@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
-    "mtime": 1794752377.783336,
-    "seen": 1794752379.337093,
-    "ast_hash": "68162242650862d642b7dc18942daf39",
+    "mtime": 1794757456.141725,
+    "seen": 1794757461.627712,
+    "ast_hash": "b81597a020a9fc18951f0e3262f84dec",
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794756633.300737,
-    "seen": 1794756635.036674,
-    "ast_hash": "7959e8721d35311a692782a14444d003",
+    "mtime": 1794757493.082676,
+    "seen": 1794757499.267076,
+    "ast_hash": "290b2dfbf19dbe628f6b93666e689412",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794756633.3010318,
-    "seen": 1794756635.036673,
-    "ast_hash": "6a6644128987697e42f1f2d9873f4e12",
+    "mtime": 1794757456.1429834,
+    "seen": 1794757461.6277068,
+    "ast_hash": "501d295973c1777a7b6abc25420c8c3c",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -342,8 +342,8 @@
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
-    "mtime": 1794757145.0152864,
-    "seen": 1794757151.015538,
+    "mtime": 1794757779.663666,
+    "seen": 1794757781.4080021,
     "ast_hash": "eb9a79370f87370efccaf187b2e24856",
     "semantic_hash": ""
   },
@@ -432,8 +432,8 @@
     "semantic_hash": ""
   },
   "apps/macos/Presentation/GreetingView.swift": {
-    "mtime": 1794757347.752801,
-    "seen": 1794757353.8793118,
+    "mtime": 1794757779.6638415,
+    "seen": 1794757781.40799,
     "ast_hash": "2d747c33095706717e5ce1e72afec56a",
     "semantic_hash": ""
   },
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794757145.053905,
-    "seen": 1794757151.015536,
+    "mtime": 1794757779.687939,
+    "seen": 1794757781.408003,
     "ast_hash": "370d779bedb0bf26893ed1166a574dfd",
     "semantic_hash": ""
   },
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/tokens/mod.rs": {
-    "mtime": 1794757145.056331,
-    "seen": 1794757151.015538,
+    "mtime": 1794757779.6885865,
+    "seen": 1794757781.4079978,
     "ast_hash": "cd35eb5ef647c94f3dc16d0e50adf4c2",
     "semantic_hash": ""
   },
@@ -552,8 +552,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/tokens_contract.rs": {
-    "mtime": 1794757145.059824,
-    "seen": 1794757151.0155299,
+    "mtime": 1794757779.6908636,
+    "seen": 1794757781.407993,
     "ast_hash": "0310c2c1669f5d9854cf93377232c53c",
     "semantic_hash": ""
   },
@@ -618,8 +618,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/tokens_rules.rs": {
-    "mtime": 1794757145.0600011,
-    "seen": 1794757151.01554,
+    "mtime": 1794757779.6910737,
+    "seen": 1794757781.4080021,
     "ast_hash": "2e12884596a7a3e7841cadd048b51c9b",
     "semantic_hash": ""
   },
@@ -756,8 +756,8 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794757145.041827,
-    "seen": 1794757151.015527,
+    "mtime": 1794757779.6810791,
+    "seen": 1794757781.407999,
     "ast_hash": "8f83ff2fdf08896372cb9d5bdb102566",
     "semantic_hash": ""
   },
@@ -924,9 +924,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0004-konfigurasi-publik/verify.md": {
-    "mtime": 1794756817.9131253,
-    "seen": 1794756819.898705,
-    "ast_hash": "17edc66e69a3393bf4022b5c54319824",
+    "mtime": 1794757449.5679603,
+    "seen": 1794757454.622829,
+    "ast_hash": "08d2df56d091cb832e7457d2e1b5263d",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/config_macos_contract.rs": {
@@ -935,40 +935,40 @@
     "ast_hash": "8a473b02e525dddc8124559c976cb1b4",
     "semantic_hash": ""
   },
-  "apps/macos/Tests/DesignSystemTests/ThemeTests.swift": {
-    "mtime": 1794757145.0158553,
-    "seen": 1794757151.015532,
-    "ast_hash": "31865cf15aa1a274e011d3c0a90fcb7d",
-    "semantic_hash": ""
-  },
   "tooling/codegen/tests/tokens_swift_contract.rs": {
-    "mtime": 1794757145.060154,
-    "seen": 1794757151.015533,
+    "mtime": 1794757779.691271,
+    "seen": 1794757781.407995,
     "ast_hash": "843e4180b62d68d09be1923f0f2aa43d",
     "semantic_hash": ""
   },
   "apps/macos/DesignSystem/Tokens.swift": {
-    "mtime": 1794757145.014416,
-    "seen": 1794757151.0155342,
+    "mtime": 1794757779.6630213,
+    "seen": 1794757781.407996,
     "ast_hash": "78f79c372bfdd27b12cf8cd9863e8adc",
     "semantic_hash": ""
   },
-  "tooling/codegen/src/tokens/swift.rs": {
-    "mtime": 1794757145.0568538,
-    "seen": 1794757151.015535,
-    "ast_hash": "9e408d9c96643d95c203fd075aae1d66",
+  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/verify.md": {
+    "mtime": 1794757779.681439,
+    "seen": 1794757781.407997,
+    "ast_hash": "200f6c6a9135aecac73c05389e3544ea",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/DesignSystemTests/ThemeTests.swift": {
+    "mtime": 1794757779.6641855,
+    "seen": 1794757781.408,
+    "ast_hash": "31865cf15aa1a274e011d3c0a90fcb7d",
     "semantic_hash": ""
   },
   "apps/macos/DesignSystem/Theme.swift": {
-    "mtime": 1794757145.0142534,
-    "seen": 1794757151.0155368,
+    "mtime": 1794757779.6628828,
+    "seen": 1794757781.408001,
     "ast_hash": "17a3eefc337819445119743a83302ac0",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794757766.0439453,
-    "seen": 1794757768.2110589,
-    "ast_hash": "200f6c6a9135aecac73c05389e3544ea",
+  "tooling/codegen/src/tokens/swift.rs": {
+    "mtime": 1794757779.688832,
+    "seen": 1794757781.408004,
+    "ast_hash": "9e408d9c96643d95c203fd075aae1d66",
     "semantic_hash": ""
   }
 }
