@@ -5,13 +5,13 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 18:15`
+- **Diperbarui:** `2026-11-15 18:40`
 
 ## Sub sesi wave `1`
 
 | Nama | Peran | Item | Scope | Ownership | Branch | Model | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `arc-f001-spec` | architect | 001 spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
+| `arc-f001-spec` | architect | 001 spec `_root` 0001; ringkasan diterima lead dengan satu perubahan (`c459559`), menunggu laporan akhir | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
 | `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS, plus penerapan macOS 001 dan 003; nomor ditetapkan saat "mulai" | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/` (folder per spec, ditetapkan saat "mulai") | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | standby |
 | `dev-f001-m1` | developer | 001 Build it; milestone dari blok usulan spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | standby |
@@ -33,6 +33,7 @@
 | 2026-11-15 | Nama sub sesi memakai nomor scope tiga digit (`arc-f001-spec`, `dev-f003-m1`), karena `ListAgents` di Mac ini sudah memuat sesi proyek lain bernama `arc-f4-spec`, `dev-f4-m1`, dan sejenisnya. | lead |
 | 2026-11-15 | Worktree sub sesi dibuat aplikasi di `/Users/ojiepermana/worktrees/desktop/<name>-<hash>` dan dipotong dari `origin/main` (`60fb6a3`), bukan `main` lokal. Kelima worktree wave 1 sudah di-fast-forward ke `9b67c13` sebelum ada perubahan di dalamnya. Sesi berikutnya dimulai dengan `source_branch: main`, dan brief selalu membuka dengan `git merge main`. | lead |
 | 2026-11-15 | Ringkasan "Accept this spec?" spec `_root/0002` dibalas `accept`: cross check (Opus) sudah diterapkan, kriteria 2, 3, 22 dan Done when scope 003 tercakup AC-1 sampai AC-7, belum ada spec `Accepted` lain, tautan relatif sah. Usul tautan dari `docs/contracts/README.md` tidak dikerjakan lead (di luar file lead) dan tetap sebagai Follow-up spec. | lead |
+| 2026-11-15 | Ringkasan "Accept this spec?" spec `_root/0001` dibalas `accept` dengan satu perubahan: rustdoc kerangka `lib.rs` dan `description` paket Core berbahasa Inggris, supaya selaras dengan spec `_root/0002` yang sudah di `main`. Lulus: cross check (Opus) diterapkan, Done when dan kriteria 1, 2, 27, 32 tercakup AC-1 sampai AC-9, selaras dengan spec 0002. Brief developer milestone 2 akan mengizinkan `docs/architecture/README.md` (AC-8), yang biasanya terlarang. | lead |
 
 ## Keputusan delegasi
 
@@ -40,6 +41,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 | Tanggal | Spec · AC | Pertanyaan | Diambil | Runner-up | Berat | Cara membatalkan | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11-15 | `_root/0001` · semua AC yang menyebut `desktop-core` | Nama paket Cargo | `desktop-core` (lib `desktop_core`), awalan `desktop-` untuk semua paket; `foundation` rancu dengan framework `Foundation` Apple | `foundation-core` | berat | `architect (update)` spec `_root/0001` dan `_root/0002`; manifest, `use`, dan kelak nama modul binding Swift ikut berubah | berlaku |
 | 2026-11-15 | `_root/0002` · AC-4, AC-5 | Perilaku masukan tepi dan validasi `hello` | Fungsi total: setiap `String` diterima apa adanya, tanpa validasi, pemangkasan, batas panjang, atau kesalahan; sesuai bentuk di `docs/contracts/README.md` | `Result<String, HelloError>` dengan pangkas dan tolak kosong | berat | `architect (update)` spec `_root/0002`; tanda tangan, AC-4, AC-5, V-2 sampai V-4, R-4, langkah 1 sampai 4 dibangun ulang, dan `docs/contracts/README.md` ikut berubah | berlaku |
 | 2026-11-15 | `_root/0002` · R-8 | Aturan pemanggil saat kolom nama kosong | UI mengirim isi kolom apa adanya, juga saat kosong | UI boleh menonaktifkan tombol saat kosong | - | `architect (update)` spec `_root/0002`; R-8 dan Follow-up macOS berubah | berlaku |
 | 2026-11-15 | `_root/0002` · AC-3, AC-4 | Letak dan path publik `hello` | Modul privat `greeting`, ekspor ulang di akar crate | `hello` langsung di `lib.rs` | - | `architect (update)` spec `_root/0002`; langkah 1 dibangun ulang | berlaku |
@@ -51,6 +53,19 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 | 2026-11-15 | `_root/0002` · AC-3 | Bukti satu implementasi | `git grep` pola format plus uji bernilai literal; pemeriksaan tetap diserahkan ke scope 002 | Skrip di `scripts/` sekarang | - | `architect (update)` spec `_root/0002`; langkah 6 dibangun ulang | berlaku |
 | 2026-11-15 | `_root/0002` · AC-6, AC-7 | Tempat lint Core | `[lints.rust]` di `crates/core/Cargo.toml` (`unsafe_code = "forbid"`, `missing_docs = "warn"`) | Atribut `#![...]` di `lib.rs` | - | `architect (update)` spec `_root/0002`; langkah 5 dibangun ulang | berlaku |
 | 2026-11-15 | `_root/0002` · tidak ada AC | Badan fungsi | `format!("Hello, {name}!")` | Menyisipkan ke buffer `name` | - | `architect (update)` spec `_root/0002` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-1 | Cara aplikasi OS bergabung ke workspace | `members` eksplisit plus aturan netral host, sehingga `--workspace` hijau di ketiga host | `default-members` hanya Core | - | `architect (update)` spec `_root/0001`; gerbang lead berubah menjadi daftar `-p` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-4 | Pin toolchain | `1.99.1` persis (stable aktif dan lengkap di Mac ini, tanpa unduhan) | `1.100.0` (terbit 2026-11-09) | - | `architect (update)` spec `_root/0001`; `rust-toolchain.toml` dan `rust-version` berubah | berlaku |
+| 2026-11-15 | `_root/0001` · tidak ada AC | Edisi dan resolver | Edisi 2024, resolver 3 | Edisi 2021, resolver 2 | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-3, AC-7 | Bukti minimal arah dependensi | Perintah `cargo tree` tertulis di spec | Crate `xtask check-deps` sekarang | - | `architect (update)` spec `_root/0001`; langkah baru di Build plan | berlaku |
+| 2026-11-15 | `_root/0001` · AC-7 | Folder rencana | Tidak dibuat sebelum ada tanggung jawab nyata | Folder dengan README penanda | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-5 | Isi `.gitignore` | `/target`, `DerivedData/`, `xcuserdata/`, `.build/`, `.DS_Store` | Hanya `/target` | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-3 | `uniffi` di Core | Dilarang; alat binding tinggal di `desktop-macos-ffi` | `uniffi` di Core di balik feature | - | `architect (update)` spec `_root/0001`; desain scope 004 berubah | berlaku |
+| 2026-11-15 | `_root/0001` · AC-4 | Kebijakan menaikkan pin | Patch lewat commit yang lulus gerbang, minor lewat pembaruan spec | `channel = "stable"` mengambang | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-7 | Lint workspace | Tanpa `[workspace.lints]`; lint Core milik spec 0002, kebijakan workspace milik scope 002 | Tetapkan sekarang | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-7 | `[workspace.dependencies]` | Ditambah konsumen pertama (scope 004) | Ditulis sekarang | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-2 | Tempat uji API Core | `crates/core/tests/` | `tests/contracts/` di root | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · tidak ada AC | Bagian References | Tanpa bagian References | - | - | `architect (update)` spec `_root/0001` | berlaku |
+| 2026-11-15 | `_root/0001` · AC-7 | Bahasa rustdoc dan deskripsi paket Core | Inggris, mengikuti spec `_root/0002`, sampai scope 002 memutuskan kebijakan bahasa komentar (diminta lead saat accept) | Indonesia | - | `architect (update)` spec `_root/0001` dan `_root/0002`; rustdoc Core ditulis ulang | berlaku |
 
 ## Blocker terbuka
 
