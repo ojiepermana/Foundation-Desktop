@@ -11,9 +11,9 @@ Terapkan warna, tipografi dan jarak yang sama maknanya pada jendela sapaan di se
 * [x] `/architect scope 008 tema bersama untuk _root` (spec)
 * [ ] Build it: `/develop scope 008 tema bersama untuk _root`
   * [x] Milestone 1: Alat dan sumber token. Build plan langkah 1 dan 2. AC-1 sampai AC-10
-  * [ ] Milestone 2: Dokumen mengikuti keadaan nyata. Build plan langkah 3. AC-11. after milestone 1
+  * [x] Milestone 2: Dokumen mengikuti keadaan nyata. Build plan langkah 3. AC-11. after milestone 1
   * [ ] Milestone 3: Bukti di host Windows dan Linux. Build plan langkah 4. AC-12. after milestone 1; needs host Windows dan host Linux (`BLOCKED`, `owner: user`)
-* [ ] Verify it: `/check verify scope 008 tema bersama untuk _root`
+* [x] Verify it: `/check verify scope 008 tema bersama untuk _root` (bukti di Mac, AC-1 sampai AC-11; AC-12 menunggu langkah manual `F008-1` di host Windows dan Linux)
 * [x] Test it: `/test scope 008 tema bersama untuk _root`
 * [ ] `/architect scope 008 tema bersama untuk macOS` (spec). after spec _root/0003; needs pembaruan AC-12 spec macos/0001
 
