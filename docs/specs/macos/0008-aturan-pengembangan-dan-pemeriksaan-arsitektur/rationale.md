@@ -145,3 +145,17 @@ Dibaca subagent baru berkonteks bersih pada model `sonnet` (model lain dari penu
 | `C-3` memakai awalan folder, berbeda dengan definisi file uji spec bersama | nit | Memakai definisi spec bersama |
 
 Subagent juga memastikan hal berikut benar: `C-1` dan `C-2` setia pada pola `grep -E` spec `macos/0005`; aturan `C` gagal pada kode sekarang dan lulus pada kode yang akan ditulis spec `macos/0005` dan `macos/0004`; kasus `D` dan `B` memicu aturan yang dimaksud; hitungan AC-4 dan AC-8 benar; AC-5 tidak cocok dengan pemakaian `Command` yang ada; argumen `G-2` sama dengan spec `macos/0001`; hitungan 16 path AC-12 spec `macos/0001` tidak tersentuh.
+
+## Penyelarasan sesudah diterima
+
+Lead menerima spec ini pada 2026-11-15 (commit `a1d0e5c`) dan meminta penyelarasan teks dengan `main` `35432f4`. Keputusan dan ID AC tidak berubah.
+
+| Yang berubah di `main` | Penyesuaian di `index.md` |
+| --- | --- |
+| Modul `architecture` nyata (`c3448d9`): `mod.rs`, `deps.rs`, `manifest.rs`, `code.rs`, `RULES` berisi `A-1` sampai `A-11`, dan `Findings` yang mengurutkan menurut `rule: u32` | Pendaftaran aturan `C` ditulis terhadap kode itu: `mod macos;`, pemanggilan sesudah `code::check`, entri `RULES` di akhir larik, field `letter` dan `Findings::push_rule`, kunci urutan `(letter, rule, path, line)`, serta `walk` dan `File` yang menjadi `pub(super)`. `scan_lines` tidak dipakai, karena hanya mencocokkan teks persis dan selalu mencatat huruf `'A'`. Baris milestone 3 di tabel file ikut menyebut `code.rs`. |
+| Angka `rules` bergantung pada urutan build terhadap milestone 3 spec `_root/0007` | AC-6 dan AC-7 memakai angka relatif ("bertambah tepat tiga", "bertambah tepat satu") dengan batas akhir milestone spec ini. Follow-up spec bersama tidak lagi menyebut `16` dan `17`. |
+| Spec `macos/0006` diterima: `LocalizedText.swift`, tombol `Button(LocalizedText.string(.greetingSubmit))`, resource bahasa di `apps/macos/Presentation/Resources/`, dan suite uji baru | Pola `C-1` dan `C-2` dicocokkan dengan isi file spec `macos/0004`, `macos/0005`, dan `macos/0006`: tidak ada yang cocok, jadi aturannya tetap lulus. `macos/0006` hanya mengubah hitungan baris tombol di AC-6 spec `macos/0005`, bukan pola yang disalin. AC-3 tidak lagi mengunci jumlah uji dan suite, dan angka `7` dan `4` hanya disebut sebagai keadaan pada akhir milestone 1. |
+| Keluaran generator dan resource macOS dari spec `macos/0004`, `macos/0005`, `macos/0006`, dan spec macOS scope 011 | Satu kalimat di bagian **Kapan gerbang wajib**: semuanya sudah tercakup `apps/macos/`, `design-system/`, `shared/` (termasuk `shared/assets/`), dan `tooling/codegen/`, jadi pola `R` tidak berubah. |
+| Spec macOS scope 011 kemungkinan menyentuh `project.pbxproj` | `C-4` dinyatakan hanya mencari tiga teks per baris dan tidak membaca bentuk lain berkas itu. |
+
+Kode `macos/0006` dicocokkan dengan pola `C-1` dan `C-2` memakai skrip sementara di scratchpad sesi, pada blok **Isi file** spec itu (`git show fff3137`). Hasilnya 0 kecocokan.

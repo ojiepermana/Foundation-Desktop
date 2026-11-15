@@ -822,15 +822,15 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
-    "mtime": 1794754280.8757432,
-    "seen": 1794754282.525245,
-    "ast_hash": "4de40df3ad45e9cc61726f2619e4bcde",
+    "mtime": 1794754441.6281033,
+    "seen": 1794754443.252116,
+    "ast_hash": "d0f228eded182e360cedfc465a0f09c0",
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794754280.8753624,
-    "seen": 1794754282.525248,
-    "ast_hash": "1ff1fc62b1443214e98e2d8e6edb62cb",
+    "mtime": 1794754441.627912,
+    "seen": 1794754443.2521129,
+    "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
     "semantic_hash": ""
   }
 }
