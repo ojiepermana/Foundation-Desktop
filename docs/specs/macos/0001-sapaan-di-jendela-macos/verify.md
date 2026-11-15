@@ -52,16 +52,16 @@ Sesi ini tidak membuka aplikasi atau Xcode GUI. Dua langkah manual menunggu user
 
 ### Commands
 
-- [ ] `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build` → kode 0; `** BUILD SUCCEEDED **` → AC-4
-- [ ] Perintah yang sama dengan `-configuration Release` → kode 0; `** BUILD SUCCEEDED **` → AC-4
-- [ ] `lipo -archs apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/DesktopMac`, untuk `<K>` = `Debug` dan `Release` → `arm64` untuk keduanya → AC-4
-- [ ] `nm apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/* 2>/dev/null | grep -c uniffi_desktop_macos_ffi_fn_func_hello`, untuk `Debug` dan `Release` → 1 atau lebih (tercatat `15` untuk Debug, `2` untuk Release) → AC-4
-- [ ] `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, lalu `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` → kode 0; `Test run with 7 tests in 1 suite passed` dan `Test run with 4 tests in 1 suite passed` → AC-2, AC-3 (diulang)
-- [ ] `git grep --untracked -lF 'Hello, ' -- '*.swift'` → tepat dua baris, `apps/macos/Tests/InteropTests/BindingContractTests.swift` dan `apps/macos/Tests/PresentationTests/GreetingViewModelTests.swift` → AC-8
-- [ ] `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` → tepat satu baris, `apps/macos/Interop/Greeter.swift` → AC-8
-- [ ] `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` → `1` → AC-8
-- [ ] `git grep --untracked -lF 'Hello, {' -- '*.rs'` → tepat satu baris, `crates/core/src/greeting.rs` → AC-8
-- [ ] `git status --short` sesudah kedua build → tidak mencetak apa pun (`apps/macos/DerivedData/` dan `target/` diabaikan git) → AC-4
+- [x] `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build` → kode 0; `** BUILD SUCCEEDED **` → AC-4
+- [x] Perintah yang sama dengan `-configuration Release` → kode 0; `** BUILD SUCCEEDED **` → AC-4
+- [x] `lipo -archs apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/DesktopMac`, untuk `<K>` = `Debug` dan `Release` → `arm64` untuk keduanya → AC-4
+- [x] `nm apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/* 2>/dev/null | grep -c uniffi_desktop_macos_ffi_fn_func_hello`, untuk `Debug` dan `Release` → 1 atau lebih (tercatat `15` untuk Debug, `2` untuk Release) → AC-4
+- [x] `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, lalu `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` → kode 0; `Test run with 7 tests in 1 suite passed` dan `Test run with 4 tests in 1 suite passed` → AC-2, AC-3 (diulang)
+- [x] `git grep --untracked -lF 'Hello, ' -- '*.swift'` → tepat dua baris, `apps/macos/Tests/InteropTests/BindingContractTests.swift` dan `apps/macos/Tests/PresentationTests/GreetingViewModelTests.swift` → AC-8
+- [x] `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` → tepat satu baris, `apps/macos/Interop/Greeter.swift` → AC-8
+- [x] `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` → `1` → AC-8
+- [x] `git grep --untracked -lF 'Hello, {' -- '*.rs'` → tepat satu baris, `crates/core/src/greeting.rs` → AC-8
+- [x] `git status --short` sesudah kedua build → tidak mencetak apa pun (`apps/macos/DerivedData/` dan `target/` diabaikan git) → AC-4
 
 ### Acceptance-criteria coverage
 
@@ -80,14 +80,14 @@ Tidak ada untuk milestone ini. F004-1 (AC-5) dan F004-2 (AC-13) tetap `NOT_RUN`,
 
 ### Commands
 
-- [ ] AC-1: `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, `rm -rf bindings/swift/Sources`, lalu kedua perintah `cargo run -p desktop-macos-ffi --features bindgen --bin uniffi-bindgen-swift --locked -- ...` di **Membuat ulang binding** → keempatnya kode 0. `git diff --exit-code -- bindings/swift` → kode 0. `git status --short -- bindings/swift` → kosong. `git ls-files bindings/swift` → empat path: `bindings/swift/Package.swift`, `bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift`, `bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h`, `bindings/swift/Sources/desktop_macos_ffiFFI/module.modulemap` → AC-1
-- [ ] AC-2, AC-3: `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` → kode 0; `✔ Test run with 7 tests in 1 suite passed` dan `✔ Test run with 4 tests in 1 suite passed` → AC-2, AC-3
-- [ ] AC-4: `xcodebuild ... -configuration Debug ... build` dan `-configuration Release` → keduanya `** BUILD SUCCEEDED **`; `lipo -archs` → `arm64` untuk keduanya; `nm ... | grep -c uniffi_desktop_macos_ffi_fn_func_hello` → `15` (Debug) dan `2` (Release) → AC-4
-- [ ] AC-6: `grep -n unsafe_code crates/macos-ffi/Cargo.toml` → `26:unsafe_code = "forbid"`; `grep -rn unsafe crates/macos-ffi/src` → kosong (kode 1); `cargo test -p desktop-macos-ffi --locked` → `test tests::forwards_to_core ... ok` → AC-6
-- [ ] AC-7: `grep -nE '^[[:space:]]*pub fn ' crates/macos-ffi/src/lib.rs` → `18:pub fn hello(name: String) -> String {`; `grep -c 'desktop_core::hello(name)' crates/macos-ffi/src/lib.rs` → `1`; `grep -c '^public func hello(name: String) -> String' bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift` → `1` → AC-7
-- [ ] AC-8: `git grep --untracked -lF 'Hello, ' -- '*.swift'` → dua path di `apps/macos/Tests/`; `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` → `apps/macos/Interop/Greeter.swift`; `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` → `1`; `git grep --untracked -lF 'Hello, {' -- '*.rs'` → `crates/core/src/greeting.rs` → AC-8
-- [ ] AC-9: `cargo build --workspace --locked`, `cargo test --workspace --locked` (tidak ada `FAILED`), `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo clippy -p desktop-macos-ffi --all-targets --all-features --locked -- -D warnings` → semuanya kode 0. `cargo tree -p desktop-macos-ffi --depth 1 --prefix none --locked` → tiga baris, `desktop-macos-ffi v0.1.0`, `desktop-core v0.1.0`, `uniffi v0.32.2`. `cargo tree -p desktop-macos-ffi --target all --all-features --prefix none --locked | grep -cE '^(desktop-windows|desktop-linux|gtk|gtk4|libadwaita|windows-reactor) '` → `0`. `cargo tree -p desktop-core --target all --all-features --prefix none --locked` → satu baris, `desktop-core v0.1.0` → AC-9
-- [ ] AC-10: keluaran perintah kombinasi versi, sama dengan tabel **Kombinasi yang dipakai** spec:
+- [x] AC-1: `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, `rm -rf bindings/swift/Sources`, lalu kedua perintah `cargo run -p desktop-macos-ffi --features bindgen --bin uniffi-bindgen-swift --locked -- ...` di **Membuat ulang binding** → keempatnya kode 0. `git diff --exit-code -- bindings/swift` → kode 0. `git status --short -- bindings/swift` → kosong. `git ls-files bindings/swift` → empat path: `bindings/swift/Package.swift`, `bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift`, `bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h`, `bindings/swift/Sources/desktop_macos_ffiFFI/module.modulemap` → AC-1
+- [x] AC-2, AC-3: `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` → kode 0; `✔ Test run with 7 tests in 1 suite passed` dan `✔ Test run with 4 tests in 1 suite passed` → AC-2, AC-3
+- [x] AC-4: `xcodebuild ... -configuration Debug ... build` dan `-configuration Release` → keduanya `** BUILD SUCCEEDED **`; `lipo -archs` → `arm64` untuk keduanya; `nm ... | grep -c uniffi_desktop_macos_ffi_fn_func_hello` → `15` (Debug) dan `2` (Release) → AC-4
+- [x] AC-6: `grep -n unsafe_code crates/macos-ffi/Cargo.toml` → `26:unsafe_code = "forbid"`; `grep -rn unsafe crates/macos-ffi/src` → kosong (kode 1); `cargo test -p desktop-macos-ffi --locked` → `test tests::forwards_to_core ... ok` → AC-6
+- [x] AC-7: `grep -nE '^[[:space:]]*pub fn ' crates/macos-ffi/src/lib.rs` → `18:pub fn hello(name: String) -> String {`; `grep -c 'desktop_core::hello(name)' crates/macos-ffi/src/lib.rs` → `1`; `grep -c '^public func hello(name: String) -> String' bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift` → `1` → AC-7
+- [x] AC-8: `git grep --untracked -lF 'Hello, ' -- '*.swift'` → dua path di `apps/macos/Tests/`; `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` → `apps/macos/Interop/Greeter.swift`; `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` → `1`; `git grep --untracked -lF 'Hello, {' -- '*.rs'` → `crates/core/src/greeting.rs` → AC-8
+- [x] AC-9: `cargo build --workspace --locked`, `cargo test --workspace --locked` (tidak ada `FAILED`), `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo clippy -p desktop-macos-ffi --all-targets --all-features --locked -- -D warnings` → semuanya kode 0. `cargo tree -p desktop-macos-ffi --depth 1 --prefix none --locked` → tiga baris, `desktop-macos-ffi v0.1.0`, `desktop-core v0.1.0`, `uniffi v0.32.2`. `cargo tree -p desktop-macos-ffi --target all --all-features --prefix none --locked | grep -cE '^(desktop-windows|desktop-linux|gtk|gtk4|libadwaita|windows-reactor) '` → `0`. `cargo tree -p desktop-core --target all --all-features --prefix none --locked` → satu baris, `desktop-core v0.1.0` → AC-9
+- [x] AC-10: keluaran perintah kombinasi versi, sama dengan tabel **Kombinasi yang dipakai** spec:
   - `sw_vers -productVersion` → `27.0.1`
   - `uname -m` → `arm64`
   - `xcodebuild -version` → `Xcode 27.1`, `Build version 27A9275`
@@ -97,9 +97,9 @@ Tidak ada untuk milestone ini. F004-1 (AC-5) dan F004-2 (AC-13) tetap `NOT_RUN`,
   - `grep -A1 '^name = "uniffi"$' Cargo.lock` → `name = "uniffi"`, lalu `version = "0.32.2"`
   - `grep -c 'bindings_contract_version = 30' bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift` → `1`
   - `vtool -show-build apps/macos/DerivedData/Build/Products/Release/DesktopMac.app/Contents/MacOS/DesktopMac` → `platform MACOS`, `minos 14.0`, `sdk 27.0` → AC-10
-- [ ] AC-11: `git status --short` sesudah perintah AC-1 sampai AC-4 → kosong. `git log --name-only --format= --grep='spec macos/0001 step' | sort -u` → hanya `Cargo.lock`, `Cargo.toml`, enam belas path dari tabel **Tata letak**, `docs/specs/macos/0001-sapaan-di-jendela-macos/index.md`, `docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md`, dan empat berkas `graphify-out/`; tidak ada `.gitignore`, `rust-toolchain.toml`, atau `.graphifyignore`. `Cargo.toml` di commit langkah 1 (`9e14ced`) sama persis dengan bagian **Isi file** (`diff` kosong) → AC-11
-- [ ] AC-12: `git ls-files apps/macos bindings/swift crates/macos-ffi` → tepat 16 path, sama dengan tabel **Tata letak**, tanpa `Platform`, `DesignSystem`, atau `Resources`. Daftar AC-11 tidak memuat path di bawah `scripts/` atau `.github/` (hitungan `0`). `grep -c ui-testing apps/macos/DesktopMac.xcodeproj/project.pbxproj` → `0` → AC-12
-- [ ] Sesudah semua perintah: `rm -rf target apps/macos/.build apps/macos/DerivedData`, lalu `git status --short` → kosong
+- [x] AC-11: `git status --short` sesudah perintah AC-1 sampai AC-4 → kosong. `git log --name-only --format= --grep='spec macos/0001 step' | sort -u` → hanya `Cargo.lock`, `Cargo.toml`, enam belas path dari tabel **Tata letak**, `docs/specs/macos/0001-sapaan-di-jendela-macos/index.md`, `docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md`, dan empat berkas `graphify-out/`; tidak ada `.gitignore`, `rust-toolchain.toml`, atau `.graphifyignore`. `Cargo.toml` di commit langkah 1 (`9e14ced`) sama persis dengan bagian **Isi file** (`diff` kosong) → AC-11
+- [x] AC-12: `git ls-files apps/macos bindings/swift crates/macos-ffi` → tepat 16 path, sama dengan tabel **Tata letak**, tanpa `Platform`, `DesignSystem`, atau `Resources`. Daftar AC-11 tidak memuat path di bawah `scripts/` atau `.github/` (hitungan `0`). `grep -c ui-testing apps/macos/DesktopMac.xcodeproj/project.pbxproj` → `0` → AC-12
+- [x] Sesudah semua perintah: `rm -rf target apps/macos/.build apps/macos/DerivedData`, lalu `git status --short` → kosong
 
 ### Acceptance-criteria coverage
 
