@@ -12,6 +12,7 @@ use std::fmt;
 use std::fs;
 use std::path::{Path, PathBuf};
 
+pub mod architecture;
 pub mod assets;
 pub mod config;
 pub mod json;
@@ -75,6 +76,7 @@ pub const SOURCES: &[Source] = &[
     config::SOURCE,
     localization::SOURCE,
     assets::SOURCE,
+    architecture::SOURCE,
 ];
 
 /// The repo root, fixed when this crate is compiled.
