@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794740752.3015726,
-    "seen": 1794740754.3580601,
-    "ast_hash": "74c788513e364a370bc4a9cf9d7e5b69",
+    "mtime": 1794740788.3860097,
+    "seen": 1794740789.4100459,
+    "ast_hash": "ac192e59f74c041cca3d70b6f8e7eaf5",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -264,14 +264,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794740863.6698837,
-    "seen": 1794740865.506787,
+    "mtime": 1794740874.5909522,
+    "seen": 1794740876.546481,
     "ast_hash": "84cc965d59445aea36f3e62c169f9d53",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794740863.670172,
-    "seen": 1794740865.506783,
+    "mtime": 1794740874.591165,
+    "seen": 1794740876.546484,
     "ast_hash": "32e9d8a53c63c3ccf464954a91c2f91a",
     "semantic_hash": ""
   },
@@ -342,8 +342,8 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794740863.671683,
-    "seen": 1794740865.5067892,
+    "mtime": 1794740874.592721,
+    "seen": 1794740876.546483,
     "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
     "semantic_hash": ""
   },
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794740863.6721818,
-    "seen": 1794740865.5067909,
+    "mtime": 1794740874.5931551,
+    "seen": 1794740876.546477,
     "ast_hash": "51fc5ecbc67be6469930feb751c1050e",
     "semantic_hash": ""
   },
