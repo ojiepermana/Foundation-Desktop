@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 22:09`
+- **Diperbarui:** `2026-11-15 22:10`
 
 ## Sub sesi wave `2`
 
@@ -52,7 +52,7 @@
 | `arc-f002-spec` | architect | 002 spec macOS `macos/0008`; laporan `done` (`a1d0e5c`, penyelarasan `622f0d6`, HEAD `31c47ab`), merge `980b522`; cross check subagent Sonnet | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/` | `claude/arc-f002-spec-d362fa` | `opus-5-5 · high` | merged |
 | `dev-f008-m1` | developer | 002 macOS Build it milestone 1; Langkah Build plan selesai 1 (`2470327`); `G-1` sampai `G-5` dan AC-1 sampai AC-5 lulus di `main` `5f7e69d`; laporan `done` (HEAD `bff6a22`), merge `6c3256c` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `verify.md` dan baris `**Status**` spec `macos/0008` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
 | `dev-f008-m1` | developer | dua perbaikan spec `_root/0007` atas temuan tester: dedupe per baris di `mod.rs` (dan hapus `#[ignore]` di uji tester, izin satu baris), literal `Hello, {` keluar dari sumber `architecture_contract.rs` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `tooling/codegen/src/architecture/mod.rs`, `tooling/codegen/tests/architecture_contract.rs`, satu atribut di `tooling/codegen/tests/architecture_rules.rs` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | aktif |
-| `arc-f001-spec` | checker (verify) | 002 macOS verify milestone 1 (gerbang Mac, AC-1 sampai AC-5, AC-9) dari `main` `6c3256c` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | centang `verify.md` spec `macos/0008` bagian Milestone 1 | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | aktif |
+| `arc-f001-spec` | checker (verify) | 002 macOS verify milestone 1; laporan `done` PASS 17 dari 17 (`026f517`, HEAD `100159a`), merge `1e3911e`; semua gerbang dijalankan sendiri di clone sekali pakai; family sama dengan penulis | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | centang `verify.md` spec `macos/0008` bagian Milestone 1 | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | merged |
 
 ## Sub sesi wave `1`
 
@@ -316,6 +316,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Dicentang pada wave ini
 
+- 002 macOS · `Milestone 1: Gerbang Mac terbukti` · laporan `done` `dev-f008-m1` dan verify PASS `arc-f001-spec` (17 dari 17 langkah pada `6c3256c`; `G-1` sampai `G-5` dijalankan ulang dari `target/` kosong: 7, 29, 28, 50 detik; `G-2` terbukti tidak menulis ke berkas terlacak lewat `shasum`; pola `R` cocok untuk empat keluaran generator spec `macos/0004` sampai `0007`) · build `claude/dev-f008-m1-1a2956` → `6c3256c`, centang verify `claude/arc-f001-spec-a1f824` → `1e3911e` · commit `docs(scope): tick the 002 macOS milestone 1` · tanpa langkah manual
 - 011 macOS · `/architect scope 011 aset merek untuk macOS` · laporan `done` `arc-f011-spec` · `claude/arc-f011-spec-3fcf4a` → `ae98dc0` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, `architecture check` di `main` sesudah merge kode 0 · commit `docs(scope): tick the 011 macOS spec` · manual `F011-2` (AC-11) dan `F011-3` (AC-12) tercatat; nilai dari user `N9`
 - 002 · `Milestone 3: Panduan dan dokumen mengikuti` dan `Verify it: /check verify scope 002 aturan pengembangan untuk _root` · laporan `done` `dev-f008-m1` dan verify PASS `arc-f001-spec` (milestone 1 dan 2: 24 dari 24; milestone 3: 13 dari 13 pada `00e898e`; lima dokumen sama byte demi byte dengan hasil menerapkan 16 blok Ganti spec pada versi sebelum langkah 5; sebelas probe `A-12` dan `A-13` di clone sekali pakai) · build `claude/dev-f008-m1-1a2956` → `2a56971` dan `00e898e`, centang verify `claude/arc-f001-spec-a1f824` → `6c6eccb` · `verify.md` 37 `[x]`, 0 terbuka · gerbang lead di `main` `00e898e`: fmt, clippy, 159 test, lima `check` · commit `docs(scope): tick 002 milestone 3 and verify` · `(manual NOT_RUN: F002-1, owner user)` untuk AC-11; milestone 4 dan `Build it` tetap terbuka
 - 002 macOS · `/architect scope 002 aturan pengembangan untuk macOS` · laporan `done` `arc-f002-spec` · `claude/arc-f002-spec-d362fa` → `980b522` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, `architecture check` di `main` sesudah merge kode 0 · commit `docs(scope): tick the 002 macOS spec` · tanpa langkah manual; milestone 2 menunggu persetujuan user atas teks `AGENTS.md`
