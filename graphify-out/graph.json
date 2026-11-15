@@ -3161,7 +3161,7 @@
       "node_kind": "heading",
       "norm_label": "dicentang pada wave ini",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L137"
+      "source_location": "L139"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan",
@@ -3209,7 +3209,7 @@
       "node_kind": "heading",
       "norm_label": "penutupan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L153"
+      "source_location": "L156"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_riwayat_wave",
@@ -3221,7 +3221,7 @@
       "node_kind": "heading",
       "norm_label": "riwayat wave",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L149"
+      "source_location": "L152"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_1",
@@ -12618,7 +12618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L137",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -12629,7 +12629,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L149",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -12640,7 +12640,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L153",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -15054,13 +15054,24 @@
     },
     {
       "source": "docs_scope_001_batas_workspace_dan_pemilik",
+      "target": "docs_specs_macos_0002_batas_workspace_dan_pemilik",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/scope/001 - Batas workspace dan pemilik.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_scope_001_batas_workspace_dan_pemilik",
       "target": "docs_scope_scope",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/001 - Batas workspace dan pemilik.md",
-      "source_location": "L22",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -15098,13 +15109,24 @@
     },
     {
       "source": "docs_scope_003_kontrak_sapaan_bersama",
+      "target": "docs_specs_macos_0003_kontrak_sapaan_bersama",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/scope/003 - Kontrak sapaan bersama.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_scope_003_kontrak_sapaan_bersama",
       "target": "docs_scope_scope",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/003 - Kontrak sapaan bersama.md",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -15450,17 +15472,6 @@
     },
     {
       "source": "docs_specs_macos_0002_batas_workspace_dan_pemilik",
-      "target": "docs_scope_001_batas_workspace_dan_pemilik",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_specs_macos_0002_batas_workspace_dan_pemilik",
       "target": "docs_specs_macos_0001_sapaan_di_jendela_macos_index",
       "relation": "references",
       "_origin": "ast",
@@ -15490,17 +15501,6 @@
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0003-kontrak-sapaan-bersama.md",
       "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_specs_macos_0003_kontrak_sapaan_bersama",
-      "target": "docs_scope_003_kontrak_sapaan_bersama",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/specs/macos/0003-kontrak-sapaan-bersama.md",
-      "source_location": "L3",
       "weight": 1.0
     },
     {
