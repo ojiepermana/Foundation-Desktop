@@ -27,7 +27,7 @@ Setelah scaffold tersedia, `/audit` mengidentifikasi konvensi pada struktur yang
   * [x] Milestone 3: Aturan tema macOS. Build plan langkah 3. AC-6, AC-9. after milestone 3 spec _root/0007 dan milestone 2 spec macos/0005 di `main`
   * [x] Milestone 4: Setelan Xcode dari generator. Build plan langkah 4. AC-7, AC-9. after milestone 3 dan milestone 1 spec macos/0004 di `main`
 * [ ] Verify it: `/check verify scope 002 aturan pengembangan untuk macOS`
-* [ ] Test it: `/test scope 002 aturan pengembangan untuk macOS`
+* [x] Test it: `/test scope 002 aturan pengembangan untuk macOS` (aturan `C-1` sampai `C-4`; gerbang `G-1` sampai `G-5` berupa perintah, bukan uji; AC-8 menunggu milestone 2)
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 
