@@ -304,6 +304,10 @@ fn generate_and_check_round_trip_for_the_strings_files() {
         problems[0]
     );
     let (written, _) = generate(&root, &localization::SOURCE).expect("generate succeeds");
-    assert_eq!(written, [edited.path.clone()], "AC-1: only the edited file");
+    assert_eq!(
+        written,
+        std::slice::from_ref(&edited.path),
+        "AC-1: only the edited file"
+    );
     fs::remove_dir_all(&root).expect("the copy can be removed");
 }
