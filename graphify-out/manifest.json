@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794744282.8390856,
-    "seen": 1794744285.677454,
-    "ast_hash": "2ca12b8c691f04fe8469dbfd1c683d64",
+    "mtime": 1794744441.3570523,
+    "seen": 1794744443.858952,
+    "ast_hash": "3025fc18ae8ac9ec98f7069cece954a2",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794744282.8393502,
-    "seen": 1794744285.677452,
-    "ast_hash": "0aa66e555601ff7369663790559dde7d",
+    "mtime": 1794744441.3574083,
+    "seen": 1794744443.858948,
+    "ast_hash": "55ef9079b92da72af4cfc198247d9ce5",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -485,16 +485,16 @@
     "ast_hash": "98fce5a6079ade3b9d9c34e303424818",
     "semantic_hash": ""
   },
-  "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794744354.5206323,
-    "seen": 1794744358.2529228,
-    "ast_hash": "9db21cf0cedb9c4d28f894bb20623ff0",
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
+    "mtime": 1794744455.8466594,
+    "seen": 1794744459.049572,
+    "ast_hash": "e213abb0afd37a34aa8b7c1b9793e75a",
     "semantic_hash": ""
   },
-  "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
-    "mtime": 1794744354.520826,
-    "seen": 1794744358.252992,
-    "ast_hash": "e213abb0afd37a34aa8b7c1b9793e75a",
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
+    "mtime": 1794744455.846217,
+    "seen": 1794744459.049574,
+    "ast_hash": "9db21cf0cedb9c4d28f894bb20623ff0",
     "semantic_hash": ""
   }
 }
