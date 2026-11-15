@@ -96,10 +96,10 @@
     "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
   },
   "docs/scope/008 - Tema bersama dan kontrol native.md": {
-    "mtime": 1794730741.1257787,
-    "seen": 1794731111.1997929,
-    "ast_hash": "9f244529e2f5da64b4e48e1c2a82efe8",
-    "semantic_hash": "9f244529e2f5da64b4e48e1c2a82efe8"
+    "mtime": 1794744282.8377163,
+    "seen": 1794744285.677449,
+    "ast_hash": "b537145060684e44d2717125ed715ea6",
+    "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
     "mtime": 1794743710.9462507,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794743710.9533358,
-    "seen": 1794743729.0393379,
-    "ast_hash": "066bd2057274ed54b5d640dfdae5c22b",
+    "mtime": 1794744282.8395083,
+    "seen": 1794744285.677456,
+    "ast_hash": "af7bdf8a6670180a0015b31b5e503269",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794744159.8196967,
-    "seen": 1794744163.970829,
-    "ast_hash": "fd465ddf6520cdb14851eac1add6d4b9",
+    "mtime": 1794744282.8390856,
+    "seen": 1794744285.677454,
+    "ast_hash": "2ca12b8c691f04fe8469dbfd1c683d64",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794744159.8199606,
-    "seen": 1794744163.970818,
-    "ast_hash": "dac14ae9814d4894720e50a3c0a01ce4",
+    "mtime": 1794744282.8393502,
+    "seen": 1794744285.677452,
+    "ast_hash": "0aa66e555601ff7369663790559dde7d",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {

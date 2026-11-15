@@ -5,13 +5,13 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 19:02`
+- **Diperbarui:** `2026-11-15 19:04`
 
 ## Sub sesi wave `2`
 
 | Nama | Peran | Item | Scope | Ownership | Branch | Model | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `arc-f004-spec` | architect | 008 spec `_root/0003`; ringkasan diterima lead tanpa perubahan (`2b3141d`), menunggu laporan akhir | `008 - Tema bersama dan kontrol native.md` | `docs/specs/_root/0003-tema-bersama-dan-kontrol-native/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | dipakai ulang |
+| `arc-f004-spec` | architect | 008 spec `_root/0003`; laporan `done` (`2b3141d`, HEAD `d23f57a`), merge `02d4a07` | `008 - Tema bersama dan kontrol native.md` | `docs/specs/_root/0003-tema-bersama-dan-kontrol-native/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect | 009 spec `_root/0004`; laporan `done` (`0bca895`, HEAD `c319c6d`), merge `c04db56`; bagian "Bentuk alat" bersandar pada spec `_root/0003` | `009 - Konfigurasi publik.md` | `docs/specs/_root/0004-konfigurasi-publik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f011-spec` | architect | 011 spec `_root/0005`; mengikuti bentuk generator dari architect 008 | `011 - Aset merek bersama.md` | `docs/specs/_root/0005-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `fable-5-2 · high` | aktif |
 | `arc-f010-spec` | architect | 010 spec `_root/0006`; mengikuti bentuk generator dari architect 008 | `010 - Satu contoh lokalisasi.md` | `docs/specs/_root/0006-satu-contoh-lokalisasi/` | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | aktif |
@@ -179,12 +179,15 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 004 · Milestone 4 dan `Build it` ← langkah manual `F004-1` dan `F004-2`.
 - `README.md` root masih menyebut semua fitur `planned` dan repo "berisi dokumentasi perencanaan"; `/sync` tidak berwenang atas file itu, jadi menunggu user atau item architect.
 - 009 · `Build it` milestone 1 ← 008 milestone 1 (spec `_root/0003`) di `main`.
+- 008 · Milestone 3 (AC-12) ← host Windows dan host Linux; langkah manual `F008-1`, pemilik user.
+- Spec `_root/0004` baris `.gitattributes` (`/shared/config/** text eol=lf`) ← disamakan dengan pola per jenis file spec `_root/0003` lewat `architect (update)` kecil, sebelum build 009.
 - Spec `macos/0001` Follow-up Scope 010 dan 011 ← `architect (update)`: keputusan 12 spec `_root/0004` memindahkan nama produk ke konfigurasi publik.
 - 012 · `/architect scope 012 build dan penerimaan untuk _root` ← spec 008 sampai 011 dan 002 diterima, supaya skrip dan CI membungkus perintah yang sudah ada.
 - 008 sampai 012 bagian macOS ← spec `_root` masing masing, dan alur 004 terbukti di jendela (`F004-1`, `F004-2`).
 
 ## Dicentang pada wave ini
 
+- 008 · `/architect scope 008 tema bersama untuk _root` · laporan `done` `arc-f004-spec` · `claude/arc-f004-spec-de734c` → `02d4a07` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik · commit `docs(scope): tick 008 spec` · manual `F008-1` (AC-12) untuk milestone 3; nilai dari user `N7`
 - 009 · `/architect scope 009 konfigurasi publik untuk _root` · laporan `done` `arc-f001-spec` · `claude/arc-f001-spec-a1f824` → `c04db56` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, tautan relatif sah menurut laporan · commit `docs(scope): tick 009 spec` · nilai dari user `N5`, `N6`
 - 002 · `/audit` · laporan `done` `arc-f003-spec` (usulan diterima lead, disetujui user, disegarkan terhadap `main` `83d4920`) · `claude/arc-f003-spec-14125c` → `d753c2a` · worktree bersih, diff hanya `AGENTS.md` dan `crates/core/AGENTS.md` plus `graphify-out/`, 1224 byte pertama `AGENTS.md` sama dengan sebelumnya, tautan sah, tanpa `CLAUDE.md`; auditor menjalankan fmt, clippy, build, dan 37 test di branch · commit `docs(scope): tick 002 audit` · tanpa langkah manual
 - 001 macOS · `Verify it: /check verify scope 001 batas workspace dan pemilik untuk macOS` dan 003 macOS · `Verify it: /check verify scope 003 kontrak sapaan untuk macOS` · laporan `done` `arc-f001-spec`: spec `macos/0002` PASS (AC-1 sampai AC-7), spec `macos/0003` PASS untuk bagian tanpa jendela; rujukan `[x]` diperiksa di tiga `verify.md` (23, 21, 40 kotak) dan perintah dijalankan ulang pada `726e99e` · `claude/arc-f001-spec-a1f824` → `bd7b064` · catatan `docs/reviews/2026-11-15-verify-macos-0002-0003.md` · commit `docs(scope): tick the macOS verify boxes for 001 and 003` · `(manual NOT_RUN: F004-1, F004-2, owner user)` untuk AC-4 bagian jendela spec `macos/0003`

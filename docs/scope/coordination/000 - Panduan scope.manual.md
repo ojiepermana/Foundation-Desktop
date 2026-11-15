@@ -9,6 +9,7 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | ID | Langkah | AC | Kotak yang dicentang dengan langkah ini `NOT_RUN` | Bisa dijalankan sesudah | Hasil |
 | --- | --- | --- | --- | --- | --- |
 | `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
+| `F008-1` | Bangun, uji, dan periksa token dengan `desktop-codegen` di host Windows dan host Linux | spec `_root/0003` AC-12 | belum ada | 008 milestone 1 di `origin/main` | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 
@@ -70,3 +71,17 @@ Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `macos/0001` `AC-13`
   9. `open apps/macos/DesktopMac.xcodeproj`, tunggu paket selesai dimuat, lalu tekan Command R. Tutup Xcode, lalu jalankan `git status --short`.
 - **Lulus bila:** (6) label menampilkan `Hello, Budi!`; (7) VoiceOver menyebut `Name` untuk kolom, `Greet` untuk tombol, dan membacakan `Hello, Budi!` untuk label; (8) aplikasi tertutup tanpa dialog; (9) build berhasil dan jendela yang sama terbuka. Bila `git status --short` mencetak sesuatu, catat setiap path dan jangan di-commit; keluaran itu tidak menggagalkan langkah 9.
 - **Hanya langkah ini yang bisa membuktikan:** fokus keyboard, aksesibilitas kontrol native, dan bahwa proyek tulisan tangan terbuka benar di Xcode.
+
+## Fitur `008`: `Tema bersama dan kontrol native` (spec `_root/0003`)
+
+### `F008-1` · Bangun, uji, dan periksa token di host Windows dan host Linux
+
+Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `_root/0003` `AC-12` (kriteria 16 pada host lain); ini milestone 3 fitur 008.
+
+- **Prasyarat:** host Windows `x86_64-pc-windows-msvc` dan host Linux `x86_64-unknown-linux-gnu`, `rustup` dengan toolchain `1.99.1`, checkout `main` sesudah milestone 1 fitur 008.
+- **Jalankan:** dari akar repo, pada tiap host:
+  - `cargo build -p desktop-codegen --locked`
+  - `cargo test -p desktop-codegen --locked`
+  - `cargo run -p desktop-codegen --locked -- tokens check`
+- **Lulus bila:** ketiganya keluar dengan kode 0, dan baris terakhir perintah ketiga `tokens: ok, 6 semantic tokens, 3 placeholder values, 3 outputs up to date`. Kirim OS, arsitektur, versi, perintah, dan keluarannya.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa alat generator dan token terbangun dan memberi keluaran yang sama di luar macOS.
