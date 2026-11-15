@@ -786,9 +786,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/code.rs": {
-    "mtime": 1794754400.8626976,
-    "seen": 1794754402.4756942,
-    "ast_hash": "31d568462c52ffbe9d0b13a147cc66f9",
+    "mtime": 1794760332.8474684,
+    "seen": 1794760334.826802,
+    "ast_hash": "bba53d8201c7b402c356339e46d0070a",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
@@ -804,9 +804,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
-    "mtime": 1794755474.5015776,
-    "seen": 1794755476.878803,
-    "ast_hash": "fc0fbef260c0dcdd3045ee793baf7e33",
+    "mtime": 1794760332.848302,
+    "seen": 1794760334.826804,
+    "ast_hash": "307890b74728f8b8da356285c276858d",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/manifest.rs": {
@@ -870,9 +870,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794755398.5765517,
-    "seen": 1794755402.110209,
-    "ast_hash": "4cee97352b12a822265ee7ae732e2c79",
+    "mtime": 1794760481.1032145,
+    "seen": 1794760482.8926852,
+    "ast_hash": "670c36f7762348e286e1ae669c025022",
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
@@ -1041,6 +1041,18 @@
     "mtime": 1794759977.591315,
     "seen": 1794759979.486847,
     "ast_hash": "d3dbb50af1ff24801233e304dbc266f0",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/macos.rs": {
+    "mtime": 1794760332.8479083,
+    "seen": 1794760334.826798,
+    "ast_hash": "43406f353b0c19d4f446ad265dac0c79",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/architecture_macos.rs": {
+    "mtime": 1794760332.8512409,
+    "seen": 1794760334.826806,
+    "ast_hash": "9b540205c052ff13db9169c22a7d91ef",
     "semantic_hash": ""
   }
 }

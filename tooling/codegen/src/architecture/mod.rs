@@ -14,6 +14,7 @@ use crate::{Plan, Problem, Source};
 mod code;
 mod deps;
 mod docs;
+mod macos;
 mod manifest;
 
 /// The `architecture` source, run as
@@ -26,6 +27,7 @@ pub const SOURCE: Source = Source {
 /// The IDs of the rules this source checks, in order.
 pub const RULES: &[&str] = &[
     "A-1", "A-2", "A-3", "A-4", "A-5", "A-6", "A-7", "A-8", "A-9", "A-10", "A-11", "A-12", "A-13",
+    "C-1", "C-2", "C-3",
 ];
 
 /// A class of packages a workspace member may be forbidden to reach.
@@ -128,20 +130,29 @@ pub const MEMBERS: &[MemberRule] = &[
 
 /// One problem with the keys it is sorted by.
 struct Found {
+    letter: char,
     rule: u32,
     path: String,
     line: usize,
     message: String,
 }
 
-/// Collects problems and sorts them by rule number, path, and line.
+/// Collects problems and sorts them by rule letter, rule number, path, and
+/// line.
 #[derive(Default)]
 struct Findings(Vec<Found>);
 
 impl Findings {
     /// Records a problem of rule `rule` (`0` for read errors) at `path`.
     fn push(&mut self, rule: u32, path: &str, line: usize, message: String) {
+        self.push_rule('A', rule, path, line, message);
+    }
+
+    /// Records a problem of rule `<letter>-<rule>` at `path`, for the rules
+    /// of another spec such as the `C` rules of spec `macos/0008`.
+    fn push_rule(&mut self, letter: char, rule: u32, path: &str, line: usize, message: String) {
         self.0.push(Found {
+            letter,
             rule,
             path: path.to_string(),
             line,
@@ -152,7 +163,12 @@ impl Findings {
     /// The problems in the order of spec `_root/0007`.
     fn into_problems(mut self) -> Vec<Problem> {
         self.0.sort_by(|a, b| {
-            (a.rule, a.path.as_str(), a.line).cmp(&(b.rule, b.path.as_str(), b.line))
+            (a.letter, a.rule, a.path.as_str(), a.line).cmp(&(
+                b.letter,
+                b.rule,
+                b.path.as_str(),
+                b.line,
+            ))
         });
         self.0
             .dedup_by(|a, b| a.path == b.path && a.line == b.line && a.message == b.message);
@@ -170,6 +186,7 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     let files = code::walk(root);
     code::check(root, &files, &mut findings);
     docs::check(root, &files, &mut findings);
+    macos::check(root, &mut findings);
     if !findings.0.is_empty() {
         return Err(findings.into_problems());
     }
