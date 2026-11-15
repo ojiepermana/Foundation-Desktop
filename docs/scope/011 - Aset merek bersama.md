@@ -14,7 +14,7 @@ Tentukan pemilik berkas merek dan cara menghasilkan varian yang diperlukan setia
   * [x] Milestone 2: Dokumen rujukan menunjuk aturan aset. Build plan langkah 3. AC-8, AC-9. after milestone 1
   * [ ] Milestone 3: Berkas merek nyata dari user. Build plan langkah 4. AC-10. after milestone 1; needs ikon SVG dari user (`BLOCKED`, `owner: user`)
 * [x] Verify it: `/check verify scope 011 aset merek bersama` (AC-1 sampai AC-9; AC-10 menunggu langkah manual `F011-1`, ikon SVG nyata dari user)
-* [ ] Test it: `/test scope 011 aset merek bersama`
+* [x] Test it: `/test scope 011 aset merek bersama`
 * [ ] `/architect scope 011 aset merek untuk macOS` (spec). after milestone 1 di atas; needs pembaruan AC-12 spec macos/0001
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
