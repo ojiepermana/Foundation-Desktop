@@ -898,5 +898,17 @@
     "seen": 1794755934.9775748,
     "ast_hash": "afce35b8a7d46b42d693b072d1b0e0af",
     "semantic_hash": ""
+  },
+  "scripts/build-rust.sh": {
+    "mtime": 1794755998.2286758,
+    "seen": 1794756000.2229602,
+    "ast_hash": "26c212c734eb68ed815dbec5aa265370",
+    "semantic_hash": ""
+  },
+  "scripts/test.sh": {
+    "mtime": 1794755998.2289598,
+    "seen": 1794756000.2229629,
+    "ast_hash": "67a537e0dba6d048621697cdb7a96344",
+    "semantic_hash": ""
   }
 }
