@@ -54,9 +54,9 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794738651.448525,
-    "seen": 1794738652.23966,
-    "ast_hash": "102c2152717405fe54ed5313da9e27d9",
+    "mtime": 1794741101.3842468,
+    "seen": 1794741103.69764,
+    "ast_hash": "2077026839251f69ceda205871599d26",
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
@@ -66,9 +66,9 @@
     "semantic_hash": "1ee11d35079c41c8e668deb9ea59b100"
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
-    "mtime": 1794738421.4841013,
-    "seen": 1794738424.896445,
-    "ast_hash": "bbdc27630055c0561fabfce359151e59",
+    "mtime": 1794740752.3002844,
+    "seen": 1794740754.358057,
+    "ast_hash": "691c74b2667b6592a65a0a335d5815f8",
     "semantic_hash": ""
   },
   "docs/scope/004 - Sapaan di jendela macOS.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794740045.3400164,
-    "seen": 1794740046.43776,
-    "ast_hash": "fc6e5bb55a64bd5e050d95db16b93969",
+    "mtime": 1794741101.3864481,
+    "seen": 1794741103.697644,
+    "ast_hash": "0b195e108f6e623eecad62e9945fc05a",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794739801.121769,
-    "seen": 1794739803.6559098,
-    "ast_hash": "9c3567acd6fb9b75dd26e6f026dbc8d3",
+    "mtime": 1794741038.2346368,
+    "seen": 1794741039.9780061,
+    "ast_hash": "dc6f77113212357897513fed1b156311",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794740028.3608875,
-    "seen": 1794740031.4405382,
-    "ast_hash": "9c18db8c717b576d88d4ed693421704a",
+    "mtime": 1794741072.1472223,
+    "seen": 1794741073.220414,
+    "ast_hash": "84cc965d59445aea36f3e62c169f9d53",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794740028.3610513,
-    "seen": 1794740031.440534,
-    "ast_hash": "627790c887d1131f79516a709a9fd613",
+    "mtime": 1794741072.1474054,
+    "seen": 1794741073.2204149,
+    "ast_hash": "32e9d8a53c63c3ccf464954a91c2f91a",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794740287.2968566,
-    "seen": 1794740289.077939,
-    "ast_hash": "a0a4e1b623c02f3c25399aed2317d712",
+    "mtime": 1794741072.1486514,
+    "seen": 1794741073.220413,
+    "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
@@ -372,9 +372,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
-    "mtime": 1794741138.1582901,
-    "seen": 1794741140.4012659,
-    "ast_hash": "4b93e9c8bca456ffa3ce6891b9e6b98e",
+    "mtime": 1794741162.9159667,
+    "seen": 1794741164.0800252,
+    "ast_hash": "e74eb04abbd8232196604b2e5fefd59d",
     "semantic_hash": ""
   },
   "bindings/swift/Package.swift": {
@@ -417,6 +417,30 @@
     "mtime": 1794740287.2874827,
     "seen": 1794740289.077943,
     "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
+    "mtime": 1794741072.1492667,
+    "seen": 1794741073.22041,
+    "ast_hash": "51fc5ecbc67be6469930feb751c1050e",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
+    "mtime": 1794740726.6282058,
+    "seen": 1794740727.807503,
+    "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
+    "semantic_hash": ""
+  },
+  "apps/macos/App/DesktopMacApp.swift": {
+    "mtime": 1794741033.5251837,
+    "seen": 1794741036.017934,
+    "ast_hash": "d56b1e3c15c6554e10c91524bc08b77b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingView.swift": {
+    "mtime": 1794741033.5262637,
+    "seen": 1794741036.01794,
+    "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
     "semantic_hash": ""
   }
 }
