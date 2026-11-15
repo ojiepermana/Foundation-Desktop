@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 21:10`
+- **Diperbarui:** `2026-11-15 21:30`
 
 ## Sub sesi wave `1`
 
@@ -15,8 +15,9 @@
 | `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1`; koreksi rujukan langkah `8515ef5`, merge `d4ff759` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; brief "mulai" dikirim 2026-11-15. Penerapan macOS 001 dan 003 menyusul di sesi yang sama sesudah spec ini di-merge | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | aktif |
 | `dev-f001-m1` | developer | 001 Build it milestone 1; Langkah Build plan selesai 1 (`09c6f0c`), 2 (`60b948d`); Pointer code in `crates/core/` dan root workspace; laporan `done`, merge `9dee57d` | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec 0001, baris `**Status**` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
-| `dev-f001-m1` | developer | 001 Build it milestone 2 (langkah 3), tindak lanjut di sesi yang sama tanpa clear | `001 - Batas workspace dan pemilik.md` | `docs/architecture/README.md` (diizinkan brief, AC-8), `verify.md` spec 0001 bagian Milestone 2 | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | dipakai ulang |
+| `dev-f001-m1` | developer | 001 Build it milestone 2; Langkah Build plan selesai 3 (`1d2c3f7`); Pointer code in `docs/architecture/README.md`; laporan `done`, merge `8fcc995` | `001 - Batas workspace dan pemilik.md` | `docs/architecture/README.md` (diizinkan brief, AC-8), `verify.md` spec 0001 bagian Milestone 2 | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
 | `arc-f001-spec` | checker (verify) | 001 verify milestone 1 (AC-1 sampai AC-7) dari `main`; sesi dibersihkan, judul `arc-f001-spec · 001 verify milestone 1` | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 1; laporan `done` PASS 15 dari 15, tanpa commit | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | done |
+| `arc-f001-spec` | checker (verify) | 001 verify milestone 2 (AC-8) dari `main` `8fcc995`, tindak lanjut di sesi yang sama | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 2 | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
 | `dev-f003-m1` | developer | 003 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3 sampai 6) spec `_root/0002`; brief "mulai" dikirim 2026-11-15 sesudah 001 milestone 1 di `main` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs` (tambah baris), `crates/core/Cargo.toml` (tambah `[lints.rust]`), `docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | aktif |
 
 ## Keputusan
@@ -43,6 +44,7 @@
 | 2026-11-15 | Pembaruan spec `_root/0001` (`01875fd`) di-merge sebagai `60ca131`: `.graphifyignore` berisi `/Cargo.toml` masuk "Isi file", AC-7, tabel lokasi, Build plan langkah 1, dan kasus gagal; ID AC tetap. Gerbang: worktree bersih, diff hanya dua file spec plus `graphify-out/`, konflik hanya `GRAPH_REPORT.md`. "lanjut" dikirim ke `dev-f001-m1` dengan `.graphifyignore` ditambahkan ke ownership. User diberi tahu pilihan ini dan runner-up-nya (ubah skrip hook) lewat ringkasan giliran. | lead |
 | 2026-11-15 | Gerbang `dev-f001-m1` milestone 1: worktree bersih, diff hanya ownership plus `graphify-out/`, merge tanpa konflik, lalu di `main`: `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo build --workspace --locked`, `cargo test -p desktop-core --locked` (0 test, `ok`), `cargo tree` satu baris, `target` ter-ignore, `Cargo.lock` satu paket; tujuh file sama dengan "Isi file". Merge `9dee57d`. Kotak milestone 1 menunggu checker. | lead |
 | 2026-11-15 | `start_session` untuk `chk-f001-m1` ditolak aplikasi (giliran dipicu pesan sesi lain). Pengganti: sesi `arc-f001-spec` dibersihkan (`clear_session`) dan dipakai ulang sebagai checker verify milestone 1 dari `main`; architect tidak menulis kode yang diperiksa. Brief ke sesi yang baru dibersihkan harus dikirim ke id `local_…`, bukan judul. Kelima belas langkah `verify.md` sudah `[x]` oleh developer; checker diminta menjalankan ulang semuanya. Brief developer berikutnya meminta kotak langkah dibiarkan `- [ ]`. | lead |
+| 2026-11-15 | Gerbang `dev-f001-m1` milestone 2: worktree bersih, diff hanya `docs/architecture/README.md` dan `verify.md` plus `graphify-out/`; di `main` pemeriksaan AC-8 lulus (8 sebutan nama paket, pin `1.99.1`, dua heading, tabel aturan sama dengan spec, tautan spec sah, dua kalimat lama hilang). Merge `8fcc995`; konflik hanya `graphify-out/GRAPH_REPORT.md`. Catatan: pada commit merge hook melaporkan `staged sources unchanged` karena manifest branch sudah memuat hash file itu; `graph.json` hasil gabungan tetap JSON sah dan dibuat ulang penuh pada commit berikutnya yang mengubah sumber. | lead |
 
 ## Keputusan delegasi
 

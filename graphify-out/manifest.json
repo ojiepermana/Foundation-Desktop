@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794737880.9193158,
-    "seen": 1794737883.802251,
-    "ast_hash": "f4639428166faf1975eb8650d647f547",
+    "mtime": 1794737946.7389634,
+    "seen": 1794737949.118876,
+    "ast_hash": "b98ff4f2deb7844e53e59ed4304df5f8",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -258,9 +258,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/index.md": {
-    "mtime": 1794736899.2145047,
-    "seen": 1794736899.7673888,
-    "ast_hash": "97c3f9fa4351b092a46bb9c7d44708c1",
+    "mtime": 1794737768.9385607,
+    "seen": 1794737769.946007,
+    "ast_hash": "7e93aae165b9d8b7966c126d64e093fd",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
@@ -276,21 +276,39 @@
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
-    "mtime": 1794737490.7305584,
-    "seen": 1794737501.197765,
-    "ast_hash": "78b7bdeda63bfd27210ab07d0f0f402d",
+    "mtime": 1794737834.8739347,
+    "seen": 1794737835.649299,
+    "ast_hash": "51c08c774722617d9afdba42a42eec10",
     "semantic_hash": ""
   },
   "crates/core/Cargo.toml": {
-    "mtime": 1794737490.7302663,
-    "seen": 1794737501.197768,
-    "ast_hash": "9527894858646b0369568062745b4e19",
+    "mtime": 1794737834.873161,
+    "seen": 1794737835.649295,
+    "ast_hash": "75bc2f2b8ba1f3cad03d91b31a72c3c9",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md": {
     "mtime": 1794738001.5968251,
     "seen": 1794738002.671702,
     "ast_hash": "5b0540458c866490482feb32f10a9e1e",
+    "semantic_hash": ""
+  },
+  "crates/core/src/greeting.rs": {
+    "mtime": 1794737809.7436602,
+    "seen": 1794737810.80048,
+    "ast_hash": "3c2a2d080bbb85d8560b414c1d7d820d",
+    "semantic_hash": ""
+  },
+  "crates/core/tests/hello_contract.rs": {
+    "mtime": 1794737825.142215,
+    "seen": 1794737827.753149,
+    "ast_hash": "1c09215caec48f872be58e8452552837",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md": {
+    "mtime": 1794737891.1521683,
+    "seen": 1794737894.8279538,
+    "ast_hash": "8706174f4ff0906eead19f206e07e3b7",
     "semantic_hash": ""
   }
 }

@@ -2,7 +2,7 @@
 
 **Scope**: [003 - Kontrak sapaan bersama](../../../scope/003%20-%20Kontrak%20sapaan%20bersama.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
