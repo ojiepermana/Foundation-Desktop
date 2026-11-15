@@ -14,7 +14,7 @@ Tentukan tempat untuk Core, penghubung macOS, aplikasi native, dan resource agar
   * [x] Milestone 2: Peta arsitektur mencatat tata letak nyata. Build plan langkah 3. AC-8. after milestone 1
   * [ ] Milestone 3: Bukti Core di host Windows dan Linux. Build plan langkah 4. AC-9. after milestone 1; needs host Windows dan host Linux (`BLOCKED`, `owner: user`)
 * [x] Verify it: `/check verify scope 001 batas workspace dan pemilik` (bukti di Mac, AC-1 sampai AC-8; AC-9 menunggu langkah manual `F001-1` di host Windows dan Linux)
-* [ ] Test it: `/test scope 001 batas workspace dan pemilik`
+* [x] Test it: `/test scope 001 batas workspace dan pemilik`
 * [ ] `/architect scope 001 batas workspace dan pemilik untuk macOS` (spec). after spec _root/0001; ditulis bersama spec macOS scope 004
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
