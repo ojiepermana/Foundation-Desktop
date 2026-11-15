@@ -562,5 +562,11 @@
     "seen": 1794744660.71662,
     "ast_hash": "d14c3fafc33db61667f7e5ec475eb93f",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
+    "mtime": 1794744815.0818596,
+    "seen": 1794744820.816674,
+    "ast_hash": "b33e8c03b0dc83d5d627e80c29430719",
+    "semantic_hash": ""
   }
 }
