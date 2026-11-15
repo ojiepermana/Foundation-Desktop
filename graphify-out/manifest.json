@@ -694,5 +694,11 @@
     "seen": 1794752436.523442,
     "ast_hash": "298c5d751b6299940d3860305e89c487",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/localization_rules.rs": {
+    "mtime": 1794752849.1505895,
+    "seen": 1794752855.168397,
+    "ast_hash": "4fba29d98f64da943e3b8534e6ec868d",
+    "semantic_hash": ""
   }
 }
