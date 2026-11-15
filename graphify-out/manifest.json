@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794752436.9303215,
-    "seen": 1794752438.539522,
-    "ast_hash": "1f0e6ebd590bfcf21632ddfbcc56205d",
+    "mtime": 1794752643.9550223,
+    "seen": 1794752647.009237,
+    "ast_hash": "28e357e444337bb9716ab336eecca9eb",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -474,15 +474,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/rationale.md": {
-    "mtime": 1794744248.0915823,
-    "seen": 1794744256.004603,
-    "ast_hash": "dbc27121be87fc8ef5517012ee0e204d",
+    "mtime": 1794752563.831713,
+    "seen": 1794752567.4100401,
+    "ast_hash": "61dd2cd70bdde643d0b780276ed6606e",
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794744988.7458286,
-    "seen": 1794744995.800632,
-    "ast_hash": "c9dabe56f1a3bf5d2220578dcd05b7d3",
+    "mtime": 1794752563.8314927,
+    "seen": 1794752567.410041,
+    "ast_hash": "902a15be0250e3375a8a21c86a9814ac",
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794752107.347207,
-    "seen": 1794752109.23809,
-    "ast_hash": "267de7feb07e605b8e999682a20e1b97",
+    "mtime": 1794752563.8318822,
+    "seen": 1794752567.410036,
+    "ast_hash": "f09ef242480c5f2d684c6d72d4ee5d96",
     "semantic_hash": ""
   },
   "design-system/schemas/typography.schema.json": {
@@ -696,8 +696,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_rules.rs": {
-    "mtime": 1794752733.4386208,
-    "seen": 1794752740.475969,
+    "mtime": 1794752750.417176,
+    "seen": 1794752757.555014,
     "ast_hash": "4fba29d98f64da943e3b8534e6ec868d",
     "semantic_hash": ""
   }
