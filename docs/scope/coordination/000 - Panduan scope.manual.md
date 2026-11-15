@@ -17,10 +17,12 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | `F011-1` | Mengganti ikon penanda dengan ikon aplikasi nyata dalam SVG, lalu `assets generate` dan `assets check` | spec `_root/0005` AC-10 | belum ada | 011 milestone 1 di `main`, dan berkas ikon darimu (`N9`) | `NOT_RUN` |
 | `F011-2` | Ikon aplikasi terlihat di Dock, About, Finder, dan tampilan gelap (langkah 1 sampai 6) | spec `macos/0007` AC-11 | belum ada | 011 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F011-3` | Ikon nyata sampai bundel Mac: `assets generate`, `assets check`, build, lalu ulangi `F011-2` | spec `macos/0007` AC-12 | belum ada | `F011-1` selesai dan 011 macOS milestone 1 di `main` | `NOT_RUN` |
-| `F012-1` | Jalankan `build-rust.sh`, `validate.sh`, `test.sh` di host Windows (Git Bash) dan host Linux; mencakup perintah `F001-1`, `F002-1`, `F008-1` | spec `_root/0008` AC-12 | belum ada | 012 milestone 1 di `main`, dan host Windows serta Linux | `NOT_RUN` |
+| `F012-1` | Jalankan `build-rust.sh`, `validate.sh`, `test.sh` di host Windows (Git Bash) dan host Linux; mencakup perintah `F001-1`, `F002-1`, `F008-1` | spec `_root/0008` AC-12 | belum ada | sekarang (012 milestone 1 di `main` lokal `bc1c74c`), sesudah `main` di-push dan di-clone di host Windows serta Linux | `NOT_RUN` |
 | `F012-2` | Push `main` dan jalankan workflow GitHub Actions `foundation` dan `foundation-macos` | spec `_root/0008` AC-11 | belum ada | 012 milestone 3 di `main`, dan push ke `origin` | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
+
+Catatan (2026-11-15): sejak milestone 1 fitur 012 di `main`, satu kali jalan `F012-1` di host Windows dan Linux juga membuktikan `F001-1`, `F002-1`, dan `F008-1`. Ketiga langkah lama tetap tercantum dengan perintahnya sendiri, tetapi cukup jalankan `F012-1` dan kirim keluarannya.
 
 ## Nilai dari user
 
