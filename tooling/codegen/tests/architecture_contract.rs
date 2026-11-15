@@ -4,8 +4,8 @@
 //! standard library. `every_source_passes_check_on_the_repo` runs `check`
 //! for every entry of `SOURCES`, so a registered source cannot slip past
 //! the gate (AC-1, AC-3). `rejects_broken_repos` and
-//! `accepts_allowed_shapes` run the cases `N-1` to `N-19`, `P-1`, `P-2`,
-//! and `P-3` of
+//! `accepts_allowed_shapes` run the cases `N-1` to `N-23` and `P-1` to
+//! `P-5` of
 //! `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md`
 //! on a copy of the repo under a temporary root, restoring every changed
 //! file before the next case (AC-2).
@@ -40,15 +40,16 @@ fn every_source_passes_check_on_the_repo() {
     assert!(failures.is_empty(), "{}", failures.join("\n"));
 }
 
-/// Folders the copy skips, the same as the tool skips.
-const SKIPPED: [&str; 7] = [
+/// Folders the copy skips. These are the folders the tool skips, except
+/// `.claude`: the tool does not scan it, but the root `AGENTS.md` links
+/// into it, so the copy keeps it for the `A-12` existence check.
+const SKIPPED: [&str; 6] = [
     ".git",
     "target",
     ".build",
     "DerivedData",
     "xcuserdata",
     "graphify-out",
-    ".claude",
 ];
 
 /// Copies the repo tree from `from` to `to`, skipping [`SKIPPED`] names
@@ -392,6 +393,33 @@ const REJECTED: &[Rejected] = &[
         rules: &["A-11"],
         contains: &[],
     },
+    Rejected {
+        number: "N-20",
+        edits: &[Edit::Append("README.md", "[rusak](docs/tidak-ada.md)\n")],
+        rules: &["A-12"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-21",
+        edits: &[Edit::Append("AGENTS.md", "`_root/9999`\n")],
+        rules: &["A-13"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-22",
+        edits: &[Edit::Append("AGENTS.md", "cargo test -p desktop-nope\n")],
+        rules: &["A-13"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-23",
+        edits: &[Edit::Append(
+            "crates/core/AGENTS.md",
+            "`crates/core/tests/tidak_ada.rs`\n",
+        )],
+        rules: &["A-13"],
+        contains: &[],
+    },
 ];
 
 #[test]
@@ -436,6 +464,14 @@ const ACCEPTED: &[(&str, &[Edit])] = &[
         &[Edit::Create(
             "apps/macos/Tests/PresentationTests/Extra.swift",
             "let text = \"Hello, Ayu!\"\n",
+        )],
+    ),
+    ("P-4", &[Edit::Append("README.md", "`[x](tidak-ada.md)`\n")]),
+    (
+        "P-5",
+        &[Edit::Append(
+            "AGENTS.md",
+            "`docs/specs/windows/` `.cargo/config.toml`\n",
         )],
     ),
 ];
