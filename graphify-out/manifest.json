@@ -460,5 +460,17 @@
     "seen": 1794742647.2475939,
     "ast_hash": "c8ec2e4a46ff2ff7c71f1d70487e1b06",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0004-konfigurasi-publik/rationale.md": {
+    "mtime": 1794743549.5977948,
+    "seen": 1794743550.893516,
+    "ast_hash": "802305f45ff7b70d6947db8521ae8a78",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0004-konfigurasi-publik/index.md": {
+    "mtime": 1794743549.5971897,
+    "seen": 1794743550.893552,
+    "ast_hash": "a823623842188841beaf6cc5868ae375",
+    "semantic_hash": ""
   }
 }
