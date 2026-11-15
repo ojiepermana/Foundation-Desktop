@@ -484,5 +484,17 @@
     "seen": 1794744480.383229,
     "ast_hash": "9a365f920bdca9e7a7bbbf56f433c1cb",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
+    "mtime": 1794744555.5136085,
+    "seen": 1794744558.254743,
+    "ast_hash": "e213abb0afd37a34aa8b7c1b9793e75a",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
+    "mtime": 1794744555.513371,
+    "seen": 1794744558.2547462,
+    "ast_hash": "9db21cf0cedb9c4d28f894bb20623ff0",
+    "semantic_hash": ""
   }
 }
