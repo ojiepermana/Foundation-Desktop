@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 21:40`
+- **Diperbarui:** `2026-11-15 21:42`
 
 ## Sub sesi wave `2`
 
@@ -37,7 +37,7 @@
 | `arc-f010-spec` | architect | 010 spec macOS `macos/0006`; konteks tidak dibersihkan (`clear_session` ditolak mode auto); perubahan yang dibutuhkan pada spec `macos/0001` ditulis sebagai Follow-up | `010 - Satu contoh lokalisasi.md` | `docs/specs/macos/0006-satu-contoh-lokalisasi/` | `claude/arc-f010-spec-3201ce` | `opus-5-5 · high` | aktif |
 | `arc-f001-spec` | checker (verify) | 011 verify milestone 1 dan 2; laporan `done` PASS 29 dari 29 (`bd55fcc`, HEAD `9275492`), merge `b93440d`; AC-10 `NOT_RUN`; dijalankan di Opus, family sama dengan penulis kode | `011 - Aset merek bersama.md` | centang `verify.md` spec `_root/0005` | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | merged |
 | `dev-f001-m1` | tester | 011 Test it; laporan `done` (`ddd3caa`, HEAD `246ab9b`), merge `fe9d9d8`: 19 test di `tooling/codegen/tests/assets_rules.rs` | `011 - Aset merek bersama.md` | `tooling/codegen/tests/assets_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
-| `dev-f008-m1` | developer | 002 Build it milestone 1 lalu 2 (langkah 1 sampai 4 spec `_root/0007`); berhenti sebelum milestone 3 | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `tooling/codegen/src/lib.rs` (pendaftaran), `tooling/codegen/src/architecture/`, `tooling/codegen/tests/architecture_contract.rs`, pemindahan dua uji dari `crates/core/tests/`, `verify.md` spec `_root/0007` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | aktif |
+| `dev-f008-m1` | developer | 002 Build it milestone 1, 2, lalu 3 (langkah 1 sampai 5 spec `_root/0007`); milestone 3 ditambahkan sesudah user setuju, dengan izin eksplisit untuk lima dokumen | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `tooling/codegen/src/lib.rs` (pendaftaran), `tooling/codegen/src/architecture/`, `tooling/codegen/tests/architecture_contract.rs`, pemindahan dua uji dari `crates/core/tests/`, `verify.md` spec `_root/0007` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | aktif |
 | `arc-f012-spec` | architect | 012 spec `_root/0008`; "mulai" dikirim sesudah spec `_root/0007` di `main` | `012 - Build dan penerimaan per target.md` | `docs/specs/_root/0008-build-dan-penerimaan-per-target/` | `claude/arc-f012-spec-50349d` | `opus-5-5 · high` | aktif |
 | `arc-f011-spec` | architect | 011 spec macOS `macos/0007`; konteks tidak dibersihkan | `011 - Aset merek bersama.md` | `docs/specs/macos/0007-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `opus-5-5 · high` | aktif |
 | `arc-f002-spec` | architect | 002 spec macOS `macos/0008`; konteks tidak dibersihkan | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/` | `claude/arc-f002-spec-d362fa` | `opus-5-5 · high` | aktif |
@@ -145,6 +145,7 @@
 | 2026-11-15 | Tujuh sesi berjalan sesudah merge `9b84e6c`: verify 011 (`arc-f001-spec`), `Test it` 011 (`dev-f001-m1`), build spec `_root/0007` milestone 1 dan 2 (`dev-f008-m1`), dan empat architect: `_root/0008` scope 012 (`arc-f012-spec`), `macos/0006` scope 010, `macos/0007` scope 011 (`arc-f011-spec`), `macos/0008` scope 002 (`arc-f002-spec`). Nomor spec itu ditetapkan lead. Tiga sesi membangun bersamaan, di atas batas dua di aturan umum: paket yang dibangun kecil (`desktop-codegen`, 717 MiB `target/` di checkout utama) dan tiap sesi menghapus `target/` sebelum melapor. Disk Mac 14 GiB bebas (turun dari 25 GiB; folder proyek ini dan worktree-nya di bawah 1 GiB), dicatat untuk user. `arc-f004-spec` idle, disimpan untuk pembaruan gabungan spec `macos/0001` sesudah spec `macos/0006` dan `macos/0007` diterima. Milestone 3 spec `_root/0007` tetap menunggu persetujuan user. | lead |
 | 2026-11-15 | Verify 011 PASS di-merge (`b93440d`). Penilaian checker atas lima tafsiran developer: semuanya sesuai spec. Dua usul teks opsional untuk spec `_root/0005`, tidak menahan apa pun dan digabung ke `architect (update)` berikutnya atas spec itu bila ada: "satu masalah S-1 per berkas, untuk syarat pertama yang gagal", dan "dua baris" di pendaftaran `lib.rs` menjadi "dua perubahan" (`rustfmt` memecah larik `SOURCES`). `Verify it` 011 dicentang dengan `F011-1` `NOT_RUN`; `Build it` 011 tetap terbuka karena milestone 3 menunggu ikon dari user, sama seperti 001, 004, dan 008. | lead |
 | 2026-11-15 | `Test it` 011 di-merge (`fe9d9d8`); 156 test lulus di `main`. Catatan tester untuk pemilik spec `_root/0005`, bukan bug: menurut teks S-5, `a:onload=` dan `a.onload=` diterima karena `:` dan `.` dihitung karakter batas; uji mengunci perilaku itu. Atribut bernamespace seperti itu tidak dijalankan penampil SVG sebagai penangan peristiwa, jadi lead tidak membuka pembaruan spec; dicatat bersama dua usul teks checker untuk `architect (update)` berikutnya atas spec itu. Bagian bersama scope 011 kini hanya menunggu `F011-1`. | lead |
+| 2026-11-15 | User menjawab "1. ya, 2. pindah ke opus". (1) Milestone 3 spec `_root/0007` boleh dibangun: `AGENTS.md`, `crates/core/AGENTS.md`, `README.md`, `docs/architecture/README.md`, dan `docs/contracts/README.md` diubah hanya dengan teks "Cari" dan "Ganti" di bagian **Perubahan dokumen** spec itu. Izin diteruskan ke `dev-f008-m1` sebagai perubahan brief: lanjut ke langkah 5, `needs-decision` bila teks "Cari" tidak cocok tepat satu kali. Ini juga menjawab pertanyaan lama tentang tiga dokumen usang. (2) Sesi lead pindah ke Opus: lead tidak bisa mengganti modelnya sendiri (`set_session_model` menolak sesi sendiri), jadi user memilihnya lewat pemilih model; `get_session "self"` saat dicatat masih `claude-fable-5-2 · high`. | user |
 
 ## Keputusan delegasi
 
@@ -252,7 +253,6 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 001 · Milestone 3 (AC-9) dan `Build it` ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
 - 004 · Milestone 4 dan `Build it` ← langkah manual `F004-1` dan `F004-2`.
-- `README.md` root masih menyebut semua fitur `planned` dan repo "berisi dokumentasi perencanaan"; `/sync` tidak berwenang atas file itu, jadi menunggu user atau item architect.
 - Spec `macos/0001` ← satu `architect (update)` gabungan: 13 butir dari spec `macos/0004` dan butir dari spec `macos/0005`, `macos/0006` (keduanya belum diterima), serta spec macOS scope 011 (belum dimulai); harus di-merge sebelum build macOS 008, 009, 010, dan 011.
 - 009 macOS · Milestone 1 ← 009 milestone 1 (spec `_root/0004`) di `main` dan pembaruan gabungan spec `macos/0001`.
 - 009 macOS · Milestone 2 (AC-7) ← sesi GUI di Mac; langkah manual `F009-1`, pemilik user.
@@ -264,7 +264,6 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 002 · Milestone 4 (AC-11) ← host Windows dan host Linux; langkah manual `F002-1`, pemilik user.
 - 008 macOS · Milestone 1 ← pembaruan gabungan spec `macos/0001` dan `macos/0004`, dan build spec `_root/0007` milestone 1 dan 2 (file bersama `tooling/codegen/`).
 - 008 macOS · Milestone 3 (AC-7, AC-8) ← sesi GUI di Mac; langkah manual `F008-2`, pemilik user.
-- 002 · Milestone 3 spec `_root/0007` ← persetujuan user untuk mengubah `AGENTS.md`, `README.md`, `docs/contracts/README.md`, `docs/architecture/README.md`, dan `crates/core/AGENTS.md` dengan teks pengganti di spec.
 - 008 sampai 012 bagian macOS ← spec `_root` masing masing, dan alur 004 terbukti di jendela (`F004-1`, `F004-2`).
 
 ## Dicentang pada wave ini
