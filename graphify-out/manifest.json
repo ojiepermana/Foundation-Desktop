@@ -898,5 +898,11 @@
     "seen": 1794756256.5767858,
     "ast_hash": "87bc36524812fef7c15b8cd4b3aa2f7e",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0004-konfigurasi-publik/verify.md": {
+    "mtime": 1794756623.8715377,
+    "seen": 1794756626.045652,
+    "ast_hash": "17edc66e69a3393bf4022b5c54319824",
+    "semantic_hash": ""
   }
 }
