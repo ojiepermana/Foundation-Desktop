@@ -7,3 +7,4 @@
 /scripts/*.sh text eol=lf
 /.github/workflows/*.yml text eol=lf
 /apps/macos/DesignSystem/Tokens.swift text eol=lf
+/apps/macos/**/*.strings text eol=lf

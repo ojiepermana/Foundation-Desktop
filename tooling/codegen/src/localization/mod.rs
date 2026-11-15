@@ -17,6 +17,7 @@ use serde::Deserialize;
 use crate::json::UniqueMap;
 use crate::{Output, Plan, Problem, Source};
 
+pub mod macos;
 mod schema;
 
 /// The `localization` source, run as
@@ -137,11 +138,13 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     let text = fs::read_to_string(root.join(CATALOG_PATH))
         .map_err(|error| vec![Problem::new(CATALOG_PATH, format!("cannot read: {error}"))])?;
     let catalog = parse(&text)?;
+    let mut outputs = vec![Output {
+        path: SCHEMA_PATH.to_string(),
+        contents: schema::contents(),
+    }];
+    outputs.extend(macos::outputs(&catalog));
     Ok(Plan {
-        outputs: vec![Output {
-            path: SCHEMA_PATH.to_string(),
-            contents: schema::contents(),
-        }],
+        outputs,
         summary: summary(&catalog),
     })
 }

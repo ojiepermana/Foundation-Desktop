@@ -2,7 +2,7 @@
 
 **Scope**: [010 - Satu contoh lokalisasi](../../../scope/010%20-%20Satu%20contoh%20lokalisasi.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 

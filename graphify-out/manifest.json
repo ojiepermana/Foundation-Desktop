@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
-    "mtime": 1794757881.5705154,
-    "seen": 1794757883.393523,
-    "ast_hash": "eb9a79370f87370efccaf187b2e24856",
+    "mtime": 1794759301.6012805,
+    "seen": 1794759308.094746,
+    "ast_hash": "317a514e7e07949c95973b3a1e1f6d0c",
     "semantic_hash": ""
   },
   "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift": {
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "apps/macos/Presentation/GreetingView.swift": {
-    "mtime": 1794757881.5706966,
-    "seen": 1794757883.393514,
-    "ast_hash": "2d747c33095706717e5ce1e72afec56a",
+    "mtime": 1794759301.6015313,
+    "seen": 1794759308.094751,
+    "ast_hash": "357ee62643c1da9986f26aec02f666c7",
     "semantic_hash": ""
   },
   "docs/reviews/2026-11-15-verify-macos-0002-0003.md": {
@@ -642,9 +642,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/localization/mod.rs": {
-    "mtime": 1794752435.0739129,
-    "seen": 1794752436.5234299,
-    "ast_hash": "55ffb9de4706fc5679fa53a2c11a8d98",
+    "mtime": 1794759301.6540916,
+    "seen": 1794759308.094741,
+    "ast_hash": "bc5b468faf60719607fefefdffbe4848",
     "semantic_hash": ""
   },
   "tooling/codegen/src/localization/schema.rs": {
@@ -834,9 +834,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794756266.8909137,
-    "seen": 1794756268.4732852,
-    "ast_hash": "4c4092d5dea899ff85e7755157c42e74",
+    "mtime": 1794759301.6422744,
+    "seen": 1794759308.094754,
+    "ast_hash": "1f662e89c3db60050a559fd9f4b500a3",
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
@@ -981,6 +981,36 @@
     "mtime": 1794759245.5431724,
     "seen": 1794759251.144023,
     "ast_hash": "408cdcf9fddfc920e4fe88931872fdef",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/localization_macos_contract.rs": {
+    "mtime": 1794759301.660351,
+    "seen": 1794759308.094749,
+    "ast_hash": "325a3de83c6f15a6c67047902088cd76",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/localization/macos.rs": {
+    "mtime": 1794759301.6538913,
+    "seen": 1794759308.09475,
+    "ast_hash": "3db3e9fc7d1f9f00f386215c32adc30c",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/PresentationTests/LocalizedTextTests.swift": {
+    "mtime": 1794759301.6041923,
+    "seen": 1794759308.094752,
+    "ast_hash": "026747fcfe3b4b059250e44abe8378e1",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/LocalizedText.swift": {
+    "mtime": 1794759301.6026196,
+    "seen": 1794759308.094753,
+    "ast_hash": "8f99098d1068e030e4ce97aa9fe45f4f",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0006-satu-contoh-lokalisasi/verify.md": {
+    "mtime": 1794759301.6432042,
+    "seen": 1794759308.0947552,
+    "ast_hash": "f41fac9832b6566d352134b657592030",
     "semantic_hash": ""
   }
 }
