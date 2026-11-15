@@ -792,9 +792,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794753562.4886844,
-    "seen": 1794753568.560063,
-    "ast_hash": "95aa10a1a490a1cb1ba88179f8be8a78",
+    "mtime": 1794753864.137734,
+    "seen": 1794753866.4779031,
+    "ast_hash": "b751f43b590bc5a10eed537b3b52783c",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/macos_bridge_ownership.rs": {

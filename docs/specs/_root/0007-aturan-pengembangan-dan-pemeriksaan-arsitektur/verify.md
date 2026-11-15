@@ -30,3 +30,32 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 
 - AC-1: langkah 1 sampai 3 (angka `4 rules`; angka `13 rules` menunggu milestone 3) · AC-2: langkah 4 sampai 6 · AC-3: langkah 7 sampai 9 · AC-10: langkah 9 sampai 11.
 - AC-4, AC-7, dan AC-8 menunggu milestone 2. AC-5, AC-6, dan AC-9 menunggu milestone 3. AC-11 menunggu milestone 4 (`BLOCKED`, `owner: user`).
+
+## Milestone 2: Aturan kode dan uji lintas crate
+
+Build plan langkah 3 dan 4. Hasil tercatat pada commit kode langkah 4 (`d951fa6`), pada working tree yang bersih. Pemindahan uji ada di commit langkah 3 (`f9dbf0b`). Angka aturan pada akhir milestone ini `11 rules`.
+
+### UI / manual
+
+Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
+
+### Commands
+
+- [ ] `cargo run -p desktop-codegen --locked -- architecture check` → kode 0; baris terakhir `architecture: ok, 11 rules, 3 members, 0 outputs up to date`; `architecture generate` → `architecture: ok, 11 rules, 3 members, 0 outputs, 0 written`, lalu `git status --short` kosong → AC-4
+- [ ] `cargo test -p desktop-codegen --locked --test architecture_contract` → `3 passed`; `rejects_broken_repos` memuat `N-1` sampai `N-19` (`N-7`, `N-8` → `A-5`; `N-9`, `N-10` → `A-6`; `N-11` → `A-7`; `N-12` → `A-8`; `N-13` → `A-8` dan `A-9`; `N-14` sampai `N-17` → `A-9`; `N-18` → `A-10`; `N-19` → `A-11`), dan `accepts_allowed_shapes` memuat `P-1`, `P-2`, `P-3` → AC-4, AC-8
+- [ ] `printf '\n// shared/config\n' >> crates/macos-ffi/src/lib.rs`, lalu `architecture check` → kode 1; stderr `crates/macos-ffi/src/lib.rs: A-7: Core and the bridge do not read configuration (shared/config)` lalu `architecture: failed, 1 problems` → AC-4
+- [ ] `git checkout -- crates/macos-ffi/src/lib.rs`, lalu `architecture check` → kode 0 → AC-4
+- [ ] `git ls-files crates/core/tests` → tepat tiga path: `crates/core/tests/contract_surface.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/tests/hello_invariants.rs` → AC-7
+- [ ] `git ls-files tooling/codegen/tests` → memuat `tooling/codegen/tests/workspace_layout.rs` dan `tooling/codegen/tests/macos_bridge_ownership.rs` → AC-7
+- [ ] `git grep -n '\.\./\.\./\|CARGO_MANIFEST_DIR' -- 'crates/core/*.rs'` → tidak mencetak apa pun → AC-7
+- [ ] `cargo test -p desktop-core --locked` → kode 0 (unit 5, `contract_surface` 7, `hello_contract` 4, `hello_invariants` 5, doc 1); `cargo test -p desktop-codegen --locked` → kode 0, termasuk `workspace_layout` 10 passed dan `macos_bridge_ownership` 4 passed → AC-7
+- [ ] `git show --stat=200 -M --format= f9dbf0b` (commit langkah 3) → `{crates/core => tooling/codegen}/tests/macos_bridge_ownership.rs` dan `{crates/core => tooling/codegen}/tests/workspace_layout.rs`. Dengan lebar bawaan 80 kolom di luar terminal, `git show --stat -M --format=` memotong path menjadi `.../codegen}/tests/...`; `git show -M --summary --format= f9dbf0b` mencetak `rename ... (96%)` dan `rename ... (100%)` → AC-7
+- [ ] Jumlah `#[test]`: `git show f9dbf0b~1:crates/core/tests/workspace_layout.rs | grep -c '#\[test\]'` → `10` dan untuk `macos_bridge_ownership.rs` → `4`; di lokasi baru `grep -c '#\[test\]' tooling/codegen/tests/workspace_layout.rs tooling/codegen/tests/macos_bridge_ownership.rs` → `10` dan `4`. `git diff f9dbf0b~1 f9dbf0b -M -- crates/core/tests tooling/codegen/tests` hanya mengubah dua baris `include_str!` di `macos_bridge_ownership.rs` → AC-7
+- [ ] `grep -c '^\[workspace\.lints' Cargo.toml` → `0`; `git ls-files | grep -cE '(^|/)\.?(rustfmt|clippy)\.toml$'` → `0` (kode keluar `grep` 1 untuk keduanya) → AC-8
+- [ ] `cargo build --workspace --locked`, `cargo test --workspace --locked`, `cargo fmt --all --check`, dan `cargo clippy --workspace --all-targets --locked -- -D warnings` → semuanya kode 0; `cargo test --workspace` menjalankan 140 test tanpa `FAILED` → AC-8
+- [ ] `git log --name-only --format= --grep='spec _root/0007 step' | sort -u` → hanya `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md`, `verify.md` spec ini, empat file `graphify-out/`, `tooling/codegen/src/architecture/code.rs`, `deps.rs`, `manifest.rs`, `mod.rs`, `tooling/codegen/src/lib.rs`, `tooling/codegen/tests/architecture_contract.rs`, `tooling/codegen/tests/macos_bridge_ownership.rs`, dan `tooling/codegen/tests/workspace_layout.rs`. Path lama dua uji tidak tercetak, karena `git log --name-only` tanpa `--follow` hanya menyebut path tujuan. Tidak ada `Cargo.toml`, `Cargo.lock`, `.gitattributes`, atau path di bawah `scripts/`, `.github/`, `.githooks/`, `apps/`, dan `bindings/` → AC-10
+
+### Acceptance-criteria coverage
+
+- AC-4: langkah 1 sampai 4 · AC-7: langkah 5 sampai 10 · AC-8: langkah 2, 11, dan 12 · AC-10: langkah 13.
+- AC-1 dengan angka `13 rules`, AC-5, AC-6, dan AC-9 menunggu milestone 3. AC-11 menunggu milestone 4 (`BLOCKED`, `owner: user`).
