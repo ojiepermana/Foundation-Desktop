@@ -24,7 +24,7 @@ Spec ini menetapkan satu Cargo Workspace (kumpulan paket Rust yang dibangun bers
 - **AC-4** (kriteria 1): `rust-toolchain.toml` berisi persis seperti di bagian "Isi file", dan `rustc --version` mencetak baris yang diawali `rustc 1.99.1`. `git ls-files --error-unmatch Cargo.lock` keluar dengan kode 0, dan `grep -c '^\[\[package\]\]' Cargo.lock` mencetak `1`.
 - **AC-5** (kriteria 1): Sesudah perintah AC-1 dan AC-2 dijalankan pada working tree yang bersih, `git status --short` tidak mencetak apa pun dan `git check-ignore -q target` keluar dengan kode 0. `git ls-files graphify-out` tetap mencetak empat path.
 - **AC-6** (gerbang merge lead): `cargo fmt --all --check` dan `cargo clippy --workspace --all-targets --locked -- -D warnings` keluar dengan kode 0.
-- **AC-7** (kriteria 32): Milestone 1 hanya menyentuh file berikut: `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat file `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge, atau sesudah merge dengan `git log --name-only --format= --grep='spec _root/0001 step [12]' | sort -u`. Pada commit langkah 1, isi enam file pertama sama persis dengan bagian "Isi file", jadi kerangka Core tidak memuat item, atribut, atau test. Pada akhir milestone 1 `grep -cE '^\[workspace\.(lints|dependencies)\]|^default-members|^exclude|^\[profile' Cargo.toml` mencetak `0`. Tidak ada crate `xtask` dan tidak ada `.cargo/config.toml`.
+- **AC-7** (kriteria 32): Milestone 1 hanya menyentuh file berikut: `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat file `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge, atau sesudah merge dengan `git log --name-only --format= --grep='spec _root/0001 step [12]' | sort -u`. Pada commit langkah 1, isi tujuh file pertama sama persis dengan bagian "Isi file", jadi kerangka Core tidak memuat item, atribut, atau test. Pada akhir milestone 1 `grep -cE '^\[workspace\.(lints|dependencies)\]|^default-members|^exclude|^\[profile' Cargo.toml` mencetak `0`. Tidak ada crate `xtask` dan tidak ada `.cargo/config.toml`.
 - **AC-8** (kriteria 27, Done when): `docs/architecture/README.md` memuat teks dari bagian "Perubahan dokumen arsitektur". `grep -c 'desktop-core\|desktop-macos-ffi\|desktop-windows\|desktop-linux' docs/architecture/README.md` mencetak angka 4 atau lebih, `grep -c '1\.99\.1' docs/architecture/README.md` mencetak 1 atau lebih, heading `### Yang sudah ada` dan `### Aturan arah dependensi` ada, tabel aturannya sama baris demi baris dengan tabel di bagian "Aturan arah dependensi" spec ini, dan tautan ke `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md` mengarah ke file yang ada. Kalimat "Pada tahap scope, folder implementasi masih berupa rencana." dan "Root workspace nantinya memuat manifest Cargo, lockfile dan konfigurasi toolchain." sudah tidak ada.
 - **AC-9** (kriteria 2 pada host lain; `BLOCKED`, `owner: user`): Pada host Windows dengan target `x86_64-pc-windows-msvc` dan host Linux dengan target `x86_64-unknown-linux-gnu`, `cargo build -p desktop-core --locked` dan `cargo test -p desktop-core --locked` keluar dengan kode 0 dengan toolchain `1.99.1`. Prasyaratnya hanya `rustup` dan linker sistem (MSVC Build Tools di Windows, `cc` di Linux), tanpa pustaka UI. Hasil dicatat per host dengan OS, arsitektur, versi, perintah, dan keluaran.
 
@@ -60,7 +60,7 @@ Pemilik di sini adalah lapisan arsitektur dari [peta arsitektur](../../../archit
 
 | Lokasi | Paket Cargo | Keadaan sesudah spec ini | Pemilik | Scope yang membuat atau mengisinya |
 | --- | --- | --- | --- | --- |
-| `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore` di root | bukan paket | dibuat (`.gitignore` ditambah) | Tooling bersama | 001 (spec ini) |
+| `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore` di root | bukan paket | dibuat (`.gitignore` ditambah) | Tooling bersama | 001 (spec ini) |
 | `crates/core/` | `desktop-core` | kerangka dibuat | Rust Core | 001 kerangka, 003 isi |
 | `crates/macos-ffi/` | `desktop-macos-ffi` | rencana | Aplikasi macOS | 004 |
 | `bindings/swift/` | bukan paket (keluaran generator, sumbernya `crates/macos-ffi/`) | rencana | Aplikasi macOS | 004 |
@@ -141,6 +141,14 @@ xcuserdata/
 .DS_Store
 ```
 
+`.graphifyignore` di root, tepat satu baris:
+
+```gitignore
+/Cargo.toml
+```
+
+Hook Graphify (versi 0.9.48) tidak menghasilkan node untuk manifest virtual, mencatat `Cargo.toml` root sebagai sumber yang gagal, lalu menolak commit. Baris ini membuat Graphify melewati manifest root saja; manifest anggota seperti `crates/core/Cargo.toml` tetap terbaca. Hapus baris ini bila Graphify kelak menangani manifest virtual.
+
 `Cargo.lock`, dibuat dengan `cargo generate-lockfile` di root dan tidak disunting dengan tangan. Tanpa dependensi, perintah itu tidak mengunduh apa pun dan hasilnya:
 
 ```toml
@@ -192,6 +200,7 @@ Spec ini tidak menambah rahasia, kredensial, atau variabel lingkungan. `publish 
 | Mesin tanpa `rustup` memakai compiler yang lebih lama | Cargo menolak build dengan pesan `rust-version` yang jelas. Compiler yang lebih baru bisa membangun, tetapi bukan kombinasi yang dibuktikan. |
 | `--locked` gagal sesudah manifest berubah | Perbarui lockfile dengan `cargo build`, lalu sertakan di commit yang sama dengan manifest. |
 | Konflik `Cargo.lock` saat merge | Ambil satu sisi, jalankan `cargo build`, lalu commit hasilnya. |
+| Sumber baru membuat hook gagal dengan `Graphify extraction failed` | Tambahkan entri `.graphifyignore` untuk sumber itu, dan catat entri serta alasannya di spec pemilik file itu. Hook dan `scripts/update_graphify.py` tidak dilonggarkan. |
 | Anggota khusus OS gagal dibangun di host lain | Pelanggaran aturan netral host. Anggota itu diperbaiki; perintah `--workspace` tidak diganti dengan daftar `-p`. |
 
 ### Skenario uji kritis
@@ -280,7 +289,7 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
 
 **Milestone 1: Workspace dan kerangka Core** (langkah 1 dan 2)
 
-1. Buat `Cargo.toml`, `rust-toolchain.toml`, `crates/core/Cargo.toml`, dan `crates/core/src/lib.rs`, ubah `.gitignore`, lalu jalankan `cargo generate-lockfile`, semuanya persis seperti bagian "Isi file" dan dalam satu commit. Sebelum commit, perintah AC-1 sampai AC-6 harus lulus, satisfies **AC-1**, **AC-2**, **AC-3**, **AC-4**, **AC-5**, **AC-7**
+1. Buat `Cargo.toml`, `rust-toolchain.toml`, `.graphifyignore`, `crates/core/Cargo.toml`, dan `crates/core/src/lib.rs`, ubah `.gitignore`, lalu jalankan `cargo generate-lockfile`, semuanya persis seperti bagian "Isi file" dan dalam satu commit. Sebelum commit, perintah AC-1 sampai AC-6 harus lulus, satisfies **AC-1**, **AC-2**, **AC-3**, **AC-4**, **AC-5**, **AC-7**
 2. Dengan `CARGO_PROFILE_DEV_DEBUG=0 CARGO_INCREMENTAL=0`, jalankan ulang setiap perintah AC-1 sampai AC-7 pada commit langkah 1, catat perintah dan keluarannya di `verify.md` bagian `## Milestone 1: Workspace dan kerangka Core`, hapus `target/`, lalu commit `verify.md`, satisfies **AC-1**, **AC-2**, **AC-3**, **AC-4**, **AC-5**, **AC-6**, **AC-7**
 
 **Milestone 2: Peta arsitektur mencatat tata letak nyata** (langkah 3, sesudah milestone 1)
