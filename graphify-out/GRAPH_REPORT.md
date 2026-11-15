@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- Corpus is ~29,055 words - fits in a single context window. You may not need a graph.
+- Corpus is ~29,179 words - fits in a single context window. You may not need a graph.
 
 ## Summary
 - 330 nodes · 573 edges · 24 communities (20 shown, 4 thin omitted)

@@ -108,6 +108,7 @@ Mode keputusan koordinasi adalah `auto`: opsi rekomendasi diambil dan pilihan ke
 | 11 | Kapan `[workspace.dependencies]` dibuat? | Oleh konsumen pertama Core (scope 004) | Ditulis sekarang | biasa | Bagian "Isi file" |
 | 12 | Tempat uji API publik Core | `crates/core/tests/` | `tests/contracts/` di root sebagai paket uji sendiri | biasa | Tabel "Lokasi dan pemilik"; spec `_root/0002` |
 | 13 | Rujukan dan cross check | Tanpa bagian References; cross check oleh model lain | Rujukan sumber saja | biasa | Tidak ada |
+| 14 | Bahasa rustdoc dan deskripsi paket Core | Inggris, mengikuti spec `_root/0002` | Indonesia | biasa | Bagian "Isi file" (`crates/core/src/lib.rs`, `description` di `crates/core/Cargo.toml`) |
 
 Alasan singkat per keputusan:
 
@@ -124,12 +125,13 @@ Alasan singkat per keputusan:
 11. Entri yang belum dipakai siapa pun adalah kerangka untuk pekerjaan mendatang. Scope 004 tetap menyentuh manifest root untuk menambah anggotanya.
 12. Pada manifest virtual, `tests/` di root bukan folder target Cargo. Uji di `crates/core/tests/` berjalan dengan `cargo test -p desktop-core` tanpa paket tambahan.
 13. Sumber keputusan ini adalah dokumen repo yang sudah ditautkan di teks, jadi daftar rujukan terpisah tidak menambah apa pun.
+14. Diminta lead saat menerima spec ini pada 2026-11-15. Spec `_root/0002` menulis rustdoc Core dalam bahasa Inggris dan menambahkan bagiannya di bawah empat baris kerangka tanpa mengubahnya, jadi kerangka berbahasa Indonesia akan membuat dokumen crate bercampur bahasa. Kebijakan bahasa komentar untuk seluruh repo tetap milik scope 002.
 
 ## Bukti percobaan
 
 Dijalankan pada 2026-11-15 di folder sementara di luar repo, macOS 27.0.1 `arm64`, `rustc 1.99.1 (58cf8f9c3 2026-10-13)`, `cargo 1.99.1`, dengan `CARGO_PROFILE_DEV_DEBUG=0 CARGO_INCREMENTAL=0`. Folder itu dihapus sesudahnya.
 
-Workspace dengan isi persis seperti bagian "Isi file":
+Workspace dengan isi seperti bagian "Isi file". Percobaan memakai komentar dokumen dan deskripsi paket berbahasa Indonesia; keputusan 14 kemudian menggantinya dengan teks Inggris, yang tidak memengaruhi hasil perintah mana pun di bawah:
 
 | Perintah | Hasil |
 | --- | --- |

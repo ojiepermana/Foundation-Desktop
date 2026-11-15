@@ -108,7 +108,7 @@ components = ["rustfmt", "clippy"]
 ```toml
 [package]
 name = "desktop-core"
-description = "Perilaku bersama fondasi desktop, tanpa pustaka UI dan tanpa SDK khusus OS."
+description = "Shared behaviour for the desktop foundation, with no UI library and no OS-specific SDK."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
@@ -117,13 +117,13 @@ publish.workspace = true
 [dependencies]
 ```
 
-`crates/core/src/lib.rs`:
+`crates/core/src/lib.rs`, tepat empat baris. Komentar dokumen dan deskripsi paket Core berbahasa Inggris, mengikuti spec `_root/0002`, sampai scope 002 memutuskan kebijakan bahasa komentar:
 
 ```rust
-//! Rust Core fondasi desktop.
+//! Rust Core for the desktop foundation.
 //!
-//! Crate ini memiliki perilaku bersama untuk ketiga aplikasi native. Ia dibangun
-//! dan diuji tanpa pustaka UI dan tanpa SDK khusus OS.
+//! This crate owns the behaviour shared by the three native apps. It builds
+//! and tests without any UI library or OS-specific SDK.
 ```
 
 `.gitignore` sesudah perubahan (lima baris pertama sudah ada dan tidak diubah, lima baris terakhir ditambahkan tanpa baris kosong di antaranya):

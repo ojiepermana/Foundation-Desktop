@@ -390,7 +390,7 @@
       "node_kind": "heading",
       "norm_label": "bukti percobaan",
       "source_file": "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md",
-      "source_location": "L128"
+      "source_location": "L130"
     },
     {
       "id": "docs_specs_root_0001_batas_workspace_dan_pemilik_rationale_context",
@@ -414,7 +414,7 @@
       "node_kind": "heading",
       "norm_label": "cross check",
       "source_file": "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md",
-      "source_location": "L165"
+      "source_location": "L167"
     },
     {
       "id": "docs_specs_root_0001_batas_workspace_dan_pemilik_rationale_keputusan_yang_diambil",
@@ -6247,7 +6247,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md",
-      "source_location": "L128",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
@@ -6258,7 +6258,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md",
-      "source_location": "L165",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
