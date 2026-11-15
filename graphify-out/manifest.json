@@ -1084,5 +1084,11 @@
     "seen": 1794760957.78917,
     "ast_hash": "59e1a58bcef804278589a9b604499ec5",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/architecture_macos_rules.rs": {
+    "mtime": 1794761639.604467,
+    "seen": 1794761644.8472059,
+    "ast_hash": "195910c528d92710a0ff0c33dc14f16b",
+    "semantic_hash": ""
   }
 }
