@@ -14,7 +14,11 @@ Tetapkan satu fungsi publik dengan masukan nama dan hasil sapaan. Bagian spec ti
   * [x] Milestone 2: masukan tepi, aturan kontrak, dan bukti. Build plan langkah 3 sampai 6. AC-2, AC-3, AC-4, AC-5, AC-6, AC-7. after milestone 1
 * [x] Verify it: `/check verify scope 003 kontrak sapaan untuk _root`
 * [x] Test it: `/test scope 003 kontrak sapaan untuk _root`
-* [ ] `/architect scope 003 kontrak sapaan untuk macOS` (spec). after spec _root/0002; ditulis bersama spec macOS scope 004
+
+**macOS** · spec [macos/0003](../specs/macos/0003-kontrak-sapaan-bersama.md)
+
+* [x] `/architect scope 003 kontrak sapaan untuk macOS` (spec)
+* [ ] Verify it: `/check verify scope 003 kontrak sapaan untuk macOS`. needs Verify it scope 004; bagian jendela AC-4 menunggu `F004-1` dan `F004-2`
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 
