@@ -624,9 +624,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/verify.md": {
-    "mtime": 1794751903.620459,
-    "seen": 1794751904.78996,
-    "ast_hash": "d49ec597b3595f81a41cb04780af350d",
+    "mtime": 1794752314.716769,
+    "seen": 1794752318.171632,
+    "ast_hash": "b38078bdae76be4bcf9d92835bd9cde6",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/tokens_rules.rs": {
