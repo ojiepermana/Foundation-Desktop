@@ -1,0 +1,15 @@
+{
+  "$schema": "./catalog.schema.json",
+  "schemaVersion": 1,
+  "sourceLocale": "en",
+  "locales": ["en", "id"],
+  "entries": {
+    "greeting.submit": {
+      "description": "Label of the button that sends the name and shows the greeting.",
+      "text": {
+        "en": "Greet",
+        "id": "Sapa"
+      }
+    }
+  }
+}
