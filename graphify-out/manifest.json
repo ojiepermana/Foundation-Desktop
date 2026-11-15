@@ -138,8 +138,8 @@
     "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
   },
   "AGENTS.md": {
-    "mtime": 1794742559.6713948,
-    "seen": 1794742561.6498308,
+    "mtime": 1794742568.4430912,
+    "seen": 1794742570.0307462,
     "ast_hash": "13a851a717ac1bcd1faf1319da0b38dd",
     "semantic_hash": ""
   },
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794742183.6660445,
-    "seen": 1794742185.651707,
-    "ast_hash": "0b5ab1263c625b047a831d8a2f88eeb7",
+    "mtime": 1794742512.7222607,
+    "seen": 1794742515.068953,
+    "ast_hash": "a844ee5c4decdb6c49c50f99f4416686",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -456,8 +456,8 @@
     "semantic_hash": ""
   },
   "crates/core/AGENTS.md": {
-    "mtime": 1794742559.6751354,
-    "seen": 1794742561.6498282,
+    "mtime": 1794742568.446252,
+    "seen": 1794742570.0306711,
     "ast_hash": "c8ec2e4a46ff2ff7c71f1d70487e1b06",
     "semantic_hash": ""
   }
