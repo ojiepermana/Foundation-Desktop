@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 163 files · ~261,430 words
+- 163 files · ~261,645 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -93,7 +93,6 @@
 - Milestone 1: Katalog dan sumber localization
 - macos_bridge_ownership.rs
 - Aturan pengembangan
-- TextRole
 - Log koordinasi: `<nama-SCOPE>`
 - required
 - Verify: spec macos/0002 dan macos/0003 · 2026-11-15
@@ -102,6 +101,7 @@
 - 0006. Satu contoh lokalisasi di macOS
 - 0002. Kontrak sapaan bersama
 - refresh
+- GreetingView
 - Peran: architect
 - Peran: checker
 - Peran: debugger
@@ -120,7 +120,7 @@
 - Milestone 1: Gerbang bersama
 - validate.sh
 - public.json
-- DesktopMacApp
+- TextRole
 - macos-ffi/src/lib.rs
 - 008 - Tema bersama dan kontrol native
 - PackageDescription
@@ -152,12 +152,12 @@
   apps/macos/DesignSystem/Tokens.swift → apps/macos/DesignSystem/Theme.swift
 - `Uji jendela di Mac` --semantically_similar_to--> `Uji sesi grafis Linux`  [INFERRED] [semantically similar]
   docs/platforms/macos/README.md → docs/platforms/linux/README.md
-- `.body` --calls--> `GreetingView`  [INFERRED]
-  apps/macos/App/DesktopMacApp.swift → apps/macos/Presentation/GreetingView.swift
 - `.body` --calls--> `GreetingViewModel`  [INFERRED]
   apps/macos/App/DesktopMacApp.swift → apps/macos/Presentation/GreetingViewModel.swift
 - `Colors` --calls--> `ThemeColor`  [INFERRED]
   apps/macos/DesignSystem/Tokens.swift → apps/macos/DesignSystem/Theme.swift
+- `long_name_is_not_cut()` --calls--> `hello()`  [INFERRED]
+  crates/core/tests/hello_contract.rs → crates/core/src/greeting.rs
 
 ## Import Cycles
 - None detected.
@@ -340,8 +340,8 @@ Cohesion: 0.22
 Nodes (4): CoreGreeter, String, BindingContractTests, DesktopMacosFFI
 
 ### Community 43 - "GreetingViewModel"
-Cohesion: 0.25
-Nodes (7): Greeter, GreetingView, .body, GreetingViewModel, String, GreetingViewModelTests, View
+Cohesion: 0.26
+Nodes (7): Greeter, GreetingViewModel, String, GreetingViewModelTests, RecordingGreeter, String, Sendable
 
 ### Community 44 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
 Cohesion: 0.14
@@ -499,41 +499,41 @@ Nodes (7): bridge_sources_hold_no_unsafe(), files_with_extension(), hand_written
 Cohesion: 0.22
 Nodes (9): Agent skills, Aturan pengembangan, Build approach, Commands, Context files, Rules, Specs, Stack (+1 more)
 
-### Community 83 - "TextRole"
-Cohesion: 0.28
-Nodes (7): TextRole, .font, RecordingGreeter, String, Equatable, Font, Sendable
-
-### Community 84 - "Log koordinasi: `<nama-SCOPE>`"
+### Community 83 - "Log koordinasi: `<nama-SCOPE>`"
 Cohesion: 0.22
 Nodes (8): Blocker terbuka, Dicentang pada wave ini, Keputusan, Keputusan delegasi, Log koordinasi: `<nama-SCOPE>`, Penutupan, Riwayat wave, Sub sesi wave `<n>`
 
-### Community 85 - "required"
+### Community 84 - "required"
 Cohesion: 0.28
 Nodes (9): additionalProperties, required, type, additionalProperties, description, value, additionalProperties, dark (+1 more)
 
-### Community 86 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
+### Community 85 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
 Cohesion: 0.22
 Nodes (9): Catatan, Host dan versi, Keadaan `verify.md` yang dirujuk, Spec macos/0002 (scope 001), Spec macos/0003 (scope 003), Tafsiran yang diambil, Verdict, Verify: spec macos/0002 dan macos/0003 · 2026-11-15 (+1 more)
 
-### Community 87 - "0001. Sapaan di jendela macOS"
+### Community 86 - "0001. Sapaan di jendela macOS"
 Cohesion: 0.22
 Nodes (9): 0001. Sapaan di jendela macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 88 - "0005. Tema bersama dan kontrol native di macOS"
+### Community 87 - "0005. Tema bersama dan kontrol native di macOS"
 Cohesion: 0.22
 Nodes (9): 0005. Tema bersama dan kontrol native di macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 89 - "0006. Satu contoh lokalisasi di macOS"
+### Community 88 - "0006. Satu contoh lokalisasi di macOS"
 Cohesion: 0.22
 Nodes (9): 0006. Satu contoh lokalisasi di macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 90 - "0002. Kontrak sapaan bersama"
+### Community 89 - "0002. Kontrak sapaan bersama"
 Cohesion: 0.22
 Nodes (9): 0002. Kontrak sapaan bersama, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 91 - "refresh"
+### Community 90 - "refresh"
 Cohesion: 0.33
 Nodes (7): Ekstraksi struktur lokal, Pemeriksaan kesegaran graf, Pemeriksaan ujung relasi, Pencatatan hash manifest, Penggunaan ulang bukti semantik, Refresh the shared Graphify artifacts inside a disposable Git index snapshot., refresh()
+
+### Community 91 - "GreetingView"
+Cohesion: 0.25
+Nodes (7): App, DesktopMacApp, .body, GreetingView, .body, Scene, View
 
 ### Community 92 - "Peran: architect"
 Cohesion: 0.25
@@ -603,9 +603,9 @@ Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Gerbang bersama,
 Cohesion: 0.33
 Nodes (5): build, app_identifier, product_name, $schema, schemaVersion
 
-### Community 110 - "DesktopMacApp"
+### Community 110 - "TextRole"
 Cohesion: 0.50
-Nodes (4): App, DesktopMacApp, .body, Scene
+Nodes (4): TextRole, .font, Equatable, Font
 
 ### Community 112 - "008 - Tema bersama dan kontrol native"
 Cohesion: 0.50
