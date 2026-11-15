@@ -2,7 +2,7 @@
 
 **Scope**: [012 - Build dan penerimaan per target](../../../scope/012%20-%20Build%20dan%20penerimaan%20per%20target.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 

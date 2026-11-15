@@ -876,15 +876,27 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
-    "mtime": 1794755684.0770144,
-    "seen": 1794755688.6097028,
-    "ast_hash": "77a4ea5250399a55e7f209cdd89561e4",
+    "mtime": 1794755933.1112669,
+    "seen": 1794755934.977571,
+    "ast_hash": "c3d00ab1256b0307aa3bac321b8b20a0",
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md": {
     "mtime": 1794755684.0772216,
     "seen": 1794755688.609706,
     "ast_hash": "b613741fc18c5be9037cea9b8bc17bc3",
+    "semantic_hash": ""
+  },
+  "scripts/lib.sh": {
+    "mtime": 1794755933.1151795,
+    "seen": 1794755934.9775739,
+    "ast_hash": "0088702bf81aee4f1dad7d440acbc4e3",
+    "semantic_hash": ""
+  },
+  "scripts/validate.sh": {
+    "mtime": 1794755933.115568,
+    "seen": 1794755934.9775748,
+    "ast_hash": "afce35b8a7d46b42d693b072d1b0e0af",
     "semantic_hash": ""
   }
 }
