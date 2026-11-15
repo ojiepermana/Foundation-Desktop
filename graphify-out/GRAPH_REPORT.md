@@ -1,24 +1,24 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- Corpus is ~22,927 words - fits in a single context window. You may not need a graph.
+- Corpus is ~29,055 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 298 nodes · 537 edges · 24 communities (20 shown, 4 thin omitted)
+- 330 nodes · 573 edges · 24 communities (20 shown, 4 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- Fondasi macOS
 - Scope fondasi desktop native
-- GTK dan sesi Linux
 - pre-commit script
-- Arsitektur fondasi desktop
-- Alur lead
-- Fondasi Windows
-- Desain dan kontrol native
+- Fondasi macOS
 - Resource bersama
-- 004 - Sapaan di jendela macOS
+- GTK dan sesi Linux
+- Alur lead
+- 0001. Batas workspace dan pemilik
+- Penerimaan dan bukti fondasi
+- Sistem desain bersama
+- 0001. Batas workspace dan pemilik: alasan
 - Log koordinasi: `<nama-SCOPE>`
 - Log koordinasi: `000 - Panduan scope`
 - Peran: architect
@@ -52,10 +52,10 @@
   AGENTS.md → scripts/update_graphify.py
 - `Fondasi desktop native` --cites--> `Aturan commit dan integrasi`  [EXTRACTED]
   README.md → AGENTS.md
-- `Fondasi desktop native` --cites--> `Arsitektur fondasi desktop`  [EXTRACTED]
-  README.md → docs/architecture/README.md
-- `Fondasi desktop native` --references--> `Rust Core`  [EXTRACTED]
-  README.md → docs/architecture/README.md
+- `Fondasi desktop native` --cites--> `Sistem desain bersama`  [EXTRACTED]
+  README.md → docs/design-system/README.md
+- `Fondasi desktop native` --cites--> `Fondasi Linux`  [EXTRACTED]
+  README.md → docs/platforms/linux/README.md
 
 ## Import Cycles
 - None detected.
@@ -68,45 +68,45 @@
 
 ## Communities (24 total, 4 thin omitted)
 
-### Community 0 - "Fondasi macOS"
-Cohesion: 0.11
-Nodes (33): Cargo Workspace, Rust Core, API publik Rust, Eksekusi dan uji, hello(name: String) → String, Kepemilikan dan kompatibilitas, Kepemilikan memori dan pemetaan kesalahan, Kontrak Rust bersama (+25 more)
+### Community 0 - "Scope fondasi desktop native"
+Cohesion: 0.08
+Nodes (47): Architecture Decision Record, Arsitektur fondasi desktop, Aturan pengembangan yang akan dicatat, Batas fase fondasi, Cargo Workspace, Pemilik dan arah dependensi, Rust Core, Rust stable (+39 more)
 
-### Community 1 - "Scope fondasi desktop native"
-Cohesion: 0.11
-Nodes (27): Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C01 · Cargo Workspace berhasil dibangun, C02 · Rust Core dapat dibangun dan diuji secara mandiri dari framework UI native, C25 · Pemeriksaan kepatuhan arsitektur telah dikonfigurasi, C26 · `AGENTS.md` di akar repo memuat aturan pengembangan yang bisa diperiksa (+19 more)
+### Community 1 - "pre-commit script"
+Cohesion: 0.10
+Nodes (25): Aktivasi hook per clone, Aturan commit dan integrasi, Integrasi branch ke main, Pembaruan Graphify sebelum commit, Pembaruan semantik dengan skill Graphify, Pemeriksaan SHA origin/main, Snapshot indeks Git, Verifikasi diff dan dokumentasi (+17 more)
 
-### Community 3 - "GTK dan sesi Linux"
+### Community 2 - "Fondasi macOS"
+Cohesion: 0.11
+Nodes (28): Kepemilikan memori dan pemetaan kesalahan, AppKit, Apple Silicon ARM64 dan Intel bersyarat, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS (+20 more)
+
+### Community 3 - "Resource bersama"
+Cohesion: 0.10
+Nodes (24): Pemilik tunggal dan arah dependensi, Tooling bersama, C18 · Aturan konfigurasi bersama terdokumentasi, C19 · Tersedia aturan lokalisasi bersama, C20 · Ada contoh minimal penggunaan lokalisasi, C21 · Kepemilikan aset bersama terdokumentasi, C25 · Pemeriksaan kepatuhan arsitektur telah dikonfigurasi, C26 · `AGENTS.md` di akar repo memuat aturan pengembangan yang bisa diperiksa (+16 more)
+
+### Community 4 - "GTK dan sesi Linux"
 Cohesion: 0.15
 Nodes (22): Bukti yang diperlukan di Linux, Compositor Wayland, Evaluasi Flatpak di masa mendatang, Fondasi Linux, GTK 4, gtk-rs, Jendela native dan Rust Core, Kompatibilitas X11 (+14 more)
-
-### Community 4 - "pre-commit script"
-Cohesion: 0.17
-Nodes (17): Pembaruan Graphify sebelum commit, Pembaruan semantik dengan skill Graphify, Snapshot indeks Git, post-commit script, Rekonsiliasi indeks sesudah git commit --only, pre-commit script, Empat artefak Graphify dalam satu commit, Isolasi riwayat kueri lokal (+9 more)
-
-### Community 5 - "Arsitektur fondasi desktop"
-Cohesion: 0.12
-Nodes (17): Aktivasi hook per clone, Aturan commit dan integrasi, Integrasi branch ke main, Pemeriksaan SHA origin/main, Verifikasi diff dan dokumentasi, AGENTS.md, Architecture Decision Record, Arsitektur fondasi desktop (+9 more)
 
 ### Community 6 - "Alur lead"
 Cohesion: 0.11
 Nodes (18): 1. Tentukan SCOPE, 2. Analisis dan rencana wave, 3. Mulai sub sesi, 4. Komunikasi, 5. Laporan, 6. Gerbang centang dan merge, 7. Log, 8. Akhir wave (+10 more)
 
-### Community 7 - "Fondasi Windows"
-Cohesion: 0.16
-Nodes (19): Alur dan kepemilikan, Bukti build, runtime dan distribusi, Fondasi Windows, Matriks kompatibilitas Windows, Percobaan WinUI 3 di host Windows, Pesan UI bertipe, Target Windows x64 dan kelayakan ARM64, Tema, resource dan perilaku native (+11 more)
+### Community 7 - "0001. Batas workspace dan pemilik"
+Cohesion: 0.11
+Nodes (19): 0001. Batas workspace dan pemilik, Aturan arah dependensi, Aturan untuk manifest root, Build plan, Consequences, Decision, Follow-up, Invarian (+11 more)
 
-### Community 8 - "Desain dan kontrol native"
-Cohesion: 0.29
-Nodes (15): Aksesibilitas kontrol native, Alias warna semantik, CSS GTK, Fluent Design, Sistem desain bersama, Skema token desain, Tampilan terang dan gelap, Tema SwiftUI (+7 more)
+### Community 8 - "Penerimaan dan bukti fondasi"
+Cohesion: 0.18
+Nodes (14): Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai, C29 · Alur kerja GitHub Actions untuk fondasi sudah dikonfigurasi, C30 · Pengujian yang relevan sudah dijalankan, C31 · Laporan menyajikan hasil aktual dari verifikasi yang dijalankan (+6 more)
 
-### Community 9 - "Resource bersama"
-Cohesion: 0.22
-Nodes (13): C19 · Tersedia aturan lokalisasi bersama, C20 · Ada contoh minimal penggunaan lokalisasi, C21 · Kepemilikan aset bersama terdokumentasi, 010 - Satu contoh lokalisasi, 011 - Aset merek bersama, Aset merek, Aset merek berversi, Fallback dan validasi placeholder (+5 more)
+### Community 9 - "Sistem desain bersama"
+Cohesion: 0.31
+Nodes (14): Aksesibilitas kontrol native, Alias warna semantik, CSS GTK, Fluent Design, Sistem desain bersama, Skema token desain, Tampilan terang dan gelap, Tema SwiftUI (+6 more)
 
-### Community 10 - "004 - Sapaan di jendela macOS"
-Cohesion: 0.24
-Nodes (11): C04 · UniFFI berhasil menghasilkan binding Swift untuk macOS, C05 · Aplikasi macOS berhasil memanggil fungsi Rust tersebut, C23 · Kepemilikan pada batas FFI macOS terdokumentasi dan divalidasi bila relevan, 000 - Panduan scope, Bukti per target, Cara menurunkan scope menjadi spec, Spec bersama dan spec per OS, Status fitur (+3 more)
+### Community 10 - "0001. Batas workspace dan pemilik: alasan"
+Cohesion: 0.18
+Nodes (11): 0001. Batas workspace dan pemilik: alasan, Bukti percobaan, Context, Cross check, Keputusan yang diambil, Opsi 1: Satu workspace, anggota eksplisit, aturan netral host, Opsi 2: Satu workspace dengan `default-members` hanya Core, Opsi 3: Aplikasi OS di luar workspace (+3 more)
 
 ### Community 11 - "Log koordinasi: `<nama-SCOPE>`"
 Cohesion: 0.22
@@ -145,25 +145,25 @@ Cohesion: 0.50
 Nodes (3): Langkah manual: `000 - Panduan scope`, Nilai dari user, Ringkasan
 
 ## Knowledge Gaps
-- **103 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+98 more)
+- **129 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+124 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Scope fondasi desktop native` connect `Scope fondasi desktop native` to `Fondasi macOS`, `scope.md`, `GTK dan sesi Linux`, `Arsitektur fondasi desktop`, `Fondasi Windows`, `Desain dan kontrol native`, `Resource bersama`, `004 - Sapaan di jendela macOS`?**
-  _High betweenness centrality (0.141) - this node is a cross-community bridge._
-- **Why does `Fondasi desktop native` connect `Scope fondasi desktop native` to `Fondasi macOS`, `scope.md`, `GTK dan sesi Linux`, `Arsitektur fondasi desktop`, `Fondasi Windows`, `Desain dan kontrol native`, `Resource bersama`, `004 - Sapaan di jendela macOS`?**
-  _High betweenness centrality (0.105) - this node is a cross-community bridge._
-- **Why does `Aturan commit dan integrasi` connect `Arsitektur fondasi desktop` to `Scope fondasi desktop native`, `pre-commit script`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
+- **Why does `Scope fondasi desktop native` connect `Scope fondasi desktop native` to `Fondasi macOS`, `Resource bersama`, `GTK dan sesi Linux`, `scope.md`, `Penerimaan dan bukti fondasi`, `Sistem desain bersama`?**
+  _High betweenness centrality (0.123) - this node is a cross-community bridge._
+- **Why does `Fondasi desktop native` connect `Scope fondasi desktop native` to `pre-commit script`, `Fondasi macOS`, `Resource bersama`, `GTK dan sesi Linux`, `scope.md`, `Penerimaan dan bukti fondasi`, `Sistem desain bersama`?**
+  _High betweenness centrality (0.099) - this node is a cross-community bridge._
+- **Why does `0001. Batas workspace dan pemilik` connect `0001. Batas workspace dan pemilik` to `scope.md`?**
+  _High betweenness centrality (0.074) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
-  _103 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Fondasi macOS` be split into smaller, more focused modules?**
-  _Cohesion score 0.10795454545454546 - nodes in this community are weakly interconnected._
+  _129 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Scope fondasi desktop native` be split into smaller, more focused modules?**
-  _Cohesion score 0.10541310541310542 - nodes in this community are weakly interconnected._
-- **Should `GTK dan sesi Linux` be split into smaller, more focused modules?**
-  _Cohesion score 0.1471861471861472 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08233117483811286 - nodes in this community are weakly interconnected._
+- **Should `pre-commit script` be split into smaller, more focused modules?**
+  _Cohesion score 0.1032258064516129 - nodes in this community are weakly interconnected._
+- **Should `Fondasi macOS` be split into smaller, more focused modules?**
+  _Cohesion score 0.10846560846560846 - nodes in this community are weakly interconnected._
 Pembaruan hook menggunakan indeks struktural lokal. Hash semantik kosong menandai dokumen yang menunggu ekstraksi semantik.

@@ -250,5 +250,17 @@
     "seen": 1794735733.556393,
     "ast_hash": "3adacb9ec310d028ffc9292682411984",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
+    "mtime": 1794736841.824455,
+    "seen": 1794736842.4435918,
+    "ast_hash": "428c7bc4b173fcbf963e97f14452966c",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
+    "mtime": 1794736841.8250842,
+    "seen": 1794736842.4435961,
+    "ast_hash": "e43e158d254ebb86291864c05f386b33",
+    "semantic_hash": ""
   }
 }
