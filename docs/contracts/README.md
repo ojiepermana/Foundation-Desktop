@@ -24,7 +24,7 @@ Saat kontrak berkembang, spec yang terkait akan mencatat input, output, nilai op
 
 ## Eksekusi dan uji
 
-Core mengutamakan safe Rust, dependensi minimal dan kepemilikan eksplisit. Hindari state global yang dapat berubah serta alokasi dan kloning yang tidak diperlukan. Input dari luar diperiksa sesuai kontrak. Jika bagian `unsafe` diperlukan, invariannya perlu tercatat.
+Core hanya memakai safe Rust, dengan dependensi minimal dan kepemilikan eksplisit. Hindari state global yang dapat berubah serta alokasi dan kloning yang tidak diperlukan. Input dari luar diperiksa sesuai kontrak. Kode `unsafe` di Core dan di jembatan macOS ditolak saat build lewat `unsafe_code = "forbid"`. Membukanya butuh pembaruan spec `_root` lebih dulu.
 
 Uji unit dan uji API publik akan menjalankan Core secara mandiri. Uji integrasi tiap aplikasi akan membuktikan bahwa nilai yang terlihat berasal dari fungsi yang sama. Pekerjaan yang mahal kelak perlu menjaga thread UI tetap responsif. Kontrak asinkron, pembatalan, keamanan antar thread, dan akses kemampuan OS dapat didokumentasikan saat dibutuhkan tanpa menambah runtime pada contoh sapaan.
 
