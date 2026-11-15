@@ -335,16 +335,16 @@
     "ast_hash": "632f2790312266d4ff057959998134d5",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794739610.7601519,
-    "seen": 1794739612.2847219,
-    "ast_hash": "13b32666d9a5301b8a6fe6c599628452",
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
+    "mtime": 1794739712.0050187,
+    "seen": 1794739714.913426,
+    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
-    "mtime": 1794739610.7603815,
-    "seen": 1794739612.284725,
-    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
+    "mtime": 1794739712.0046086,
+    "seen": 1794739714.91343,
+    "ast_hash": "13b32666d9a5301b8a6fe6c599628452",
     "semantic_hash": ""
   }
 }
