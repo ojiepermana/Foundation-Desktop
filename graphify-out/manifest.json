@@ -850,5 +850,17 @@
     "seen": 1794754605.9786072,
     "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0007-aset-merek-bersama/rationale.md": {
+    "mtime": 1794754727.6060555,
+    "seen": 1794754730.049432,
+    "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0007-aset-merek-bersama/index.md": {
+    "mtime": 1794754727.6058402,
+    "seen": 1794754730.049437,
+    "ast_hash": "454645e883ce3edc7bde6c0eea48d1d1",
+    "semantic_hash": ""
   }
 }
