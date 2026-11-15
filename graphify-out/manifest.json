@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
-    "mtime": 1794755517.0405173,
-    "seen": 1794755521.6715899,
-    "ast_hash": "81df9566a8a17037dddeb67409d266a6",
+    "mtime": 1794755495.8881068,
+    "seen": 1794755503.2213519,
+    "ast_hash": "8091c2a603822ca3a10f62949c37f6b1",
     "semantic_hash": ""
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794755517.0432947,
-    "seen": 1794755521.671592,
-    "ast_hash": "f57c9bcb77309d0b0457bf509ccd67cc",
+    "mtime": 1794755495.8943138,
+    "seen": 1794755503.2213628,
+    "ast_hash": "8a2a751f92d0bea1ba39219e1251e584",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -876,14 +876,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
-    "mtime": 1794755596.6435294,
-    "seen": 1794755598.7664042,
+    "mtime": 1794755608.1953123,
+    "seen": 1794755610.0898392,
     "ast_hash": "77a4ea5250399a55e7f209cdd89561e4",
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md": {
-    "mtime": 1794755596.643794,
-    "seen": 1794755598.7664,
+    "mtime": 1794755608.1995285,
+    "seen": 1794755610.0898418,
     "ast_hash": "b613741fc18c5be9037cea9b8bc17bc3",
     "semantic_hash": ""
   }
