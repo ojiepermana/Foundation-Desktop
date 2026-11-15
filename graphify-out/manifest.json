@@ -1000,5 +1000,11 @@
     "seen": 1794758326.917136,
     "ast_hash": "026747fcfe3b4b059250e44abe8378e1",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0006-satu-contoh-lokalisasi/verify.md": {
+    "mtime": 1794759182.0738935,
+    "seen": 1794759187.1737962,
+    "ast_hash": "f41fac9832b6566d352134b657592030",
+    "semantic_hash": ""
   }
 }
