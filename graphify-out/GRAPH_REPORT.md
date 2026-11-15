@@ -1,32 +1,32 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 83 files · ~109,599 words
+- 83 files · ~109,794 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 754 nodes · 1161 edges · 57 communities (50 shown, 7 thin omitted)
+- 754 nodes · 1158 edges · 57 communities (50 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
 - desktop_macos_ffi.swift
 - workspace_layout.rs
-- GreetingViewModel
 - quality/README.md
+- GreetingViewModel
 - Fondasi Windows
 - hello
-- Fondasi Linux
 - Rancangan konfigurasi
+- Fondasi Linux
 - Alur lead
-- 0001. Batas workspace dan pemilik
 - Penerimaan dan bukti fondasi
-- Scope fondasi desktop native
+- 0001. Batas workspace dan pemilik
 - Milestone 1: Jembatan, binding, dan uji tanpa jendela
 - 0002. Batas workspace dan pemilik di macOS
 - 0003. Kontrak sapaan bersama di macOS
 - Fondasi macOS
 - UniffiInternalError
+- Scope fondasi desktop native
 - contract_surface.rs
 - 001 - Batas workspace dan pemilik
 - Langkah manual: `000 - Panduan scope`
@@ -35,6 +35,7 @@
 - 0003. Tema bersama dan kontrol native: catatan keputusan
 - 0004. Konfigurasi publik: alasan
 - Fondasi desktop native
+- Sistem desain bersama
 - Log koordinasi: `000 - Panduan scope`
 - Milestone 1: Workspace dan kerangka Core
 - Milestone 1: fungsi hello dan uji Done when
@@ -42,7 +43,6 @@
 - 0006. Satu contoh lokalisasi
 - Options considered
 - Log koordinasi: `<nama-SCOPE>`
-- Sistem desain bersama
 - Verify: spec macos/0002 dan macos/0003 · 2026-11-15
 - 0001. Sapaan di jendela macOS
 - 0002. Kontrak sapaan bersama
@@ -70,7 +70,7 @@
 2. `Fondasi macOS` - 21 edges
 3. `Fondasi Windows` - 19 edges
 4. `Fondasi desktop native` - 16 edges
-5. `Scope fondasi desktop native` - 16 edges
+5. `Scope fondasi desktop native` - 15 edges
 6. `RustBuffer` - 14 edges
 7. `Penerimaan dan bukti fondasi` - 14 edges
 8. `UniffiInternalError` - 13 edges
@@ -106,13 +106,13 @@ Nodes (50): Array, createReader(), createWriter(), Data, FfiConverter, FfiConver
 Cohesion: 0.06
 Nodes (41): bridge_sources_hold_no_unsafe(), files_with_extension(), hand_written_swift_uses_no_pointers(), repo_root(), PathBuf, Vec, architecture_rule_table_matches_the_spec_row_by_row(), every_member_inherits_shared_fields_and_uses_desktop_prefix() (+33 more)
 
-### Community 2 - "GreetingViewModel"
+### Community 2 - "quality/README.md"
+Cohesion: 0.14
+Nodes (6): Aturan commit dan integrasi, C18 · Aturan konfigurasi bersama terdokumentasi, C19 · Tersedia aturan lokalisasi bersama, C20 · Ada contoh minimal penggunaan lokalisasi, 009 - Konfigurasi publik, 010 - Satu contoh lokalisasi
+
+### Community 3 - "GreetingViewModel"
 Cohesion: 0.07
 Nodes (23): App, DesktopMacApp, .body, CoreGreeter, Greeter, String, GreetingView, .body (+15 more)
-
-### Community 3 - "quality/README.md"
-Cohesion: 0.15
-Nodes (3): Aturan commit dan integrasi, C18 · Aturan konfigurasi bersama terdokumentasi, 009 - Konfigurasi publik
 
 ### Community 4 - "Fondasi Windows"
 Cohesion: 0.08
@@ -122,49 +122,49 @@ Nodes (36): Fluent Design, Alur dan kepemilikan, Bukti build, runtime dan distri
 Cohesion: 0.12
 Nodes (11): hello(), String, long_name_is_not_cut(), assert_wraps_name(), braces_in_name_stay_plain_text(), every_vector_is_prefix_then_name_unchanged_then_bang(), long_multi_byte_name_is_not_cut(), String (+3 more)
 
-### Community 6 - "Fondasi Linux"
-Cohesion: 0.14
-Nodes (23): Bukti yang diperlukan di Linux, Compositor Wayland, Evaluasi Flatpak di masa mendatang, Fondasi Linux, GTK 4, gtk-rs, Jendela native dan Rust Core, Kompatibilitas X11 (+15 more)
-
-### Community 7 - "Rancangan konfigurasi"
+### Community 6 - "Rancangan konfigurasi"
 Cohesion: 0.09
 Nodes (23): 0004. Konfigurasi publik, Aturan versi skema, Batas pengaturan khusus OS, Bentuk alat, Build plan, Cara aplikasi memakai nilai, Consequences, Decision (+15 more)
+
+### Community 7 - "Fondasi Linux"
+Cohesion: 0.15
+Nodes (22): Bukti yang diperlukan di Linux, Compositor Wayland, Evaluasi Flatpak di masa mendatang, Fondasi Linux, GTK 4, gtk-rs, Jendela native dan Rust Core, Kompatibilitas X11 (+14 more)
 
 ### Community 8 - "Alur lead"
 Cohesion: 0.11
 Nodes (18): 1. Tentukan SCOPE, 2. Analisis dan rencana wave, 3. Mulai sub sesi, 4. Komunikasi, 5. Laporan, 6. Gerbang centang dan merge, 7. Log, 8. Akhir wave (+10 more)
 
-### Community 9 - "0001. Batas workspace dan pemilik"
+### Community 9 - "Penerimaan dan bukti fondasi"
+Cohesion: 0.13
+Nodes (19): Apple Silicon ARM64 dan Intel bersyarat, Uji jendela di Mac, Xcode, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai (+11 more)
+
+### Community 10 - "0001. Batas workspace dan pemilik"
 Cohesion: 0.11
 Nodes (19): 0001. Batas workspace dan pemilik, Aturan arah dependensi, Aturan untuk manifest root, Build plan, Consequences, Decision, Follow-up, Invarian (+11 more)
 
-### Community 10 - "Penerimaan dan bukti fondasi"
-Cohesion: 0.14
-Nodes (18): Apple Silicon ARM64 dan Intel bersyarat, Xcode, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai, C29 · Alur kerja GitHub Actions untuk fondasi sudah dikonfigurasi (+10 more)
-
-### Community 11 - "Scope fondasi desktop native"
-Cohesion: 0.20
-Nodes (16): C19 · Tersedia aturan lokalisasi bersama, C20 · Ada contoh minimal penggunaan lokalisasi, C21 · Kepemilikan aset bersama terdokumentasi, Validasi keluaran generator, 010 - Satu contoh lokalisasi, 011 - Aset merek bersama, Scope fondasi desktop native, Aset merek (+8 more)
-
-### Community 12 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
+### Community 11 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
 Cohesion: 0.14
 Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Jembatan, binding, dan uji tanpa jendela, Milestone 2: Jendela SwiftUI dan proyek Xcode (+5 more)
 
-### Community 13 - "0002. Batas workspace dan pemilik di macOS"
+### Community 12 - "0002. Batas workspace dan pemilik di macOS"
 Cohesion: 0.14
 Nodes (14): 0002. Batas workspace dan pemilik di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tambah satu langkah untuk peta arsitektur (+6 more)
 
-### Community 14 - "0003. Kontrak sapaan bersama di macOS"
+### Community 13 - "0003. Kontrak sapaan bersama di macOS"
 Cohesion: 0.14
 Nodes (14): 0003. Kontrak sapaan bersama di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tanpa langkah build (+6 more)
 
-### Community 15 - "Fondasi macOS"
+### Community 14 - "Fondasi macOS"
 Cohesion: 0.23
 Nodes (13): Kepemilikan memori dan pemetaan kesalahan, AppKit, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS, Jendela dan interaksi (+5 more)
 
-### Community 16 - "UniffiInternalError"
+### Community 15 - "UniffiInternalError"
 Cohesion: 0.17
 Nodes (12): UniffiInternalError, bufferOverflow, .errorDescription, incompleteData, rustPanic, unexpectedEnumCase, unexpectedNullPointer, unexpectedOptionalTag (+4 more)
+
+### Community 16 - "Scope fondasi desktop native"
+Cohesion: 0.24
+Nodes (12): C21 · Kepemilikan aset bersama terdokumentasi, 011 - Aset merek bersama, Scope fondasi desktop native, Aset merek, Aset merek berversi, Fallback dan validasi placeholder, Katalog lokalisasi bersama, Konfigurasi (+4 more)
 
 ### Community 17 - "contract_surface.rs"
 Cohesion: 0.22
@@ -198,37 +198,37 @@ Nodes (11): 0004. Konfigurasi publik: alasan, Bukti yang diperiksa, Context, Cro
 Cohesion: 0.27
 Nodes (10): API publik Rust, Eksekusi dan uji, hello(name: String) → String, Kepemilikan dan kompatibilitas, Kontrak Rust bersama, Safe Rust, Uji kontrak Core mandiri, Bekerja dari satu platform (+2 more)
 
-### Community 25 - "Log koordinasi: `000 - Panduan scope`"
+### Community 25 - "Sistem desain bersama"
+Cohesion: 0.47
+Nodes (10): Aksesibilitas kontrol native, Alias warna semantik, CSS GTK, Sistem desain bersama, Skema token desain, Tampilan terang dan gelap, Tema SwiftUI, Tipografi dan jarak (+2 more)
+
+### Community 26 - "Log koordinasi: `000 - Panduan scope`"
 Cohesion: 0.20
 Nodes (9): Blocker terbuka, Dicentang pada wave ini, Keputusan, Keputusan delegasi, Log koordinasi: `000 - Panduan scope`, Penutupan, Riwayat wave, Sub sesi wave `1` (+1 more)
 
-### Community 26 - "Milestone 1: Workspace dan kerangka Core"
+### Community 27 - "Milestone 1: Workspace dan kerangka Core"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Workspace dan kerangka Core, Milestone 2: Peta arsitektur mencatat tata letak nyata, UI / manual, UI / manual (+1 more)
 
-### Community 27 - "Milestone 1: fungsi hello dan uji Done when"
+### Community 28 - "Milestone 1: fungsi hello dan uji Done when"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: fungsi hello dan uji Done when, Milestone 2: masukan tepi, aturan kontrak, dan bukti, UI / manual, UI / manual (+1 more)
 
-### Community 28 - "0003. Tema bersama dan kontrol native"
+### Community 29 - "0003. Tema bersama dan kontrol native"
 Cohesion: 0.20
 Nodes (10): 0003. Tema bersama dan kontrol native, Build plan, Consequences, Decision, Feature design, Follow-up, Perubahan dokumen, Rationale (+2 more)
 
-### Community 29 - "0006. Satu contoh lokalisasi"
+### Community 30 - "0006. Satu contoh lokalisasi"
 Cohesion: 0.20
 Nodes (10): 0006. Satu contoh lokalisasi, Build plan, Consequences, Decision, Feature design, Follow-up, Perubahan dokumen rujukan, Rationale (+2 more)
 
-### Community 30 - "Options considered"
+### Community 31 - "Options considered"
 Cohesion: 0.20
 Nodes (10): 0006. Satu contoh lokalisasi: catatan keputusan, Bukti percobaan, Context, Keputusan yang lebih kecil, Option 1: Satu katalog JSON netral untuk semua bahasa, resource native dibuat dari katalog itu, Option 2: Satu berkas JSON per bahasa, Option 3: Format native satu OS sebagai sumber bersama, Option 4: Pustaka lokalisasi Rust yang dipakai ketiga aplikasi saat berjalan (+2 more)
 
-### Community 31 - "Log koordinasi: `<nama-SCOPE>`"
+### Community 32 - "Log koordinasi: `<nama-SCOPE>`"
 Cohesion: 0.22
 Nodes (8): Blocker terbuka, Dicentang pada wave ini, Keputusan, Keputusan delegasi, Log koordinasi: `<nama-SCOPE>`, Penutupan, Riwayat wave, Sub sesi wave `<n>`
-
-### Community 32 - "Sistem desain bersama"
-Cohesion: 0.53
-Nodes (9): Aksesibilitas kontrol native, Alias warna semantik, CSS GTK, Sistem desain bersama, Skema token desain, Tampilan terang dan gelap, Tema SwiftUI, Tipografi dan jarak (+1 more)
 
 ### Community 33 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
 Cohesion: 0.22
@@ -294,9 +294,9 @@ Nodes (4): InitializationResult, apiChecksumMismatch, contractVersionMismatch, o
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `Scope fondasi desktop native`, `Fondasi desktop native`, `quality/README.md`?**
-  _High betweenness centrality (0.073) - this node is a cross-community bridge._
-- **Why does `Validasi keluaran generator` connect `Scope fondasi desktop native` to `Sistem desain bersama`, `workspace_layout.rs`, `Penerimaan dan bukti fondasi`, `Fondasi macOS`?**
+- **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `Scope fondasi desktop native`, `Sistem desain bersama`, `quality/README.md`, `Fondasi desktop native`?**
+  _High betweenness centrality (0.074) - this node is a cross-community bridge._
+- **Why does `Validasi keluaran generator` connect `Sistem desain bersama` to `Scope fondasi desktop native`, `Penerimaan dan bukti fondasi`, `Fondasi macOS`, `workspace_layout.rs`?**
   _High betweenness centrality (0.073) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
   _312 weakly-connected nodes found - possible documentation gaps or missing edges._
@@ -304,8 +304,8 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.06842105263157895 - nodes in this community are weakly interconnected._
 - **Should `workspace_layout.rs` be split into smaller, more focused modules?**
   _Cohesion score 0.06108597285067873 - nodes in this community are weakly interconnected._
+- **Should `quality/README.md` be split into smaller, more focused modules?**
+  _Cohesion score 0.13526570048309178 - nodes in this community are weakly interconnected._
 - **Should `GreetingViewModel` be split into smaller, more focused modules?**
   _Cohesion score 0.07053140096618357 - nodes in this community are weakly interconnected._
-- **Should `Fondasi Windows` be split into smaller, more focused modules?**
-  _Cohesion score 0.08412698412698413 - nodes in this community are weakly interconnected._
 Pembaruan hook menggunakan indeks struktural lokal. Hash semantik kosong menandai dokumen yang menunggu ekstraksi semantik.

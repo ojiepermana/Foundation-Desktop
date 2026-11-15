@@ -1,12 +1,20 @@
 # 010 - Satu contoh lokalisasi
 
-Penyempurnaan alur · planned · needs a decision
+Penyempurnaan alur · in-progress
 
 Gunakan satu teks antarmuka pada layar sapaan untuk membuktikan alur dari katalog bersama ke resource bahasa native.
 
 **Done when:** Ketiga aplikasi menampilkan teks UI dari kunci yang sama, dengan aturan fallback, placeholder, dan deteksi terjemahan yang hilang.
 
-* [ ] `/architect scope 010 contoh lokalisasi untuk _root`
+**Pointer:** spec bersama [_root/0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md)
+
+* [x] `/architect scope 010 contoh lokalisasi untuk _root` (spec)
+* [ ] Build it: `/develop scope 010 contoh lokalisasi untuk _root`
+  * [ ] Milestone 1: Katalog dan sumber `localization`. Build plan langkah 1 dan 2. AC-1 sampai AC-10. needs scope 008 milestone 1 (spec _root/0003) di `main`; tidak paralel dengan build spec _root/0003 atau _root/0004
+  * [ ] Milestone 2: Dokumen rujukan mencatat keadaan nyata. Build plan langkah 3. AC-11. after milestone 1
+* [ ] Verify it: `/check verify scope 010 contoh lokalisasi untuk _root`
+* [ ] Test it: `/test scope 010 contoh lokalisasi untuk _root`
+* [ ] `/architect scope 010 contoh lokalisasi untuk macOS` (spec). after milestone 1 di atas; needs pembaruan AC-12 spec macos/0001
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 

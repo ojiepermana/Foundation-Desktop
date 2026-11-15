@@ -108,10 +108,10 @@
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
-    "mtime": 1794730741.1355429,
-    "seen": 1794731111.199797,
-    "ast_hash": "0fcb2334cc6f90fa55ce4bd023527ced",
-    "semantic_hash": "0fcb2334cc6f90fa55ce4bd023527ced"
+    "mtime": 1794744559.2128248,
+    "seen": 1794744562.5616431,
+    "ast_hash": "bbb74de888bc30be21cd41d0525a06eb",
+    "semantic_hash": ""
   },
   "docs/scope/011 - Aset merek bersama.md": {
     "mtime": 1794730741.1360652,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794744282.8395083,
-    "seen": 1794744285.677456,
-    "ast_hash": "af7bdf8a6670180a0015b31b5e503269",
+    "mtime": 1794744559.2140937,
+    "seen": 1794744562.5616472,
+    "ast_hash": "fea39a655bdb0428b8ef7f9e133f8900",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794744514.1146073,
-    "seen": 1794744517.605527,
-    "ast_hash": "66ad8b70f9810908c381aeff9452e5ce",
+    "mtime": 1794744559.2137334,
+    "seen": 1794744562.5616488,
+    "ast_hash": "7ec8d8bae79a15865993973879c61ff1",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
