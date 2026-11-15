@@ -250,5 +250,17 @@
     "seen": 1794735733.556393,
     "ast_hash": "3adacb9ec310d028ffc9292682411984",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
+    "mtime": 1794736591.7233176,
+    "seen": 1794736592.603795,
+    "ast_hash": "2011de42e5cf2ed341915361cfda0781",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0002-kontrak-sapaan-bersama/index.md": {
+    "mtime": 1794736591.7231236,
+    "seen": 1794736592.603807,
+    "ast_hash": "4fb5187ff49f85a5d21145d6b3234e8a",
+    "semantic_hash": ""
   }
 }
