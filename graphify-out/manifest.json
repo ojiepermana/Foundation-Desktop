@@ -642,9 +642,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/localization/mod.rs": {
-    "mtime": 1794752435.0739129,
-    "seen": 1794752436.5234299,
-    "ast_hash": "55ffb9de4706fc5679fa53a2c11a8d98",
+    "mtime": 1794758114.0416124,
+    "seen": 1794758116.553597,
+    "ast_hash": "bc5b468faf60719607fefefdffbe4848",
     "semantic_hash": ""
   },
   "tooling/codegen/src/localization/schema.rs": {
@@ -834,9 +834,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794756266.8909137,
-    "seen": 1794756268.4732852,
-    "ast_hash": "4c4092d5dea899ff85e7755157c42e74",
+    "mtime": 1794758114.0358639,
+    "seen": 1794758116.5536,
+    "ast_hash": "1f662e89c3db60050a559fd9f4b500a3",
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
@@ -975,6 +975,18 @@
     "mtime": 1794757881.5695362,
     "seen": 1794757883.3935292,
     "ast_hash": "78f79c372bfdd27b12cf8cd9863e8adc",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/localization_macos_contract.rs": {
+    "mtime": 1794758114.043878,
+    "seen": 1794758116.5535932,
+    "ast_hash": "325a3de83c6f15a6c67047902088cd76",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/localization/macos.rs": {
+    "mtime": 1794758114.041422,
+    "seen": 1794758116.553598,
+    "ast_hash": "3db3e9fc7d1f9f00f386215c32adc30c",
     "semantic_hash": ""
   }
 }
