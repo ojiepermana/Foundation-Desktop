@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794755017.4613528,
-    "seen": 1794755019.4304798,
-    "ast_hash": "de3b2cb751d8771a0a56bf2cae7980a0",
+    "mtime": 1794755279.1549447,
+    "seen": 1794755281.7916749,
+    "ast_hash": "a5ba198c84f65f3b1ffc805c74a7554b",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -474,15 +474,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
-    "mtime": 1794744555.5136085,
-    "seen": 1794744558.254743,
-    "ast_hash": "e213abb0afd37a34aa8b7c1b9793e75a",
+    "mtime": 1794755275.0862334,
+    "seen": 1794755278.292297,
+    "ast_hash": "fe34926a150518a0d7858934016c6374",
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794752435.0671866,
-    "seen": 1794752436.523437,
-    "ast_hash": "420daecee251826eafb3f451baae3660",
+    "mtime": 1794755275.08602,
+    "seen": 1794755278.2923038,
+    "ast_hash": "65709e0475490e592adaf9c93af60443",
     "semantic_hash": ""
   },
   "tooling/codegen/Cargo.toml": {
@@ -624,15 +624,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/rationale.md": {
-    "mtime": 1794752197.6185129,
-    "seen": 1794752200.054091,
-    "ast_hash": "86d1d78d44759623b2948c237a6d8fd8",
+    "mtime": 1794755248.0580013,
+    "seen": 1794755250.230735,
+    "ast_hash": "e7827dd4d741d0eb20f30c2df8cb4747",
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/index.md": {
-    "mtime": 1794753083.755903,
-    "seen": 1794753088.8940978,
-    "ast_hash": "4bb70542a447185d478c4286d923935f",
+    "mtime": 1794755248.0577705,
+    "seen": 1794755250.230738,
+    "ast_hash": "4f3ee6ecf58fd3d5a7c33bbc309bcbc0",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/config_rules.rs": {
@@ -660,9 +660,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
-    "mtime": 1794752828.8521287,
-    "seen": 1794752834.591329,
-    "ast_hash": "6c1d38594550de939244aa5149e1d53a",
+    "mtime": 1794755275.0864286,
+    "seen": 1794755278.2923079,
+    "ast_hash": "cd43377e43983d498b3c42c4edf169f7",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_contract.rs": {
@@ -690,14 +690,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794753978.2625053,
-    "seen": 1794753980.333806,
+    "mtime": 1794755322.0109851,
+    "seen": 1794755327.1603498,
     "ast_hash": "af4b8f8fc65ddf10ff066de46c2faa7d",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
-    "mtime": 1794753046.6814454,
-    "seen": 1794753050.8417768,
+    "mtime": 1794755322.0112002,
+    "seen": 1794755327.1603441,
     "ast_hash": "243295688f54049e8cc9a992e81a37f3",
     "semantic_hash": ""
   },
@@ -750,9 +750,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/verify.md": {
-    "mtime": 1794753514.3260243,
-    "seen": 1794753517.0772521,
-    "ast_hash": "b346520b8f77a536bd3e7325f4ee5457",
+    "mtime": 1794755248.0585356,
+    "seen": 1794755250.23074,
+    "ast_hash": "5d8b8d4fc7f673526220b4591801205d",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
@@ -792,8 +792,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794754824.4541292,
-    "seen": 1794754826.104234,
+    "mtime": 1794755322.0114243,
+    "seen": 1794755327.160335,
     "ast_hash": "5feb7693ce6723603ee95355f02500ff",
     "semantic_hash": ""
   },
@@ -870,8 +870,8 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794755305.505097,
-    "seen": 1794755308.031938,
+    "mtime": 1794755322.017394,
+    "seen": 1794755327.1603541,
     "ast_hash": "4cee97352b12a822265ee7ae732e2c79",
     "semantic_hash": ""
   }
