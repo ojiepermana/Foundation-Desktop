@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "test-preferences.json": {
-    "mtime": 1794738323.4396434,
-    "seen": 1794738325.260055,
-    "ast_hash": "3056dbf00efbe13913ea90c4ca8474f5",
+    "mtime": 1794741534.3950708,
+    "seen": 1794741536.041732,
+    "ast_hash": "9e96946fdad73d5dfd91db8213f119ef",
     "semantic_hash": ""
   },
   "crates/core/tests/contract_surface.rs": {
@@ -441,6 +441,12 @@
     "mtime": 1794741033.5262637,
     "seen": 1794741036.01794,
     "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
+    "semantic_hash": ""
+  },
+  "crates/core/tests/macos_bridge_ownership.rs": {
+    "mtime": 1794741534.3857408,
+    "seen": 1794741536.041739,
+    "ast_hash": "279a47592eb67615319332e40de8b248",
     "semantic_hash": ""
   }
 }
