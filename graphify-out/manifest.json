@@ -364,5 +364,23 @@
     "seen": 1794739939.050119,
     "ast_hash": "005d7cb6fc31c3f1454570a48c5fd9e0",
     "semantic_hash": ""
+  },
+  "bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h": {
+    "mtime": 1794740001.3535516,
+    "seen": 1794740004.8699799,
+    "ast_hash": "1f2397eaa29b6460ab6102cc8362562b",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Package.swift": {
+    "mtime": 1794740001.3530185,
+    "seen": 1794740004.869983,
+    "ast_hash": "1fa4dd93f00dbafd6c970f69bbe3f390",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift": {
+    "mtime": 1794740001.3533099,
+    "seen": 1794740004.869985,
+    "ast_hash": "ee1e6e8038a9efd34ffac1dc2f55bc31",
+    "semantic_hash": ""
   }
 }
