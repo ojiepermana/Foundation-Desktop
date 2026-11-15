@@ -2,7 +2,7 @@
 
 **Scope**: [004 - Sapaan di jendela macOS](../../../scope/004%20-%20Sapaan%20di%20jendela%20macOS.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 

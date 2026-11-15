@@ -342,9 +342,27 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794739767.6535225,
-    "seen": 1794739770.2422678,
-    "ast_hash": "13b32666d9a5301b8a6fe6c599628452",
+    "mtime": 1794739938.1432445,
+    "seen": 1794739939.0501142,
+    "ast_hash": "a0a4e1b623c02f3c25399aed2317d712",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/src/bin/uniffi-bindgen-swift.rs": {
+    "mtime": 1794739938.1144476,
+    "seen": 1794739939.050117,
+    "ast_hash": "fefaf8455dad550fd4e9818b0543cc75",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/Cargo.toml": {
+    "mtime": 1794739938.1140454,
+    "seen": 1794739939.050118,
+    "ast_hash": "730676471aca1151030449d7991f9b37",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/src/lib.rs": {
+    "mtime": 1794739938.1146348,
+    "seen": 1794739939.050119,
+    "ast_hash": "005d7cb6fc31c3f1454570a48c5fd9e0",
     "semantic_hash": ""
   }
 }
