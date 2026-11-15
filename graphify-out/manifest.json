@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
-    "mtime": 1794754628.4301035,
-    "seen": 1794754630.1234171,
-    "ast_hash": "70710dd3a70f602ba8729f68e96698a4",
+    "mtime": 1794754826.8660758,
+    "seen": 1794754828.4218318,
+    "ast_hash": "8b17e3956d713310e55d97ed9ceeebda",
     "semantic_hash": ""
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "docs/scope/011 - Aset merek bersama.md": {
-    "mtime": 1794753604.4261434,
-    "seen": 1794753610.497625,
-    "ast_hash": "ef5291085b7aaf89a00b9712590a796b",
+    "mtime": 1794754921.5467827,
+    "seen": 1794754923.244066,
+    "ast_hash": "bba4d8ad47f09736e9213831ac3230e2",
     "semantic_hash": ""
   },
   "docs/scope/012 - Build dan penerimaan per target.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794754628.4317005,
-    "seen": 1794754630.12342,
-    "ast_hash": "506d7e3d17f26bde80102af266c05fd4",
+    "mtime": 1794754921.5474117,
+    "seen": 1794754923.244063,
+    "ast_hash": "f76bd950ea4bf15005e9f1523dca03e7",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794754482.0963633,
-    "seen": 1794754483.616086,
-    "ast_hash": "3fb3c43e139d5c4aeb5d39a08d55451d",
+    "mtime": 1794754921.5475872,
+    "seen": 1794754923.2440681,
+    "ast_hash": "3b48b3c702c094404b637ad376071eef",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -792,9 +792,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794754400.8410695,
-    "seen": 1794754402.4757,
-    "ast_hash": "2a4c778fb88dedd8fcaa73515010b303",
+    "mtime": 1794754824.4541292,
+    "seen": 1794754826.104234,
+    "ast_hash": "5feb7693ce6723603ee95355f02500ff",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
@@ -851,15 +851,27 @@
     "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
     "semantic_hash": ""
   },
+  "docs/specs/macos/0007-aset-merek-bersama/index.md": {
+    "mtime": 1794754919.0735312,
+    "seen": 1794754920.915825,
+    "ast_hash": "454645e883ce3edc7bde6c0eea48d1d1",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0007-aset-merek-bersama/rationale.md": {
+    "mtime": 1794754919.073812,
+    "seen": 1794754920.915828,
+    "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
+    "semantic_hash": ""
+  },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md": {
-    "mtime": 1794754956.9894767,
-    "seen": 1794754958.7208152,
+    "mtime": 1794754970.251435,
+    "seen": 1794754973.739964,
     "ast_hash": "13d31eab9c7962b229a202b72d32e29a",
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
-    "mtime": 1794754956.9892337,
-    "seen": 1794754958.720819,
+    "mtime": 1794754970.2512295,
+    "seen": 1794754973.7399712,
     "ast_hash": "ba16e0294e103d2e9df698a62f7a6523",
     "semantic_hash": ""
   }

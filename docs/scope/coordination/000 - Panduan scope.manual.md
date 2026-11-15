@@ -15,6 +15,8 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | `F009-1` | Judul jendela dari konfigurasi publik dan nama menu aplikasi (langkah 1 sampai 4) | spec `macos/0004` AC-7 | belum ada | 009 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F010-1` | Teks tombol mengikuti bahasa: `Sapa` untuk `id` dan `id-ID`, `Greet` untuk `fr` dan Inggris, VoiceOver (langkah 1 sampai 7) | spec `macos/0006` AC-11 | belum ada | 010 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F011-1` | Mengganti ikon penanda dengan ikon aplikasi nyata dalam SVG, lalu `assets generate` dan `assets check` | spec `_root/0005` AC-10 | belum ada | 011 milestone 1 di `main`, dan berkas ikon darimu (`N9`) | `NOT_RUN` |
+| `F011-2` | Ikon aplikasi terlihat di Dock, About, Finder, dan tampilan gelap (langkah 1 sampai 6) | spec `macos/0007` AC-11 | belum ada | 011 macOS milestone 1 di `main` | `NOT_RUN` |
+| `F011-3` | Ikon nyata sampai bundel Mac: `assets generate`, `assets check`, build, lalu ulangi `F011-2` | spec `macos/0007` AC-12 | belum ada | `F011-1` selesai dan 011 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 
@@ -177,3 +179,28 @@ Dari laporan `arc-f011-spec` (2026-11-15). Membuktikan spec `_root/0005` `AC-10`
   6. Commit sumber, manifest, dan keluaran bersama.
 - **Lulus bila:** langkah 4 keluar dengan kode 0 dan baris terakhirnya memuat `0 placeholder values`; langkah 5 mencetak `0`. Bila langkah 4 menolak sumber (aturan S), ekspor ulang ikonnya; bentuk merek tidak diperbaiki oleh sesi mana pun.
 - **Hanya langkah ini yang bisa membuktikan:** bahwa berkas merek nyata lolos aturan sumber. Bila kamu hanya punya PNG atau desain berbeda per OS, spec `_root/0005` diperbarui lebih dulu.
+
+### `F011-2` · Ikon aplikasi terlihat di sesi GUI
+
+Dari laporan `arc-f011-spec` (2026-11-15). Membuktikan spec `macos/0007` `AC-11`; ini milestone 2 bagian macOS fitur 011.
+
+- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang diuji 27.0.1), Xcode 27.1, sesi desktop yang sedang login, repo pada commit yang lulus AC-4 spec `macos/0007` (milestone 1 bagian macOS sudah di-merge).
+- **Jalankan:**
+  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`. Harapan: `** BUILD SUCCEEDED **`.
+  2. `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`. Harapan: ikon di Dock adalah kotak abu abu dengan tanda silang, bukan ikon kosong bawaan sistem. Sistem boleh menambah bentuk sudut dan efeknya sendiri.
+  3. Di menu aplikasi pilih item About (item pertama). Harapan: jendela About menampilkan ikon yang sama. Tutup jendela itu.
+  4. `open -R apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`, pilih `DesktopMac.app` di Finder, tekan Command I. Harapan: Finder dan Get Info menampilkan ikon yang sama. Tutup Get Info.
+  5. System Settings, Appearance: pilih Dark. Harapan: ikon di Dock, Finder, dan About tetap terlihat sebagai kotak dengan tanda silang. Kembalikan Appearance.
+  6. Command Q, lalu `git status --short`. Harapan: tidak ada keluaran. Bila ada, catat setiap path dan jangan di-commit.
+- **Lulus bila:** setiap harapan di atas terpenuhi. Kirim host, arsitektur, versi macOS, tampilan yang aktif, dan hasil tiap langkah. Bila Dock masih menampilkan ikon lama, catat itu dan ulangi langkah 2 sesudah `killall Dock`.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa ikon dari sumber bersama benar benar tampil di Dock, Finder, dan About.
+
+### `F011-3` · Ikon nyata sampai bundel Mac
+
+Dari laporan `arc-f011-spec` (2026-11-15). Membuktikan spec `macos/0007` `AC-12`; ini milestone 3 bagian macOS fitur 011. Dijalankan sesudah `F011-1`.
+
+- **Prasyarat:** ikon SVG nyata sudah masuk `shared/assets/source/app-icon.svg` dan `"placeholder": true` sudah dihapus dari `shared/assets/brand.json` (`F011-1`); milestone 1 spec `macos/0007` di `main`.
+- **Jalankan:** `cargo run -p desktop-codegen --locked -- assets generate`, lalu `cargo run -p desktop-codegen --locked -- assets check`; commit sumber, manifest, dan dua keluaran di `apps/macos/Resources/AppIcon.icon/` bersama; jalankan ulang perintah AC-4 spec `macos/0007` (Debug dan Release); lalu ulangi enam langkah `F011-2`.
+- **Lulus bila:** `assets check` kode 0 dengan baris terakhir memuat `0 placeholder values` dan berakhir `3 outputs up to date`; kedua build `** BUILD SUCCEEDED **` dengan ikon di bundel; langkah `F011-2` menampilkan ikon nyata.
+- **Catatan untuk `F011-1`:** sesudah milestone 1 spec `macos/0007` dibangun, commit penggantian ikon juga harus memuat dua keluaran di `apps/macos/Resources/AppIcon.icon/`.
+
