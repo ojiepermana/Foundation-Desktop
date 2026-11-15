@@ -60,7 +60,7 @@ impl File {
     }
 
     /// Whether a folder segment of the path is `tests` or `Tests`.
-    fn is_test(&self) -> bool {
+    pub(super) fn is_test(&self) -> bool {
         let mut folders: Vec<&str> = self.path.split('/').collect();
         folders.pop();
         folders
