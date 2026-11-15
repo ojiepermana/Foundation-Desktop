@@ -54,10 +54,10 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794730741.0869222,
-    "seen": 1794731111.19978,
-    "ast_hash": "5005a9d5fcf7c4e31b4819c392631015",
-    "semantic_hash": "5005a9d5fcf7c4e31b4819c392631015"
+    "mtime": 1794737050.7852662,
+    "seen": 1794737053.5966961,
+    "ast_hash": "efa8d60a7abf374735c34f1b34a39f2c",
+    "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
     "mtime": 1794730741.1026645,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794736762.5202625,
-    "seen": 1794736765.1353579,
-    "ast_hash": "de39c9423e28b1ad40a1ef0a146c9cf1",
+    "mtime": 1794737050.9850307,
+    "seen": 1794737053.59669,
+    "ast_hash": "b4ce9ff5fdbf6bb225cd455682012f00",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794736970.6666152,
-    "seen": 1794736971.72524,
-    "ast_hash": "1de8cf8cd50f8bf05a3b8cc9e356d798",
+    "mtime": 1794737050.9438813,
+    "seen": 1794737053.5966961,
+    "ast_hash": "519e3d3ab6e3ae057a915367773e17ff",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794736933.7350564,
-    "seen": 1794736934.4724429,
-    "ast_hash": "89003894a8ea80d618fa0777111ed748",
+    "mtime": 1794737050.9656613,
+    "seen": 1794737053.596694,
+    "ast_hash": "fd7bf1e06dffa0b4b3b45c70b6b6a198",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
