@@ -910,5 +910,11 @@
     "seen": 1794756000.2229629,
     "ast_hash": "67a537e0dba6d048621697cdb7a96344",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0008-build-dan-penerimaan-per-target/verify.md": {
+    "mtime": 1794756161.7323334,
+    "seen": 1794756163.53902,
+    "ast_hash": "de03df4d94cc23d59a9ac5e8b1832b86",
+    "semantic_hash": ""
   }
 }
