@@ -54,9 +54,9 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794737880.9058845,
-    "seen": 1794737883.802242,
-    "ast_hash": "5b097eaf45afaf3f4a1963d2f7fa5496",
+    "mtime": 1794738212.6471436,
+    "seen": 1794738213.7650251,
+    "ast_hash": "af43f646755ac2eea0facb657707618f",
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794738128.0756269,
-    "seen": 1794738129.226642,
-    "ast_hash": "d892272d612ce44185fe42ae8b39c8ce",
+    "mtime": 1794738212.649358,
+    "seen": 1794738213.7650208,
+    "ast_hash": "58d8d84e79db10a0b7893256a91205a8",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794737050.9656613,
-    "seen": 1794737053.596694,
-    "ast_hash": "fd7bf1e06dffa0b4b3b45c70b6b6a198",
+    "mtime": 1794738212.6495435,
+    "seen": 1794738213.765013,
+    "ast_hash": "5395a1cb7a949b60bda35f0151e3908a",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {

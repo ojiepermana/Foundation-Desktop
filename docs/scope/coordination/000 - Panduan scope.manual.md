@@ -8,7 +8,7 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 
 | ID | Langkah | AC | Kotak yang dicentang dengan langkah ini `NOT_RUN` | Bisa dijalankan sesudah | Hasil |
 | --- | --- | --- | --- | --- | --- |
-| `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | belum ada | 001 milestone 1 di `main` | `NOT_RUN` |
+| `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
 
 ## Nilai dari user
 
