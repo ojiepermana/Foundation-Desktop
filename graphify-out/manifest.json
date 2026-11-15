@@ -546,9 +546,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/tokens_contract.rs": {
-    "mtime": 1794744656.4974947,
-    "seen": 1794744660.716618,
-    "ast_hash": "1eaea07e301d914935697c8fc3a23db6",
+    "mtime": 1794744717.587457,
+    "seen": 1794744720.61724,
+    "ast_hash": "d2326aeab5b7d7e4fa65d841171c1a95",
     "semantic_hash": ""
   },
   "tooling/codegen/src/tokens/mod.rs": {

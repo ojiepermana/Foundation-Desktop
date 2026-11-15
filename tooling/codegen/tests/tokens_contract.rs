@@ -4,12 +4,14 @@
 //! the committed outputs to the generator (AC-5), the determinism of the
 //! outputs (AC-6), and the resolved values in the "Nilai hasil" table of
 //! `docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md`
-//! (AC-2, AC-8).
+//! (AC-2, AC-8), the 18 broken sources of the "Kasus sumber rusak" table
+//! (AC-3, AC-4, AC-7), and the repair of stale and missing outputs (AC-5).
 
 use std::fs;
+use std::path::Path;
 
 use desktop_codegen::tokens::{self, Rgb, RoleName, Weight};
-use desktop_codegen::{check, repo_root};
+use desktop_codegen::{check, generate, repo_root};
 
 /// Reads one token file from the repo.
 fn read(path: &str) -> String {
@@ -113,4 +115,274 @@ fn resolves_light_and_dark() {
     assert_eq!(spacing, [("gap.control", 12), ("inset.window", 20)]);
 
     assert_eq!(set.placeholders, 3);
+}
+
+/// Which token file a broken source case edits.
+#[derive(Clone, Copy)]
+enum File {
+    Colors,
+    Typography,
+    Spacing,
+}
+
+/// One row of the "Kasus sumber rusak" table: replace the first `find`
+/// with `replace` in `file`, then expect a problem containing `expect`.
+struct Case {
+    number: u32,
+    file: File,
+    find: &'static str,
+    replace: &'static str,
+    expect: &'static str,
+}
+
+const CASES: [Case; 18] = [
+    Case {
+        number: 1,
+        file: File::Colors,
+        find: "\"#FAFAFA\"",
+        replace: "\"#fafafa\"",
+        expect: "colors.json: base.neutral.50.value: expected #RRGGBB with uppercase hex digits, found #fafafa",
+    },
+    Case {
+        number: 2,
+        file: File::Colors,
+        find: "\"#FAFAFA\"",
+        replace: "\"#FFF\"",
+        expect: "colors.json: base.neutral.50.value: expected #RRGGBB",
+    },
+    Case {
+        number: 3,
+        file: File::Colors,
+        find: "\"dark\": \"neutral.950\"",
+        replace: "\"dark\": \"neutral.900\"",
+        expect: "colors.json: semantic.background.dark: unknown base token neutral.900",
+    },
+    Case {
+        number: 4,
+        file: File::Colors,
+        find: "\"dark\": \"neutral.950\"",
+        replace: "\"dark\": \"accent\"",
+        expect: "colors.json: semantic.background.dark: unknown base token accent",
+    },
+    Case {
+        number: 5,
+        file: File::Colors,
+        find: "      \"dark\": \"neutral.950\"\n",
+        replace: "      \"light\": \"neutral.50\"\n",
+        expect: "colors.json: duplicate field `light`",
+    },
+    Case {
+        number: 6,
+        file: File::Colors,
+        find: "\"dark\": \"neutral.50\",\n      \"on\"",
+        replace: "\"on\"",
+        expect: "colors.json: missing field `dark`",
+    },
+    Case {
+        number: 7,
+        file: File::Colors,
+        find: "\"light\": \"brand.primary\",\n      \"dark\": \"brand.primary\"",
+        replace: "\"light\": \"neutral.50\",\n      \"dark\": \"neutral.50\"",
+        expect: "colors.json: base.brand.primary: not used by any semantic token",
+    },
+    Case {
+        number: 8,
+        file: File::Colors,
+        find: "\"#111111\"",
+        replace: "\"#999999\"",
+        expect: "colors.json: semantic.text.primary: contrast on background is ",
+    },
+    Case {
+        number: 9,
+        file: File::Colors,
+        find: "\"on\": \"background\"",
+        replace: "\"on\": \"surface\"",
+        expect: "colors.json: semantic.text.primary.on: unknown semantic color surface",
+    },
+    Case {
+        number: 10,
+        file: File::Colors,
+        find: "\"on\": \"background\"",
+        replace: "\"on\": \"text.primary\"",
+        expect: "colors.json: semantic.text.primary.on: a color cannot sit on itself",
+    },
+    Case {
+        number: 11,
+        file: File::Colors,
+        find: "\"schemaVersion\": 1",
+        replace: "\"schemaVersion\": 2",
+        expect: "colors.json: schemaVersion: expected 1, found 2",
+    },
+    Case {
+        number: 12,
+        file: File::Colors,
+        find: "\"schemaVersion\": 1,",
+        replace: "\"schemaVersion\": 1, \"focus\": {},",
+        expect: "colors.json: unknown field `focus`",
+    },
+    Case {
+        number: 13,
+        file: File::Colors,
+        find: "\"neutral.50\": {",
+        replace: "\"brand.primary\": {",
+        expect: "colors.json: duplicate key `brand.primary`",
+    },
+    Case {
+        number: 14,
+        file: File::Colors,
+        find: "\"text.primary\": {",
+        replace: "\"backgro.und\": {",
+        expect: "colors.json: semantic: names backgro.und and background collide once the dots are removed",
+    },
+    Case {
+        number: 15,
+        file: File::Colors,
+        find: "\"Main text.\"",
+        replace: "\"Main */ text\"",
+        expect: "colors.json: semantic.text.primary.description: must match",
+    },
+    Case {
+        number: 16,
+        file: File::Typography,
+        find: "\"body\"",
+        replace: "\"title\"",
+        expect: "typography.json: roles.title: unknown role, expected one of: body",
+    },
+    Case {
+        number: 17,
+        file: File::Typography,
+        find: "\"regular\"",
+        replace: "\"heavy\"",
+        expect: "typography.json: unknown variant `heavy`, expected `regular` or `semibold`",
+    },
+    Case {
+        number: 18,
+        file: File::Spacing,
+        find: "\"value\": 12 }",
+        replace: "\"value\": 12.5 }",
+        expect: "spacing.json: invalid type: floating point `12.5`, expected u64",
+    },
+];
+
+#[test]
+fn rejects_broken_sources() {
+    let colors = read(tokens::COLORS_PATH);
+    let typography = read(tokens::TYPOGRAPHY_PATH);
+    let spacing = read(tokens::SPACING_PATH);
+    let mut failures = Vec::new();
+    for case in &CASES {
+        let edit = |text: &str| {
+            assert!(
+                text.contains(case.find),
+                "case {}: the search text is not in the file",
+                case.number
+            );
+            text.replacen(case.find, case.replace, 1)
+        };
+        let result = match case.file {
+            File::Colors => tokens::parse(&edit(&colors), &typography, &spacing),
+            File::Typography => tokens::parse(&colors, &edit(&typography), &spacing),
+            File::Spacing => tokens::parse(&colors, &typography, &edit(&spacing)),
+        };
+        let lines: Vec<String> = match result {
+            Ok(_) => vec!["(accepted)".to_string()],
+            Err(problems) => problems.iter().map(ToString::to_string).collect(),
+        };
+        if !lines.iter().any(|line| line.contains(case.expect)) {
+            failures.push(format!(
+                "case {}: expected a problem containing {:?}, got {:?}",
+                case.number, case.expect, lines
+            ));
+        }
+    }
+    assert!(failures.is_empty(), "{}", failures.join("\n"));
+}
+
+/// The three schema outputs, from the repo root.
+const SCHEMAS: [&str; 3] = [
+    "design-system/schemas/colors.schema.json",
+    "design-system/schemas/spacing.schema.json",
+    "design-system/schemas/typography.schema.json",
+];
+
+/// Makes a fresh copy of the three token files, without any outputs.
+fn copy_sources(root: &Path) {
+    if root.exists() {
+        fs::remove_dir_all(root).expect("the old copy can be removed");
+    }
+    fs::create_dir_all(root.join("design-system/tokens")).expect("the copy folder can be made");
+    for path in [
+        tokens::COLORS_PATH,
+        tokens::TYPOGRAPHY_PATH,
+        tokens::SPACING_PATH,
+    ] {
+        fs::write(root.join(path), read(path)).expect("the token file can be copied");
+    }
+}
+
+#[test]
+fn check_reports_stale_and_missing_outputs_and_generate_repairs_them() {
+    let root = Path::new(env!("CARGO_TARGET_TMPDIR")).join("tokens_contract_repair");
+    copy_sources(&root);
+    let source = &tokens::SOURCE;
+
+    let problems = check(&root, source).expect_err("outputs are missing");
+    let missing: Vec<&str> = problems
+        .iter()
+        .filter(|problem| problem.message.starts_with("missing, run: "))
+        .map(|problem| problem.path.as_str())
+        .collect();
+    assert_eq!(missing, SCHEMAS);
+    assert_eq!(problems.len(), 3);
+    assert!(
+        !root.join("design-system/schemas").exists(),
+        "check must not write"
+    );
+
+    let (written, line) = generate(&root, source).expect("generate succeeds");
+    assert_eq!(written, SCHEMAS);
+    assert!(
+        line.ends_with("3 outputs, 3 written"),
+        "unexpected line: {line}"
+    );
+
+    let line = check(&root, source).expect("outputs are up to date");
+    assert!(
+        line.ends_with("3 outputs up to date"),
+        "unexpected line: {line}"
+    );
+
+    let (written, line) = generate(&root, source).expect("generate succeeds");
+    assert!(written.is_empty(), "second generate wrote {written:?}");
+    assert!(
+        line.ends_with("3 outputs, 0 written"),
+        "unexpected line: {line}"
+    );
+
+    let stale = root.join(SCHEMAS[0]);
+    fs::write(&stale, "{}").expect("the output can be edited");
+    let problems = check(&root, source).expect_err("one output is stale");
+    assert_eq!(problems.len(), 1);
+    assert_eq!(problems[0].path, SCHEMAS[0]);
+    assert!(
+        problems[0]
+            .message
+            .starts_with("differs from the generator output"),
+        "unexpected problem: {}",
+        problems[0]
+    );
+    let (written, _) = generate(&root, source).expect("generate succeeds");
+    assert_eq!(written, [SCHEMAS[0]]);
+
+    fs::write(&stale, "{}").expect("the output can be edited");
+    let colors = read(tokens::COLORS_PATH).replacen("\"#FAFAFA\"", "\"#fafafa\"", 1);
+    fs::write(root.join(tokens::COLORS_PATH), colors).expect("the source can be edited");
+    generate(&root, source).expect_err("a broken source fails");
+    assert_eq!(
+        fs::read_to_string(&stale).expect("the output is readable"),
+        "{}",
+        "generate must not write when the source is broken"
+    );
+
+    fs::remove_dir_all(&root).expect("the copy can be removed");
 }
