@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794744478.1387043,
-    "seen": 1794744480.383221,
-    "ast_hash": "60f91066abfc65c3e3a3a9a9f81bfb5e",
+    "mtime": 1794745176.3341782,
+    "seen": 1794745179.346726,
+    "ast_hash": "87c768414da35dfe6961f84e3cb30e04",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -18,10 +18,10 @@
     "semantic_hash": "3b115bb9483c28080c096b595f16a1c9"
   },
   "docs/design-system/README.md": {
-    "mtime": 1794730406.347383,
-    "seen": 1794731111.199768,
-    "ast_hash": "d5846fb898c7ad03202e5afdeac256df",
-    "semantic_hash": "d5846fb898c7ad03202e5afdeac256df"
+    "mtime": 1794745176.3345726,
+    "seen": 1794745179.3467321,
+    "ast_hash": "933918fb76492ae87cf895ce8987fdf8",
+    "semantic_hash": ""
   },
   "docs/platforms/linux/README.md": {
     "mtime": 1794730333.0976675,
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794744988.7516592,
-    "seen": 1794744995.8006232,
-    "ast_hash": "b33e8c03b0dc83d5d627e80c29430719",
+    "mtime": 1794745176.3580716,
+    "seen": 1794745179.34673,
+    "ast_hash": "48f52c601cfed1b313c7e00845ba4f37",
     "semantic_hash": ""
   },
   "design-system/schemas/typography.schema.json": {
