@@ -6,10 +6,10 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794730566.3714023,
-    "seen": 1794731111.1997619,
-    "ast_hash": "4b19528a22c76973e380c799681f6481",
-    "semantic_hash": "4b19528a22c76973e380c799681f6481"
+    "mtime": 1794737833.0803332,
+    "seen": 1794737834.141263,
+    "ast_hash": "cfe14f5ececfddfa7d6e70d8c3b1e648",
+    "semantic_hash": ""
   },
   "docs/contracts/README.md": {
     "mtime": 1794730406.3463833,
@@ -288,9 +288,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md": {
-    "mtime": 1794737559.2145882,
-    "seen": 1794737560.642653,
-    "ast_hash": "c2769f62e159d7659190ce39af76e0da",
+    "mtime": 1794737833.0856872,
+    "seen": 1794737834.141272,
+    "ast_hash": "1984d5a293540d3c60934006ec401d71",
     "semantic_hash": ""
   }
 }
