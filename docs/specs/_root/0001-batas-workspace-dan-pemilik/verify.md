@@ -33,3 +33,27 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 - AC-1: langkah 1 dan 2 · AC-2: langkah 3 dan 4 · AC-3: langkah 5 dan 6 · AC-4: langkah 7 dan 8 · AC-5: langkah 9 · AC-6: langkah 10 dan 11 · AC-7: langkah 12 sampai 15.
 - AC-8 menunggu milestone 2 (langkah 3 Build plan, `docs/architecture/README.md`).
 - AC-9 menunggu milestone 3 (langkah 4 Build plan, `BLOCKED`, `owner: user`, host Windows dan Linux).
+
+## Milestone 2: Peta arsitektur mencatat tata letak nyata
+
+Kamu bisa menjalankan semua perintah dari root repo. Perintah perbandingan tabel memakai process substitution, jadi jalankan di `bash` atau `zsh`. Hasil yang diharapkan di bawah dicoba developer pada commit langkah 3 di Mac koordinasi pada 2026-11-15. Checker yang mencentang kotaknya.
+
+### UI / manual
+
+Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah.
+
+### Commands
+
+- [ ] `grep -c 'desktop-core\|desktop-macos-ffi\|desktop-windows\|desktop-linux' docs/architecture/README.md` → angka 4 atau lebih (developer melihat `8`) → AC-8
+- [ ] `grep -c '1\.99\.1' docs/architecture/README.md` → angka 1 atau lebih (developer melihat `1`) → AC-8
+- [ ] `grep -c '^### Yang sudah ada$' docs/architecture/README.md` → `1`; `grep -c '^### Aturan arah dependensi$' docs/architecture/README.md` → `1` → AC-8
+- [ ] `diff <(awk '/^## Aturan arah dependensi$/{f=1;next} /^\*\*Aturan netral host/{f=0} f && /^\|/' docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md) <(awk '/^### Aturan arah dependensi$/{f=1;next} /^## /{f=0} f && /^\|/' docs/architecture/README.md)` → tidak mencetak apa pun, kode 0; perintah `awk` kedua sendiri mencetak 7 baris (header, pemisah, lima aturan) → AC-8
+- [ ] `grep -o '(\.\./specs/_root/0001-batas-workspace-dan-pemilik/index\.md)' docs/architecture/README.md` → satu baris; `test -f docs/architecture/../specs/_root/0001-batas-workspace-dan-pemilik/index.md` → kode 0 → AC-8
+- [ ] `grep -c 'Pada tahap scope, folder implementasi masih berupa rencana\.' docs/architecture/README.md` → `0` → AC-8
+- [ ] `grep -c 'Root workspace nantinya memuat manifest Cargo, lockfile dan konfigurasi toolchain\.' docs/architecture/README.md` → `0` → AC-8
+- [ ] Bandingkan isi `docs/architecture/README.md` dengan bagian "Perubahan dokumen arsitektur" spec ini: dua kalimat pengganti dan dua subbagian baru (sebelum heading "Aturan pengembangan yang akan dicatat") sama teksnya, dan `git diff <commit sebelum langkah 3> -- docs/architecture/README.md` tidak mengubah baris lain, termasuk tabel "Pemilik dan arah dependensi" → AC-8
+
+### Acceptance-criteria coverage
+
+- AC-8: langkah 1 sampai 8 di bagian ini.
+- AC-1 sampai AC-7 tercakup di Milestone 1. AC-9 menunggu milestone 3 (langkah 4 Build plan, `BLOCKED`, `owner: user`).

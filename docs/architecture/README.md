@@ -18,7 +18,7 @@ Jendela, navigasi, izin, event loop, dan pelepasan resource milik OS masing masi
 
 ## Tata letak yang dituju
 
-Path ini menunjukkan tempat kode **saat dibutuhkan**. Pada tahap scope, folder implementasi masih berupa rencana.
+Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace dan `crates/core/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
 
 | Lokasi yang direncanakan | Isi |
 | --- | --- |
@@ -32,9 +32,32 @@ Path ini menunjukkan tempat kode **saat dibutuhkan**. Pada tahap scope, folder i
 | `tests/fixtures/`, `tests/contracts/` | Contoh input dan uji kontrak yang bisa digunakan kembali. |
 | `scripts/`, `.github/workflows/` | Perintah lokal untuk build, generate, validate, dan test serta job CI pada host target. |
 
-Root workspace nantinya memuat manifest Cargo, lockfile dan konfigurasi toolchain. Modul baru layak dibuat saat ada tanggung jawab nyata. Dependensi mengarah melalui antarmuka publik dan tidak boleh membentuk siklus.
+Root workspace memuat manifest Cargo virtual, `Cargo.lock` yang terlacak git, dan `rust-toolchain.toml` yang mengunci Rust `1.99.1` dengan edisi `2024`. Modul baru layak dibuat saat ada tanggung jawab nyata. Dependensi mengarah melalui antarmuka publik dan tidak boleh membentuk siklus.
 
 Target bersama adalah Rust stable. Sebelum mengunci versi, periksa ketersediaan, status pemeliharaan, dukungan versi OS dan CPU, serta kecocokan compiler, SDK, pustaka dan runtime sebagai satu kombinasi. Dahulukan komponen stabil yang didukung. Untuk kandidat eksperimental seperti `windows-reactor`, keputusan bergantung pada hasil percobaan native.
+
+### Yang sudah ada
+
+| Lokasi | Isi |
+| --- | --- |
+| `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml` | Manifest workspace virtual dengan daftar anggota eksplisit, lockfile bersama, dan pin toolchain. |
+| `crates/core/` | Paket `desktop-core`, kerangka Rust Core tanpa dependensi. |
+
+Nama paket yang dicadangkan untuk lokasi yang masih rencana: `desktop-macos-ffi` di `crates/macos-ffi/`, `desktop-windows` di `apps/windows/`, dan `desktop-linux` di `apps/linux/`.
+
+### Aturan arah dependensi
+
+Dependensi mengarah ke Core dan tidak pernah membentuk siklus. Aturan berlaku untuk dependensi biasa, dependensi build, dan dependensi test.
+
+| Dari | Boleh bergantung pada | Dilarang |
+| --- | --- | --- |
+| `desktop-core` | Tidak ada anggota workspace. | Anggota lain mana pun; pustaka UI; SDK khusus OS; alat binding seperti `uniffi`. Berlaku langsung maupun transitif. |
+| `desktop-macos-ffi` | `desktop-core`, alat binding. | Crate aplikasi; pustaka UI. |
+| `desktop-windows` | `desktop-core`; pustaka UI dan SDK Windows di bawah tabel `target` untuk Windows. | `desktop-macos-ffi`, `desktop-linux`. |
+| `desktop-linux` | `desktop-core`; GTK dan libadwaita di bawah tabel `target` untuk Linux. | `desktop-macos-ffi`, `desktop-windows`. |
+| `apps/macos/` (Xcode) | `bindings/swift/` dan pustaka hasil build `desktop-macos-ffi`. | Memanggil Core lewat jalur lain. |
+
+Tidak ada anggota yang bergantung pada crate aplikasi. Anggota yang butuh pustaka satu OS menaruh dependensi itu di bawah tabel `target` untuk OS tersebut dan memberi kode yang memakainya atribut `cfg` yang sama, sehingga `cargo build --workspace --locked` berhasil di ketiga host. Bukti untuk Core adalah `cargo tree -p desktop-core --target all --all-features --prefix none --locked`, yang mencetak tepat satu baris. Rincian dan alasannya ada di [spec 0001](../specs/_root/0001-batas-workspace-dan-pemilik/index.md).
 
 ## Aturan pengembangan yang akan dicatat
 
