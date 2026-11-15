@@ -1,0 +1,9 @@
+[package]
+name = "desktop-core"
+description = "Shared behaviour for the desktop foundation, with no UI library and no OS-specific SDK."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]

@@ -3,3 +3,8 @@
 !/graphify-out/graph.html
 !/graphify-out/GRAPH_REPORT.md
 !/graphify-out/manifest.json
+/target
+DerivedData/
+xcuserdata/
+.build/
+.DS_Store

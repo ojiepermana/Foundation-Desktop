@@ -264,15 +264,33 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794737407.5647142,
-    "seen": 1794737412.161351,
-    "ast_hash": "071e214936bff280fa253f204f18337c",
+    "mtime": 1794737559.2140253,
+    "seen": 1794737560.642657,
+    "ast_hash": "29083f4990628de7f12e632595a653b6",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
     "mtime": 1794737407.564954,
     "seen": 1794737412.1613598,
     "ast_hash": "7af901c6f78630392fbf57e2f8fb268f",
+    "semantic_hash": ""
+  },
+  "crates/core/src/lib.rs": {
+    "mtime": 1794737490.7305584,
+    "seen": 1794737501.197765,
+    "ast_hash": "78b7bdeda63bfd27210ab07d0f0f402d",
+    "semantic_hash": ""
+  },
+  "crates/core/Cargo.toml": {
+    "mtime": 1794737490.7302663,
+    "seen": 1794737501.197768,
+    "ast_hash": "9527894858646b0369568062745b4e19",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md": {
+    "mtime": 1794737559.2145882,
+    "seen": 1794737560.642653,
+    "ast_hash": "c2769f62e159d7659190ce39af76e0da",
     "semantic_hash": ""
   }
 }
