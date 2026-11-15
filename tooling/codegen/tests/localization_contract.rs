@@ -6,8 +6,11 @@
 //! a complete committed catalog (AC-6), and the resolved values in the
 //! "Nilai hasil" table of
 //! `docs/specs/_root/0006-satu-contoh-lokalisasi/index.md` (AC-2, AC-7).
+//! They also run the test catalogs K-1 and K-2 (AC-5, AC-6, AC-7) and the
+//! 31 rows of the "Kasus sumber rusak" table (AC-3, AC-4, AC-5, AC-8).
 
 use std::fs;
+use std::path::Path;
 
 use desktop_codegen::localization::{self, Catalog, Origin};
 use desktop_codegen::{check, repo_root};
@@ -109,4 +112,303 @@ fn generation_is_deterministic() {
             output.path
         );
     }
+}
+
+/// Replaces the first `find` with `replace` in the real catalog.
+fn edited(find: &str, replace: &str) -> String {
+    let text = real_catalog();
+    assert!(text.contains(find), "{find:?} is not in the real catalog");
+    text.replacen(find, replace, 1)
+}
+
+/// Test catalog K-1: placeholders in a different order per locale.
+fn catalog_k1() -> String {
+    edited("\"Greet\"", "\"{name}, welcome to {app}.\"").replacen(
+        "\"Sapa\"",
+        "\"Selamat datang di {app}, {name}.\"",
+        1,
+    )
+}
+
+/// Test catalog K-2: a third locale and no `id` text.
+fn catalog_k2() -> String {
+    edited("[\"en\", \"id\"]", "[\"en\", \"id\", \"ms\"]").replacen(
+        "\"Greet\",\n        \"id\": \"Sapa\"",
+        "\"Greet\"",
+        1,
+    )
+}
+
+#[test]
+fn placeholders_may_reorder() {
+    let catalog = parse_ok(&catalog_k1());
+    assert_eq!(catalog.entries.len(), 1);
+    assert_eq!(catalog.entries[0].placeholders, ["name", "app"]);
+    let origins: Vec<Origin> = catalog.entries[0]
+        .texts
+        .iter()
+        .map(|text| text.origin)
+        .collect();
+    assert_eq!(origins, [Origin::Own, Origin::Own]);
+    assert!(catalog.missing.is_empty());
+}
+
+#[test]
+fn missing_translations_are_listed_and_fall_back() {
+    let text = catalog_k2();
+    let catalog = parse_ok(&text);
+    assert_eq!(catalog.locales, ["en", "id", "ms"]);
+    assert_eq!(
+        texts(&catalog, 0),
+        [
+            ("en", "Greet", Origin::Own),
+            ("id", "Greet", Origin::Fallback),
+            ("ms", "Greet", Origin::Fallback),
+        ]
+    );
+    let missing: Vec<(&str, &str)> = catalog
+        .missing
+        .iter()
+        .map(|missing| (missing.key.as_str(), missing.locale.as_str()))
+        .collect();
+    assert_eq!(
+        missing,
+        [("greeting.submit", "id"), ("greeting.submit", "ms")]
+    );
+
+    let root = Path::new(env!("CARGO_TARGET_TMPDIR")).join("localization_contract_k2");
+    if root.exists() {
+        fs::remove_dir_all(&root).expect("the old copy can be removed");
+    }
+    let path = root.join(localization::CATALOG_PATH);
+    fs::create_dir_all(path.parent().expect("the catalog has a folder"))
+        .expect("the copy folder can be made");
+    fs::write(&path, &text).expect("the catalog can be copied");
+    let plan = (localization::SOURCE.plan)(&root).expect("K-2 is valid");
+    assert_eq!(
+        plan.summary,
+        "1 keys, 3 locales, 2 missing translations (greeting.submit id; greeting.submit ms)"
+    );
+    fs::remove_dir_all(&root).expect("the copy can be removed");
+}
+
+/// One row of the "Kasus sumber rusak" table: replace the first `find`
+/// with `replace` in the real catalog, then expect a problem containing
+/// `expect`.
+struct Case {
+    number: u32,
+    find: &'static str,
+    replace: &'static str,
+    expect: &'static str,
+}
+
+/// The message of cases 23 to 28.
+const BRACES: &str =
+    "catalog.json: entries.greeting.submit.text.en: braces must form {name} placeholders";
+
+const CASES: [Case; 31] = [
+    Case {
+        number: 1,
+        find: "\"schemaVersion\": 1",
+        replace: "\"schemaVersion\": 2",
+        expect: "catalog.json: schemaVersion: expected 1, found 2",
+    },
+    Case {
+        number: 2,
+        find: "\"schemaVersion\": 1",
+        replace: "\"schemaVersion\": 1.0",
+        expect: "catalog.json: invalid type: floating point `1.0`, expected u64",
+    },
+    Case {
+        number: 3,
+        find: "\"$schema\": \"./catalog.schema.json\"",
+        replace: "\"$schema\": \"other.json\"",
+        expect: "catalog.json: $schema: expected ./catalog.schema.json, found other.json",
+    },
+    Case {
+        number: 4,
+        find: "\"schemaVersion\": 1,",
+        replace: "\"schemaVersion\": 1, \"notes\": \"x\",",
+        expect: "catalog.json: unknown field `notes`",
+    },
+    Case {
+        number: 5,
+        find: "\"id\": \"Sapa\"",
+        replace: "\"en\": \"Sapa\"",
+        expect: "catalog.json: duplicate key `en`",
+    },
+    Case {
+        number: 6,
+        find: "[\"en\", \"id\"]",
+        replace: "\"en\"",
+        expect: "catalog.json: invalid type: string \"en\", expected a sequence",
+    },
+    Case {
+        number: 7,
+        find: "\"greeting.submit\"",
+        replace: "\"Greeting.submit\"",
+        expect: "catalog.json: entries.Greeting.submit: key must match",
+    },
+    Case {
+        number: 8,
+        find: "\"greeting.submit\"",
+        replace: "\"greeting\"",
+        expect: "catalog.json: entries.greeting: key must match",
+    },
+    Case {
+        number: 9,
+        find: "\"greeting.submit\"",
+        replace: "\"greeting..submit\"",
+        expect: "catalog.json: entries.greeting..submit: key must match",
+    },
+    Case {
+        number: 10,
+        find: "\"greeting.submit\"",
+        replace: "\"greeting.submit_label\"",
+        expect: "catalog.json: entries.greeting.submit_label: key must match",
+    },
+    Case {
+        number: 11,
+        find: "\"greeting.submit\"",
+        replace: "\"greeting.1st\"",
+        expect: "catalog.json: entries.greeting.1st: key must match",
+    },
+    Case {
+        number: 12,
+        find: "[\"en\", \"id\"]",
+        replace: "[\"en\", \"ID\"]",
+        expect: "catalog.json: locales.ID: locale must match",
+    },
+    Case {
+        number: 13,
+        find: "[\"en\", \"id\"]",
+        replace: "[\"en\", \"pt_BR\"]",
+        expect: "catalog.json: locales.pt_BR: locale must match",
+    },
+    Case {
+        number: 14,
+        find: "[\"en\", \"id\"]",
+        replace: "[\"en\", \"zh-Hans\"]",
+        expect: "catalog.json: locales.zh-Hans: locale must match",
+    },
+    Case {
+        number: 15,
+        find: "[\"en\", \"id\"]",
+        replace: "[\"en\", \"en\"]",
+        expect: "catalog.json: locales: en is listed twice",
+    },
+    Case {
+        number: 16,
+        find: "[\"en\", \"id\"]",
+        replace: "[]",
+        expect: "catalog.json: locales: needs at least one locale",
+    },
+    Case {
+        number: 17,
+        find: "\"sourceLocale\": \"en\"",
+        replace: "\"sourceLocale\": \"fr\"",
+        expect: "catalog.json: sourceLocale: fr is not listed in locales",
+    },
+    Case {
+        number: 18,
+        find: "\"id\": \"Sapa\"",
+        replace: "\"fr\": \"Saluer\"",
+        expect: "catalog.json: entries.greeting.submit.text.fr: locale is not listed in locales",
+    },
+    Case {
+        number: 19,
+        find: "        \"en\": \"Greet\",\n",
+        replace: "",
+        expect: "catalog.json: entries.greeting.submit.text: missing source text for en",
+    },
+    Case {
+        number: 20,
+        find: "\"Sapa\"",
+        replace: "\"\"",
+        expect: "catalog.json: entries.greeting.submit.text.id: text is empty",
+    },
+    Case {
+        number: 21,
+        find: "\"Sapa\"",
+        replace: "\"   \"",
+        expect: "catalog.json: entries.greeting.submit.text.id: text is empty",
+    },
+    Case {
+        number: 22,
+        find: "\"Sapa\"",
+        replace: "\"Sa\\tpa\"",
+        expect: "catalog.json: entries.greeting.submit.text.id: text contains a control character",
+    },
+    Case {
+        number: 23,
+        find: "\"Greet\"",
+        replace: "\"Hi {\"",
+        expect: BRACES,
+    },
+    Case {
+        number: 24,
+        find: "\"Greet\"",
+        replace: "\"Hi }\"",
+        expect: BRACES,
+    },
+    Case {
+        number: 25,
+        find: "\"Greet\"",
+        replace: "\"Hi {Name}\"",
+        expect: BRACES,
+    },
+    Case {
+        number: 26,
+        find: "\"Greet\"",
+        replace: "\"Hi {}\"",
+        expect: BRACES,
+    },
+    Case {
+        number: 27,
+        find: "\"Greet\"",
+        replace: "\"Hi {na me}\"",
+        expect: BRACES,
+    },
+    Case {
+        number: 28,
+        find: "\"Greet\"",
+        replace: "\"Hi {{name}}\"",
+        expect: BRACES,
+    },
+    Case {
+        number: 29,
+        find: "\"Greet\"",
+        replace: "\"Hi {name}\"",
+        expect: "catalog.json: entries.greeting.submit.text.id: placeholders differ from en: expected name, found none",
+    },
+    Case {
+        number: 30,
+        find: "\"Sapa\"",
+        replace: "\"Hai {user}\"",
+        expect: "catalog.json: entries.greeting.submit.text.id: placeholders differ from en: expected none, found user",
+    },
+    Case {
+        number: 31,
+        find: "shows the greeting.",
+        replace: "shows the greeting */",
+        expect: "catalog.json: entries.greeting.submit.description: must match",
+    },
+];
+
+#[test]
+fn rejects_broken_catalogs() {
+    let mut failures = Vec::new();
+    for case in &CASES {
+        let lines: Vec<String> = match localization::parse(&edited(case.find, case.replace)) {
+            Ok(_) => vec!["(accepted)".to_string()],
+            Err(problems) => problems.iter().map(ToString::to_string).collect(),
+        };
+        if !lines.iter().any(|line| line.contains(case.expect)) {
+            failures.push(format!(
+                "case {}: expected a problem containing {:?}, got {:?}",
+                case.number, case.expect, lines
+            ));
+        }
+    }
+    assert!(failures.is_empty(), "{}", failures.join("\n"));
 }

@@ -660,15 +660,21 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_contract.rs": {
-    "mtime": 1794752193.7805145,
-    "seen": 1794752195.4428868,
-    "ast_hash": "a8554df13117edac10946b77be8971e9",
+    "mtime": 1794752238.1972697,
+    "seen": 1794752242.060114,
+    "ast_hash": "b0e0d0bca08e7362708772321d0b873c",
     "semantic_hash": ""
   },
   "shared/localization/README.md": {
     "mtime": 1794752193.7722304,
     "seen": 1794752195.442888,
     "ast_hash": "298c5d751b6299940d3860305e89c487",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
+    "mtime": 1794752290.6653206,
+    "seen": 1794752294.8964632,
+    "ast_hash": "d5e6c2e0946d34e026ee7e2dbad58065",
     "semantic_hash": ""
   }
 }
