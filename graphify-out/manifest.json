@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794755123.3433676,
-    "seen": 1794755127.263606,
-    "ast_hash": "4e036fa53f92ef6b8693631f6709d924",
+    "mtime": 1794755204.6598582,
+    "seen": 1794755207.860571,
+    "ast_hash": "72397c32a98534009cfe564c03bc2aae",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -876,14 +876,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md": {
-    "mtime": 1794755172.688284,
-    "seen": 1794755177.015553,
+    "mtime": 1794755237.1077173,
+    "seen": 1794755239.50836,
     "ast_hash": "685b011631737b508f84c798d04d09ab",
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
-    "mtime": 1794755172.6880515,
-    "seen": 1794755177.0155609,
+    "mtime": 1794755237.1072202,
+    "seen": 1794755239.508363,
     "ast_hash": "d85d92a8e5e10da9218bc7ca6e347b7d",
     "semantic_hash": ""
   }
