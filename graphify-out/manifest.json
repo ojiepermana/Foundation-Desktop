@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794744478.1387043,
-    "seen": 1794744480.383221,
-    "ast_hash": "60f91066abfc65c3e3a3a9a9f81bfb5e",
+    "mtime": 1794745176.3341782,
+    "seen": 1794745179.346726,
+    "ast_hash": "87c768414da35dfe6961f84e3cb30e04",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -18,10 +18,10 @@
     "semantic_hash": "3b115bb9483c28080c096b595f16a1c9"
   },
   "docs/design-system/README.md": {
-    "mtime": 1794730406.347383,
-    "seen": 1794731111.199768,
-    "ast_hash": "d5846fb898c7ad03202e5afdeac256df",
-    "semantic_hash": "d5846fb898c7ad03202e5afdeac256df"
+    "mtime": 1794745176.3345726,
+    "seen": 1794745179.3467321,
+    "ast_hash": "933918fb76492ae87cf895ce8987fdf8",
+    "semantic_hash": ""
   },
   "docs/platforms/linux/README.md": {
     "mtime": 1794730333.0976675,
@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
-    "mtime": 1794743710.9462507,
-    "seen": 1794743729.0393448,
-    "ast_hash": "eca0c4f6fa0d157c78f583f293f88771",
+    "mtime": 1794745128.5609655,
+    "seen": 1794745133.9051552,
+    "ast_hash": "bdd10a1e037abc6524cd5222f8f78814",
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794744559.2137334,
-    "seen": 1794744562.5616488,
-    "ast_hash": "7ec8d8bae79a15865993973879c61ff1",
+    "mtime": 1794745193.092047,
+    "seen": 1794745196.071697,
+    "ast_hash": "362d517a6b05115abf4910722ac0abb5",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794744441.3574083,
-    "seen": 1794744443.858948,
-    "ast_hash": "55ef9079b92da72af4cfc198247d9ce5",
+    "mtime": 1794745128.5696309,
+    "seen": 1794745133.9051478,
+    "ast_hash": "70f897c6897d1f3ad9771eb6512e66fa",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794745281.7265236,
-    "seen": 1794745283.515074,
-    "ast_hash": "19d6199b45bb1db422768b3160fe0a48",
+    "mtime": 1794745294.6768725,
+    "seen": 1794745295.919669,
+    "ast_hash": "13971e7038bf4a1bea3d8d42ca369d48",
     "semantic_hash": ""
   },
   "design-system/schemas/typography.schema.json": {
@@ -579,6 +579,18 @@
     "mtime": 1794744988.6528747,
     "seen": 1794744995.8006358,
     "ast_hash": "bf415a267b8024d83db1a627ed148497",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0004-konfigurasi-publik/rationale.md": {
+    "mtime": 1794745121.5787337,
+    "seen": 1794745127.4907122,
+    "ast_hash": "f262c92351d406625d7fbba0180c6375",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0004-konfigurasi-publik/index.md": {
+    "mtime": 1794745121.5785213,
+    "seen": 1794745127.490716,
+    "ast_hash": "82dac752d3b9514ebceaad43e882517d",
     "semantic_hash": ""
   }
 }

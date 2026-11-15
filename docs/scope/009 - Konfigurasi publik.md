@@ -14,7 +14,15 @@ Pisahkan nilai publik bersama dari pengaturan lokal dan rahasia penandatanganan.
   * [ ] Milestone 2: Dokumen rujukan mencatat sumber yang nyata. Build plan langkah 3. AC-8, AC-9. after milestone 1
 * [ ] Verify it: `/check verify scope 009 konfigurasi publik untuk _root`
 * [ ] Test it: `/test scope 009 konfigurasi publik untuk _root`
-* [ ] `/architect scope 009 konfigurasi publik untuk macOS` (spec). after spec _root/0004
+
+**macOS** · spec [macos/0004](../specs/macos/0004-konfigurasi-publik/index.md)
+
+* [x] `/architect scope 009 konfigurasi publik untuk macOS` (spec)
+* [ ] Build it: `/develop scope 009 konfigurasi publik untuk macOS`
+  * [ ] Milestone 1: Setelan Xcode dari sumber bersama. Build plan langkah 1 sampai 3. AC-1, AC-2, AC-3, AC-4, AC-5, AC-6, AC-8, AC-9, AC-10, AC-11. needs scope 009 milestone 1 (spec _root/0004) di `main`; needs pembaruan spec macos/0001; tidak paralel dengan build _root/0004
+  * [ ] Milestone 2: Sesi GUI di Mac. Build plan langkah 4. AC-7. after milestone 1; needs sesi GUI di Mac (`BLOCKED`, `owner: user`)
+* [ ] Verify it: `/check verify scope 009 konfigurasi publik untuk macOS`
+* [ ] Test it: `/test scope 009 konfigurasi publik untuk macOS`
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 
