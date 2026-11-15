@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 18:37`
+- **Diperbarui:** `2026-11-15 18:38`
 
 ## Sub sesi wave `2`
 
@@ -95,6 +95,7 @@
 | 2026-11-15 | Merge tambahan `AGENTS.md` dari audit 002 disetujui user ("Ya, merge"). Sebelum merge, auditor diminta menyegarkan hanya fakta yang usang karena 53 commit `main` sesudah audit (anggota `desktop-macos-ffi`, lokasi macOS, perintah `swift test` dan `xcodebuild`, test `macos_bridge_ownership.rs`), tanpa menambah bagian baru; lead memeriksa selisihnya terhadap usulan yang disetujui dan menunjukkannya ke user. | user |
 | 2026-11-15 | Pada giliran user ini lead memulai lima sesi baru dengan `source_branch: main`: `arc-f011-spec` dan `arc-f010-spec` (langsung), `arc-f002-spec`, `arc-f012-spec`, dan `dev-f008-m1` (standby). Empat architect berjalan bersamaan (008, 009, 010, 011); batas architect 6. Scope 002 sengaja menunggu spec `_root/0003`, karena keduanya menyentuh rumah pemeriksaan dan validasi. | lead |
 | 2026-11-15 | Audit 002 di-merge (`d753c2a`) sesudah disegarkan. Selisih terhadap usulan yang disetujui user: kalimat pembuka dan butir Anggota kini menyebut jembatan, binding, dan aplikasi macOS; satu butir Stack baru untuk macOS; tiga perintah macOS di Commands; kalimat Specs menyebut `docs/reviews/`; dua butir Rules baru (binding dibuat ulang di commit yang sama; hanya `Interop` yang mengimpor binding), keduanya merujuk spec `macos/0001`; di file Core satu baris tabel dan satu butir Gotchas untuk `macos_bridge_ownership.rs`. Masukan baru untuk architect 002: test Core itu memakai `include_str!` ke `crates/macos-ffi/`, sehingga `cargo test -p desktop-core` tidak bisa dikompilasi tanpa crate jembatan; ini berseberangan dengan maksud AC-2 spec `_root/0001` (Core diuji sendiri) dan lolos gerbang tester 004 oleh lead. Diputuskan di spec 002 apakah pemeriksaan lintas crate boleh tinggal di uji Core. | lead |
+| 2026-11-15 | `/sync` wave 1 dijalankan lead (mode `branch`, rentang `9b67c13..HEAD`, 21 file sumber). Hasil: `AGENTS.md` root dan `crates/core/AGENTS.md` sudah cocok dengan kode (baru disegarkan audit), jadi tidak ada baris yang ditambah; baris `**Status**` spec `macos/0003` `Proposed` → `In Progress` mengikuti status fitur 003; tidak ada kotak scope yang dicentang `/sync`. Sengaja tidak dilakukan: `/sync` boleh mencentang `Build it` dari bukti kode, tetapi `Build it` fitur 001 dan 004 tetap terbuka karena gerbangnya menunggu `F001-1`, `F004-1`, `F004-2`; `AGENTS.md` bersarang untuk `crates/macos-ffi/` dan `apps/macos/` (area baru di rentang ini) tidak dibuat, karena aturan `/sync` mewajibkan `CLAUDE.md` pendamping dan user belum memutuskan file itu; dicatat sebagai celah konteks untuk `/audit`. Tawaran mencari Agent Skill dan MCP untuk alat baru (UniFFI, SwiftUI, Swift Testing) tidak dijalankan; disampaikan ke user. Di luar wewenang `/sync` dan lead, untuk user: `README.md` root ("semua fitur `planned`"), `docs/architecture/README.md` (ADR di `docs/decisions/`), `docs/contracts/README.md` (kemungkinan `unsafe`). | lead |
 
 ## Keputusan delegasi
 
@@ -157,7 +158,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 001 · Milestone 3 (AC-9) dan `Build it` ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
 - 004 · Milestone 4 dan `Build it` ← langkah manual `F004-1` dan `F004-2`.
-- `README.md` masih menyebut semua fitur `planned`; diperbarui lewat `/sync` akhir wave.
+- `README.md` root masih menyebut semua fitur `planned` dan repo "berisi dokumentasi perencanaan"; `/sync` tidak berwenang atas file itu, jadi menunggu user atau item architect.
 - 012 · `/architect scope 012 build dan penerimaan untuk _root` ← spec 008 sampai 011 dan 002 diterima, supaya skrip dan CI membungkus perintah yang sudah ada.
 - 008 sampai 012 bagian macOS ← spec `_root` masing masing, dan alur 004 terbukti di jendela (`F004-1`, `F004-2`).
 

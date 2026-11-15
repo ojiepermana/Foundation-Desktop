@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794742647.7064505,
-    "seen": 1794742649.632786,
-    "ast_hash": "636727cc8085f9a7e12a676d8d2513fa",
+    "mtime": 1794742716.3334963,
+    "seen": 1794742719.0781188,
+    "ast_hash": "e073f5a8db940e17a6aa6ce225727773",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -426,9 +426,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
-    "mtime": 1794740726.6282058,
-    "seen": 1794740727.807503,
-    "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
+    "mtime": 1794742716.384685,
+    "seen": 1794742719.078124,
+    "ast_hash": "9693d37ba3cf9366f846a05205e4574b",
     "semantic_hash": ""
   },
   "apps/macos/App/DesktopMacApp.swift": {
