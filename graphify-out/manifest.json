@@ -622,5 +622,11 @@
     "seen": 1794745651.7074099,
     "ast_hash": "4f0b665ddb92e8b395aec1d8b7628dcf",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0004-konfigurasi-publik/verify.md": {
+    "mtime": 1794745709.6699047,
+    "seen": 1794745711.104518,
+    "ast_hash": "d54294557922bfca896049462728e21b",
+    "semantic_hash": ""
   }
 }
