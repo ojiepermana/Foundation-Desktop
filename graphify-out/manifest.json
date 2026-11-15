@@ -906,9 +906,9 @@
     "semantic_hash": ""
   },
   "scripts/lib.sh": {
-    "mtime": 1794756247.7253728,
-    "seen": 1794756249.321429,
-    "ast_hash": "0088702bf81aee4f1dad7d440acbc4e3",
+    "mtime": 1794760369.1567848,
+    "seen": 1794760371.672496,
+    "ast_hash": "9f02472cb0c4e0ac3b6215dc61d84bed",
     "semantic_hash": ""
   },
   "scripts/test.sh": {
@@ -1041,6 +1041,24 @@
     "mtime": 1794759977.591315,
     "seen": 1794759979.486847,
     "ast_hash": "d3dbb50af1ff24801233e304dbc266f0",
+    "semantic_hash": ""
+  },
+  "scripts/generate-bindings.sh": {
+    "mtime": 1794760369.1564999,
+    "seen": 1794760371.67248,
+    "ast_hash": "c50f7a82b8aa3d3f083b383f71c7698d",
+    "semantic_hash": ""
+  },
+  "scripts/build-macos.sh": {
+    "mtime": 1794760369.1562524,
+    "seen": 1794760371.672487,
+    "ast_hash": "fe1e70936c46819f85fa232705e0a74c",
+    "semantic_hash": ""
+  },
+  "scripts/generate-design-tokens.sh": {
+    "mtime": 1794760369.156625,
+    "seen": 1794760371.672491,
+    "ast_hash": "25c730d9328ed8090be8fcd4d2d557a7",
     "semantic_hash": ""
   }
 }
