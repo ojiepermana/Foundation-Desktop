@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794755017.4613528,
-    "seen": 1794755019.4304798,
-    "ast_hash": "de3b2cb751d8771a0a56bf2cae7980a0",
+    "mtime": 1794755123.3433676,
+    "seen": 1794755127.263606,
+    "ast_hash": "4e036fa53f92ef6b8693631f6709d924",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -846,9 +846,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794754604.260467,
-    "seen": 1794754605.9786072,
-    "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
+    "mtime": 1794755069.9269426,
+    "seen": 1794755071.670568,
+    "ast_hash": "517b21c71c9e7462155e6b53a9af3fe7",
     "semantic_hash": ""
   },
   "docs/specs/macos/0007-aset-merek-bersama/index.md": {
@@ -863,16 +863,28 @@
     "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
     "semantic_hash": ""
   },
-  "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
-    "mtime": 1794755162.635568,
-    "seen": 1794755164.302028,
-    "ast_hash": "d85d92a8e5e10da9218bc7ca6e347b7d",
+  "tooling/codegen/tests/architecture_rules.rs": {
+    "mtime": 1794755062.75065,
+    "seen": 1794755064.329476,
+    "ast_hash": "1e0c0da8d94525a6427a1441b17db421",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
+    "mtime": 1794755069.9273121,
+    "seen": 1794755071.670572,
+    "ast_hash": "c23202b5aaa1f75924b4ab43fddabefe",
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md": {
-    "mtime": 1794755162.6357725,
-    "seen": 1794755164.3020318,
+    "mtime": 1794755172.688284,
+    "seen": 1794755177.015553,
     "ast_hash": "685b011631737b508f84c798d04d09ab",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
+    "mtime": 1794755172.6880515,
+    "seen": 1794755177.0155609,
+    "ast_hash": "d85d92a8e5e10da9218bc7ca6e347b7d",
     "semantic_hash": ""
   }
 }
