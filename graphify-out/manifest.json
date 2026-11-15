@@ -258,9 +258,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/index.md": {
-    "mtime": 1794736899.2145047,
-    "seen": 1794736899.7673888,
-    "ast_hash": "97c3f9fa4351b092a46bb9c7d44708c1",
+    "mtime": 1794737768.9385607,
+    "seen": 1794737769.946007,
+    "ast_hash": "7e93aae165b9d8b7966c126d64e093fd",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
@@ -276,9 +276,9 @@
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
-    "mtime": 1794737490.7305584,
-    "seen": 1794737501.197765,
-    "ast_hash": "78b7bdeda63bfd27210ab07d0f0f402d",
+    "mtime": 1794737768.9257822,
+    "seen": 1794737769.94601,
+    "ast_hash": "c0cd3d402750f3bb6ee8a88afac93fdc",
     "semantic_hash": ""
   },
   "crates/core/Cargo.toml": {
@@ -291,6 +291,12 @@
     "mtime": 1794737559.2145882,
     "seen": 1794737560.642653,
     "ast_hash": "c2769f62e159d7659190ce39af76e0da",
+    "semantic_hash": ""
+  },
+  "crates/core/src/greeting.rs": {
+    "mtime": 1794737768.9256017,
+    "seen": 1794737769.946012,
+    "ast_hash": "0e4c12a04427ae16734cc94295cd3d1d",
     "semantic_hash": ""
   }
 }
