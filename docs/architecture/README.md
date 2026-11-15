@@ -58,6 +58,7 @@ Dependensi mengarah ke Core dan tidak pernah membentuk siklus. Aturan berlaku un
 | `desktop-macos-ffi` | `desktop-core`, alat binding. | Crate aplikasi; pustaka UI. |
 | `desktop-windows` | `desktop-core`; pustaka UI dan SDK Windows di bawah tabel `target` untuk Windows. | `desktop-macos-ffi`, `desktop-linux`. |
 | `desktop-linux` | `desktop-core`; GTK dan libadwaita di bawah tabel `target` untuk Linux. | `desktop-macos-ffi`, `desktop-windows`. |
+| `desktop-codegen` | Pustaka teks umum seperti `serde` dan `serde_json`. | Anggota workspace mana pun; pustaka UI; SDK khusus OS. Tidak ada anggota yang bergantung padanya. |
 | `apps/macos/` (Xcode) | `bindings/swift/` dan pustaka hasil build `desktop-macos-ffi`. | Memanggil Core lewat jalur lain. |
 
 Tidak ada anggota yang bergantung pada crate aplikasi. Anggota yang butuh pustaka satu OS menaruh dependensi itu di bawah tabel `target` untuk OS tersebut dan memberi kode yang memakainya atribut `cfg` yang sama, sehingga `cargo build --workspace --locked` berhasil di ketiga host. Bukti untuk Core adalah `cargo tree -p desktop-core --target all --all-features --prefix none --locked`, yang mencetak tepat satu baris. Rincian dan alasannya ada di [spec 0001](../specs/_root/0001-batas-workspace-dan-pemilik/index.md).

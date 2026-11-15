@@ -13,6 +13,6 @@
 | <a id="scope-07"></a>007 | [Sapaan di jendela Linux](007%20-%20Sapaan%20di%20jendela%20Linux.md) | Alur native | planned |
 | <a id="scope-08"></a>008 | [Tema bersama dan kontrol native](008%20-%20Tema%20bersama%20dan%20kontrol%20native.md) | Penyempurnaan alur | in-progress |
 | <a id="scope-09"></a>009 | [Konfigurasi publik](009%20-%20Konfigurasi%20publik.md) | Penyempurnaan alur | in-progress |
-| <a id="scope-10"></a>010 | [Satu contoh lokalisasi](010%20-%20Satu%20contoh%20lokalisasi.md) | Penyempurnaan alur | planned |
+| <a id="scope-10"></a>010 | [Satu contoh lokalisasi](010%20-%20Satu%20contoh%20lokalisasi.md) | Penyempurnaan alur | in-progress |
 | <a id="scope-11"></a>011 | [Aset merek bersama](011%20-%20Aset%20merek%20bersama.md) | Penyempurnaan alur | planned |
 | <a id="scope-12"></a>012 | [Build dan penerimaan per target](012%20-%20Build%20dan%20penerimaan%20per%20target.md) | Penerimaan | planned |

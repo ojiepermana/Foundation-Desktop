@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794741186.4283166,
-    "seen": 1794741187.3231308,
-    "ast_hash": "bb2759fbf52f3001ce332ca326d72493",
+    "mtime": 1794744478.1387043,
+    "seen": 1794744480.383221,
+    "ast_hash": "60f91066abfc65c3e3a3a9a9f81bfb5e",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -108,10 +108,10 @@
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
-    "mtime": 1794730741.1355429,
-    "seen": 1794731111.199797,
-    "ast_hash": "0fcb2334cc6f90fa55ce4bd023527ced",
-    "semantic_hash": "0fcb2334cc6f90fa55ce4bd023527ced"
+    "mtime": 1794744559.2128248,
+    "seen": 1794744562.5616431,
+    "ast_hash": "bbb74de888bc30be21cd41d0525a06eb",
+    "semantic_hash": ""
   },
   "docs/scope/011 - Aset merek bersama.md": {
     "mtime": 1794730741.1360652,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794744282.8395083,
-    "seen": 1794744285.677456,
-    "ast_hash": "af7bdf8a6670180a0015b31b5e503269",
+    "mtime": 1794744559.2140937,
+    "seen": 1794744562.5616472,
+    "ast_hash": "fea39a655bdb0428b8ef7f9e133f8900",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794744282.8390856,
-    "seen": 1794744285.677454,
-    "ast_hash": "2ca12b8c691f04fe8469dbfd1c683d64",
+    "mtime": 1794744559.2137334,
+    "seen": 1794744562.5616488,
+    "ast_hash": "7ec8d8bae79a15865993973879c61ff1",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794744282.8393502,
-    "seen": 1794744285.677452,
-    "ast_hash": "0aa66e555601ff7369663790559dde7d",
+    "mtime": 1794744441.3574083,
+    "seen": 1794744443.858948,
+    "ast_hash": "55ef9079b92da72af4cfc198247d9ce5",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794741072.1472223,
-    "seen": 1794741073.220414,
-    "ast_hash": "84cc965d59445aea36f3e62c169f9d53",
+    "mtime": 1794744478.1459827,
+    "seen": 1794744480.3832278,
+    "ast_hash": "8629771533e931035f200ee2b4a95c8b",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794741072.1474054,
-    "seen": 1794741073.2204149,
-    "ast_hash": "32e9d8a53c63c3ccf464954a91c2f91a",
+    "mtime": 1794744478.1462011,
+    "seen": 1794744480.3832262,
+    "ast_hash": "b67ca8a20a5bb94d9e49ee6ee132f433",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -480,93 +480,105 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794744656.4759436,
-    "seen": 1794744660.716622,
-    "ast_hash": "5de598cc407bc3a3a250c9070f6575d6",
+    "mtime": 1794744844.809981,
+    "seen": 1794744850.494344,
+    "ast_hash": "c9dabe56f1a3bf5d2220578dcd05b7d3",
     "semantic_hash": ""
   },
-  "design-system/schemas/colors.schema.json": {
-    "mtime": 1794744656.4638174,
-    "seen": 1794744660.716573,
-    "ast_hash": "8815db30c7fb0fb182f0344fe84a1968",
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
+    "mtime": 1794744555.5136085,
+    "seen": 1794744558.254743,
+    "ast_hash": "e213abb0afd37a34aa8b7c1b9793e75a",
     "semantic_hash": ""
   },
-  "tooling/codegen/src/main.rs": {
-    "mtime": 1794744656.4968953,
-    "seen": 1794744660.716578,
-    "ast_hash": "f16429b3af1dc32733469aa38c8850b0",
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
+    "mtime": 1794744555.513371,
+    "seen": 1794744558.2547462,
+    "ast_hash": "9db21cf0cedb9c4d28f894bb20623ff0",
     "semantic_hash": ""
   },
   "tooling/codegen/Cargo.toml": {
-    "mtime": 1794744656.496312,
-    "seen": 1794744660.7165802,
+    "mtime": 1794744844.8159409,
+    "seen": 1794744850.4943109,
     "ast_hash": "a410bcf22e0d5bd06bad242d90e28085",
     "semantic_hash": ""
   },
+  "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
+    "mtime": 1794744844.810723,
+    "seen": 1794744850.494317,
+    "ast_hash": "b33e8c03b0dc83d5d627e80c29430719",
+    "semantic_hash": ""
+  },
+  "design-system/schemas/spacing.schema.json": {
+    "mtime": 1794744844.798463,
+    "seen": 1794744850.4943202,
+    "ast_hash": "bf415a267b8024d83db1a627ed148497",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/tokens/mod.rs": {
+    "mtime": 1794744844.816973,
+    "seen": 1794744850.494327,
+    "ast_hash": "a8ff076221e193fc7701221ef2781e69",
+    "semantic_hash": ""
+  },
   "tooling/codegen/src/json.rs": {
-    "mtime": 1794744656.496571,
-    "seen": 1794744660.716581,
+    "mtime": 1794744844.8161912,
+    "seen": 1794744850.494329,
     "ast_hash": "eaa371a53bbe0e774757ac65315063fa",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
-    "mtime": 1794744656.464452,
-    "seen": 1794744660.7165818,
+    "mtime": 1794744844.799368,
+    "seen": 1794744850.494331,
     "ast_hash": "7a6cc6e975075c5b85f8b6fb9e52fe47",
     "semantic_hash": ""
   },
-  "design-system/tokens/typography.json": {
-    "mtime": 1794744656.4645844,
-    "seen": 1794744660.716613,
-    "ast_hash": "d11a7883380093a2b124b7dee554317e",
-    "semantic_hash": ""
-  },
-  "design-system/schemas/typography.schema.json": {
-    "mtime": 1794744656.464104,
-    "seen": 1794744660.716615,
-    "ast_hash": "11707de39c78e2b23242ca845d03d8c1",
+  "tooling/codegen/src/main.rs": {
+    "mtime": 1794744844.8165781,
+    "seen": 1794744850.494333,
+    "ast_hash": "f16429b3af1dc32733469aa38c8850b0",
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794744656.4967468,
-    "seen": 1794744660.716616,
+    "mtime": 1794744844.816395,
+    "seen": 1794744850.494336,
     "ast_hash": "d78ed1c3949e4a8958f8ecd0ffee7bb6",
     "semantic_hash": ""
   },
-  "design-system/tokens/colors.json": {
-    "mtime": 1794744656.464315,
-    "seen": 1794744660.7166169,
-    "ast_hash": "6c7851dbad512150223936254d393342",
-    "semantic_hash": ""
-  },
-  "design-system/schemas/spacing.schema.json": {
-    "mtime": 1794744656.4639728,
-    "seen": 1794744660.716618,
-    "ast_hash": "bf415a267b8024d83db1a627ed148497",
-    "semantic_hash": ""
-  },
   "tooling/codegen/tests/tokens_contract.rs": {
-    "mtime": 1794744717.587457,
-    "seen": 1794744720.61724,
+    "mtime": 1794744844.8177695,
+    "seen": 1794744850.494338,
     "ast_hash": "d2326aeab5b7d7e4fa65d841171c1a95",
     "semantic_hash": ""
   },
-  "tooling/codegen/src/tokens/mod.rs": {
-    "mtime": 1794744656.4971306,
-    "seen": 1794744660.716619,
-    "ast_hash": "a8ff076221e193fc7701221ef2781e69",
+  "design-system/tokens/colors.json": {
+    "mtime": 1794744844.799173,
+    "seen": 1794744850.4943402,
+    "ast_hash": "6c7851dbad512150223936254d393342",
+    "semantic_hash": ""
+  },
+  "design-system/tokens/typography.json": {
+    "mtime": 1794744844.7995846,
+    "seen": 1794744850.4943519,
+    "ast_hash": "d11a7883380093a2b124b7dee554317e",
     "semantic_hash": ""
   },
   "tooling/codegen/src/tokens/schema.rs": {
-    "mtime": 1794744656.4973016,
-    "seen": 1794744660.71662,
+    "mtime": 1794744844.8173714,
+    "seen": 1794744850.494354,
     "ast_hash": "d14c3fafc33db61667f7e5ec475eb93f",
     "semantic_hash": ""
   },
-  "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794744815.0818596,
-    "seen": 1794744820.816674,
-    "ast_hash": "b33e8c03b0dc83d5d627e80c29430719",
+  "design-system/schemas/typography.schema.json": {
+    "mtime": 1794744844.7989016,
+    "seen": 1794744850.494356,
+    "ast_hash": "11707de39c78e2b23242ca845d03d8c1",
+    "semantic_hash": ""
+  },
+  "design-system/schemas/colors.schema.json": {
+    "mtime": 1794744844.798114,
+    "seen": 1794744850.494358,
+    "ast_hash": "8815db30c7fb0fb182f0344fe84a1968",
     "semantic_hash": ""
   }
 }
