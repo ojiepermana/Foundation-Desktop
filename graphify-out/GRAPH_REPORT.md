@@ -1,11 +1,11 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 146 files · ~233,484 words
+- 146 files · ~233,918 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1944 nodes · 3208 edges · 112 communities (104 shown, 8 thin omitted)
+- 1945 nodes · 3209 edges · 112 communities (104 shown, 8 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 48 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -34,7 +34,7 @@
 - hello
 - Rancangan konfigurasi
 - assets_contract.rs
-- Fondasi Linux
+- pre-commit script
 - Langkah manual: `000 - Panduan scope`
 - Rancangan
 - Feature design
@@ -45,6 +45,7 @@
 - Alur lead
 - 0001. Batas workspace dan pemilik
 - Penerimaan dan bukti fondasi
+- Fondasi Linux
 - architecture_contract.rs
 - 000 - Panduan scope
 - spacing.json
@@ -55,15 +56,14 @@
 - Milestone 1: Sumber architecture dan aturan dependensi
 - properties
 - Fondasi macOS
-- pre-commit script
 - 0007. Aturan pengembangan dan pemeriksaan arsitektur: alasan
 - catalog.json
 - properties
 - 0004. Konfigurasi publik: alasan
+- 0005. Aset merek bersama: alasan
 - tokens_contract.rs
 - contract_surface.rs
 - colors.schema.json
-- 003 - Kontrak sapaan bersama
 - 0001. Sapaan di jendela macOS: catatan keputusan
 - 0004. Konfigurasi publik di macOS: alasan
 - 0005. Tema bersama dan kontrol native di macOS: catatan keputusan
@@ -72,7 +72,6 @@
 - 0008. Aturan pengembangan dan pemeriksaan arsitektur di macOS: alasan
 - 0001. Batas workspace dan pemilik: alasan
 - 0003. Tema bersama dan kontrol native: catatan keputusan
-- 0005. Aset merek bersama: alasan
 - Aset merek bersama
 - Log koordinasi: `000 - Panduan scope`
 - Milestone 1: Workspace dan kerangka Core
@@ -93,12 +92,13 @@
 - 0005. Tema bersama dan kontrol native di macOS
 - 0006. Satu contoh lokalisasi di macOS
 - 0002. Kontrak sapaan bersama
-- refresh
 - Peran: architect
 - Peran: checker
 - Peran: debugger
 - Peran: developer
 - Peran: tester
+- 001 - Batas workspace dan pemilik
+- 007 - Sapaan di jendela Linux
 - Options considered
 - Konfigurasi publik
 - Rust Core (`desktop-core`)
@@ -136,12 +136,12 @@
   docs/platforms/macos/README.md → docs/platforms/linux/README.md
 - `long_name_is_not_cut()` --calls--> `hello()`  [INFERRED]
   crates/core/tests/hello_contract.rs → crates/core/src/greeting.rs
+- `C02 · Rust Core dapat dibangun dan diuji secara mandiri dari framework UI native` --cites--> `003 - Kontrak sapaan bersama`  [EXTRACTED]
+  docs/quality/README.md → docs/scope/003 - Kontrak sapaan bersama.md
 - `C01 · Cargo Workspace berhasil dibangun` --cites--> `012 - Build dan penerimaan per target`  [EXTRACTED]
   docs/quality/README.md → docs/scope/012 - Build dan penerimaan per target.md
 - `check_colors()` --calls--> `resolve()`  [INFERRED]
   tooling/codegen/src/tokens/mod.rs → tooling/codegen/src/architecture/manifest.rs
-- `check_sources()` --calls--> `check_svg()`  [INFERRED]
-  tooling/codegen/src/assets/mod.rs → tooling/codegen/src/assets/svg.rs
 
 ## Import Cycles
 - None detected.
@@ -247,9 +247,9 @@ Nodes (23): 0004. Konfigurasi publik, Aturan versi skema, Batas pengaturan khusu
 Cohesion: 0.19
 Nodes (20): accepts_valid_sources(), Change, changed_icon(), fixture(), folder_case(), make_light_dark(), messages(), read() (+12 more)
 
-### Community 24 - "Fondasi Linux"
-Cohesion: 0.15
-Nodes (22): Bukti yang diperlukan di Linux, Compositor Wayland, Evaluasi Flatpak di masa mendatang, Fondasi Linux, GTK 4, gtk-rs, Jendela native dan Rust Core, Kompatibilitas X11 (+14 more)
+### Community 24 - "pre-commit script"
+Cohesion: 0.13
+Nodes (17): Validasi keluaran generator, post-commit script, Rekonsiliasi indeks sesudah git commit --only, pre-commit script, Empat artefak Graphify dalam satu commit, Isolasi riwayat kueri lokal, Preservasi edit unstaged pada artefak, Validasi artefak sebelum staging (+9 more)
 
 ### Community 25 - "Langkah manual: `000 - Panduan scope`"
 Cohesion: 0.09
@@ -291,49 +291,49 @@ Nodes (19): 0001. Batas workspace dan pemilik, Aturan arah dependensi, Aturan un
 Cohesion: 0.14
 Nodes (18): Apple Silicon ARM64 dan Intel bersyarat, Xcode, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai, C29 · Alur kerja GitHub Actions untuk fondasi sudah dikonfigurasi (+10 more)
 
-### Community 35 - "architecture_contract.rs"
+### Community 35 - "Fondasi Linux"
+Cohesion: 0.20
+Nodes (17): Bukti yang diperlukan di Linux, Compositor Wayland, Evaluasi Flatpak di masa mendatang, Fondasi Linux, GTK 4, gtk-rs, Jendela native dan Rust Core, Kompatibilitas X11 (+9 more)
+
+### Community 36 - "architecture_contract.rs"
 Cohesion: 0.23
 Nodes (14): accepts_allowed_shapes(), apply(), copy_repo(), copy_tree(), Edit, lock_block(), Rejected, rejects_broken_repos() (+6 more)
 
-### Community 36 - "000 - Panduan scope"
+### Community 37 - "000 - Panduan scope"
 Cohesion: 0.15
 Nodes (16): C04 · UniFFI berhasil menghasilkan binding Swift untuk macOS, C05 · Aplikasi macOS berhasil memanggil fungsi Rust tersebut, C14 · Antarmuka pada ketiga OS menampilkan hasil aktual dari fungsi Rust yang sama, C15 · Token desain memiliki satu sumber acuan, C16 · Ketiga aplikasi memakai token hasil generasi atau pemetaan yang dapat diulang, C17 · Antarmuka memperlihatkan tampilan terang dan gelap, C23 · Kepemilikan pada batas FFI macOS terdokumentasi dan divalidasi bila relevan, 000 - Panduan scope (+8 more)
 
-### Community 37 - "spacing.json"
+### Community 38 - "spacing.json"
 Cohesion: 0.13
 Nodes (14): base, space.large, space.medium, description, ref, description, ref, $schema (+6 more)
 
-### Community 38 - "svg.rs"
+### Community 39 - "svg.rs"
 Cohesion: 0.31
 Nodes (13): FnMut, check_elements(), check_entities(), check_events(), check_references(), check_root(), check_svg(), is_valid_view_box() (+5 more)
 
-### Community 39 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
+### Community 40 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
 Cohesion: 0.14
 Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Jembatan, binding, dan uji tanpa jendela, Milestone 2: Jendela SwiftUI dan proyek Xcode (+5 more)
 
-### Community 40 - "0002. Batas workspace dan pemilik di macOS"
+### Community 41 - "0002. Batas workspace dan pemilik di macOS"
 Cohesion: 0.14
 Nodes (14): 0002. Batas workspace dan pemilik di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tambah satu langkah untuk peta arsitektur (+6 more)
 
-### Community 41 - "0003. Kontrak sapaan bersama di macOS"
+### Community 42 - "0003. Kontrak sapaan bersama di macOS"
 Cohesion: 0.14
 Nodes (14): 0003. Kontrak sapaan bersama di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tanpa langkah build (+6 more)
 
-### Community 42 - "Milestone 1: Sumber architecture dan aturan dependensi"
+### Community 43 - "Milestone 1: Sumber architecture dan aturan dependensi"
 Cohesion: 0.14
 Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Sumber architecture dan aturan dependensi, Milestone 2: Aturan kode dan uji lintas crate (+5 more)
 
-### Community 43 - "properties"
+### Community 44 - "properties"
 Cohesion: 0.17
 Nodes (13): propertyNames, type, properties, base, $schema, schemaVersion, semantic, pattern (+5 more)
 
-### Community 44 - "Fondasi macOS"
+### Community 45 - "Fondasi macOS"
 Cohesion: 0.19
 Nodes (13): AppKit, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS, Jendela dan interaksi, macos-ffi (+5 more)
-
-### Community 45 - "pre-commit script"
-Cohesion: 0.21
-Nodes (10): Validasi keluaran generator, post-commit script, Rekonsiliasi indeks sesudah git commit --only, pre-commit script, Empat artefak Graphify dalam satu commit, Isolasi riwayat kueri lokal, Preservasi edit unstaged pada artefak, Validasi artefak sebelum staging (+2 more)
 
 ### Community 46 - "0007. Aturan pengembangan dan pemeriksaan arsitektur: alasan"
 Cohesion: 0.15
@@ -351,21 +351,21 @@ Nodes (12): properties, pattern, type, pattern, type, type, description, on (+4 
 Cohesion: 0.17
 Nodes (12): 0004. Konfigurasi publik: alasan, Bukti yang diperiksa, Context, Cross check, Keputusan yang diambil, Opsi 1: Satu file nilai JSON dengan skema tertutup di `shared/config/`, Opsi 2: File nilai TOML dengan aturan di kode validasi, Opsi 3: Tanpa file bersama, nilai tetap di proyek native (+4 more)
 
-### Community 50 - "tokens_contract.rs"
+### Community 50 - "0005. Aset merek bersama: alasan"
+Cohesion: 0.17
+Nodes (12): 0005. Aset merek bersama: alasan, Bukti percobaan, Context, Cross check, Keputusan yang diambil, Opsi 1: Dokumen aturan saja, Opsi 2: Aturan, manifest, dan satu sumber penanda, diperiksa `desktop-codegen`, dengan ekspor biner oleh alat native tiap OS, Opsi 3: Generator ekspor biner bersama (+4 more)
+
+### Community 51 - "tokens_contract.rs"
 Cohesion: 0.27
 Nodes (9): Case, check_reports_stale_and_missing_outputs_and_generate_repairs_them(), copy_sources(), File, read(), rejects_broken_sources(), resolves_light_and_dark(), Path (+1 more)
 
-### Community 51 - "contract_surface.rs"
+### Community 52 - "contract_surface.rs"
 Cohesion: 0.22
 Nodes (5): manifest_declares_no_dependencies_of_any_kind(), manifest_forbids_unsafe_code_and_warns_on_missing_docs(), manifest_tables(), String, Vec
 
-### Community 52 - "colors.schema.json"
+### Community 53 - "colors.schema.json"
 Cohesion: 0.18
 Nodes (10): additionalProperties, $comment, base, $schema, schemaVersion, semantic, required, $schema (+2 more)
-
-### Community 53 - "003 - Kontrak sapaan bersama"
-Cohesion: 0.18
-Nodes (11): C01 · Cargo Workspace berhasil dibangun, C02 · Rust Core dapat dibangun dan diuji secara mandiri dari framework UI native, C03 · Satu implementasi Rust menjadi sumber perilaku sapaan Hello World, C22 · Tersedia aturan kontrak publik Rust yang dipakai bersama, C25 · Pemeriksaan kepatuhan arsitektur telah dikonfigurasi, C26 · `AGENTS.md` di akar repo memuat aturan pengembangan yang bisa diperiksa, C27 · Dokumentasi arsitektur tersedia, C32 · Implementasi hanya memuat layanan yang dibutuhkan oleh fondasi. Layanan untuk fitur mendatang tetap di luar cakupan (+3 more)
 
 ### Community 54 - "0001. Sapaan di jendela macOS: catatan keputusan"
 Cohesion: 0.18
@@ -399,113 +399,113 @@ Nodes (11): 0001. Batas workspace dan pemilik: alasan, Bukti percobaan, Context,
 Cohesion: 0.18
 Nodes (11): 0003. Tema bersama dan kontrol native: catatan keputusan, Bukti percobaan, Context, Cross check, Keputusan yang lebih kecil, Opsi 1: Alat Rust di workspace, bentuk token sebagai tipe, skema dihasilkan, Opsi 2: Skema JSON tulisan tangan dan crate mesin JSON Schema, Opsi 3: Alat siap pakai dari luar dengan format standar (+3 more)
 
-### Community 62 - "0005. Aset merek bersama: alasan"
-Cohesion: 0.18
-Nodes (11): 0005. Aset merek bersama: alasan, Bukti percobaan, Context, Cross check, Keputusan yang diambil, Opsi 1: Dokumen aturan saja, Opsi 2: Aturan, manifest, dan satu sumber penanda, diperiksa `desktop-codegen`, dengan ekspor biner oleh alat native tiap OS, Opsi 3: Generator ekspor biner bersama (+3 more)
-
-### Community 63 - "Aset merek bersama"
+### Community 62 - "Aset merek bersama"
 Cohesion: 0.18
 Nodes (11): Aset merek bersama, Format sumber, Mengganti atau menambah aset, Pemeriksaan, Pemilik, Penamaan, Resolusi, Struktur (+3 more)
 
-### Community 64 - "Log koordinasi: `000 - Panduan scope`"
+### Community 63 - "Log koordinasi: `000 - Panduan scope`"
 Cohesion: 0.20
 Nodes (9): Blocker terbuka, Dicentang pada wave ini, Keputusan, Keputusan delegasi, Log koordinasi: `000 - Panduan scope`, Penutupan, Riwayat wave, Sub sesi wave `1` (+1 more)
 
-### Community 65 - "Milestone 1: Workspace dan kerangka Core"
+### Community 64 - "Milestone 1: Workspace dan kerangka Core"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Workspace dan kerangka Core, Milestone 2: Peta arsitektur mencatat tata letak nyata, UI / manual, UI / manual (+1 more)
 
-### Community 66 - "Milestone 1: fungsi hello dan uji Done when"
+### Community 65 - "Milestone 1: fungsi hello dan uji Done when"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: fungsi hello dan uji Done when, Milestone 2: masukan tepi, aturan kontrak, dan bukti, UI / manual, UI / manual (+1 more)
 
-### Community 67 - "0003. Tema bersama dan kontrol native"
+### Community 66 - "0003. Tema bersama dan kontrol native"
 Cohesion: 0.20
 Nodes (10): 0003. Tema bersama dan kontrol native, Build plan, Consequences, Decision, Feature design, Follow-up, Perubahan dokumen, Rationale (+2 more)
 
-### Community 68 - "Milestone 1: Alat dan sumber token"
+### Community 67 - "Milestone 1: Alat dan sumber token"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Alat dan sumber token, Milestone 2: Dokumen mengikuti keadaan nyata, UI / manual, UI / manual (+1 more)
 
-### Community 69 - "Milestone 1: Sumber nilai, pemeriksaan, dan skema hasil generator"
+### Community 68 - "Milestone 1: Sumber nilai, pemeriksaan, dan skema hasil generator"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Sumber nilai, pemeriksaan, dan skema hasil generator, Milestone 2: Dokumen rujukan mencatat sumber yang nyata, UI / manual, UI / manual (+1 more)
 
-### Community 70 - "Milestone 1: Sumber, manifest, aturan, dan pemeriksaan aset merek"
+### Community 69 - "Milestone 1: Sumber, manifest, aturan, dan pemeriksaan aset merek"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Sumber, manifest, aturan, dan pemeriksaan aset merek, Milestone 2: Dokumen rujukan menunjuk aturan aset, UI / manual, UI / manual (+1 more)
 
-### Community 71 - "0006. Satu contoh lokalisasi"
+### Community 70 - "0006. Satu contoh lokalisasi"
 Cohesion: 0.20
 Nodes (10): 0006. Satu contoh lokalisasi, Build plan, Consequences, Decision, Feature design, Follow-up, Perubahan dokumen rujukan, Rationale (+2 more)
 
-### Community 72 - "Options considered"
+### Community 71 - "Options considered"
 Cohesion: 0.20
 Nodes (10): 0006. Satu contoh lokalisasi: catatan keputusan, Bukti percobaan, Context, Keputusan yang lebih kecil, Option 1: Satu katalog JSON netral untuk semua bahasa, resource native dibuat dari katalog itu, Option 2: Satu berkas JSON per bahasa, Option 3: Format native satu OS sebagai sumber bersama, Option 4: Pustaka lokalisasi Rust yang dipakai ketiga aplikasi saat berjalan (+2 more)
 
-### Community 73 - "Milestone 1: Katalog dan sumber localization"
+### Community 72 - "Milestone 1: Katalog dan sumber localization"
 Cohesion: 0.20
 Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Katalog dan sumber localization, Milestone 2: Dokumen rujukan mencatat keadaan nyata, UI / manual, UI / manual (+1 more)
 
-### Community 74 - "macos_bridge_ownership.rs"
+### Community 73 - "macos_bridge_ownership.rs"
 Cohesion: 0.33
 Nodes (7): bridge_sources_hold_no_unsafe(), files_with_extension(), hand_written_swift_uses_no_pointers(), repo_root(), Path, PathBuf, Vec
 
-### Community 75 - "Aturan pengembangan"
+### Community 74 - "Aturan pengembangan"
 Cohesion: 0.22
 Nodes (9): Agent skills, Aturan pengembangan, Build approach, Commands, Context files, Rules, Specs, Stack (+1 more)
 
-### Community 76 - "Log koordinasi: `<nama-SCOPE>`"
+### Community 75 - "Log koordinasi: `<nama-SCOPE>`"
 Cohesion: 0.22
 Nodes (8): Blocker terbuka, Dicentang pada wave ini, Keputusan, Keputusan delegasi, Log koordinasi: `<nama-SCOPE>`, Penutupan, Riwayat wave, Sub sesi wave `<n>`
 
-### Community 77 - "required"
+### Community 76 - "required"
 Cohesion: 0.28
 Nodes (9): additionalProperties, required, type, additionalProperties, description, value, additionalProperties, dark (+1 more)
 
-### Community 78 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
+### Community 77 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
 Cohesion: 0.22
 Nodes (9): Catatan, Host dan versi, Keadaan `verify.md` yang dirujuk, Spec macos/0002 (scope 001), Spec macos/0003 (scope 003), Tafsiran yang diambil, Verdict, Verify: spec macos/0002 dan macos/0003 · 2026-11-15 (+1 more)
 
-### Community 79 - "0001. Sapaan di jendela macOS"
+### Community 78 - "0001. Sapaan di jendela macOS"
 Cohesion: 0.22
 Nodes (9): 0001. Sapaan di jendela macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 80 - "0005. Tema bersama dan kontrol native di macOS"
+### Community 79 - "0005. Tema bersama dan kontrol native di macOS"
 Cohesion: 0.22
 Nodes (9): 0005. Tema bersama dan kontrol native di macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 81 - "0006. Satu contoh lokalisasi di macOS"
+### Community 80 - "0006. Satu contoh lokalisasi di macOS"
 Cohesion: 0.22
 Nodes (9): 0006. Satu contoh lokalisasi di macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 82 - "0002. Kontrak sapaan bersama"
+### Community 81 - "0002. Kontrak sapaan bersama"
 Cohesion: 0.22
 Nodes (9): 0002. Kontrak sapaan bersama, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 83 - "refresh"
-Cohesion: 0.33
-Nodes (7): Ekstraksi struktur lokal, Pemeriksaan kesegaran graf, Pemeriksaan ujung relasi, Pencatatan hash manifest, Penggunaan ulang bukti semantik, Refresh the shared Graphify artifacts inside a disposable Git index snapshot., refresh()
-
-### Community 84 - "Peran: architect"
+### Community 82 - "Peran: architect"
 Cohesion: 0.25
 Nodes (7): Command yang dijalankan, Ownership, Peran: architect, Pesan, Selesai bila, Tujuan, Verifikasi sebelum melapor
 
-### Community 85 - "Peran: checker"
+### Community 83 - "Peran: checker"
 Cohesion: 0.25
 Nodes (7): Command yang dijalankan, Ownership, Peran: checker, Pesan, Selesai bila, Tujuan, Verifikasi sebelum melapor
 
-### Community 86 - "Peran: debugger"
+### Community 84 - "Peran: debugger"
 Cohesion: 0.25
 Nodes (7): Command yang dijalankan, Ownership, Peran: debugger, Pesan, Selesai bila, Tujuan, Verifikasi sebelum melapor
 
-### Community 87 - "Peran: developer"
+### Community 85 - "Peran: developer"
 Cohesion: 0.25
 Nodes (7): Command yang dijalankan, Ownership, Peran: developer, Pesan, Selesai bila, Tujuan, Verifikasi sebelum melapor
 
-### Community 88 - "Peran: tester"
+### Community 86 - "Peran: tester"
 Cohesion: 0.25
 Nodes (7): Command yang dijalankan, Ownership, Peran: tester, Pesan, Selesai bila, Tujuan, Verifikasi sebelum melapor
+
+### Community 87 - "001 - Batas workspace dan pemilik"
+Cohesion: 0.25
+Nodes (8): C01 · Cargo Workspace berhasil dibangun, C02 · Rust Core dapat dibangun dan diuji secara mandiri dari framework UI native, C25 · Pemeriksaan kepatuhan arsitektur telah dikonfigurasi, C26 · `AGENTS.md` di akar repo memuat aturan pengembangan yang bisa diperiksa, C27 · Dokumentasi arsitektur tersedia, C32 · Implementasi hanya memuat layanan yang dibutuhkan oleh fondasi. Layanan untuk fitur mendatang tetap di luar cakupan, 001 - Batas workspace dan pemilik, 002 - Aturan pengembangan dan pemeriksaan arsitektur
+
+### Community 88 - "007 - Sapaan di jendela Linux"
+Cohesion: 0.25
+Nodes (8): C03 · Satu implementasi Rust menjadi sumber perilaku sapaan Hello World, C10 · Aplikasi Linux menggunakan GTK 4 dan libadwaita, C11 · Aplikasi Linux memanggil Rust Core langsung melalui Cargo, C12 · Aplikasi Linux berjalan pada backend Wayland native, C13 · Kompatibilitas X11 diperiksa dan hasil atau keterbatasannya dicatat, C22 · Tersedia aturan kontrak publik Rust yang dipakai bersama, 003 - Kontrak sapaan bersama, 007 - Sapaan di jendela Linux
 
 ### Community 89 - "Options considered"
 Cohesion: 0.25
@@ -552,19 +552,19 @@ Cohesion: 0.67
 Nodes (3): pattern, type, light
 
 ## Knowledge Gaps
-- **755 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+750 more)
+- **756 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+751 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Problem` connect `Problem` to `Findings`, `tokens_rules.rs`, `svg.rs`, `localization/mod.rs`, `architecture_rules.rs`, `assets_rules.rs`, `assets/mod.rs`, `assets_contract.rs`?**
-  _High betweenness centrality (0.058) - this node is a cross-community bridge._
+- **Why does `Problem` connect `Problem` to `Findings`, `tokens_rules.rs`, `localization/mod.rs`, `svg.rs`, `architecture_rules.rs`, `assets_rules.rs`, `assets/mod.rs`, `assets_contract.rs`?**
+  _High betweenness centrality (0.057) - this node is a cross-community bridge._
 - **Why does `generate()` connect `tokens_rules.rs` to `Problem`, `architecture_rules.rs`, `assets_rules.rs`, `config_rules.rs`, `localization_rules.rs`, `tokens_contract.rs`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
-  _755 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _756 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `desktop_macos_ffi.swift` be split into smaller, more focused modules?**
   _Cohesion score 0.050883898709985664 - nodes in this community are weakly interconnected._
 - **Should `quality/README.md` be split into smaller, more focused modules?**
