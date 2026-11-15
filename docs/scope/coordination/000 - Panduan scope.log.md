@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 23:02`
+- **Diperbarui:** `2026-11-15 23:03`
 
 ## Sub sesi wave `2`
 
@@ -53,6 +53,7 @@
 | `dev-f001-m1` | tester | 009 macOS Test it; laporan `done` (`684561a`), merge `7e3f062`: 10 test di `tooling/codegen/tests/config_macos_rules.rs`; `validate.sh` dan `G-1` sampai `G-5` dijalankan tester | `009 - Konfigurasi publik.md` | `tooling/codegen/tests/config_macos_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
 | `dev-f008-m1` | developer | 008 macOS Build it milestone 1 dan 2; Langkah Build plan selesai 1 (`acb34e2`), 2 (`28df96f`), 3 (`d79bf8d`); Pointer code in `tooling/codegen/src/tokens/swift.rs`, `apps/macos/DesignSystem/`; laporan `done` (HEAD `ec1a51a`), merge `033231a` | `008 - Tema bersama dan kontrol native.md` | `tooling/codegen/src/tokens/`, `lib.rs` (satu baris komentar), tiga uji `tokens_*`, `.gitattributes` (satu baris), `apps/macos/DesignSystem/`, `apps/macos/Tests/DesignSystemTests/`, `Package.swift`, `GreetingView.swift`, `verify.md` spec `macos/0005` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
 | `arc-f001-spec` | checker (verify) | 008 macOS verify milestone 1 dan 2; laporan `done` PASS 25 dari 25 (`c509183`, HEAD `6a4e89b`), merge `c7ec7d2`; AC-7, AC-8 `NOT_RUN`; family sama dengan penulis kode | `008 - Tema bersama dan kontrol native.md` | centang langkah perintah di `verify.md` spec `macos/0005` | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | merged |
+| `dev-f001-m1` | tester | 008 macOS Test it; Range `d1323d7..033231a`; uji Swift baru tidak diizinkan (AC-9 mengunci tiga path) | `008 - Tema bersama dan kontrol native.md` | paling banyak satu file baru `tooling/codegen/tests/tokens_swift_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | aktif |
 | `dev-f008-m1` | developer | 010 macOS Build it milestone 1 (langkah 1 sampai 3 spec `macos/0006`): emitter `localization/macos.rs`, dua `.strings`, `LocalizedText.swift`, baris tombol | `010 - Satu contoh lokalisasi.md` | sepuluh path tabel Tata letak spec `macos/0006` (termasuk `.gitattributes` satu baris, `localization/mod.rs`, `Package.swift`, baris tombol `GreetingView.swift`), `verify.md` spec itu | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | aktif |
 | `arc-f011-spec` | architect (update) | spec `_root/0005`: batas waktu AC-2 dan AC-5, kalimat S-1, "dua perubahan", penegasan S-5, centang Follow-up; laporan `done` (`e8e4409`, HEAD `c0b3f24`), merge `0db6d1e` | `011 - Aset merek bersama.md` | `docs/specs/_root/0005-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `opus-5-5 · high` | merged |
 | `arc-f010-spec` | architect (update) | spec `_root/0006`: batas waktu AC-9 dan AC-11, dua Follow-up `[x]`, path uji `workspace_layout`, Follow-up pola deskripsi; laporan `done` (`0accfaa`, HEAD `d478baf`), merge `85859e7` | `010 - Satu contoh lokalisasi.md` | `docs/specs/_root/0006-satu-contoh-lokalisasi/` | `claude/arc-f010-spec-3201ce` | `opus-5-5 · high` | merged |
