@@ -10,6 +10,7 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | --- | --- | --- | --- | --- | --- |
 | `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
 | `F008-1` | Bangun, uji, dan periksa token dengan `desktop-codegen` di host Windows dan host Linux | spec `_root/0003` AC-12 | belum ada | 008 milestone 1 di `origin/main` | `NOT_RUN` |
+| `F009-1` | Judul jendela dari konfigurasi publik dan nama menu aplikasi (langkah 1 sampai 4) | spec `macos/0004` AC-7 | belum ada | 009 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 
@@ -86,3 +87,18 @@ Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `_root/0003` `AC-12`
   - `cargo run -p desktop-codegen --locked -- tokens check`
 - **Lulus bila:** ketiganya keluar dengan kode 0, dan baris terakhir perintah ketiga `tokens: ok, 6 semantic tokens, 3 placeholder values, 3 outputs up to date`. Kirim OS, arsitektur, versi, perintah, dan keluarannya.
 - **Hanya langkah ini yang bisa membuktikan:** bahwa alat generator dan token terbangun dan memberi keluaran yang sama di luar macOS.
+
+## Fitur `009`: `Konfigurasi publik` (spec `macos/0004`)
+
+### `F009-1` · Judul jendela dari konfigurasi publik dan nama menu aplikasi
+
+Dari laporan `arc-f001-spec` (2026-11-15). Membuktikan spec `macos/0004` `AC-7`; ini milestone 2 bagian macOS fitur 009.
+
+- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang diuji 27.0.1), Xcode 27.1, sesi desktop yang sedang login, repo pada commit yang lulus AC-4 spec `macos/0004` (milestone 1 bagian macOS sudah di-merge).
+- **Jalankan:**
+  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`
+  2. `jq -r '.build.product_name' shared/config/public.json`, catat keluarannya, lalu `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`
+  3. Lihat menu bar selagi aplikasi di depan. Catat juga nama di atas ikon Dock.
+  4. Tekan Command Q.
+- **Lulus bila:** (1) `** BUILD SUCCEEDED **`; (2) satu jendela terbuka dan judulnya sama persis dengan keluaran `jq` (nilai sementara `Desktop Foundation`); (3) menu aplikasi di sebelah menu Apple bernama `DesktopMac` (nama di Dock dicatat saja, tidak menentukan lulus atau gagal); (4) aplikasi tertutup tanpa dialog. Kirim host, arsitektur, versi macOS, versi Xcode, dan hasil tiap nomor.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa judul jendela nyata berasal dari `shared/config/public.json` lewat bundel, bukan dari literal.
