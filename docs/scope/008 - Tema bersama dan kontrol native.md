@@ -6,11 +6,11 @@ Terapkan warna, tipografi dan jarak yang sama maknanya pada jendela sapaan di se
 
 **Done when:** Tampilan terang dan gelap memakai token yang bisa dihasilkan ulang, serta kontrol mempertahankan fokus, penskalaan, dan aksesibilitas native di tiap OS.
 
-**Pointer:** spec bersama [_root/0003](../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md)
+**Pointer:** spec bersama [_root/0003](../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md) · code in `tooling/codegen/`, `design-system/`
 
 * [x] `/architect scope 008 tema bersama untuk _root` (spec)
 * [ ] Build it: `/develop scope 008 tema bersama untuk _root`
-  * [ ] Milestone 1: Alat dan sumber token. Build plan langkah 1 dan 2. AC-1 sampai AC-10
+  * [x] Milestone 1: Alat dan sumber token. Build plan langkah 1 dan 2. AC-1 sampai AC-10
   * [ ] Milestone 2: Dokumen mengikuti keadaan nyata. Build plan langkah 3. AC-11. after milestone 1
   * [ ] Milestone 3: Bukti di host Windows dan Linux. Build plan langkah 4. AC-12. after milestone 1; needs host Windows dan host Linux (`BLOCKED`, `owner: user`)
 * [ ] Verify it: `/check verify scope 008 tema bersama untuk _root`
