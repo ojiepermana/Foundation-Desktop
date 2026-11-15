@@ -330,15 +330,15 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
-    "mtime": 1794739767.6538305,
-    "seen": 1794739770.242265,
-    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
+    "mtime": 1794755884.566695,
+    "seen": 1794755886.330013,
+    "ast_hash": "71c855105ba953435c10870f268a449e",
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794741072.1486514,
-    "seen": 1794741073.220413,
-    "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
+    "mtime": 1794755884.566476,
+    "seen": 1794755886.330008,
+    "ast_hash": "211b6f7fbaea7db72f0eda23b2d3d88a",
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
@@ -366,9 +366,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
-    "mtime": 1794741663.0517359,
-    "seen": 1794741665.122643,
-    "ast_hash": "bb4fd38fb42a48a47f78b47d209b0371",
+    "mtime": 1794755884.567046,
+    "seen": 1794755886.330011,
+    "ast_hash": "4f15e8fc71b192f4415fef0a87c3dfbb",
     "semantic_hash": ""
   },
   "bindings/swift/Package.swift": {

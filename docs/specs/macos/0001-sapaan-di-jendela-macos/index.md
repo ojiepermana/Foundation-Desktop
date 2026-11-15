@@ -18,27 +18,27 @@ Spec ini menghubungkan jendela SwiftUI ke fungsi `hello` di Rust Core. Jembatan 
 
 **Acceptance criteria**:
 
-Angka kriteria merujuk tabel di [Penerimaan dan bukti fondasi](../../../quality/README.md). Vektor V-1 sampai V-11 dan aturan R-1 sampai R-9 adalah milik [spec `_root/0002`](../../_root/0002-kontrak-sapaan-bersama/index.md). Semua perintah dijalankan dari akar repo pada Mac Apple Silicon.
+Angka kriteria merujuk tabel di [Penerimaan dan bukti fondasi](../../../quality/README.md). Vektor V-1 sampai V-11 dan aturan R-1 sampai R-9 adalah milik [spec `_root/0002`](../../_root/0002-kontrak-sapaan-bersama/index.md). Semua perintah dijalankan dari akar repo pada Mac Apple Silicon. Angka dan daftar yang bertanda "pada akhir milestone <n> spec ini" berlaku pada titik itu; spec `macos/0004` sampai `macos/0007` menambah path, uji, dan berkas sendiri, dan memegang tambahan itu di AC miliknya secara relatif; spec `macos/0008` menambah pemeriksaan tanpa path baru. Pembaruan ini (2026-11-15) tidak mengubah ID AC.
 
-* **AC-1** (Done when "binding dapat dibuat ulang", kriteria 4): pada working tree yang bersih, dengan isi `bindings/swift/` sudah masuk commit, keempat perintah pertama di bagian **Membuat ulang binding** keluar dengan kode 0. Sesudahnya `git diff --exit-code -- bindings/swift` keluar dengan kode 0 dan `git status --short -- bindings/swift` tidak mencetak apa pun. `git ls-files bindings/swift` mencetak tepat empat path: `bindings/swift/Package.swift`, `bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift`, `bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h`, dan `bindings/swift/Sources/desktop_macos_ffiFFI/module.modulemap`.
-* **AC-2** (kriteria 5 dan 14): Swift memanggil `hello` di Core lewat binding, tanpa jendela. Sesudah `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, perintah `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` keluar dengan kode 0. Keluaran memuat `Test run with 7 tests in 1 suite passed`, yaitu tujuh uji suite `BindingContractTests`. Uji itu membuktikan V-1, V-2, V-6, V-7, V-10, dan V-11 byte demi byte lewat `CoreGreeter`.
-* **AC-3** (kriteria 14, aturan R-8): ViewModel mengirim isi kolom apa adanya dan menyimpan hasil apa adanya. Keluaran perintah `swift test` yang sama memuat `Test run with 4 tests in 1 suite passed`, yaitu empat uji suite `GreetingViewModelTests`: `greeting` bernilai `nil` sebelum tombol ditekan, nama `Ayu` memberi `Hello, Ayu!` lewat Core yang asli, nama kosong memberi `Hello, !`, dan dengan greeter tiruan nama `"  Ayu  "` sampai tanpa perubahan serta teks yang dikembalikan greeter tiruan tampil tanpa perubahan.
+* **AC-1** (Done when "binding dapat dibuat ulang", kriteria 4): pada working tree yang bersih, dengan isi `bindings/swift/` sudah masuk commit, keempat perintah pertama di bagian **Membuat ulang binding** keluar dengan kode 0. Sesudahnya `git diff --exit-code -- bindings/swift` keluar dengan kode 0 dan `git status --short -- bindings/swift` tidak mencetak apa pun. `git ls-files bindings/swift` mencetak tepat empat path: `bindings/swift/Package.swift`, `bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift`, `bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h`, dan `bindings/swift/Sources/desktop_macos_ffiFFI/module.modulemap`. Pemeriksaan tetapnya, tanpa menulis ke `bindings/swift/`, adalah `G-2` di spec [`macos/0008`](../0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md).
+* **AC-2** (kriteria 5 dan 14): Swift memanggil `hello` di Core lewat binding, tanpa jendela. Sesudah `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, perintah `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` keluar dengan kode 0. Pada akhir milestone 1 spec ini keluaran memuat `Test run with 7 tests in 1 suite passed`, yaitu tujuh uji suite `BindingContractTests`. Kapan pun, keluarannya memuat `✔ Suite BindingContractTests passed`. Uji itu membuktikan V-1, V-2, V-6, V-7, V-10, dan V-11 byte demi byte lewat `CoreGreeter`.
+* **AC-3** (kriteria 14, aturan R-8): ViewModel mengirim isi kolom apa adanya dan menyimpan hasil apa adanya. Keluaran perintah `swift test` yang sama memuat `✔ Suite GreetingViewModelTests passed`, dan pada akhir milestone 1 spec ini juga `Test run with 4 tests in 1 suite passed`, yaitu empat uji suite `GreetingViewModelTests`: `greeting` bernilai `nil` sebelum tombol ditekan, nama `Ayu` memberi `Hello, Ayu!` lewat Core yang asli, nama kosong memberi `Hello, !`, dan dengan greeter tiruan nama `"  Ayu  "` sampai tanpa perubahan serta teks yang dikembalikan greeter tiruan tampil tanpa perubahan. Sesudah spec `macos/0006`, target `PresentationTests` mencetak ringkasan miliknya sendiri; angkanya dipegang AC spec itu.
 * **AC-4** (Done when "aplikasi terbuka di macOS" bagian build, kriteria 5): `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build` keluar dengan kode 0 dan mencetak `** BUILD SUCCEEDED **`. Perintah yang sama dengan `-configuration Release` juga berhasil. Untuk kedua konfigurasi, dengan `<K>` diganti `Debug` atau `Release`: `lipo -archs apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/DesktopMac` mencetak `arm64`, dan `nm apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/* 2>/dev/null | grep -c uniffi_desktop_macos_ffi_fn_func_hello` mencetak angka 1 atau lebih. Artinya aplikasi membawa jembatan Rust di dalamnya.
-* **AC-5** (Done when "menekan tombol sesudah mengisi nama menampilkan nilai dari Core", kriteria 5 dan 14; langkah manual, `owner: user`): pada sesi GUI, langkah 1 sampai 5 di bagian **Rencana verifikasi manual** memberi hasil yang tertulis. Jendela berjudul `Desktop Foundation` terbuka, nama `Ayu` lalu tombol `Greet` menampilkan `Hello, Ayu!`, dan kolom kosong menampilkan `Hello, !`.
+* **AC-5** (Done when "menekan tombol sesudah mengisi nama menampilkan nilai dari Core", kriteria 5 dan 14; langkah manual, `owner: user`): pada sesi GUI, langkah 1 sampai 5 di bagian **Rencana verifikasi manual** memberi hasil yang tertulis. Jendela berjudul `Desktop Foundation` terbuka, nama `Ayu` lalu tombol `Greet` menampilkan `Hello, Ayu!`, dan kolom kosong menampilkan `Hello, !`. Sesudah spec `macos/0004` dibangun, judul itu adalah nilai `build.product_name` di konfigurasi publik (nilai sementara `Desktop Foundation`). Sesudah spec `macos/0006` dibangun, label tombol dibaca dari katalog, jadi langkah itu dijalankan dengan bahasa sistem Inggris.
 * **AC-6** (kriteria 23): kepemilikan di batas FFI (batas antara kode Rust dan Swift) tertulis dan diuji. Bagian **Kepemilikan di batas FFI** spec ini adalah sumbernya. Komentar dokumen crate di `crates/macos-ffi/src/lib.rs` menyebut path spec ini dan merangkum aturannya. `crates/macos-ffi/Cargo.toml` memuat `unsafe_code = "forbid"`, dan `grep -rn unsafe crates/macos-ffi/src` tidak mencetak apa pun. Uji `v10NulInTheMiddleIsKept`, `v11LongNameIsNotCut`, dan `repeatedCallsFromManyThreads` di `BindingContractTests` lulus, begitu juga uji Rust `forwards_to_core` lewat `cargo test -p desktop-macos-ffi --locked`.
 * **AC-7** (kriteria 5, aturan R-8 untuk jembatan): jembatan mengekspos `hello` dengan nama dan tanda tangan yang sama dan hanya meneruskan panggilan. `grep -nE '^[[:space:]]*pub fn ' crates/macos-ffi/src/lib.rs` mencetak tepat satu baris, yang berisi `pub fn hello(name: String) -> String {`. `grep -c 'desktop_core::hello(name)' crates/macos-ffi/src/lib.rs` mencetak `1`. `grep -c '^public func hello(name: String) -> String' bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift` mencetak `1`.
-* **AC-8** (kriteria 14): hasil yang tampil hanya berasal dari Core, lewat satu jalur. `git grep --untracked -lF 'Hello, ' -- '*.swift'` mencetak tepat dua baris, keduanya di bawah `apps/macos/Tests/`. `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` mencetak tepat satu baris: `apps/macos/Interop/Greeter.swift`. `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` mencetak `1`, jadi hasil ditampilkan sebagai teks biasa. `git grep --untracked -lF 'Hello, {' -- '*.rs'` tetap mencetak tepat satu baris: `crates/core/src/greeting.rs`.
+* **AC-8** (kriteria 14): hasil yang tampil hanya berasal dari Core, lewat satu jalur. Setiap baris dari `git grep --untracked -lF 'Hello, ' -- '*.swift'` berada di bawah `apps/macos/Tests/`; pada akhir milestone 2 spec ini jumlahnya tepat dua. Aturan `A-8` spec [`_root/0007`](../../_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) memeriksanya di setiap host. `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` mencetak tepat satu baris: `apps/macos/Interop/Greeter.swift` (aturan `A-10` spec `_root/0007`). `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` mencetak `1`, jadi hasil ditampilkan sebagai teks biasa. `git grep --untracked -lF 'Hello, {' -- '*.rs'` tetap mencetak tepat satu baris: `crates/core/src/greeting.rs`.
 * **AC-9** (kriteria 5 lewat aturan [spec `_root/0001`](../../_root/0001-batas-workspace-dan-pemilik/index.md)): workspace tetap hijau dan arah dependensi sesuai tabel spec 0001. `cargo build --workspace --locked`, `cargo test --workspace --locked`, `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, dan `cargo clippy -p desktop-macos-ffi --all-targets --all-features --locked -- -D warnings` keluar dengan kode 0. `cargo tree -p desktop-macos-ffi --depth 1 --prefix none --locked` mencetak tepat tiga baris, yang diawali `desktop-macos-ffi v0.1.0`, `desktop-core v0.1.0`, dan `uniffi v0.32.2`. `cargo tree -p desktop-macos-ffi --target all --all-features --prefix none --locked | grep -cE '^(desktop-windows|desktop-linux|gtk|gtk4|libadwaita|windows-reactor) '` mencetak `0`, jadi jembatan tidak membawa crate aplikasi atau pustaka UI. `cargo tree -p desktop-core --target all --all-features --prefix none --locked` tetap mencetak tepat satu baris.
 * **AC-10** (bukti Kompatibilitas di [rujukan macOS](../../../platforms/macos/README.md), mendukung kriteria 4 dan 5): kombinasi yang dipakai tercatat bersama keluaran perintahnya dan sama dengan tabel **Kombinasi yang dipakai**. Perintahnya: `sw_vers -productVersion`, `uname -m`, `xcodebuild -version`, `swift --version`, `rustc --version`, `xcrun --sdk macosx --show-sdk-version` (mencetak `27.0`), dan `grep -A1 '^name = "uniffi"$' Cargo.lock` (baris kedua `version = "0.32.2"`). `grep -c 'bindings_contract_version = 30' bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift` mencetak `1`. `vtool -show-build apps/macos/DerivedData/Build/Products/Release/DesktopMac.app/Contents/MacOS/DesktopMac` memuat `minos 14.0`.
 * **AC-11** (kriteria 1 lewat spec `_root/0001`): repo tetap bersih dan file bersama tidak disentuh. Sesudah semua perintah AC-1 sampai AC-4 dijalankan pada working tree yang bersih, `git status --short` tidak mencetak apa pun. Setiap commit fitur ini memakai subject yang memuat `spec macos/0001 step <n>`, dan `git log --name-only --format= --grep='spec macos/0001 step' | sort -u` hanya mencetak path dari tabel **File yang boleh diubah tiap milestone** dan kalimat di bawahnya. Jadi `.gitignore` dan `rust-toolchain.toml` tidak muncul di daftar itu. Pada commit langkah 1, `Cargo.toml` akar sama persis dengan bagian **Isi file**: hanya baris `members` yang berubah dan tabel `[workspace.dependencies]` yang ditambahkan.
-* **AC-12** (kriteria 32): fitur ini hanya membuat yang dibutuhkan alur sapaan. `git ls-files apps/macos bindings/swift crates/macos-ffi` mencetak tepat 16 path dari tabel **Tata letak**, jadi tidak ada folder `Platform`, `DesignSystem`, atau `Resources`. Daftar path dari perintah `git log` di **AC-11** tidak memuat path di bawah `scripts/` atau `.github/`. `grep -c ui-testing apps/macos/DesktopMac.xcodeproj/project.pbxproj` mencetak `0`, jadi tidak ada target uji UI.
+* **AC-12** (kriteria 32): fitur ini hanya membuat yang dibutuhkan alur sapaan. Pada akhir milestone 3 spec ini, `git ls-files apps/macos bindings/swift crates/macos-ffi` mencetak tepat 16 path dari tabel **Tata letak**. Spec berikutnya menambah path lewat AC dan tabel **Tata letak** miliknya sendiri, dicatat di AC spec itu sebagai path yang ditambahkan commit langkahnya sendiri: `macos/0004` satu, `macos/0005` tiga, `macos/0006` empat, dan `macos/0007` dua (daftarnya di tabel **Path dari spec lain**). Folder di `apps/macos/`, sampai spec yang membuat folder baru memperbarui spec ini: tidak ada folder `Platform`; `DesignSystem/` milik spec `macos/0005`; `apps/macos/Resources/` hanya memuat `AppIcon.icon/` dari spec `macos/0007`; `apps/macos/Presentation/Resources/` milik spec `macos/0006`; `apps/macos/Config/` milik spec `macos/0004`. `git ls-files apps/macos | grep -c '^apps/macos/Platform/'` mencetak `0`, dan `git ls-files apps/macos/Resources | grep -vc '^apps/macos/Resources/AppIcon.icon/'` mencetak `0`. Daftar path dari perintah `git log` di **AC-11** tidak memuat path di bawah `scripts/` atau `.github/`. `grep -c ui-testing apps/macos/DesktopMac.xcodeproj/project.pbxproj` mencetak `0`, jadi tidak ada target uji UI.
 * **AC-13** (bukti Penggunaan nyata di rujukan macOS, mendukung kriteria 5 dan 14; langkah manual, `owner: user`): pada sesi GUI, langkah 6 sampai 9 di bagian **Rencana verifikasi manual** memberi hasil yang tertulis. Tombol Return menjalankan `Greet` tanpa mouse, VoiceOver membacakan kolom, tombol, dan hasil, dan Run dari Xcode membuka jendela yang sama. Berkas yang dibuat atau diubah Xcode pada langkah 9 dicatat dan tidak menggagalkan AC ini.
 
 ## Decision
 
 **Chosen option**: Opsi 1: binding terlacak sebagai paket Swift lokal, modul Swift yang diuji `swift test`, dan target aplikasi Xcode yang tipis.
 
-Jembatan `desktop-macos-ffi` adalah pustaka statis yang mengekspos `hello` lewat makro UniFFI. Generator di crate yang sama menulis binding Swift ke `bindings/swift/`, yang dilacak git dan dipakai `apps/macos/` sebagai paket Swift lokal. Logika Swift tinggal di dua modul paket (`Interop` dan `Presentation`), dan proyek Xcode hanya berisi titik masuk aplikasi.
+Jembatan `desktop-macos-ffi` adalah pustaka statis yang mengekspos `hello` lewat makro UniFFI. Generator di crate yang sama menulis binding Swift ke `bindings/swift/`, yang dilacak git dan dipakai `apps/macos/` sebagai paket Swift lokal. Logika Swift tinggal di modul paket (`Interop` dan `Presentation` pada akhir milestone 2 spec ini; spec `macos/0005` menambah `DesignSystem`), dan proyek Xcode berisi titik masuk aplikasi dan resource bundel (resource bundel dari spec `macos/0007`).
 
 Keputusan turunannya:
 
@@ -49,7 +49,7 @@ Keputusan turunannya:
 | Generator binding | Bin `uniffi-bindgen-swift` di crate jembatan, di balik fitur `bindgen`. Build biasa tidak ikut membangunnya. |
 | Binding di git | Tiga berkas hasil generator dan satu `Package.swift` tulisan tangan dilacak git. Pustaka hasil build tinggal di `target/`. |
 | Bukti binding mutakhir | Jalankan generator, lalu `git diff --exit-code -- bindings/swift`. |
-| Struktur Swift | Paket lokal `apps/macos/Package.swift` dengan modul `Interop` dan `Presentation`. Target aplikasi `DesktopMac` hanya berisi folder `App/`. |
+| Struktur Swift | Paket lokal `apps/macos/Package.swift` dengan modul `Interop` dan `Presentation`; spec `macos/0005` menambah modul `DesignSystem`. Target aplikasi `DesktopMac` berisi folder `App/` dan grup tersinkron `Resources/` (spec `macos/0007`). |
 | Cara menaut | Target `systemLibrary` untuk header, `linkedLibrary("desktop_macos_ffi")`, dan path pencarian pustaka dari pemanggil (`-Xlinker -L` atau `LIBRARY_SEARCH_PATHS`). |
 | Proyek Xcode | `apps/macos/DesktopMac.xcodeproj`, ditulis tangan dan dilacak git. Fase skrip `Build Rust bridge` menjalankan `cargo build` sebelum menaut. |
 | Versi minimum macOS | `14.0`. |
@@ -57,7 +57,7 @@ Keputusan turunannya:
 | Tanda tangan kode | Ad hoc (tanda tangan lokal tanpa akun Apple), tanpa sandbox dan tanpa entitlement. |
 | State dan thread | `GreetingViewModel` bertanda `@MainActor` dan `@Observable`. `hello` dipanggil sinkron di thread utama. |
 | Uji Swift | Swift Testing lewat `swift test`. Tidak ada target uji UI. Alur jendela dibuktikan dengan langkah manual. |
-| Teks antarmuka | Literal bahasa Inggris (`Desktop Foundation`, `Name`, `Greet`) sampai scope 010. Hasil sapaan memakai `Text(verbatim:)`. |
+| Teks antarmuka | `Name` tetap literal bahasa Inggris. Label tombol dibaca dari katalog lewat kunci `greeting.submit` (spec `macos/0006`). Judul jendela dari bundel, nilai `build.product_name` (spec `macos/0004`). Hasil sapaan memakai `Text(verbatim:)`. Pada akhir milestone 2 spec ini ketiganya literal (`Desktop Foundation`, `Name`, `Greet`). |
 
 Nilai dari spec lain yang dipakai di sini, tanpa diputuskan ulang:
 
@@ -137,7 +137,7 @@ Aturan lain di batas ini:
 
 **Tata letak**:
 
-Enam belas path yang dibuat fitur ini. Kolom sumber menyebut dari mana isinya berasal.
+Enam belas path yang dibuat fitur ini, keadaan pada akhir milestone 3 spec ini. Kolom sumber menyebut dari mana isinya berasal. Path yang ditambah spec lain ada di tabel **Path dari spec lain** di bawahnya.
 
 | Path | Sumber isi |
 | --- | --- |
@@ -158,16 +158,34 @@ Enam belas path yang dibuat fitur ini. Kolom sumber menyebut dari mana isinya be
 | `apps/macos/DesktopMac.xcodeproj/project.pbxproj` | Bagian **Isi file** |
 | `apps/macos/DesktopMac.xcodeproj/project.xcworkspace/contents.xcworkspacedata` | Bagian **Isi file** |
 
-Selain itu fitur ini mengubah `Cargo.toml` akar dan `Cargo.lock`. Folder `Platform`, `DesignSystem`, dan `Resources` dari rujukan macOS belum dibuat, karena belum ada tanggung jawab nyata untuknya (spec `_root/0001`, baris Folder rencana).
+**Path dari spec lain**. Tiap spec memegang hitungan dan bukti untuk path miliknya; tabel ini hanya menunjuk:
+
+| Path | Sumber isi |
+| --- | --- |
+| `apps/macos/Config/Shared.xcconfig` | Generator `desktop-codegen` (spec `macos/0004`). Jangan disunting. |
+| `apps/macos/DesignSystem/Theme.swift` | Spec `macos/0005` |
+| `apps/macos/DesignSystem/Tokens.swift` | Generator `desktop-codegen` (spec `macos/0005`). Jangan disunting. |
+| `apps/macos/Tests/DesignSystemTests/ThemeTests.swift` | Spec `macos/0005` |
+| `apps/macos/Presentation/Resources/en.lproj/Localizable.strings` | Generator `desktop-codegen` (spec `macos/0006`). Jangan disunting. |
+| `apps/macos/Presentation/Resources/id.lproj/Localizable.strings` | Generator `desktop-codegen` (spec `macos/0006`). Jangan disunting. |
+| `apps/macos/Presentation/LocalizedText.swift` | Spec `macos/0006` |
+| `apps/macos/Tests/PresentationTests/LocalizedTextTests.swift` | Spec `macos/0006` |
+| `apps/macos/Resources/AppIcon.icon/Assets/app-icon.svg` | Generator `desktop-codegen` (spec `macos/0007`). Jangan disunting. |
+| `apps/macos/Resources/AppIcon.icon/icon.json` | Generator `desktop-codegen` (spec `macos/0007`). Jangan disunting. |
+
+Selain itu fitur ini mengubah `Cargo.toml` akar dan `Cargo.lock`. Folder di `apps/macos/`: tidak ada folder `Platform`; `DesignSystem/` milik spec `macos/0005`; `apps/macos/Resources/` hanya memuat `AppIcon.icon/` dari spec `macos/0007`; `apps/macos/Presentation/Resources/` milik spec `macos/0006`; `apps/macos/Config/` milik spec `macos/0004`. Pada akhir milestone 3 spec ini kelima folder itu belum ada, karena belum ada tanggung jawab nyata untuknya (spec `_root/0001`, baris Folder rencana).
 
 Peran tiap bagian `apps/macos/`:
 
 | Bagian | Jenis | Isi | Boleh mengimpor |
 | --- | --- | --- | --- |
 | `App/` | Sumber target aplikasi `DesktopMac` di proyek Xcode | Titik masuk `@main` dan jendela | `Presentation`, `SwiftUI` |
-| `Presentation/` | Modul paket Swift | `GreetingView` dan `GreetingViewModel` | `Interop`, `SwiftUI`, `Observation` |
+| `Resources/` | Resource bundel aplikasi, didaftarkan sebagai grup tersinkron (spec `macos/0007`) | Isinya sekarang hanya keluaran generator `AppIcon.icon` | Tidak ada; bukan kode |
+| `Config/` | Setelan build Xcode (spec `macos/0004`) | `Shared.xcconfig`, keluaran generator | Tidak ada; bukan kode |
+| `DesignSystem/` | Modul paket Swift (spec `macos/0005`) | `Tokens` hasil generator, `ThemeColor`, dan `TextRole` | `SwiftUI`, `AppKit` |
+| `Presentation/` | Modul paket Swift | `GreetingView` dan `GreetingViewModel`; spec `macos/0006` menambah `LocalizedText` dan `Presentation/Resources/` berisi katalog `.strings` | `Interop`, `DesignSystem` (spec `macos/0005`), `SwiftUI`, `Observation`, `Foundation` (`LocalizedText`, spec `macos/0006`) |
 | `Interop/` | Modul paket Swift | Protokol `Greeter` dan `CoreGreeter` | `DesktopMacosFFI` |
-| `Tests/` | Target uji paket Swift | Uji tanpa jendela | Modul yang diuji, `Testing` |
+| `Tests/` | Target uji paket Swift | Uji tanpa jendela | Modul yang diuji, `Testing`; spec lain menambah impor yang diuji targetnya (`AppKit` dan `SwiftUI` di `DesignSystemTests`, spec `macos/0005`; `Foundation` di `LocalizedTextTests`, spec `macos/0006`) |
 
 **Isi file**:
 
@@ -305,7 +323,7 @@ let package = Package(
 )
 ```
 
-`apps/macos/Package.swift`. SwiftPM memberi paket lokal identitas dari nama foldernya, jadi paket binding dirujuk sebagai `package: "swift"`:
+`apps/macos/Package.swift`, keadaan akhir milestone 1 spec ini; isi sekarang ada di spec `macos/0005` (modul `DesignSystem`) dan spec `macos/0006` (resource `Presentation`). SwiftPM memberi paket lokal identitas dari nama foldernya, jadi paket binding dirujuk sebagai `package: "swift"`:
 
 ```swift
 // swift-tools-version: 6.0
@@ -383,7 +401,7 @@ public final class GreetingViewModel {
 }
 ```
 
-`apps/macos/Presentation/GreetingView.swift`:
+`apps/macos/Presentation/GreetingView.swift`, keadaan akhir milestone 2 spec ini; isi sekarang ada di spec `macos/0005` (token tema) dan spec `macos/0006` (label tombol):
 
 ```swift
 import SwiftUI
@@ -517,7 +535,7 @@ private final class RecordingGreeter: Greeter, @unchecked Sendable {
 }
 ```
 
-`apps/macos/App/DesktopMacApp.swift`:
+`apps/macos/App/DesktopMacApp.swift`, keadaan akhir milestone 2 spec ini; isi sekarang ada di spec `macos/0004` (judul jendela dari bundel):
 
 ```swift
 import Presentation
@@ -546,7 +564,7 @@ struct DesktopMacApp: App {
 </Workspace>
 ```
 
-`apps/macos/DesktopMac.xcodeproj/project.pbxproj`. Indentasinya memakai tab. Format proyek adalah versi 77, yang menyinkronkan folder `App/` otomatis, jadi berkas Swift baru di folder itu tidak perlu didaftarkan di sini:
+`apps/macos/DesktopMac.xcodeproj/project.pbxproj`, keadaan akhir milestone 2 spec ini; isi sekarang ada di spec `macos/0004` (bagian "Perubahan `project.pbxproj`": `Shared.xcconfig` sebagai dasar setelan, tiga setelan dihapus) dan spec `macos/0007` (sembilan baris untuk grup `Resources/`). Indentasinya memakai tab. Format proyek adalah versi 77, yang menyinkronkan folder `App/` (dan sesudah spec `macos/0007` juga `Resources/`) otomatis, jadi berkas baru di folder itu tidak perlu didaftarkan di sini:
 
 ```
 // !$*UTF8*$!
@@ -835,7 +853,7 @@ Hal yang perlu kamu tahu tentang proyek ini:
 * `ENABLE_USER_SCRIPT_SANDBOXING = NO` diperlukan, karena `cargo` menulis ke `target/` di luar folder build Xcode.
 * `LIBRARY_SEARCH_PATHS` menunjuk `target/aarch64-apple-darwin/debug` atau `release` lewat `RUST_PROFILE_DIR`. Nilainya diapit tanda kutip di dalam, supaya path repo yang memuat spasi tetap utuh. Flag `-ldesktop_macos_ffi` datang dari `bindings/swift/Package.swift`.
 * Tidak ada berkas skema yang dilacak. `xcodebuild` dan Xcode membuat skema `DesktopMac` sendiri.
-* `MARKETING_VERSION = 0.1.0` disalin dari `version` workspace. Kalau versi workspace naik, nilai ini ikut dinaikkan dengan tangan.
+* Pada akhir milestone 2 spec ini, `MARKETING_VERSION = 0.1.0` disalin dari `version` workspace. Sesudah spec `macos/0004`, nilai itu, nama tampil, dan pengenal bundel datang dari `apps/macos/Config/Shared.xcconfig`, keluaran generator `config`; jangan dinaikkan dengan tangan.
 
 **Membuat ulang binding**:
 
@@ -854,7 +872,7 @@ cargo run -p desktop-macos-ffi --features bindgen --bin uniffi-bindgen-swift --l
 git diff --exit-code -- bindings/swift
 ```
 
-Generator membaca API dari pustaka statis hasil perintah pertama. Keluarannya sama untuk pustaka debug dan release, dan sama setiap kali dijalankan pada sumber yang sama. Perintah terakhir keluar dengan kode 0 bila binding di git sudah mutakhir. Generator ini tidak memanggil pemformat Swift, jadi hasilnya tidak bergantung pada alat yang terpasang di mesin.
+Generator membaca API dari pustaka statis hasil perintah pertama. Keluarannya sama untuk pustaka debug dan release, dan sama setiap kali dijalankan pada sumber yang sama. Perintah terakhir keluar dengan kode 0 bila binding di git sudah mutakhir. Generator ini tidak memanggil pemformat Swift, jadi hasilnya tidak bergantung pada alat yang terpasang di mesin. Bagian ini tetap cara memperbaiki binding; pemeriksaannya adalah `G-2` di spec `macos/0008`.
 
 **Perintah build dan uji**:
 
@@ -882,11 +900,13 @@ Keluaran build tinggal di `target/`, `apps/macos/.build/`, dan `apps/macos/Deriv
 | Tekan `Greet` atau Return | Teks label hasil | Nilai kembali `Greeter.hello(name:)`, disimpan di `greeting`, ditampilkan dengan `Text(verbatim:)` |
 | Jendela baru terbuka | Teks label hasil | String kosong, karena `greeting` masih `nil` |
 | `CoreGreeter.hello` | Sapaan | `DesktopMacosFFI.hello(name:)`, yang memanggil `desktop_core::hello` lewat jembatan |
-| Jendela | Judul `Desktop Foundation`, label kolom `Name`, teks tombol `Greet` | Literal di `DesktopMacApp.swift` dan `GreetingView.swift`. Diputuskan spec ini sebagai teks sementara sampai scope 010. |
-| Bundel aplikasi | Nama tampil `Desktop Foundation` | `INFOPLIST_KEY_CFBundleDisplayName` di `project.pbxproj`. Teks sementara sampai scope 011. |
-| Bundel aplikasi | Nama di menu bar `DesktopMac` | `PRODUCT_NAME`, yang sama dengan nama target, di `project.pbxproj`. Teks sementara sampai scope 011. |
-| Bundel aplikasi | Pengenal bundel `com.example.desktop-foundation.macos` | Nilai sementara di `project.pbxproj`. Nilai akhirnya hanya user yang tahu (lihat Follow-up). |
-| Bundel aplikasi | Versi `0.1.0` dan build `1` | `MARKETING_VERSION` disalin dari `version` workspace (spec `_root/0001`). `CURRENT_PROJECT_VERSION` ditetapkan spec ini. |
+| Jendela | Judul `Desktop Foundation` | Pada akhir milestone 2 spec ini literal di `DesktopMacApp.swift`. Sesudah spec `macos/0004`, nilai `CFBundleDisplayName` di bundel, dari `build.product_name` di konfigurasi publik. |
+| Jendela | Label kolom `Name` | Literal bahasa Inggris di `GreetingView.swift` |
+| Jendela | Teks tombol `Greet` | Pada akhir milestone 2 spec ini literal. Sesudah spec `macos/0006`, katalog lewat kunci `greeting.submit`. |
+| Bundel aplikasi | Nama tampil `Desktop Foundation` | Pada akhir milestone 2 spec ini `INFOPLIST_KEY_CFBundleDisplayName` di `project.pbxproj`. Sesudah spec `macos/0004`, `apps/macos/Config/Shared.xcconfig`. |
+| Bundel aplikasi | Nama di menu bar `DesktopMac` | `PRODUCT_NAME`, yang sama dengan nama target, di `project.pbxproj`. Ditetapkan spec ini; spec `macos/0004` memutuskan `PRODUCT_NAME` tidak ikut nama produk (lihat Follow-up di sana). |
+| Bundel aplikasi | Pengenal bundel `com.example.desktop-foundation.macos` | Pada akhir milestone 2 spec ini nilai sementara di `project.pbxproj`. Sesudah spec `macos/0004`, `Shared.xcconfig`: dasar pengenal di konfigurasi publik ditambah `.macos`. |
+| Bundel aplikasi | Versi `0.1.0` dan build `1` | `MARKETING_VERSION` dari `version` workspace (spec `_root/0001`): pada akhir milestone 2 spec ini disalin di `project.pbxproj`, sesudah spec `macos/0004` lewat `Shared.xcconfig`. `CURRENT_PROJECT_VERSION` ditetapkan spec ini. |
 | Bundel aplikasi | Versi minimum macOS `14.0` | `MACOSX_DEPLOYMENT_TARGET` di `project.pbxproj`, ditetapkan spec ini |
 | Penautan | Lokasi `libdesktop_macos_ffi.a` | `target/aarch64-apple-darwin/<profil>/`, hasil `cargo build --target aarch64-apple-darwin` |
 | Generator | Checksum fungsi dan versi kontrak di binding | Dihitung UniFFI dari pustaka statis |
@@ -917,7 +937,7 @@ Tidak ada autentikasi, peran, jaringan, atau penyimpanan. Nama adalah teks dari 
 
 **Configuration required**:
 
-Tidak ada variabel lingkungan, kredensial, atau berkas konfigurasi baru. Prasyarat mesin: Xcode `27.1` terpilih lewat `xcode-select`, dan `rustup` dengan `cargo` di `$HOME/.cargo/bin`.
+Tidak ada variabel lingkungan atau kredensial. Sesudah spec `macos/0004`, `apps/macos/Config/Shared.xcconfig` adalah berkas setelan build hasil generator `desktop-codegen`; jangan disunting. Prasyarat mesin: Xcode `27.1` terpilih lewat `xcode-select`, dan `rustup` dengan `cargo` di `$HOME/.cargo/bin`.
 
 **Kasus gagal yang sudah diputuskan**:
 
@@ -965,17 +985,17 @@ Tidak ada skenario izin, karena tidak ada pembatasan akses. Alur di jendela nyat
 
 Langkah ini hanya dijalankan user pada sesi GUI. `/develop` menyalinnya ke `verify.md` di bawah `### UI / manual` pada milestone 4.
 
-Prasyarat: Mac Apple Silicon dengan macOS 14 atau lebih baru (yang sudah diuji: 27.0.1), Xcode 27.1, sesi desktop yang sedang login, dan repo pada commit yang lulus **AC-4**.
+Prasyarat: Mac Apple Silicon dengan macOS 14 atau lebih baru (yang sudah diuji: 27.0.1), Xcode 27.1, sesi desktop yang sedang login, repo pada commit yang lulus **AC-4**, dan bahasa sistem Inggris (System Settings, General, Language & Region, English di urutan pertama). Langkah 2 sampai 5 dan 7 bergantung pada bahasa itu, karena sesudah spec `macos/0006` label tombol `Greet` dibaca dari katalog.
 
 1. Dari akar repo jalankan `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`. Harapan: `** BUILD SUCCEEDED **`. (**AC-5**)
-2. Jalankan `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`. Harapan: satu jendela berjudul `Desktop Foundation` dengan kolom `Name`, tombol `Greet`, dan label hasil yang kosong. (**AC-5**)
-3. Ketik `Ayu` di kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, Ayu!`. (**AC-5**)
-4. Hapus isi kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, !`. (**AC-5**)
-5. Tempel teks `Łukasz 李 👩🏽‍💻` ke kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, Łukasz 李 👩🏽‍💻!` dengan emoji yang utuh. (**AC-5**)
+2. Dengan bahasa sistem Inggris, jalankan `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`. Harapan: satu jendela berjudul `Desktop Foundation` dengan kolom `Name`, tombol `Greet`, dan label hasil yang kosong. Sesudah spec `macos/0004`, judul itu adalah nilai `build.product_name` di konfigurasi publik, dengan nilai sementara `Desktop Foundation`. (**AC-5**)
+3. Dengan bahasa sistem Inggris, ketik `Ayu` di kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, Ayu!`. (**AC-5**)
+4. Dengan bahasa sistem Inggris, hapus isi kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, !`. (**AC-5**)
+5. Dengan bahasa sistem Inggris, tempel teks `Łukasz 李 👩🏽‍💻` ke kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, Łukasz 李 👩🏽‍💻!` dengan emoji yang utuh. (**AC-5**)
 6. Hapus isi kolom, ketik `Budi`, lalu tekan Return tanpa memakai mouse. Harapan: label menampilkan `Hello, Budi!`. (**AC-13**)
-7. Nyalakan VoiceOver dengan Command F5 (pada sebagian laptop Fn Command F5), lalu pindah ke kolom, tombol, dan label. Harapan: VoiceOver menyebut `Name` untuk kolom, `Greet` untuk tombol, dan membacakan `Hello, Budi!` untuk label. Matikan VoiceOver. (**AC-13**)
+7. Dengan bahasa sistem Inggris, nyalakan VoiceOver dengan Command F5 (pada sebagian laptop Fn Command F5), lalu pindah ke kolom, tombol, dan label. Harapan: VoiceOver menyebut `Name` untuk kolom, `Greet` untuk tombol, dan membacakan `Hello, Budi!` untuk label. Matikan VoiceOver. (**AC-13**)
 8. Tekan Command Q. Harapan: aplikasi tertutup tanpa dialog. (**AC-13**)
-9. Jalankan `open apps/macos/DesktopMac.xcodeproj`, tunggu paket selesai dimuat, lalu tekan Command R. Harapan: build berhasil dan jendela yang sama terbuka. Tutup Xcode, lalu jalankan `git status --short`. Harapan: tidak ada keluaran. Bila ada, catat setiap path yang tercetak dan jangan di commit. Keluaran di sini tidak menggagalkan langkah ini. Yang menentukan adalah build berhasil dan jendela terbuka. (**AC-13**)
+9. Jalankan `open apps/macos/DesktopMac.xcodeproj`, tunggu paket selesai dimuat, lalu tekan Command R. Harapan: build berhasil dan jendela yang sama terbuka. Tutup Xcode, lalu jalankan `git status --short`. Harapan: tidak ada keluaran. Bila ada, catat setiap path yang tercetak dan jangan di commit. Keluaran di sini tidak menggagalkan langkah ini. Yang menentukan adalah build berhasil dan jendela terbuka. Bila Xcode menulis ke `apps/macos/Resources/AppIcon.icon/`, `assets check` menangkapnya; kembalikan dengan `assets generate` (spec `macos/0007`). (**AC-13**)
 
 Catat host, arsitektur, versi macOS, dan hasil tiap langkah. Langkah yang belum dijalankan tetap tercatat sebagai belum diverifikasi.
 
@@ -1037,7 +1057,7 @@ Hook `pre-commit` menolak commit bila sebuah sumber punya extractor tetapi tidak
 * Hanya macOS 27.0.1 pada arm64 yang diuji. Versi minimum 14.0 adalah pengaturan build, belum bukti berjalan. Mac Intel tidak didukung.
 * Lewat jembatan, satu nama dibatasi sekitar 2 GiB, dan panik di Rust menghentikan aplikasi. Keduanya tidak tercapai oleh nama yang diketik pengguna.
 * Aplikasi belum memakai sandbox dan hanya ditandatangani ad hoc, jadi belum bisa dibagikan ke Mac lain.
-* Teks antarmuka masih literal bahasa Inggris, dan pengenal bundel masih nilai sementara.
+* Pada akhir milestone 2 spec ini teks antarmuka masih literal bahasa Inggris dan pengenal bundel masih nilai sementara. Spec `macos/0004` dan `macos/0006` memindahkan judul, nama tampil, pengenal, dan label tombol; pengenal akhir tetap nilai dari user.
 
 **Neutral**:
 
@@ -1055,17 +1075,17 @@ Hook `pre-commit` menolak commit bila sebuah sumber punya extractor tetapi tidak
 * [ ] Lead: bila langkah manual 9 menemukan berkas yang dibuat Xcode dan tidak diabaikan git, putuskan apakah berkas itu dilacak (pembaruan spec ini) atau diabaikan (pembaruan `.gitignore` lewat spec `_root/0001`).
 * [ ] Lead: tambahkan tautan balik ke spec ini di berkas scope 004. Sesudah build, `docs/architecture/README.md` bagian "Yang sudah ada" dan `docs/platforms/macos/README.md` perlu menyebut `crates/macos-ffi/`, `bindings/swift/`, dan `apps/macos/` sebagai hal yang sudah ada. Berkas berkas itu di luar ownership sesi penulis spec.
 * [ ] Lead: `test-preferences.json` di akar hanya menyebut `cargo test`. Sesudah milestone 1, uji Swift di `apps/macos/Tests/` berjalan lewat perintah `swift test` di **AC-2**. Pertimbangkan mencatatnya di berkas itu supaya `/test` menemukannya.
-* [ ] Nilai dari user: pengenal bundel akhir untuk aplikasi macOS. Nilai sementara `com.example.desktop-foundation.macos` cukup untuk build lokal dan wajib diganti sebelum penandatanganan atau distribusi.
-* [ ] Scope 002: jadikan pemeriksaan tetap untuk **AC-7** dan **AC-8** (hanya `Interop` yang mengimpor `DesktopMacosFFI`, tidak ada `Hello, ` di Swift selain uji, binding sama dengan keluaran generator), dan putuskan apakah `[lints.rust]` jembatan pindah ke `[workspace.lints]`.
-* [ ] Scope 008: token tema untuk Swift dan modul `DesignSystem`, serta pemeriksaan tampilan terang dan gelap. Jarak dan ukuran di `GreetingView` masih angka literal.
-* [ ] Scope 009: konfigurasi publik untuk aplikasi macOS. Belum ada yang dibaca aplikasi ini.
-* [ ] Scope 010: pindahkan `Desktop Foundation`, `Name`, dan `Greet` ke katalog bahasa. Hasil `hello` tetap ditampilkan dengan `Text(verbatim:)`.
-* [ ] Scope 011: ikon aplikasi, nama tampil bundel, dan aset merek lain.
-* [ ] Scope 012: bungkus perintah di **Membuat ulang binding** dan **Perintah build dan uji** dalam `scripts/generate-bindings.sh` dan `scripts/build-macos.sh`, jalankan di runner macOS GitHub Actions, catat hasil per arsitektur, dan jaga `MARKETING_VERSION` tetap sama dengan versi workspace.
+* [ ] Nilai dari user: pengenal bundel akhir untuk aplikasi macOS. Sesudah spec `macos/0004`, nilainya adalah `DASAR_PENGENAL` (`N6`) di konfigurasi publik ditambah `.macos`. Nilai sementara `com.example.desktop-foundation.macos` cukup untuk build lokal dan wajib diganti sebelum penandatanganan atau distribusi.
+* [x] Scope 002: jadikan pemeriksaan tetap untuk **AC-7** dan **AC-8** (hanya `Interop` yang mengimpor `DesktopMacosFFI`, tidak ada `Hello, ` di Swift selain uji, binding sama dengan keluaran generator), dan putuskan apakah `[lints.rust]` jembatan pindah ke `[workspace.lints]`. Diterapkan di spec `_root/0007` (aturan `A-8`, `A-9`, `A-10`; tanpa `[workspace.lints]`, `A-5`) dan spec `macos/0008` (binding sama dengan keluaran generator, `G-2`) (2026-11-15).
+* [x] Scope 008: token tema untuk Swift dan modul `DesignSystem`, serta pemeriksaan tampilan terang dan gelap. Jarak dan ukuran di `GreetingView` masih angka literal. Diterapkan di spec `macos/0005` (2026-11-15).
+* [x] Scope 009: konfigurasi publik untuk aplikasi macOS. Belum ada yang dibaca aplikasi ini. Diterapkan di spec `_root/0004` dan `macos/0004` (2026-11-15).
+* [x] Scope 010: pindahkan `Desktop Foundation`, `Name`, dan `Greet` ke katalog bahasa. Hasil `hello` tetap ditampilkan dengan `Text(verbatim:)`. Diterapkan di spec `macos/0006` (2026-11-15): hanya `Greet` yang pindah, sebagai `greeting.submit`. `Name` tetap literal. `Desktop Foundation` milik spec `macos/0004` (nama produk di konfigurasi publik, keputusan 12 spec `_root/0004`).
+* [x] Scope 011: ikon aplikasi, nama tampil bundel, dan aset merek lain. Ikon aplikasi diterapkan di spec `macos/0007`; nama tampil bundel di spec `macos/0004` (keputusan 12 spec `_root/0004`); aset merek lain menunggu kebutuhan produk (2026-11-15).
+* [ ] Scope 012: bungkus perintah di **Membuat ulang binding** dan **Perintah build dan uji** dalam `scripts/generate-bindings.sh` dan `scripts/build-macos.sh`, jalankan di runner macOS GitHub Actions, catat hasil per arsitektur, dan jaga `MARKETING_VERSION` tetap sama dengan versi workspace. Bagian `MARKETING_VERSION` terjawab di spec `macos/0004` (generator `config`); yang tersisa untuk scope 012 adalah skrip dan CI.
 * [ ] Distribusi (di luar fase fondasi): sandbox, hardened runtime, entitlement, penandatanganan dengan identitas tim, dan notarisasi.
 * [ ] Scope 006 dan 007 (menunggu host Windows dan Linux): `cargo build --workspace --locked` di host itu sekarang ikut membangun `desktop-macos-ffi` dan pustaka UniFFI. Itu belum diuji. Bila gagal di sana, perbaiki lewat aturan netral host di spec `_root/0001` dengan pembaruan spec ini.
 * [ ] Uji di macOS 14 sampai 26 belum ada. Bila host seperti itu tersedia, jalankan **AC-4** dan langkah manual di sana, atau naikkan versi minimum lewat pembaruan spec ini.
 * [ ] Bila langkah manual 9 menunjukkan Xcode di GUI menolak paket lokal di folder yang sama dengan proyek, pindahkan `Package.swift`, `Interop/`, `Presentation/`, dan `Tests/` ke `apps/macos/Modules/` lewat pembaruan spec ini, dan ubah `relativePath` di proyek menjadi `Modules`.
-* [ ] `tooling/codegen/` sengaja belum dibuat. Generator binding tinggal di crate jembatan. Scope 002 atau 008 yang pertama membutuhkan folder itu yang membuatnya (spec `_root/0001`).
+* [x] `tooling/codegen/` sengaja belum dibuat. Generator binding tinggal di crate jembatan. Scope 002 atau 008 yang pertama membutuhkan folder itu yang membuatnya (spec `_root/0001`). Dibuat spec `_root/0003` sebagai paket `desktop-codegen`; generator binding tetap di crate jembatan (2026-11-15).
 * [ ] Bila alur di jendela perlu diuji otomatis, tambahkan target uji UI lewat pembaruan spec ini. Uji seperti itu mengambil alih layar, jadi tetap dijalankan user.
 * [ ] Menaikkan versi UniFFI: ubah satu baris di `crates/macos-ffi/Cargo.toml`, jalankan `cargo build` supaya `Cargo.lock` ikut berubah, buat ulang binding, jalankan semua AC, dan perbarui tabel **Kombinasi yang dipakai** di spec ini.

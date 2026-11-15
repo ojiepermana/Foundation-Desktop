@@ -183,3 +183,21 @@ Spec ini dibaca ulang oleh model lain (Claude Opus, hanya membaca) pada 2026-11-
 | Generator gagal sesudah folder keluaran dihapus, `CARGO_TARGET_DIR` milik user, dan Xcode di GUI menolak paket lokal | Tiga baris baru di tabel kasus gagal, dan satu Follow-up untuk jalan keluar paket lokal. |
 
 Satu temuan tidak diterapkan karena percobaan menunjukkan sebaliknya: pemeriksa menduga berpindah antara Xcode dan terminal membangun ulang seluruh Rust, sebab Xcode mengekspor `MACOSX_DEPLOYMENT_TARGET`. Pada Rust 1.99.1 itu tidak terjadi (lihat **Bukti percobaan**).
+
+## Pembaruan 2026-11-15: gabungan permintaan spec macOS berikutnya
+
+Spec `macos/0004` sampai `macos/0008` mengubah berkas yang isinya ditulis spec ini, dan menambah path di `apps/macos/`. Lead menggabungkan semua permintaan mereka menjadi satu pembaruan, supaya spec ini tidak ditulis ulang empat kali dan tidak ada angka yang bergantung pada urutan build.
+
+* Setiap hitungan (AC-2, AC-3, AC-8, AC-12) diberi batas "pada akhir milestone <n> spec ini". Tambahan dari spec lain dihitung relatif di AC spec itu. ID AC tidak berubah, dan centang di `verify.md` tetap benar untuk commit saat itu.
+* Larangan folder di AC-12 dan Tata letak menjadi satu kalimat kepemilikan: tidak ada `Platform`; `DesignSystem/` milik `macos/0005`; `apps/macos/Resources/` hanya `AppIcon.icon/` dari `macos/0007`; `apps/macos/Presentation/Resources/` milik `macos/0006`; `apps/macos/Config/` milik `macos/0004`.
+* Blok "Isi file" untuk `Package.swift`, `GreetingView.swift`, `DesktopMacApp.swift`, dan `project.pbxproj` tetap isi akhir milestone spec ini, dengan rujukan ke spec yang mengubahnya. Isi baru tidak disalin ke sini, supaya hanya ada satu sumber untuk tiap perubahan.
+* Path baru dari spec lain didaftar di tabel terpisah **Path dari spec lain**, bukan digabung ke tabel enam belas path, supaya tabel itu tetap keadaan akhir milestone 3 dan AC-11 tetap bisa diperiksa.
+* Teks antarmuka, nama produk, dan pengenal bundel mengikuti keputusan 12 spec `_root/0004` (nama produk di konfigurasi publik), spec `macos/0004` (judul dan setelan bundel dari `Shared.xcconfig`), dan spec `macos/0006` (hanya `Greet` pindah ke katalog sebagai `greeting.submit`; `Name` tetap literal).
+* Pemeriksaan binding tetap perintah "Membuat ulang binding" sebagai cara memperbaiki; pemeriksaan tanpa menulisnya adalah `G-2` spec `macos/0008`. Pemeriksaan tetap AC-7 dan AC-8 dijawab aturan `A-8` sampai `A-10` spec `_root/0007`.
+* Langkah manual 2, 3, 6, dan 7 kini butuh bahasa sistem Inggris, dan langkah 9 menyebut `assets check` untuk ikon. Status `F004-1` dan `F004-2` tetap `NOT_RUN`.
+* Blok `Package.swift` diberi label akhir milestone 1, bukan milestone 2 seperti usulan spec `macos/0005`, karena tabel "File yang boleh diubah tiap milestone" spec ini menaruh `Package.swift` di milestone 1. `GreetingView.swift`, `DesktopMacApp.swift`, dan `project.pbxproj` diberi label milestone 2.
+* Usulan spec `macos/0006` menyebut langkah manual 2, 3, 6, dan 7 untuk prasyarat bahasa. Yang dipakai adalah langkah 2 sampai 5 dan 7: langkah 4 dan 5 juga menekan tombol `Greet`, sedangkan langkah 6 memakai Return dan tidak bergantung pada label.
+* AC-2 dan AC-3 kini juga menerima baris `✔ Suite BindingContractTests passed` dan `✔ Suite GreetingViewModelTests passed`, yang tidak bergantung pada jumlah target uji. Kedua baris itu tercetak di keluaran `swift test` Swift 6.4 pada Mac koordinasi (2026-11-15, saat menyiapkan spec `macos/0005`), misalnya `✔ Suite BindingContractTests passed after 0.335 seconds.`.
+* Larangan folder `Platform` berlaku sampai spec yang membuat folder itu memperbarui spec ini, karena spec `_root/0001` (Folder rencana) dan spec `macos/0008` mengizinkan folder itu kelak.
+
+Cross check pembaruan ini dijalankan oleh subagent baru berkonteks bersih (Claude Opus, family yang sama dengan penulis pembaruan; Fable tidak dipakai). Perbaikan yang diterapkan: tiga kalimat yang masih bisa basi (paragraf Decision, baris nama di menu bar, impor di tabel peran), kalimat sinkronisasi `project.pbxproj`, daftar langkah manual yang bergantung pada bahasa, larangan `Platform` yang dibatasi, dan hitungan relatif di spec `macos/0004` serta `macos/0005` yang diganti pemeriksaan path tambahan per commit, supaya tidak gagal saat diperiksa ulang sesudah spec berikutnya dibangun.
