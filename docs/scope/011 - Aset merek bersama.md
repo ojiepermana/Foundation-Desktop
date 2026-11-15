@@ -24,7 +24,7 @@ Tentukan pemilik berkas merek dan cara menghasilkan varian yang diperlukan setia
   * [ ] Milestone 2: Ikon terlihat di sesi GUI. Build plan langkah 3. AC-11. after milestone 1; needs sesi GUI di Mac (`BLOCKED`, `owner: user`, langkah manual `F011-2`)
   * [ ] Milestone 3: Ikon nyata dari user. Build plan langkah 4. AC-12. after milestone 1 dan langkah manual `F011-1` (`BLOCKED`, `owner: user`, langkah manual `F011-3`)
 * [x] Verify it: `/check verify scope 011 aset merek untuk macOS` (bukti tanpa jendela, AC-1 sampai AC-10; AC-11 menunggu langkah manual `F011-2`, AC-12 menunggu `F011-3`)
-* [ ] Test it: `/test scope 011 aset merek untuk macOS`
+* [x] Test it: `/test scope 011 aset merek untuk macOS`
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 
