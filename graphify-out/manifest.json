@@ -634,5 +634,11 @@
     "seen": 1794751909.488357,
     "ast_hash": "aacb5ae90cdf21a7990caf7718370f10",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_rules.rs": {
+    "mtime": 1794752285.6581488,
+    "seen": 1794752289.0029912,
+    "ast_hash": "83ec42b8d6774fca31a928524079c215",
+    "semantic_hash": ""
   }
 }
