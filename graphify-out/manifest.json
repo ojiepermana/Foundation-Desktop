@@ -862,5 +862,11 @@
     "seen": 1794754920.915828,
     "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/architecture_rules.rs": {
+    "mtime": 1794755062.75065,
+    "seen": 1794755064.329476,
+    "ast_hash": "1e0c0da8d94525a6427a1441b17db421",
+    "semantic_hash": ""
   }
 }
