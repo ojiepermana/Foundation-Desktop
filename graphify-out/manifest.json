@@ -329,12 +329,6 @@
     "ast_hash": "f21b33018cd4cfaee59f1d8cb44cf218",
     "semantic_hash": ""
   },
-  "crates/core/tests/workspace_layout.rs": {
-    "mtime": 1794738586.7995105,
-    "seen": 1794738587.646782,
-    "ast_hash": "632f2790312266d4ff057959998134d5",
-    "semantic_hash": ""
-  },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
     "mtime": 1794739767.6538305,
     "seen": 1794739770.242265,
@@ -441,12 +435,6 @@
     "mtime": 1794741033.5262637,
     "seen": 1794741036.01794,
     "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
-    "semantic_hash": ""
-  },
-  "crates/core/tests/macos_bridge_ownership.rs": {
-    "mtime": 1794741621.8338816,
-    "seen": 1794741622.8036742,
-    "ast_hash": "279a47592eb67615319332e40de8b248",
     "semantic_hash": ""
   },
   "docs/reviews/2026-11-15-verify-macos-0002-0003.md": {
@@ -807,6 +795,18 @@
     "mtime": 1794753562.4886844,
     "seen": 1794753568.560063,
     "ast_hash": "95aa10a1a490a1cb1ba88179f8be8a78",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/macos_bridge_ownership.rs": {
+    "mtime": 1794753644.0586333,
+    "seen": 1794753650.059819,
+    "ast_hash": "a67a741d8d2db0dc96da4376185f3db9",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/workspace_layout.rs": {
+    "mtime": 1794753644.059081,
+    "seen": 1794753650.059826,
+    "ast_hash": "632f2790312266d4ff057959998134d5",
     "semantic_hash": ""
   }
 }
