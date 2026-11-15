@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "crates/core/src/greeting.rs": {
-    "mtime": 1794737768.9256017,
-    "seen": 1794737769.946012,
-    "ast_hash": "0e4c12a04427ae16734cc94295cd3d1d",
+    "mtime": 1794737809.7436602,
+    "seen": 1794737810.80048,
+    "ast_hash": "3c2a2d080bbb85d8560b414c1d7d820d",
     "semantic_hash": ""
   },
   "crates/core/tests/hello_contract.rs": {
