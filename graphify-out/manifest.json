@@ -412,5 +412,11 @@
     "seen": 1794740058.695907,
     "ast_hash": "2e4466d2dab07629cd4d280604d4b36d",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
+    "mtime": 1794740101.9787247,
+    "seen": 1794740102.7979321,
+    "ast_hash": "df5e761cf15abaffeac4feb58851b64a",
+    "semantic_hash": ""
   }
 }
