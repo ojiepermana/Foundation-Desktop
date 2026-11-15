@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794740028.3608875,
-    "seen": 1794740031.4405382,
-    "ast_hash": "9c18db8c717b576d88d4ed693421704a",
+    "mtime": 1794741072.1472223,
+    "seen": 1794741073.220414,
+    "ast_hash": "84cc965d59445aea36f3e62c169f9d53",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794740028.3610513,
-    "seen": 1794740031.440534,
-    "ast_hash": "627790c887d1131f79516a709a9fd613",
+    "mtime": 1794741072.1474054,
+    "seen": 1794741073.2204149,
+    "ast_hash": "32e9d8a53c63c3ccf464954a91c2f91a",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794740287.2968566,
-    "seen": 1794740289.077939,
-    "ast_hash": "a0a4e1b623c02f3c25399aed2317d712",
+    "mtime": 1794741072.1486514,
+    "seen": 1794741073.220413,
+    "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
@@ -420,9 +420,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794740726.6280117,
-    "seen": 1794740727.8075001,
-    "ast_hash": "66a219c8db835c3ae3626ecfaaaae208",
+    "mtime": 1794741072.1492667,
+    "seen": 1794741073.22041,
+    "ast_hash": "51fc5ecbc67be6469930feb751c1050e",
     "semantic_hash": ""
   },
   "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
