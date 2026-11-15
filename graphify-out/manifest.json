@@ -778,5 +778,11 @@
     "seen": 1794753106.364084,
     "ast_hash": "11452544872e000e16e87c072f506cb0",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/assets_rules.rs": {
+    "mtime": 1794753582.2322845,
+    "seen": 1794753586.798111,
+    "ast_hash": "363d14073b40388cb28750d561c3467b",
+    "semantic_hash": ""
   }
 }
