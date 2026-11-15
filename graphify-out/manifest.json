@@ -418,5 +418,17 @@
     "seen": 1794740289.077943,
     "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
+    "mtime": 1794740620.646151,
+    "seen": 1794740622.736178,
+    "ast_hash": "66a219c8db835c3ae3626ecfaaaae208",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
+    "mtime": 1794740620.6463597,
+    "seen": 1794740622.736181,
+    "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
+    "semantic_hash": ""
   }
 }
