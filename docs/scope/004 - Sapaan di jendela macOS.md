@@ -15,7 +15,7 @@ Hubungkan kolom nama, tombol, dan label SwiftUI ke [kontrak 003](003%20-%20Kontr
   * [ ] Milestone 3: Bukti build, kombinasi versi, dan kebersihan repo. Build plan langkah 5. AC-10, AC-11, AC-12. after milestone 2
   * [ ] Milestone 4: Sesi GUI di Mac. Build plan langkah 6. AC-5, AC-13. after milestone 2; needs sesi GUI di Mac (`BLOCKED`, `owner: user`)
 * [ ] Verify it: `/check verify scope 004 sapaan di jendela macOS`
-* [ ] Test it: `/test scope 004 sapaan di jendela macOS`
+* [x] Test it: `/test scope 004 sapaan di jendela macOS`
 
 **Tujuan spec** `docs/specs/macos/`
 
