@@ -778,5 +778,17 @@
     "seen": 1794753106.364084,
     "ast_hash": "11452544872e000e16e87c072f506cb0",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
+    "mtime": 1794754189.9504254,
+    "seen": 1794754191.393677,
+    "ast_hash": "1ff1fc62b1443214e98e2d8e6edb62cb",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
+    "mtime": 1794754189.950631,
+    "seen": 1794754191.3936799,
+    "ast_hash": "4de40df3ad45e9cc61726f2619e4bcde",
+    "semantic_hash": ""
   }
 }
