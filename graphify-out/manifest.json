@@ -310,5 +310,23 @@
     "seen": 1794738179.8169851,
     "ast_hash": "987f8df927a82d86e7de6dbafad7ca7b",
     "semantic_hash": ""
+  },
+  "test-preferences.json": {
+    "mtime": 1794738323.4396434,
+    "seen": 1794738325.260055,
+    "ast_hash": "3056dbf00efbe13913ea90c4ca8474f5",
+    "semantic_hash": ""
+  },
+  "crates/core/tests/contract_surface.rs": {
+    "mtime": 1794738323.4195101,
+    "seen": 1794738325.260061,
+    "ast_hash": "0c7f552809eb75d8f6cd7929a78ed32a",
+    "semantic_hash": ""
+  },
+  "crates/core/tests/hello_invariants.rs": {
+    "mtime": 1794738323.4200966,
+    "seen": 1794738325.260065,
+    "ast_hash": "f21b33018cd4cfaee59f1d8cb44cf218",
+    "semantic_hash": ""
   }
 }
