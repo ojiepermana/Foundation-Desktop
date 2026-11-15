@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Placeholder app icon, not a brand asset</title>
+  <rect x="64" y="64" width="896" height="896" rx="160" fill="#d9d9d9" stroke="#8c8c8c" stroke-width="16"/>
+  <path d="M192 192 L832 832 M832 192 L192 832" fill="none" stroke="#8c8c8c" stroke-width="16"/>
+</svg>
