@@ -3,3 +3,5 @@
 /shared/localization/**/*.json text eol=lf
 /shared/assets/**/*.json text eol=lf
 /shared/assets/**/*.svg text eol=lf
+/scripts/*.sh text eol=lf
+/.github/workflows/*.yml text eol=lf
