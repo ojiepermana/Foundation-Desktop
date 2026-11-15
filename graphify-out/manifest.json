@@ -874,5 +874,17 @@
     "seen": 1794755402.110209,
     "ast_hash": "4cee97352b12a822265ee7ae732e2c79",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
+    "mtime": 1794755684.0770144,
+    "seen": 1794755688.6097028,
+    "ast_hash": "77a4ea5250399a55e7f209cdd89561e4",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md": {
+    "mtime": 1794755684.0772216,
+    "seen": 1794755688.609706,
+    "ast_hash": "b613741fc18c5be9037cea9b8bc17bc3",
+    "semantic_hash": ""
   }
 }
