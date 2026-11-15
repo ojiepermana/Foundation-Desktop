@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 79 files · ~85,393 words
+- 79 files · ~85,472 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -20,13 +20,13 @@
 - Fondasi Linux
 - workspace_layout.rs
 - Alur lead
-- 0001. Batas workspace dan pemilik
 - Penerimaan dan bukti fondasi
+- 0001. Batas workspace dan pemilik
 - Scope fondasi desktop native
-- Fondasi macOS
 - Milestone 1: Jembatan, binding, dan uji tanpa jendela
 - 0002. Batas workspace dan pemilik di macOS
 - 0003. Kontrak sapaan bersama di macOS
+- Fondasi macOS
 - UniffiInternalError
 - contract_surface.rs
 - 001 - Batas workspace dan pemilik
@@ -133,33 +133,33 @@ Nodes (17): architecture_rule_table_matches_the_spec_row_by_row(), every_member_
 Cohesion: 0.11
 Nodes (18): 1. Tentukan SCOPE, 2. Analisis dan rencana wave, 3. Mulai sub sesi, 4. Komunikasi, 5. Laporan, 6. Gerbang centang dan merge, 7. Log, 8. Akhir wave (+10 more)
 
-### Community 10 - "0001. Batas workspace dan pemilik"
+### Community 10 - "Penerimaan dan bukti fondasi"
+Cohesion: 0.13
+Nodes (19): Apple Silicon ARM64 dan Intel bersyarat, Uji jendela di Mac, Xcode, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai (+11 more)
+
+### Community 11 - "0001. Batas workspace dan pemilik"
 Cohesion: 0.11
 Nodes (19): 0001. Batas workspace dan pemilik, Aturan arah dependensi, Aturan untuk manifest root, Build plan, Consequences, Decision, Follow-up, Invarian (+11 more)
-
-### Community 11 - "Penerimaan dan bukti fondasi"
-Cohesion: 0.15
-Nodes (17): Uji jendela di Mac, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai, C29 · Alur kerja GitHub Actions untuk fondasi sudah dikonfigurasi, C30 · Pengujian yang relevan sudah dijalankan (+9 more)
 
 ### Community 12 - "Scope fondasi desktop native"
 Cohesion: 0.20
 Nodes (16): C19 · Tersedia aturan lokalisasi bersama, C20 · Ada contoh minimal penggunaan lokalisasi, C21 · Kepemilikan aset bersama terdokumentasi, Validasi keluaran generator, 010 - Satu contoh lokalisasi, 011 - Aset merek bersama, Scope fondasi desktop native, Aset merek (+8 more)
 
-### Community 13 - "Fondasi macOS"
-Cohesion: 0.20
-Nodes (15): Kepemilikan memori dan pemetaan kesalahan, AppKit, Apple Silicon ARM64 dan Intel bersyarat, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS (+7 more)
-
-### Community 14 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
+### Community 13 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
 Cohesion: 0.14
 Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Jembatan, binding, dan uji tanpa jendela, Milestone 2: Jendela SwiftUI dan proyek Xcode (+5 more)
 
-### Community 15 - "0002. Batas workspace dan pemilik di macOS"
+### Community 14 - "0002. Batas workspace dan pemilik di macOS"
 Cohesion: 0.14
 Nodes (14): 0002. Batas workspace dan pemilik di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tambah satu langkah untuk peta arsitektur (+6 more)
 
-### Community 16 - "0003. Kontrak sapaan bersama di macOS"
+### Community 15 - "0003. Kontrak sapaan bersama di macOS"
 Cohesion: 0.14
 Nodes (14): 0003. Kontrak sapaan bersama di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tanpa langkah build (+6 more)
+
+### Community 16 - "Fondasi macOS"
+Cohesion: 0.23
+Nodes (13): Kepemilikan memori dan pemetaan kesalahan, AppKit, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS, Jendela dan interaksi (+5 more)
 
 ### Community 17 - "UniffiInternalError"
 Cohesion: 0.17
@@ -269,7 +269,7 @@ Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Validasi keluaran generator` connect `Scope fondasi desktop native` to `Fondasi Windows`, `Penerimaan dan bukti fondasi`, `pre-commit script`, `Fondasi macOS`?**
+- **Why does `Validasi keluaran generator` connect `Scope fondasi desktop native` to `Fondasi macOS`, `Fondasi Windows`, `Penerimaan dan bukti fondasi`, `pre-commit script`?**
   _High betweenness centrality (0.073) - this node is a cross-community bridge._
 - **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `quality/README.md`, `Scope fondasi desktop native`, `Fondasi desktop native`?**
   _High betweenness centrality (0.070) - this node is a cross-community bridge._
