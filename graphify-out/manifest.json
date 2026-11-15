@@ -232,5 +232,23 @@
     "seen": 1794735638.6501918,
     "ast_hash": "fd3fb072b04137be5a680eb6c17015e9",
     "semantic_hash": ""
+  },
+  "docs/scope/coordination/000 - Panduan scope.brief-umum.md": {
+    "mtime": 1794735733.0799336,
+    "seen": 1794735733.556389,
+    "ast_hash": "1e5d17a5b6904ea85b51d23f4f9e45a3",
+    "semantic_hash": ""
+  },
+  "docs/scope/coordination/000 - Panduan scope.log.md": {
+    "mtime": 1794735733.0800736,
+    "seen": 1794735733.556392,
+    "ast_hash": "2229d34df979c6b23fcdcbb6f637aafc",
+    "semantic_hash": ""
+  },
+  "docs/scope/coordination/000 - Panduan scope.manual.md": {
+    "mtime": 1794735733.0802002,
+    "seen": 1794735733.556393,
+    "ast_hash": "3adacb9ec310d028ffc9292682411984",
+    "semantic_hash": ""
   }
 }
