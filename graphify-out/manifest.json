@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794753084.1684012,
-    "seen": 1794753088.8940952,
-    "ast_hash": "b16648db5873f6f5acf75f7b40df16ba",
+    "mtime": 1794753440.225243,
+    "seen": 1794753443.65394,
+    "ast_hash": "41f61fd2f1dc671271c20dea4dad603e",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
@@ -702,9 +702,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794753046.67155,
-    "seen": 1794753050.841774,
-    "ast_hash": "a213dfbe8c7770e61eadb1d4841b2f7d",
+    "mtime": 1794753440.2035925,
+    "seen": 1794753443.653942,
+    "ast_hash": "af4b8f8fc65ddf10ff066de46c2faa7d",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
@@ -777,6 +777,30 @@
     "mtime": 1794753103.0190125,
     "seen": 1794753106.364084,
     "ast_hash": "11452544872e000e16e87c072f506cb0",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/manifest.rs": {
+    "mtime": 1794753440.209623,
+    "seen": 1794753443.653933,
+    "ast_hash": "9bf03672858719c9b61b67b99c275669",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/deps.rs": {
+    "mtime": 1794753440.2094529,
+    "seen": 1794753443.6539369,
+    "ast_hash": "ff95171762f6972a35464fcc3d530cb7",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/mod.rs": {
+    "mtime": 1794753440.2098212,
+    "seen": 1794753443.653941,
+    "ast_hash": "8b49859413a7d10319586ad650e92d3d",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/architecture_contract.rs": {
+    "mtime": 1794753440.231236,
+    "seen": 1794753443.653943,
+    "ast_hash": "c8809605b9dd6fd0aabec741f18372be",
     "semantic_hash": ""
   }
 }
