@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794753170.0180533,
-    "seen": 1794753171.996812,
-    "ast_hash": "4cb4a7015bccf079793ef929a454229a",
+    "mtime": 1794753332.6399884,
+    "seen": 1794753334.4868999,
+    "ast_hash": "b18ef3bdccbd973f3a835e543a34dbeb",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -780,8 +780,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/assets_rules.rs": {
-    "mtime": 1794753501.6032276,
-    "seen": 1794753504.344243,
+    "mtime": 1794753513.6481674,
+    "seen": 1794753516.3438752,
     "ast_hash": "363d14073b40388cb28750d561c3467b",
     "semantic_hash": ""
   }
