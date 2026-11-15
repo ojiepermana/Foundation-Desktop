@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794744478.148292,
-    "seen": 1794744480.383229,
-    "ast_hash": "9a365f920bdca9e7a7bbbf56f433c1cb",
+    "mtime": 1794744988.7458286,
+    "seen": 1794744995.800632,
+    "ast_hash": "c9dabe56f1a3bf5d2220578dcd05b7d3",
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
@@ -495,6 +495,90 @@
     "mtime": 1794744555.513371,
     "seen": 1794744558.2547462,
     "ast_hash": "9db21cf0cedb9c4d28f894bb20623ff0",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/Cargo.toml": {
+    "mtime": 1794744988.7767344,
+    "seen": 1794744995.800617,
+    "ast_hash": "a410bcf22e0d5bd06bad242d90e28085",
+    "semantic_hash": ""
+  },
+  "design-system/tokens/colors.json": {
+    "mtime": 1794744988.6535923,
+    "seen": 1794744995.800621,
+    "ast_hash": "6c7851dbad512150223936254d393342",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
+    "mtime": 1794744988.7516592,
+    "seen": 1794744995.8006232,
+    "ast_hash": "b33e8c03b0dc83d5d627e80c29430719",
+    "semantic_hash": ""
+  },
+  "design-system/schemas/typography.schema.json": {
+    "mtime": 1794744988.6532993,
+    "seen": 1794744995.8006258,
+    "ast_hash": "11707de39c78e2b23242ca845d03d8c1",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/lib.rs": {
+    "mtime": 1794744988.7776232,
+    "seen": 1794744995.800627,
+    "ast_hash": "d78ed1c3949e4a8958f8ecd0ffee7bb6",
+    "semantic_hash": ""
+  },
+  "design-system/tokens/spacing.json": {
+    "mtime": 1794744988.6537895,
+    "seen": 1794744995.800628,
+    "ast_hash": "7a6cc6e975075c5b85f8b6fb9e52fe47",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/json.rs": {
+    "mtime": 1794744988.7771406,
+    "seen": 1794744995.800628,
+    "ast_hash": "eaa371a53bbe0e774757ac65315063fa",
+    "semantic_hash": ""
+  },
+  "design-system/schemas/colors.schema.json": {
+    "mtime": 1794744988.6524148,
+    "seen": 1794744995.800629,
+    "ast_hash": "8815db30c7fb0fb182f0344fe84a1968",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/tokens/schema.rs": {
+    "mtime": 1794744988.7784734,
+    "seen": 1794744995.80063,
+    "ast_hash": "d14c3fafc33db61667f7e5ec475eb93f",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/tokens/mod.rs": {
+    "mtime": 1794744988.7782295,
+    "seen": 1794744995.800631,
+    "ast_hash": "a8ff076221e193fc7701221ef2781e69",
+    "semantic_hash": ""
+  },
+  "design-system/tokens/typography.json": {
+    "mtime": 1794744988.6541033,
+    "seen": 1794744995.8006332,
+    "ast_hash": "d11a7883380093a2b124b7dee554317e",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/tokens_contract.rs": {
+    "mtime": 1794744988.7788317,
+    "seen": 1794744995.8006341,
+    "ast_hash": "d2326aeab5b7d7e4fa65d841171c1a95",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/main.rs": {
+    "mtime": 1794744988.7778323,
+    "seen": 1794744995.8006349,
+    "ast_hash": "f16429b3af1dc32733469aa38c8850b0",
+    "semantic_hash": ""
+  },
+  "design-system/schemas/spacing.schema.json": {
+    "mtime": 1794744988.6528747,
+    "seen": 1794744995.8006358,
+    "ast_hash": "bf415a267b8024d83db1a627ed148497",
     "semantic_hash": ""
   }
 }

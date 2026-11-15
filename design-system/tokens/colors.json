@@ -1,0 +1,27 @@
+{
+  "$schema": "../schemas/colors.schema.json",
+  "schemaVersion": 1,
+  "base": {
+    "brand.primary": { "value": "#3366CC", "placeholder": true },
+    "neutral.50": { "value": "#FAFAFA", "placeholder": true },
+    "neutral.950": { "value": "#111111", "placeholder": true }
+  },
+  "semantic": {
+    "accent": {
+      "description": "Fill of the primary action control.",
+      "light": "brand.primary",
+      "dark": "brand.primary"
+    },
+    "background": {
+      "description": "Window background behind all content.",
+      "light": "neutral.50",
+      "dark": "neutral.950"
+    },
+    "text.primary": {
+      "description": "Main text.",
+      "light": "neutral.950",
+      "dark": "neutral.50",
+      "on": "background"
+    }
+  }
+}
