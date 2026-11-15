@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 18:05`
+- **Diperbarui:** `2026-11-15 18:06`
 
 ## Sub sesi wave `1`
 
@@ -19,6 +19,7 @@
 | `dev-f003-m1` | developer | 004 Build it milestone 2 (langkah 4) lalu milestone 3 (langkah 5); tindak lanjut di sesi yang sama tanpa clear | `004 - Sapaan di jendela macOS.md` | `apps/macos/Presentation/GreetingView.swift`, `apps/macos/App/`, `apps/macos/DesktopMac.xcodeproj/`, `verify.md` spec `macos/0001` bagian Milestone 2 dan 3 | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | dipakai ulang |
 | `arc-f001-spec` | checker (verify) | 004 verify milestone 1 (AC-1, AC-2, AC-3, AC-6, AC-7, AC-9) dari `main` `d7feee4`; sesi dibersihkan | `004 - Sapaan di jendela macOS.md` | centang `verify.md` spec `macos/0001` bagian Milestone 1 | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | dipakai ulang |
 | `arc-f001-spec` | architect (update) | spec `_root/0001` AC-4: hitungan paket `Cargo.lock` berlaku pada akhir milestone 1; laporan `done` (`26d9ef7`, HEAD `e1a16ce`), merge `d370d32` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
+| `arc-f004-spec` | architect (update) | spec `_root/0001` AC-8 dibatasi "pada akhir milestone 2"; spec `macos/0002` menambah penggantian baris `crates/core/`; satu baris Follow-up spec `macos/0001` ditandai terjawab; tindak lanjut di sesi yang sama | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md`, `docs/specs/macos/0002-batas-workspace-dan-pemilik.md`, satu baris Follow-up `docs/specs/macos/0001-sapaan-di-jendela-macos/index.md` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | dipakai ulang |
 | `arc-f004-spec` | architect | spec penerapan macOS scope 001 (`macos/0002`) dan scope 003 (`macos/0003`); laporan `done` (`d0e4bde`, HEAD `9c20d1d`), merge `2a42719` | `001 - Batas workspace dan pemilik.md`, `003 - Kontrak sapaan bersama.md` | `docs/specs/macos/0002-batas-workspace-dan-pemilik.md`, `docs/specs/macos/0003-kontrak-sapaan-bersama.md` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; laporan `done` (`d191846`, HEAD `2a672ab`), merge `c7ade1b` | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `dev-f001-m1` | developer | 001 Build it milestone 1; Langkah Build plan selesai 1 (`09c6f0c`), 2 (`60b948d`); Pointer code in `crates/core/` dan root workspace; laporan `done`, merge `9dee57d` | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec 0001, baris `**Status**` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
