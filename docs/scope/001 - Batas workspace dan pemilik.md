@@ -20,7 +20,7 @@ Tentukan tempat untuk Core, penghubung macOS, aplikasi native, dan resource agar
 
 * [x] `/architect scope 001 batas workspace dan pemilik untuk macOS` (spec)
 * [ ] Build it: `/develop scope 001 batas workspace dan pemilik untuk macOS`
-  * [ ] Milestone 1: Peta arsitektur mencatat lokasi macOS. Build plan langkah 1. AC-4. needs scope 004 milestone 2; needs AC-8 spec _root/0001 diberi batas "pada akhir milestone 2"
+  * [ ] Milestone 1: Peta arsitektur mencatat lokasi macOS. Build plan langkah 1. AC-4. needs scope 004 milestone 2
 * [ ] Verify it: `/check verify scope 001 batas workspace dan pemilik untuk macOS`. needs Verify it scope 004
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
