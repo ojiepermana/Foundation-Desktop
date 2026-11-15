@@ -672,9 +672,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
-    "mtime": 1794752435.067744,
-    "seen": 1794752436.523438,
-    "ast_hash": "7dc57f67ab9aa6a2d4a2eb6b93e1aa1c",
+    "mtime": 1794752725.0974221,
+    "seen": 1794752731.384448,
+    "ast_hash": "6c1d38594550de939244aa5149e1d53a",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_contract.rs": {
