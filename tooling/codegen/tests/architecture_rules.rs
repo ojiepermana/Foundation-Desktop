@@ -646,7 +646,6 @@ fn architecture_command_exit_codes() {
 /// with a one line fix (also compare the line when deduplicating). Run it
 /// with `-- --ignored` after the fix, then remove the `ignore` attribute.
 #[test]
-#[ignore = "spec _root/0007: per line problems are deduplicated; reported to the developer"]
 fn every_violating_line_gives_its_own_problem() {
     let copy = Copy::new("two_lines");
     copy.append(BRIDGE, "// shared/config\n// shared/config\n");
