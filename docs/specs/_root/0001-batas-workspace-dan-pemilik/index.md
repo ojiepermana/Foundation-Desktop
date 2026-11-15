@@ -56,26 +56,27 @@ Alasan, opsi yang ditimbang, dan daftar keputusan beserta pilihan keduanya ada d
 
 ### Lokasi dan pemilik
 
-Pemilik di sini adalah lapisan arsitektur dari [peta arsitektur](../../../architecture/README.md), bukan orang. Setiap lokasi punya tepat satu pemilik.
+Pemilik di sini adalah lapisan arsitektur dari [peta arsitektur](../../../architecture/README.md), bukan orang. Setiap lokasi punya tepat satu pemilik. Kolom keadaan diperbarui 2026-11-15 sesudah scope 002 sampai 011. Pada akhir milestone 1 spec ini hanya file root dan kerangka `crates/core/` yang ada.
 
-| Lokasi | Paket Cargo | Keadaan sesudah spec ini | Pemilik | Scope yang membuat atau mengisinya |
+| Lokasi | Paket Cargo | Keadaan di `main` (2026-11-15) | Pemilik | Scope yang membuat atau mengisinya |
 | --- | --- | --- | --- | --- |
-| `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore` di root | bukan paket | dibuat (`.gitignore` ditambah) | Tooling bersama | 001 (spec ini) |
-| `crates/core/` | `desktop-core` | kerangka dibuat | Rust Core | 001 kerangka, 003 isi |
-| `crates/macos-ffi/` | `desktop-macos-ffi` | rencana | Aplikasi macOS | 004 |
-| `bindings/swift/` | bukan paket (keluaran generator, sumbernya `crates/macos-ffi/`) | rencana | Aplikasi macOS | 004 |
-| `apps/macos/` | bukan paket (proyek Xcode) | rencana | Aplikasi macOS | 004 |
+| `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore` di root | bukan paket | ada | Tooling bersama | 001 (spec ini) |
+| `.gitattributes` di root | bukan paket | ada, satu baris `text eol=lf` per jenis file sumber bersama | Tooling bersama | 008 lewat spec [`_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md), lalu 009, 010, dan 011 menambah barisnya |
+| `crates/core/` | `desktop-core` | ada, berisi `hello` | Rust Core | 001 kerangka, 003 isi lewat spec [`_root/0002`](../0002-kontrak-sapaan-bersama/index.md) |
+| `crates/macos-ffi/` | `desktop-macos-ffi` | ada | Aplikasi macOS | 004 lewat spec [`macos/0001`](../../macos/0001-sapaan-di-jendela-macos/index.md) |
+| `bindings/swift/` | bukan paket (keluaran generator, sumbernya `crates/macos-ffi/`) | ada | Aplikasi macOS | 004 |
+| `apps/macos/` | bukan paket (proyek Xcode) | ada | Aplikasi macOS | 004, lalu spec macOS scope 008 sampai 011 |
 | `apps/windows/` | `desktop-windows` | rencana | Aplikasi Windows | 006, sesudah 005 |
 | `apps/linux/` | `desktop-linux` | rencana | Aplikasi Linux | 007 |
-| `design-system/tokens/`, `design-system/schemas/` | bukan paket | rencana | Sistem desain | 008 |
-| `shared/config/`, `shared/localization/`, `shared/assets/` | bukan paket | rencana | Resource bersama | 009, 010, 011 |
+| `design-system/tokens/`, `design-system/schemas/` | bukan paket | ada | Sistem desain | 008 lewat spec [`_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md) |
+| `shared/config/`, `shared/localization/`, `shared/assets/` | bukan paket | ada | Resource bersama | 009 lewat spec [`_root/0004`](../0004-konfigurasi-publik/index.md), 010 lewat spec [`_root/0006`](../0006-satu-contoh-lokalisasi/index.md), 011 lewat spec [`_root/0005`](../0005-aset-merek-bersama/index.md) |
 | `shared/specifications/` | bukan paket | rencana, belum ada scope yang membutuhkannya | Resource bersama | belum ada; spec pekerjaan tinggal di `docs/specs/` |
-| `tooling/codegen/` | `desktop-codegen` | rencana | Tooling bersama | 008, lewat spec `_root/0003` |
-| `tooling/validation/` | ditetapkan scope pembuatnya | rencana | Tooling bersama | scope pertama yang membutuhkannya; scope 008 tidak membuatnya |
+| `tooling/codegen/` | `desktop-codegen` | ada: generator, validasi sumber bersama, dan pemeriksaan arsitektur | Tooling bersama | 008 lewat spec [`_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md); sumber `architecture` dari 002 lewat spec [`_root/0007`](../0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) |
+| `tooling/validation/` | tidak ada | tidak dibuat; pemeriksaan tinggal di `tooling/codegen/` | Tooling bersama | tidak ada; diputuskan spec [`_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md) dan spec [`_root/0007`](../0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) |
 | `tests/fixtures/`, `tests/contracts/` | bukan paket | rencana | Tooling bersama | saat konsumen kedua butuh fixture yang sama |
-| `scripts/`, `.github/workflows/` | bukan paket | `scripts/update_graphify.py` sudah ada | Tooling bersama | 012 |
+| `scripts/`, `.github/workflows/` | bukan paket | `scripts/update_graphify.py` ada; skrip build dan CI dari spec `_root/0008` (diterima, belum di `main`) | Tooling bersama | 012 |
 
-Uji API publik Core tinggal di `crates/core/tests/`, supaya `cargo test -p desktop-core` menjalankannya. `tests/` di root bukan folder target Cargo pada manifest virtual, jadi folder itu hanya untuk fixture yang dipakai lebih dari satu aplikasi.
+Uji API publik Core tinggal di `crates/core/tests/`, supaya `cargo test -p desktop-core` menjalankannya. Uji yang membaca file di luar Core, termasuk `workspace_layout.rs` yang mengunci tabel arah dependensi spec ini, tinggal di `tooling/codegen/tests/` sejak spec [`_root/0007`](../0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md). `tests/` di root bukan folder target Cargo pada manifest virtual, jadi folder itu hanya untuk fixture yang dipakai lebih dari satu aplikasi.
 
 ### Isi file
 
@@ -329,12 +330,12 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
 
 ## Follow-up
 
-- [ ] Scope 002: pemeriksaan arsitektur otomatis yang lengkap (daftar larangan untuk Core termasuk dependensi transitif, sisi yang diizinkan per anggota, keluaran generator yang menyimpang), kebijakan `[workspace.lints]`, konfigurasi `rustfmt` dan `clippy` bila diperlukan, dan isi `AGENTS.md` (aturan manifest root, penamaan, netral host). Scope 002 juga memutuskan apakah spec di `docs/specs/` menggantikan ADR di `docs/decisions/` yang disebut dokumen arsitektur.
-- [ ] Scope 003 (spec `_root/0002`): isi Core. `hello`, modul, lint khusus Core lewat `[lints.rust]` di `crates/core/Cargo.toml`, dan uji kontrak di `crates/core/tests/`.
+- [x] Scope 002: pemeriksaan arsitektur otomatis yang lengkap (daftar larangan untuk Core termasuk dependensi transitif, sisi yang diizinkan per anggota, keluaran generator yang menyimpang), kebijakan `[workspace.lints]`, konfigurasi `rustfmt` dan `clippy` bila diperlukan, dan isi `AGENTS.md` (aturan manifest root, penamaan, netral host). Scope 002 juga memutuskan apakah spec di `docs/specs/` menggantikan ADR di `docs/decisions/` yang disebut dokumen arsitektur. Dijawab di spec [`_root/0007`](../0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) (2026-11-15): aturan `A-1` sampai `A-13`, tanpa `[workspace.lints]`, `rustfmt.toml`, atau `clippy.toml`, isi `AGENTS.md`, dan spec menggantikan ADR.
+- [x] Scope 003 (spec `_root/0002`): isi Core. `hello`, modul, lint khusus Core lewat `[lints.rust]` di `crates/core/Cargo.toml`, dan uji kontrak di `crates/core/tests/`. Dijawab di spec [`_root/0002`](../0002-kontrak-sapaan-bersama/index.md) (2026-11-15).
 - [x] Scope 004: `crates/macos-ffi/` bergabung sebagai `desktop-macos-ffi` dan menambah `[workspace.dependencies]`; versi UniFFI yang cocok dengan Rust `1.99.1`; jenis crate; apakah `bindings/swift/` dilacak git; proyek Xcode di `apps/macos/`; target Intel `x86_64-apple-darwin` dan apakah masuk `targets` di `rust-toolchain.toml`; entri `.gitignore` di luar lima baris umum. Dijawab di spec [macos/0001](../../macos/0001-sapaan-di-jendela-macos/index.md) (2026-11-15).
 - [ ] Scope 005 dan 006 (menunggu host Windows): `apps/windows/` bergabung sebagai `desktop-windows` di bawah aturan netral host, termasuk perilaku titik masuknya di host lain. Bila `windows-reactor` butuh toolchain lain atau tidak bisa mematuhi aturan itu, perbarui spec ini lebih dulu.
 - [ ] Scope 007 (menunggu host Linux): `apps/linux/` bergabung sebagai `desktop-linux` di bawah aturan netral host, termasuk perilaku titik masuknya di host lain.
-- [ ] Scope 012: skrip `scripts/` dan CI membungkus perintah yang sama dengan `--locked` dan membaca `rust-toolchain.toml`; pengaturan `[profile.release]` bila dibutuhkan.
+- [ ] Scope 012: skrip `scripts/` dan CI membungkus perintah yang sama dengan `--locked` dan membaca `rust-toolchain.toml`; pengaturan `[profile.release]` bila dibutuhkan. Spec `_root/0008` sudah diterima tetapi belum di `main`; centang baris ini sesudah spec itu masuk.
 - [ ] AC-9 dan milestone 3 menunggu host Windows dan Linux (`owner: user`).
-- [ ] `README.md` di root masih berkata repo hanya berisi dokumentasi perencanaan. Kalimat itu usang sesudah milestone 1; `/sync` atau lead memperbaruinya.
+- [x] `README.md` di root masih berkata repo hanya berisi dokumentasi perencanaan. Kalimat itu usang sesudah milestone 1; `/sync` atau lead memperbaruinya. Diperbarui lewat bagian **Perubahan dokumen** spec [`_root/0007`](../0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) (2026-11-15).
 - [ ] Field `license` sengaja tidak diisi karena lisensinya hanya user yang tahu. `publish = false` menjaga paket tetap privat sampai nilai itu ada.

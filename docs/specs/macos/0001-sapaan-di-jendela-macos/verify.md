@@ -4,6 +4,8 @@ _Langkah ini diturunkan dari kriteria penerimaan spec macos/0001. `/check verify
 
 Kamu bisa menjalankan semua perintah dari akar repo, dengan `export CARGO_PROFILE_DEV_DEBUG=0 CARGO_INCREMENTAL=0`. Hasil yang tercatat diambil developer pada commit langkah 3 (`aac5336`) di Mac koordinasi (macOS 27.0.1, `arm64`, `rustc 1.99.1 (58cf8f9c3 2026-10-13)`, Xcode 27.1, Swift 6.4) pada 2026-11-15. Path absolut di keluaran `cargo tree` ikut lokasi checkout, jadi yang dicocokkan cukup awal barisnya. Kotak di bawah sengaja dibiarkan kosong untuk checker.
 
+Catatan pembaruan spec (2026-11-15): angka di langkah yang sudah `[x]` (`7 tests` dan `4 tests` di AC-2 dan AC-3, dua berkas ber`Hello, ` di AC-8, 16 path di AC-12) berlaku pada commit milestone tempat langkah itu dicatat. Spec ini kini membatasi angka itu dengan "pada akhir milestone <n> spec ini", dan spec `macos/0004` sampai `macos/0008` memegang tambahannya sendiri. Centang di bawah tidak berubah. Uji `workspace_layout` dan `macos_bridge_ownership` yang disebut di sini kini ada di `tooling/codegen/tests/` (spec `_root/0007`).
+
 ## Milestone 1: Jembatan, binding, dan uji tanpa jendela
 
 Build plan langkah 1 sampai 3.

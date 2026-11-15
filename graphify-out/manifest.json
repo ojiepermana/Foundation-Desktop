@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794755732.1592233,
-    "seen": 1794755734.827944,
-    "ast_hash": "f1ad1f40635b02eca118eaa52ab203e4",
+    "mtime": 1794756049.6885593,
+    "seen": 1794756051.56605,
+    "ast_hash": "461f201b7a4cace4288829e9acc6c178",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794755732.1594758,
-    "seen": 1794755734.827945,
-    "ast_hash": "3378655ba012e86a3a558be3ee0dc411",
+    "mtime": 1794756049.688775,
+    "seen": 1794756051.5660532,
+    "ast_hash": "99aef91c105f7f71136202ebb99e0964",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794744478.1459827,
-    "seen": 1794744480.3832278,
-    "ast_hash": "8629771533e931035f200ee2b4a95c8b",
+    "mtime": 1794755838.3990533,
+    "seen": 1794755842.589785,
+    "ast_hash": "bb17ef359e523ace52abff913609bb59",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794744478.1462011,
-    "seen": 1794744480.3832262,
-    "ast_hash": "b67ca8a20a5bb94d9e49ee6ee132f433",
+    "mtime": 1794755838.39927,
+    "seen": 1794755842.589777,
+    "ast_hash": "d32098a7954d5e68e5bca79264d68573",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -330,15 +330,15 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
-    "mtime": 1794739767.6538305,
-    "seen": 1794739770.242265,
-    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
+    "mtime": 1794755995.0486557,
+    "seen": 1794755997.190579,
+    "ast_hash": "71c855105ba953435c10870f268a449e",
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794741072.1486514,
-    "seen": 1794741073.220413,
-    "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
+    "mtime": 1794755995.0483732,
+    "seen": 1794755997.1905751,
+    "ast_hash": "211b6f7fbaea7db72f0eda23b2d3d88a",
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
@@ -366,9 +366,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
-    "mtime": 1794741663.0517359,
-    "seen": 1794741665.122643,
-    "ast_hash": "bb4fd38fb42a48a47f78b47d209b0371",
+    "mtime": 1794755995.0511246,
+    "seen": 1794755997.190572,
+    "ast_hash": "4f15e8fc71b192f4415fef0a87c3dfbb",
     "semantic_hash": ""
   },
   "bindings/swift/Package.swift": {
@@ -414,9 +414,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794741186.4339898,
-    "seen": 1794741187.323127,
-    "ast_hash": "8d2c344cd81bcacf0611188410c721eb",
+    "mtime": 1794755995.0513284,
+    "seen": 1794755997.190578,
+    "ast_hash": "81f82748fbe732eaaf4ef1f8c420037e",
     "semantic_hash": ""
   },
   "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
@@ -462,15 +462,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/rationale.md": {
-    "mtime": 1794752563.831713,
-    "seen": 1794752567.4100401,
-    "ast_hash": "61dd2cd70bdde643d0b780276ed6606e",
+    "mtime": 1794755838.40352,
+    "seen": 1794755842.589782,
+    "ast_hash": "d6e65dc7866684536f2a8135ead24993",
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794752563.8314927,
-    "seen": 1794752567.410041,
-    "ast_hash": "902a15be0250e3375a8a21c86a9814ac",
+    "mtime": 1794755838.4022424,
+    "seen": 1794755842.589768,
+    "ast_hash": "f2f682d17dad56d0d23f2101feda3ad8",
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
@@ -576,9 +576,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0004-konfigurasi-publik/index.md": {
-    "mtime": 1794745121.5785213,
-    "seen": 1794745127.490716,
-    "ast_hash": "82dac752d3b9514ebceaad43e882517d",
+    "mtime": 1794755995.051819,
+    "seen": 1794755997.1905768,
+    "ast_hash": "6812a4d40978e039146629d27701f25e",
     "semantic_hash": ""
   },
   "shared/config/public.schema.json": {
@@ -756,9 +756,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794753103.018702,
-    "seen": 1794753106.364079,
-    "ast_hash": "6e9358812a55a4c0cdaa769ff0693c18",
+    "mtime": 1794755995.0523014,
+    "seen": 1794755997.19058,
+    "ast_hash": "7e590f317fd710382f0c93064b56dd10",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md": {
@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794755474.5037727,
-    "seen": 1794755476.8788009,
-    "ast_hash": "5c91b4ed05c9b22318a232f3b6616129",
+    "mtime": 1794755811.5203724,
+    "seen": 1794755815.071863,
+    "ast_hash": "851b8e776facde4c25ab9d872faf8aa4",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
@@ -876,8 +876,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md": {
-    "mtime": 1794755933.1112669,
-    "seen": 1794755934.977571,
+    "mtime": 1794756175.4469717,
+    "seen": 1794756177.126411,
     "ast_hash": "c3d00ab1256b0307aa3bac321b8b20a0",
     "semantic_hash": ""
   },
@@ -887,34 +887,34 @@
     "ast_hash": "b613741fc18c5be9037cea9b8bc17bc3",
     "semantic_hash": ""
   },
-  "scripts/lib.sh": {
-    "mtime": 1794755933.1151795,
-    "seen": 1794755934.9775739,
-    "ast_hash": "0088702bf81aee4f1dad7d440acbc4e3",
-    "semantic_hash": ""
-  },
   "scripts/validate.sh": {
-    "mtime": 1794755933.115568,
-    "seen": 1794755934.9775748,
+    "mtime": 1794756175.451352,
+    "seen": 1794756177.1264052,
     "ast_hash": "afce35b8a7d46b42d693b072d1b0e0af",
     "semantic_hash": ""
   },
-  "scripts/build-rust.sh": {
-    "mtime": 1794755998.2286758,
-    "seen": 1794756000.2229602,
-    "ast_hash": "26c212c734eb68ed815dbec5aa265370",
-    "semantic_hash": ""
-  },
   "scripts/test.sh": {
-    "mtime": 1794755998.2289598,
-    "seen": 1794756000.2229629,
+    "mtime": 1794756175.4511514,
+    "seen": 1794756177.1264079,
     "ast_hash": "67a537e0dba6d048621697cdb7a96344",
     "semantic_hash": ""
   },
+  "scripts/lib.sh": {
+    "mtime": 1794756175.4510574,
+    "seen": 1794756177.126409,
+    "ast_hash": "0088702bf81aee4f1dad7d440acbc4e3",
+    "semantic_hash": ""
+  },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/verify.md": {
-    "mtime": 1794756161.7323334,
-    "seen": 1794756163.53902,
+    "mtime": 1794756175.4474154,
+    "seen": 1794756177.12641,
     "ast_hash": "de03df4d94cc23d59a9ac5e8b1832b86",
+    "semantic_hash": ""
+  },
+  "scripts/build-rust.sh": {
+    "mtime": 1794756175.4509475,
+    "seen": 1794756177.126412,
+    "ast_hash": "26c212c734eb68ed815dbec5aa265370",
     "semantic_hash": ""
   }
 }

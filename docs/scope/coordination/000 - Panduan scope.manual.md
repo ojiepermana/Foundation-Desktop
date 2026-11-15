@@ -75,30 +75,29 @@ Kedua langkah di bawah adalah milestone 4 fitur 004. Catat host, arsitektur, ver
 
 ### `F004-1` · Alur sapaan di jendela
 
-Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `macos/0001` `AC-5` (Done when scope 004, kriteria 5 dan 14).
+Dari laporan `arc-f004-spec` (2026-11-15, diperbarui sesudah pembaruan gabungan spec `macos/0001`). Membuktikan spec `macos/0001` `AC-5`; ini bagian milestone 4 fitur 004.
 
-- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang sudah diuji: 27.0.1), Xcode 27.1, sesi desktop yang sedang login, dan repo pada commit yang lulus AC-4 (004 milestone 2 sudah di-merge).
+- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang diuji 27.0.1), Xcode 27.1, sesi desktop yang sedang login, repo pada commit yang lulus AC-4 spec `macos/0001`, dan bahasa sistem Inggris (System Settings, General, Language & Region, English di urutan pertama). Langkah 2 sampai 5 dan 7 bergantung pada bahasa itu, karena sesudah spec `macos/0006` label tombol `Greet` dibaca dari katalog.
 - **Jalankan:**
-  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`
-  2. `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`
-  3. Ketik `Ayu` di kolom, lalu klik `Greet`.
-  4. Hapus isi kolom, lalu klik `Greet`.
-  5. Tempel teks `Łukasz 李 👩🏽‍💻` ke kolom, lalu klik `Greet`.
-- **Lulus bila:** (1) `** BUILD SUCCEEDED **`; (2) satu jendela berjudul `Desktop Foundation` dengan kolom `Name`, tombol `Greet`, dan label hasil yang kosong; (3) label menampilkan `Hello, Ayu!`; (4) label menampilkan `Hello, !`; (5) label menampilkan `Hello, Łukasz 李 👩🏽‍💻!` dengan emoji yang utuh.
-- **Hanya langkah ini yang bisa membuktikan:** bahwa nilai yang terlihat di jendela nyata berasal dari Core. Uji `swift test` membuktikan jalur yang sama tanpa jendela.
+  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`. Harapan: `** BUILD SUCCEEDED **`.
+  2. `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`. Harapan: satu jendela berjudul `Desktop Foundation` dengan kolom `Name`, tombol `Greet`, dan label hasil yang kosong. Sesudah spec `macos/0004`, judul itu adalah nilai `build.product_name` di konfigurasi publik (nilai sementara `Desktop Foundation`).
+  3. Ketik `Ayu` di kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, Ayu!`.
+  4. Hapus isi kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, !`.
+  5. Tempel teks `Łukasz 李 👩🏽‍💻` ke kolom, lalu klik `Greet`. Harapan: label menampilkan `Hello, Łukasz 李 👩🏽‍💻!` dengan emoji yang utuh.
+- **Lulus bila:** setiap harapan di atas terpenuhi. Kirim host, arsitektur, versi macOS, dan hasil tiap langkah.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa jendela nyata menampilkan nilai yang dikembalikan Core.
 
 ### `F004-2` · Penggunaan nyata
 
-Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `macos/0001` `AC-13`.
+Dari laporan `arc-f004-spec` (2026-11-15, diperbarui). Membuktikan spec `macos/0001` `AC-13`; ini bagian milestone 4 fitur 004. Prasyarat sama dengan `F004-1`; lanjutkan dari jendela yang sama.
 
-- **Prasyarat:** sama dengan `F004-1`, dan aplikasi masih terbuka dari langkah 2.
 - **Jalankan:**
-  6. Hapus isi kolom, ketik `Budi`, lalu tekan Return tanpa memakai mouse.
-  7. Nyalakan VoiceOver dengan Command F5 (pada sebagian laptop Fn Command F5), lalu pindah ke kolom, tombol, dan label. Matikan VoiceOver sesudahnya.
-  8. Tekan Command Q.
-  9. `open apps/macos/DesktopMac.xcodeproj`, tunggu paket selesai dimuat, lalu tekan Command R. Tutup Xcode, lalu jalankan `git status --short`.
-- **Lulus bila:** (6) label menampilkan `Hello, Budi!`; (7) VoiceOver menyebut `Name` untuk kolom, `Greet` untuk tombol, dan membacakan `Hello, Budi!` untuk label; (8) aplikasi tertutup tanpa dialog; (9) build berhasil dan jendela yang sama terbuka. Bila `git status --short` mencetak sesuatu, catat setiap path dan jangan di-commit; keluaran itu tidak menggagalkan langkah 9.
-- **Hanya langkah ini yang bisa membuktikan:** fokus keyboard, aksesibilitas kontrol native, dan bahwa proyek tulisan tangan terbuka benar di Xcode.
+  6. Hapus isi kolom, ketik `Budi`, lalu tekan Return tanpa memakai mouse. Harapan: label menampilkan `Hello, Budi!`.
+  7. Dengan bahasa sistem Inggris, nyalakan VoiceOver dengan Command F5 (pada sebagian laptop Fn Command F5), lalu pindah ke kolom, tombol, dan label. Harapan: VoiceOver menyebut `Name` untuk kolom, `Greet` untuk tombol, dan membacakan `Hello, Budi!` untuk label. Matikan VoiceOver.
+  8. Tekan Command Q. Harapan: aplikasi tertutup tanpa dialog.
+  9. `open apps/macos/DesktopMac.xcodeproj`, tunggu paket selesai dimuat, lalu tekan Command R. Harapan: build berhasil dan jendela yang sama terbuka. Tutup Xcode, lalu `git status --short`. Harapan: tidak ada keluaran. Bila ada, catat setiap path dan jangan di-commit; keluaran di sini tidak menggagalkan langkah ini, yang menentukan adalah build berhasil dan jendela terbuka. Bila Xcode menulis ke `apps/macos/Resources/AppIcon.icon/`, `assets check` menangkapnya; kembalikan dengan `assets generate` (spec `macos/0007`).
+- **Lulus bila:** setiap harapan di atas terpenuhi. Langkah yang belum dijalankan tetap tercatat sebagai belum diverifikasi.
+- **Hanya langkah ini yang bisa membuktikan:** Return tanpa mouse, bacaan VoiceOver, dan Run dari Xcode pada proyek nyata.
 
 ## Fitur `008`: `Tema bersama dan kontrol native` (spec `_root/0003`)
 
