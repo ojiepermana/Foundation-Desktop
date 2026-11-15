@@ -6,5 +6,5 @@
   "testDir": "crates/<crate>/tests",
   "filePattern": "*.rs",
   "packageManager": "cargo",
-  "notes": "Built in cargo test harness only. No dev dependencies in desktop-core (spec _root/0002 decision 7, AC-2). Unit tests live in #[cfg(test)] mod tests inside the source file; contract tests use only the public path in crates/<crate>/tests/. Every test file starts with a //! doc comment (missing_docs)."
+  "notes": "Built in cargo test harness only. No dev dependencies in desktop-core (spec _root/0002 decision 7, AC-2). Unit tests live in #[cfg(test)] mod tests inside the source file; contract tests use only the public path in crates/<crate>/tests/. Every test file starts with a //! doc comment (missing_docs). macOS Swift tests (Swift Testing, spec macos/0001 AC-2 and AC-3) live in apps/macos/Tests/ and run without a window: cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin, then swift test --package-path apps/macos -Xlinker -L\"$PWD/target/aarch64-apple-darwin/debug\". A new file under apps/macos, bindings/swift, or crates/macos-ffi needs a spec macos/0001 update first (AC-12)."
 }
