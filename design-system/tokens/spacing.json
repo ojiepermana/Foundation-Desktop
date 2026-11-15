@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/spacing.schema.json",
+  "schemaVersion": 1,
+  "base": {
+    "space.large": { "value": 20 },
+    "space.medium": { "value": 12 }
+  },
+  "semantic": {
+    "gap.control": {
+      "description": "Gap between stacked controls.",
+      "ref": "space.medium"
+    },
+    "inset.window": {
+      "description": "Padding between the window edge and its content.",
+      "ref": "space.large"
+    }
+  }
+}
