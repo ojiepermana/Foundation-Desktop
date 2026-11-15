@@ -80,6 +80,7 @@ Mode keputusan `auto`. Setiap baris: pertanyaan, pilihan, pilihan kedua, tanda, 
 | D-19 | Akhir `generate-bindings.sh` | Baris `bindings/swift: unchanged` atau `changed`, tanpa gagal | `git diff --exit-code -- bindings/swift` dari blok **Membuat ulang binding** | biasa | AC-7; alat pembuat ulang gagal justru saat ia bekerja |
 | D-20 | `test.sh` di CI | Tidak dijalankan; `validate.sh` mencetak `rust tests:` | Jalankan juga | biasa | `cargo test` dua kali per job |
 | D-21 | Pembatalan run CI | Hanya untuk `pull_request` | Batalkan semua run lama pada ref yang sama | biasa | Run `main` bisa batal, sehingga AC-11 tidak punya run untuk commit itu |
+| D-22 | Syarat Xcode di skrip | `build-macos.sh` keluar `2` bila major `xcodebuild -version` di bawah 26 | Tanpa pemeriksaan; biarkan `actool` gagal di langkah `G-4` | biasa | AC-9; galat datang terlambat dan tidak menyebut sebabnya |
 
 Alasan singkat per baris:
 
@@ -104,6 +105,7 @@ Alasan singkat per baris:
 * **D-19.** Kegagalan `git diff` di akhir blok **Membuat ulang binding** berarti "binding berubah, commit", yang memang tujuan menjalankan alat itu. Pemeriksaan binding sekarang milik `G-2`, jadi alat pembuat ulang cukup melaporkan apakah ada yang berubah.
 * **D-20.** Usul pemeriksaan silang: `cargo test` dua kali per job hanya memakan menit.
 * **D-21.** Usul pemeriksaan silang: dengan pembatalan untuk semua event, push kedua ke `main` membatalkan run commit pertama, sehingga commit itu tidak punya bukti CI.
+* **D-22.** Lead meneruskan bahwa spec `macos/0007` (diterima) memakai dokumen Icon Composer yang hanya dikompilasi `actool` Xcode 26 ke atas, dan meminta skrip build macOS menyebut syarat itu. Memeriksanya sebelum langkah pertama memberi pesan yang jelas, bukan galat `actool` sesudah beberapa menit build.
 
 ## Bukti percobaan
 

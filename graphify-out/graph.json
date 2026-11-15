@@ -7963,7 +7963,7 @@
       "node_kind": "heading",
       "norm_label": "build plan",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L475"
+      "source_location": "L476"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_consequences",
@@ -7975,7 +7975,7 @@
       "node_kind": "heading",
       "norm_label": "consequences",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L519"
+      "source_location": "L520"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_daftar_penerimaan_per_target",
@@ -8011,7 +8011,7 @@
       "node_kind": "heading",
       "norm_label": "file yang boleh diubah tiap milestone",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L464"
+      "source_location": "L465"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_follow_up",
@@ -8023,7 +8023,7 @@
       "node_kind": "heading",
       "norm_label": "follow-up",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L546"
+      "source_location": "L547"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_invarian",
@@ -8083,7 +8083,7 @@
       "node_kind": "heading",
       "norm_label": "langkah manual",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L497"
+      "source_location": "L498"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_laporan_fondasi",
@@ -8155,7 +8155,7 @@
       "node_kind": "heading",
       "norm_label": "skenario uji kritis",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L456"
+      "source_location": "L457"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_skrip",
@@ -14044,7 +14044,7 @@
       "node_kind": "heading",
       "norm_label": "bukti percobaan",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md",
-      "source_location": "L108"
+      "source_location": "L110"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_rationale_context",
@@ -14068,7 +14068,7 @@
       "node_kind": "heading",
       "norm_label": "cross check",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md",
-      "source_location": "L124"
+      "source_location": "L126"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_rationale_keputusan_yang_diambil",
@@ -46335,7 +46335,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L464",
+      "source_location": "L465",
       "weight": 1.0
     },
     {
@@ -46346,7 +46346,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L475",
+      "source_location": "L476",
       "weight": 1.0
     },
     {
@@ -46357,7 +46357,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L497",
+      "source_location": "L498",
       "weight": 1.0
     },
     {
@@ -46368,7 +46368,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L519",
+      "source_location": "L520",
       "weight": 1.0
     },
     {
@@ -46379,7 +46379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L546",
+      "source_location": "L547",
       "weight": 1.0
     },
     {
@@ -46533,7 +46533,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L456",
+      "source_location": "L457",
       "weight": 1.0
     },
     {
@@ -46566,7 +46566,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md",
-      "source_location": "L108",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -46577,7 +46577,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md",
-      "source_location": "L124",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
