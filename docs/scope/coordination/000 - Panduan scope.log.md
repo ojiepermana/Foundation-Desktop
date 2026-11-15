@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 23:00`
+- **Diperbarui:** `2026-11-15 23:10`
 
 ## Sub sesi wave `1`
 
@@ -13,6 +13,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `arc-f001-spec` | architect | 001 spec `_root` 0001; laporan `done` (`9bf09db`), merge `50c3b3c`; `architect (update)` `.graphifyignore` `01875fd`, merge `60ca131` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1`; koreksi rujukan langkah `8515ef5`, merge `d4ff759` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
+| `dev-f001-m1` | tester | 001 Test it, tindak lanjut di sesi tester yang sama; Range `60ca131..8fcc995`; hanya invarian yang spec nyatakan berlaku terus | `001 - Batas workspace dan pemilik.md` | `crates/core/tests/workspace_layout.rs` (baru) | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | aktif |
 | `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; brief "mulai" dikirim 2026-11-15. Penerapan macOS 001 dan 003 menyusul di sesi yang sama sesudah spec ini di-merge | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | aktif |
 | `dev-f001-m1` | developer | 001 Build it milestone 1; Langkah Build plan selesai 1 (`09c6f0c`), 2 (`60b948d`); Pointer code in `crates/core/` dan root workspace; laporan `done`, merge `9dee57d` | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec 0001, baris `**Status**` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
 | `dev-f001-m1` | developer | 001 Build it milestone 2; Langkah Build plan selesai 3 (`1d2c3f7`); Pointer code in `docs/architecture/README.md`; laporan `done`, merge `8fcc995` | `001 - Batas workspace dan pemilik.md` | `docs/architecture/README.md` (diizinkan brief, AC-8), `verify.md` spec 0001 bagian Milestone 2 | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
