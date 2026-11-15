@@ -64,13 +64,15 @@ enum Edit {
     Append(&'static str, &'static str),
     /// Create file `.0` with text `.1`, making its folders.
     Create(&'static str, &'static str),
+    /// Insert the line `.1` before the last line of file `.0`.
+    BeforeLastLine(&'static str, &'static str),
 }
 
 impl Edit {
     /// The file the edit changes, from the repo root.
     fn path(self) -> &'static str {
         match self {
-            Edit::Append(path, _) | Edit::Create(path, _) => path,
+            Edit::Append(path, _) | Edit::Create(path, _) | Edit::BeforeLastLine(path, _) => path,
         }
     }
 }
@@ -87,6 +89,11 @@ fn apply(edit: Edit, text: &str) -> String {
             format!("{text}{separator}{line}\n")
         }
         Edit::Create(_, contents) => contents.to_string(),
+        Edit::BeforeLastLine(_, line) => {
+            let body = text.strip_suffix('\n').unwrap_or(text);
+            let cut = body.rfind('\n').map_or(0, |at| at + 1);
+            format!("{}{line}\n{}", &text[..cut], &text[cut..])
+        }
     }
 }
 
@@ -192,6 +199,14 @@ const REJECTED: &[(&str, &[Edit], &str)] = &[
             "import DesignSystem\n",
         )],
         "C-3",
+    ),
+    (
+        "D-8",
+        &[Edit::BeforeLastLine(
+            "apps/macos/DesktopMac.xcodeproj/project.pbxproj",
+            "MARKETING_VERSION = 0.1.0;",
+        )],
+        "C-4",
     ),
 ];
 

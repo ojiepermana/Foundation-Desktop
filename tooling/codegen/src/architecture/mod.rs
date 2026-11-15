@@ -27,7 +27,7 @@ pub const SOURCE: Source = Source {
 /// The IDs of the rules this source checks, in order.
 pub const RULES: &[&str] = &[
     "A-1", "A-2", "A-3", "A-4", "A-5", "A-6", "A-7", "A-8", "A-9", "A-10", "A-11", "A-12", "A-13",
-    "C-1", "C-2", "C-3",
+    "C-1", "C-2", "C-3", "C-4",
 ];
 
 /// A class of packages a workspace member may be forbidden to reach.

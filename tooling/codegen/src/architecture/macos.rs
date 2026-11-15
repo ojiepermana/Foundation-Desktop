@@ -1,4 +1,4 @@
-//! Rules `C-1` to `C-3`: the macOS text rules of spec `macos/0008`
+//! Rules `C-1` to `C-4`: the macOS text rules of spec `macos/0008`
 //! (`docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md`).
 //!
 //! The rules read the Swift files of the macOS app as text, with the same
@@ -6,6 +6,7 @@
 //! match their patterns without regular expressions: one problem per line,
 //! for the first pattern in list order.
 
+use std::fs;
 use std::path::Path;
 
 use super::Findings;
@@ -16,6 +17,17 @@ const VIEW_FOLDERS: [&str; 2] = ["apps/macos/Presentation/", "apps/macos/App/"];
 
 /// The only folder outside the tests that may import `DesignSystem` (`C-3`).
 const DESIGN_SYSTEM_USER: &str = "apps/macos/Presentation/";
+
+/// The Xcode project file that `C-4` reads, from the repo root.
+const PROJECT_FILE: &str = "apps/macos/DesktopMac.xcodeproj/project.pbxproj";
+
+/// The settings the generator writes to `apps/macos/Config/Shared.xcconfig`,
+/// which the Xcode project must not set again (`C-4`), in order.
+const GENERATED_SETTINGS: [&str; 3] = [
+    "INFOPLIST_KEY_CFBundleDisplayName",
+    "MARKETING_VERSION",
+    "PRODUCT_BUNDLE_IDENTIFIER",
+];
 
 /// Exact style patterns of `C-1`, after the four patterns with a number.
 const STYLE_TEXTS: [&str; 12] = [
@@ -51,8 +63,9 @@ const CONTROL_TEXTS: [&str; 14] = [
     "TextFieldStyle {",
 ];
 
-/// Runs `C-1` to `C-3`.
+/// Runs `C-1` to `C-4`.
 pub(super) fn check(root: &Path, findings: &mut Findings) {
+    check_project(root, findings);
     let files = walk(root);
     for file in &files {
         if !file.path.ends_with(".swift") || !file.path.starts_with("apps/macos/") {
@@ -85,6 +98,38 @@ pub(super) fn check(root: &Path, findings: &mut Findings) {
                 }
             }
             check_import(file, line, number, findings);
+        }
+    }
+}
+
+/// `C-4`: the Xcode project does not set again a setting the generator
+/// writes to `Shared.xcconfig`.
+fn check_project(root: &Path, findings: &mut Findings) {
+    let text = match fs::read_to_string(root.join(PROJECT_FILE)) {
+        Ok(text) => text,
+        Err(error) => {
+            findings.push_rule(
+                'C',
+                4,
+                PROJECT_FILE,
+                0,
+                format!("C-4: cannot read: {error}"),
+            );
+            return;
+        }
+    };
+    for (number, line) in text.lines().enumerate() {
+        if let Some(setting) = GENERATED_SETTINGS
+            .iter()
+            .find(|setting| line.contains(*setting))
+        {
+            findings.push_rule(
+                'C',
+                4,
+                PROJECT_FILE,
+                number + 1,
+                format!("C-4: {setting} belongs in apps/macos/Config/Shared.xcconfig"),
+            );
         }
     }
 }

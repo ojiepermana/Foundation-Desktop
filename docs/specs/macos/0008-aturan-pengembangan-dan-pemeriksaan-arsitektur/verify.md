@@ -62,3 +62,30 @@ Tidak ada. Aturan ini hanya membaca teks.
 
 - AC-6: langkah 1 sampai 6 · AC-9: langkah 6 sampai 10.
 - AC-7 menunggu milestone 4. AC-8 menunggu milestone 2 (`AGENTS.md`, persetujuan user).
+
+## Milestone 4: Setelan Xcode dari generator
+
+Build plan langkah 4. Hasil tercatat pada commit langkah 4 dengan working tree yang bersih, mulai tanpa `target/`, `apps/macos/.build/`, dan `apps/macos/DerivedData/`, pada host yang sama.
+
+### UI / manual
+
+Tidak ada. Aturan ini hanya membaca teks.
+
+### Commands
+
+- [ ] Angka pembanding sebelum langkah 4: `architecture check` pada commit langkah 3 → `architecture: ok, 16 rules, 3 members, 0 outputs up to date` → AC-7
+- [ ] `grep -cE 'INFOPLIST_KEY_CFBundleDisplayName|MARKETING_VERSION|PRODUCT_BUNDLE_IDENTIFIER' apps/macos/DesktopMac.xcodeproj/project.pbxproj` → `0` (spec `macos/0004` sudah memindahkan ketiganya ke `Shared.xcconfig`) → AC-7
+- [ ] `cargo run -p desktop-codegen --locked -- architecture check` sesudah langkah 4 → kode 0; `architecture: ok, 17 rules, 3 members, 0 outputs up to date`, yaitu tepat satu lebih banyak dari `16` → AC-7
+- [ ] `cargo test -p desktop-codegen --locked --test architecture_macos` → `test result: ok. 2 passed`; `rejects_macos_violations` sekarang juga menolak `D-8` (baris `MARKETING_VERSION = 0.1.0;` sebelum baris terakhir `project.pbxproj` di salinan) dengan masalah yang diawali `C-4: ` → AC-7
+- [ ] `cargo test -p desktop-codegen --locked --test architecture_contract` dan `--test architecture_rules` → `3 passed` dan `19 passed`, tanpa diubah → AC-9
+- [ ] `cargo build --workspace --locked`, `cargo test --workspace --locked` (225 test, 0 ignored), `cargo fmt --all --check`, dan `cargo clippy --workspace --all-targets --locked -- -D warnings` → kode 0; empat sumber lain lulus `check`; `git grep --untracked -lF 'Hello, {' -- '*.rs'` → hanya `crates/core/src/greeting.rs` → AC-9
+- [ ] Gerbang Mac: `G-1` kode 0 (1 detik); `G-2` dua generator kode 0 dan `diff -r` kosong (24 detik); `G-3` kode 0, `10 tests in 2 suites`, `7 tests in 1 suite`, `5 tests in 1 suite`, 0 `failed` (19 detik); `G-4` `** BUILD SUCCEEDED **` (30 detik); `G-5` kosong → AC-9
+- [ ] `/bin/bash scripts/validate.sh` → `== validate.sh: PASS, 13 steps, 0 failed` → AC-9
+- [ ] `cargo tree -p desktop-codegen --depth 1 --prefix none --locked | wc -l` → `3`, sama dengan angka sebelum langkah 1 di bagian Milestone 1 → AC-9
+- [ ] `git log --format=%s --grep='spec macos/0008 step'` → subject langkah 1, 3, dan 4, semuanya memuat `spec macos/0008 step <n>`; `git log --name-only --format= --grep='spec macos/0008 step' | sort -u` → hanya `index.md` dan `verify.md` spec ini, empat file `graphify-out/`, `tooling/codegen/src/architecture/code.rs`, `macos.rs`, `mod.rs`, dan `tooling/codegen/tests/architecture_macos.rs`. Tidak ada `Cargo.toml`, `Cargo.lock`, `.gitattributes`, `.gitignore`, atau path di bawah `scripts/`, `.github/`, `.githooks/`, `apps/`, `bindings/`, dan `crates/` → AC-9
+- [ ] Sesudah semua perintah: `target/`, `apps/macos/.build/`, dan `apps/macos/DerivedData/` dihapus; `git status --short` kosong → AC-9
+
+### Acceptance-criteria coverage
+
+- AC-7: langkah 1 sampai 4 · AC-9: langkah 5 sampai 11.
+- AC-8 menunggu milestone 2 (`AGENTS.md`, persetujuan user).
