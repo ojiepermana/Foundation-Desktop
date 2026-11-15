@@ -700,5 +700,17 @@
     "seen": 1794752855.168397,
     "ast_hash": "4fba29d98f64da943e3b8534e6ec868d",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0006-satu-contoh-lokalisasi/index.md": {
+    "mtime": 1794754038.5606134,
+    "seen": 1794754039.97259,
+    "ast_hash": "1c762096e57dc6073831d870828474f5",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0006-satu-contoh-lokalisasi/rationale.md": {
+    "mtime": 1794754038.5608182,
+    "seen": 1794754039.9725928,
+    "ast_hash": "fa444b2c14a52b218fd100625248bc82",
+    "semantic_hash": ""
   }
 }
