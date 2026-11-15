@@ -2,7 +2,7 @@
 
 **Scope**: [008 - Tema bersama dan kontrol native](../../../scope/008%20-%20Tema%20bersama%20dan%20kontrol%20native.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 

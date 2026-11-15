@@ -1,0 +1,10 @@
+{
+  "$schema": "../schemas/typography.schema.json",
+  "schemaVersion": 1,
+  "roles": {
+    "body": {
+      "description": "Default reading text.",
+      "weight": "regular"
+    }
+  }
+}
