@@ -11378,7 +11378,7 @@
       "file_type": "code",
       "norm_label": "accepts_allowed_shapes()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L504"
+      "source_location": "L505"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_apply",
@@ -25606,7 +25606,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L505",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -25618,7 +25618,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L508",
+      "source_location": "L509",
       "weight": 1.0
     },
     {
@@ -51851,7 +51851,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L504",
+      "source_location": "L505",
       "weight": 1.0
     },
     {
