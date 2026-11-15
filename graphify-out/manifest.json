@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
-    "mtime": 1794753170.0081751,
-    "seen": 1794753171.9968169,
-    "ast_hash": "eb0e68a4e026d3ba68dff0ab806c964f",
+    "mtime": 1794753776.7819378,
+    "seen": 1794753781.16182,
+    "ast_hash": "00dfb2f470cbfa7ad603d012269daf11",
     "semantic_hash": ""
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "docs/scope/011 - Aset merek bersama.md": {
-    "mtime": 1794752200.7511976,
-    "seen": 1794752203.032633,
-    "ast_hash": "617ae1a5fa1ce57e6b436276dc6b3b42",
+    "mtime": 1794753604.4261434,
+    "seen": 1794753610.497625,
+    "ast_hash": "ef5291085b7aaf89a00b9712590a796b",
     "semantic_hash": ""
   },
   "docs/scope/012 - Build dan penerimaan per target.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794753170.0180533,
-    "seen": 1794753171.996812,
-    "ast_hash": "4cb4a7015bccf079793ef929a454229a",
+    "mtime": 1794753776.785445,
+    "seen": 1794753781.161824,
+    "ast_hash": "e4bab482dce8ced2bbb7431fe6ddebb0",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794753440.225243,
-    "seen": 1794753443.65394,
+    "mtime": 1794753874.0224118,
+    "seen": 1794753875.936508,
     "ast_hash": "41f61fd2f1dc671271c20dea4dad603e",
     "semantic_hash": ""
   },
@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794753440.2035925,
-    "seen": 1794753443.653942,
+    "mtime": 1794753874.0031807,
+    "seen": 1794753875.936497,
     "ast_hash": "af4b8f8fc65ddf10ff066de46c2faa7d",
     "semantic_hash": ""
   },
@@ -750,9 +750,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/verify.md": {
-    "mtime": 1794753083.771067,
-    "seen": 1794753088.894102,
-    "ast_hash": "8559f408a19edc2f1db11824aa24fd14",
+    "mtime": 1794753514.3260243,
+    "seen": 1794753517.0772521,
+    "ast_hash": "b346520b8f77a536bd3e7325f4ee5457",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
@@ -767,52 +767,58 @@
     "ast_hash": "11452544872e000e16e87c072f506cb0",
     "semantic_hash": ""
   },
-  "tooling/codegen/src/architecture/manifest.rs": {
-    "mtime": 1794753440.209623,
-    "seen": 1794753443.653933,
-    "ast_hash": "9bf03672858719c9b61b67b99c275669",
-    "semantic_hash": ""
-  },
-  "tooling/codegen/src/architecture/deps.rs": {
-    "mtime": 1794753440.2094529,
-    "seen": 1794753443.6539369,
-    "ast_hash": "ff95171762f6972a35464fcc3d530cb7",
-    "semantic_hash": ""
-  },
-  "tooling/codegen/src/architecture/mod.rs": {
-    "mtime": 1794753808.500911,
-    "seen": 1794753812.29324,
-    "ast_hash": "6738a91631fc4e6ebdc3e99b0b62c9d2",
-    "semantic_hash": ""
-  },
-  "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794753808.505171,
-    "seen": 1794753812.293244,
-    "ast_hash": "cb88f1695dd7db5a01f0e8a0d643c002",
+  "tooling/codegen/tests/assets_rules.rs": {
+    "mtime": 1794753582.2322845,
+    "seen": 1794753586.798111,
+    "ast_hash": "363d14073b40388cb28750d561c3467b",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794753864.137734,
-    "seen": 1794753866.4779031,
+    "mtime": 1794753874.0036457,
+    "seen": 1794753875.936486,
     "ast_hash": "b751f43b590bc5a10eed537b3b52783c",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/macos_bridge_ownership.rs": {
-    "mtime": 1794753644.0586333,
-    "seen": 1794753650.059819,
+    "mtime": 1794753874.0325167,
+    "seen": 1794753875.936492,
     "ast_hash": "a67a741d8d2db0dc96da4376185f3db9",
     "semantic_hash": ""
   },
-  "tooling/codegen/tests/workspace_layout.rs": {
-    "mtime": 1794753644.059081,
-    "seen": 1794753650.059826,
-    "ast_hash": "632f2790312266d4ff057959998134d5",
+  "tooling/codegen/src/architecture/manifest.rs": {
+    "mtime": 1794753874.0163584,
+    "seen": 1794753875.9365,
+    "ast_hash": "9bf03672858719c9b61b67b99c275669",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/code.rs": {
-    "mtime": 1794753808.5001857,
-    "seen": 1794753812.293247,
+    "mtime": 1794753874.015836,
+    "seen": 1794753875.936503,
     "ast_hash": "2d6434d4bc3a237e745ce4941c9d908a",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/mod.rs": {
+    "mtime": 1794753874.01651,
+    "seen": 1794753875.936505,
+    "ast_hash": "6738a91631fc4e6ebdc3e99b0b62c9d2",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/workspace_layout.rs": {
+    "mtime": 1794753874.0331001,
+    "seen": 1794753875.936511,
+    "ast_hash": "632f2790312266d4ff057959998134d5",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/architecture_contract.rs": {
+    "mtime": 1794753874.0275404,
+    "seen": 1794753875.936513,
+    "ast_hash": "cb88f1695dd7db5a01f0e8a0d643c002",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/deps.rs": {
+    "mtime": 1794753874.016205,
+    "seen": 1794753875.936515,
+    "ast_hash": "ff95171762f6972a35464fcc3d530cb7",
     "semantic_hash": ""
   }
 }
