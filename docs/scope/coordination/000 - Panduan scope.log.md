@@ -5,14 +5,14 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 18:40`
+- **Diperbarui:** `2026-11-15 18:55`
 
 ## Sub sesi wave `1`
 
 | Nama | Peran | Item | Scope | Ownership | Branch | Model | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `arc-f001-spec` | architect | 001 spec `_root` 0001; ringkasan diterima lead dengan satu perubahan (`c459559`), menunggu laporan akhir | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
-| `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
+| `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1`; koreksi rujukan langkah `8515ef5`, merge `d4ff759` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS, plus penerapan macOS 001 dan 003; nomor ditetapkan saat "mulai" | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/` (folder per spec, ditetapkan saat "mulai") | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | standby |
 | `dev-f001-m1` | developer | 001 Build it; milestone dari blok usulan spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | standby |
 | `dev-f003-m1` | developer | 003 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3 sampai 6) spec `_root/0002`; menunggu 001 milestone 1 di `main` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs` (tambah baris), `crates/core/Cargo.toml` (tambah `[lints.rust]`), `docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | standby |
@@ -34,6 +34,7 @@
 | 2026-11-15 | Worktree sub sesi dibuat aplikasi di `/Users/ojiepermana/worktrees/desktop/<name>-<hash>` dan dipotong dari `origin/main` (`60fb6a3`), bukan `main` lokal. Kelima worktree wave 1 sudah di-fast-forward ke `9b67c13` sebelum ada perubahan di dalamnya. Sesi berikutnya dimulai dengan `source_branch: main`, dan brief selalu membuka dengan `git merge main`. | lead |
 | 2026-11-15 | Ringkasan "Accept this spec?" spec `_root/0002` dibalas `accept`: cross check (Opus) sudah diterapkan, kriteria 2, 3, 22 dan Done when scope 003 tercakup AC-1 sampai AC-7, belum ada spec `Accepted` lain, tautan relatif sah. Usul tautan dari `docs/contracts/README.md` tidak dikerjakan lead (di luar file lead) dan tetap sebagai Follow-up spec. | lead |
 | 2026-11-15 | Ringkasan "Accept this spec?" spec `_root/0001` dibalas `accept` dengan satu perubahan: rustdoc kerangka `lib.rs` dan `description` paket Core berbahasa Inggris, supaya selaras dengan spec `_root/0002` yang sudah di `main`. Lulus: cross check (Opus) diterapkan, Done when dan kriteria 1, 2, 27, 32 tercakup AC-1 sampai AC-9, selaras dengan spec 0002. Brief developer milestone 2 akan mengizinkan `docs/architecture/README.md` (AC-8), yang biasanya terlarang. | lead |
+| 2026-11-15 | Koreksi susulan `arc-f003-spec` (`8515ef5`) di-merge sebagai `d4ff759`: prasyarat build 003 menunjuk milestone 1 spec `_root/0001` = Build plan langkah 1 dan 2 (bukan 1 sampai 4), karena spec 0001 berubah sesudah cross check. Teks AC dan keputusan spec 0002 tidak berubah. Konflik hanya di `graphify-out/GRAPH_REPORT.md`, diselesaikan lead dengan sisi `main`. Kotak milestone 1 di file scope 003 disesuaikan. | lead |
 
 ## Keputusan delegasi
 
@@ -75,7 +76,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 001, 002, 003, 008 sampai 012 · penerapan Windows dan Linux: host masing masing; pemilik user. Fitur bersama tidak ditandai `done` sebelum bukti itu ada.
 - 002 · `/audit` ← `001 - Batas workspace dan pemilik.md`: scaffold (`Build it` 001) harus sudah di `main`.
 - 004 · `/architect scope 004 sapaan di jendela macOS` ← spec `_root/0001` di-merge (`_root/0002` sudah di `main`, `63f89a1`). Input wajib dari Follow-up spec 0002: pembungkus UniFFI yang badannya hanya `desktop_core::hello(name)`, uji Swift V-1, V-2, V-6, V-10, `Text(verbatim:)`, dan R-8.
-- 003 · `Build it` milestone 1 ← `001 - Batas workspace dan pemilik.md`: milestone 1 "Workspace dan kerangka Core" (spec `_root/0001` langkah 1 sampai 4) di `main`.
+- 003 · `Build it` milestone 1 ← `001 - Batas workspace dan pemilik.md`: milestone 1 "Workspace dan kerangka Core" (spec `_root/0001` langkah 1 dan 2) di `main`.
 - 003 · `/architect scope 003 kontrak sapaan untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
 - `README.md` masih menyebut semua fitur `planned`; diperbarui lewat `/sync` akhir wave.
 - 008 sampai 012 · `/architect scope … untuk _root` ← alur 004 terbukti di Mac (urutan Panduan).
