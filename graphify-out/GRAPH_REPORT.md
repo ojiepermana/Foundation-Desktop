@@ -1,11 +1,11 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 72 files · ~67,420 words
+- 72 files · ~67,586 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 622 nodes · 1002 edges · 49 communities (42 shown, 7 thin omitted)
+- 622 nodes · 1003 edges · 49 communities (42 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -253,7 +253,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `Fondasi desktop native` connect `Fondasi desktop native` to `Fondasi Linux`, `Arsitektur fondasi desktop`, `pre-commit script`, `scope.md`, `Fondasi Windows`, `Scope fondasi desktop native`, `Fondasi macOS`, `Penerimaan dan bukti fondasi`, `Sistem desain bersama`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
   _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **Why does `Scope fondasi desktop native` connect `Scope fondasi desktop native` to `Fondasi Linux`, `scope.md`, `Fondasi Windows`, `Fondasi macOS`, `Penerimaan dan bukti fondasi`, `Sistem desain bersama`, `Fondasi desktop native`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `Scope fondasi desktop native`, `Fondasi desktop native`, `scope.md`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
   _High betweenness centrality (0.030) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**

@@ -1791,7 +1791,7 @@
       "node_kind": "heading",
       "norm_label": "build plan",
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L168"
+      "source_location": "L171"
     },
     {
       "id": "docs_specs_macos_0002_batas_workspace_dan_pemilik_consequences",
@@ -1803,7 +1803,7 @@
       "node_kind": "heading",
       "norm_label": "consequences",
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L191"
+      "source_location": "L194"
     },
     {
       "id": "docs_specs_macos_0002_batas_workspace_dan_pemilik_context",
@@ -1839,7 +1839,7 @@
       "node_kind": "heading",
       "norm_label": "feature design",
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L88"
+      "source_location": "L90"
     },
     {
       "id": "docs_specs_macos_0002_batas_workspace_dan_pemilik_follow_up",
@@ -1851,7 +1851,7 @@
       "node_kind": "heading",
       "norm_label": "follow-up",
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L209"
+      "source_location": "L211"
     },
     {
       "id": "docs_specs_macos_0002_batas_workspace_dan_pemilik_opsi_1_rujuk_bukti_yang_ada_tambah_satu_langkah_untuk_peta_arsitektur",
@@ -13113,7 +13113,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L168",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -13135,7 +13135,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L191",
+      "source_location": "L194",
       "weight": 1.0
     },
     {
@@ -13146,7 +13146,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L209",
+      "source_location": "L211",
       "weight": 1.0
     },
     {
@@ -13201,7 +13201,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0002-batas-workspace-dan-pemilik.md",
-      "source_location": "L88",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -15556,6 +15556,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md",
       "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0001_batas_workspace_dan_pemilik_rationale",
+      "target": "docs_specs_macos_0002_batas_workspace_dan_pemilik",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
