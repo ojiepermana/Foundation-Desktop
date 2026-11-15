@@ -1,19 +1,19 @@
 {
   "README.md": {
-    "mtime": 1794754232.7051039,
-    "seen": 1794754234.192078,
+    "mtime": 1794754339.8179383,
+    "seen": 1794754341.287497,
     "ast_hash": "f835abe422bb6a9b6c62ef700a853a3a",
     "semantic_hash": ""
   },
   "docs/architecture/README.md": {
-    "mtime": 1794754232.7100449,
-    "seen": 1794754234.192082,
+    "mtime": 1794754339.8229527,
+    "seen": 1794754341.2874959,
     "ast_hash": "a93d1e996463885c1edaa655bcbd4900",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
-    "mtime": 1794754232.7102196,
-    "seen": 1794754234.192074,
+    "mtime": 1794754339.8231063,
+    "seen": 1794754341.2874932,
     "ast_hash": "d0697ee58c07997c7a230bcffc8ee0e0",
     "semantic_hash": ""
   },
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
-    "mtime": 1794753776.7819378,
-    "seen": 1794753781.16182,
-    "ast_hash": "00dfb2f470cbfa7ad603d012269daf11",
+    "mtime": 1794754303.5007868,
+    "seen": 1794754305.0951092,
+    "ast_hash": "2e1d1bb5c861ceda2c092632cf058af1",
     "semantic_hash": ""
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
@@ -138,8 +138,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1794754232.7047503,
-    "seen": 1794754234.1920798,
+    "mtime": 1794754339.8176029,
+    "seen": 1794754341.287503,
     "ast_hash": "757041d4eeb6af0648fd6c2b9c10f6ed",
     "semantic_hash": ""
   },
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794754113.7594156,
-    "seen": 1794754116.4989922,
-    "ast_hash": "7b71cfb6823456208bdbd75ebac51aed",
+    "mtime": 1794754303.5030541,
+    "seen": 1794754305.095113,
+    "ast_hash": "05cf2a98ec9b59c4b69033d498f41e7b",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -444,8 +444,8 @@
     "semantic_hash": ""
   },
   "crates/core/AGENTS.md": {
-    "mtime": 1794754232.7076645,
-    "seen": 1794754234.1920698,
+    "mtime": 1794754339.8206992,
+    "seen": 1794754341.287502,
     "ast_hash": "359a158389c976a93da708802f54ecf4",
     "semantic_hash": ""
   },
@@ -786,26 +786,26 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/code.rs": {
-    "mtime": 1794754232.722267,
-    "seen": 1794754234.192082,
+    "mtime": 1794754339.8357022,
+    "seen": 1794754341.287501,
     "ast_hash": "31d568462c52ffbe9d0b13a147cc66f9",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794754232.718096,
-    "seen": 1794754234.192081,
-    "ast_hash": "9e8c5fc607a91aa08ab9c00ef6b319b0",
+    "mtime": 1794754339.8316288,
+    "seen": 1794754341.2875001,
+    "ast_hash": "2a4c778fb88dedd8fcaa73515010b303",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794754232.7244558,
-    "seen": 1794754234.192079,
+    "mtime": 1794754339.8378422,
+    "seen": 1794754341.287503,
     "ast_hash": "eff930bca8b72432049fa7041a86c173",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
-    "mtime": 1794754232.7226999,
-    "seen": 1794754234.192075,
+    "mtime": 1794754339.836149,
+    "seen": 1794754341.287504,
     "ast_hash": "dac0be29af580737b42610ef5be41003",
     "semantic_hash": ""
   },
@@ -822,8 +822,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/docs.rs": {
-    "mtime": 1794754232.722491,
-    "seen": 1794754234.1920772,
+    "mtime": 1794754339.8359303,
+    "seen": 1794754341.287499,
     "ast_hash": "13d3d68f79cc73dca014c6d6bee4bfad",
     "semantic_hash": ""
   }
