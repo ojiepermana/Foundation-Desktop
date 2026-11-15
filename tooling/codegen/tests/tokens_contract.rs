@@ -305,6 +305,15 @@ const SCHEMAS: [&str; 3] = [
     "design-system/schemas/typography.schema.json",
 ];
 
+/// Every output of the source, in plan order: the schemas, then the Swift
+/// tokens of spec `macos/0005`.
+const OUTPUTS: [&str; 4] = [
+    SCHEMAS[0],
+    SCHEMAS[1],
+    SCHEMAS[2],
+    "apps/macos/DesignSystem/Tokens.swift",
+];
+
 /// Makes a fresh copy of the three token files, without any outputs.
 fn copy_sources(root: &Path) {
     if root.exists() {
@@ -332,30 +341,30 @@ fn check_reports_stale_and_missing_outputs_and_generate_repairs_them() {
         .filter(|problem| problem.message.starts_with("missing, run: "))
         .map(|problem| problem.path.as_str())
         .collect();
-    assert_eq!(missing, SCHEMAS);
-    assert_eq!(problems.len(), 3);
+    assert_eq!(missing, OUTPUTS);
+    assert_eq!(problems.len(), 4);
     assert!(
         !root.join("design-system/schemas").exists(),
         "check must not write"
     );
 
     let (written, line) = generate(&root, source).expect("generate succeeds");
-    assert_eq!(written, SCHEMAS);
+    assert_eq!(written, OUTPUTS);
     assert!(
-        line.ends_with("3 outputs, 3 written"),
+        line.ends_with("4 outputs, 4 written"),
         "unexpected line: {line}"
     );
 
     let line = check(&root, source).expect("outputs are up to date");
     assert!(
-        line.ends_with("3 outputs up to date"),
+        line.ends_with("4 outputs up to date"),
         "unexpected line: {line}"
     );
 
     let (written, line) = generate(&root, source).expect("generate succeeds");
     assert!(written.is_empty(), "second generate wrote {written:?}");
     assert!(
-        line.ends_with("3 outputs, 0 written"),
+        line.ends_with("4 outputs, 0 written"),
         "unexpected line: {line}"
     );
 
