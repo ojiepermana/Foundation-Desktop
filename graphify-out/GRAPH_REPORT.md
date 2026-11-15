@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 99 files · ~126,113 words
+- 99 files · ~126,257 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -385,11 +385,11 @@ Nodes (3): pattern, type, light
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `quality/README.md`, `Scope fondasi desktop native`, `Fondasi desktop native`?**
-  _High betweenness centrality (0.029) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `0004. Konfigurasi publik` connect `Rancangan konfigurasi` to `quality/README.md`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `Validasi keluaran generator` connect `Scope fondasi desktop native` to `Penerimaan dan bukti fondasi`, `Fondasi macOS`, `pre-commit script`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `Verify: spec macos/0002 dan macos/0003 · 2026-11-15` connect `Verify: spec macos/0002 dan macos/0003 · 2026-11-15` to `quality/README.md`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
   _454 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `desktop_macos_ffi.swift` be split into smaller, more focused modules?**
