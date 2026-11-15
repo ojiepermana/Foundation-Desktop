@@ -334,5 +334,17 @@
     "seen": 1794738587.646782,
     "ast_hash": "632f2790312266d4ff057959998134d5",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
+    "mtime": 1794739767.6538305,
+    "seen": 1794739770.242265,
+    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
+    "mtime": 1794739767.6535225,
+    "seen": 1794739770.2422678,
+    "ast_hash": "13b32666d9a5301b8a6fe6c599628452",
+    "semantic_hash": ""
   }
 }
