@@ -193,3 +193,14 @@ Putaran kedua membaca rancangan sekarang, menulis ulang aturan S sebagai skrip, 
 | Bagian **Done when** tentang cara aset masuk ke tiap OS hanya dipenuhi sebagai aturan | Ditulis terang di bawah daftar AC: mekanisme dan bukti per OS adalah kewajiban spec OS. |
 | Catatan ekspor menandai semua OS basi untuk perubahan apa pun, dan tidak menangkap keluaran biner yang disunting tangan | Dicatat di Consequences dan kasus gagal. |
 | Pengurai HTML membaca komentar berbeda dari XML | Dicatat di bagian Keamanan. Tidak ada aturan baru, karena alat ekspor dan aplikasi native membaca SVG sebagai XML. |
+
+## Pembaruan 2026-11-15
+
+Pembaruan teks sesudah build, verify, dan test milestone 1 dan 2, tanpa mengubah aturan, kode, atau ID:
+
+| Asal | Perubahan |
+| --- | --- |
+| Follow-up spec `macos/0007` | **AC-2** dan **AC-5** diberi batas "pada akhir milestone 1 spec ini", karena emitter macOS menambah dua keluaran dan satu berkas `.svg`. **AC-3** sudah berbatas. |
+| Checker | **S-1** menyebut bahwa satu berkas memberi satu masalah S-1, untuk syarat pertama yang gagal, sesuai kode di `tooling/codegen/src/assets/svg.rs`. Pendaftaran di `lib.rs` disebut "dua perubahan", karena `rustfmt` memecah larik `SOURCES`. |
+| Tester | **S-5** menyatakan terang bahwa `on` di tengah nama atribut, termasuk `a.onload=` dan `a:onload=`, diterima. Itu maksud aturan sejak awal: atribut peristiwa SVG selalu tanpa awalan, dan pembatas `_`, `.`, `:`, `-` mencegah penolakan palsu untuk nama seperti `data-onload`. Sumber yang membawa atribut seperti itu tetap tidak menjalankan apa pun di alat ekspor atau aplikasi native. Uji `assets_rules.rs` sudah mengunci perilaku ini, jadi tidak ada perubahan kode. |
+| Lead | Follow-up macOS ditandai dijawab spec `macos/0007`. Follow-up Scope 002 tetap terbuka, karena spec `_root/0007` tidak memeriksa berkas gambar merek. Tautan balik di berkas scope 011 sudah ada. Tautan dari `shared/assets/README.md` ke spec `macos/0007` dicatat sebagai opsional. |
