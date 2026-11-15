@@ -16,8 +16,10 @@ let package = Package(
             dependencies: [.product(name: "DesktopMacosFFI", package: "swift")],
             path: "Interop"
         ),
-        .target(name: "Presentation", dependencies: ["Interop"], path: "Presentation"),
+        .target(name: "DesignSystem", path: "DesignSystem"),
+        .target(name: "Presentation", dependencies: ["Interop", "DesignSystem"], path: "Presentation"),
         .testTarget(name: "InteropTests", dependencies: ["Interop"], path: "Tests/InteropTests"),
         .testTarget(name: "PresentationTests", dependencies: ["Presentation", "Interop"], path: "Tests/PresentationTests"),
+        .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem"], path: "Tests/DesignSystemTests"),
     ]
 )

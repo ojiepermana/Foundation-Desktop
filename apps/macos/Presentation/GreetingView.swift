@@ -1,3 +1,4 @@
+import DesignSystem
 import SwiftUI
 
 /// The greeting window content: a name field, a button, and the result label.
@@ -9,15 +10,20 @@ public struct GreetingView: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: Tokens.Spacing.gapControl) {
             TextField("Name", text: $model.name)
             Button("Greet") {
                 model.greet()
             }
             .keyboardShortcut(.defaultAction)
+            .buttonStyle(.borderedProminent)
+            .tint(Tokens.Colors.accent.color)
             Text(verbatim: model.greeting ?? "")
+                .font(Tokens.Typography.body.font)
+                .foregroundStyle(Tokens.Colors.textPrimary.color)
         }
-        .padding(20)
+        .padding(Tokens.Spacing.insetWindow)
         .frame(minWidth: 320)
+        .background(Tokens.Colors.background.color)
     }
 }

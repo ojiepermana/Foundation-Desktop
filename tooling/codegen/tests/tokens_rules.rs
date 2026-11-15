@@ -407,9 +407,10 @@ fn json_outputs_are_canonical_with_whole_numbers_and_one_final_newline() {
     }
 }
 
-/// Covers AC-6 (O-6): outputs use fixed relative paths with `/`, shared
-/// ones live under `design-system/`, and each output type has a per type
-/// `text eol=lf` line in `.gitattributes`.
+/// Covers AC-6 (O-6): outputs use fixed relative paths with `/`. Shared
+/// ones live under `design-system/` with a per type `text eol=lf` line in
+/// `.gitattributes`; the macOS tokens of spec `macos/0005` live under
+/// `apps/macos/DesignSystem/` with a `text eol=lf` line for that path.
 #[test]
 fn outputs_live_under_design_system_with_lf_attributes() {
     let rules: Vec<&str> = GITATTRIBUTES
@@ -422,13 +423,19 @@ fn outputs_live_under_design_system_with_lf_attributes() {
             !path.starts_with('/') && !path.contains('\\') && !path.contains(".."),
             "O-6: {path} is a plain relative path"
         );
-        assert!(path.starts_with("design-system/"), "O-6: {path} location");
         let extension = path.rsplit('.').next().unwrap_or_default();
-        assert!(
-            rules.iter().any(|rule| rule.starts_with("/design-system/")
-                && rule.ends_with(&format!("*.{extension}"))),
-            "O-6: no per type text eol=lf line for {path}: {rules:?}"
-        );
+        let covered = if path.starts_with("design-system/") {
+            rules.iter().any(|rule| {
+                rule.starts_with("/design-system/") && rule.ends_with(&format!("*.{extension}"))
+            })
+        } else {
+            assert!(
+                path.starts_with("apps/macos/DesignSystem/"),
+                "O-6: {path} location"
+            );
+            rules.contains(&format!("/{path}").as_str())
+        };
+        assert!(covered, "O-6: no text eol=lf line for {path}: {rules:?}");
     }
 }
 

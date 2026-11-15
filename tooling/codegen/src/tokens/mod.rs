@@ -17,6 +17,7 @@ use crate::json::UniqueMap;
 use crate::{Plan, Problem, Source};
 
 mod schema;
+pub mod swift;
 
 /// The `tokens` source, run as `desktop-codegen tokens <check|generate>`.
 pub const SOURCE: Source = Source {
@@ -230,7 +231,8 @@ struct SemanticSpace {
     reference: String,
 }
 
-/// Reads the three token files under `root` and plans the schema outputs.
+/// Reads the three token files under `root` and plans the schema outputs
+/// and the Swift tokens of spec `macos/0005`.
 fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     let mut problems = Vec::new();
     let mut read = |path: &str| match fs::read_to_string(root.join(path)) {
@@ -252,10 +254,9 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
         tokens.colors.len() + tokens.roles.len() + tokens.spacing.len(),
         tokens.placeholders
     );
-    Ok(Plan {
-        outputs: schema::outputs(),
-        summary,
-    })
+    let mut outputs = schema::outputs();
+    outputs.push(swift::output(&tokens));
+    Ok(Plan { outputs, summary })
 }
 
 /// Parses and checks the text of the three token files.

@@ -6,3 +6,4 @@
 /apps/macos/Config/*.xcconfig text eol=lf
 /scripts/*.sh text eol=lf
 /.github/workflows/*.yml text eol=lf
+/apps/macos/DesignSystem/Tokens.swift text eol=lf

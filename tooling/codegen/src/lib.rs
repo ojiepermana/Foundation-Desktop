@@ -92,7 +92,7 @@ pub fn source(name: &str) -> Option<&'static Source> {
 /// Checks the source and compares every output with the file on disk.
 ///
 /// Returns the full success line, for example
-/// `tokens: ok, 6 semantic tokens, 3 placeholder values, 3 outputs up to date`.
+/// `tokens: ok, 6 semantic tokens, 3 placeholder values, 4 outputs up to date`.
 /// Never writes.
 pub fn check(root: &Path, source: &Source) -> Result<String, Vec<Problem>> {
     let plan = (source.plan)(root)?;

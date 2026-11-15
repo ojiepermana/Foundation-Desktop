@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
-    "mtime": 1794740287.2869787,
-    "seen": 1794740289.07793,
-    "ast_hash": "c6d7ed31a2558949961f0289d3f689ca",
+    "mtime": 1794757881.5705154,
+    "seen": 1794757883.393523,
+    "ast_hash": "eb9a79370f87370efccaf187b2e24856",
     "semantic_hash": ""
   },
   "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift": {
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "apps/macos/Presentation/GreetingView.swift": {
-    "mtime": 1794741033.5262637,
-    "seen": 1794741036.01794,
-    "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
+    "mtime": 1794757881.5706966,
+    "seen": 1794757883.393514,
+    "ast_hash": "2d747c33095706717e5ce1e72afec56a",
     "semantic_hash": ""
   },
   "docs/reviews/2026-11-15-verify-macos-0002-0003.md": {
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794753978.2707603,
-    "seen": 1794753980.333809,
-    "ast_hash": "41f61fd2f1dc671271c20dea4dad603e",
+    "mtime": 1794757881.5976152,
+    "seen": 1794757883.393525,
+    "ast_hash": "370d779bedb0bf26893ed1166a574dfd",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
@@ -540,9 +540,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/tokens/mod.rs": {
-    "mtime": 1794744988.7782295,
-    "seen": 1794744995.800631,
-    "ast_hash": "a8ff076221e193fc7701221ef2781e69",
+    "mtime": 1794757881.5983403,
+    "seen": 1794757883.393518,
+    "ast_hash": "cd35eb5ef647c94f3dc16d0e50adf4c2",
     "semantic_hash": ""
   },
   "design-system/tokens/typography.json": {
@@ -552,9 +552,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/tokens_contract.rs": {
-    "mtime": 1794744988.7788317,
-    "seen": 1794744995.8006341,
-    "ast_hash": "d2326aeab5b7d7e4fa65d841171c1a95",
+    "mtime": 1794757881.6014729,
+    "seen": 1794757883.393528,
+    "ast_hash": "0310c2c1669f5d9854cf93377232c53c",
     "semantic_hash": ""
   },
   "tooling/codegen/src/main.rs": {
@@ -618,9 +618,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/tokens_rules.rs": {
-    "mtime": 1794751908.40678,
-    "seen": 1794751909.488357,
-    "ast_hash": "aacb5ae90cdf21a7990caf7718370f10",
+    "mtime": 1794757881.6016536,
+    "seen": 1794757883.3935301,
+    "ast_hash": "2e12884596a7a3e7841cadd048b51c9b",
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/rationale.md": {
@@ -756,9 +756,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794756266.8904672,
-    "seen": 1794756268.4732742,
-    "ast_hash": "e994dbfb14a9215e67021a94c1200a94",
+    "mtime": 1794757881.5898776,
+    "seen": 1794757883.393524,
+    "ast_hash": "8f83ff2fdf08896372cb9d5bdb102566",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md": {
@@ -939,6 +939,42 @@
     "mtime": 1794757831.726944,
     "seen": 1794757833.667895,
     "ast_hash": "85aca3df8ff55ac3964531fd2b0a8ebf",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/tokens_swift_contract.rs": {
+    "mtime": 1794757881.6018038,
+    "seen": 1794757883.3935192,
+    "ast_hash": "843e4180b62d68d09be1923f0f2aa43d",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/DesignSystemTests/ThemeTests.swift": {
+    "mtime": 1794757881.5710552,
+    "seen": 1794757883.39352,
+    "ast_hash": "31865cf15aa1a274e011d3c0a90fcb7d",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/verify.md": {
+    "mtime": 1794757881.5903113,
+    "seen": 1794757883.3935208,
+    "ast_hash": "200f6c6a9135aecac73c05389e3544ea",
+    "semantic_hash": ""
+  },
+  "apps/macos/DesignSystem/Theme.swift": {
+    "mtime": 1794757881.5693176,
+    "seen": 1794757883.393526,
+    "ast_hash": "17a3eefc337819445119743a83302ac0",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/tokens/swift.rs": {
+    "mtime": 1794757881.5986216,
+    "seen": 1794757883.393527,
+    "ast_hash": "9e408d9c96643d95c203fd075aae1d66",
+    "semantic_hash": ""
+  },
+  "apps/macos/DesignSystem/Tokens.swift": {
+    "mtime": 1794757881.5695362,
+    "seen": 1794757883.3935292,
+    "ast_hash": "78f79c372bfdd27b12cf8cd9863e8adc",
     "semantic_hash": ""
   }
 }
