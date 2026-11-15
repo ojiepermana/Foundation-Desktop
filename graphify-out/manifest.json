@@ -448,5 +448,11 @@
     "seen": 1794741622.8036742,
     "ast_hash": "279a47592eb67615319332e40de8b248",
     "semantic_hash": ""
+  },
+  "docs/reviews/2026-11-15-verify-macos-0002-0003.md": {
+    "mtime": 1794741976.7376637,
+    "seen": 1794741980.480792,
+    "ast_hash": "a37b60080cfbc9aff733c6ad8adced1e",
+    "semantic_hash": ""
   }
 }
