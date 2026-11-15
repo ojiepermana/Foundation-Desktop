@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794754628.4317005,
-    "seen": 1794754630.12342,
-    "ast_hash": "506d7e3d17f26bde80102af266c05fd4",
+    "mtime": 1794754798.012347,
+    "seen": 1794754800.486409,
+    "ast_hash": "f22f91d44f8063389998c90d3261f255",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -851,16 +851,16 @@
     "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0007-aset-merek-bersama/rationale.md": {
-    "mtime": 1794754727.6060555,
-    "seen": 1794754730.049432,
-    "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
+  "docs/specs/macos/0007-aset-merek-bersama/index.md": {
+    "mtime": 1794754813.3645375,
+    "seen": 1794754815.1150331,
+    "ast_hash": "454645e883ce3edc7bde6c0eea48d1d1",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0007-aset-merek-bersama/index.md": {
-    "mtime": 1794754727.6058402,
-    "seen": 1794754730.049437,
-    "ast_hash": "454645e883ce3edc7bde6c0eea48d1d1",
+  "docs/specs/macos/0007-aset-merek-bersama/rationale.md": {
+    "mtime": 1794754813.3662226,
+    "seen": 1794754815.115037,
+    "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
     "semantic_hash": ""
   }
 }
