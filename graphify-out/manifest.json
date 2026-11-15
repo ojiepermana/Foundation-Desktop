@@ -108,9 +108,9 @@
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
-    "mtime": 1794752436.9294758,
-    "seen": 1794752438.539525,
-    "ast_hash": "4c24ed8c69ce7ec01aee8b0e3a34ef4f",
+    "mtime": 1794752874.4917665,
+    "seen": 1794752878.149069,
+    "ast_hash": "3063c38df3128ec737329e2e8ebec77d",
     "semantic_hash": ""
   },
   "docs/scope/011 - Aset merek bersama.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794752643.9550223,
-    "seen": 1794752647.009237,
-    "ast_hash": "28e357e444337bb9716ab336eecca9eb",
+    "mtime": 1794752874.4936593,
+    "seen": 1794752878.1490738,
+    "ast_hash": "db45b3c587748ce6d13370532047a026",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -672,9 +672,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
-    "mtime": 1794752435.067744,
-    "seen": 1794752436.523438,
-    "ast_hash": "7dc57f67ab9aa6a2d4a2eb6b93e1aa1c",
+    "mtime": 1794752828.8521287,
+    "seen": 1794752834.591329,
+    "ast_hash": "6c1d38594550de939244aa5149e1d53a",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_contract.rs": {
@@ -695,16 +695,22 @@
     "ast_hash": "298c5d751b6299940d3860305e89c487",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794752916.5752547,
-    "seen": 1794752918.873021,
-    "ast_hash": "6e9358812a55a4c0cdaa769ff0693c18",
+  "tooling/codegen/tests/localization_rules.rs": {
+    "mtime": 1794752849.1505895,
+    "seen": 1794752855.168397,
+    "ast_hash": "4fba29d98f64da943e3b8534e6ec868d",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md": {
-    "mtime": 1794752916.5756445,
-    "seen": 1794752918.873025,
+    "mtime": 1794752932.2813125,
+    "seen": 1794752934.077419,
     "ast_hash": "11452544872e000e16e87c072f506cb0",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
+    "mtime": 1794752932.2810023,
+    "seen": 1794752934.0774221,
+    "ast_hash": "6e9358812a55a4c0cdaa769ff0693c18",
     "semantic_hash": ""
   }
 }
