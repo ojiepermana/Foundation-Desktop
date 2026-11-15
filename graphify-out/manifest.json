@@ -96,9 +96,9 @@
     "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
   },
   "docs/scope/008 - Tema bersama dan kontrol native.md": {
-    "mtime": 1794753170.0121553,
-    "seen": 1794753171.9968178,
-    "ast_hash": "6325631c45b3611235c5fb8526c4e596",
+    "mtime": 1794758562.4955072,
+    "seen": 1794758568.663424,
+    "ast_hash": "15f85e2325aac9be368704db09925d1e",
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794757841.0849605,
-    "seen": 1794757844.1485,
-    "ast_hash": "5a438890306d74cba0f7e36cf93ab5b2",
+    "mtime": 1794758595.3166034,
+    "seen": 1794758607.275124,
+    "ast_hash": "c4f4011b3b0f4c107c59a11964fb0cc5",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794757456.1429834,
-    "seen": 1794757461.6277068,
-    "ast_hash": "501d295973c1777a7b6abc25420c8c3c",
+    "mtime": 1794758562.496813,
+    "seen": 1794758568.66342,
+    "ast_hash": "19fce7dddce7966347f420562cb818b0",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -342,8 +342,8 @@
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
-    "mtime": 1794758322.6157317,
-    "seen": 1794758326.917141,
+    "mtime": 1794759188.4008553,
+    "seen": 1794759194.527539,
     "ast_hash": "317a514e7e07949c95973b3a1e1f6d0c",
     "semantic_hash": ""
   },
@@ -432,8 +432,8 @@
     "semantic_hash": ""
   },
   "apps/macos/Presentation/GreetingView.swift": {
-    "mtime": 1794758322.6159234,
-    "seen": 1794758326.9171252,
+    "mtime": 1794759188.4010415,
+    "seen": 1794759194.527542,
     "ast_hash": "357ee62643c1da9986f26aec02f666c7",
     "semantic_hash": ""
   },
@@ -642,8 +642,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/localization/mod.rs": {
-    "mtime": 1794758114.0416124,
-    "seen": 1794758116.553597,
+    "mtime": 1794759188.4286172,
+    "seen": 1794759194.527543,
     "ast_hash": "bc5b468faf60719607fefefdffbe4848",
     "semantic_hash": ""
   },
@@ -834,8 +834,8 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794758114.0358639,
-    "seen": 1794758116.5536,
+    "mtime": 1794759188.416893,
+    "seen": 1794759194.527532,
     "ast_hash": "1f662e89c3db60050a559fd9f4b500a3",
     "semantic_hash": ""
   },
@@ -954,9 +954,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794757881.5903113,
-    "seen": 1794757883.3935208,
-    "ast_hash": "200f6c6a9135aecac73c05389e3544ea",
+    "mtime": 1794758554.8344538,
+    "seen": 1794758560.806051,
+    "ast_hash": "a5405dfd926dbca9dd00c2c18334b160",
     "semantic_hash": ""
   },
   "apps/macos/DesignSystem/Theme.swift": {
@@ -978,33 +978,33 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_macos_contract.rs": {
-    "mtime": 1794758114.043878,
-    "seen": 1794758116.5535932,
+    "mtime": 1794759188.430736,
+    "seen": 1794759194.5275352,
     "ast_hash": "325a3de83c6f15a6c67047902088cd76",
     "semantic_hash": ""
   },
   "tooling/codegen/src/localization/macos.rs": {
-    "mtime": 1794758114.041422,
-    "seen": 1794758116.553598,
+    "mtime": 1794759188.42845,
+    "seen": 1794759194.5275369,
     "ast_hash": "3db3e9fc7d1f9f00f386215c32adc30c",
     "semantic_hash": ""
   },
+  "docs/specs/macos/0006-satu-contoh-lokalisasi/verify.md": {
+    "mtime": 1794759188.417603,
+    "seen": 1794759194.52754,
+    "ast_hash": "f41fac9832b6566d352134b657592030",
+    "semantic_hash": ""
+  },
   "apps/macos/Presentation/LocalizedText.swift": {
-    "mtime": 1794758322.616154,
-    "seen": 1794758326.9171321,
+    "mtime": 1794759188.401297,
+    "seen": 1794759194.527541,
     "ast_hash": "8f99098d1068e030e4ce97aa9fe45f4f",
     "semantic_hash": ""
   },
   "apps/macos/Tests/PresentationTests/LocalizedTextTests.swift": {
-    "mtime": 1794758322.6177034,
-    "seen": 1794758326.917136,
+    "mtime": 1794759188.402368,
+    "seen": 1794759194.527542,
     "ast_hash": "026747fcfe3b4b059250e44abe8378e1",
-    "semantic_hash": ""
-  },
-  "docs/specs/macos/0006-satu-contoh-lokalisasi/verify.md": {
-    "mtime": 1794759182.0738935,
-    "seen": 1794759187.1737962,
-    "ast_hash": "f41fac9832b6566d352134b657592030",
     "semantic_hash": ""
   }
 }
