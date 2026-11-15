@@ -41,7 +41,7 @@ Nilai dari spec lain yang dipakai di sini, tanpa diputuskan ulang:
 | Paket Cargo dan nama lib | `desktop-core`, dipakai sebagai `desktop_core` | Spec `_root/0001` |
 | Path crate | `crates/core/` | Spec `_root/0001` |
 | Edisi, toolchain, versi awal | Edisi `2024`, toolchain `1.99.1`, `version = "0.1.0"` yang diwarisi dari `[workspace.package]` | Spec `_root/0001` |
-| Kerangka crate | `crates/core/Cargo.toml` dengan `[dependencies]` kosong, dan `crates/core/src/lib.rs` yang hanya berisi komentar dokumen crate | Spec `_root/0001`, Build plan langkah 1 sampai 4 |
+| Kerangka crate | `crates/core/Cargo.toml` dengan `[dependencies]` kosong, dan `crates/core/src/lib.rs` yang hanya berisi komentar dokumen crate | Spec `_root/0001`, Build plan langkah 1 dan 2 (milestone 1) |
 | Bentuk fungsi dan format hasil | `pub fn hello(name: String) -> String`, hasil `Hello, {name}!` | [Kontrak Rust](../../../contracts/README.md) |
 
 ## Rationale
@@ -229,7 +229,7 @@ Tidak ada skenario izin, karena tidak ada pembatasan akses.
 
 ## Build plan
 
-Urutan mengikuti pendekatan Tracer Bullet dari [Panduan scope](../../../scope/000%20-%20Panduan%20scope.md): lebih dulu satu jalur tipis dari path publik sampai uji yang lulus, lalu ditebalkan. Prasyarat: kerangka crate Core dari spec `_root/0001` (Build plan langkah 1 sampai 4) sudah ada di `main`.
+Urutan mengikuti pendekatan Tracer Bullet dari [Panduan scope](../../../scope/000%20-%20Panduan%20scope.md): lebih dulu satu jalur tipis dari path publik sampai uji yang lulus, lalu ditebalkan. Prasyarat: kerangka crate Core dari spec `_root/0001` (milestone 1, Build plan langkah 1 dan 2) sudah ada di `main`.
 
 1. Buat `crates/core/src/greeting.rs` dengan isi di bagian **API surface**, lalu tambahkan `mod greeting;` dan `pub use greeting::hello;` di `crates/core/src/lib.rs`, satisfies **AC-1**, **AC-4**
 2. Buat `crates/core/tests/hello_contract.rs` dengan komentar `//!`, uji `ayu_returns_hello_ayu`, dan uji `signature_is_pinned`. Jalankan `cargo test -p desktop-core --locked`, satisfies **AC-1**, **AC-2**, **AC-4**
