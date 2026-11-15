@@ -15,6 +15,25 @@ no_args() {
   fi
 }
 
+# needs_darwin_arm64: scripts for the macOS app stop with code 2 on any other host, before the header.
+needs_darwin_arm64() {
+  host_os=$(uname -s)
+  host_arch=$(uname -m)
+  if [ "$host_os" != "Darwin" ] || [ "$host_arch" != "arm64" ]; then
+    echo "$NAME: needs macOS on arm64, this host is $host_os $host_arch" >&2
+    exit 2
+  fi
+}
+
+# must_print_nothing <command> [arguments...]: run the command, pass its output on, and fail if it printed anything.
+must_print_nothing() {
+  quiet_out=$("$@" 2>&1)
+  quiet_code=$?
+  [ -n "$quiet_out" ] && printf '%s\n' "$quiet_out"
+  [ "$quiet_code" -eq 0 ] || return "$quiet_code"
+  [ -z "$quiet_out" ]
+}
+
 # summary_line <text>: append one line to the GitHub job summary when it is set.
 summary_line() {
   if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then
