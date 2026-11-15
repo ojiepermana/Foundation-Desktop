@@ -372,9 +372,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
-    "mtime": 1794740287.2973552,
-    "seen": 1794740289.0779352,
-    "ast_hash": "df5e761cf15abaffeac4feb58851b64a",
+    "mtime": 1794741138.1582901,
+    "seen": 1794741140.4012659,
+    "ast_hash": "4b93e9c8bca456ffa3ce6891b9e6b98e",
     "semantic_hash": ""
   },
   "bindings/swift/Package.swift": {
