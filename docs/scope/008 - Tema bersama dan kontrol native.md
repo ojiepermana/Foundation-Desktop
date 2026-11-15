@@ -20,10 +20,10 @@ Terapkan warna, tipografi dan jarak yang sama maknanya pada jendela sapaan di se
 
 * [x] `/architect scope 008 tema bersama untuk macOS` (spec)
 * [ ] Build it: `/develop scope 008 tema bersama untuk macOS`
-  * [ ] Milestone 1: Token sampai ke Swift. Build plan langkah 1. AC-1, AC-2, AC-4. needs pembaruan gabungan spec macos/0001 dan macos/0004; after build scope 011 dan build spec _root/0007 (file bersama `tooling/codegen/src/lib.rs`, `.gitattributes`); memegang `tooling/codegen/src/tokens/`, `tooling/codegen/tests/tokens_contract.rs`, `tooling/codegen/tests/tokens_rules.rs`
-  * [ ] Milestone 2: Jendela sapaan memakai token. Build plan langkah 2 dan 3. AC-3, AC-5, AC-6, AC-9, AC-10, AC-11. after milestone 1
+  * [x] Milestone 1: Token sampai ke Swift. Build plan langkah 1. AC-1, AC-2, AC-4. needs pembaruan gabungan spec macos/0001 dan macos/0004; after build scope 011 dan build spec _root/0007 (file bersama `tooling/codegen/src/lib.rs`, `.gitattributes`); memegang `tooling/codegen/src/tokens/`, `tooling/codegen/tests/tokens_contract.rs`, `tooling/codegen/tests/tokens_rules.rs`
+  * [x] Milestone 2: Jendela sapaan memakai token. Build plan langkah 2 dan 3. AC-3, AC-5, AC-6, AC-9, AC-10, AC-11. after milestone 1
   * [ ] Milestone 3: Sesi GUI di Mac. Build plan langkah 4. AC-7, AC-8. after milestone 2; needs sesi GUI di Mac (`BLOCKED`, `owner: user`, langkah manual `F008-2`)
-* [ ] Verify it: `/check verify scope 008 tema bersama untuk macOS`
+* [x] Verify it: `/check verify scope 008 tema bersama untuk macOS` (bukti tanpa jendela, AC-1 sampai AC-6 dan AC-9 sampai AC-11; AC-7 dan AC-8 menunggu langkah manual `F008-2`)
 * [ ] Test it: `/test scope 008 tema bersama untuk macOS`
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
