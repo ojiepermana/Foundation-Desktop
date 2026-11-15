@@ -96,15 +96,15 @@
     "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
   },
   "docs/scope/008 - Tema bersama dan kontrol native.md": {
-    "mtime": 1794745406.569515,
-    "seen": 1794745407.770623,
-    "ast_hash": "ba195572c8f5d9f4b68a6a2b6238945d",
+    "mtime": 1794751948.9284632,
+    "seen": 1794751950.0554292,
+    "ast_hash": "d80ca0ccb095fa6270adc03ab9e9b71e",
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
-    "mtime": 1794745128.5609655,
-    "seen": 1794745133.9051552,
-    "ast_hash": "bdd10a1e037abc6524cd5222f8f78814",
+    "mtime": 1794751948.9286013,
+    "seen": 1794751950.05543,
+    "ast_hash": "ee7a03dde4389514ae95c34a43f3e121",
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
@@ -234,15 +234,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.brief-umum.md": {
-    "mtime": 1794744159.8193316,
-    "seen": 1794744163.970825,
-    "ast_hash": "1937de51dc9787904f93d62b7e7c4503",
+    "mtime": 1794751948.9292846,
+    "seen": 1794751950.055428,
+    "ast_hash": "c79ad67b0c2533af3c7f3b05bd947472",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794745448.3606255,
-    "seen": 1794745450.1653419,
-    "ast_hash": "c139da08ee9d0311d988c7b52b55e551",
+    "mtime": 1794751948.929639,
+    "seen": 1794751950.055425,
+    "ast_hash": "fb9771a3bc9f93576c87b449c1c500d2",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
