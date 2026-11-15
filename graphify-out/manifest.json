@@ -580,5 +580,17 @@
     "seen": 1794744995.8006358,
     "ast_hash": "bf415a267b8024d83db1a627ed148497",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0004-konfigurasi-publik/rationale.md": {
+    "mtime": 1794745121.5787337,
+    "seen": 1794745127.4907122,
+    "ast_hash": "f262c92351d406625d7fbba0180c6375",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0004-konfigurasi-publik/index.md": {
+    "mtime": 1794745121.5785213,
+    "seen": 1794745127.490716,
+    "ast_hash": "82dac752d3b9514ebceaad43e882517d",
+    "semantic_hash": ""
   }
 }
