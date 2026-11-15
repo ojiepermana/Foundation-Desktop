@@ -2,7 +2,7 @@
 
 **Scope**: [009 - Konfigurasi publik](../../../scope/009%20-%20Konfigurasi%20publik.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
