@@ -426,9 +426,9 @@
     "semantic_hash": ""
   },
   "apps/macos/App/DesktopMacApp.swift": {
-    "mtime": 1794741033.5251837,
-    "seen": 1794741036.017934,
-    "ast_hash": "d56b1e3c15c6554e10c91524bc08b77b",
+    "mtime": 1794756367.1641142,
+    "seen": 1794756371.916569,
+    "ast_hash": "675b76f2791cc7132d5fc04e3fed2929",
     "semantic_hash": ""
   },
   "apps/macos/Presentation/GreetingView.swift": {
