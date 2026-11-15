@@ -39,3 +39,26 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 
 - AC-1: langkah 1 sampai 3 · AC-2: langkah 4 dan 5 · AC-3: langkah 5 sampai 7 · AC-4: langkah 5 dan 6 · AC-5: langkah 5, 6, dan 8 · AC-6: langkah 5 dan 9 · AC-7: langkah 5, 7, dan 9 · AC-8: langkah 2, 5, 6, 10, dan 11 · AC-9: langkah 5 dan 12 sampai 14 · AC-10: langkah 15 sampai 20.
 - AC-11 menunggu milestone 2.
+
+## Milestone 2: Dokumen rujukan mencatat keadaan nyata
+
+Build plan langkah 3. Hasil tercatat sebelum commit langkah 3, di atas commit langkah 2 (`0257e46`).
+
+### UI / manual
+
+Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah.
+
+### Commands
+
+- [ ] Paragraf di bawah `## Lokalisasi` di `docs/shared-resources/README.md` → sama persis dengan blok butir 1 bagian **Perubahan dokumen rujukan** spec; paragraf lama ("akan memiliki katalog istilah") tidak ada lagi → AC-11
+- [ ] `grep -c '0006-satu-contoh-lokalisasi' docs/shared-resources/README.md` → `1` (1 atau lebih) → AC-11
+- [ ] Kalimat "sudah ada." di bagian "Tata letak yang dituju" `docs/architecture/README.md` → ``Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, `tooling/codegen/`, dan `shared/localization/` sudah ada.`` (`shared/localization/` sesudah lokasi terakhir, `tooling/codegen/`) → AC-11
+- [ ] Baris terakhir tabel `### Yang sudah ada` di dokumen arsitektur → `| `shared/localization/` | Katalog bahasa bersama ... [spec 0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md). |`, sesudah baris `shared/config/`, sama dengan butir 3 spec → AC-11
+- [ ] `(cd docs/shared-resources && test -f ../specs/_root/0006-satu-contoh-lokalisasi/index.md) && (cd docs/architecture && test -f ../specs/_root/0006-satu-contoh-lokalisasi/index.md)` → kode 0; tautan di kedua dokumen mengarah ke berkas yang ada → AC-11
+- [ ] `git diff 0257e46 -- docs/architecture/README.md` → satu baris diganti dan satu baris ditambah; tabel "Aturan arah dependensi" tidak berubah → AC-11
+- [ ] `cargo test -p desktop-core --locked` → kode 0, tidak ada `FAILED` (`workspace_layout` 10 passed) → AC-11
+
+### Acceptance-criteria coverage
+
+- AC-11: langkah 1 sampai 7.
+- AC-1 sampai AC-10 dibuktikan di milestone 1. Semua AC spec ini tercakup.

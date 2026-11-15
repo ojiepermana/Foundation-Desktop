@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794751903.6094954,
-    "seen": 1794751904.789952,
-    "ast_hash": "9fe146992e5cfb18365f9b814c764461",
+    "mtime": 1794752327.616471,
+    "seen": 1794752330.140287,
+    "ast_hash": "df3f84bd9e1e8e5836f2c41063107a74",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
-    "mtime": 1794751903.6159906,
-    "seen": 1794751904.789954,
-    "ast_hash": "f8dfef81c8b2afcb037efd0eb20cf9e7",
+    "mtime": 1794752327.6214166,
+    "seen": 1794752330.140289,
+    "ast_hash": "cb418402263454de26849c085c567a65",
     "semantic_hash": ""
   },
   "AGENTS.md": {
@@ -672,9 +672,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
-    "mtime": 1794752290.6653206,
-    "seen": 1794752294.8964632,
-    "ast_hash": "d5e6c2e0946d34e026ee7e2dbad58065",
+    "mtime": 1794752327.625408,
+    "seen": 1794752330.1402838,
+    "ast_hash": "7dc57f67ab9aa6a2d4a2eb6b93e1aa1c",
     "semantic_hash": ""
   }
 }
