@@ -102,10 +102,10 @@
     "semantic_hash": "9f244529e2f5da64b4e48e1c2a82efe8"
   },
   "docs/scope/009 - Konfigurasi publik.md": {
-    "mtime": 1794730741.1258981,
-    "seen": 1794731111.199795,
-    "ast_hash": "721e97ff5611f92120a80c08b2a01e73",
-    "semantic_hash": "721e97ff5611f92120a80c08b2a01e73"
+    "mtime": 1794743710.9462507,
+    "seen": 1794743729.0393448,
+    "ast_hash": "eca0c4f6fa0d157c78f583f293f88771",
+    "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
     "mtime": 1794730741.1355429,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794742647.7068121,
-    "seen": 1794742649.632797,
-    "ast_hash": "b14ca6253e22ddf5d26fe6b43d9cc123",
+    "mtime": 1794743710.9533358,
+    "seen": 1794743729.0393379,
+    "ast_hash": "066bd2057274ed54b5d640dfdae5c22b",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794743629.8294928,
-    "seen": 1794743632.1478882,
-    "ast_hash": "a42c18e2561d7a6b0cbf52dd86f20e80",
+    "mtime": 1794743710.9471862,
+    "seen": 1794743729.039343,
+    "ast_hash": "73b9aef0e61372eb42a32f708486286b",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
