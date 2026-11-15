@@ -201,3 +201,15 @@ Dibaca subagent baru berkonteks bersih pada model `sonnet` (model lain dari penu
 Satu temuan tidak diterapkan: pola kelas `ui` dan `os-sdk` memuat nama crate yang baru dipakai host lain, yang dinilai mendekati kriteria 32. Alasannya di keputusan 18.
 
 Subagent juga memastikan hal berikut benar pada repo: kedua path `include_str!` baru di `macos_bridge_ownership.rs` dan path lama di `workspace_layout.rs` menunjuk file yang ada dari `tooling/codegen/tests/`; kedua file memuat 10 dan 4 uji; `A-12` memberi 0 tautan rusak, termasuk pada spec ini; calon path `A-13` pada teks `AGENTS.md` baru semuanya ada sesudah langkahnya; AC-5 dan AC-6 memberi hitungan yang tertulis; setiap kalimat lama di **Perubahan dokumen** ada persis di dokumen sekarang.
+
+## Pembaruan 2026-11-15 sesudah milestone 3
+
+Lewat `architect (update)`, sesudah milestone 1 sampai 3 spec ini terverifikasi dan [spec `macos/0008`](../../macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) diterima. Teks saja: keputusan, ID AC, ID aturan `A-1` sampai `A-13`, centang `verify.md`, dan teks "Cari" serta "Ganti" di **Perubahan dokumen** tidak berubah.
+
+| Sumber | Perubahan di `index.md` |
+| --- | --- |
+| Follow-up spec `macos/0008` | `A-14` tidak dibuat; AC-2 spec `macos/0004` menjadi `C-4` spec `macos/0008`, dan baris Follow-up-nya `[x]`. Baris binding di "Peta aturan ke pemeriksaan" dan baris Mac di "Kapan pemeriksaan berjalan" menunjuk gerbang `G-1` sampai `G-5` dan pola `R`. "Peta aturan" mendapat baris untuk `C-1` sampai `C-4`. AC-1 dan kalimat `RULES` menyebut bahwa aturan `C` menambah angka `rules` sesudah milestone 3 spec ini. Urutan masalah mendapat huruf ID sebagai kunci pertama sesudah spec `macos/0008` dibangun. Follow-up "Spec macOS scope 002" `[x]`. |
+| Checker (`arc-f001-spec`) | "Salinan repo di uji" menyebut `.claude/` yang ikut disalin. AC-7 memakai `git show -M --summary --format= HEAD`; `verify.md` mendapat satu keterangan tanpa mengubah centang. |
+| Perbaikan `c69fd44` | "File yang tidak terbaca" menyebut bahwa bagian kedua `A-1` dan bagian nama paket `A-13` dilewati bila satu manifest anggota tidak terbaca. Kasus itu mendapat ID `N-24` di tabel kasus, dan baris `rejects_broken_repos` menyebut harapannya (tepat satu masalah `cannot read`). Pemeriksaannya sudah ada di uji sesudah perulangan `REJECTED`, tetapi belum memakai nama `N-24`. |
+| Follow-up yang terjawab | Dua baris Follow-up untuk `_root/0001` dan spec lain kini menyebut berkas dan nomor baris yang masih usang pada `2b78862`. |
+| Scope 012 | Baris "Di CI" menunjuk spec `_root/0008` tanpa tautan (berkasnya belum ada di `main`) dan tanpa mengunci isinya. |

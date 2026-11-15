@@ -690,15 +690,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794753978.2625053,
-    "seen": 1794753980.333806,
-    "ast_hash": "af4b8f8fc65ddf10ff066de46c2faa7d",
+    "mtime": 1794755222.7233605,
+    "seen": 1794755227.576652,
+    "ast_hash": "995cbb2021a3ba9bf84021a8f29941bb",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
-    "mtime": 1794753046.6814454,
-    "seen": 1794753050.8417768,
-    "ast_hash": "243295688f54049e8cc9a992e81a37f3",
+    "mtime": 1794755222.7236183,
+    "seen": 1794755227.5766559,
+    "ast_hash": "4921516f47319392f80b1c8d5917a4c6",
     "semantic_hash": ""
   },
   "tooling/codegen/src/assets/schema.rs": {
@@ -792,9 +792,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794754824.4541292,
-    "seen": 1794754826.104234,
-    "ast_hash": "5feb7693ce6723603ee95355f02500ff",
+    "mtime": 1794755222.7238245,
+    "seen": 1794755227.576658,
+    "ast_hash": "3bf19a190ecf6669d2a7736cb54c9d76",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
