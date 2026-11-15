@@ -38,3 +38,32 @@ Tidak ada. Milestone ini belum punya jendela, dan semua bukti berupa perintah ta
 
 - AC-1: langkah 15 sampai 17 · AC-2: langkah 18 · AC-3: langkah 19 · AC-6: langkah 9 sampai 11 dan 18 · AC-7: langkah 9 dan 12 sampai 14 · AC-9: langkah 1 sampai 8.
 - AC-4 dan AC-8 menunggu milestone 2. AC-10, AC-11, dan AC-12 menunggu milestone 3 (AC-1 juga diulang di sana). AC-5 dan AC-13 menunggu milestone 4 (sesi GUI, `owner: user`).
+
+## Milestone 2: Jendela SwiftUI dan proyek Xcode
+
+Build plan langkah 4. Hasil yang tercatat diambil developer pada commit langkah 4 (`1344f3f`) di host yang sama.
+
+### UI / manual
+
+Sesi ini tidak membuka aplikasi atau Xcode GUI. Dua langkah manual menunggu user di milestone 4:
+
+- **F004-1** (AC-5): langkah 1 sampai 5 di bagian **Rencana verifikasi manual** spec. Status `NOT_RUN`, `owner: user`.
+- **F004-2** (AC-13): langkah 6 sampai 9 di bagian yang sama. Status `NOT_RUN`, `owner: user`.
+
+### Commands
+
+- [ ] `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build` → kode 0; `** BUILD SUCCEEDED **` → AC-4
+- [ ] Perintah yang sama dengan `-configuration Release` → kode 0; `** BUILD SUCCEEDED **` → AC-4
+- [ ] `lipo -archs apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/DesktopMac`, untuk `<K>` = `Debug` dan `Release` → `arm64` untuk keduanya → AC-4
+- [ ] `nm apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/* 2>/dev/null | grep -c uniffi_desktop_macos_ffi_fn_func_hello`, untuk `Debug` dan `Release` → 1 atau lebih (tercatat `15` untuk Debug, `2` untuk Release) → AC-4
+- [ ] `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, lalu `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` → kode 0; `Test run with 7 tests in 1 suite passed` dan `Test run with 4 tests in 1 suite passed` → AC-2, AC-3 (diulang)
+- [ ] `git grep --untracked -lF 'Hello, ' -- '*.swift'` → tepat dua baris, `apps/macos/Tests/InteropTests/BindingContractTests.swift` dan `apps/macos/Tests/PresentationTests/GreetingViewModelTests.swift` → AC-8
+- [ ] `git grep --untracked -l 'import DesktopMacosFFI' -- apps/macos` → tepat satu baris, `apps/macos/Interop/Greeter.swift` → AC-8
+- [ ] `grep -c 'Text(verbatim: model.greeting' apps/macos/Presentation/GreetingView.swift` → `1` → AC-8
+- [ ] `git grep --untracked -lF 'Hello, {' -- '*.rs'` → tepat satu baris, `crates/core/src/greeting.rs` → AC-8
+- [ ] `git status --short` sesudah kedua build → tidak mencetak apa pun (`apps/macos/DerivedData/` dan `target/` diabaikan git) → AC-4
+
+### Acceptance-criteria coverage
+
+- AC-4: langkah 1 sampai 4 dan 10 · AC-8: langkah 6 sampai 9 · AC-2 dan AC-3 diulang di langkah 5.
+- AC-5 dan AC-13 menunggu milestone 4 (F004-1 dan F004-2, `NOT_RUN`, `owner: user`). AC-1, AC-10, AC-11, dan AC-12 dibuktikan di milestone 3.
