@@ -328,5 +328,11 @@
     "seen": 1794738325.260065,
     "ast_hash": "f21b33018cd4cfaee59f1d8cb44cf218",
     "semantic_hash": ""
+  },
+  "crates/core/tests/workspace_layout.rs": {
+    "mtime": 1794738586.7995105,
+    "seen": 1794738587.646782,
+    "ast_hash": "632f2790312266d4ff057959998134d5",
+    "semantic_hash": ""
   }
 }
