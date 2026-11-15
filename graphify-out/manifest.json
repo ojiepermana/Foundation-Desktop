@@ -894,9 +894,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0008-build-dan-penerimaan-per-target/verify.md": {
-    "mtime": 1794756630.7220218,
-    "seen": 1794756632.487055,
-    "ast_hash": "f9d71a450ea3babd1f86c976ffa52290",
+    "mtime": 1794760516.8557825,
+    "seen": 1794760519.557483,
+    "ast_hash": "9c4132336350dae9575042d98db3ed84",
     "semantic_hash": ""
   },
   "scripts/validate.sh": {
