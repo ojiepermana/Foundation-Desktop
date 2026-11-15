@@ -372,9 +372,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
-    "mtime": 1794740287.2973552,
-    "seen": 1794740289.0779352,
-    "ast_hash": "df5e761cf15abaffeac4feb58851b64a",
+    "mtime": 1794741033.5534008,
+    "seen": 1794741036.017938,
+    "ast_hash": "7762be0bb05a0707756d8121fcbc4a7c",
     "semantic_hash": ""
   },
   "bindings/swift/Package.swift": {
@@ -429,6 +429,18 @@
     "mtime": 1794740726.6282058,
     "seen": 1794740727.807503,
     "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
+    "semantic_hash": ""
+  },
+  "apps/macos/App/DesktopMacApp.swift": {
+    "mtime": 1794741033.5251837,
+    "seen": 1794741036.017934,
+    "ast_hash": "d56b1e3c15c6554e10c91524bc08b77b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingView.swift": {
+    "mtime": 1794741033.5262637,
+    "seen": 1794741036.01794,
+    "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
     "semantic_hash": ""
   }
 }
