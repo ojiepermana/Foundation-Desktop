@@ -1,0 +1,10 @@
+{
+  "$schema": "./brand.schema.json",
+  "schemaVersion": 1,
+  "assets": {
+    "app-icon": {
+      "variants": "any",
+      "placeholder": true
+    }
+  }
+}

@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794752435.0736914,
-    "seen": 1794752436.523435,
-    "ast_hash": "e1822aa32c46cf753f66c9338e6c5b7a",
+    "mtime": 1794752796.4546373,
+    "seen": 1794752805.117244,
+    "ast_hash": "b16648db5873f6f5acf75f7b40df16ba",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
@@ -642,9 +642,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/index.md": {
-    "mtime": 1794752197.618333,
-    "seen": 1794752200.054094,
-    "ast_hash": "45bdb0ae7e03165233b41799959756e8",
+    "mtime": 1794752796.4490187,
+    "seen": 1794752805.11725,
+    "ast_hash": "4bb70542a447185d478c4286d923935f",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/config_rules.rs": {
@@ -693,6 +693,54 @@
     "mtime": 1794752435.072028,
     "seen": 1794752436.523442,
     "ast_hash": "298c5d751b6299940d3860305e89c487",
+    "semantic_hash": ""
+  },
+  "shared/assets/brand.schema.json": {
+    "mtime": 1794752796.4521542,
+    "seen": 1794752805.117236,
+    "ast_hash": "278f1e500378c033416e8f99c751a277",
+    "semantic_hash": ""
+  },
+  "shared/assets/README.md": {
+    "mtime": 1794752796.4518557,
+    "seen": 1794752805.1172411,
+    "ast_hash": "67b6e5bcc2d015d2d427ac7fc7fb96d8",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/assets/schema.rs": {
+    "mtime": 1794752796.4540102,
+    "seen": 1794752805.117242,
+    "ast_hash": "93830058325ab6c48208940ec52e26fa",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/assets_contract.rs": {
+    "mtime": 1794752796.455702,
+    "seen": 1794752805.117246,
+    "ast_hash": "b079fc7df74d6b7220d9d3f24615e552",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/assets/mod.rs": {
+    "mtime": 1794752796.4538505,
+    "seen": 1794752805.1172469,
+    "ast_hash": "d4fd7bdde0790e6c93024d37114aa187",
+    "semantic_hash": ""
+  },
+  "shared/assets/source/app-icon.svg": {
+    "mtime": 1794752796.452358,
+    "seen": 1794752805.1172469,
+    "ast_hash": "eba3dc08f06b1b0358589b5c561fef7f",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/assets/svg.rs": {
+    "mtime": 1794752796.4541838,
+    "seen": 1794752805.117248,
+    "ast_hash": "980490ceaa8c0fa25a7687816722482b",
+    "semantic_hash": ""
+  },
+  "shared/assets/brand.json": {
+    "mtime": 1794752796.451997,
+    "seen": 1794752805.117249,
+    "ast_hash": "43e6c03890ff6b4cf48dbf25dc6cd116",
     "semantic_hash": ""
   }
 }

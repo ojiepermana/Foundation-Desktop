@@ -2,7 +2,7 @@
 
 **Scope**: [011 - Aset merek bersama](../../../scope/011%20-%20Aset%20merek%20bersama.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
