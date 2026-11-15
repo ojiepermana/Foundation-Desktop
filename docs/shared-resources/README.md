@@ -8,7 +8,7 @@ Konfigurasi publik, teks antarmuka, dan aset merek masing masing memiliki satu s
 
 ## Lokalisasi
 
-`shared/localization/` akan memiliki katalog istilah dan teks bersama dengan kunci stabil. Konvensi mencakup nama locale, fallback bila teks bahasa tujuan belum ada, placeholder yang harus cocok, dan deteksi entri hilang. Satu contoh teks UI cukup untuk membuktikan alurnya. Format angka, tanggal, dan bentuk jamak mengikuti OS.
+`shared/localization/catalog.json` memuat katalog teks bersama dengan kunci stabil. Aturan nama locale, fallback bila teks bahasa tujuan belum ada, placeholder yang harus cocok, deteksi entri hilang, dan versi ada di [spec 0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md). Satu contoh teks UI, label tombol sapaan dengan kunci `greeting.submit`, membuktikan alurnya. Katalog diperiksa dengan `cargo run -p desktop-codegen --locked -- localization check`. Format angka, tanggal, dan bentuk jamak mengikuti OS.
 
 ## Aset merek
 

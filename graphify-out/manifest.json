@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794751903.6094954,
-    "seen": 1794751904.789952,
-    "ast_hash": "9fe146992e5cfb18365f9b814c764461",
+    "mtime": 1794752435.054967,
+    "seen": 1794752436.5234392,
+    "ast_hash": "df3f84bd9e1e8e5836f2c41063107a74",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -102,15 +102,15 @@
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
-    "mtime": 1794752318.9718451,
-    "seen": 1794752321.4871428,
-    "ast_hash": "ce9c442d8ac2ebe73b9e0067990f7404",
+    "mtime": 1794752377.783336,
+    "seen": 1794752379.337093,
+    "ast_hash": "68162242650862d642b7dc18942daf39",
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
-    "mtime": 1794744559.2128248,
-    "seen": 1794744562.5616431,
-    "ast_hash": "bbb74de888bc30be21cd41d0525a06eb",
+    "mtime": 1794752436.9294758,
+    "seen": 1794752438.539525,
+    "ast_hash": "4c24ed8c69ce7ec01aee8b0e3a34ef4f",
     "semantic_hash": ""
   },
   "docs/scope/011 - Aset merek bersama.md": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
-    "mtime": 1794751903.6159906,
-    "seen": 1794751904.789954,
-    "ast_hash": "f8dfef81c8b2afcb037efd0eb20cf9e7",
+    "mtime": 1794752435.0618582,
+    "seen": 1794752436.5234408,
+    "ast_hash": "cb418402263454de26849c085c567a65",
     "semantic_hash": ""
   },
   "AGENTS.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794752348.7840168,
-    "seen": 1794752351.1409159,
-    "ast_hash": "e2bfa3ffd8a4d29e612c5492e64eb55e",
+    "mtime": 1794752436.9303215,
+    "seen": 1794752438.539522,
+    "ast_hash": "1f0e6ebd590bfcf21632ddfbcc56205d",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -474,14 +474,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/rationale.md": {
-    "mtime": 1794752507.0419133,
-    "seen": 1794752515.0708008,
+    "mtime": 1794752517.5617146,
+    "seen": 1794752524.231853,
     "ast_hash": "61dd2cd70bdde643d0b780276ed6606e",
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794752507.0352926,
-    "seen": 1794752515.0708082,
+    "mtime": 1794752517.5542533,
+    "seen": 1794752524.231848,
     "ast_hash": "902a15be0250e3375a8a21c86a9814ac",
     "semantic_hash": ""
   },
@@ -492,9 +492,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794744555.513371,
-    "seen": 1794744558.2547462,
-    "ast_hash": "9db21cf0cedb9c4d28f894bb20623ff0",
+    "mtime": 1794752435.0671866,
+    "seen": 1794752436.523437,
+    "ast_hash": "420daecee251826eafb3f451baae3660",
     "semantic_hash": ""
   },
   "tooling/codegen/Cargo.toml": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794752507.044299,
-    "seen": 1794752515.070806,
+    "mtime": 1794752517.572292,
+    "seen": 1794752524.2318552,
     "ast_hash": "f09ef242480c5f2d684c6d72d4ee5d96",
     "semantic_hash": ""
   },
@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794751903.6267357,
-    "seen": 1794751904.789957,
-    "ast_hash": "d9f3c1f9b8a3cbdbcce546b303679f71",
+    "mtime": 1794752435.0736914,
+    "seen": 1794752436.523435,
+    "ast_hash": "e1822aa32c46cf753f66c9338e6c5b7a",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
@@ -645,6 +645,54 @@
     "mtime": 1794752197.618333,
     "seen": 1794752200.054094,
     "ast_hash": "45bdb0ae7e03165233b41799959756e8",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_rules.rs": {
+    "mtime": 1794752375.0855324,
+    "seen": 1794752376.96803,
+    "ast_hash": "83ec42b8d6774fca31a928524079c215",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/localization/mod.rs": {
+    "mtime": 1794752435.0739129,
+    "seen": 1794752436.5234299,
+    "ast_hash": "55ffb9de4706fc5679fa53a2c11a8d98",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/localization/schema.rs": {
+    "mtime": 1794752435.0740857,
+    "seen": 1794752436.523433,
+    "ast_hash": "dd39636c693e889eaa8355a4c4e580ec",
+    "semantic_hash": ""
+  },
+  "shared/localization/catalog.schema.json": {
+    "mtime": 1794752435.072324,
+    "seen": 1794752436.523436,
+    "ast_hash": "38586c358166563968a894da86ae772d",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
+    "mtime": 1794752435.067744,
+    "seen": 1794752436.523438,
+    "ast_hash": "7dc57f67ab9aa6a2d4a2eb6b93e1aa1c",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/localization_contract.rs": {
+    "mtime": 1794752435.0758407,
+    "seen": 1794752436.5234401,
+    "ast_hash": "b0e0d0bca08e7362708772321d0b873c",
+    "semantic_hash": ""
+  },
+  "shared/localization/catalog.json": {
+    "mtime": 1794752435.0721812,
+    "seen": 1794752436.523442,
+    "ast_hash": "dcebc884006c80631bf9debf0d9fe213",
+    "semantic_hash": ""
+  },
+  "shared/localization/README.md": {
+    "mtime": 1794752435.072028,
+    "seen": 1794752436.523442,
+    "ast_hash": "298c5d751b6299940d3860305e89c487",
     "semantic_hash": ""
   }
 }
