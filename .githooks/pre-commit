@@ -1,0 +1,41 @@
+#!/bin/sh
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+set -- graphify-out/graph.json graphify-out/graph.html graphify-out/GRAPH_REPORT.md graphify-out/manifest.json
+
+temp_dir=$(mktemp -d "${TMPDIR:-/tmp}/graphify-commit.XXXXXXXX")
+temp_dir=$(cd "$temp_dir" && pwd -P)
+trap 'rm -rf "$temp_dir"' EXIT
+trap 'exit 1' HUP INT TERM
+snapshot="$temp_dir/repo"
+mkdir "$snapshot"
+
+# Include the previous graph for incremental updates, but no local Graphify state.
+git ls-files -z -- . ':(exclude)graphify-out' > "$temp_dir/paths"
+git ls-files -z -- "$@" >> "$temp_dir/paths"
+git checkout-index --prefix="$snapshot/" --stdin -z < "$temp_dir/paths"
+git_env=$(git rev-parse --local-env-vars)
+(
+    unset $git_env
+    cd "$snapshot"
+    python3 scripts/update_graphify.py "$snapshot"
+)
+
+# Keep any working-tree edits to generated files; stage only the snapshot results.
+for artifact do
+    if [ ! -f "$snapshot/$artifact" ] || [ -L "$snapshot/$artifact" ]; then
+        echo "Graphify did not produce $artifact" >&2
+        exit 1
+    fi
+    if git diff --quiet -- "$artifact" &&
+        { [ ! -e "$artifact" ] || git ls-files --error-unmatch -- "$artifact" >/dev/null 2>&1; }; then
+        printf '%s\n' "$artifact" >> "$temp_dir/mirror"
+    fi
+done
+git_dir=$(git rev-parse --absolute-git-dir)
+index=$(git rev-parse --path-format=absolute --git-path index)
+GIT_INDEX_FILE="$index" git --git-dir="$git_dir" --work-tree="$snapshot" add -- "$@"
+if [ -f "$temp_dir/mirror" ]; then
+    git checkout-index --force --stdin < "$temp_dir/mirror"
+fi

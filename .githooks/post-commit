@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+set -- graphify-out/graph.json graphify-out/graph.html graphify-out/GRAPH_REPORT.md graphify-out/manifest.json
+git diff --cached --quiet HEAD -- "$@" && exit 0
+
+# For a path-limited commit Git restores its normal index after committing the
+# temporary one. Advance only entries that still match the previous commit.
+previous=$(git rev-parse --verify 'HEAD@{1}' 2>/dev/null) || exit 0
+for artifact do
+    if git diff --cached --quiet "$previous" -- "$artifact" &&
+        ! git diff --cached --quiet HEAD -- "$artifact"; then
+        git restore --source=HEAD --staged -- "$artifact"
+    fi
+done

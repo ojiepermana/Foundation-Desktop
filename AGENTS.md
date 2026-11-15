@@ -1,5 +1,8 @@
 # Aturan commit dan integrasi
 
-1. Sebelum **setiap commit**, tinjau diff dan perbarui dokumentasi yang terdampak. Jalankan `/graphify . --update` dari root repo setelah perubahan terakhir, termasuk penambahan, penggantian nama, atau penghapusan berkas. Hasil “tidak ada perubahan” memenuhi langkah ini bila graf sudah mutakhir.
-2. Gunakan sumber yang akan di-commit sebagai masukan graf. Jika ada perubahan lain atau riwayat lokal di `graphify-out/memory/`, jalankan pembaruan pada salinan berkas dari indeks Git. Sertakan hasil Graphify yang berubah dalam commit yang sama, periksa `git diff --cached`, dan ulangi pembaruan jika sumber berubah lagi.
-3. Saat mengirim perubahan ke `main`, ambil `origin/main` terbaru, gabungkan commit dari branch kerja ke `main`, lalu push ke `origin/main`. Jika integrasi mengubah isi sumber, perbarui graf sebelum menyelesaikan commit hasil penggabungan. Pastikan SHA pada remote sama dengan SHA lokal yang dikirim.
+Aktifkan hook sekali di setiap clone dengan `git config --local core.hooksPath .githooks`. Hook memerlukan Python 3 dan CLI `graphify` di PATH. Untuk memasang Graphify, gunakan `uv tool install graphifyy`.
+
+1. Sebelum commit, perbarui dokumentasi yang terdampak, stage sumber yang ingin disimpan, lalu periksa `git diff --cached`.
+2. Saat `git commit`, hook memperbarui Graphify dari salinan indeks Git dan menyertakan perubahan JSON, HTML, laporan, dan manifest dalam commit yang sama. Perubahan unstaged serta riwayat kueri lokal tetap di mesin. Jika pembaruan gagal, perbaiki penyebab yang dilaporkan dan ulangi commit.
+3. Pembaruan lokal membaca struktur kode serta judul dan tautan Markdown. Untuk memperbarui konsep dan hubungan semantik dalam isi dokumen, jalankan `/graphify . --update` dari salinan sumber yang akan di-commit dan stage keempat hasilnya.
+4. Saat mengirim perubahan ke `main`, ambil `origin/main` terbaru, gabungkan branch kerja, lalu push ke `origin/main`. Jika Git perlu membuat commit penggabungan, gunakan `git merge --no-commit <branch>` lalu `git commit` agar hook menyertakan graf hasil penggabungan. Pastikan SHA pada remote sama dengan SHA lokal yang dikirim.

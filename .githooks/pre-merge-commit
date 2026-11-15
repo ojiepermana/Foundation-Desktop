@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+# Git has already computed the merge tree when it calls this hook. A regular
+# commit must pick up any new graph blobs staged by pre-commit.
+before=$(git write-tree)
+"$(dirname "$0")/pre-commit"
+if [ "$(git write-tree)" != "$before" ]; then
+    echo "Graphify staged the merged graph. Run git merge --continue to include it." >&2
+    exit 1
+fi

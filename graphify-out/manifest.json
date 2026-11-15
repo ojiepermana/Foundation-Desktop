@@ -138,9 +138,33 @@
     "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
   },
   "AGENTS.md": {
-    "mtime": 1794733330.638307,
-    "seen": 1794733430.944061,
-    "ast_hash": "c6b0d7b678d8a27ed9bd28b9bc1fcd76",
-    "semantic_hash": "c6b0d7b678d8a27ed9bd28b9bc1fcd76"
+    "mtime": 1794733850.116427,
+    "seen": 1794733851.215505,
+    "ast_hash": "9464659b98349309151606ff2daefd64",
+    "semantic_hash": ""
+  },
+  ".githooks/post-commit": {
+    "mtime": 1794733850.114889,
+    "seen": 1794733851.215499,
+    "ast_hash": "b4fbcb075d3945b9158e97f1fedfc4ae",
+    "semantic_hash": ""
+  },
+  "scripts/update_graphify.py": {
+    "mtime": 1794733850.1555765,
+    "seen": 1794733851.215502,
+    "ast_hash": "499d3b5c7e36ea4fd8b84be970a7f92b",
+    "semantic_hash": ""
+  },
+  ".githooks/pre-commit": {
+    "mtime": 1794733850.1151848,
+    "seen": 1794733851.2155058,
+    "ast_hash": "78915ca71f0d13177a512eeeef4a84da",
+    "semantic_hash": ""
+  },
+  ".githooks/pre-merge-commit": {
+    "mtime": 1794733850.115341,
+    "seen": 1794733851.215507,
+    "ast_hash": "ed9a51db821f31c5abcbc13109aecc07",
+    "semantic_hash": ""
   }
 }
