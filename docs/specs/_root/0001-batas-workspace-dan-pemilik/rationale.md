@@ -109,6 +109,7 @@ Mode keputusan koordinasi adalah `auto`: opsi rekomendasi diambil dan pilihan ke
 | 12 | Tempat uji API publik Core | `crates/core/tests/` | `tests/contracts/` di root sebagai paket uji sendiri | biasa | Tabel "Lokasi dan pemilik"; spec `_root/0002` |
 | 13 | Rujukan dan cross check | Tanpa bagian References; cross check oleh model lain | Rujukan sumber saja | biasa | Tidak ada |
 | 14 | Bahasa rustdoc dan deskripsi paket Core | Inggris, mengikuti spec `_root/0002` | Indonesia | biasa | Bagian "Isi file" (`crates/core/src/lib.rs`, `description` di `crates/core/Cargo.toml`) |
+| 15 | Cara membuat hook Graphify menerima manifest virtual di root | `.graphifyignore` di root berisi `/Cargo.toml` | Mengubah `scripts/update_graphify.py` supaya menoleransi manifest tanpa node | biasa | Bagian "Isi file", AC-7, langkah 1 Build plan |
 
 Alasan singkat per keputusan:
 
@@ -126,6 +127,7 @@ Alasan singkat per keputusan:
 12. Pada manifest virtual, `tests/` di root bukan folder target Cargo. Uji di `crates/core/tests/` berjalan dengan `cargo test -p desktop-core` tanpa paket tambahan.
 13. Sumber keputusan ini adalah dokumen repo yang sudah ditautkan di teks, jadi daftar rujukan terpisah tidak menambah apa pun.
 14. Diminta lead saat menerima spec ini pada 2026-11-15. Spec `_root/0002` menulis rustdoc Core dalam bahasa Inggris dan menambahkan bagiannya di bawah empat baris kerangka tanpa mengubahnya, jadi kerangka berbahasa Indonesia akan membuat dokumen crate bercampur bahasa. Kebijakan bahasa komentar untuk seluruh repo tetap milik scope 002.
+15. Diputuskan lead pada 2026-11-15 sesudah build milestone 1 terblokir di commit langkah 1. Graphify 0.9.48 punya extractor untuk `Cargo.toml`, tetapi manifest virtual (tanpa `[package]`) menghasilkan nol node dan masuk `failed_sources`, dan `scripts/update_graphify.py` keluar dengan `Graphify extraction failed` bila daftar itu tidak kosong. Temuan ini dilaporkan `dev-f001-m1` dan direproduksi lead di luar repo: dengan `.graphifyignore` berisi `/Cargo.toml`, manifest root dilewati, ekstraksi lulus, dan `crates/core/Cargo.toml` tetap menghasilkan satu node. Entri itu memakai mekanisme Graphify sendiri dan sesuai `AGENTS.md` butir 2 (perbaiki penyebab yang dilaporkan, lalu ulangi commit). Mengubah skrip tidak diambil karena skrip hook milik user dan sengaja ketat. Akibatnya manifest root tidak muncul di graf pengetahuan sampai baris itu dihapus.
 
 ## Bukti percobaan
 
