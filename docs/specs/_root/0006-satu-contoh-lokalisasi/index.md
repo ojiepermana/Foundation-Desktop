@@ -27,7 +27,7 @@ Angka kriteria merujuk ke tabel di [Penerimaan dan bukti fondasi](../../../quali
 * **AC-5** (kriteria 19, placeholder; baris "Sumber bersama"): teks dan placeholder mengikuti aturan L-6 dan L-7. Kasus 20 sampai 30 lulus. Uji `placeholders_may_reorder` lulus: terjemahan yang urutan placeholder nya berbeda dari teks sumber diterima, dan `Entry.placeholders` adalah `name`, `app`, yaitu urutan kemunculan pertama di teks sumber.
 * **AC-6** (Done when "deteksi terjemahan yang hilang"): setiap terjemahan yang hilang disebut, bukan hanya yang pertama, dan katalog yang tidak lengkap tidak bisa masuk `main`. Uji `missing_translations_are_listed_and_fall_back` lulus: untuk katalog K-2, `Catalog.missing` memuat tepat dua pasangan, `greeting.submit` dengan `id` dan `greeting.submit` dengan `ms`, dan ringkasan `plan` tepat `1 keys, 3 locales, 2 missing translations (greeting.submit id; greeting.submit ms)`. Uji `committed_catalog_is_complete` lulus untuk katalog nyata, jadi `cargo test --workspace --locked` gagal begitu satu terjemahan hilang.
 * **AC-7** (Done when "aturan fallback"): teks yang hilang diganti teks bahasa sumber menurut aturan L-9, tidak pernah dengan kunci mentah atau teks kosong. Dalam uji `missing_translations_are_listed_and_fall_back`, teks `id` dan `ms` untuk `greeting.submit` bernilai `Greet` dengan asal `Origin::Fallback`, dan teks `en` berasal `Origin::Own`. Dalam uji `real_catalog_resolves`, semua teks berasal `Origin::Own`.
-* **AC-8** (kriteria 19, versi dan bentuk): bentuk katalog tertutup dan versinya diperiksa. Kasus 1 sampai 6 dan kasus 31 lulus, lewat `cargo test -p desktop-codegen --locked` maupun `cargo test --workspace --locked`. Isi `shared/localization/catalog.schema.json` sama persis dengan bagian **Isi berkas**. `grep -c '"additionalProperties": false' shared/localization/catalog.schema.json` mencetak `2`, dan `grep -c '"\$schema": "catalog.schema.json"' shared/localization/catalog.json` mencetak `1`.
+* **AC-8** (kriteria 19, versi dan bentuk): bentuk katalog tertutup dan versinya diperiksa. Kasus 1 sampai 6 dan kasus 31 lulus, lewat `cargo test -p desktop-codegen --locked` maupun `cargo test --workspace --locked`. Isi `shared/localization/catalog.schema.json` sama persis dengan bagian **Isi berkas**. `grep -c '"additionalProperties": false' shared/localization/catalog.schema.json` mencetak `2`, dan `grep -c '"\$schema": "./catalog.schema.json"' shared/localization/catalog.json` mencetak `1`.
 * **AC-9** (baris "Sumber bersama", konsistensi keluaran generator): keluaran bisa dibuat ulang dan penyimpangan tertangkap. Pada working tree yang bersih, `cargo run -p desktop-codegen --locked -- localization generate` mencetak baris terakhir `localization: ok, 1 keys, 2 locales, 0 missing translations, 1 outputs, 0 written`, lalu `git diff --exit-code -- shared/localization` keluar dengan kode 0. Sesudah `rm shared/localization/catalog.schema.json`, perintah yang sama mencetak `wrote shared/localization/catalog.schema.json` dan baris terakhir yang berakhir `1 outputs, 1 written`, dan `git status --short` tidak mencetak apa pun. `git ls-files --eol 'shared/localization/*.json'` mencetak dua baris yang keduanya memuat `i/lf`, `w/lf`, dan `attr/text eol=lf`. Uji `committed_outputs_match_the_source` dan `generation_is_deterministic` lulus. `cargo test -p desktop-codegen --locked --test localization_contract` mencetak `test result: ok. 7 passed`.
 * **AC-10** (kriteria 32): spec ini hanya menambah yang dibutuhkan contoh. Katalog nyata memuat tepat satu entri. `cargo build --workspace --locked`, `cargo test --workspace --locked`, `cargo fmt --all --check`, dan `cargo clippy --workspace --all-targets --locked -- -D warnings` keluar dengan kode 0. `cargo tree -p desktop-codegen --depth 1 --prefix none --locked` tetap mencetak tepat tiga baris, jadi alat tidak mendapat dependensi baru. `cargo tree -p desktop-core -e normal,build,dev --prefix none --locked` tetap mencetak tepat satu baris. `git grep --untracked -lF 'Hello, {' -- '*.rs'` tetap mencetak tepat satu baris, `crates/core/src/greeting.rs`. `git log --name-only --format= --grep='spec _root/0006 step' | sort -u` hanya mencetak path dari tabel **File yang boleh diubah tiap milestone**, jadi tidak ada path di bawah `crates/`, `bindings/`, `apps/`, `scripts/`, atau `.github/`, dan `Cargo.toml` serta `Cargo.lock` tidak berubah.
 * **AC-11** (kriteria 19, "tersedia aturan"): aturan bisa ditemukan dari dokumen rujukan. `docs/shared-resources/README.md` dan `docs/architecture/README.md` memuat teks dari bagian **Perubahan dokumen rujukan**. `grep -c '0006-satu-contoh-lokalisasi' docs/shared-resources/README.md` mencetak 1 atau lebih, dan tautan itu mengarah ke berkas yang ada. `cargo test -p desktop-core --locked` tetap lulus.
@@ -44,7 +44,7 @@ Keputusan turunannya:
 
 | Hal | Keputusan |
 | --- | --- |
-| Teks contoh | Label tombol sapaan, kunci `greeting.submit`. `Name` dan `Desktop Foundation` tetap literal bahasa Inggris. |
+| Teks contoh | Label tombol sapaan, kunci `greeting.submit`. `Name` tetap literal bahasa Inggris. `Desktop Foundation` adalah nama produk dan bukan isi katalog (spec `_root/0004`). |
 | Bahasa | Bahasa sumber `en`. Bahasa contoh kedua `id`. Pasangan ini usulan, user boleh menggantinya (lihat Follow-up). |
 | Bentuk kunci | Dua sampai lima segmen huruf kecil dan angka, dipisah titik. Kunci menyebut peran, bukan isi teks. |
 | Nama locale | Tag bahasa gaya BCP 47 (standar penamaan bahasa) yang dipersempit: bahasa, lalu wilayah bila perlu, misalnya `id` atau `pt-BR`. |
@@ -61,7 +61,7 @@ Nilai dari spec lain yang dipakai di sini, tanpa diputuskan ulang:
 
 | Nilai | Isi | Pemilik |
 | --- | --- | --- |
-| Alat | `tooling/codegen/`, paket `desktop-codegen`, perintah `cargo run -p desktop-codegen --locked -- <sumber> <check\|generate>`, kode keluar `0`, `1`, `2` | Spec `_root/0003` |
+| Alat | `tooling/codegen/`, paket `desktop-codegen`, perintah `cargo run -p desktop-codegen --locked -- <sumber> <check\|generate>`, kode keluar `0`, `1`, `2` | Spec [`_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md) |
 | Pola sumber | Modul `tooling/codegen/src/<sumber>/mod.rs` dengan `pub const SOURCE`, dua baris di `lib.rs`, uji di `tooling/codegen/tests/<sumber>_contract.rs` | Spec `_root/0003` |
 | Tipe dan fungsi alat | `Source`, `Plan`, `Output`, `Problem`, `check`, `generate`, `repo_root`, `json::UniqueMap`, `json::to_canonical_json` | Spec `_root/0003`, bagian API surface |
 | Aturan keluaran | O-1 sampai O-7 (penanda, isi tetap, UTF-8 dengan `\n`, urutan tetap, lokasi tetap, dilacak git, satu pintu) | Spec `_root/0003` |
@@ -72,7 +72,7 @@ Nilai dari spec lain yang dipakai di sini, tanpa diputuskan ulang:
 | Hasil `hello` selalu bahasa Inggris dan tampil sebagai teks biasa | `Hello, {name}!`, aturan R-8 | Spec [_root/0002](../0002-kontrak-sapaan-bersama/index.md) |
 | Aturan workspace | Tanpa `.cargo/config.toml`, paket berawalan `desktop-`, aturan netral host | Spec [_root/0001](../0001-batas-workspace-dan-pemilik/index.md) |
 
-Spec `_root/0003` ada di `docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md`. Saat spec ini ditulis, spec itu masih menunggu diterima dan belum ada di `main`.
+Spec [`_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md) sudah ada di `main` dengan status `Proposed`. Alatnya sendiri baru ada sesudah milestone 1 spec itu dibangun.
 
 ## Rationale
 
@@ -86,7 +86,7 @@ Satu berkas JSON, `shared/localization/catalog.json`. Tidak ada basis data dan t
 
 | Anggota | Tipe | Wajib | Isi |
 | --- | --- | --- | --- |
-| `$schema` | teks | ya | Tepat `catalog.schema.json` |
+| `$schema` | teks | ya | Tepat `./catalog.schema.json`, sama bentuknya dengan `shared/config/public.json` |
 | `schemaVersion` | bilangan bulat | ya | Tepat `1` (L-10) |
 | `sourceLocale` | teks | ya | Nama locale yang sah dan terdaftar di `locales` (L-4, L-5) |
 | `locales` | larik teks | ya | Paling sedikit satu, tanpa pengulangan, setiap isinya nama locale yang sah (L-4). Urutannya menjadi urutan keluaran. |
@@ -108,7 +108,7 @@ Satu berkas JSON, `shared/localization/catalog.json`. Tidak ada basis data dan t
 
 ```json
 {
-  "$schema": "catalog.schema.json",
+  "$schema": "./catalog.schema.json",
   "schemaVersion": 1,
   "sourceLocale": "en",
   "locales": ["en", "id"],
@@ -145,7 +145,7 @@ Aturan kunci, nama locale, placeholder, fallback, deteksi terjemahan yang hilang
   "additionalProperties": false,
   "properties": {
     "$schema": {
-      "const": "catalog.schema.json"
+      "const": "./catalog.schema.json"
     },
     "entries": {
       "additionalProperties": {
@@ -226,7 +226,7 @@ Tidak ada. Katalog adalah berkas statis. Bahasa yang dipakai aplikasi dipilih sa
 
 Aturan ini berlaku untuk katalog, alat, dan ketiga aplikasi. Kata "teks" berarti nilai di dalam `text` untuk satu locale. Setiap pola dicocokkan dengan seluruh string. Alat tidak punya crate regex, jadi pola diperiksa dengan kode biasa.
 
-* **L-1 Satu sumber.** Teks antarmuka yang dilokalkan hanya ditulis di `catalog.json`. Resource bahasa di tiap OS adalah turunan. Teks antarmuka yang belum masuk katalog tetap literal dalam bahasa sumber di kode UI. Hasil fungsi Core, termasuk `hello`, bukan teks antarmuka dan tidak pernah masuk katalog.
+* **L-1 Satu sumber.** Teks antarmuka yang dilokalkan hanya ditulis di `catalog.json`. Resource bahasa di tiap OS adalah turunan. Teks antarmuka yang belum masuk katalog tetap literal dalam bahasa sumber di kode UI. Hasil fungsi Core, termasuk `hello`, bukan teks antarmuka dan tidak pernah masuk katalog. Nama produk juga tidak masuk katalog: nilainya sama untuk semua bahasa dan dimiliki konfigurasi publik (spec [`_root/0004`](../0004-konfigurasi-publik/index.md), `build.product_name`).
 * **L-2 Bentuk berkas.** Berkas adalah satu objek JSON dengan anggota persis seperti tabel **Data model sketch**. Anggota yang tidak dikenal, tipe yang salah, anggota wajib yang tidak ada, dan nama anggota yang ditulis dua kali ditolak. Bilangan bulat berarti angka JSON tanpa pecahan: `1` sah, sedangkan `1.0`, `"1"`, dan `true` tidak.
 * **L-3 Kunci stabil.** Kunci cocok dengan `^[a-z][a-z0-9]*(\.[a-z][a-z0-9]*){1,4}$`: dua sampai lima segmen, tiap segmen huruf kecil ASCII dan angka, diawali huruf, dipisah titik. Segmen pertama menyebut layar atau area, segmen berikutnya menyebut elemen dan perannya, bukan isi teksnya (`greeting.submit`, bukan `greeting.greet`). Kunci tidak diganti namanya dan tidak dipakai ulang untuk makna lain. Mengubah kata kata tanpa mengubah makna mempertahankan kunci. Makna baru berarti kunci baru. Ketiga aplikasi mencari teks dengan kunci yang sama (lihat L-11 untuk bentuk pengenalnya di resource).
 * **L-4 Nama locale.** Nama locale cocok dengan `^[a-z]{2,3}(-[A-Z]{2})?$`: kode bahasa huruf kecil, lalu bila perlu tanda `-` dan kode wilayah dua huruf besar. Contoh yang sah: `en`, `id`, `pt-BR`, `zh-TW`. Aksara, wilayah berupa angka, varian, dan ekstensi belum didukung. Emitter memetakan nama ini ke kebiasaan tiap OS (misalnya `pt_BR` untuk gettext). Pemetaan itu ditulis di spec OS dan wajib satu ke satu: dua nama locale katalog tidak boleh menjadi nama OS yang sama.
@@ -317,7 +317,7 @@ Urutan ini menentukan masalah mana yang muncul dan urutannya di `Vec<Problem>`.
 | Aturan | Yang ditolak | Pesan |
 | --- | --- | --- |
 | L-2 | Bentuk di luar tabel **Data model sketch** | Pesan `serde_json` apa adanya, misalnya ``unknown field `notes`, expected one of ...``, ``missing field `text` ``, ``invalid type: floating point `1.0`, expected u64``. Untuk kunci atau locale yang ditulis dua kali: ``duplicate key `<nama>` `` |
-| L-10 | `$schema` atau `schemaVersion` tidak tepat | `$schema: expected catalog.schema.json, found <nilai>` dan `schemaVersion: expected 1, found <angka>` |
+| L-10 | `$schema` atau `schemaVersion` tidak tepat | `$schema: expected ./catalog.schema.json, found <nilai>` dan `schemaVersion: expected 1, found <angka>` |
 | L-4 | Nama locale tidak cocok dengan pola | `locales.<nama>: locale must match ^[a-z]{2,3}(-[A-Z]{2})?$` dan `sourceLocale: locale must match ^[a-z]{2,3}(-[A-Z]{2})?$` |
 | L-5 | `locales` kosong atau berulang | `locales: needs at least one locale` dan `locales: <nama> is listed twice` (sekali untuk tiap nama yang berulang) |
 | L-5 | `sourceLocale` tidak terdaftar | `sourceLocale: <nama> is not listed in locales` |
@@ -357,7 +357,7 @@ Urutan ini menentukan masalah mana yang muncul dan urutannya di `Vec<Problem>`.
 | --- | --- | --- |
 | 1 | `"schemaVersion": 1` menjadi `"schemaVersion": 2` | `catalog.json: schemaVersion: expected 1, found 2` |
 | 2 | `"schemaVersion": 1` menjadi `"schemaVersion": 1.0` | ``catalog.json: invalid type: floating point `1.0`, expected u64`` |
-| 3 | `"$schema": "catalog.schema.json"` menjadi `"$schema": "other.json"` | `catalog.json: $schema: expected catalog.schema.json, found other.json` |
+| 3 | `"$schema": "./catalog.schema.json"` menjadi `"$schema": "other.json"` | `catalog.json: $schema: expected ./catalog.schema.json, found other.json` |
 | 4 | tambah `"notes": "x",` sesudah `"schemaVersion": 1,` | ``catalog.json: unknown field `notes` `` |
 | 5 | `"id": "Sapa"` menjadi `"en": "Sapa"` | ``catalog.json: duplicate key `en` `` |
 | 6 | `["en", "id"]` menjadi `"en"` | `catalog.json: invalid type: string "en", expected a sequence` |
@@ -538,7 +538,7 @@ Satu langkah menjadi satu commit dengan subject `type(scope): spec _root/0006 st
 
 **Negative / tradeoffs**:
 
-* Layar sapaan menjadi setengah terjemahan untuk pengguna bahasa Indonesia: tombol `Sapa`, label kolom `Name`, judul `Desktop Foundation`, dan hasil `Hello, Ayu!`. Itu harga dari "satu contoh".
+* Layar sapaan menjadi setengah terjemahan untuk pengguna bahasa Indonesia: tombol `Sapa`, tetapi label kolom `Name` dan hasil `Hello, Ayu!` tetap bahasa Inggris. Itu harga dari "satu contoh".
 * `localization check` tetap keluar dengan kode 0 saat ada terjemahan yang hilang. Yang menolaknya adalah uji gerbang, jadi orang yang hanya menjalankan `check` harus membaca ringkasannya.
 * Setiap OS menambah satu modul emitter dan satu atau lebih berkas hasil generator yang dilacak git.
 * Kurung kurawal literal, baris baru, dan bentuk jamak belum bisa ditulis. Teks pertama yang membutuhkannya menunggu pembaruan spec ini.
@@ -561,13 +561,14 @@ Satu langkah menjadi satu commit dengan subject `type(scope): spec _root/0006 st
 
 ## Follow-up
 
-* [ ] Jawaban atas Follow-up "Scope 010" di spec macos/0001: hanya `Greet` yang pindah ke katalog, sebagai `greeting.submit`. `Name` dan `Desktop Foundation` tetap literal, karena berkas fitur scope 010 meminta satu teks. Hasil `hello` tetap memakai `Text(verbatim:)` (OS-7). Baris Follow-up itu ditandai oleh pemilik spec macos/0001.
+* [ ] Jawaban atas Follow-up "Scope 010" di spec macos/0001: hanya `Greet` yang pindah ke katalog, sebagai `greeting.submit`. `Name` tetap literal, karena berkas fitur scope 010 meminta satu teks. `Desktop Foundation` adalah nama produk, jadi tidak pernah masuk katalog. Hasil `hello` tetap memakai `Text(verbatim:)` (OS-7). Baris Follow-up itu ditandai oleh pemilik spec macos/0001.
+* [ ] Jawaban atas Follow-up "Scope 010" di spec `_root/0004`: katalog tidak memuat nama produk (L-1). Judul jendela mengambil nama produk dari nilai turunan `build.product_name` lewat spec OS scope 009, bukan dari katalog.
 * [ ] macOS (scope 010, `docs/specs/macos/`, sesudah spec ini diterima): pilih format resource Apple dan lokasinya di `apps/macos/`, tambah emitter macOS (OS-2), ubah `GreetingView` agar membaca `greeting.submit`, dan buktikan OS-1 sampai OS-9. Perubahan itu menambah path di `apps/macos/`, jadi **AC-12** spec macos/0001 (tepat 16 path) perlu diperbarui lebih dulu. SwiftUI membaca literal string sebagai kunci lokalisasi dan menafsirkan Markdown, jadi spec macOS perlu menetapkan cara menampilkan teks katalog sebagai teks biasa (OS-6).
 * [ ] Windows (scope 010, menunggu host Windows): adapter lokalisasi Rust untuk presentasi WinUI, dengan OS-1 sampai OS-9. Adapter menerapkan langkah pemilihan bahasa L-9 sendiri. Spec ini tidak menulis bukti untuk Windows.
 * [ ] Linux (scope 010, menunggu host Linux): resource yang sesuai GTK, dengan OS-1 sampai OS-9. Bila memakai gettext, kunci menjadi `msgid`, jadi katalog bahasa sumber wajib ditulis dan dimuat sebagai pilihan terakhir (OS-3). Spec ini tidak menulis bukti untuk Linux.
 * [ ] Bukti `desktop-codegen` di host Windows dan Linux mengikuti AC-12 spec `_root/0003`. Di sana `cargo run -p desktop-codegen --locked -- localization check` ikut dijalankan (`owner: user`).
 * [ ] Nilai dari user: bahasa yang didukung selain bahasa sumber, dan teks terjemahan yang disetujui. Usulan sekarang `id` dengan `Sapa`. Menggantinya adalah perubahan `catalog.json`, tabel **Nilai hasil**, **AC-1**, **AC-2**, kasus uji yang menyebut teks itu, dan OS-4, lewat pembaruan spec ini, tanpa mengubah aturan.
-* [ ] Pemilik spec `_root/0003`: sumber `localization` menambah tiga path di `tooling/codegen/` dan satu baris `.gitattributes`. Angka path di AC-1 spec itu dan baris `sources:` di usage ikut berubah. Bila spec `_root/0003` berubah sebelum diterima (nama tipe, pola deskripsi, bentuk baris sukses), spec ini diperbarui mengikutinya.
+* [ ] Pemilik spec `_root/0003`: sumber `localization` menambah tiga path di `tooling/codegen/` dan satu baris `.gitattributes`. Angka path di AC-1 spec itu dan baris `sources:` di usage ikut berubah. Bila spec `_root/0003` berubah (nama tipe, pola deskripsi, bentuk baris sukses), spec ini diperbarui mengikutinya.
 * [ ] Scope 012: skrip `scripts/validate.sh` dan CI menjalankan `localization check` dan `cargo test --workspace --locked`.
 * [ ] Scope 002: jadikan L-1 pemeriksaan arsitektur yang tetap (teks antarmuka yang punya kunci tidak boleh ditulis literal di kode UI), dan jadikan `desktop-core` tanpa pustaka lokalisasi bagian dari daftar larangan Core.
 * [ ] `/sync` sesudah build: kalimat "sumber bersama masih rencana" di `AGENTS.md` akar tidak lagi benar untuk `shared/localization/`.

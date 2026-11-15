@@ -19036,6 +19036,17 @@
     },
     {
       "source": "docs_specs_root_0006_satu_contoh_lokalisasi_index",
+      "target": "docs_specs_root_0004_konfigurasi_publik_index",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md",
+      "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0006_satu_contoh_lokalisasi_index",
       "target": "docs_shared_resources_readme",
       "relation": "references",
       "_origin": "ast",
@@ -19065,6 +19076,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md",
       "source_location": "L513",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0006_satu_contoh_lokalisasi_index",
+      "target": "docs_specs_root_0003_tema_bersama_dan_kontrol_native_index",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
