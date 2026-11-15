@@ -4,7 +4,7 @@
 //! standard library. `every_source_passes_check_on_the_repo` runs `check`
 //! for every entry of `SOURCES`, so a registered source cannot slip past
 //! the gate (AC-1, AC-3). `rejects_broken_repos` and
-//! `accepts_allowed_shapes` run the cases `N-1` to `N-23` and `P-1` to
+//! `accepts_allowed_shapes` run the cases `N-1` to `N-24` and `P-1` to
 //! `P-5` of
 //! `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md`
 //! on a copy of the repo under a temporary root, restoring every changed
@@ -340,7 +340,9 @@ const REJECTED: &[Rejected] = &[
         edits: &[Edit::Replace(
             "crates/macos-ffi/src/lib.rs",
             "desktop_core::hello(name)",
-            "format!(\"Hello, {name}!\")",
+            // Split so the greeting pattern stays in crates/core/src/greeting.rs
+            // only (spec `_root/0002` AC-3); the copy still gets the full text.
+            concat!("format!(\"Hello, ", "{name}!\")"),
         )],
         rules: &["A-8", "A-9"],
         contains: &[],
@@ -455,16 +457,17 @@ fn rejects_broken_repos() {
             }
         }
     }
-    // A member manifest that cannot be read gives exactly one `cannot read`
-    // problem. The A-1 rule check needs that member's package name, so it
-    // is skipped ("File yang tidak terbaca" in spec `_root/0007`).
+    // N-24: a member manifest that cannot be read gives exactly one
+    // `cannot read` problem, with no A-1 or A-13 problem. Both need that
+    // member's package name, so they are skipped ("File yang tidak terbaca"
+    // in spec `_root/0007`).
     let found = match run_case(&root, &[Edit::Delete("crates/macos-ffi/Cargo.toml")]) {
         Ok(summary) => vec![format!("(accepted: {summary})")],
         Err(messages) => messages,
     };
     if found.len() != 1 || !found[0].starts_with("cannot read: ") {
         failures.push(format!(
-            "unreadable member manifest: expected exactly one cannot read problem, got {found:?}"
+            "N-24: expected exactly one cannot read problem, got {found:?}"
         ));
     }
     fs::remove_dir_all(&root).expect("the copy can be removed");

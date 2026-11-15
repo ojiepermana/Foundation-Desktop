@@ -190,3 +190,17 @@ Tidak diterapkan:
 * Daftar kata terlarang bersama di T-3. Kata kunci berbeda per bahasa target, jadi aturannya tinggal di emitter (K-2).
 
 Pemeriksa menyatakan setiap AC punya langkah Build plan, dan kriteria 15, 16, 17 serta kedua bagian Done when tercakup oleh AC atau oleh kewajiban spec OS.
+
+## Pembaruan 2026-11-15 sesudah scope 002 sampai 011
+
+Lewat `architect (update)`, teks saja. Keputusan, ID AC, dan centang `verify.md` tidak berubah. Keputusan 17 di atas ("`tooling/validation/` tidak dibuat") tetap berlaku dan kini juga keputusan spec `_root/0007`.
+
+| Bagian `index.md` | Perubahan |
+| --- | --- |
+| Consequences, Neutral | Kalimat "`tooling/validation/` tetap rencana. Scope 002 memutuskan ..." menjadi pernyataan keputusan spec `_root/0007`: pemeriksaan arsitektur tinggal di paket ini sebagai sumber `architecture`. |
+| Follow-up Scope 002 | `[x]`: `tokens check` berjalan di `cargo test --workspace --locked` lewat `every_source_passes_check_on_the_repo`, butir "Keluaran generator" di `AGENTS.md`, dan pemeriksaan arsitektur di paket yang sama. |
+| Follow-up Scope 009, 010, dan 011 | `[x]`: sumber `config`, `localization`, dan `assets` ada di `SOURCES` dengan berkas uji dan baris `.gitattributes` (spec `_root/0004`, `_root/0006`, `_root/0005`). |
+| Follow-up Scope 011 (huruf merek) | `[x]`: spec `_root/0005` mencatat huruf merek sebagai aset yang menunggu kebutuhan. |
+| Follow-up spec macOS scope 008 | `[x]`: ditulis sebagai spec `macos/0005`; build menyusul. |
+| Follow-up lead (tautan balik, `.gitattributes`, sesi scope 010 dan 011) | `[x]`: keduanya sudah ada di berkas scope 008 dan di aturan umum koordinasi; spec `_root/0005` dan `_root/0006` memakai bentuk alat ini. |
+| Follow-up yang tetap terbuka | Scope 012 menunggu spec `_root/0008` masuk `main`. AC-12 spec `macos/0001` masih mengunci 16 path dan menunggu pembaruan gabungan spec macOS. Keduanya mendapat keterangan keadaan. |

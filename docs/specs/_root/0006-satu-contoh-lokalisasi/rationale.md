@@ -128,6 +128,8 @@ Aturan nama locale dan fallback dibuat sesempit yang dibutuhkan `en` dan `id`. D
 
 Pasangan `en` dan `id` serta teks `Sapa` adalah usulan. Pilihannya dibuat supaya tampilan bawaan yang sudah diverifikasi tidak berubah dan bahasa kedua masuk akal untuk repo ini. Nilai akhirnya milik user, dan menggantinya tidak menyentuh aturan.
 
+Pada 2026-11-15 batas waktu AC-9 dan AC-11 diperjelas, karena spec `macos/0006` menaikkan jumlah keluaran dari `1 outputs` ke `3 outputs` dan spec `_root/0007` memindahkan uji `workspace_layout` ke `tooling/codegen/tests/`. Angka, perintah yang tercatat di `verify.md`, aturan, dan keputusan tidak berubah.
+
 ## Bukti percobaan
 
 Urutan pemeriksaan, katalog uji K-1 dan K-2, dan 31 kasus sumber rusak sudah dijalankan pada prototipe Python yang mengikuti bagian **Urutan pemeriksaan** dan **Aturan sumber** (2026-11-15). Setiap kasus memberi pesan yang tertulis di tabel, kasus 16 memberi dua masalah, dan kasus lain memberi tepat satu. Perintah `python3` di AC-1 sudah dijalankan pada salinan katalog. Isi `catalog.schema.json` dibuat dengan penulis JSON yang mengurutkan kunci, memakai indentasi dua spasi, dan menambah satu baris baru di akhir, sama dengan aturan `to_canonical_json` di spec `_root/0003`.

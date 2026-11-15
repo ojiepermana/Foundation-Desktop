@@ -17,6 +17,8 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | `F011-1` | Mengganti ikon penanda dengan ikon aplikasi nyata dalam SVG, lalu `assets generate` dan `assets check` | spec `_root/0005` AC-10 | belum ada | 011 milestone 1 di `main`, dan berkas ikon darimu (`N9`) | `NOT_RUN` |
 | `F011-2` | Ikon aplikasi terlihat di Dock, About, Finder, dan tampilan gelap (langkah 1 sampai 6) | spec `macos/0007` AC-11 | belum ada | 011 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F011-3` | Ikon nyata sampai bundel Mac: `assets generate`, `assets check`, build, lalu ulangi `F011-2` | spec `macos/0007` AC-12 | belum ada | `F011-1` selesai dan 011 macOS milestone 1 di `main` | `NOT_RUN` |
+| `F012-1` | Jalankan `build-rust.sh`, `validate.sh`, `test.sh` di host Windows (Git Bash) dan host Linux; mencakup perintah `F001-1`, `F002-1`, `F008-1` | spec `_root/0008` AC-12 | belum ada | 012 milestone 1 di `main`, dan host Windows serta Linux | `NOT_RUN` |
+| `F012-2` | Push `main` dan jalankan workflow GitHub Actions `foundation` dan `foundation-macos` | spec `_root/0008` AC-11 | belum ada | 012 milestone 3 di `main`, dan push ke `origin` | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 
@@ -35,6 +37,7 @@ Nilai yang hanya kamu tahu. AC di kolom ketiga `BLOCKED` sampai nilainya ada.
 | `N7` | Warna merek: warna utama, latar terang dan gelap, teks terang dan gelap, dan apakah tampilan gelap memakai rona merek yang berbeda. Tiga warna dasar sekarang (`brand.primary`, `neutral.50`, `neutral.950`) adalah contoh bertanda `placeholder`. | spec `_root/0003` AC-8 (lulus dengan nilai sementara; alat melaporkan `3 placeholder values`) | `design-system/tokens/colors.json` |
 | `N8` | Bahasa yang didukung selain bahasa sumber, dan teks terjemahan yang disetujui. Sekarang: sumber `en` (`Greet`), bahasa kedua `id` (`Sapa`), usulan architect. | spec `_root/0006` AC-1 (lulus dengan usulan itu) | `shared/localization/catalog.json` |
 | `N9` | Berkas ikon aplikasi nyata dalam SVG (dan berkas merek lain bila ada). Sekarang `shared/assets/source/app-icon.svg` akan berupa penanda kotak abu abu bersilang bertanda `placeholder`. | spec `_root/0005` AC-10 (`BLOCKED`, `owner: user`) | `shared/assets/source/`, `shared/assets/brand.json` |
+| `N10` | Visibilitas repo GitHub (publik atau privat). Menentukan biaya runner dan apakah runner ARM masuk CI. | tidak ada; Follow-up spec `_root/0008` | `.github/workflows/`, lewat pembaruan spec `_root/0008` |
 
 ## Fitur `001`: `Batas workspace dan pemilik` (spec `_root/0001`)
 
@@ -203,4 +206,29 @@ Dari laporan `arc-f011-spec` (2026-11-15). Membuktikan spec `macos/0007` `AC-12`
 - **Jalankan:** `cargo run -p desktop-codegen --locked -- assets generate`, lalu `cargo run -p desktop-codegen --locked -- assets check`; commit sumber, manifest, dan dua keluaran di `apps/macos/Resources/AppIcon.icon/` bersama; jalankan ulang perintah AC-4 spec `macos/0007` (Debug dan Release); lalu ulangi enam langkah `F011-2`.
 - **Lulus bila:** `assets check` kode 0 dengan baris terakhir memuat `0 placeholder values` dan berakhir `3 outputs up to date`; kedua build `** BUILD SUCCEEDED **` dengan ikon di bundel; langkah `F011-2` menampilkan ikon nyata.
 - **Catatan untuk `F011-1`:** sesudah milestone 1 spec `macos/0007` dibangun, commit penggantian ikon juga harus memuat dua keluaran di `apps/macos/Resources/AppIcon.icon/`.
+
+## Fitur `012`: `Build dan penerimaan per target` (spec `_root/0008`)
+
+### `F012-1` · Jalankan skrip bersama di host Windows dan host Linux
+
+Dari laporan `arc-f012-spec` (2026-11-15). Membuktikan spec `_root/0008` `AC-12`; ini bagian milestone 4 fitur 012. Sesudah milestone 1 fitur 012 di `main`, langkah ini menggantikan perintah `F001-1`, `F002-1`, dan `F008-1`: satu kali jalan membuktikan ketiganya.
+
+- **Prasyarat:** milestone 1 spec `_root/0008` di `main` dan di-clone di host itu. Windows `x86_64-pc-windows-msvc` dengan Git for Windows (Git Bash), `rustup`, dan MSVC Build Tools. Linux `x86_64-unknown-linux-gnu` dengan `bash`, `git`, `rustup`, dan `cc`. Tanpa pustaka UI.
+- **Jalankan:** dari akar repo, di Git Bash atau shell Linux:
+  1. `rustup toolchain install`
+  2. `bash scripts/build-rust.sh`
+  3. `bash scripts/validate.sh`
+  4. `bash scripts/test.sh`
+- **Lulus bila:** perintah 2 sampai 4 keluar dengan kode 0 dan baris terakhirnya `== <nama>.sh: PASS, ...`; baris `rustc:` diawali `rustc 1.99.1 `; keluaran perintah 3 memuat `tokens: ok, ` dan `architecture: ok, `; keluaran perintah 3 dan 4 memuat `rust tests: <p> passed, 0 failed`. Kirim seluruh keluaran ketiga skrip per host.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa skrip, gerbang, dan pemeriksaan teks memberi hasil yang sama di luar macOS.
+
+### `F012-2` · Push dan jalankan workflow GitHub Actions
+
+Dari laporan `arc-f012-spec` (2026-11-15). Membuktikan spec `_root/0008` `AC-11`; ini bagian milestone 4 fitur 012.
+
+- **Prasyarat:** milestone 3 spec `_root/0008` di `main`. Repo GitHub `origin` ada dan GitHub Actions diizinkan untuk repo itu (Settings, Actions, General: izinkan action milik GitHub). Untuk repo privat, menit runner macOS dihitung lebih mahal; atur batas pemakaian bila perlu.
+- **Jalankan:** kirim `main` ke `origin` mengikuti aturan 4 di `AGENTS.md`. Buka tab Actions dan tunggu run workflow `foundation` untuk commit itu. Untuk `foundation-macos`, tunggu run dari push itu; bila tidak ada (push tidak menyentuh path filternya), pilih workflow `foundation-macos`, Run workflow, cabang `main`.
+- **Lulus bila:** ketiga job (`rust (ubuntu-24.04)`, `rust (windows-2025)`, `macos (macos-26)`) berhasil pada commit yang sama. Kirim URL run, hasil tiap job, versi citra runner dari langkah "Set up job", serta baris kepala dan baris penutup tiap skrip dari log.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa workflow benar benar berjalan di runner GitHub, termasuk Windows dan Linux.
+- **Nilai darimu (`N10`):** visibilitas repo GitHub. Publik membuat runner ARM (`ubuntu-24.04-arm`, `windows-11-arm`) gratis; privat berbayar per menit.
 

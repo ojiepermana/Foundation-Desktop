@@ -192,3 +192,13 @@ Tabel aturan arah dependensi mendapat baris `desktop-codegen`, dan tabel lokasi 
 | "Tanpa prasyarat selain toolchain" keliru karena butuh linker sistem | Invarian dan user story menyebut linker sistem |
 | Bukti untuk anggota OS di host lain terlalu ketat | Hasil yang diharapkan menjadi "tanpa pustaka UI atau SDK OS" |
 | Perilaku titik masuk pengganti adalah desain aplikasi Windows dan Linux | Dipindah ke Follow-up scope 006 dan 007 |
+
+## Pembaruan 2026-11-15 sesudah scope 002 sampai 011
+
+Lewat `architect (update)`, teks saja. Keputusan, ID AC, tabel "Aturan arah dependensi", dan centang `verify.md` tidak berubah.
+
+| Bagian `index.md` | Perubahan |
+| --- | --- |
+| Tabel "Lokasi dan pemilik" | Kolom keadaan menjadi "Keadaan di `main` (2026-11-15)", dengan satu kalimat yang mencatat keadaan pada akhir milestone 1. Baris `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, `shared/localization/`, `shared/assets/`, dan `tooling/codegen/` kini "ada" dengan spec pengisinya. Baris `tooling/validation/` kini "tidak dibuat", diputuskan spec `_root/0003` dan `_root/0007`. Baris `scripts/` menyebut spec `_root/0008` tanpa tautan, karena spec itu belum di `main`. Baris baru untuk `.gitattributes`, file root yang diatur spec `_root/0003`, `_root/0004`, `_root/0005`, dan `_root/0006` (Follow-up spec `_root/0003`). |
+| Kalimat sesudah tabel | Uji yang membaca file di luar Core, termasuk `workspace_layout.rs`, tinggal di `tooling/codegen/tests/` sejak spec `_root/0007`. |
+| Follow-up | Scope 002, Scope 003, dan baris `README.md` menjadi `[x]` dengan spec penjawabnya. Scope 012 tetap terbuka sampai spec `_root/0008` masuk `main`. |

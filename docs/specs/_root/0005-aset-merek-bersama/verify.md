@@ -8,6 +8,8 @@ Kamu bisa menjalankan semua perintah dari root repo, dengan `export CARGO_PROFIL
 
 Build plan langkah 1 dan 2. Hasil tercatat pada commit langkah 1 (`82890be`), pada working tree yang bersih.
 
+Keterangan (2026-11-15, pembaruan spec): angka `1 outputs` dan jumlah berkas gambar di bawah berlaku pada akhir milestone 1 spec ini, sesuai batas waktu di **AC-2** dan **AC-5**. Sesudah spec `macos/0007` dibangun, angkanya menjadi `3 outputs` dan dua berkas `.svg`. Centang di bawah tetap benar untuk commit itu.
+
 ### UI / manual
 
 Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
