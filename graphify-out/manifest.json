@@ -288,9 +288,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md": {
-    "mtime": 1794737833.0856872,
-    "seen": 1794737834.141272,
-    "ast_hash": "1984d5a293540d3c60934006ec401d71",
+    "mtime": 1794738001.5968251,
+    "seen": 1794738002.671702,
+    "ast_hash": "5b0540458c866490482feb32f10a9e1e",
     "semantic_hash": ""
   },
   "crates/core/src/greeting.rs": {
