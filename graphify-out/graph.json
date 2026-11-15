@@ -7922,7 +7922,7 @@
       "node_kind": "heading",
       "norm_label": "consequences",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L530"
+      "source_location": "L528"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_daftar_penerimaan_per_target",
@@ -7970,7 +7970,7 @@
       "node_kind": "heading",
       "norm_label": "follow-up",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L557"
+      "source_location": "L555"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_invarian",
@@ -8030,7 +8030,7 @@
       "node_kind": "heading",
       "norm_label": "langkah manual",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L508"
+      "source_location": "L506"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_laporan_fondasi",
@@ -14989,7 +14989,7 @@
       "node_kind": "heading",
       "norm_label": "cross check",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md",
-      "source_location": "L129"
+      "source_location": "L130"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_rationale_keputusan_yang_diambil",
@@ -48059,7 +48059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L508",
+      "source_location": "L506",
       "weight": 1.0
     },
     {
@@ -48070,7 +48070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L530",
+      "source_location": "L528",
       "weight": 1.0
     },
     {
@@ -48081,7 +48081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L557",
+      "source_location": "L555",
       "weight": 1.0
     },
     {
@@ -48279,7 +48279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/rationale.md",
-      "source_location": "L129",
+      "source_location": "L130",
       "weight": 1.0
     },
     {
