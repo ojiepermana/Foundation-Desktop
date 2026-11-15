@@ -72,10 +72,10 @@
     "semantic_hash": ""
   },
   "docs/scope/004 - Sapaan di jendela macOS.md": {
-    "mtime": 1794730741.1030672,
-    "seen": 1794731111.199786,
-    "ast_hash": "88f81b1f84ab8b0e747e0cb0a555c1dc",
-    "semantic_hash": "88f81b1f84ab8b0e747e0cb0a555c1dc"
+    "mtime": 1794739801.118052,
+    "seen": 1794739803.65592,
+    "ast_hash": "bb82e37ff57ab9c2178f6a641692a7e2",
+    "semantic_hash": ""
   },
   "docs/scope/005 - Kelayakan WinUI dari Rust.md": {
     "mtime": 1794730741.1124384,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794737050.9850307,
-    "seen": 1794737053.59669,
-    "ast_hash": "b4ce9ff5fdbf6bb225cd455682012f00",
+    "mtime": 1794739801.1219287,
+    "seen": 1794739803.655924,
+    "ast_hash": "beedc79839c0ec4786e7944275b6a004",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794739718.788837,
-    "seen": 1794739720.143222,
-    "ast_hash": "bc67e273607a915c9229912f3f0ddcd6",
+    "mtime": 1794739801.1214736,
+    "seen": 1794739803.655916,
+    "ast_hash": "9ba3014e66fce13cfb616496aa153551",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794739718.7890427,
-    "seen": 1794739720.14323,
-    "ast_hash": "720a639873b3a858672fb446835f98d6",
+    "mtime": 1794739801.121769,
+    "seen": 1794739803.6559098,
+    "ast_hash": "9c3567acd6fb9b75dd26e6f026dbc8d3",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {

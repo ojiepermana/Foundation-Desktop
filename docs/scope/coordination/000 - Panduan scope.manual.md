@@ -9,6 +9,8 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | ID | Langkah | AC | Kotak yang dicentang dengan langkah ini `NOT_RUN` | Bisa dijalankan sesudah | Hasil |
 | --- | --- | --- | --- | --- | --- |
 | `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
+| `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | belum ada | 004 milestone 2 di `main` | `NOT_RUN` |
+| `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | belum ada | 004 milestone 2 di `main` | `NOT_RUN` |
 
 ## Nilai dari user
 
@@ -34,3 +36,34 @@ Dari laporan `arc-f001-spec` (2026-11-15). Membuktikan spec `_root/0001` `AC-9` 
   - `cargo test -p desktop-core --locked`
 - **Lulus bila:** `rustc --version` diawali `rustc 1.99.1`, kedua perintah `cargo` keluar dengan kode 0, dan keluaran test memuat `test result: ok` tanpa `FAILED`. Kirim OS, arsitektur, versi, perintah, dan keluarannya; checker mencatatnya di `verify.md` bagian `## Milestone 3: Bukti Core di host Windows dan Linux`.
 - **Hanya langkah ini yang bisa membuktikan:** bahwa Core terbangun dan teruji di luar macOS. Semua bukti lain fitur 001 dijalankan di Mac.
+
+## Fitur `004`: `Sapaan di jendela macOS` (spec `macos/0001`)
+
+Kedua langkah di bawah adalah milestone 4 fitur 004. Catat host, arsitektur, versi macOS, dan hasil tiap nomor. Yang belum dijalankan tetap tercatat belum diverifikasi.
+
+### `F004-1` · Alur sapaan di jendela
+
+Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `macos/0001` `AC-5` (Done when scope 004, kriteria 5 dan 14).
+
+- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang sudah diuji: 27.0.1), Xcode 27.1, sesi desktop yang sedang login, dan repo pada commit yang lulus AC-4 (004 milestone 2 sudah di-merge).
+- **Jalankan:**
+  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`
+  2. `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`
+  3. Ketik `Ayu` di kolom, lalu klik `Greet`.
+  4. Hapus isi kolom, lalu klik `Greet`.
+  5. Tempel teks `Łukasz 李 👩🏽‍💻` ke kolom, lalu klik `Greet`.
+- **Lulus bila:** (1) `** BUILD SUCCEEDED **`; (2) satu jendela berjudul `Desktop Foundation` dengan kolom `Name`, tombol `Greet`, dan label hasil yang kosong; (3) label menampilkan `Hello, Ayu!`; (4) label menampilkan `Hello, !`; (5) label menampilkan `Hello, Łukasz 李 👩🏽‍💻!` dengan emoji yang utuh.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa nilai yang terlihat di jendela nyata berasal dari Core. Uji `swift test` membuktikan jalur yang sama tanpa jendela.
+
+### `F004-2` · Penggunaan nyata
+
+Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `macos/0001` `AC-13`.
+
+- **Prasyarat:** sama dengan `F004-1`, dan aplikasi masih terbuka dari langkah 2.
+- **Jalankan:**
+  6. Hapus isi kolom, ketik `Budi`, lalu tekan Return tanpa memakai mouse.
+  7. Nyalakan VoiceOver dengan Command F5 (pada sebagian laptop Fn Command F5), lalu pindah ke kolom, tombol, dan label. Matikan VoiceOver sesudahnya.
+  8. Tekan Command Q.
+  9. `open apps/macos/DesktopMac.xcodeproj`, tunggu paket selesai dimuat, lalu tekan Command R. Tutup Xcode, lalu jalankan `git status --short`.
+- **Lulus bila:** (6) label menampilkan `Hello, Budi!`; (7) VoiceOver menyebut `Name` untuk kolom, `Greet` untuk tombol, dan membacakan `Hello, Budi!` untuk label; (8) aplikasi tertutup tanpa dialog; (9) build berhasil dan jendela yang sama terbuka. Bila `git status --short` mencetak sesuatu, catat setiap path dan jangan di-commit; keluaran itu tidak menggagalkan langkah 9.
+- **Hanya langkah ini yang bisa membuktikan:** fokus keyboard, aksesibilitas kontrol native, dan bahwa proyek tulisan tangan terbuka benar di Xcode.

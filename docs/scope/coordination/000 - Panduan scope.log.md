@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 17:48`
+- **Diperbarui:** `2026-11-15 17:50`
 
 ## Sub sesi wave `1`
 
@@ -15,7 +15,7 @@
 | `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1`; koreksi rujukan langkah `8515ef5`, merge `d4ff759` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `dev-f001-m1` | tester | 001 Test it, tindak lanjut di sesi tester yang sama; Range `60ca131..8fcc995`; hanya invarian yang spec nyatakan berlaku terus | `001 - Batas workspace dan pemilik.md` | `crates/core/tests/workspace_layout.rs`; laporan `done` (`2b142b0`, HEAD `c28576d`), merge `519454f` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
 | `arc-f003-spec` | auditor | 002 `/audit`; laporan `done` (`b095d1a`, HEAD `9c7e7b5`): `AGENTS.md` root +55 baris di akhir, 1224 byte pertama sama; `crates/core/AGENTS.md` baru; tanpa `CLAUDE.md`. Merge ditahan sampai user setuju | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `AGENTS.md` (hanya menambah di akhir), `crates/core/AGENTS.md` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | done |
-| `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; ringkasan diterima lead tanpa perubahan (`d191846`), menunggu laporan akhir. Penerapan macOS 001 dan 003 menyusul di sesi yang sama sesudah spec ini di-merge | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | aktif |
+| `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; laporan `done` (`d191846`, HEAD `2a672ab`), merge `c7ade1b` | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `dev-f001-m1` | developer | 001 Build it milestone 1; Langkah Build plan selesai 1 (`09c6f0c`), 2 (`60b948d`); Pointer code in `crates/core/` dan root workspace; laporan `done`, merge `9dee57d` | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec 0001, baris `**Status**` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
 | `dev-f001-m1` | developer | 001 Build it milestone 2; Langkah Build plan selesai 3 (`1d2c3f7`); Pointer code in `docs/architecture/README.md`; laporan `done`, merge `8fcc995` | `001 - Batas workspace dan pemilik.md` | `docs/architecture/README.md` (diizinkan brief, AC-8), `verify.md` spec 0001 bagian Milestone 2 | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
 | `arc-f001-spec` | checker (verify) | 001 verify milestone 1 (AC-1 sampai AC-7) dari `main`; sesi dibersihkan, judul `arc-f001-spec · 001 verify milestone 1` | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 1; laporan `done` PASS 15 dari 15, tanpa commit | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | done |
@@ -119,13 +119,15 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 001 · Milestone 3 (AC-9) dan `Build it` ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - 001 · `/architect scope 001 batas workspace dan pemilik untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
-- 004 · `Build it` ← (001 milestone 1 `9dee57d` dan build 003 `e310892` sudah di `main`) serta spec `macos/0001` di-merge (sedang ditulis `arc-f004-spec`).
+- 004 · Milestone 1 ← developer bebas (`dev-f003-m1` dipakai ulang) dan koreksi AC-4 spec `_root/0001`.
+- 004 · Milestone 4 (AC-5, AC-13) ← sesi GUI di Mac; langkah manual `F004-1` dan `F004-2`, pemilik user.
 - 003 · `/architect scope 003 kontrak sapaan untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
 - `README.md` masih menyebut semua fitur `planned`; diperbarui lewat `/sync` akhir wave.
 - 008 sampai 012 · `/architect scope … untuk _root` ← alur 004 terbukti di Mac (urutan Panduan).
 
 ## Dicentang pada wave ini
 
+- 004 · `/architect scope 004 sapaan di jendela macOS` · laporan `done` `arc-f004-spec` · `claude/arc-f004-spec-de734c` → `c7ade1b` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, konflik hanya `graphify-out/` (keempat file diambil dari `main`, hook membangun ulang: 58 sumber), tanpa penanda konflik, tautan relatif sah · commit `docs(scope): tick 004 spec` · manual `F004-1` (AC-5) dan `F004-2` (AC-13) tercatat untuk milestone 4
 - 001 · `Test it: /test scope 001 batas workspace dan pemilik` · laporan `done` tester `dev-f001-m1` (10 test baru di `workspace_layout.rs`; sembilan mutasi di salinan scratchpad tertangkap) · `claude/dev-f001-m1-c305cb` → `519454f` · di `main`: fmt, clippy, `cargo test -p desktop-core --locked` (5 unit, 7 + 4 + 5 + 10 integrasi, 1 doc), `cargo tree` satu baris, manifest, lockfile, dan kode produksi tidak berubah · commit `docs(scope): tick 001 test` · tanpa langkah manual
 - 003 · `Test it: /test scope 003 kontrak sapaan untuk _root` · laporan `done` tester `dev-f001-m1` (12 test baru di dua file, plus `test-preferences.json`) · `claude/dev-f001-m1-c305cb` → `c40e86a` · di `main`: fmt, clippy, `cargo test -p desktop-core --locked` (5 unit, 7 + 4 + 5 integrasi, 1 doc), `cargo tree` satu baris, grep AC-3 satu file, kode produksi dan `Cargo.lock` tidak berubah · commit `docs(scope): tick 003 test` · tanpa langkah manual
 - 003 · `Milestone 1`, `Milestone 2`, `Build it`, `Verify it: /check verify scope 003 kontrak sapaan untuk _root` · laporan `done` `dev-f003-m1` dan verify penuh PASS `arc-f003-spec` (21 dari 21 langkah, AC-1 sampai AC-7, pada `e310892`; enam probe negatif di salinan scratchpad) · `claude/dev-f003-m1-f164e9` → `e310892`, centang verify `claude/arc-f003-spec-14125c` → `7223987` · fmt, clippy, test (5 unit, 4 kontrak, 1 doc), `cargo doc`, `cargo tree`, grep AC-3, AC-4, AC-6 di `main` · commit `docs(scope): tick 003 build and verify` · tanpa langkah manual
