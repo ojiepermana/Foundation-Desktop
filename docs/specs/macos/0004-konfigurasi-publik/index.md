@@ -49,7 +49,7 @@ Dengan nilai sementara, ketiganya adalah `Desktop Foundation`, `com.example.desk
 - **AC-8** (aturan `K-3` dan `K-4`; **host mana pun**): aplikasi dan build Xcode tidak membaca `shared/config/`. `git grep -n 'shared/config\|public\.json' -- '*.swift' apps/macos/DesktopMac.xcodeproj crates/macos-ffi` tidak mencetak apa pun. `grep -c 'shellScript = ' apps/macos/DesktopMac.xcodeproj/project.pbxproj` mencetak `1`, yaitu fase `Build Rust bridge` yang sudah ada.
 - **AC-9** (kriteria 18; Done when "batas pengaturan khusus tiap OS" bagian macOS; **host mana pun**): setelan yang dimiliki macOS tetap di proyek, dan berkas hasil generator hanya memuat tiga setelan turunan. `grep -vc '^//' apps/macos/Config/Shared.xcconfig` mencetak `3`. Untuk tiap teks berikut, `grep -cF '<teks>' apps/macos/DesktopMac.xcodeproj/project.pbxproj` mencetak `2`: `MACOSX_DEPLOYMENT_TARGET = 14.0;`, `CURRENT_PROJECT_VERSION = 1;`, `PRODUCT_NAME = "$(TARGET_NAME)";`, `CODE_SIGN_IDENTITY = "-";`, `CODE_SIGN_STYLE = Automatic;`, dan `DEVELOPMENT_TEAM = "";`. Tabel "Batas setelan di macOS" spec ini adalah catatan batas itu.
 - **AC-10** (kriteria 5 dan 14 lewat spec 004; **Mac**): alur sapaan tetap utuh. Perintah **AC-2**, **AC-3**, dan **AC-4** spec 004 tetap lulus dengan keluaran yang tertulis di sana. `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, dan `cargo test --workspace --locked` keluar dengan kode 0, termasuk uji `hand_written_swift_uses_no_pointers` dan `committed_outputs_match_the_source`.
-- **AC-11** (kriteria 32; **host mana pun**): build spec ini hanya menyentuh `apps/macos/Config/Shared.xcconfig`, `apps/macos/App/DesktopMacApp.swift`, `apps/macos/DesktopMac.xcodeproj/project.pbxproj`, `tooling/codegen/src/config/macos.rs`, `tooling/codegen/src/config/mod.rs`, `tooling/codegen/tests/config_macos_contract.rs`, `.gitattributes` (satu baris), `tooling/codegen/tests/config_contract.rs` (hanya bila sebuah uji di sana mengunci jumlah atau daftar keluaran `plan`, lihat "Kasus gagal yang sudah diputuskan"), `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat berkas `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge. `git ls-files apps/macos bindings/swift crates/macos-ffi | wc -l | tr -d ' '` mencetak `17`. `Cargo.toml`, `Cargo.lock`, `.gitignore`, `shared/config/`, dan `tooling/codegen/Cargo.toml` tidak berubah. Tidak ada berkas timpaan lokal dan tidak ada fase skrip baru.
+- **AC-11** (kriteria 32; **host mana pun**): build spec ini hanya menyentuh `apps/macos/Config/Shared.xcconfig`, `apps/macos/App/DesktopMacApp.swift`, `apps/macos/DesktopMac.xcodeproj/project.pbxproj`, `tooling/codegen/src/config/macos.rs`, `tooling/codegen/src/config/mod.rs`, `tooling/codegen/tests/config_macos_contract.rs`, `.gitattributes` (satu baris), `tooling/codegen/tests/config_contract.rs` (hanya bila sebuah uji di sana mengunci jumlah atau daftar keluaran `plan`, lihat "Kasus gagal yang sudah diputuskan"), `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat berkas `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge. Fitur ini menambah tepat satu path: `git log --diff-filter=A --name-only --format= --grep='spec macos/0004 step' -- apps/macos bindings/swift crates/macos-ffi | sort -u` mencetak tepat satu baris, `apps/macos/Config/Shared.xcconfig`. Pemeriksaan ini hanya membaca commit fitur ini, jadi tetap benar sesudah spec macOS lain menambah path; total path tidak dikunci di sini. `Cargo.toml`, `Cargo.lock`, `.gitignore`, `shared/config/`, dan `tooling/codegen/Cargo.toml` tidak berubah. Tidak ada berkas timpaan lokal dan tidak ada fase skrip baru.
 
 ## Decision
 
@@ -348,25 +348,27 @@ Prasyarat: needs scope 009 milestone 1 (spec `_root/0004`: sumber `config`, `sha
 - `tooling/codegen/src/config/mod.rs` dimiliki build spec `_root/0004`. Langkah 1 mengubahnya, jadi build ini berjalan sesudah milestone 1 scope 009 di `main`, bukan paralel.
 - `.gitattributes` adalah berkas root yang dibuat spec `_root/0003`. Spec ini hanya menambah satu baris.
 - `/develop` menulis `verify.md` saat build. Spec ini tidak membuatnya.
-- Uji di `crates/core/tests/` tidak perlu diubah. `macos_bridge_ownership.rs` membaca berkas Swift di `apps/macos/` dan tetap lulus, karena `DesktopMacApp.swift` yang baru tidak memakai pointer. `workspace_layout.rs` tidak membaca berkas yang diubah di sini.
+- Uji di `tooling/codegen/tests/` (dulu `crates/core/tests/`, dipindah spec `_root/0007`) tidak perlu diubah. `macos_bridge_ownership.rs` membaca berkas Swift di `apps/macos/` dan tetap lulus, karena `DesktopMacApp.swift` yang baru tidak memakai pointer. `workspace_layout.rs` tidak membaca berkas yang diubah di sini.
 
 ## Follow-up
 
 Pembaruan yang diminta pada spec `macos/0001` sebelum build (lewat `architect (update)`, bukan disunting dari sini):
 
-- [ ] AC-12: "tepat 16 path" menjadi 17, dan tabel "Tata letak" mendapat baris `apps/macos/Config/Shared.xcconfig` dengan sumber "Generator `desktop-codegen` (spec `macos/0004`). Jangan disunting.".
-- [ ] "Isi file" untuk `apps/macos/App/DesktopMacApp.swift`: diganti blok di spec ini, atau menunjuk ke spec ini.
-- [ ] "Isi file" untuk `project.pbxproj`: sepuluh baris berubah seperti di "Perubahan `project.pbxproj`" spec ini (satu `PBXFileReference`, satu anak grup, dan di tiap konfigurasi target satu `baseConfigurationReference` ditambah serta tiga setelan dihapus).
-- [ ] Catatan di bawah `project.pbxproj` yang berbunyi `MARKETING_VERSION = 0.1.0` disalin dan dinaikkan dengan tangan: diganti dengan rujukan ke `Shared.xcconfig`.
-- [ ] Tabel "Value sourcing": baris judul jendela, nama tampil bundel, pengenal bundel, dan versi bundel menunjuk ke spec ini.
-- [ ] "Configuration required": menyebut `apps/macos/Config/Shared.xcconfig` sebagai berkas setelan hasil generator.
-- [ ] AC-5 dan langkah manual 2: judul jendela adalah nilai `build.product_name`, dengan nilai sementara `Desktop Foundation`.
-- [ ] Tabel keputusan, baris "Teks antarmuka": `Desktop Foundation` dikeluarkan dari daftar literal. Judul jendela datang dari bundel menurut spec ini; `Name` dan `Greet` mengikuti spec `_root/0006`.
-- [ ] Follow-up "Nilai dari user: pengenal bundel akhir": menunjuk ke `DASAR_PENGENAL` (`N6`) ditambah `.macos`.
-- [ ] Follow-up Scope 009: ditandai `[x]`, diterapkan di spec `_root/0004` dan spec ini.
-- [ ] Follow-up Scope 010: `Desktop Foundation` dikeluarkan dari daftar teks yang pindah ke katalog bahasa. Nasib `Name` dan `Greet` diputuskan spec `_root/0006`.
-- [ ] Follow-up Scope 011: "nama tampil bundel" dikeluarkan. Yang tersisa ikon aplikasi dan aset merek lain.
-- [ ] Follow-up Scope 012: bagian "jaga `MARKETING_VERSION` tetap sama dengan versi workspace" ditandai terjawab di sini. Yang tersisa untuk scope 012 adalah membungkus perintah dalam skrip dan CI.
+- [x] AC-12: "tepat 16 path" menjadi 17, dan tabel "Tata letak" mendapat baris `apps/macos/Config/Shared.xcconfig` dengan sumber "Generator `desktop-codegen` (spec `macos/0004`). Jangan disunting.".
+- [x] "Isi file" untuk `apps/macos/App/DesktopMacApp.swift`: diganti blok di spec ini, atau menunjuk ke spec ini.
+- [x] "Isi file" untuk `project.pbxproj`: sepuluh baris berubah seperti di "Perubahan `project.pbxproj`" spec ini (satu `PBXFileReference`, satu anak grup, dan di tiap konfigurasi target satu `baseConfigurationReference` ditambah serta tiga setelan dihapus).
+- [x] Catatan di bawah `project.pbxproj` yang berbunyi `MARKETING_VERSION = 0.1.0` disalin dan dinaikkan dengan tangan: diganti dengan rujukan ke `Shared.xcconfig`.
+- [x] Tabel "Value sourcing": baris judul jendela, nama tampil bundel, pengenal bundel, dan versi bundel menunjuk ke spec ini.
+- [x] "Configuration required": menyebut `apps/macos/Config/Shared.xcconfig` sebagai berkas setelan hasil generator.
+- [x] AC-5 dan langkah manual 2: judul jendela adalah nilai `build.product_name`, dengan nilai sementara `Desktop Foundation`.
+- [x] Tabel keputusan, baris "Teks antarmuka": `Desktop Foundation` dikeluarkan dari daftar literal. Judul jendela datang dari bundel menurut spec ini; `Name` dan `Greet` mengikuti spec `_root/0006`.
+- [x] Follow-up "Nilai dari user: pengenal bundel akhir": menunjuk ke `DASAR_PENGENAL` (`N6`) ditambah `.macos`.
+- [x] Follow-up Scope 009: ditandai `[x]`, diterapkan di spec `_root/0004` dan spec ini.
+- [x] Follow-up Scope 010: `Desktop Foundation` dikeluarkan dari daftar teks yang pindah ke katalog bahasa. Nasib `Name` dan `Greet` diputuskan spec `_root/0006`.
+- [x] Follow-up Scope 011: "nama tampil bundel" dikeluarkan. Yang tersisa ikon aplikasi dan aset merek lain.
+- [x] Follow-up Scope 012: bagian "jaga `MARKETING_VERSION` tetap sama dengan versi workspace" ditandai terjawab di sini. Yang tersisa untuk scope 012 adalah membungkus perintah dalam skrip dan CI.
+
+Semua butir di atas diterapkan di spec `macos/0001` (2026-11-15). Angka 17 di butir AC-12 diganti hitungan relatif, dan baris `Shared.xcconfig` masuk tabel **Path dari spec lain** di sana.
 
 Pembaruan yang diminta pada spec `_root/0004`:
 
@@ -384,7 +386,7 @@ Lainnya:
 - [x] Jawaban atas Follow-up "Spec macOS scope 009" di spec `_root/0004`: `K-2` dipenuhi dengan generator, akhiran `.macos` dipertahankan, judul jendela ikut nama produk, `PRODUCT_NAME` tidak ikut, dan belum ada berkas untuk pengaturan lokal.
 - [ ] Scope 010: judul jendela bukan entri katalog, sejalan dengan aturan `L-1` spec `_root/0006`. Bila kelak judul butuh teks lain di samping nama produk, spec scope 010 memutuskan bentuknya.
 - [ ] Scope 012: `scripts/build-macos.sh` dan CI menjalankan `cargo run -p desktop-codegen --locked -- config check` sebelum `xcodebuild`, dan mencatat hasil AC-3 serta AC-4 per arsitektur.
-- [ ] Scope 002 (spec pemeriksaan arsitektur, bila ditulis): jadikan AC-2 pemeriksaan tetap, supaya tiga setelan turunan tidak kembali ke `project.pbxproj`.
+- [x] Scope 002 (spec pemeriksaan arsitektur, bila ditulis): dijawab spec `macos/0008` (aturan `C-4`). Jadikan AC-2 pemeriksaan tetap, supaya tiga setelan turunan tidak kembali ke `project.pbxproj`.
 - [ ] `/sync` atau lead, sesudah milestone 1: `docs/platforms/macos/README.md` dan `AGENTS.md` root menyebut `apps/macos/Config/Shared.xcconfig` sebagai berkas hasil generator dan perintah `config generate`.
 - [ ] Bila nama di menu bar harus sama dengan nama produk, perbarui spec ini dan spec `macos/0001` bersama: `PRODUCT_NAME` ikut nama produk, dan path bundel di AC-4, AC-10, serta rencana manual spec `macos/0001` berubah. Percobaan menunjukkan `INFOPLIST_KEY_CFBundleName` tidak dipakai Xcode, jadi tidak ada jalan tengah lewat setelan.
 - [ ] Bila pengembang butuh pengenal bundel sendiri untuk tim pribadi, perbarui spec ini dengan berkas `Local.xcconfig` yang diabaikan git dan perubahan `.gitignore` lewat spec `_root/0001`.

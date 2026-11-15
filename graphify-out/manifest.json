@@ -330,15 +330,15 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
-    "mtime": 1794739767.6538305,
-    "seen": 1794739770.242265,
-    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
+    "mtime": 1794755995.0486557,
+    "seen": 1794755997.190579,
+    "ast_hash": "71c855105ba953435c10870f268a449e",
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794741072.1486514,
-    "seen": 1794741073.220413,
-    "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
+    "mtime": 1794755995.0483732,
+    "seen": 1794755997.1905751,
+    "ast_hash": "211b6f7fbaea7db72f0eda23b2d3d88a",
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
@@ -366,9 +366,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
-    "mtime": 1794741663.0517359,
-    "seen": 1794741665.122643,
-    "ast_hash": "bb4fd38fb42a48a47f78b47d209b0371",
+    "mtime": 1794755995.0511246,
+    "seen": 1794755997.190572,
+    "ast_hash": "4f15e8fc71b192f4415fef0a87c3dfbb",
     "semantic_hash": ""
   },
   "bindings/swift/Package.swift": {
@@ -414,9 +414,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794741186.4339898,
-    "seen": 1794741187.323127,
-    "ast_hash": "8d2c344cd81bcacf0611188410c721eb",
+    "mtime": 1794755995.0513284,
+    "seen": 1794755997.190578,
+    "ast_hash": "81f82748fbe732eaaf4ef1f8c420037e",
     "semantic_hash": ""
   },
   "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
@@ -576,9 +576,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0004-konfigurasi-publik/index.md": {
-    "mtime": 1794745121.5785213,
-    "seen": 1794745127.490716,
-    "ast_hash": "82dac752d3b9514ebceaad43e882517d",
+    "mtime": 1794755995.051819,
+    "seen": 1794755997.1905768,
+    "ast_hash": "6812a4d40978e039146629d27701f25e",
     "semantic_hash": ""
   },
   "shared/config/public.schema.json": {
@@ -756,9 +756,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794753103.018702,
-    "seen": 1794753106.364079,
-    "ast_hash": "6e9358812a55a4c0cdaa769ff0693c18",
+    "mtime": 1794755995.0523014,
+    "seen": 1794755997.19058,
+    "ast_hash": "7e590f317fd710382f0c93064b56dd10",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md": {
