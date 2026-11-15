@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 22:20`
+- **Diperbarui:** `2026-11-15 22:40`
 
 ## Sub sesi wave `1`
 
@@ -19,7 +19,7 @@
 | `arc-f001-spec` | checker (verify) | 001 verify milestone 1 (AC-1 sampai AC-7) dari `main`; sesi dibersihkan, judul `arc-f001-spec · 001 verify milestone 1` | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 1; laporan `done` PASS 15 dari 15, tanpa commit | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | done |
 | `arc-f001-spec` | checker (verify) | 001 verify milestone 2 (AC-8) dari `main` `8fcc995`, tindak lanjut di sesi yang sama | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 2; laporan `done` PASS 8 dari 8 (`7828cf0`, `b4f903d`), merge `26d3dce` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `dev-f003-m1` | developer | 003 Build it milestone 1 dan 2; Langkah Build plan selesai 1 (`edf3e29`), 2 (`288ae81`), 3 (`2afc387`), 4 (`d6ab359`), 5 (`bfb12a9`), 6 (`de9d200`); Pointer code in `crates/core/src/greeting.rs`, uji `crates/core/tests/hello_contract.rs`; laporan `done` (`a723881`), merge `e310892` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs`, `crates/core/Cargo.toml`, `verify.md` spec 0002, baris `**Status**` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | merged |
-| `arc-f003-spec` | checker (verify) | 003 verify penuh (milestone 1 dan 2, AC-1 sampai AC-7) dari `main` `e310892`; sesi dibersihkan, judul `arc-f003-spec · 003 verify penuh` | `003 - Kontrak sapaan bersama.md` | centang `verify.md` spec 0002 | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | dipakai ulang |
+| `arc-f003-spec` | checker (verify) | 003 verify penuh (milestone 1 dan 2, AC-1 sampai AC-7) dari `main` `e310892`; sesi dibersihkan, judul `arc-f003-spec · 003 verify penuh` | `003 - Kontrak sapaan bersama.md` | centang `verify.md` spec 0002; laporan `done` PASS 21 dari 21 (`4070062`, HEAD `ebd802a`), merge `7223987` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `dev-f001-m1` | tester | 003 Test it; sesi dibersihkan, effort dinaikkan ke `high`, judul `dev-f001-m1 · 003 Test it`; Range `8fcc995..e310892` | `003 - Kontrak sapaan bersama.md` | file baru di `crates/core/tests/`, `test-preferences.json` (baru) | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | dipakai ulang |
 
 ## Keputusan
@@ -102,6 +102,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Dicentang pada wave ini
 
+- 003 · `Milestone 1`, `Milestone 2`, `Build it`, `Verify it: /check verify scope 003 kontrak sapaan untuk _root` · laporan `done` `dev-f003-m1` dan verify penuh PASS `arc-f003-spec` (21 dari 21 langkah, AC-1 sampai AC-7, pada `e310892`; enam probe negatif di salinan scratchpad) · `claude/dev-f003-m1-f164e9` → `e310892`, centang verify `claude/arc-f003-spec-14125c` → `7223987` · fmt, clippy, test (5 unit, 4 kontrak, 1 doc), `cargo doc`, `cargo tree`, grep AC-3, AC-4, AC-6 di `main` · commit `docs(scope): tick 003 build and verify` · tanpa langkah manual
 - 001 · `Verify it: /check verify scope 001 batas workspace dan pemilik` · verify PASS `arc-f001-spec` untuk milestone 1 (15 dari 15, pada `9dee57d`) dan milestone 2 (8 dari 8, pada `8fcc995`); sesudah merge terakhir gerbang lead di `main` `e310892` mengulang fmt, clippy, test, dan `cargo tree` satu baris · `verify.md` 23 langkah `[x]`, 0 terbuka · commit `docs(scope): tick 001 milestone 2 and verify` · `(manual NOT_RUN: F001-1, owner user)` untuk AC-9
 - 001 · `Milestone 2: Peta arsitektur mencatat tata letak nyata` · laporan `done` `dev-f001-m1` dan verify PASS `arc-f001-spec` (8 dari 8, AC-8, pada `8fcc995`) · `claude/dev-f001-m1-c305cb` → `8fcc995`, centang verify `claude/arc-f001-spec-a1f824` → `26d3dce` · pemeriksaan AC-8 di `main` · commit yang sama · tanpa langkah manual
 - 001 · `Milestone 1: Workspace dan kerangka Core` · laporan `done` `dev-f001-m1` dan verify PASS `arc-f001-spec` (15 dari 15 langkah, AC-1 sampai AC-7, dijalankan pada `9dee57d`) · `claude/dev-f001-m1-c305cb` → `9dee57d` · fmt, clippy, build, test, `cargo tree` di `main` · commit `docs(scope): tick 001 milestone 1` · tanpa langkah manual
