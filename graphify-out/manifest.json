@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794737833.0803332,
-    "seen": 1794737834.141263,
-    "ast_hash": "cfe14f5ececfddfa7d6e70d8c3b1e648",
+    "mtime": 1794741186.4283166,
+    "seen": 1794741187.3231308,
+    "ast_hash": "bb2759fbf52f3001ce332ca326d72493",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -420,9 +420,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794741072.1492667,
-    "seen": 1794741073.22041,
-    "ast_hash": "51fc5ecbc67be6469930feb751c1050e",
+    "mtime": 1794741186.4339898,
+    "seen": 1794741187.323127,
+    "ast_hash": "8d2c344cd81bcacf0611188410c721eb",
     "semantic_hash": ""
   },
   "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {

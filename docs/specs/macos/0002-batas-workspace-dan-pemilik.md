@@ -2,7 +2,7 @@
 
 **Scope**: [001 - Batas workspace dan pemilik](../../scope/001%20-%20Batas%20workspace%20dan%20pemilik.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
