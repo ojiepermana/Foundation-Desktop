@@ -18,15 +18,15 @@ Spec ini menetapkan satu file, `shared/config/public.json`, sebagai sumber nilai
 
 **Acceptance criteria** (kontrak; nomor kriteria merujuk [Penerimaan dan bukti fondasi](../../../quality/README.md); semua perintah dijalankan dari root repo di host macOS, pada file yang sudah masuk commit):
 
-- **AC-1** (kriteria 18; Done when "skema"): `git ls-files shared/config` mencetak tepat tiga baris: `shared/config/README.md`, `shared/config/public.json`, dan `shared/config/public.schema.json`. Isi `README.md` dan `public.schema.json` sama persis dengan bagian "Isi file": `awk '/^````markdown$/{f=1;next} /^````$/{f=0} f' docs/specs/_root/0004-konfigurasi-publik/index.md | diff - shared/config/README.md` dan `awk '/^```json$/{n++;f=(n==3);next} /^```$/{f=0} f' docs/specs/_root/0004-konfigurasi-publik/index.md | diff - shared/config/public.schema.json` tidak mencetak apa pun. `grep -c '^/shared/config/\*\* text eol=lf$' .gitattributes` mencetak `1`.
+- **AC-1** (kriteria 18; Done when "skema"): `git ls-files shared/config` mencetak tepat tiga baris: `shared/config/README.md`, `shared/config/public.json`, dan `shared/config/public.schema.json`. Isi `README.md` dan `public.schema.json` sama persis dengan bagian "Isi file": `awk '/^````markdown$/{f=1;next} /^````$/{f=0} f' docs/specs/_root/0004-konfigurasi-publik/index.md | diff - shared/config/README.md` dan `awk '/^```json$/{n++;f=(n==3);next} /^```$/{f=0} f' docs/specs/_root/0004-konfigurasi-publik/index.md | diff - shared/config/public.schema.json` tidak mencetak apa pun. `grep -cxF '/shared/config/**/*.json text eol=lf' .gitattributes` mencetak `1`.
 - **AC-2** (Done when "nilai publik"): `jq -c . shared/config/public.json` mencetak `{"$schema":"./public.schema.json","schemaVersion":1,"build":{"product_name":"NAMA_PRODUK","app_identifier":"DASAR_PENGENAL"}}`, dengan `NAMA_PRODUK` dan `DASAR_PENGENAL` dari tabel "Nilai dari user". Selama user belum memberi nilai akhir, keduanya adalah nilai sementara `Desktop Foundation` dan `com.example.desktop-foundation`, dan `awk '/^```json$/{n++;f=(n==2);next} /^```$/{f=0} f' docs/specs/_root/0004-konfigurasi-publik/index.md | diff - shared/config/public.json` tidak mencetak apa pun.
 - **AC-3** (Done when "versi"): nomor versi skema sama di setiap tempat ia tercatat. `jq -r '.schemaVersion' shared/config/public.json` dan `jq -r '.properties.schemaVersion.const' shared/config/public.schema.json` sama sama mencetak `1`, `grep '^| [0-9]' shared/config/README.md | tail -1` mencetak baris yang diawali `| 1 |`, dan pemeriksaan hanya mengenal versi `1` (uji T-25 sampai T-27 di **AC-5**). Versi aplikasi tidak ada di `public.json`: `grep -c '"version"' shared/config/public.json` mencetak `0`, dan `grep -c '^version = ' Cargo.toml` mencetak `1` (baris di `[workspace.package]`).
-- **AC-4** (kriteria 18; Done when "cara validasi"): `cargo run -p desktop-codegen --locked -- config check` keluar dengan kode 0 dan mencetak baris yang diawali `config: ok, schema version 1, 2 build values`. Sesudah `touch shared/config/local.json`, perintah yang sama keluar dengan kode 1 dan keluarannya memuat `R-1` serta `shared/config/local.json`; sesudah `rm shared/config/local.json`, perintah itu kembali keluar dengan kode 0. `cargo run -p desktop-codegen --locked -- config generate` lalu `git status --short` tidak mencetak nama file apa pun, jadi skema yang terlacak sama dengan keluaran generator.
-- **AC-5** (Done when "cara validasi"): `cargo test -p desktop-codegen --locked --test config_contract` keluar dengan kode 0. File uji itu memuat satu uji untuk setiap baris tabel "Kasus yang ditolak" dan "Kasus yang diterima", masing masing memberi masukan lewat root sementara tanpa menyunting file di `shared/config/`, serta uji `committed_outputs_match_the_source` yang menjalankan `check` pada repo. Tiap uji tolak menyatakan `plan` gagal dan salah satu pesannya memuat ID aturan di kolom "Aturan". Nama tiap uji memuat nomor kasusnya (misalnya `t01_`), sehingga `cargo test -p desktop-codegen --locked --test config_contract -- --list` memperlihatkan T-1 sampai T-32.
-- **AC-6** (Done when "pisahkan nilai publik dari pengaturan lokal dan rahasia"): `shared/config/README.md` memuat heading `## Yang tidak boleh ada di folder ini` dengan tabel empat kelas dari bagian "Empat kelas nilai". `git ls-files shared/config | wc -l` mencetak `3`. `git grep -n -i 'DEVELOPMENT_TEAM\|CODE_SIGN\|password\|secret\|token' -- shared/config/public.json shared/config/public.schema.json` tidak mencetak apa pun.
+- **AC-4** (kriteria 18; Done when "cara validasi"): `cargo run -p desktop-codegen --locked -- config check` keluar dengan kode 0 dan mencetak baris yang diawali `config: ok, schema version 1, 2 build values`. Sesudah `touch shared/config/local.json`, perintah yang sama keluar dengan kode 1, dan stderr memuat satu baris yang diawali `shared/config/local.json: R-1` lalu baris `config: failed, 1 problems`; sesudah `rm shared/config/local.json`, perintah itu kembali keluar dengan kode 0. `cargo run -p desktop-codegen --locked -- config generate` keluar dengan kode 0, mencetak baris yang diakhiri `0 written`, dan sesudahnya `git status --short` tidak mencetak nama file apa pun, jadi skema yang terlacak sama dengan keluaran generator.
+- **AC-5** (Done when "cara validasi"): `cargo test -p desktop-codegen --locked --test config_contract` keluar dengan kode 0. File uji itu memuat satu uji untuk setiap baris tabel "Kasus yang ditolak" dan "Kasus yang diterima", masing masing memberi masukan lewat root sementara tanpa menyunting file di `shared/config/`, serta uji `committed_outputs_match_the_source` yang menjalankan `check(&repo_root(), &config::SOURCE)`. Tiap uji tolak menyatakan `plan` gagal dan salah satu pesannya diawali ID aturan di kolom "Aturan". Nama tiap uji diawali nomor kasusnya, sehingga `cargo test -p desktop-codegen --locked --test config_contract -- --list` mencetak 32 uji bernama `t01_` sampai `t32_` dan uji `committed_outputs_match_the_source`. Uji yang sama lulus lewat `cargo test --workspace --locked`.
+- **AC-6** (Done when "pisahkan nilai publik dari pengaturan lokal dan rahasia"): `shared/config/README.md` memuat heading `## Yang tidak boleh ada di folder ini` dengan tabel empat kelas dari bagian "Empat kelas nilai". `git ls-files shared/config | wc -l | tr -d ' '` mencetak `3`. `git grep -n -i 'DEVELOPMENT_TEAM\|CODE_SIGN\|password\|secret\|token' -- shared/config/public.json shared/config/public.schema.json` tidak mencetak apa pun.
 - **AC-7** (Done when "konsumsi"): `shared/config/README.md` memuat heading `## Cara aplikasi memakai nilai` dengan tabel pemakaian dan aturan `K-1` sampai `K-7`; `grep -c '^- \*\*K-[1-7]\*\*' shared/config/README.md` mencetak `7`. Yang berlaku terus: `git grep -n 'shared/config\|public\.json' -- crates/core/src crates/macos-ffi/src bindings` tidak mencetak apa pun, karena Core dan jembatan tidak membaca konfigurasi (`K-4`).
 - **AC-8** (kriteria 18; Done when "batas pengaturan khusus tiap OS"): `shared/config/README.md` memuat heading `## Batas pengaturan khusus OS` dengan tiga pertanyaan penentu dan tabel contoh per OS. `docs/shared-resources/README.md` dan `docs/architecture/README.md` memuat teks dari bagian "Perubahan dokumen": `grep -c '0004-konfigurasi-publik' docs/shared-resources/README.md` mencetak `1`, `grep -c 'akan memiliki skema untuk nilai publik' docs/shared-resources/README.md` mencetak `0`, `grep -c '^Path ini menunjukkan.*.shared/config/.*sudah ada\.' docs/architecture/README.md` mencetak `1`, dan `grep -c '^| .shared/config/. |' docs/architecture/README.md` mencetak `1`.
-- **AC-9** (kriteria 32): `jq -c 'keys' shared/config/public.json` mencetak `["$schema","build","schemaVersion"]`, jadi tidak ada grup `runtime`, definisi environment, atau flag. Build spec ini hanya menyentuh tiga file di `shared/config/`, `tooling/codegen/src/config/mod.rs`, `tooling/codegen/src/lib.rs` (dua baris), `tooling/codegen/tests/config_contract.rs`, `.gitattributes` (satu baris), `docs/shared-resources/README.md`, `docs/architecture/README.md`, `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat file `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge. `Cargo.toml`, `Cargo.lock`, `tooling/codegen/Cargo.toml`, dan semua file di `apps/`, `crates/`, serta `bindings/` tidak berubah, jadi tidak ada dependensi baru. Berkas scope disunting lead di luar branch developer.
+- **AC-9** (kriteria 32): `jq -c 'keys' shared/config/public.json` mencetak `["$schema","build","schemaVersion"]`, jadi tidak ada grup `runtime`, definisi environment, atau flag. Build spec ini hanya menyentuh tiga file di `shared/config/`, `tooling/codegen/src/config/mod.rs`, `tooling/codegen/src/lib.rs` (baris `pub mod config;` dan baris `SOURCES`), `tooling/codegen/tests/config_contract.rs`, `.gitattributes` (satu baris), `docs/shared-resources/README.md`, `docs/architecture/README.md`, `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat file `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge. `Cargo.toml`, `Cargo.lock`, `tooling/codegen/Cargo.toml`, dan semua file di `apps/`, `crates/`, serta `bindings/` tidak berubah, jadi tidak ada dependensi baru. Berkas scope disunting lead di luar branch developer.
 - **AC-10** (gerbang merge lead): `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, dan `cargo test --workspace --locked` keluar dengan kode 0.
 
 ## Decision
@@ -51,7 +51,7 @@ Keputusan turunannya:
 | Nilai saat berjalan, environment, flag | Tidak ada di versi 1. Ditambah lewat pembaruan spec ini saat ada kebutuhan nyata. |
 | Timpaan lokal | Tidak ada untuk nilai publik. |
 | Isi folder | Tertutup: tiga file di "Isi file". |
-| Alat validasi | Sumber baru bernama `config` di paket `desktop-codegen` dari spec `_root/0003` (scope 008). Spec ini tidak membuat alat sendiri dan tidak menambah dependensi. |
+| Alat validasi | Sumber baru bernama `config` di paket `desktop-codegen` dari [spec `_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md) (scope 008). Spec ini tidak membuat alat sendiri dan tidak menambah dependensi. |
 
 ## Rationale
 
@@ -149,7 +149,7 @@ Dengan nilai sementara, file itu berisi:
 
 ```json
 {
-  "$comment": "Generated by desktop-codegen from tooling/codegen/src/config/mod.rs. Do not edit. Run: cargo run -p desktop-codegen --locked -- config generate",
+  "$comment": "Generated by desktop-codegen from tooling/codegen/src/config. Do not edit. To regenerate, run: cargo run -p desktop-codegen --locked -- config generate",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "description": "Public values that must be the same in the macOS, Windows, and Linux apps. An editor aid; the check in desktop-codegen is the authority. Rules: docs/specs/_root/0004-konfigurasi-publik/index.md.",
@@ -294,9 +294,9 @@ Yang diperiksa:
 
 Syarat untuk pemeriksaan:
 
-- Fungsi `plan` sumber `config` menerima root repo sebagai masukan dan hanya membaca `<root>/shared/config/`, sehingga uji bisa memberinya root sementara.
+- Fungsi `plan` sumber `config` menerima root repo sebagai masukan dan hanya membaca `<root>/shared/config/`, sehingga uji bisa memberinya root sementara lewat `(config::SOURCE.plan)(&root)`.
 - `plan` menjalankan ketiga aturan dan mengembalikan satu `Problem` untuk setiap pelanggaran, bukan hanya yang pertama. Bila `public.json` tidak ada atau bukan JSON yang bisa dibaca, aturan yang butuh isinya dilewati.
-- Tiap `Problem` memakai path file dari root repo (misalnya `shared/config/public.json`), dan pesannya diawali ID aturan lalu menyebut nama kunci atau nama entri yang salah, misalnya `R-1: unexpected entry` untuk path `shared/config/local.json`. Susunan baris keluaran dan kode keluar mengikuti alat: kode 1 untuk sumber yang tidak sah atau keluaran yang menyimpang.
+- Tiap `Problem` memakai path file dari root repo (misalnya `shared/config/public.json`), dan pesannya diawali ID aturan lalu menyebut nama kunci atau nama entri yang salah, misalnya `R-1: unexpected entry` untuk path `shared/config/local.json`. Susunan baris keluaran dan kode keluar mengikuti alat: tiap `Problem` dicetak ke stderr sebagai `<path>: <pesan>`, disusul baris `config: failed, <n> problems` (kata `problems` selalu jamak), dan kode keluar 1 untuk sumber yang tidak sah atau keluaran yang menyimpang.
 - Pemeriksaan berjalan di ketiga host tanpa SDK UI dan tanpa jaringan.
 
 Kasus yang ditolak. Tiap baris berangkat dari root sementara yang `shared/config/` nya berisi tiga file "Isi file" dengan nilai sementara, lalu diubah seperti kolom "Masukan". Salah satu pesan wajib memuat ID di kolom "Aturan"; pesan lain boleh ada.
@@ -331,7 +331,7 @@ Kasus yang ditolak. Tiap baris berangkat dari root sementara yang `shared/config
 | T-26 | Baris terakhir "Riwayat skema" di `README.md` diawali `| 2 |`, `public.json` tetap | `R-3` |
 | T-27 | `schemaVersion` di `public.json` adalah `2` dan baris terakhir "Riwayat skema" diawali `| 2 |` | `R-3` |
 
-Kasus yang diterima (`plan` lulus):
+Kasus yang diterima (`plan` lulus). Uji ini tidak menghitung keluaran `plan` dan tidak mengunci daftar path keluarannya, karena spec OS menambah keluaran sendiri:
 
 | No. | Masukan |
 | --- | --- |
@@ -343,20 +343,21 @@ Kasus yang diterima (`plan` lulus):
 
 #### Bentuk alat
 
-Pemeriksaan dan generator memakai paket `desktop-codegen` di `tooling/codegen/`, yang dibuat milestone 1 spec `_root/0003` (scope 008). Spec ini menambah satu sumber bernama `config` ke alat itu dan tidak membuat alat, paket, skrip, atau dependensi sendiri. Nilai berikut datang dari spec `_root/0003`; bila spec itu berubah, bagian ini ikut diperbarui.
+Pemeriksaan dan generator memakai paket `desktop-codegen` di `tooling/codegen/`, yang dibuat milestone 1 [spec `_root/0003`](../0003-tema-bersama-dan-kontrol-native/index.md) (scope 008) dan sudah ada di `main`. Spec ini menambah satu sumber bernama `config` ke alat itu dan tidak membuat alat, paket, skrip, atau dependensi sendiri. Nilai berikut sudah dicocokkan dengan `tooling/codegen/src/lib.rs`, `main.rs`, dan `json.rs` di `main` pada 2026-11-15; bila alat itu berubah, bagian ini ikut diperbarui.
 
 | Hal | Nilai |
 | --- | --- |
-| Modul baru | `tooling/codegen/src/config/mod.rs`, mengekspor `pub const SOURCE: Source = Source { name: "config", plan };` dengan `fn plan(root: &Path) -> Result<Plan, Vec<Problem>>`. |
-| Pendaftaran | Dua baris di `tooling/codegen/src/lib.rs`: `pub mod config;` dan entri `config::SOURCE` di `pub const SOURCES: &[Source]`. Subperintah dan teks usage mengikuti `SOURCES`. |
+| Modul baru | `tooling/codegen/src/config/mod.rs`, mengekspor `pub const SOURCE: Source = Source { name: "config", plan };` dengan `fn plan(root: &Path) -> Result<Plan, Vec<Problem>>`. Tipe `Source`, `Plan`, `Output`, dan `Problem` datang dari akar crate. |
+| Pendaftaran | Di `tooling/codegen/src/lib.rs`: satu baris baru `pub mod config;`, dan `config::SOURCE` ditambahkan sesudah `tokens::SOURCE` di `pub const SOURCES: &[Source]`. Subperintah dan baris usage `sources: tokens, config` mengikuti `SOURCES`. |
 | Bentuk yang diterima | Tipe Rust `serde` dengan `#[serde(deny_unknown_fields)]` untuk objek teratas dan `build`, ditambah pemeriksaan tulis tangan untuk `R-1`, `R-3`, nilai `$schema`, dan aturan dua nilai `build`. Kesalahan baca dari `serde` dilaporkan sebagai `R-2`. |
 | Konstanta | Versi skema yang dikenal `1`, batas panjang `build.app_identifier` `100`, dan tiga path file di `shared/config/`. Pemeriksaan dan skema hasil generator memakai konstanta yang sama. |
-| Keluaran `plan` | Satu `Output` dengan path `shared/config/public.schema.json` dan isi dari `desktop_codegen::json::to_canonical_json`, serta `summary` berisi `schema version 1, 2 build values`. |
-| Perintah periksa | `cargo run -p desktop-codegen --locked -- config check`. Kode 0 lulus, 1 sumber tidak sah atau keluaran menyimpang, 2 salah pakai. Tidak menulis apa pun. |
-| Perintah generator | `cargo run -p desktop-codegen --locked -- config generate`. Menulis hanya keluaran yang berbeda. Sumber yang tidak sah tidak menulis apa pun. |
-| Uji | `tooling/codegen/tests/config_contract.rs`: uji `committed_outputs_match_the_source` yang memanggil `check` pada repo, dan satu uji per baris T-1 sampai T-32. Uji hanya memakai API publik paket dan pustaka standar. |
-| Root sementara di uji | Folder di bawah `std::env::temp_dir()` bernama `desktop-codegen-config-` ditambah ID proses dan nama uji, dibuat di awal uji dan dihapus di akhirnya. Tanpa crate tambahan. |
-| Akhir baris | Satu baris `/shared/config/** text eol=lf` ditambahkan ke `.gitattributes` root, sesudah baris yang sudah ada. |
+| Aturan keluaran | Skema mematuhi O-1 sampai O-7 spec `_root/0003`. Penandanya kunci `$comment` dengan teks di blok "Isi file". |
+| Keluaran `plan` | Untuk spec ini satu `Output` dengan path `shared/config/public.schema.json` dan isi dari `desktop_codegen::json::to_canonical_json`, serta `summary` berisi `schema version 1, 2 build values`. Spec OS menambah keluarannya sesudah itu; yang pertama `apps/macos/Config/Shared.xcconfig` dari [spec `macos/0004`](../../macos/0004-konfigurasi-publik/index.md). |
+| Perintah periksa | `cargo run -p desktop-codegen --locked -- config check`. Kode 0 lulus, 1 sumber tidak sah atau keluaran menyimpang, 2 salah pakai. Tidak menulis apa pun. Baris sukses: `config: ok, schema version 1, 2 build values, <n> outputs up to date`. |
+| Perintah generator | `cargo run -p desktop-codegen --locked -- config generate`. Menulis hanya keluaran yang hilang atau berbeda, membuat folder induk bila belum ada, dan mencetak `wrote <path>` per file. Baris sukses: `config: ok, schema version 1, 2 build values, <n> outputs, <w> written`. Sumber yang tidak sah tidak menulis apa pun. |
+| Uji | `tooling/codegen/tests/config_contract.rs`: uji `committed_outputs_match_the_source` yang memanggil `check(&repo_root(), &config::SOURCE)`, dan satu uji per baris T-1 sampai T-32. Uji hanya memakai API publik paket dan pustaka standar. |
+| Root sementara di uji | Folder di bawah `env!("CARGO_TARGET_TMPDIR")` bernama `config_contract_` ditambah nama uji, seperti di `tokens_contract.rs`. Folder lama dihapus di awal uji lalu dibuat ulang. Tanpa crate tambahan. |
+| Akhir baris | Satu baris `/shared/config/**/*.json text eol=lf` ditambahkan ke `.gitattributes` root, sesudah baris yang sudah ada. Barisnya per jenis file, menurut aturan O-6 spec `_root/0003`. `README.md` tidak mendapat baris; `R-3` membacanya dengan mengabaikan `\r` di akhir baris. |
 | Gerbang | `cargo test --workspace --locked` yang sudah ada ikut menjalankan `config_contract`, jadi skema yang menyimpang atau sumber yang tidak sah menggagalkan gerbang. |
 
 Batas yang berlaku datang dari spec [_root/0001](../0001-batas-workspace-dan-pemilik/index.md): tanpa `.cargo/config.toml`, paket berawalan `desktop-`, aturan netral host, dan `desktop-core` tetap tanpa dependensi. `desktop-codegen` tidak bergantung pada anggota workspace lain dan tidak ada anggota yang bergantung padanya.
@@ -367,9 +368,9 @@ Bila sebuah spec OS memilih generator untuk memenuhi `K-2`, keluaran native OS i
 
 | Nilai | Sumber | Dipakai saat | macOS | Windows | Linux |
 | --- | --- | --- | --- | --- | --- |
-| Nama produk | `build.product_name` | Build | Nama tampil bundel. Cara baca ditetapkan spec macOS scope 009. | Menunggu host | Menunggu host |
-| Dasar pengenal aplikasi | `build.app_identifier` | Build | Pengenal bundel menurut `K-6`. Sekarang nilai itu ditambah `.macos` (spec `macos/0001`). | Menunggu host | Menunggu host |
-| Versi aplikasi | `[workspace.package].version` di `Cargo.toml` root | Build | `MARKETING_VERSION`, mengikuti `K-2`. | `CARGO_PKG_VERSION` saat kompilasi | `CARGO_PKG_VERSION` saat kompilasi |
+| Nama produk | `build.product_name` | Build | Nama tampil bundel dan judul jendela, lewat berkas hasil generator `apps/macos/Config/Shared.xcconfig` ([spec `macos/0004`](../../macos/0004-konfigurasi-publik/index.md)). | Menunggu host | Menunggu host |
+| Dasar pengenal aplikasi | `build.app_identifier` | Build | Pengenal bundel menurut `K-6`: nilai itu ditambah `.macos` (spec `macos/0004`). | Menunggu host | Menunggu host |
+| Versi aplikasi | `[workspace.package].version` di `Cargo.toml` root | Build | `MARKETING_VERSION` di berkas hasil generator yang sama, mengikuti `K-2` (spec `macos/0004`). | `CARGO_PKG_VERSION` saat kompilasi | `CARGO_PKG_VERSION` saat kompilasi |
 
 Aturan konsumsi:
 
@@ -387,7 +388,7 @@ Rincian `K-6`:
 - Pemetaan tetap adalah fungsi dari `build.app_identifier` saja, misalnya membuang tanda `-` atau mengganti huruf besar kecil. Spec OS menulis aturannya dan batas panjang hasilnya di OS itu.
 - Hasil turunan tiap OS adalah salinan, jadi tunduk pada `K-2`.
 
-Sesudah spec ini dibangun, aplikasi macOS masih memegang salinan tulis tangan di `project.pbxproj` yang belum dibandingkan. Itu pelanggaran `K-2` yang diketahui dan ditutup spec macOS scope 009 (lihat Follow-up). Nilainya sudah sama sejak awal: nama `Desktop Foundation`, pengenal `com.example.desktop-foundation` ditambah `.macos`, dan versi `0.1.0`.
+Salinan tulis tangan di `project.pbxproj` aplikasi macOS melanggar `K-2` sampai milestone 1 spec `macos/0004` dibangun. Sesudah itu salinan macOS dibuat generator sebagai keluaran kedua sumber `config`, dan `check` yang sama menjaganya. Selama masa antara, nilainya sudah sama: nama `Desktop Foundation`, pengenal `com.example.desktop-foundation` ditambah `.macos`, dan versi `0.1.0`.
 
 Nama produk bukan teks yang diterjemahkan dan bukan berkas merek. Katalog bahasa (scope 010) tidak menyalinnya, dan aset merek (scope 011) hanya memegang ikon dan berkas gambar.
 
@@ -438,13 +439,14 @@ Isi `shared/config/` bersifat publik: siapa pun yang bisa membaca repo boleh mel
 
 | Kejadian | Perilaku yang diharapkan |
 | --- | --- |
-| User memberi nama produk atau dasar pengenal akhir | Sunting `public.json` saja, jalankan validasi, lalu generator atau pemeriksaan tiap OS. Versi skema tidak naik. Selama spec macOS scope 009 belum dibangun, salinan di `project.pbxproj` diganti lewat pembaruan spec `macos/0001`. |
+| User memberi nama produk atau dasar pengenal akhir | Sunting `public.json` saja, jalankan validasi, lalu generator atau pemeriksaan tiap OS. Versi skema tidak naik. Di macOS, `config generate` menulis ulang `apps/macos/Config/Shared.xcconfig` (spec `macos/0004`); sebelum milestone 1 spec itu dibangun, salinan di `project.pbxproj` masih diganti dengan tangan. |
 | Sebuah aplikasi butuh nilai bersama baru | Perbarui spec ini lebih dulu, lalu ikuti "Aturan versi skema". |
 | Nilai baru hanya dibutuhkan satu OS | Pengaturan khusus OS. Tinggal di proyek native, lewat spec OS itu. |
 | Pengembang butuh pengenal lain untuk penandatanganan di mesinnya | Pengaturan lokal di file native yang diabaikan git, ditetapkan spec OS. `public.json` tidak diubah. |
 | Sebuah nilai harus berbeda per environment atau dibaca saat berjalan | Pembaruan spec ini menambah grup yang sesuai dan menaikkan versi skema. Sebelum itu nilai seperti itu tidak boleh ada. |
 | Versi workspace naik | Ubah `[workspace.package].version`. Salinan di proyek bukan Cargo ikut lewat `K-2`. |
 | Format native sebuah OS menolak `build.app_identifier` | Spec OS itu menulis pemetaan tetap menurut `K-6`. Bila pemetaan tidak mungkin, spec ini mempersempit aturan nilai dan menaikkan versi skema. |
+| Format native sebuah OS menolak `build.product_name` | Aturan keluaran OS itu menolaknya saat `config check`, karena nama produk harus sama di semua OS dan tidak bisa dipetakan. Di macOS itu aturan `M-1` spec `macos/0004`. Ganti namanya, atau perbarui spec OS itu. |
 | Konflik merge di `public.json` | Ambil satu sisi, lalu jalankan validasi. |
 | File baru di `shared/config/` membuat hook gagal dengan `Graphify extraction failed` | Ikuti baris yang sama di "Kasus gagal yang sudah diputuskan" spec `_root/0001`. File JSON di root sudah lolos hook, jadi ini tidak diharapkan terjadi. |
 | Bentuk alat di spec `_root/0003` berubah sebelum build spec ini | Bagian "Bentuk alat" diperbarui lebih dulu. Developer tidak membuat alat kedua. |
@@ -532,7 +534,7 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
 
 - [x] Jawaban atas Follow-up Scope 009 di spec `macos/0001` ("konfigurasi publik untuk aplikasi macOS. Belum ada yang dibaca aplikasi ini."): sumber bersama dan aturannya ditetapkan di sini. Cara aplikasi macOS memakainya milik spec macOS scope 009 di bawah.
 - [x] Jawaban atas Follow-up Scope 012 di spec `macos/0001` tentang `MARKETING_VERSION`: sumber versi tetap `[workspace.package].version`, dan salinannya wajib mengikuti `K-2`. Spec macOS scope 009 memilih generator atau pemeriksaan; scope 012 menjalankannya di skrip dan CI.
-- [ ] Spec macOS scope 009 (sesudah spec ini): cara `apps/macos/` memakai `build.product_name`, `build.app_identifier`, dan versi workspace menurut `K-2` dan `K-6`; apakah aturan turunan tetap "ditambah `.macos`"; apakah judul jendela `WindowGroup("Desktop Foundation")` dan nama di menu bar (`PRODUCT_NAME`) ikut nama produk; file native yang diabaikan git untuk pengaturan lokal bila dibutuhkan (perubahan `.gitignore` lewat spec `_root/0001`).
+- [x] Spec macOS scope 009: dijawab di [spec `macos/0004`](../../macos/0004-konfigurasi-publik/index.md) (2026-11-15). `K-2` dipenuhi dengan generator, akhiran `.macos` dipertahankan, judul jendela ikut nama produk, `PRODUCT_NAME` tidak ikut, dan belum ada berkas untuk pengaturan lokal.
 - [ ] Scope 006 (menunggu host Windows): cara `apps/windows/` memakai dua nilai itu dan versi dari Cargo, dan aturan turunan pengenal. Format Windows belum diperiksa: untuk aplikasi berpaket, nama identitas paket dan ID aplikasi di manifest diduga lebih sempit dari `build.app_identifier` (tanpa tanda `-`, lebih pendek), jadi spec itu kemungkinan butuh pemetaan tetap menurut `K-6`. Validasi belum dijalankan di host Windows.
 - [ ] Scope 007 (menunggu host Linux): cara `apps/linux/` memakai dua nilai itu dan versi dari Cargo, dan aturan turunan pengenal. ID aplikasi GTK mengizinkan tanda `-` tetapi tidak menyarankannya, jadi spec itu memutuskan apakah butuh pemetaan. Validasi belum dijalankan di host Linux.
 - [ ] Scope 010: katalog bahasa tidak memuat nama produk. Teks UI yang menyebut nama produk, termasuk judul jendela, mengambilnya dari nilai native turunan `build.product_name`.
@@ -540,6 +542,6 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
 - [ ] Scope 012: skrip `scripts/validate.sh` dan CI memanggil `cargo run -p desktop-codegen --locked -- config check`; penyimpanan rahasia CI untuk kredensial penandatanganan ditetapkan di sana atau di spec distribusi.
 - [ ] `/sync` atau lead, sesudah milestone 1: `AGENTS.md` root masih berkata sumber bersama adalah rencana. Cantumkan `shared/config/`, perintah `cargo run -p desktop-codegen --locked -- config check`, dan aturan empat kelas di sana, dengan spec ini sebagai pemiliknya.
 - [ ] Scope 002 (spec pemeriksaan arsitektur, bila ditulis): jadikan `K-4` pemeriksaan tetap (Core dan jembatan tidak merujuk `shared/config/`).
-- [ ] Pemilik spec `_root/0003`: bagian "Bentuk alat" memakai nilai yang dikirim architect scope 008 pada 2026-11-15, sebelum spec itu diterima lead. Bila nama paket, perintah, API `Source`, atau aturan keluaran berubah saat diterima, bagian itu, AC-4, AC-5, dan AC-9 diperbarui di sini.
+- [x] Bagian "Bentuk alat", AC-4, AC-5, dan AC-9 dicocokkan dengan paket `desktop-codegen` yang sudah ada di `main` (2026-11-15). Bila API `Source`, perintah, atau aturan keluaran spec `_root/0003` berubah lagi, bagian itu diperbarui di sini.
 - [ ] Nilai dari user: `NAMA_PRODUK` dan `DASAR_PENGENAL` akhir. `N4` di file langkah manual koordinasi (pengenal bundel akhir macOS) sekarang berarti `DASAR_PENGENAL` yang diturunkan dengan aturan spec macOS.
 - [ ] Lead: tambahkan tautan balik ke spec ini di berkas scope 009.
