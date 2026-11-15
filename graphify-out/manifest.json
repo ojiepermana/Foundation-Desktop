@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794745176.3341782,
-    "seen": 1794745179.346726,
-    "ast_hash": "87c768414da35dfe6961f84e3cb30e04",
+    "mtime": 1794745763.1730866,
+    "seen": 1794745764.386313,
+    "ast_hash": "9fe146992e5cfb18365f9b814c764461",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -132,10 +132,10 @@
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
-    "mtime": 1794730406.3481607,
-    "seen": 1794731111.1998038,
-    "ast_hash": "74c063c6e1f7504a39a2a56971c278da",
-    "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
+    "mtime": 1794745763.1786983,
+    "seen": 1794745764.3863199,
+    "ast_hash": "f8dfef81c8b2afcb037efd0eb20cf9e7",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
     "mtime": 1794742646.1288874,
@@ -624,9 +624,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/verify.md": {
-    "mtime": 1794745709.6699047,
-    "seen": 1794745711.104518,
-    "ast_hash": "d54294557922bfca896049462728e21b",
+    "mtime": 1794745763.1819012,
+    "seen": 1794745764.386325,
+    "ast_hash": "d49ec597b3595f81a41cb04780af350d",
     "semantic_hash": ""
   }
 }

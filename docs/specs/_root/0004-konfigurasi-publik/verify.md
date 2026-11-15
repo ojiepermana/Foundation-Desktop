@@ -42,3 +42,29 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 
 - AC-1: langkah 1 sampai 4 · AC-2: langkah 5 dan 6 · AC-3: langkah 7 sampai 9, 13, dan 14 · AC-4: langkah 10 sampai 12 · AC-5: langkah 13 sampai 15 dan 23 · AC-6: langkah 1, 11, 16, dan 17 · AC-7: langkah 18 dan 19 · AC-9: langkah 20 sampai 22 · AC-10: langkah 23.
 - AC-8 menunggu milestone 2. AC-9 diperiksa lagi di milestone 2 sesudah dokumen berubah.
+
+## Milestone 2: Dokumen rujukan mencatat sumber yang nyata
+
+Build plan langkah 3. Hasil tercatat sebelum commit langkah 3, di atas commit langkah 2 (`75fa02a`).
+
+### UI / manual
+
+Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah.
+
+### Commands
+
+- [ ] `grep -n '^## Batas pengaturan khusus OS' shared/config/README.md` → satu baris; di bawahnya ada tiga pertanyaan penentu bernomor dan tabel contoh untuk macOS, Windows, dan Linux → AC-8
+- [ ] Paragraf di bawah `## Konfigurasi` di `docs/shared-resources/README.md` → sama persis dengan blok pertama "Perubahan dokumen" spec, dengan `spec 0004` di kalimat terakhir menjadi tautan `[spec 0004](../specs/_root/0004-konfigurasi-publik/index.md)` → AC-8
+- [ ] `grep -c '0004-konfigurasi-publik' docs/shared-resources/README.md` → `1` → AC-8
+- [ ] `grep -c 'akan memiliki skema untuk nilai publik' docs/shared-resources/README.md` → `0` (kode keluar `grep` 1) → AC-8
+- [ ] `grep -c '^Path ini menunjukkan.*.shared/config/.*sudah ada\.' docs/architecture/README.md` → `1`; kalimatnya kini ``Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, dan `tooling/codegen/` sudah ada.`` (sisipan tepat sebelum `dan` terakhir; lokasi lain tidak berubah) → AC-8
+- [ ] `grep -c '^| .shared/config/. |' docs/architecture/README.md` → `1`; baris itu adalah baris terakhir tabel `### Yang sudah ada`, sesudah baris `tooling/codegen/`, dengan tautan `spec 0004` → AC-8
+- [ ] `(cd docs/shared-resources && test -f ../specs/_root/0004-konfigurasi-publik/index.md) && (cd docs/architecture && test -f ../specs/_root/0004-konfigurasi-publik/index.md)` → kode 0; kedua tautan mengarah ke file yang ada → AC-8
+- [ ] `git diff 75fa02a -- docs/architecture/README.md` → satu baris diganti dan satu baris ditambah; tabel "Aturan arah dependensi" tidak berubah. `cargo test -p desktop-core --locked` → kode 0, tidak ada `FAILED` (`workspace_layout` 10 passed) → AC-8
+- [ ] `jq -c 'keys' shared/config/public.json` → `["$schema","build","schemaVersion"]` → AC-9
+- [ ] `git diff --name-only main...HEAD` di branch developer → hanya `.gitattributes`, `docs/architecture/README.md`, `docs/shared-resources/README.md`, `docs/specs/_root/0004-konfigurasi-publik/index.md`, `docs/specs/_root/0004-konfigurasi-publik/verify.md`, empat file `graphify-out/`, tiga file `shared/config/`, `tooling/codegen/src/config/mod.rs`, `tooling/codegen/src/lib.rs`, dan `tooling/codegen/tests/config_contract.rs`; `git diff --quiet main...HEAD -- Cargo.toml Cargo.lock tooling/codegen/Cargo.toml apps crates bindings` → kode 0 → AC-9
+
+### Acceptance-criteria coverage
+
+- AC-8: langkah 1 sampai 8 · AC-9: langkah 9 dan 10.
+- AC-1 sampai AC-7 dan AC-10 dibuktikan di milestone 1. Semua AC spec ini tercakup.

@@ -18,7 +18,7 @@ Jendela, navigasi, izin, event loop, dan pelepasan resource milik OS masing masi
 
 ## Tata letak yang dituju
 
-Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, dan `tooling/codegen/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
+Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, dan `tooling/codegen/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
 
 | Lokasi yang direncanakan | Isi |
 | --- | --- |
@@ -47,6 +47,7 @@ Target bersama adalah Rust stable. Sebelum mengunci versi, periksa ketersediaan,
 | `apps/macos/` | Proyek Xcode `DesktopMac` dan paket Swift lokal dengan modul `Interop` dan `Presentation`. |
 | `design-system/tokens/`, `design-system/schemas/` | Sumber token warna, tipografi, dan jarak, beserta skema hasil generator, dari [spec 0003](../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md). |
 | `tooling/codegen/` | Paket `desktop-codegen`, alat yang memeriksa sumber bersama dan menulis ulang file turunannya. Tidak ada anggota yang bergantung padanya. |
+| `shared/config/` | Sumber nilai publik `public.json`, skema hasil generator, dan aturan pakainya dari [spec 0004](../specs/_root/0004-konfigurasi-publik/index.md). |
 
 Nama paket yang dicadangkan untuk lokasi yang masih rencana: `desktop-windows` di `apps/windows/` dan `desktop-linux` di `apps/linux/`. Rincian lokasi macOS ada di [spec macOS 0001](../specs/macos/0001-sapaan-di-jendela-macos/index.md).
 
