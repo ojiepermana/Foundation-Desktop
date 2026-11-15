@@ -300,9 +300,9 @@
     "semantic_hash": ""
   },
   "crates/core/tests/hello_contract.rs": {
-    "mtime": 1794737788.931568,
-    "seen": 1794737791.1060228,
-    "ast_hash": "3bea4bc9a7a4cc8edf292847bdf65200",
+    "mtime": 1794737825.142215,
+    "seen": 1794737827.753149,
+    "ast_hash": "1c09215caec48f872be58e8452552837",
     "semantic_hash": ""
   }
 }
