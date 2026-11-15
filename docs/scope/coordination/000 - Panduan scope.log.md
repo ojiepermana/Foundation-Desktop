@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 21:15`
+- **Diperbarui:** `2026-11-15 21:16`
 
 ## Sub sesi wave `2`
 
@@ -13,7 +13,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `arc-f004-spec` | architect | 008 spec `_root/0003`; laporan `done` (`2b3141d`, HEAD `d23f57a`), merge `02d4a07` | `008 - Tema bersama dan kontrol native.md` | `docs/specs/_root/0003-tema-bersama-dan-kontrol-native/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect | 009 spec `_root/0004`; laporan `done` (`0bca895`, HEAD `c319c6d`), merge `c04db56`; bagian "Bentuk alat" bersandar pada spec `_root/0003` | `009 - Konfigurasi publik.md` | `docs/specs/_root/0004-konfigurasi-publik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
-| `arc-f011-spec` | architect | 011 spec `_root/0005`; ringkasan diterima lead tanpa perubahan (`85a9f32`), menunggu laporan akhir | `011 - Aset merek bersama.md` | `docs/specs/_root/0005-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `fable-5-2 · high` sampai 19:24, lalu `opus-5-5 · high` | aktif |
+| `arc-f011-spec` | architect | 011 spec `_root/0005`; laporan `done` (HEAD `cf6b961`), merge `f9dd91d`; draf dan cross check saat Fable, penyelarasan dan commit saat Opus | `011 - Aset merek bersama.md` | `docs/specs/_root/0005-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `fable-5-2 · high` sampai 19:24, lalu `opus-5-5 · high` | merged |
 | `arc-f010-spec` | architect | 010 spec `_root/0006`; laporan `done` (`b2cb7be`, HEAD `6742359`), merge `a766a1f` | `010 - Satu contoh lokalisasi.md` | `docs/specs/_root/0006-satu-contoh-lokalisasi/` | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | merged |
 | `arc-f002-spec` | architect | 002 spec `_root/0007`; brief "mulai" dikirim 2026-11-15 dengan dua belas masukan audit | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/` | `claude/arc-f002-spec-d362fa` | `fable-5-2 · high` sampai 19:24, lalu `opus-5-5 · high` | aktif (dilanjutkan 21:15 sesudah terputus) |
 | `arc-f012-spec` | architect | 012 spec `_root`; ditetapkan saat "mulai", sesudah spec 008 sampai 011 dan 002 diterima | `012 - Build dan penerimaan per target.md` | ditetapkan saat "mulai" | `claude/arc-f012-spec-50349d` | `fable-5-2 · high` | standby |
@@ -226,11 +226,16 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 010 · `/architect scope 010 contoh lokalisasi untuk macOS` ← 010 milestone 1 di `main` dan pembaruan AC-12 spec `macos/0001`.
 - 008 · Milestone 3 (AC-12) ← host Windows dan host Linux; langkah manual `F008-1`, pemilik user.
 - Spec `macos/0001` Follow-up Scope 010 dan 011 ← `architect (update)`: keputusan 12 spec `_root/0004` memindahkan nama produk ke konfigurasi publik.
+- 011 · `Build it` milestone 1 ← build 010 milestone 1 di `main` (file bersama), lalu developer bebas.
+- 011 · Milestone 3 (AC-10) ← ikon SVG nyata dari user; langkah manual `F011-1`.
+- 011 · `/architect scope 011 aset merek untuk macOS` ← 011 milestone 1 di `main` dan pembaruan AC-12 spec `macos/0001`.
+- Spec `_root/0003` ← `architect (update)` kecil: catatan batas waktu untuk AC-11 dan AC-1 (kalimat dan hitungan path bertambah lewat spec berikutnya), dari temuan checker 008 dan architect 011.
 - 012 · `/architect scope 012 build dan penerimaan untuk _root` ← spec 008 sampai 011 dan 002 diterima, supaya skrip dan CI membungkus perintah yang sudah ada.
 - 008 sampai 012 bagian macOS ← spec `_root` masing masing, dan alur 004 terbukti di jendela (`F004-1`, `F004-2`).
 
 ## Dicentang pada wave ini
 
+- 011 · `/architect scope 011 aset merek untuk _root` · laporan `done` `arc-f011-spec` · `claude/arc-f011-spec-3fcf4a` → `f9dd91d` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik · commit `docs(scope): tick 011 spec` · manual `F011-1` (AC-10) untuk milestone 3; nilai dari user `N9`
 - 008 · `Milestone 2: Dokumen mengikuti keadaan nyata` dan `Verify it: /check verify scope 008 tema bersama untuk _root` · laporan `done` `dev-f008-m1` dan verify PASS `arc-f010-spec` (milestone 1: 29 dari 29 pada `abd3a43`; milestone 2: 8 dari 8 pada `cd0c908` dan diulang di `main`) · `claude/dev-f008-m1-1a2956` → `b549dce`, centang verify → `d32fcdd` · `verify.md` 37 `[x]`, 0 terbuka · gerbang lead di `main` (92 test) · commit `docs(scope): tick 008 milestone 2 and verify` · `(manual NOT_RUN: F008-1, owner user)` untuk AC-12; milestone 3 dan `Build it` tetap terbuka
 - 008 · `Test it: /test scope 008 tema bersama untuk _root` · laporan `done` tester `dev-f001-m1` (17 test baru di `tokens_rules.rs`; empat mutasi di salinan scratchpad tertangkap) · `claude/dev-f001-m1-c305cb` → `3660b20` · di `main`: fmt, clippy, `cargo test --workspace --locked` 92 lulus 0 gagal, kode alat dan sumber bersama tidak berubah · commit `docs(scope): tick 008 test` · tanpa langkah manual
 - 008 · `Milestone 1: Alat dan sumber token` · laporan `done` `dev-f008-m1` dan verify PASS `arc-f010-spec` (29 dari 29 langkah, AC-1 sampai AC-10, pada `abd3a43`; tujuh file sama byte demi byte dengan spec; langkah yang mengubah file dijalankan di clone sekali pakai) · `claude/dev-f008-m1-1a2956` → `abd3a43`, centang verify `claude/arc-f010-spec-3201ce` → `87a1011` · fmt, clippy, 42 test, `tokens check` dan `generate` di `main` · commit `docs(scope): tick 008 milestone 1` · tanpa langkah manual
