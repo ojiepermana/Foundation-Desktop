@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 21:18`
+- **Diperbarui:** `2026-11-15 21:19`
 
 ## Sub sesi wave `2`
 
@@ -31,6 +31,7 @@
 | `arc-f001-spec` | checker (verify) | 009 verify milestone 1 dan 2; laporan `done` PASS 33 dari 33 (`8521419`, HEAD `2b30e9e`), merge `b18b4af`; dijalankan di Opus, family sama dengan penulis kode | `009 - Konfigurasi publik.md` | centang `verify.md` spec `_root/0004` | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | merged |
 | `dev-f008-m1` | developer | 010 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3) spec `_root/0006`; tindak lanjut di sesi yang sama | `010 - Satu contoh lokalisasi.md` | `shared/localization/`, `tooling/codegen/src/localization/`, `tooling/codegen/src/lib.rs` (dua tempat), `tooling/codegen/tests/localization_contract.rs`, `.gitattributes` (satu baris), dua dokumen rujukan, `verify.md` spec `_root/0006`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | dipakai ulang |
 | `dev-f001-m1` | tester | 009 Test it (bagian bersama); Range `cd0c908..705b135` | `009 - Konfigurasi publik.md` | paling banyak satu file baru `tooling/codegen/tests/config_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | dipakai ulang |
+| `arc-f010-spec` | architect (update) | spec `_root/0003`: batas waktu untuk AC-11, AC-1, AC-2, AC-4, AC-10 dan keterangan di `verify.md`; tindak lanjut di sesi yang sama | `008 - Tema bersama dan kontrol native.md` | `index.md`, `rationale.md`, keterangan `verify.md` spec `_root/0003` | `claude/arc-f010-spec-3201ce` | `opus-5-5 · high` | dipakai ulang |
 
 ## Sub sesi wave `1`
 
@@ -230,7 +231,6 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 011 · `Build it` milestone 1 ← build 010 milestone 1 di `main` (file bersama), lalu developer bebas.
 - 011 · Milestone 3 (AC-10) ← ikon SVG nyata dari user; langkah manual `F011-1`.
 - 011 · `/architect scope 011 aset merek untuk macOS` ← 011 milestone 1 di `main` dan pembaruan AC-12 spec `macos/0001`.
-- Spec `_root/0003` ← `architect (update)` kecil: catatan batas waktu untuk AC-11 dan AC-1 (kalimat dan hitungan path bertambah lewat spec berikutnya), dari temuan checker 008 dan architect 011.
 - 012 · `/architect scope 012 build dan penerimaan untuk _root` ← spec 008 sampai 011 dan 002 diterima, supaya skrip dan CI membungkus perintah yang sudah ada.
 - 008 sampai 012 bagian macOS ← spec `_root` masing masing, dan alur 004 terbukti di jendela (`F004-1`, `F004-2`).
 
