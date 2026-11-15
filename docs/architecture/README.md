@@ -18,7 +18,7 @@ Jendela, navigasi, izin, event loop, dan pelepasan resource milik OS masing masi
 
 ## Tata letak yang dituju
 
-Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace dan `crates/core/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
+Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, dan `apps/macos/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
 
 | Lokasi yang direncanakan | Isi |
 | --- | --- |
@@ -41,9 +41,12 @@ Target bersama adalah Rust stable. Sebelum mengunci versi, periksa ketersediaan,
 | Lokasi | Isi |
 | --- | --- |
 | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml` | Manifest workspace virtual dengan daftar anggota eksplisit, lockfile bersama, dan pin toolchain. |
-| `crates/core/` | Paket `desktop-core`, kerangka Rust Core tanpa dependensi. |
+| `crates/core/` | Paket `desktop-core`, Rust Core tanpa dependensi, berisi fungsi publik `hello` dari [spec 0002](../specs/_root/0002-kontrak-sapaan-bersama/index.md). |
+| `crates/macos-ffi/` | Paket `desktop-macos-ffi`, jembatan UniFFI tipis yang meneruskan API publik Core ke Swift, beserta generator binding. |
+| `bindings/swift/` | Paket Swift lokal berisi binding hasil UniFFI yang terlacak git. |
+| `apps/macos/` | Proyek Xcode `DesktopMac` dan paket Swift lokal dengan modul `Interop` dan `Presentation`. |
 
-Nama paket yang dicadangkan untuk lokasi yang masih rencana: `desktop-macos-ffi` di `crates/macos-ffi/`, `desktop-windows` di `apps/windows/`, dan `desktop-linux` di `apps/linux/`.
+Nama paket yang dicadangkan untuk lokasi yang masih rencana: `desktop-windows` di `apps/windows/` dan `desktop-linux` di `apps/linux/`. Rincian lokasi macOS ada di [spec macOS 0001](../specs/macos/0001-sapaan-di-jendela-macos/index.md).
 
 ### Aturan arah dependensi
 
