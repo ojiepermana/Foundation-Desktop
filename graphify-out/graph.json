@@ -20325,7 +20325,7 @@
       "file_type": "code",
       "norm_label": "every_violating_line_gives_its_own_problem()",
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L650"
+      "source_location": "L649"
     },
     {
       "id": "tooling_codegen_tests_architecture_rules_expect",
@@ -25516,7 +25516,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L651",
+      "source_location": "L650",
       "weight": 1.0
     },
     {
@@ -25528,7 +25528,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L652",
+      "source_location": "L651",
       "weight": 1.0
     },
     {
@@ -51233,7 +51233,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L650",
+      "source_location": "L649",
       "weight": 1.0
     },
     {
