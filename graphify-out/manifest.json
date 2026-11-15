@@ -798,15 +798,15 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794754520.095619,
-    "seen": 1794754521.745867,
-    "ast_hash": "c8e409df2327a6b7f38fe8b2eda57cd3",
+    "mtime": 1794755474.5037727,
+    "seen": 1794755476.8788009,
+    "ast_hash": "5c91b4ed05c9b22318a232f3b6616129",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
-    "mtime": 1794754400.863677,
-    "seen": 1794754402.475706,
-    "ast_hash": "dac0be29af580737b42610ef5be41003",
+    "mtime": 1794755474.5015776,
+    "seen": 1794755476.878803,
+    "ast_hash": "fc0fbef260c0dcdd3045ee793baf7e33",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/manifest.rs": {
@@ -864,9 +864,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_rules.rs": {
-    "mtime": 1794755062.75065,
-    "seen": 1794755064.329476,
-    "ast_hash": "1e0c0da8d94525a6427a1441b17db421",
+    "mtime": 1794755474.5041718,
+    "seen": 1794755476.878798,
+    "ast_hash": "88a8c2aa0a582b01b9a27105b1f26bb8",
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {

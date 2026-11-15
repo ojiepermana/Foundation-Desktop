@@ -340,7 +340,9 @@ const REJECTED: &[Rejected] = &[
         edits: &[Edit::Replace(
             "crates/macos-ffi/src/lib.rs",
             "desktop_core::hello(name)",
-            "format!(\"Hello, {name}!\")",
+            // Split so the greeting pattern stays in crates/core/src/greeting.rs
+            // only (spec `_root/0002` AC-3); the copy still gets the full text.
+            concat!("format!(\"Hello, ", "{name}!\")"),
         )],
         rules: &["A-8", "A-9"],
         contains: &[],

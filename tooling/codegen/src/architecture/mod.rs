@@ -155,7 +155,7 @@ impl Findings {
             (a.rule, a.path.as_str(), a.line).cmp(&(b.rule, b.path.as_str(), b.line))
         });
         self.0
-            .dedup_by(|a, b| a.path == b.path && a.message == b.message);
+            .dedup_by(|a, b| a.path == b.path && a.line == b.line && a.message == b.message);
         self.0
             .into_iter()
             .map(|found| Problem::new(&found.path, found.message))
