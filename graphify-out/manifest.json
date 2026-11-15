@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "apps/macos/Package.swift": {
-    "mtime": 1794757881.5705154,
-    "seen": 1794757883.393523,
-    "ast_hash": "eb9a79370f87370efccaf187b2e24856",
+    "mtime": 1794758322.6157317,
+    "seen": 1794758326.917141,
+    "ast_hash": "317a514e7e07949c95973b3a1e1f6d0c",
     "semantic_hash": ""
   },
   "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift": {
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "apps/macos/Presentation/GreetingView.swift": {
-    "mtime": 1794757881.5706966,
-    "seen": 1794757883.393514,
-    "ast_hash": "2d747c33095706717e5ce1e72afec56a",
+    "mtime": 1794758322.6159234,
+    "seen": 1794758326.9171252,
+    "ast_hash": "357ee62643c1da9986f26aec02f666c7",
     "semantic_hash": ""
   },
   "docs/reviews/2026-11-15-verify-macos-0002-0003.md": {
@@ -987,6 +987,18 @@
     "mtime": 1794758114.041422,
     "seen": 1794758116.553598,
     "ast_hash": "3db3e9fc7d1f9f00f386215c32adc30c",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/LocalizedText.swift": {
+    "mtime": 1794758322.616154,
+    "seen": 1794758326.9171321,
+    "ast_hash": "8f99098d1068e030e4ce97aa9fe45f4f",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/PresentationTests/LocalizedTextTests.swift": {
+    "mtime": 1794758322.6177034,
+    "seen": 1794758326.917136,
+    "ast_hash": "026747fcfe3b4b059250e44abe8378e1",
     "semantic_hash": ""
   }
 }

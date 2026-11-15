@@ -12,7 +12,7 @@ public struct GreetingView: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: Tokens.Spacing.gapControl) {
             TextField("Name", text: $model.name)
-            Button("Greet") {
+            Button(LocalizedText.string(.greetingSubmit)) {
                 model.greet()
             }
             .keyboardShortcut(.defaultAction)
