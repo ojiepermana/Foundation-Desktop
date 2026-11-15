@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794737833.0803332,
-    "seen": 1794737834.141263,
-    "ast_hash": "cfe14f5ececfddfa7d6e70d8c3b1e648",
+    "mtime": 1794741186.4283166,
+    "seen": 1794741187.3231308,
+    "ast_hash": "bb2759fbf52f3001ce332ca326d72493",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -54,9 +54,9 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794738651.448525,
-    "seen": 1794738652.23966,
-    "ast_hash": "102c2152717405fe54ed5313da9e27d9",
+    "mtime": 1794742005.129519,
+    "seen": 1794742010.011086,
+    "ast_hash": "7f3814b6064b79c45dfc315bf36f6826",
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
@@ -66,16 +66,16 @@
     "semantic_hash": "1ee11d35079c41c8e668deb9ea59b100"
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
-    "mtime": 1794738421.4841013,
-    "seen": 1794738424.896445,
-    "ast_hash": "bbdc27630055c0561fabfce359151e59",
+    "mtime": 1794742005.129829,
+    "seen": 1794742010.011084,
+    "ast_hash": "3a2a56ed8112c83477bc2a7c6f5c3e15",
     "semantic_hash": ""
   },
   "docs/scope/004 - Sapaan di jendela macOS.md": {
-    "mtime": 1794730741.1030672,
-    "seen": 1794731111.199786,
-    "ast_hash": "88f81b1f84ab8b0e747e0cb0a555c1dc",
-    "semantic_hash": "88f81b1f84ab8b0e747e0cb0a555c1dc"
+    "mtime": 1794741703.6746547,
+    "seen": 1794741706.486387,
+    "ast_hash": "f2fa2d4f2cc56e98a5d7067d5460f8e3",
+    "semantic_hash": ""
   },
   "docs/scope/005 - Kelayakan WinUI dari Rust.md": {
     "mtime": 1794730741.1124384,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794737050.9850307,
-    "seen": 1794737053.59669,
-    "ast_hash": "b4ce9ff5fdbf6bb225cd455682012f00",
+    "mtime": 1794739801.1219287,
+    "seen": 1794739803.655924,
+    "ast_hash": "beedc79839c0ec4786e7944275b6a004",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -138,8 +138,8 @@
     "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
   },
   "AGENTS.md": {
-    "mtime": 1794739288.15217,
-    "seen": 1794739288.915,
+    "mtime": 1794742421.1807551,
+    "seen": 1794742426.289174,
     "ast_hash": "ff5ade9850c6da4da11964c62e08a5ac",
     "semantic_hash": ""
   },
@@ -234,21 +234,21 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.brief-umum.md": {
-    "mtime": 1794735733.0799336,
-    "seen": 1794735733.556389,
-    "ast_hash": "1e5d17a5b6904ea85b51d23f4f9e45a3",
+    "mtime": 1794739351.8813524,
+    "seen": 1794739353.475256,
+    "ast_hash": "b2486f4c190b258efd486b634fc09669",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794739218.6277006,
-    "seen": 1794739219.845815,
-    "ast_hash": "d812400b3e6a5f35b71c543e25141b99",
+    "mtime": 1794742183.6660445,
+    "seen": 1794742185.651707,
+    "ast_hash": "0b5ab1263c625b047a831d8a2f88eeb7",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794739218.627866,
-    "seen": 1794739219.845818,
-    "ast_hash": "40741297ad5d45d9055ea834e99c2c71",
+    "mtime": 1794742005.131476,
+    "seen": 1794742010.011088,
+    "ast_hash": "3375449d8d254864defa437d69381576",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794737559.2140253,
-    "seen": 1794737560.642657,
-    "ast_hash": "29083f4990628de7f12e632595a653b6",
+    "mtime": 1794741072.1472223,
+    "seen": 1794741073.220414,
+    "ast_hash": "84cc965d59445aea36f3e62c169f9d53",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794737407.564954,
-    "seen": 1794737412.1613598,
-    "ast_hash": "7af901c6f78630392fbf57e2f8fb268f",
+    "mtime": 1794741072.1474054,
+    "seen": 1794741073.2204149,
+    "ast_hash": "32e9d8a53c63c3ccf464954a91c2f91a",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -312,9 +312,9 @@
     "semantic_hash": ""
   },
   "test-preferences.json": {
-    "mtime": 1794738323.4396434,
-    "seen": 1794738325.260055,
-    "ast_hash": "3056dbf00efbe13913ea90c4ca8474f5",
+    "mtime": 1794741621.8439841,
+    "seen": 1794741622.8036711,
+    "ast_hash": "9e96946fdad73d5dfd91db8213f119ef",
     "semantic_hash": ""
   },
   "crates/core/tests/contract_surface.rs": {
@@ -335,9 +335,129 @@
     "ast_hash": "632f2790312266d4ff057959998134d5",
     "semantic_hash": ""
   },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/rationale.md": {
+    "mtime": 1794739767.6538305,
+    "seen": 1794739770.242265,
+    "ast_hash": "dc5aabe30b70faed6c05594258d46e78",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
+    "mtime": 1794741072.1486514,
+    "seen": 1794741073.220413,
+    "ast_hash": "41d137f6165084fa42b38dde5e13bd6c",
+    "semantic_hash": ""
+  },
+  "apps/macos/Package.swift": {
+    "mtime": 1794740287.2869787,
+    "seen": 1794740289.07793,
+    "ast_hash": "c6d7ed31a2558949961f0289d3f689ca",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift": {
+    "mtime": 1794740287.2889543,
+    "seen": 1794740289.0779321,
+    "ast_hash": "ee1e6e8038a9efd34ffac1dc2f55bc31",
+    "semantic_hash": ""
+  },
+  "apps/macos/Interop/Greeter.swift": {
+    "mtime": 1794740287.2867029,
+    "seen": 1794740289.077934,
+    "ast_hash": "101d65fa6b38e57b692010c84800ee73",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/src/bin/uniffi-bindgen-swift.rs": {
+    "mtime": 1794740287.2913454,
+    "seen": 1794740289.0779352,
+    "ast_hash": "fefaf8455dad550fd4e9818b0543cc75",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
+    "mtime": 1794741663.0517359,
+    "seen": 1794741665.122643,
+    "ast_hash": "bb4fd38fb42a48a47f78b47d209b0371",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Package.swift": {
+    "mtime": 1794740287.2885237,
+    "seen": 1794740289.0779362,
+    "ast_hash": "1fa4dd93f00dbafd6c970f69bbe3f390",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h": {
+    "mtime": 1794740287.2893445,
+    "seen": 1794740289.077937,
+    "ast_hash": "1f2397eaa29b6460ab6102cc8362562b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/PresentationTests/GreetingViewModelTests.swift": {
+    "mtime": 1794740287.2881026,
+    "seen": 1794740289.07794,
+    "ast_hash": "2e4466d2dab07629cd4d280604d4b36d",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/src/lib.rs": {
+    "mtime": 1794740287.2914472,
+    "seen": 1794740289.07794,
+    "ast_hash": "005d7cb6fc31c3f1454570a48c5fd9e0",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/Cargo.toml": {
+    "mtime": 1794740287.2911134,
+    "seen": 1794740289.077941,
+    "ast_hash": "730676471aca1151030449d7991f9b37",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/InteropTests/BindingContractTests.swift": {
+    "mtime": 1794740287.2878096,
+    "seen": 1794740289.0779421,
+    "ast_hash": "dec9670adc8873f86f80dbdefa1e80e8",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingViewModel.swift": {
+    "mtime": 1794740287.2874827,
+    "seen": 1794740289.077943,
+    "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
+    "mtime": 1794741186.4339898,
+    "seen": 1794741187.323127,
+    "ast_hash": "8d2c344cd81bcacf0611188410c721eb",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
+    "mtime": 1794740726.6282058,
+    "seen": 1794740727.807503,
+    "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
+    "semantic_hash": ""
+  },
+  "apps/macos/App/DesktopMacApp.swift": {
+    "mtime": 1794741033.5251837,
+    "seen": 1794741036.017934,
+    "ast_hash": "d56b1e3c15c6554e10c91524bc08b77b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingView.swift": {
+    "mtime": 1794741033.5262637,
+    "seen": 1794741036.01794,
+    "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
+    "semantic_hash": ""
+  },
+  "crates/core/tests/macos_bridge_ownership.rs": {
+    "mtime": 1794741621.8338816,
+    "seen": 1794741622.8036742,
+    "ast_hash": "279a47592eb67615319332e40de8b248",
+    "semantic_hash": ""
+  },
+  "docs/reviews/2026-11-15-verify-macos-0002-0003.md": {
+    "mtime": 1794741976.7376637,
+    "seen": 1794741980.480792,
+    "ast_hash": "a37b60080cfbc9aff733c6ad8adced1e",
+    "semantic_hash": ""
+  },
   "crates/core/AGENTS.md": {
-    "mtime": 1794739288.1528385,
-    "seen": 1794739288.914997,
+    "mtime": 1794742421.198126,
+    "seen": 1794742426.2891772,
     "ast_hash": "21db51277f306f11895a413a481c1bc6",
     "semantic_hash": ""
   }

@@ -7,7 +7,7 @@
 | <a id="scope-01"></a>001 | [Batas workspace dan pemilik](001%20-%20Batas%20workspace%20dan%20pemilik.md) | Dasar | in-progress |
 | <a id="scope-02"></a>002 | [Aturan pengembangan dan pemeriksaan arsitektur](002%20-%20Aturan%20pengembangan%20dan%20pemeriksaan%20arsitektur.md) | Dasar | planned |
 | <a id="scope-03"></a>003 | [Kontrak sapaan bersama](003%20-%20Kontrak%20sapaan%20bersama.md) | Dasar | in-progress |
-| <a id="scope-04"></a>004 | [Sapaan di jendela macOS](004%20-%20Sapaan%20di%20jendela%20macOS.md) | Alur native | planned |
+| <a id="scope-04"></a>004 | [Sapaan di jendela macOS](004%20-%20Sapaan%20di%20jendela%20macOS.md) | Alur native | in-progress |
 | <a id="scope-05"></a>005 | [Kelayakan WinUI dari Rust](005%20-%20Kelayakan%20WinUI%20dari%20Rust.md) | Alur native | planned |
 | <a id="scope-06"></a>006 | [Sapaan di jendela Windows](006%20-%20Sapaan%20di%20jendela%20Windows.md) | Alur native | planned |
 | <a id="scope-07"></a>007 | [Sapaan di jendela Linux](007%20-%20Sapaan%20di%20jendela%20Linux.md) | Alur native | planned |
