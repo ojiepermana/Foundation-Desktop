@@ -180,6 +180,8 @@ Dibaca oleh model lain (read only) pada 2026-11-15 sebelum spec ini diajukan. De
 | Pola `/target/` membuat `git check-ignore -q target` gagal sesudah folder dihapus | Pola menjadi `/target` |
 | `shared/specifications/` tidak ada di tabel lokasi | Baris ditambahkan |
 | Letak baris baru `.gitignore` ambigu | Isi akhir file ditulis lengkap |
+
+AC-4 diperjelas pada 2026-11-15 karena spec [macos/0001](../../macos/0001-sapaan-di-jendela-macos/index.md): hitungan satu paket di `Cargo.lock` berlaku pada akhir milestone 1, sebab langkah 1 spec itu menambah `desktop-macos-ffi` dan UniFFI sehingga lockfile memuat sekitar 77 paket, dan keputusan spec ini tidak berubah.
 | AC-9 tidak menyebut target dan linker | Target dan prasyarat linker disebut |
 | Bukti `cargo tree` hanya melihat host, fitur bawaan, dan tanpa dependensi test | Perintah memakai `--target all --all-features` dan semua jenis sisi |
 | Aturan netral host tidak mencakup skrip build | Aturan mencakup `build.rs` dan dependensi build per target |
