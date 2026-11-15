@@ -25,3 +25,4 @@ Saat satu fitur siap dirancang, spec bersama masuk ke `docs/specs/_root/`. Spec 
 | Token warna, tipografi, jarak, dan tema native | [Sistem desain](docs/design-system/README.md) |
 | Konfigurasi, teks antarmuka, dan aset merek | [Resource bersama](docs/shared-resources/README.md) |
 | 32 kriteria penerimaan, build per arsitektur, tes dan bukti runtime | [Penerimaan dan bukti fondasi](docs/quality/README.md) |
+| Cara memperbarui graf sebelum commit dan mengirim perubahan ke `main` | [Aturan commit dan integrasi](AGENTS.md) |

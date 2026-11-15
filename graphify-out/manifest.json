@@ -1,0 +1,146 @@
+{
+  "README.md": {
+    "mtime": 1794733300.246755,
+    "seen": 1794733430.9440682,
+    "ast_hash": "0dbc2953ce9bd3587106f37a4b06494c",
+    "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
+  },
+  "docs/architecture/README.md": {
+    "mtime": 1794730566.3714023,
+    "seen": 1794731111.1997619,
+    "ast_hash": "4b19528a22c76973e380c799681f6481",
+    "semantic_hash": "4b19528a22c76973e380c799681f6481"
+  },
+  "docs/contracts/README.md": {
+    "mtime": 1794730406.3463833,
+    "seen": 1794731111.199765,
+    "ast_hash": "3b115bb9483c28080c096b595f16a1c9",
+    "semantic_hash": "3b115bb9483c28080c096b595f16a1c9"
+  },
+  "docs/design-system/README.md": {
+    "mtime": 1794730406.347383,
+    "seen": 1794731111.199768,
+    "ast_hash": "d5846fb898c7ad03202e5afdeac256df",
+    "semantic_hash": "d5846fb898c7ad03202e5afdeac256df"
+  },
+  "docs/platforms/linux/README.md": {
+    "mtime": 1794730333.0976675,
+    "seen": 1794731111.1997702,
+    "ast_hash": "3c129449344201cc3c566bf710dff7a5",
+    "semantic_hash": "3c129449344201cc3c566bf710dff7a5"
+  },
+  "docs/platforms/macos/README.md": {
+    "mtime": 1794730337.6407824,
+    "seen": 1794731111.199772,
+    "ast_hash": "02fae0722af24a7f7ce782c3313bbeb1",
+    "semantic_hash": "02fae0722af24a7f7ce782c3313bbeb1"
+  },
+  "docs/platforms/windows/README.md": {
+    "mtime": 1794730566.372251,
+    "seen": 1794731111.199774,
+    "ast_hash": "890c5fe0de07dc54843e06782d9afb99",
+    "semantic_hash": "890c5fe0de07dc54843e06782d9afb99"
+  },
+  "docs/quality/README.md": {
+    "mtime": 1794730720.0784366,
+    "seen": 1794731111.199776,
+    "ast_hash": "416526ab925f4e73eb4a515b1c32e810",
+    "semantic_hash": "416526ab925f4e73eb4a515b1c32e810"
+  },
+  "docs/scope/000 - Panduan scope.md": {
+    "mtime": 1794730741.0708592,
+    "seen": 1794731111.199778,
+    "ast_hash": "840cadf54591ac8ce83d826f4b8e74b9",
+    "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
+  },
+  "docs/scope/001 - Batas workspace dan pemilik.md": {
+    "mtime": 1794730741.0869222,
+    "seen": 1794731111.19978,
+    "ast_hash": "5005a9d5fcf7c4e31b4819c392631015",
+    "semantic_hash": "5005a9d5fcf7c4e31b4819c392631015"
+  },
+  "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
+    "mtime": 1794730741.1026645,
+    "seen": 1794731111.199782,
+    "ast_hash": "1ee11d35079c41c8e668deb9ea59b100",
+    "semantic_hash": "1ee11d35079c41c8e668deb9ea59b100"
+  },
+  "docs/scope/003 - Kontrak sapaan bersama.md": {
+    "mtime": 1794730741.102933,
+    "seen": 1794731111.199784,
+    "ast_hash": "67f9278ce53ae04b1b0808781cb2165a",
+    "semantic_hash": "67f9278ce53ae04b1b0808781cb2165a"
+  },
+  "docs/scope/004 - Sapaan di jendela macOS.md": {
+    "mtime": 1794730741.1030672,
+    "seen": 1794731111.199786,
+    "ast_hash": "88f81b1f84ab8b0e747e0cb0a555c1dc",
+    "semantic_hash": "88f81b1f84ab8b0e747e0cb0a555c1dc"
+  },
+  "docs/scope/005 - Kelayakan WinUI dari Rust.md": {
+    "mtime": 1794730741.1124384,
+    "seen": 1794731111.199787,
+    "ast_hash": "63df1764cd82cbe62ef2ed3976e1736e",
+    "semantic_hash": "63df1764cd82cbe62ef2ed3976e1736e"
+  },
+  "docs/scope/006 - Sapaan di jendela Windows.md": {
+    "mtime": 1794730741.1241417,
+    "seen": 1794731111.199789,
+    "ast_hash": "ed766cf97ac0977dff2b320e3ee68a4e",
+    "semantic_hash": "ed766cf97ac0977dff2b320e3ee68a4e"
+  },
+  "docs/scope/007 - Sapaan di jendela Linux.md": {
+    "mtime": 1794730741.1255836,
+    "seen": 1794731111.1997912,
+    "ast_hash": "fe32c0b702fc6f42763ad92cef48a54c",
+    "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
+  },
+  "docs/scope/008 - Tema bersama dan kontrol native.md": {
+    "mtime": 1794730741.1257787,
+    "seen": 1794731111.1997929,
+    "ast_hash": "9f244529e2f5da64b4e48e1c2a82efe8",
+    "semantic_hash": "9f244529e2f5da64b4e48e1c2a82efe8"
+  },
+  "docs/scope/009 - Konfigurasi publik.md": {
+    "mtime": 1794730741.1258981,
+    "seen": 1794731111.199795,
+    "ast_hash": "721e97ff5611f92120a80c08b2a01e73",
+    "semantic_hash": "721e97ff5611f92120a80c08b2a01e73"
+  },
+  "docs/scope/010 - Satu contoh lokalisasi.md": {
+    "mtime": 1794730741.1355429,
+    "seen": 1794731111.199797,
+    "ast_hash": "0fcb2334cc6f90fa55ce4bd023527ced",
+    "semantic_hash": "0fcb2334cc6f90fa55ce4bd023527ced"
+  },
+  "docs/scope/011 - Aset merek bersama.md": {
+    "mtime": 1794730741.1360652,
+    "seen": 1794731111.199798,
+    "ast_hash": "ee8f5d1c96bd24699fb2431057edd9b3",
+    "semantic_hash": "ee8f5d1c96bd24699fb2431057edd9b3"
+  },
+  "docs/scope/012 - Build dan penerimaan per target.md": {
+    "mtime": 1794730741.1376429,
+    "seen": 1794731111.1998,
+    "ast_hash": "7f0dc0ae611b276c9e064621d0e2ac4c",
+    "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
+  },
+  "docs/scope/scope.md": {
+    "mtime": 1794730741.1378279,
+    "seen": 1794731111.1998022,
+    "ast_hash": "4fc68e8428ee61f9802d24a0f0bb9b0e",
+    "semantic_hash": "4fc68e8428ee61f9802d24a0f0bb9b0e"
+  },
+  "docs/shared-resources/README.md": {
+    "mtime": 1794730406.3481607,
+    "seen": 1794731111.1998038,
+    "ast_hash": "74c063c6e1f7504a39a2a56971c278da",
+    "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
+  },
+  "AGENTS.md": {
+    "mtime": 1794733330.638307,
+    "seen": 1794733430.944061,
+    "ast_hash": "c6b0d7b678d8a27ed9bd28b9bc1fcd76",
+    "semantic_hash": "c6b0d7b678d8a27ed9bd28b9bc1fcd76"
+  }
+}
