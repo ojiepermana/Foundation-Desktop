@@ -138,10 +138,10 @@
     "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
   },
   "AGENTS.md": {
-    "mtime": 1794734459.4924958,
-    "seen": 1794734591.5340369,
-    "ast_hash": "9464659b98349309151606ff2daefd64",
-    "semantic_hash": "9464659b98349309151606ff2daefd64"
+    "mtime": 1794742646.1288874,
+    "seen": 1794742647.247597,
+    "ast_hash": "13a851a717ac1bcd1faf1319da0b38dd",
+    "semantic_hash": ""
   },
   ".githooks/post-commit": {
     "mtime": 1794734459.456388,
@@ -453,6 +453,12 @@
     "mtime": 1794741976.7376637,
     "seen": 1794741980.480792,
     "ast_hash": "a37b60080cfbc9aff733c6ad8adced1e",
+    "semantic_hash": ""
+  },
+  "crates/core/AGENTS.md": {
+    "mtime": 1794742646.1321232,
+    "seen": 1794742647.2475939,
+    "ast_hash": "c8ec2e4a46ff2ff7c71f1d70487e1b06",
     "semantic_hash": ""
   }
 }
