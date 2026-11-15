@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794754921.5474117,
-    "seen": 1794754923.244063,
-    "ast_hash": "f76bd950ea4bf15005e9f1523dca03e7",
+    "mtime": 1794755204.6598582,
+    "seen": 1794755207.860571,
+    "ast_hash": "72397c32a98534009cfe564c03bc2aae",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -690,14 +690,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794755222.7233605,
-    "seen": 1794755227.576652,
+    "mtime": 1794755247.646774,
+    "seen": 1794755249.9344919,
     "ast_hash": "995cbb2021a3ba9bf84021a8f29941bb",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
-    "mtime": 1794755222.7236183,
-    "seen": 1794755227.5766559,
+    "mtime": 1794755247.64815,
+    "seen": 1794755249.934498,
     "ast_hash": "4921516f47319392f80b1c8d5917a4c6",
     "semantic_hash": ""
   },
@@ -792,8 +792,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794755222.7238245,
-    "seen": 1794755227.576658,
+    "mtime": 1794755247.6489248,
+    "seen": 1794755249.934496,
     "ast_hash": "3bf19a190ecf6669d2a7736cb54c9d76",
     "semantic_hash": ""
   },
@@ -846,9 +846,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794754604.260467,
-    "seen": 1794754605.9786072,
-    "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
+    "mtime": 1794755069.9269426,
+    "seen": 1794755071.670568,
+    "ast_hash": "517b21c71c9e7462155e6b53a9af3fe7",
     "semantic_hash": ""
   },
   "docs/specs/macos/0007-aset-merek-bersama/index.md": {
@@ -861,6 +861,18 @@
     "mtime": 1794754919.073812,
     "seen": 1794754920.915828,
     "ast_hash": "85e0f851a87b262a0a445e15a0854d45",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/architecture_rules.rs": {
+    "mtime": 1794755062.75065,
+    "seen": 1794755064.329476,
+    "ast_hash": "1e0c0da8d94525a6427a1441b17db421",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
+    "mtime": 1794755069.9273121,
+    "seen": 1794755071.670572,
+    "ast_hash": "c23202b5aaa1f75924b4ab43fddabefe",
     "semantic_hash": ""
   }
 }
