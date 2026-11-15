@@ -1,0 +1,10 @@
+{
+  "tool": "cargo test",
+  "gate": null,
+  "additionalTools": [],
+  "e2eTool": "none",
+  "testDir": "crates/<crate>/tests",
+  "filePattern": "*.rs",
+  "packageManager": "cargo",
+  "notes": "Built in cargo test harness only. No dev dependencies in desktop-core (spec _root/0002 decision 7, AC-2). Unit tests live in #[cfg(test)] mod tests inside the source file; contract tests use only the public path in crates/<crate>/tests/. Every test file starts with a //! doc comment (missing_docs)."
+}
