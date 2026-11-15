@@ -742,5 +742,11 @@
     "seen": 1794752805.117249,
     "ast_hash": "43e6c03890ff6b4cf48dbf25dc6cd116",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0005-aset-merek-bersama/verify.md": {
+    "mtime": 1794752864.680607,
+    "seen": 1794752868.089798,
+    "ast_hash": "7c996da874ac753d99303ea66eed15d8",
+    "semantic_hash": ""
   }
 }
