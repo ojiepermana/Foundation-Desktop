@@ -474,15 +474,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
-    "mtime": 1794744555.5136085,
-    "seen": 1794744558.254743,
-    "ast_hash": "e213abb0afd37a34aa8b7c1b9793e75a",
+    "mtime": 1794755275.0862334,
+    "seen": 1794755278.292297,
+    "ast_hash": "fe34926a150518a0d7858934016c6374",
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md": {
-    "mtime": 1794752435.0671866,
-    "seen": 1794752436.523437,
-    "ast_hash": "420daecee251826eafb3f451baae3660",
+    "mtime": 1794755275.08602,
+    "seen": 1794755278.2923038,
+    "ast_hash": "65709e0475490e592adaf9c93af60443",
     "semantic_hash": ""
   },
   "tooling/codegen/Cargo.toml": {
@@ -660,9 +660,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/verify.md": {
-    "mtime": 1794752828.8521287,
-    "seen": 1794752834.591329,
-    "ast_hash": "6c1d38594550de939244aa5149e1d53a",
+    "mtime": 1794755275.0864286,
+    "seen": 1794755278.2923079,
+    "ast_hash": "cd43377e43983d498b3c42c4edf169f7",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/localization_contract.rs": {
