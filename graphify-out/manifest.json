@@ -924,9 +924,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0004-konfigurasi-publik/verify.md": {
-    "mtime": 1794756817.9131253,
-    "seen": 1794756819.898705,
-    "ast_hash": "17edc66e69a3393bf4022b5c54319824",
+    "mtime": 1794757449.5679603,
+    "seen": 1794757454.622829,
+    "ast_hash": "08d2df56d091cb832e7457d2e1b5263d",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/config_macos_contract.rs": {
