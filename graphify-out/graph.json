@@ -11371,7 +11371,7 @@
       "file_type": "code",
       "norm_label": "accepts_allowed_shapes()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L502"
+      "source_location": "L504"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_apply",
@@ -11470,7 +11470,7 @@
       "file_type": "code",
       "norm_label": "rejects_broken_repos()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L436"
+      "source_location": "L438"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_rs_path",
@@ -16477,7 +16477,7 @@
       "node_kind": "heading",
       "norm_label": "blocker terbuka",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L289"
+      "source_location": "L290"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_dicentang_pada_wave_ini",
@@ -16489,7 +16489,7 @@
       "node_kind": "heading",
       "norm_label": "dicentang pada wave ini",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L317"
+      "source_location": "L318"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan",
@@ -16513,7 +16513,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan delegasi",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L178"
+      "source_location": "L179"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_log_koordinasi_000_panduan_scope",
@@ -16537,7 +16537,7 @@
       "node_kind": "heading",
       "norm_label": "penutupan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L361"
+      "source_location": "L364"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_riwayat_wave",
@@ -16549,7 +16549,7 @@
       "node_kind": "heading",
       "norm_label": "riwayat wave",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L357"
+      "source_location": "L360"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_1",
@@ -20311,7 +20311,7 @@
       "file_type": "code",
       "norm_label": "every_violating_line_gives_its_own_problem()",
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L650"
+      "source_location": "L649"
     },
     {
       "id": "tooling_codegen_tests_architecture_rules_expect",
@@ -25168,7 +25168,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L503",
+      "source_location": "L505",
       "weight": 1.0
     },
     {
@@ -25180,7 +25180,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L506",
+      "source_location": "L508",
       "weight": 1.0
     },
     {
@@ -25228,7 +25228,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L437",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -25240,7 +25240,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L440",
+      "source_location": "L442",
       "weight": 1.0
     },
     {
@@ -25564,7 +25564,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L651",
+      "source_location": "L650",
       "weight": 1.0
     },
     {
@@ -25576,7 +25576,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L652",
+      "source_location": "L651",
       "weight": 1.0
     },
     {
@@ -42151,7 +42151,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L178",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -42162,7 +42162,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L289",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -42173,7 +42173,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L317",
+      "source_location": "L318",
       "weight": 1.0
     },
     {
@@ -42184,7 +42184,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L357",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -42195,7 +42195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L361",
+      "source_location": "L364",
       "weight": 1.0
     },
     {
@@ -51017,7 +51017,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L436",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -51028,7 +51028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L502",
+      "source_location": "L504",
       "weight": 1.0
     },
     {
@@ -51325,7 +51325,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_rules.rs",
-      "source_location": "L650",
+      "source_location": "L649",
       "weight": 1.0
     },
     {
