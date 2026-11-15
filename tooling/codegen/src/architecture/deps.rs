@@ -23,11 +23,19 @@ pub(super) struct Member {
 /// Reads the workspace members and their package names. Members whose
 /// manifest cannot be read are reported and left out.
 pub(super) fn members(root: &Path, findings: &mut Findings) -> Option<Vec<Member>> {
+    read_members(root, findings).map(|(members, _)| members)
+}
+
+/// Like [`members`], and also tells whether every member manifest was
+/// read. When one was not, its package name is unknown.
+pub(super) fn read_members(root: &Path, findings: &mut Findings) -> Option<(Vec<Member>, bool)> {
     let text = read(root, ROOT_MANIFEST, findings)?;
     let mut found = Vec::new();
+    let mut complete = true;
     for dir in manifest::members(&text) {
         let path = format!("{dir}/Cargo.toml");
         let Some(member) = read(root, &path, findings) else {
+            complete = false;
             continue;
         };
         let package = manifest::value(&manifest::table(&member, "[package]"), "name")
@@ -35,7 +43,7 @@ pub(super) fn members(root: &Path, findings: &mut Findings) -> Option<Vec<Member
             .to_string();
         found.push(Member { dir, package });
     }
-    Some(found)
+    Some((found, complete))
 }
 
 /// Reads one file as text, or records `cannot read`.
@@ -51,7 +59,7 @@ pub(super) fn read(root: &Path, path: &str, findings: &mut Findings) -> Option<S
 
 /// Runs `A-1` to `A-4`.
 pub(super) fn check(root: &Path, findings: &mut Findings) {
-    let Some(members) = members(root, findings) else {
+    let Some((members, complete)) = read_members(root, findings) else {
         return;
     };
     let Some(lockfile) = read(root, LOCKFILE, findings) else {
@@ -77,7 +85,9 @@ pub(super) fn check(root: &Path, findings: &mut Findings) {
             );
         }
     }
-    for rule in MEMBERS {
+    // A rule may name the member whose manifest could not be read, so this
+    // part of A-1 needs every package name and is skipped without them.
+    for rule in MEMBERS.iter().filter(|_| complete) {
         if !names.contains(&rule.package) {
             findings.push(
                 1,
