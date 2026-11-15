@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 20:20`
+- **Diperbarui:** `2026-11-15 20:50`
 
 ## Sub sesi wave `1`
 
@@ -14,8 +14,10 @@
 | `arc-f001-spec` | architect | 001 spec `_root` 0001; laporan `done` (`9bf09db`), merge `50c3b3c`; `architect (update)` `.graphifyignore` `01875fd`, merge `60ca131` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1`; koreksi rujukan langkah `8515ef5`, merge `d4ff759` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; brief "mulai" dikirim 2026-11-15. Penerapan macOS 001 dan 003 menyusul di sesi yang sama sesudah spec ini di-merge | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | aktif |
-| `dev-f001-m1` | developer | 001 Build it milestone 1 (langkah 1, 2) spec `_root/0001`; brief "mulai" dikirim 2026-11-15 | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md`, baris `**Status**` `index.md` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | aktif |
-| `dev-f003-m1` | developer | 003 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3 sampai 6) spec `_root/0002`; menunggu 001 milestone 1 di `main` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs` (tambah baris), `crates/core/Cargo.toml` (tambah `[lints.rust]`), `docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | standby |
+| `dev-f001-m1` | developer | 001 Build it milestone 1; Langkah Build plan selesai 1 (`09c6f0c`), 2 (`60b948d`); Pointer code in `crates/core/` dan root workspace; laporan `done`, merge `9dee57d` | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec 0001, baris `**Status**` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | merged |
+| `dev-f001-m1` | developer | 001 Build it milestone 2 (langkah 3), tindak lanjut di sesi yang sama tanpa clear | `001 - Batas workspace dan pemilik.md` | `docs/architecture/README.md` (diizinkan brief, AC-8), `verify.md` spec 0001 bagian Milestone 2 | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | dipakai ulang |
+| `arc-f001-spec` | checker (verify) | 001 verify milestone 1 (AC-1 sampai AC-7) dari `main`; sesi dibersihkan, judul `arc-f001-spec · 001 verify milestone 1` | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 1 | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | dipakai ulang |
+| `dev-f003-m1` | developer | 003 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3 sampai 6) spec `_root/0002`; brief "mulai" dikirim 2026-11-15 sesudah 001 milestone 1 di `main` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs` (tambah baris), `crates/core/Cargo.toml` (tambah `[lints.rust]`), `docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | aktif |
 
 ## Keputusan
 
@@ -39,6 +41,8 @@
 | 2026-11-15 | Rekonsiliasi ulang: `ListAgents` kini memuat 35 sesi peer, 10 di antaranya `busy`, semuanya proyek lain (termasuk koordinasi lain bernama `arc-f1-spec`, `dev-f009-m3`). Nama scope ini (`…-f001-…`, `…-f003-…`, `…-f004-…`) tetap unik. Checker dan tester belum dimulai; saat laporan developer tiba, sesi architect yang sudah `merged` dipakai ulang sebagai checker bila `start_session` ditolak. | lead |
 | 2026-11-15 | Laporan `blocked` `dev-f001-m1`: commit langkah 1 ditolak hook, `Graphify extraction failed` pada `Cargo.toml` root. Lead mereproduksi di scratchpad: Graphify 0.9.48 menghasilkan nol node untuk manifest virtual dan mencatatnya di `failed_sources`; `scripts/update_graphify.py` baris 74 keluar dengan error. Enam file langkah 1 sudah staged di worktree developer dan lulus AC-1 sampai AC-6. Worktree itu dibiarkan apa adanya sampai spec diperbarui. | lead |
 | 2026-11-15 | Pembaruan spec `_root/0001` (`01875fd`) di-merge sebagai `60ca131`: `.graphifyignore` berisi `/Cargo.toml` masuk "Isi file", AC-7, tabel lokasi, Build plan langkah 1, dan kasus gagal; ID AC tetap. Gerbang: worktree bersih, diff hanya dua file spec plus `graphify-out/`, konflik hanya `GRAPH_REPORT.md`. "lanjut" dikirim ke `dev-f001-m1` dengan `.graphifyignore` ditambahkan ke ownership. User diberi tahu pilihan ini dan runner-up-nya (ubah skrip hook) lewat ringkasan giliran. | lead |
+| 2026-11-15 | Gerbang `dev-f001-m1` milestone 1: worktree bersih, diff hanya ownership plus `graphify-out/`, merge tanpa konflik, lalu di `main`: `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo build --workspace --locked`, `cargo test -p desktop-core --locked` (0 test, `ok`), `cargo tree` satu baris, `target` ter-ignore, `Cargo.lock` satu paket; tujuh file sama dengan "Isi file". Merge `9dee57d`. Kotak milestone 1 menunggu checker. | lead |
+| 2026-11-15 | `start_session` untuk `chk-f001-m1` ditolak aplikasi (giliran dipicu pesan sesi lain). Pengganti: sesi `arc-f001-spec` dibersihkan (`clear_session`) dan dipakai ulang sebagai checker verify milestone 1 dari `main`; architect tidak menulis kode yang diperiksa. Brief ke sesi yang baru dibersihkan harus dikirim ke id `local_…`, bukan judul. Kelima belas langkah `verify.md` sudah `[x]` oleh developer; checker diminta menjalankan ulang semuanya. Brief developer berikutnya meminta kotak langkah dibiarkan `- [ ]`. | lead |
 
 ## Keputusan delegasi
 
@@ -79,12 +83,11 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 006 · `/architect scope 006 sapaan di jendela Windows` ← `005 - Kelayakan WinUI dari Rust.md`: hasil 005, dan host Windows; pemilik user.
 - 007 · `/architect scope 007 sapaan di jendela Linux`: hardware, host Linux dengan sesi Wayland; pemilik user.
 - 001, 002, 003, 008 sampai 012 · penerapan Windows dan Linux: host masing masing; pemilik user. Fitur bersama tidak ditandai `done` sebelum bukti itu ada.
-- 002 · `/audit` ← `001 - Batas workspace dan pemilik.md`: scaffold (`Build it` 001) harus sudah di `main`.
+- 002 · `/audit` ← scaffold sudah di `main` (`9dee57d`); dijalankan sesudah build 003 di-merge supaya konvensi dibaca dari Core yang berisi, dan butuh sesi baru pada giliran user.
 - 001 · Milestone 3 (AC-9) ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - 001 · `/architect scope 001 batas workspace dan pemilik untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
-- 004 · `Build it` ← 001 milestone 1 dan 003 milestone 1 di `main`, serta spec `macos/0001` di-merge (sedang ditulis `arc-f004-spec`).
-- 003 · `Build it` milestone 1 ← `001 - Batas workspace dan pemilik.md`: milestone 1 "Workspace dan kerangka Core" (spec `_root/0001` langkah 1 dan 2) di `main`.
+- 004 · `Build it` ← 003 milestone 1 di `main` (001 milestone 1 sudah, `9dee57d`), serta spec `macos/0001` di-merge (sedang ditulis `arc-f004-spec`).
 - 003 · `/architect scope 003 kontrak sapaan untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
 - `README.md` masih menyebut semua fitur `planned`; diperbarui lewat `/sync` akhir wave.
 - 008 sampai 012 · `/architect scope … untuk _root` ← alur 004 terbukti di Mac (urutan Panduan).
