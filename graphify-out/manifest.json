@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794740355.4456255,
-    "seen": 1794740357.72443,
-    "ast_hash": "f2803967df25b61da538224444ce68fd",
+    "mtime": 1794740682.7956233,
+    "seen": 1794740684.3309388,
+    "ast_hash": "ee3711deee66fb0206339f5b6c22d567",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -419,16 +419,16 @@
     "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794740620.646151,
-    "seen": 1794740622.736178,
-    "ast_hash": "66a219c8db835c3ae3626ecfaaaae208",
+  "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
+    "mtime": 1794740696.511718,
+    "seen": 1794740697.879497,
+    "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
     "semantic_hash": ""
   },
-  "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
-    "mtime": 1794740620.6463597,
-    "seen": 1794740622.736181,
-    "ast_hash": "47e0ef041597311243ae3afb17a6c0af",
+  "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
+    "mtime": 1794740696.5113566,
+    "seen": 1794740697.8795002,
+    "ast_hash": "66a219c8db835c3ae3626ecfaaaae208",
     "semantic_hash": ""
   }
 }
