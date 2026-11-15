@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 117 files · ~157,864 words
+- 117 files · ~158,008 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -33,14 +33,14 @@
 - Rancangan
 - Rancangan aset merek
 - Alur lead
-- Fondasi Windows
 - 0001. Batas workspace dan pemilik
 - Penerimaan dan bukti fondasi
+- Fondasi Windows
 - Fondasi desktop native
 - config/mod.rs
+- 000 - Panduan scope
 - spacing.json
 - Fondasi macOS
-- 000 - Panduan scope
 - Langkah manual: `000 - Panduan scope`
 - localization_contract.rs
 - Milestone 1: Jembatan, binding, dan uji tanpa jendela
@@ -221,17 +221,17 @@ Nodes (21): 0005. Aset merek bersama, Aturan sumber, Bentuk alat, Build plan, Co
 Cohesion: 0.11
 Nodes (18): 1. Tentukan SCOPE, 2. Analisis dan rencana wave, 3. Mulai sub sesi, 4. Komunikasi, 5. Laporan, 6. Gerbang centang dan merge, 7. Log, 8. Akhir wave (+10 more)
 
-### Community 23 - "Fondasi Windows"
-Cohesion: 0.16
-Nodes (19): Alur dan kepemilikan, Bukti build, runtime dan distribusi, Fondasi Windows, Matriks kompatibilitas Windows, Percobaan WinUI 3 di host Windows, Pesan UI bertipe, Target Windows x64 dan kelayakan ARM64, Tema, resource dan perilaku native (+11 more)
-
-### Community 24 - "0001. Batas workspace dan pemilik"
+### Community 23 - "0001. Batas workspace dan pemilik"
 Cohesion: 0.11
 Nodes (19): 0001. Batas workspace dan pemilik, Aturan arah dependensi, Aturan untuk manifest root, Build plan, Consequences, Decision, Follow-up, Invarian (+11 more)
 
-### Community 25 - "Penerimaan dan bukti fondasi"
+### Community 24 - "Penerimaan dan bukti fondasi"
 Cohesion: 0.15
 Nodes (18): Uji jendela di Mac, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai, C29 · Alur kerja GitHub Actions untuk fondasi sudah dikonfigurasi, C30 · Pengujian yang relevan sudah dijalankan (+10 more)
+
+### Community 25 - "Fondasi Windows"
+Cohesion: 0.18
+Nodes (18): Alur dan kepemilikan, Bukti build, runtime dan distribusi, Fondasi Windows, Matriks kompatibilitas Windows, Percobaan WinUI 3 di host Windows, Pesan UI bertipe, Target Windows x64 dan kelayakan ARM64, Tema, resource dan perilaku native (+10 more)
 
 ### Community 26 - "Fondasi desktop native"
 Cohesion: 0.15
@@ -241,17 +241,17 @@ Nodes (17): API publik Rust, Eksekusi dan uji, hello(name: String) → String, K
 Cohesion: 0.27
 Nodes (16): Build, check_app_identifier(), check_entries(), check_product_name(), check_public(), check_readme_version(), plan(), PublicFile (+8 more)
 
-### Community 28 - "spacing.json"
+### Community 28 - "000 - Panduan scope"
+Cohesion: 0.15
+Nodes (16): C04 · UniFFI berhasil menghasilkan binding Swift untuk macOS, C05 · Aplikasi macOS berhasil memanggil fungsi Rust tersebut, C14 · Antarmuka pada ketiga OS menampilkan hasil aktual dari fungsi Rust yang sama, C15 · Token desain memiliki satu sumber acuan, C16 · Ketiga aplikasi memakai token hasil generasi atau pemetaan yang dapat diulang, C17 · Antarmuka memperlihatkan tampilan terang dan gelap, C23 · Kepemilikan pada batas FFI macOS terdokumentasi dan divalidasi bila relevan, 000 - Panduan scope (+8 more)
+
+### Community 29 - "spacing.json"
 Cohesion: 0.13
 Nodes (14): base, space.large, space.medium, description, ref, description, ref, $schema (+6 more)
 
-### Community 29 - "Fondasi macOS"
+### Community 30 - "Fondasi macOS"
 Cohesion: 0.20
 Nodes (15): Kepemilikan memori dan pemetaan kesalahan, AppKit, Apple Silicon ARM64 dan Intel bersyarat, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS (+7 more)
-
-### Community 30 - "000 - Panduan scope"
-Cohesion: 0.16
-Nodes (15): C04 · UniFFI berhasil menghasilkan binding Swift untuk macOS, C05 · Aplikasi macOS berhasil memanggil fungsi Rust tersebut, C15 · Token desain memiliki satu sumber acuan, C16 · Ketiga aplikasi memakai token hasil generasi atau pemetaan yang dapat diulang, C17 · Antarmuka memperlihatkan tampilan terang dan gelap, C23 · Kepemilikan pada batas FFI macOS terdokumentasi dan divalidasi bila relevan, 000 - Panduan scope, Bukti per target (+7 more)
 
 ### Community 31 - "Langkah manual: `000 - Panduan scope`"
 Cohesion: 0.13
