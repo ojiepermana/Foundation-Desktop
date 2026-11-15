@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 19:18`
+- **Diperbarui:** `2026-11-15 19:19`
 
 ## Sub sesi wave `2`
 
@@ -18,7 +18,7 @@
 | `arc-f002-spec` | architect | 002 spec `_root/0007`; brief "mulai" dikirim 2026-11-15 dengan dua belas masukan audit | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/` | `claude/arc-f002-spec-d362fa` | `fable-5-2 · high` | aktif |
 | `arc-f012-spec` | architect | 012 spec `_root`; ditetapkan saat "mulai", sesudah spec 008 sampai 011 dan 002 diterima | `012 - Build dan penerimaan per target.md` | ditetapkan saat "mulai" | `claude/arc-f012-spec-50349d` | `fable-5-2 · high` | standby |
 | `dev-f008-m1` | developer | 008 Build it milestone 1; Langkah Build plan selesai 1 (`f262895`), 2 (`ed52dbd`, `5133b63`); Pointer code in `tooling/codegen/`, `design-system/`; laporan `done` (`0dbe8de`), merge `abd3a43` | `008 - Tema bersama dan kontrol native.md` | `Cargo.toml` akar (baris `members`), `Cargo.lock`, `.gitattributes`, `tooling/codegen/`, `design-system/tokens/`, `design-system/schemas/`, `verify.md` spec `_root/0003`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
-| `dev-f008-m1` | developer | 008 Build it milestone 2 (langkah 3, dokumen); tindak lanjut di sesi yang sama | `008 - Tema bersama dan kontrol native.md` | `docs/design-system/README.md`, `docs/architecture/README.md` (diizinkan brief, AC-11), `verify.md` spec `_root/0003` bagian Milestone 2 | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | dipakai ulang |
+| `dev-f008-m1` | developer | 008 Build it milestone 2; Langkah Build plan selesai 3 (`8693348`); Pointer code in `docs/design-system/README.md`, `docs/architecture/README.md`; laporan `done` (`cec0f52`), merge `b549dce` | `008 - Tema bersama dan kontrol native.md` | `docs/design-system/README.md`, `docs/architecture/README.md`, `verify.md` spec `_root/0003` bagian Milestone 2 | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
 | `arc-f010-spec` | checker (verify) | 008 verify milestone 1 (AC-1 sampai AC-10) dari `main` `abd3a43`; sesi dibersihkan, judul `arc-f010-spec · 008 verify milestone 1` | `008 - Tema bersama dan kontrol native.md` | centang `verify.md` spec `_root/0003` bagian Milestone 1 | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | dipakai ulang |
 | `arc-f003-spec` | auditor | 002 `/audit`, penyegaran fakta; laporan `done` (`2e2feb5`, HEAD `2850fba`), merge `d753c2a` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `AGENTS.md` (bagian tambahan audit, +63 baris), `crates/core/AGENTS.md` (+58 baris) | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect | 009 spec macOS `macos/0004`; laporan `done` (`23d7ccc`, HEAD `aafcce3`), merge `30c9c23` | `009 - Konfigurasi publik.md` | `docs/specs/macos/0004-konfigurasi-publik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
@@ -110,6 +110,7 @@
 | 2026-11-15 | Baris `desktop-codegen` (`a004343`) di-merge sebagai `bc76880`: spec `_root/0001` (tabel aturan, tabel lokasi dipecah menjadi `tooling/codegen/` dan `tooling/validation/`), satu baris tabel di `docs/architecture/README.md`, satu kalimat `rationale.md`, satu baris Follow-up spec `_root/0003`. `workspace_layout` 10 test lulus di `main`. Nomor spec macOS berikutnya: `macos/0005-tema-bersama-dan-kontrol-native` (scope 008). Permintaan perubahan pada spec `macos/0001` dari spec macOS 008 dan 009 akan digabung lead ke satu `architect (update)`. | lead |
 | 2026-11-15 | Gerbang `dev-f008-m1` 008 milestone 1: worktree bersih, diff 18 file ownership plus `graphify-out/`, merge tanpa konflik di luar graf. Di `main`: fmt, clippy workspace, `cargo test --workspace --locked` 42 lulus 0 gagal, `tokens check` (`6 semantic tokens, 3 placeholder values, 3 outputs up to date`), `tokens generate` (`0 written`, tanpa selisih di `design-system/`), `cargo tree` alat tiga baris (`desktop-codegen`, `serde`, `serde_json`), `cargo tree` Core tetap satu baris, `Cargo.lock` 78 paket, `Cargo.toml` akar hanya bertambah anggota `tooling/codegen`. Merge `abd3a43` (graf: 97 sumber). Verify milestone 1 dikirim ke `arc-f010-spec` (dibersihkan), milestone 2 (dokumen) ke `dev-f008-m1`. | lead |
 | 2026-11-15 | Ringkasan "Accept this spec?" spec `macos/0004` (scope 009 di Mac) dibalas `accept` tanpa perubahan: cross check (Opus, 13 temuan) diterapkan; AC-1 sampai AC-11; purwarupa dengan xcconfig tulis tangan membuktikan Info.plist bundel membawa tiga nilai. Dua belas keputusan dicatat per topik; satu `berat`. Architect lalu memperbarui spec `_root/0004` (delapan butir, termasuk pola `.gitattributes` per jenis file, plus penyelarasan dengan API nyata `desktop-codegen` yang kini di `main`). Tiga belas butir pembaruan spec `macos/0001` digabung lead dengan permintaan spec macOS 008 nanti. | lead |
+| 2026-11-15 | Gerbang `dev-f008-m1` 008 milestone 2: diff hanya dua dokumen rujukan dan `verify.md` plus `graphify-out/`. Dokumen arsitektur: satu kalimat diganti dan dua baris tabel "Yang sudah ada" ditambah; tabel aturan tidak berubah. Dokumen sistem desain: blok `## Yang sudah ada` baru. Di `main`: `workspace_layout` 10 test lulus, `grep -c` AC-11 memberi 3 dan 3. Merge `b549dce`. Verify milestone 2 dikirim ke checker yang sama sesudah verify milestone 1 selesai. `dev-f008-m1` dipilih untuk build 009 milestone 1 berikutnya, karena ia yang menulis `desktop-codegen`. | lead |
 
 ## Keputusan delegasi
 
@@ -201,7 +202,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
 - 004 · Milestone 4 dan `Build it` ← langkah manual `F004-1` dan `F004-2`.
 - `README.md` root masih menyebut semua fitur `planned` dan repo "berisi dokumentasi perencanaan"; `/sync` tidak berwenang atas file itu, jadi menunggu user atau item architect.
-- 009 · `Build it` milestone 1 ← pembaruan spec `_root/0004` di-merge (008 milestone 1 sudah di `main`, `abd3a43`), lalu developer `dev-f003-m1`.
+- 009 · `Build it` milestone 1 ← pembaruan spec `_root/0004` di-merge (008 milestone 1 sudah di `main`, `abd3a43`), lalu developer `dev-f008-m1`.
 - Spec `macos/0001` ← satu `architect (update)` gabungan: 13 butir dari spec `macos/0004` dan butir dari spec `macos/0005` (belum diterima); harus di-merge sebelum build macOS 008 dan 009.
 - 009 macOS · Milestone 1 ← 009 milestone 1 (spec `_root/0004`) di `main` dan pembaruan gabungan spec `macos/0001`.
 - 009 macOS · Milestone 2 (AC-7) ← sesi GUI di Mac; langkah manual `F009-1`, pemilik user.
