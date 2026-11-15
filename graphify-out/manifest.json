@@ -1036,5 +1036,11 @@
     "seen": 1794759705.559447,
     "ast_hash": "1b9a207dad01b1c746b00f1546d1c030",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0007-aset-merek-bersama/verify.md": {
+    "mtime": 1794759923.6235573,
+    "seen": 1794759925.895966,
+    "ast_hash": "e6acc6a1109bba4e05983c647078dae8",
+    "semantic_hash": ""
   }
 }
