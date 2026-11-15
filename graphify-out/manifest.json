@@ -934,5 +934,11 @@
     "seen": 1794756819.898707,
     "ast_hash": "8a473b02e525dddc8124559c976cb1b4",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_macos_rules.rs": {
+    "mtime": 1794757831.726944,
+    "seen": 1794757833.667895,
+    "ast_hash": "85aca3df8ff55ac3964531fd2b0a8ebf",
+    "semantic_hash": ""
   }
 }
