@@ -976,5 +976,11 @@
     "seen": 1794757883.3935292,
     "ast_hash": "78f79c372bfdd27b12cf8cd9863e8adc",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/tokens_swift_rules.rs": {
+    "mtime": 1794758856.452861,
+    "seen": 1794758866.5073202,
+    "ast_hash": "408cdcf9fddfc920e4fe88931872fdef",
+    "semantic_hash": ""
   }
 }
