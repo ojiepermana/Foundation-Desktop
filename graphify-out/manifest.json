@@ -628,5 +628,11 @@
     "seen": 1794751904.78996,
     "ast_hash": "d49ec597b3595f81a41cb04780af350d",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/tokens_rules.rs": {
+    "mtime": 1794751908.40678,
+    "seen": 1794751909.488357,
+    "ast_hash": "aacb5ae90cdf21a7990caf7718370f10",
+    "semantic_hash": ""
   }
 }
