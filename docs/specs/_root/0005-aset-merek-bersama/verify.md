@@ -41,3 +41,26 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 
 - AC-1: langkah 1 sampai 3 · AC-2: langkah 4 sampai 6 · AC-3: langkah 7 dan 8 · AC-4: langkah 9 sampai 11 · AC-5: langkah 9 dan 12 sampai 14 · AC-6: langkah 15 sampai 17 · AC-7: langkah 18 dan 19 · AC-9: langkah 20 sampai 22.
 - AC-8 menunggu milestone 2. AC-10 menunggu milestone 3 (berkas merek nyata dari user, `owner: user`).
+
+## Milestone 2: Dokumen rujukan menunjuk aturan aset
+
+Build plan langkah 3. Hasil grep dan tautan tercatat sebelum commit langkah 3, di atas commit langkah 2 (`01fffbd`). Perintah `git log` dijalankan lagi sesudah commit langkah 3.
+
+### UI / manual
+
+Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah.
+
+### Commands
+
+- [ ] Paragraf di bawah `## Aset merek` di `docs/shared-resources/README.md` → diawali tiga kalimat dari butir 1 bagian "Perubahan dokumen rujukan" spec, disusul tiga kalimat lama ("Ikon sistem boleh mengikuti OS. ...") tanpa perubahan → AC-8
+- [ ] `grep -c 'shared/assets/README.md' docs/shared-resources/README.md` → `1`; `grep -c '0005-aset-merek-bersama' docs/shared-resources/README.md` → `1`; `grep -c 'akan memiliki berkas sumber' docs/shared-resources/README.md` → `0` (kode keluar `grep` 1) → AC-8
+- [ ] `grep -c 'Root workspace.*`shared/assets/`.*sudah ada' docs/architecture/README.md` → `1`; kalimatnya kini ``..., `tooling/codegen/`, `shared/assets/`, dan `shared/localization/` sudah ada.`` (sisipan tepat sebelum `dan` terakhir; lokasi lain tidak berubah) → AC-8
+- [ ] `grep -c '^| `shared/assets/` |' docs/architecture/README.md` → `1`; baris itu adalah baris terakhir tabel `### Yang sudah ada`, sesudah baris `shared/localization/`, sama dengan butir 3 spec → AC-8
+- [ ] `test -f shared/assets/README.md && test -f docs/specs/_root/0005-aset-merek-bersama/index.md; echo $?` → `0`; dari `docs/shared-resources/`, path relatif `../../shared/assets/README.md` dan `../specs/_root/0005-aset-merek-bersama/index.md` ada, dan dari `docs/architecture/` path `../specs/_root/0005-aset-merek-bersama/index.md` ada → AC-8
+- [ ] `git diff 01fffbd -- docs/architecture/README.md` → satu baris diganti dan satu baris ditambah; tabel "Aturan arah dependensi" tidak berubah. `cargo test -p desktop-core --locked` → kode 0, tidak ada `FAILED` (`workspace_layout` 10 passed) → AC-8
+- [ ] `git log --name-only --format= --grep='spec _root/0005 step' | sed '/^$/d' | sort -u` sesudah commit langkah 3 → daftar milestone 1 ditambah `docs/architecture/README.md` dan `docs/shared-resources/README.md`; tetap tanpa `Cargo.toml`, `Cargo.lock`, `.gitignore`, `.graphifyignore`, atau path di bawah `crates/`, `apps/`, `bindings/`, `scripts/`, `.github/` → AC-9
+
+### Acceptance-criteria coverage
+
+- AC-8: langkah 1 sampai 6 · AC-9: langkah 7.
+- AC-1 sampai AC-7 dan AC-9 (gerbang) dibuktikan di milestone 1. AC-10 menunggu milestone 3 (`BLOCKED`, `owner: user`).

@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794752435.054967,
-    "seen": 1794752436.5234392,
-    "ast_hash": "df3f84bd9e1e8e5836f2c41063107a74",
+    "mtime": 1794752906.2903259,
+    "seen": 1794752909.3366442,
+    "ast_hash": "8a7edd64410e3221d4c6c52599cb5852",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
-    "mtime": 1794752435.0618582,
-    "seen": 1794752436.5234408,
-    "ast_hash": "cb418402263454de26849c085c567a65",
+    "mtime": 1794752906.2943363,
+    "seen": 1794752909.336651,
+    "ast_hash": "b27628c9deae10971e5b996525ebe5e9",
     "semantic_hash": ""
   },
   "AGENTS.md": {
@@ -744,9 +744,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/verify.md": {
-    "mtime": 1794752864.680607,
-    "seen": 1794752868.089798,
-    "ast_hash": "7c996da874ac753d99303ea66eed15d8",
+    "mtime": 1794752906.297824,
+    "seen": 1794752909.3366551,
+    "ast_hash": "8559f408a19edc2f1db11824aa24fd14",
     "semantic_hash": ""
   }
 }
