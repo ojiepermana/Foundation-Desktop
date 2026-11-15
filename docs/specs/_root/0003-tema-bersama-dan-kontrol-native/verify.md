@@ -59,14 +59,14 @@ Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah
 
 ### Commands
 
-- [ ] Blok `## Yang sudah ada` di `docs/design-system/README.md` dibandingkan dengan blok di bagian **Perubahan dokumen** spec → sama persis, kecuali kata `spec 0003` di kalimat terakhir yang menjadi tautan `[spec 0003](../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md)`; letaknya sesudah paragraf "Bukti minimum kelak" dan sebelum baris `[Scope dan urutan kerja]` → AC-11
-- [ ] Di `docs/architecture/README.md` bagian "Tata letak yang dituju", kalimat kedua berbunyi ``Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, dan `tooling/codegen/` sudah ada.`` → AC-11
-- [ ] Di tabel "Yang sudah ada" dokumen arsitektur, tepat sesudah baris `apps/macos/`, ada baris `design-system/tokens/`, `design-system/schemas/` (dengan tautan `spec 0003`) lalu baris `tooling/codegen/`, sama dengan teks spec → AC-11
-- [ ] `git diff abd3a43 -- docs/architecture/README.md` → hanya satu baris diganti dan dua baris ditambah; tabel "Aturan arah dependensi" tidak berubah → AC-11
-- [ ] `grep -c 'desktop-codegen' docs/design-system/README.md` → `3` (2 atau lebih) → AC-11
-- [ ] `grep -c 'tooling/codegen' docs/architecture/README.md` → `3` (2 atau lebih) → AC-11
-- [ ] `(cd docs/design-system && test -f ../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md) && (cd docs/architecture && test -f ../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md)` → kode 0; tautan di kedua dokumen mengarah ke file yang ada → AC-11
-- [ ] `cargo test -p desktop-core --locked` → kode 0; tidak ada `FAILED`, termasuk `workspace_layout` (`10 passed`) dan `architecture_rule_table_matches_the_spec_row_by_row` → AC-11
+- [x] Blok `## Yang sudah ada` di `docs/design-system/README.md` dibandingkan dengan blok di bagian **Perubahan dokumen** spec → sama persis, kecuali kata `spec 0003` di kalimat terakhir yang menjadi tautan `[spec 0003](../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md)`; letaknya sesudah paragraf "Bukti minimum kelak" dan sebelum baris `[Scope dan urutan kerja]` → AC-11
+- [x] Di `docs/architecture/README.md` bagian "Tata letak yang dituju", kalimat kedua berbunyi ``Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, dan `tooling/codegen/` sudah ada.`` → AC-11
+- [x] Di tabel "Yang sudah ada" dokumen arsitektur, tepat sesudah baris `apps/macos/`, ada baris `design-system/tokens/`, `design-system/schemas/` (dengan tautan `spec 0003`) lalu baris `tooling/codegen/`, sama dengan teks spec → AC-11
+- [x] `git diff abd3a43 -- docs/architecture/README.md` → hanya satu baris diganti dan dua baris ditambah; tabel "Aturan arah dependensi" tidak berubah → AC-11
+- [x] `grep -c 'desktop-codegen' docs/design-system/README.md` → `3` (2 atau lebih) → AC-11
+- [x] `grep -c 'tooling/codegen' docs/architecture/README.md` → `3` (2 atau lebih) → AC-11
+- [x] `(cd docs/design-system && test -f ../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md) && (cd docs/architecture && test -f ../specs/_root/0003-tema-bersama-dan-kontrol-native/index.md)` → kode 0; tautan di kedua dokumen mengarah ke file yang ada → AC-11
+- [x] `cargo test -p desktop-core --locked` → kode 0; tidak ada `FAILED`, termasuk `workspace_layout` (`10 passed`) dan `architecture_rule_table_matches_the_spec_row_by_row` → AC-11
 
 ### Acceptance-criteria coverage
 
