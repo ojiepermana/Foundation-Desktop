@@ -624,15 +624,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/rationale.md": {
-    "mtime": 1794752197.6185129,
-    "seen": 1794752200.054091,
-    "ast_hash": "86d1d78d44759623b2948c237a6d8fd8",
+    "mtime": 1794755139.6512756,
+    "seen": 1794755141.2394829,
+    "ast_hash": "e7827dd4d741d0eb20f30c2df8cb4747",
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/index.md": {
-    "mtime": 1794753083.755903,
-    "seen": 1794753088.8940978,
-    "ast_hash": "4bb70542a447185d478c4286d923935f",
+    "mtime": 1794755139.6510773,
+    "seen": 1794755141.239488,
+    "ast_hash": "4f3ee6ecf58fd3d5a7c33bbc309bcbc0",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/config_rules.rs": {
@@ -750,9 +750,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0005-aset-merek-bersama/verify.md": {
-    "mtime": 1794753514.3260243,
-    "seen": 1794753517.0772521,
-    "ast_hash": "b346520b8f77a536bd3e7325f4ee5457",
+    "mtime": 1794755139.651463,
+    "seen": 1794755141.239486,
+    "ast_hash": "5d8b8d4fc7f673526220b4591801205d",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
