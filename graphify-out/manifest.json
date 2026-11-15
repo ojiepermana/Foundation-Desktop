@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/index.md": {
-    "mtime": 1794745296.8263276,
-    "seen": 1794745299.650023,
-    "ast_hash": "afbd9d9d8b058ab691fe45f402083988",
+    "mtime": 1794745648.4287019,
+    "seen": 1794745651.707406,
+    "ast_hash": "adb2aef8ddce868a1f1e522f0321be8f",
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/rationale.md": {
@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794744988.7776232,
-    "seen": 1794744995.800627,
-    "ast_hash": "d78ed1c3949e4a8958f8ecd0ffee7bb6",
+    "mtime": 1794745648.6830542,
+    "seen": 1794745651.707402,
+    "ast_hash": "d9f3c1f9b8a3cbdbcce546b303679f71",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
@@ -591,6 +591,36 @@
     "mtime": 1794745121.5785213,
     "seen": 1794745127.490716,
     "ast_hash": "82dac752d3b9514ebceaad43e882517d",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_contract.rs": {
+    "mtime": 1794745648.7255502,
+    "seen": 1794745651.7074041,
+    "ast_hash": "efc5cca5c43a81f7797e825eab54b7b1",
+    "semantic_hash": ""
+  },
+  "shared/config/public.schema.json": {
+    "mtime": 1794745648.6131487,
+    "seen": 1794745651.707407,
+    "ast_hash": "14c583d3b40b5f51627088536ac0a597",
+    "semantic_hash": ""
+  },
+  "shared/config/README.md": {
+    "mtime": 1794745648.6102164,
+    "seen": 1794745651.707408,
+    "ast_hash": "3485fc82f3f62b52d4e9d1af910ead3d",
+    "semantic_hash": ""
+  },
+  "shared/config/public.json": {
+    "mtime": 1794745648.6128583,
+    "seen": 1794745651.707409,
+    "ast_hash": "7c4f1b353b4bdd109ba47fa839148400",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/config/mod.rs": {
+    "mtime": 1794745648.664838,
+    "seen": 1794745651.7074099,
+    "ast_hash": "4f0b665ddb92e8b395aec1d8b7628dcf",
     "semantic_hash": ""
   }
 }

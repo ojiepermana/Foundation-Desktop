@@ -1,0 +1,8 @@
+{
+  "$schema": "./public.schema.json",
+  "schemaVersion": 1,
+  "build": {
+    "product_name": "Desktop Foundation",
+    "app_identifier": "com.example.desktop-foundation"
+  }
+}
