@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 97 files · ~116,517 words
+- 97 files · ~117,085 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -376,10 +376,10 @@ Nodes (3): pattern, type, light
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `quality/README.md`, `Fondasi desktop native`, `Scope fondasi desktop native`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `Fondasi desktop native` connect `Fondasi desktop native` to `quality/README.md`, `Sistem desain bersama`, `Fondasi Linux`, `Fondasi Windows`, `Penerimaan dan bukti fondasi`, `000 - Panduan scope`, `Fondasi macOS`, `Scope fondasi desktop native`, `Arsitektur fondasi desktop`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Why does `0002. Batas workspace dan pemilik di macOS` connect `0002. Batas workspace dan pemilik di macOS` to `quality/README.md`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `UniffiHandleMap` connect `desktop_macos_ffi.swift` to `GreetingViewModel`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
   _420 weakly-connected nodes found - possible documentation gaps or missing edges._
