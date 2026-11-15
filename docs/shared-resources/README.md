@@ -4,11 +4,11 @@ Konfigurasi publik, teks antarmuka, dan aset merek masing masing memiliki satu s
 
 ## Konfigurasi
 
-`shared/config/` akan memiliki skema untuk nilai publik yang perlu konsisten. Bedakan nilai saat build, nilai saat aplikasi berjalan, definisi environment, dan pengaturan khusus OS. Perubahan skema perlu dapat divalidasi dan ditelusuri versinya. Izin, kunci privat, dan kredensial penandatanganan diurus lewat mekanisme yang sesuai, di luar resource publik. Layanan konfigurasi jarak jauh dan mesin feature flag ditunda.
+`shared/config/public.json` adalah sumber nilai publik yang wajib sama di ketiga aplikasi. Skemanya tertutup dan bernomor versi, dan `shared/config/README.md` menjelaskan tiap kunci serta cara mengubahnya. Fondasi saat ini hanya butuh dua nilai, yaitu nama produk dan dasar pengenal aplikasi. Versi aplikasi tetap bersumber dari `[workspace.package]` di `Cargo.toml` root. Semua nilai dipakai saat build. Belum ada nilai yang dibaca saat aplikasi berjalan dan belum ada definisi environment; keduanya ditambah lewat kenaikan versi skema saat ada kebutuhan nyata. Pengaturan khusus OS, termasuk izin, tinggal di proyek native tiap aplikasi. Pengaturan lokal tinggal di file yang diabaikan git. Kunci privat dan kredensial penandatanganan tetap di luar repo. Layanan konfigurasi jarak jauh dan mesin feature flag ditunda. Rincian dan alasannya ada di [spec 0004](../specs/_root/0004-konfigurasi-publik/index.md).
 
 ## Lokalisasi
 
-`shared/localization/` akan memiliki katalog istilah dan teks bersama dengan kunci stabil. Konvensi mencakup nama locale, fallback bila teks bahasa tujuan belum ada, placeholder yang harus cocok, dan deteksi entri hilang. Satu contoh teks UI cukup untuk membuktikan alurnya. Format angka, tanggal, dan bentuk jamak mengikuti OS.
+`shared/localization/catalog.json` memuat katalog teks bersama dengan kunci stabil. Aturan nama locale, fallback bila teks bahasa tujuan belum ada, placeholder yang harus cocok, deteksi entri hilang, dan versi ada di [spec 0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md). Satu contoh teks UI, label tombol sapaan dengan kunci `greeting.submit`, membuktikan alurnya. Katalog diperiksa dengan `cargo run -p desktop-codegen --locked -- localization check`. Format angka, tanggal, dan bentuk jamak mengikuti OS.
 
 ## Aset merek
 

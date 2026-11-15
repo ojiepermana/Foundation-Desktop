@@ -1,1 +1,3 @@
 /design-system/**/*.json text eol=lf
+/shared/config/**/*.json text eol=lf
+/shared/localization/**/*.json text eol=lf

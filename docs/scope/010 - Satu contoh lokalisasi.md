@@ -6,7 +6,7 @@ Gunakan satu teks antarmuka pada layar sapaan untuk membuktikan alur dari katalo
 
 **Done when:** Ketiga aplikasi menampilkan teks UI dari kunci yang sama, dengan aturan fallback, placeholder, dan deteksi terjemahan yang hilang.
 
-**Pointer:** spec bersama [_root/0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md)
+**Pointer:** spec bersama [_root/0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md) · code in `shared/localization/`, `tooling/codegen/src/localization/`
 
 * [x] `/architect scope 010 contoh lokalisasi untuk _root` (spec)
 * [ ] Build it: `/develop scope 010 contoh lokalisasi untuk _root`
