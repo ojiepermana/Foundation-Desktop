@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 21:19`
+- **Diperbarui:** `2026-11-15 21:20`
 
 ## Sub sesi wave `2`
 
@@ -29,9 +29,12 @@
 | `arc-f004-spec` | architect | 008 spec macOS `macos/0005`; tindak lanjut di sesi yang sama; perubahan yang dibutuhkan pada spec `macos/0001` ditulis sebagai Follow-up | `008 - Tema bersama dan kontrol native.md` | `docs/specs/macos/0005-tema-bersama-dan-kontrol-native/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` sampai 19:24, lalu `opus-5-5 · high` | aktif (dilanjutkan 21:15 sesudah terputus) |
 | `dev-f001-m1` | tester | 008 Test it; laporan `done` (`89e14d0`), merge `3660b20`: 17 test di `tooling/codegen/tests/tokens_rules.rs` | `008 - Tema bersama dan kontrol native.md` | `tooling/codegen/tests/tokens_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
 | `arc-f001-spec` | checker (verify) | 009 verify milestone 1 dan 2; laporan `done` PASS 33 dari 33 (`8521419`, HEAD `2b30e9e`), merge `b18b4af`; dijalankan di Opus, family sama dengan penulis kode | `009 - Konfigurasi publik.md` | centang `verify.md` spec `_root/0004` | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | merged |
-| `dev-f008-m1` | developer | 010 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3) spec `_root/0006`; tindak lanjut di sesi yang sama | `010 - Satu contoh lokalisasi.md` | `shared/localization/`, `tooling/codegen/src/localization/`, `tooling/codegen/src/lib.rs` (dua tempat), `tooling/codegen/tests/localization_contract.rs`, `.gitattributes` (satu baris), dua dokumen rujukan, `verify.md` spec `_root/0006`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | dipakai ulang |
+| `dev-f008-m1` | developer | 010 Build it milestone 1 dan 2; Langkah Build plan selesai 1 (`ba63885`), 2 (`0257e46`), 3 (`024c73f`); Pointer code in `shared/localization/`, `tooling/codegen/src/localization/`; laporan `done` (`b1a46fd`), merge `c8fbb0e` | `010 - Satu contoh lokalisasi.md` | `shared/localization/`, `tooling/codegen/src/localization/`, `tooling/codegen/src/lib.rs` (dua tempat), `tooling/codegen/tests/localization_contract.rs`, `.gitattributes` (satu baris), dua dokumen rujukan, `verify.md` spec `_root/0006`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
 | `dev-f001-m1` | tester | 009 Test it; laporan `done` (`1d287f0`, HEAD `4564da7`), merge `e3f74c8`: 17 test di `tooling/codegen/tests/config_rules.rs` | `009 - Konfigurasi publik.md` | `tooling/codegen/tests/config_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
 | `arc-f010-spec` | architect (update) | spec `_root/0003`: batas waktu untuk AC-11, AC-1, AC-2, AC-4, AC-10 dan keterangan di `verify.md`; tindak lanjut di sesi yang sama | `008 - Tema bersama dan kontrol native.md` | `index.md`, `rationale.md`, keterangan `verify.md` spec `_root/0003` | `claude/arc-f010-spec-3201ce` | `opus-5-5 · high` | dipakai ulang |
+| `arc-f001-spec` | checker (verify) | 010 verify milestone 1 dan 2 (AC-1 sampai AC-11) dari `main`; tindak lanjut di sesi yang sama | `010 - Satu contoh lokalisasi.md` | centang `verify.md` spec `_root/0006` | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | dipakai ulang |
+| `dev-f001-m1` | tester | 010 Test it (bagian bersama) | `010 - Satu contoh lokalisasi.md` | paling banyak satu file baru `tooling/codegen/tests/localization_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | dipakai ulang |
+| `dev-f008-m1` | developer | 011 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3) spec `_root/0005`; tindak lanjut di sesi yang sama | `011 - Aset merek bersama.md` | `shared/assets/`, `tooling/codegen/src/assets/`, `tooling/codegen/src/lib.rs` (dua tempat), `tooling/codegen/tests/assets_contract.rs`, `.gitattributes`, dua dokumen rujukan, `verify.md` spec `_root/0005`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | dipakai ulang |
 
 ## Sub sesi wave `1`
 
@@ -127,6 +130,7 @@
 | 2026-11-15 | Verify 008 milestone 2 (`d32fcdd`): PASS. Tafsiran checker yang diterima lead: sesudah build 009 menyisipkan `shared/config/` ke kalimat "sudah ada" di dokumen arsitektur (diperintahkan spec `_root/0004`), teks persis langkah 2 dan hitungan baris langkah 4 hanya cocok pada `b549dce`; isi spec `_root/0003` tetap utuh, jadi AC-11 terpenuhi. Usul checker: ikat dua langkah itu ke `b549dce` atau beri AC-11 catatan batas waktu seperti AC lain; dijadwalkan sebagai `architect (update)` kecil spec `_root/0003`. `Verify it` 008 dicentang untuk bukti Mac; milestone 3 dan `Build it` tetap terbuka (`F008-1`). | lead |
 | 2026-11-15 | Verify scope 009 (`b18b4af`): PASS. Checker, sebagai penulis spec `_root/0004`, menilai tiga tafsiran developer sesuai spec tanpa pembaruan: teks pesan `R-1` sampai `R-3` yang tidak dikunci, penulis skema di `config/mod.rs`, dan enam konstanta publik. Tafsiran checker yang diterima lead: langkah 23 mencatat 14 baris `test result: ok`, kini 15 karena `tokens_rules.rs` masuk sesudahnya; yang dikunci langkah itu tetap benar. Checker ini penulis spec yang sama dan berjalan di Opus seperti penulis kode; tidak ada sesi family lain yang tersedia. | lead |
 | 2026-11-15 | Gerbang tester 009 (`e3f74c8`): satu file test baru. Catatan untuk build spec `macos/0004`: test `every_output_follows_the_output_rules` memeriksa setiap keluaran di `Plan` sumber `config`, jadi `apps/macos/Config/Shared.xcconfig` nanti harus membawa penanda di tiga baris pertama dan punya baris `.gitattributes` per jenis file (mis. `/apps/macos/**/*.xcconfig text eol=lf`); brief developer macOS 009 wajib menyebutnya. Celah yang sama seperti 008: kode keluar 1 binary tidak bisa diuji tanpa seam root uji. | lead |
+| 2026-11-15 | Gerbang `dev-f008-m1` 010 milestone 1 dan 2: worktree bersih, diff 12 file ownership plus `graphify-out/`. Di `main`: fmt, clippy, `cargo test --workspace --locked` 116 lulus 0 gagal, `localization check` (`1 keys, 2 locales, 0 missing translations, 1 outputs up to date`), `localization generate` (`0 written`), `config check` dan `tokens check` tetap lulus, `.gitattributes` tiga baris per jenis file, manifest, lockfile, `crates/`, `apps/`, dan sumber lain tidak berubah. Merge `c8fbb0e`. Developer melaporkan tidak ada selisih antara spec dan kode nyata, jadi risiko prototipe Python tidak terjadi. Tafsiran yang diterima: `parse` lengkap sudah di commit langkah 1 dan langkah 2 menambah uji; kalimat "sudah ada" di dokumen arsitektur disusun ulang supaya tetap benar. Verify ke `arc-f001-spec`, test ke `dev-f001-m1`, build 011 ke `dev-f008-m1`. | lead |
 
 ## Keputusan delegasi
 
@@ -229,7 +233,6 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 010 · `/architect scope 010 contoh lokalisasi untuk macOS` ← 010 milestone 1 di `main` dan pembaruan AC-12 spec `macos/0001`.
 - 008 · Milestone 3 (AC-12) ← host Windows dan host Linux; langkah manual `F008-1`, pemilik user.
 - Spec `macos/0001` Follow-up Scope 010 dan 011 ← `architect (update)`: keputusan 12 spec `_root/0004` memindahkan nama produk ke konfigurasi publik.
-- 011 · `Build it` milestone 1 ← build 010 milestone 1 di `main` (file bersama), lalu developer bebas.
 - 011 · Milestone 3 (AC-10) ← ikon SVG nyata dari user; langkah manual `F011-1`.
 - 011 · `/architect scope 011 aset merek untuk macOS` ← 011 milestone 1 di `main` dan pembaruan AC-12 spec `macos/0001`.
 - 012 · `/architect scope 012 build dan penerimaan untuk _root` ← spec 008 sampai 011 dan 002 diterima, supaya skrip dan CI membungkus perintah yang sudah ada.
