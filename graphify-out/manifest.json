@@ -766,5 +766,17 @@
     "seen": 1794753088.894102,
     "ast_hash": "8559f408a19edc2f1db11824aa24fd14",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
+    "mtime": 1794753103.018702,
+    "seen": 1794753106.364079,
+    "ast_hash": "6e9358812a55a4c0cdaa769ff0693c18",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md": {
+    "mtime": 1794753103.0190125,
+    "seen": 1794753106.364084,
+    "ast_hash": "11452544872e000e16e87c072f506cb0",
+    "semantic_hash": ""
   }
 }
