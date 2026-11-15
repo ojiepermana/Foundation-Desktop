@@ -17289,7 +17289,7 @@
       "node_kind": "heading",
       "norm_label": "bukti percobaan",
       "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md",
-      "source_location": "L131"
+      "source_location": "L133"
     },
     {
       "id": "docs_specs_root_0006_satu_contoh_lokalisasi_rationale_context",
@@ -45133,7 +45133,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md",
-      "source_location": "L131",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -54616,6 +54616,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md",
       "source_location": "L229",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0006_satu_contoh_lokalisasi_index",
+      "target": "docs_specs_root_0007_aturan_pengembangan_dan_pemeriksaan_arsitektur_index",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0006-satu-contoh-lokalisasi/index.md",
+      "source_location": "L33",
       "weight": 1.0
     },
     {

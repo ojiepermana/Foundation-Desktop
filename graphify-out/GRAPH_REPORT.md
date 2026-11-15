@@ -1,11 +1,11 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 144 files · ~229,351 words
+- 144 files · ~229,690 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1895 nodes · 3079 edges · 110 communities (102 shown, 8 thin omitted)
+- 1895 nodes · 3080 edges · 110 communities (102 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 47 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -558,7 +558,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `desktop_macos_ffi.swift` be split into smaller, more focused modules?**
   _Cohesion score 0.050883898709985664 - nodes in this community are weakly interconnected._
 - **Should `quality/README.md` be split into smaller, more focused modules?**
-  _Cohesion score 0.08280701754385965 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08315789473684211 - nodes in this community are weakly interconnected._
 - **Should `Findings` be split into smaller, more focused modules?**
   _Cohesion score 0.06280701754385964 - nodes in this community are weakly interconnected._
 - **Should `Problem` be split into smaller, more focused modules?**
