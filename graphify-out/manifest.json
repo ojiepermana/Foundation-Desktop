@@ -60,10 +60,10 @@
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
-    "mtime": 1794730741.1026645,
-    "seen": 1794731111.199782,
-    "ast_hash": "1ee11d35079c41c8e668deb9ea59b100",
-    "semantic_hash": "1ee11d35079c41c8e668deb9ea59b100"
+    "mtime": 1794742647.7043679,
+    "seen": 1794742649.6327932,
+    "ast_hash": "d03e144100ea7e6d671be752b7865d78",
+    "semantic_hash": ""
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
     "mtime": 1794742005.129829,
@@ -126,9 +126,9 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794739801.1219287,
-    "seen": 1794739803.655924,
-    "ast_hash": "beedc79839c0ec4786e7944275b6a004",
+    "mtime": 1794742647.7068121,
+    "seen": 1794742649.632797,
+    "ast_hash": "b14ca6253e22ddf5d26fe6b43d9cc123",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794742512.7222607,
-    "seen": 1794742515.068953,
-    "ast_hash": "a844ee5c4decdb6c49c50f99f4416686",
+    "mtime": 1794742647.7064505,
+    "seen": 1794742649.632786,
+    "ast_hash": "636727cc8085f9a7e12a676d8d2513fa",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
