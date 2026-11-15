@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 22:40`
+- **Diperbarui:** `2026-11-15 23:00`
 
 ## Sub sesi wave `1`
 
@@ -20,7 +20,7 @@
 | `arc-f001-spec` | checker (verify) | 001 verify milestone 2 (AC-8) dari `main` `8fcc995`, tindak lanjut di sesi yang sama | `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec 0001 bagian Milestone 2; laporan `done` PASS 8 dari 8 (`7828cf0`, `b4f903d`), merge `26d3dce` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `dev-f003-m1` | developer | 003 Build it milestone 1 dan 2; Langkah Build plan selesai 1 (`edf3e29`), 2 (`288ae81`), 3 (`2afc387`), 4 (`d6ab359`), 5 (`bfb12a9`), 6 (`de9d200`); Pointer code in `crates/core/src/greeting.rs`, uji `crates/core/tests/hello_contract.rs`; laporan `done` (`a723881`), merge `e310892` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs`, `crates/core/Cargo.toml`, `verify.md` spec 0002, baris `**Status**` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | merged |
 | `arc-f003-spec` | checker (verify) | 003 verify penuh (milestone 1 dan 2, AC-1 sampai AC-7) dari `main` `e310892`; sesi dibersihkan, judul `arc-f003-spec · 003 verify penuh` | `003 - Kontrak sapaan bersama.md` | centang `verify.md` spec 0002; laporan `done` PASS 21 dari 21 (`4070062`, HEAD `ebd802a`), merge `7223987` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
-| `dev-f001-m1` | tester | 003 Test it; sesi dibersihkan, effort dinaikkan ke `high`, judul `dev-f001-m1 · 003 Test it`; Range `8fcc995..e310892` | `003 - Kontrak sapaan bersama.md` | file baru di `crates/core/tests/`, `test-preferences.json` (baru) | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | dipakai ulang |
+| `dev-f001-m1` | tester | 003 Test it; sesi dibersihkan, effort dinaikkan ke `high`, judul `dev-f001-m1 · 003 Test it`; Range `8fcc995..e310892` | `003 - Kontrak sapaan bersama.md` | `crates/core/tests/hello_invariants.rs`, `crates/core/tests/contract_surface.rs`, `test-preferences.json`; laporan `done` (`8d5aba4`, HEAD `e724d17`), merge `c40e86a` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
 
 ## Keputusan
 
@@ -50,6 +50,7 @@
 | 2026-11-15 | Gerbang `dev-f003-m1`: worktree bersih, diff hanya enam file ownership plus `graphify-out/`; konflik merge hanya `graphify-out/graph.json` (sisi `main` diambil); di `main`: `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo test -p desktop-core --locked` (5 unit, 4 kontrak, 1 doc), `cargo doc` dengan `-D warnings`, `cargo tree` satu baris, `git grep` AC-3 satu file, grep AC-4 dua baris, grep AC-6 kosong, `Cargo.lock` tidak berubah. Merge `e310892`. Kedua kotak milestone menunggu checker. | lead |
 | 2026-11-15 | `Verify it` dan `Test it` 003 dijalankan bersamaan dengan sesi yang dipakai ulang, karena `start_session` ditolak pada giliran ini: `arc-f003-spec` (dibersihkan) menjadi checker verify penuh, `dev-f001-m1` (dibersihkan, effort `high`) menjadi tester. `dev-f001-m1` tidak menulis kode 003. Role tester mengandaikan `cargo xtask evidence` dan `test-preferences.json` yang sudah ada; di repo ini tidak ada keduanya, jadi brief mengizinkan tester membuat `test-preferences.json` (harness bawaan `cargo test`, tanpa dependensi dev) dan evidence berupa perintah serta keluaran di laporan. | lead |
 | 2026-11-15 | `Verify it` fitur 001 dicentang atas dua verify milestone yang lulus (AC-1 sampai AC-8, semua yang bisa dijalankan di Mac) tanpa run verify penuh terpisah: tidak ada langkah lain yang bisa dijalankan, dan gerbang lead di `e310892` sudah mengulang perintah yang jalurnya tersentuh build 003. Milestone 3 (AC-9, seluruhnya langkah host) dan `Build it` fitur 001 sengaja TIDAK dicentang: tidak ada bagiannya yang lulus di sini, dan Panduan mensyaratkan bukti per target. Keduanya terbuka sampai `F001-1` `PASS`. | lead |
+| 2026-11-15 | Gerbang tester 003 (`c40e86a`): diff hanya dua file test baru, `test-preferences.json`, dan `graphify-out/manifest.json`. Catatan: `contract_surface.rs` membaca `crates/core/Cargo.toml`, `lib.rs`, dan `greeting.rs` lewat `include_str!` dan mengunci keadaan kontrak sekarang (tanpa dependensi, hanya `hello` yang diekspor, dua lint). API publik atau dependensi baru di Core akan membuat test itu gagal sampai spec `_root` dan test diperbarui bersama; itu sesuai R-2. AC-3 tetap perintah `git grep`, karena test Rust yang mencari pola itu akan melanggarnya sendiri. Catatan graph dari tester (manifest merekam file yang belum ada di `graph.json` sesudah merge) pulih pada commit lead berikutnya yang mengubah sumber, karena hook mengekstrak ulang seluruh korpus. | lead |
 
 ## Keputusan delegasi
 
@@ -92,7 +93,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 001, 002, 003, 008 sampai 012 · penerapan Windows dan Linux: host masing masing; pemilik user. Fitur bersama tidak ditandai `done` sebelum bukti itu ada.
 - 002 · `/audit` ← scaffold sudah di `main` (`9dee57d`); dijalankan sesudah build 003 di-merge supaya konvensi dibaca dari Core yang berisi, dan butuh sesi baru pada giliran user.
 - 001 · Milestone 3 (AC-9) dan `Build it` ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
-- 001 · `Test it` ← tester bebas (`dev-f001-m1` sedang mengerjakan `Test it` 003).
+- 001 · `Test it` ← sedang dikerjakan tester `dev-f001-m1` (tindak lanjut).
 - 001 · `/architect scope 001 batas workspace dan pemilik untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
 - 004 · `Build it` ← (001 milestone 1 `9dee57d` dan build 003 `e310892` sudah di `main`) serta spec `macos/0001` di-merge (sedang ditulis `arc-f004-spec`).
@@ -102,6 +103,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Dicentang pada wave ini
 
+- 003 · `Test it: /test scope 003 kontrak sapaan untuk _root` · laporan `done` tester `dev-f001-m1` (12 test baru di dua file, plus `test-preferences.json`) · `claude/dev-f001-m1-c305cb` → `c40e86a` · di `main`: fmt, clippy, `cargo test -p desktop-core --locked` (5 unit, 7 + 4 + 5 integrasi, 1 doc), `cargo tree` satu baris, grep AC-3 satu file, kode produksi dan `Cargo.lock` tidak berubah · commit `docs(scope): tick 003 test` · tanpa langkah manual
 - 003 · `Milestone 1`, `Milestone 2`, `Build it`, `Verify it: /check verify scope 003 kontrak sapaan untuk _root` · laporan `done` `dev-f003-m1` dan verify penuh PASS `arc-f003-spec` (21 dari 21 langkah, AC-1 sampai AC-7, pada `e310892`; enam probe negatif di salinan scratchpad) · `claude/dev-f003-m1-f164e9` → `e310892`, centang verify `claude/arc-f003-spec-14125c` → `7223987` · fmt, clippy, test (5 unit, 4 kontrak, 1 doc), `cargo doc`, `cargo tree`, grep AC-3, AC-4, AC-6 di `main` · commit `docs(scope): tick 003 build and verify` · tanpa langkah manual
 - 001 · `Verify it: /check verify scope 001 batas workspace dan pemilik` · verify PASS `arc-f001-spec` untuk milestone 1 (15 dari 15, pada `9dee57d`) dan milestone 2 (8 dari 8, pada `8fcc995`); sesudah merge terakhir gerbang lead di `main` `e310892` mengulang fmt, clippy, test, dan `cargo tree` satu baris · `verify.md` 23 langkah `[x]`, 0 terbuka · commit `docs(scope): tick 001 milestone 2 and verify` · `(manual NOT_RUN: F001-1, owner user)` untuk AC-9
 - 001 · `Milestone 2: Peta arsitektur mencatat tata letak nyata` · laporan `done` `dev-f001-m1` dan verify PASS `arc-f001-spec` (8 dari 8, AC-8, pada `8fcc995`) · `claude/dev-f001-m1-c305cb` → `8fcc995`, centang verify `claude/arc-f001-spec-a1f824` → `26d3dce` · pemeriksaan AC-8 di `main` · commit yang sama · tanpa langkah manual
