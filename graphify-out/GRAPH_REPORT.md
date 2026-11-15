@@ -1,10 +1,10 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- Corpus is ~36,531 words - fits in a single context window. You may not need a graph.
+- Corpus is ~36,596 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 351 nodes · 591 edges · 28 communities (24 shown, 4 thin omitted)
+- 353 nodes · 591 edges · 30 communities (25 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
@@ -37,6 +37,7 @@
 - brief-umum.md
 - report.md
 - 000 - Panduan scope.brief-umum.md
+- desktop-core
 
 ## God Nodes (most connected - your core abstractions)
 1. `Fondasi Linux` - 23 edges
@@ -71,7 +72,7 @@
 - **Pemeriksaan runtime pada tiga host** — docs_quality_readme_bukti_runtime_per_host, docs_platforms_macos_readme_uji_jendela_di_mac, docs_platforms_windows_readme_uji_jendela_windows, docs_platforms_linux_readme_uji_sesi_grafis_linux [EXTRACTED 1.00]
 - **Pemetaan visual native bersama** — docs_design_system_readme_token_desain_bersama, docs_design_system_readme_tema_swiftui, docs_design_system_readme_fluent_design, docs_design_system_readme_css_gtk [EXTRACTED 1.00]
 
-## Communities (28 total, 4 thin omitted)
+## Communities (30 total, 5 thin omitted)
 
 ### Community 0 - "Fondasi Windows"
 Cohesion: 0.10
@@ -170,21 +171,21 @@ Cohesion: 0.40
 Nodes (5): Keputusan yang lebih kecil, Option 1: Fungsi total, nama dipakai apa adanya, Option 2: Validasi di Core dengan kesalahan bertipe, Option 3: Rapikan diam diam, tanda tangan tetap, Options considered
 
 ## Knowledge Gaps
-- **144 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+139 more)
+- **145 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+140 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Scope fondasi desktop native` connect `Scope fondasi desktop native` to `Fondasi Windows`, `Fondasi macOS`, `scope.md`, `Arsitektur fondasi desktop`, `Fondasi Linux`, `Desain dan kontrol native`, `Resource bersama`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
-  _High betweenness centrality (0.107) - this node is a cross-community bridge._
+  _High betweenness centrality (0.106) - this node is a cross-community bridge._
 - **Why does `Fondasi desktop native` connect `Fondasi macOS` to `Fondasi Windows`, `scope.md`, `Arsitektur fondasi desktop`, `Fondasi Linux`, `Desain dan kontrol native`, `Scope fondasi desktop native`, `Resource bersama`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
-  _High betweenness centrality (0.099) - this node is a cross-community bridge._
+  _High betweenness centrality (0.098) - this node is a cross-community bridge._
 - **Why does `0001. Batas workspace dan pemilik` connect `0001. Batas workspace dan pemilik` to `scope.md`?**
-  _High betweenness centrality (0.071) - this node is a cross-community bridge._
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
-  _144 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _145 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Fondasi Windows` be split into smaller, more focused modules?**
   _Cohesion score 0.0967741935483871 - nodes in this community are weakly interconnected._
 - **Should `Fondasi macOS` be split into smaller, more focused modules?**

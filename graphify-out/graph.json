@@ -1913,6 +1913,30 @@
       "source_location": "L1"
     },
     {
+      "id": "crates_core_src_lib",
+      "label": "lib.rs",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "lib.rs",
+      "file_type": "code",
+      "norm_label": "lib.rs",
+      "source_file": "crates/core/src/lib.rs",
+      "source_location": "L1"
+    },
+    {
+      "id": "pkg_desktop_core",
+      "label": "desktop-core",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "desktop-core",
+      "ecosystem": "cargo",
+      "file_type": "code",
+      "norm_label": "desktop-core",
+      "source_file": "crates/core/Cargo.toml",
+      "source_location": "L1",
+      "type": "package"
+    },
+    {
       "id": "githooks_pre_merge_commit",
       "label": "pre-merge-commit",
       "_origin": "ast",
