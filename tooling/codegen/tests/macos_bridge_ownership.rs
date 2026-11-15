@@ -12,8 +12,8 @@
 use std::fs;
 use std::path::{Path, PathBuf};
 
-const BRIDGE_LIB: &str = include_str!("../../macos-ffi/src/lib.rs");
-const BRIDGE_MANIFEST: &str = include_str!("../../macos-ffi/Cargo.toml");
+const BRIDGE_LIB: &str = include_str!("../../../crates/macos-ffi/src/lib.rs");
+const BRIDGE_MANIFEST: &str = include_str!("../../../crates/macos-ffi/Cargo.toml");
 
 /// Build output folders under `apps/macos/` that are not source.
 const BUILD_FOLDERS: [&str; 2] = [".build", "DerivedData"];

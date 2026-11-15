@@ -18,7 +18,7 @@ Jendela, navigasi, izin, event loop, dan pelepasan resource milik OS masing masi
 
 ## Tata letak yang dituju
 
-Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, `tooling/codegen/`, dan `shared/localization/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
+Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace, `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, `tooling/codegen/`, `shared/assets/`, dan `shared/localization/` sudah ada. Lokasi lain masih berupa rencana sampai scope pemiliknya dikerjakan.
 
 | Lokasi yang direncanakan | Isi |
 | --- | --- |
@@ -49,6 +49,7 @@ Target bersama adalah Rust stable. Sebelum mengunci versi, periksa ketersediaan,
 | `tooling/codegen/` | Paket `desktop-codegen`, alat yang memeriksa sumber bersama dan menulis ulang file turunannya. Tidak ada anggota yang bergantung padanya. |
 | `shared/config/` | Sumber nilai publik `public.json`, skema hasil generator, dan aturan pakainya dari [spec 0004](../specs/_root/0004-konfigurasi-publik/index.md). |
 | `shared/localization/` | Katalog bahasa bersama `catalog.json` dan skema hasil generator. Aturannya ada di [spec 0006](../specs/_root/0006-satu-contoh-lokalisasi/index.md). |
+| `shared/assets/` | Sumber aset merek bersama dari [spec 0005](../specs/_root/0005-aset-merek-bersama/index.md): aturan di `README.md`, manifest `brand.json`, dan berkas sumber di `source/`. |
 
 Nama paket yang dicadangkan untuk lokasi yang masih rencana: `desktop-windows` di `apps/windows/` dan `desktop-linux` di `apps/linux/`. Rincian lokasi macOS ada di [spec macOS 0001](../specs/macos/0001-sapaan-di-jendela-macos/index.md).
 

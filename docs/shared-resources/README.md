@@ -12,7 +12,7 @@ Konfigurasi publik, teks antarmuka, dan aset merek masing masing memiliki satu s
 
 ## Aset merek
 
-`shared/assets/` akan memiliki berkas sumber dan aturan penamaan, format, varian terang dan gelap, resolusi, optimasi, versi, serta tujuan ekspor. Ikon sistem boleh mengikuti OS. Aset merek yang sama diekspor dari sumbernya. Tambahan ilustrasi atau artwork menunggu kebutuhan produk.
+`shared/assets/` memiliki berkas sumber, manifest `brand.json`, dan aturan pemilik, penamaan, format, optimasi, varian terang dan gelap, resolusi, versi, serta tujuan ekspor di [shared/assets/README.md](../../shared/assets/README.md). Sumber itu diperiksa `cargo run -p desktop-codegen --locked -- assets check`. Keputusan dan alasannya ada di [spec 0005](../specs/_root/0005-aset-merek-bersama/index.md). Ikon sistem boleh mengikuti OS. Aset merek yang sama diekspor dari sumbernya. Tambahan ilustrasi atau artwork menunggu kebutuhan produk.
 
 | Target | Teks antarmuka | Tujuan aset |
 | --- | --- | --- |

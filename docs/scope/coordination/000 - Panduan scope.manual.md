@@ -10,6 +10,8 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | --- | --- | --- | --- | --- | --- |
 | `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
 | `F008-1` | Bangun, uji, dan periksa token dengan `desktop-codegen` di host Windows dan host Linux | spec `_root/0003` AC-12 | `Verify it` fitur 008 (bukti Mac). Milestone 3 dan `Build it` fitur 008 tetap terbuka sampai langkah ini `PASS` | 008 milestone 1 di `origin/main` | `NOT_RUN` |
+| `F002-1` | Bangun, uji, dan jalankan pemeriksaan arsitektur di host Windows dan host Linux | spec `_root/0007` AC-11 | belum ada | 002 milestone 3 di `main`, dan host Windows serta Linux | `NOT_RUN` |
+| `F008-2` | Tampilan terang dan gelap dari token, fokus, keyboard, ukuran teks, VoiceOver, Increase contrast (langkah 1 sampai 10) | spec `macos/0005` AC-7, AC-8 | belum ada | 008 macOS milestone 2 di `main` | `NOT_RUN` |
 | `F009-1` | Judul jendela dari konfigurasi publik dan nama menu aplikasi (langkah 1 sampai 4) | spec `macos/0004` AC-7 | belum ada | 009 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F011-1` | Mengganti ikon penanda dengan ikon aplikasi nyata dalam SVG, lalu `assets generate` dan `assets check` | spec `_root/0005` AC-10 | belum ada | 011 milestone 1 di `main`, dan berkas ikon darimu (`N9`) | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
@@ -44,6 +46,22 @@ Dari laporan `arc-f001-spec` (2026-11-15). Membuktikan spec `_root/0001` `AC-9` 
   - `cargo test -p desktop-core --locked`
 - **Lulus bila:** `rustc --version` diawali `rustc 1.99.1`, kedua perintah `cargo` keluar dengan kode 0, dan keluaran test memuat `test result: ok` tanpa `FAILED`. Kirim OS, arsitektur, versi, perintah, dan keluarannya; checker mencatatnya di `verify.md` bagian `## Milestone 3: Bukti Core di host Windows dan Linux`.
 - **Hanya langkah ini yang bisa membuktikan:** bahwa Core terbangun dan teruji di luar macOS. Semua bukti lain fitur 001 dijalankan di Mac.
+
+## Fitur `002`: `Aturan pengembangan dan pemeriksaan arsitektur` (spec `_root/0007`)
+
+### `F002-1` · Bangun, uji, dan jalankan pemeriksaan arsitektur di host Windows dan host Linux
+
+Dari laporan `arc-f002-spec` (2026-11-15). Membuktikan spec `_root/0007` `AC-11` (kriteria 25 pada host lain); ini milestone 4 fitur 002.
+
+- **Prasyarat:** milestone 3 fitur 002 sudah di `main` dan di-clone di host itu. Host Windows `x86_64-pc-windows-msvc` dengan `rustup` dan MSVC Build Tools; host Linux `x86_64-unknown-linux-gnu` dengan `rustup` dan `cc`; toolchain `1.99.1`. Tanpa pustaka UI.
+- **Jalankan:** dari akar repo, pada tiap host:
+  - `rustc --version`
+  - `cargo test -p desktop-codegen --locked`
+  - `cargo run -p desktop-codegen --locked -- architecture check`
+- **Lulus bila:** `rustc --version` diawali `rustc 1.99.1`, kedua perintah `cargo` keluar dengan kode 0, keluaran test tidak memuat `FAILED`, dan baris terakhir perintah ketiga diawali `architecture: ok, 13 rules, 3 members` (angka sesuai `main` saat itu). Kirim OS, arsitektur, versi, perintah, dan keluarannya.
+- **Hanya langkah ini yang bisa membuktikan:** pemeriksaan teks (akhir baris `\r\n`, path dengan `/`) memberi hasil yang sama di luar macOS.
+
+Pertanyaan untukmu dari spec yang sama, bukan langkah uji: apakah hook `pre-merge-commit`, penggabungan `manifest.json`, atau hook `pre-push` yang menjalankan gerbang perlu diubah. Folder `.githooks/` terlarang bagi sub sesi, jadi itu hanya berubah atas katamu.
 
 ## Fitur `004`: `Sapaan di jendela macOS` (spec `macos/0001`)
 
@@ -89,6 +107,25 @@ Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `_root/0003` `AC-12`
   - `cargo run -p desktop-codegen --locked -- tokens check`
 - **Lulus bila:** ketiganya keluar dengan kode 0, dan baris terakhir perintah ketiga `tokens: ok, 6 semantic tokens, 3 placeholder values, 3 outputs up to date`. Kirim OS, arsitektur, versi, perintah, dan keluarannya.
 - **Hanya langkah ini yang bisa membuktikan:** bahwa alat generator dan token terbangun dan memberi keluaran yang sama di luar macOS.
+
+### `F008-2` · Tampilan terang dan gelap dari token dan kontrol native
+
+Dari laporan `arc-f004-spec` (2026-11-15). Membuktikan spec `macos/0005` `AC-7` (langkah 1 sampai 5) dan `AC-8` (langkah 6 sampai 10); ini milestone 3 bagian macOS fitur 008. Teks lengkap dan sama persis ada di spec `macos/0005` bagian "Rencana verifikasi manual".
+
+- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang dipakai membangun 27.0.1), Xcode 27.1, sesi desktop yang sedang login, repo pada commit yang lulus AC-5 spec `macos/0005` (milestone 2 bagian macOS sudah di-merge). Nilai warna dibaca dari `apps/macos/DesignSystem/Tokens.swift` pada commit itu; angka di bawah nilai sementara. Bilah judul milik sistem dan tidak dinilai. Warna tombol hanya dinilai saat jendela `DesktopMac` aktif, jadi klik jendela itu dulu.
+- **Jalankan:**
+  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`. Harapan: `** BUILD SUCCEEDED **`.
+  2. System Settings, Appearance: catat Appearance dan Accent color sekarang. Pilih Appearance Light dan Accent color Orange. Jalankan `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app`, ketik `Ayu`, klik `Greet`. Harapan: area isi hampir putih (`#FAFAFA`), teks `Hello, Ayu!` hampir hitam (`#111111`), tombol `Greet` berisi biru (`#3366CC`), bukan oranye, kolom `Name` seperti kolom teks Mac biasa.
+  3. Buka Digital Color Meter, pilih "Display in sRGB". Klik jendela `DesktopMac`, arahkan kursor ke area isi dan ke isi tombol `Greet`. Harapan: sekitar `250 250 250` dan `51 102 204`.
+  4. Tanpa menutup aplikasi, ganti Appearance ke Dark, klik jendela. Harapan: jendela berubah tanpa dibuka ulang; area isi hampir hitam (`#111111`), teks hampir putih (`#FAFAFA`), tombol tetap biru. Ukur lagi: sekitar `17 17 17` dan `51 102 204`.
+  5. Command Q, lalu `open` lagi saat Appearance masih Dark, ketik `Ayu`, klik `Greet`. Harapan: jendela langsung gelap, teks hampir putih. Biarkan Dark dan Orange sampai langkah 6 selesai.
+  6. Klik kolom `Name`. Harapan: cincin fokus sistem terlihat dan berwarna oranye, bukan biru token. Hapus isi, ketik `Budi`, tekan Return tanpa mouse. Harapan: `Hello, Budi!`. Ganti Appearance ke Light, klik kolom lagi, amati cincin fokus yang sama.
+  7. System Settings, Keyboard: nyalakan Keyboard navigation. Klik kolom `Name`, hapus isi, ketik `Citra`, tekan Tab. Harapan: fokus pindah ke tombol `Greet` dengan cincin fokus. Tekan Spasi. Harapan: `Hello, Citra!`. Kembalikan pengaturan.
+  8. System Settings, Accessibility, Display: perbesar Text Size. Lihat jendela aplikasi (buka ulang bila perlu, ketik `Ayu`, klik `Greet`). Harapan: tidak ada teks terpotong atau bertumpuk, label hasil seukuran dengan teks tombol dan kolom. Catat apakah teks ikut membesar (boleh tidak; itu dicatat, bukan gagal). Kembalikan pengaturan.
+  9. Hapus isi kolom, ketik `Budi`, tekan Return. Nyalakan VoiceOver (Command F5), pindah ke kolom, tombol, dan label. Harapan: `Name`, `Greet`, dan `Hello, Budi!` dibacakan. Matikan VoiceOver.
+  10. System Settings, Accessibility, Display: nyalakan Increase contrast, klik jendela. Harapan: area isi dan teks hasil tetap memakai warna token dan mudah dibaca, kontrol bergaris tepi lebih tegas. Matikan Increase contrast, kembalikan Appearance dan Accent color, Command Q.
+- **Lulus bila:** setiap harapan di atas terpenuhi. Kirim host, arsitektur, versi macOS, tampilan yang aktif, dan hasil tiap langkah.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa jendela nyata menggambar warna token di tampilan terang dan gelap, dan bahwa fokus, keyboard, dan VoiceOver tetap milik kontrol native.
 
 ## Fitur `009`: `Konfigurasi publik` (spec `macos/0004`)
 
