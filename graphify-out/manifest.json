@@ -964,5 +964,11 @@
     "seen": 1794757151.0155368,
     "ast_hash": "17a3eefc337819445119743a83302ac0",
     "semantic_hash": ""
+  },
+  "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/verify.md": {
+    "mtime": 1794757766.0439453,
+    "seen": 1794757768.2110589,
+    "ast_hash": "200f6c6a9135aecac73c05389e3544ea",
+    "semantic_hash": ""
   }
 }
