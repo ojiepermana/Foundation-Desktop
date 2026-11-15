@@ -9,14 +9,15 @@ Aktifkan hook sekali di setiap clone dengan `git config --local core.hooksPath .
 
 # Aturan pengembangan
 
-Tiga aplikasi desktop native memakai satu Rust Core. Yang sudah ada: Cargo Workspace, `crates/core/`, jembatan macOS di `crates/macos-ffi/`, binding Swift di `bindings/swift/`, dan aplikasi macOS di `apps/macos/`. Lokasi Windows, Linux, dan sumber bersama masih rencana. Setiap aturan di bawah menyebut spec pemiliknya di `docs/specs/`. Spec itu sumbernya, bagian ini hanya penunjuk.
+Tiga aplikasi desktop native memakai satu Rust Core. Yang sudah ada: Cargo Workspace, `crates/core/`, jembatan macOS di `crates/macos-ffi/`, binding Swift di `bindings/swift/`, dan aplikasi macOS di `apps/macos/`. Sumber bersama di `design-system/` dan `shared/`, alat `tooling/codegen/`, dan skrip di `scripts/` juga sudah ada. Lokasi Windows dan Linux masih rencana. Setiap aturan di bawah menyebut spec pemiliknya di `docs/specs/`. Spec itu sumbernya, bagian ini hanya penunjuk.
 
 ## Stack
 
 - **Bahasa dan toolchain**: Rust `1.99.1` (pin di `rust-toolchain.toml`, membawa `rustfmt` dan `clippy`), edisi `2024`, `rust-version = "1.99"`.
 - **Workspace**: satu Cargo Workspace dengan manifest virtual di root, `resolver = "3"`, dan satu `Cargo.lock` yang terlacak git.
 - **Anggota**: `desktop-core` di `crates/core/`, tanpa dependensi, dan `desktop-macos-ffi` di `crates/macos-ffi/`, jembatan UniFFI `=0.32.2` ke Swift.
-- **macOS**: paket Swift lokal di `apps/macos/` (modul `Interop` dan `Presentation`) dan proyek Xcode `DesktopMac`, target `aarch64-apple-darwin`. Versi yang dipakai ada di spec `macos/0001` bagian "Kombinasi yang dipakai".
+- **Alat**: `desktop-codegen` di `tooling/codegen/`, generator dan pemeriksaan untuk sumber `tokens`, `config`, `localization`, `assets`, dan `architecture`. Dependensinya hanya `serde` dan `serde_json` (spec `_root/0003`).
+- **macOS**: paket Swift lokal di `apps/macos/` (modul `Interop`, `Presentation`, dan `DesignSystem`) dan proyek Xcode `DesktopMac`, target `aarch64-apple-darwin`. Versi yang dipakai ada di spec `macos/0001` bagian "Kombinasi yang dipakai".
 - **Package manager**: `cargo`. Setiap perintah bukti memakai `--locked`.
 
 ## Build approach
@@ -35,6 +36,9 @@ cargo clippy --workspace --all-targets --locked -- -D warnings
 
 # Pemeriksaan arsitektur saja, satu baris per pelanggaran. cargo test --workspace sudah menjalankannya
 cargo run -p desktop-codegen --locked -- architecture check
+
+# Semua gerbang bersama dalam satu perintah, termasuk check tiap sumber (spec _root/0008)
+bash scripts/validate.sh
 
 # Bukti arah dependensi Core: harus mencetak tepat satu baris, desktop-core sendiri
 cargo tree -p desktop-core --target all --all-features --prefix none --locked
@@ -93,3 +97,4 @@ Alur `/scope`, `/architect`, `/develop`, `/check verify`, `/test`, `/audit`, dan
 ## Context files
 
 - [crates/core/AGENTS.md](crates/core/AGENTS.md) (Rust Core: kontrak publik, larangan dependensi, dan aturan uji)
+- [tooling/codegen/AGENTS.md](tooling/codegen/AGENTS.md) (generator sumber bersama, emitter macOS, dan pemeriksaan arsitektur)

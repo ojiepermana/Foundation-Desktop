@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1794754400.7279394,
-    "seen": 1794754402.475699,
-    "ast_hash": "757041d4eeb6af0648fd6c2b9c10f6ed",
+    "mtime": 1794761950.7214792,
+    "seen": 1794761953.429,
+    "ast_hash": "d7fb0ad1145651073a9fafb939680a08",
     "semantic_hash": ""
   },
   ".githooks/post-commit": {
@@ -1089,6 +1089,12 @@
     "mtime": 1794761824.071355,
     "seen": 1794761826.8062148,
     "ast_hash": "195910c528d92710a0ff0c33dc14f16b",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/AGENTS.md": {
+    "mtime": 1794761950.8868868,
+    "seen": 1794761953.429004,
+    "ast_hash": "dfb06202aab92ffab57646053e3c6f07",
     "semantic_hash": ""
   }
 }
