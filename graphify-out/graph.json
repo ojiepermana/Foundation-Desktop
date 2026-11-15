@@ -4218,7 +4218,7 @@
       "node_kind": "heading",
       "norm_label": "agent skills",
       "source_file": "AGENTS.md",
-      "source_location": "L55"
+      "source_location": "L63"
     },
     {
       "id": "agents_aturan_pengembangan",
@@ -4242,7 +4242,7 @@
       "node_kind": "heading",
       "norm_label": "build approach",
       "source_file": "AGENTS.md",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "agents_commands",
@@ -4254,7 +4254,7 @@
       "node_kind": "heading",
       "norm_label": "commands",
       "source_file": "AGENTS.md",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "agents_context_files",
@@ -4266,7 +4266,7 @@
       "node_kind": "heading",
       "norm_label": "context files",
       "source_file": "AGENTS.md",
-      "source_location": "L61"
+      "source_location": "L69"
     },
     {
       "id": "agents_rules",
@@ -4278,7 +4278,7 @@
       "node_kind": "heading",
       "norm_label": "rules",
       "source_file": "AGENTS.md",
-      "source_location": "L43"
+      "source_location": "L49"
     },
     {
       "id": "agents_specs",
@@ -4290,7 +4290,7 @@
       "node_kind": "heading",
       "norm_label": "specs",
       "source_file": "AGENTS.md",
-      "source_location": "L39"
+      "source_location": "L45"
     },
     {
       "id": "agents_stack",
@@ -4890,7 +4890,7 @@
       "node_kind": "heading",
       "norm_label": "commands",
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "crates_core_agents_conventions",
@@ -4902,7 +4902,7 @@
       "node_kind": "heading",
       "norm_label": "conventions",
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "crates_core_agents_gotchas",
@@ -4914,7 +4914,7 @@
       "node_kind": "heading",
       "norm_label": "gotchas",
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "crates_core_agents_key_files",
@@ -4950,7 +4950,7 @@
       "node_kind": "heading",
       "norm_label": "related specs",
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L52"
+      "source_location": "L53"
     },
     {
       "id": "crates_core_agents_rust_core_desktop_core",
@@ -11134,7 +11134,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -11145,7 +11145,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -11156,7 +11156,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -11167,7 +11167,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L43",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -11178,7 +11178,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L55",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -11189,7 +11189,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L61",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -12410,7 +12410,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -12432,7 +12432,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -12443,7 +12443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -12454,7 +12454,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -16018,7 +16018,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L63",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -16029,7 +16029,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -16040,7 +16040,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "crates/core/AGENTS.md",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
