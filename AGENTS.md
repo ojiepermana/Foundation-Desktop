@@ -33,6 +33,9 @@ cargo test --workspace --locked
 cargo fmt --all --check
 cargo clippy --workspace --all-targets --locked -- -D warnings
 
+# Pemeriksaan arsitektur saja, satu baris per pelanggaran. cargo test --workspace sudah menjalankannya
+cargo run -p desktop-codegen --locked -- architecture check
+
 # Bukti arah dependensi Core: harus mencetak tepat satu baris, desktop-core sendiri
 cargo tree -p desktop-core --target all --all-features --prefix none --locked
 
@@ -58,7 +61,28 @@ Keputusan bersama ada di `docs/specs/_root/NNNN-judul/` (`index.md`, `rationale.
 - **Binding Swift.** Isi `bindings/swift/Sources/` dibuat generator. Bila API jembatan, rustdoc fungsi yang diekspor, atau versi UniFFI berubah, jalankan perintah di spec `macos/0001` bagian "Membuat ulang binding" dan sertakan hasilnya di commit yang sama.
 - **Satu jalur ke Core di macOS.** Hanya `apps/macos/Interop/` yang mengimpor `DesktopMacosFFI`. Jembatan hanya meneruskan panggilan ke Core, dan teks sapaan di Swift hanya ada di uji (spec `macos/0001`, AC-7 dan AC-8).
 - **`.graphifyignore`.** Bila sumber baru membuat hook gagal dengan `Graphify extraction failed`, tambahkan entri untuk sumber itu dan catat alasannya di spec pemiliknya. Hook dan `scripts/update_graphify.py` tidak dilonggarkan (spec `_root/0001` bagian "Kasus gagal yang sudah diputuskan").
-- **Uji mengunci aturan ini.** `crates/core/tests/workspace_layout.rs` gagal bila aturan manifest di atas dilanggar, atau bila tabel arah dependensi di `docs/architecture/README.md` berbeda dari tabel di spec `_root/0001`. Ubah kedua tabel itu bersama sama.
+- **Uji mengunci aturan ini.** `tooling/codegen/tests/workspace_layout.rs` gagal bila aturan manifest di atas dilanggar, atau bila tabel arah dependensi di `docs/architecture/README.md` berbeda dari tabel di spec `_root/0001`. Ubah kedua tabel itu bersama sama. `tooling/codegen/tests/macos_bridge_ownership.rs` mengunci kepemilikan di batas FFI (spec `macos/0001`, AC-6).
+- **Pemeriksaan arsitektur.** Aturan `A-1` sampai `A-13` di spec `_root/0007` diperiksa sumber `architecture` di `desktop-codegen`. Pelanggaran menggagalkan `cargo test --workspace --locked`. Aturan baru masuk lewat pembaruan spec itu, bersama kasus ujinya.
+- **Anggota dan dependensi baru.** Sisi antar anggota dan dependensi langsung tiap anggota tercatat di `tooling/codegen/src/architecture/mod.rs`. Menambah satu butuh spec pemilik anggota itu lebih dulu, lalu barisnya diubah di commit yang sama dengan manifest (spec `_root/0007`, bagian "Cara menambah atau mengubah aturan").
+- **Keluaran generator.** File turunan tidak disunting tangan. Sunting sumbernya, jalankan `cargo run -p desktop-codegen --locked -- <sumber> generate`, lalu commit sumber bersama keluarannya (spec `_root/0003`, O-1 sampai O-7).
+- **Lint dan format.** Setiap anggota membawa `[lints.rust]` dengan `unsafe_code = "forbid"` dan `missing_docs = "warn"`. Tidak ada `[workspace.lints]`, `rustfmt.toml`, atau `clippy.toml`. Gaya dan lint mengikuti bawaan toolchain yang dipin (spec `_root/0007`, `A-5`).
+- **Bahasa.** Komentar kode, rustdoc, nama uji, deskripsi paket, dan pesan alat berbahasa Inggris. Dokumen di `docs/`, `AGENTS.md`, dan `README.md` berbahasa Indonesia (spec `_root/0007`, `H-6`).
+- **Keputusan.** Keputusan arsitektur dicatat sebagai spec di `docs/specs/`, dengan alasannya di `rationale.md` spec itu. Repo ini tidak memakai folder ADR.
+
+## Tinjauan manusia
+
+Aturan berikut butuh penilaian orang. Penulis perubahan memeriksanya sebelum meminta merge, dan pemeriksa membacanya lagi. Rinciannya ada di spec `_root/0007` bagian "Aturan yang diperiksa manusia".
+
+- **H-1** Perilaku bersama tinggal di Core. Aplikasi dan jembatan tidak menyalin logika Core dalam bentuk apa pun.
+- **H-2** API publik Core, anggota baru, dan dependensi langsung baru punya spec yang diterima sebelum kodenya ditulis.
+- **H-3** Versi `desktop-core` dan tabel "Riwayat kontrak" ikut berubah saat kontrak berubah.
+- **H-4** Vektor kontrak di spec sama dengan yang diuji di Rust dan di Swift.
+- **H-5** Tabel arah dependensi di spec `_root/0001` dan di peta arsitektur bermakna sama dengan tabel di alat.
+- **H-6** Kode berbahasa Inggris, dokumen berbahasa Indonesia.
+- **H-7** Setiap entri `.graphifyignore` punya alasan di spec pemilik file itu.
+- **H-8** Tidak ada kode, dependensi, folder, atau skrip untuk fitur di luar fase fondasi.
+- **H-9** Setiap `#[allow]` dan `#[expect]` membawa `reason` yang menyebut spec.
+- **H-10** Interaksi native yang tidak tercakup uji otomatis ditulis sebagai langkah manual di spec OS.
 
 ## Agent skills
 

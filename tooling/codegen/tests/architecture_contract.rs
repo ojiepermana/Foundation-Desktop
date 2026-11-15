@@ -4,8 +4,8 @@
 //! standard library. `every_source_passes_check_on_the_repo` runs `check`
 //! for every entry of `SOURCES`, so a registered source cannot slip past
 //! the gate (AC-1, AC-3). `rejects_broken_repos` and
-//! `accepts_allowed_shapes` run the cases `N-1` to `N-19`, `P-1`, `P-2`,
-//! and `P-3` of
+//! `accepts_allowed_shapes` run the cases `N-1` to `N-23` and `P-1` to
+//! `P-5` of
 //! `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md`
 //! on a copy of the repo under a temporary root, restoring every changed
 //! file before the next case (AC-2).
@@ -40,15 +40,16 @@ fn every_source_passes_check_on_the_repo() {
     assert!(failures.is_empty(), "{}", failures.join("\n"));
 }
 
-/// Folders the copy skips, the same as the tool skips.
-const SKIPPED: [&str; 7] = [
+/// Folders the copy skips. These are the folders the tool skips, except
+/// `.claude`: the tool does not scan it, but the root `AGENTS.md` links
+/// into it, so the copy keeps it for the `A-12` existence check.
+const SKIPPED: [&str; 6] = [
     ".git",
     "target",
     ".build",
     "DerivedData",
     "xcuserdata",
     "graphify-out",
-    ".claude",
 ];
 
 /// Copies the repo tree from `from` to `to`, skipping [`SKIPPED`] names
@@ -95,6 +96,8 @@ enum Edit {
     Edge(&'static str, &'static str),
     /// Remove entry `.1` from the `dependencies` of lock block `.0`.
     Unedge(&'static str, &'static str),
+    /// Delete file `.0`.
+    Delete(&'static str),
     /// Add a lock block for package `.0` at version `.1`.
     Block(&'static str, &'static str),
 }
@@ -103,7 +106,10 @@ impl Edit {
     /// The file the edit changes, from the repo root.
     fn path(self) -> &'static str {
         match self {
-            Edit::Replace(path, ..) | Edit::Append(path, _) | Edit::Create(path, _) => path,
+            Edit::Replace(path, ..)
+            | Edit::Append(path, _)
+            | Edit::Create(path, _)
+            | Edit::Delete(path) => path,
             Edit::Edge(..) | Edit::Unedge(..) | Edit::Block(..) => "Cargo.lock",
         }
     }
@@ -128,6 +134,7 @@ fn apply(edit: Edit, text: &str) -> String {
             text.replacen(find, replace, 1)
         }
         Edit::Append(_, extra) | Edit::Create(_, extra) => format!("{text}{extra}"),
+        Edit::Delete(_) => unreachable!("run_case deletes the file itself"),
         Edit::Edge(package, dependency) => {
             let (start, end) = lock_block(text, package);
             let block = &text[start..end];
@@ -187,6 +194,10 @@ fn run_case(root: &Path, edits: &[Edit]) -> Result<String, Vec<String>> {
             }
             fs::create_dir_all(parent).expect("the folder can be made");
             created_folders.extend(missing);
+        }
+        if let Edit::Delete(_) = edit {
+            fs::remove_file(&path).expect("the file can be deleted");
+            continue;
         }
         let text = fs::read_to_string(&path).unwrap_or_default();
         fs::write(&path, apply(*edit, &text)).expect("the copy can be edited");
@@ -392,6 +403,33 @@ const REJECTED: &[Rejected] = &[
         rules: &["A-11"],
         contains: &[],
     },
+    Rejected {
+        number: "N-20",
+        edits: &[Edit::Append("README.md", "[rusak](docs/tidak-ada.md)\n")],
+        rules: &["A-12"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-21",
+        edits: &[Edit::Append("AGENTS.md", "`_root/9999`\n")],
+        rules: &["A-13"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-22",
+        edits: &[Edit::Append("AGENTS.md", "cargo test -p desktop-nope\n")],
+        rules: &["A-13"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-23",
+        edits: &[Edit::Append(
+            "crates/core/AGENTS.md",
+            "`crates/core/tests/tidak_ada.rs`\n",
+        )],
+        rules: &["A-13"],
+        contains: &[],
+    },
 ];
 
 #[test]
@@ -417,6 +455,18 @@ fn rejects_broken_repos() {
             }
         }
     }
+    // A member manifest that cannot be read gives exactly one `cannot read`
+    // problem. The A-1 rule check needs that member's package name, so it
+    // is skipped ("File yang tidak terbaca" in spec `_root/0007`).
+    let found = match run_case(&root, &[Edit::Delete("crates/macos-ffi/Cargo.toml")]) {
+        Ok(summary) => vec![format!("(accepted: {summary})")],
+        Err(messages) => messages,
+    };
+    if found.len() != 1 || !found[0].starts_with("cannot read: ") {
+        failures.push(format!(
+            "unreadable member manifest: expected exactly one cannot read problem, got {found:?}"
+        ));
+    }
     fs::remove_dir_all(&root).expect("the copy can be removed");
     assert!(failures.is_empty(), "{}", failures.join("\n"));
 }
@@ -436,6 +486,14 @@ const ACCEPTED: &[(&str, &[Edit])] = &[
         &[Edit::Create(
             "apps/macos/Tests/PresentationTests/Extra.swift",
             "let text = \"Hello, Ayu!\"\n",
+        )],
+    ),
+    ("P-4", &[Edit::Append("README.md", "`[x](tidak-ada.md)`\n")]),
+    (
+        "P-5",
+        &[Edit::Append(
+            "AGENTS.md",
+            "`docs/specs/windows/` `.cargo/config.toml`\n",
         )],
     ),
 ];

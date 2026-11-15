@@ -13,6 +13,7 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | `F002-1` | Bangun, uji, dan jalankan pemeriksaan arsitektur di host Windows dan host Linux | spec `_root/0007` AC-11 | belum ada | 002 milestone 3 di `main`, dan host Windows serta Linux | `NOT_RUN` |
 | `F008-2` | Tampilan terang dan gelap dari token, fokus, keyboard, ukuran teks, VoiceOver, Increase contrast (langkah 1 sampai 10) | spec `macos/0005` AC-7, AC-8 | belum ada | 008 macOS milestone 2 di `main` | `NOT_RUN` |
 | `F009-1` | Judul jendela dari konfigurasi publik dan nama menu aplikasi (langkah 1 sampai 4) | spec `macos/0004` AC-7 | belum ada | 009 macOS milestone 1 di `main` | `NOT_RUN` |
+| `F010-1` | Teks tombol mengikuti bahasa: `Sapa` untuk `id` dan `id-ID`, `Greet` untuk `fr` dan Inggris, VoiceOver (langkah 1 sampai 7) | spec `macos/0006` AC-11 | belum ada | 010 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F011-1` | Mengganti ikon penanda dengan ikon aplikasi nyata dalam SVG, lalu `assets generate` dan `assets check` | spec `_root/0005` AC-10 | belum ada | 011 milestone 1 di `main`, dan berkas ikon darimu (`N9`) | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
@@ -141,6 +142,24 @@ Dari laporan `arc-f001-spec` (2026-11-15). Membuktikan spec `macos/0004` `AC-7`;
   4. Tekan Command Q.
 - **Lulus bila:** (1) `** BUILD SUCCEEDED **`; (2) satu jendela terbuka dan judulnya sama persis dengan keluaran `jq` (nilai sementara `Desktop Foundation`); (3) menu aplikasi di sebelah menu Apple bernama `DesktopMac` (nama di Dock dicatat saja, tidak menentukan lulus atau gagal); (4) aplikasi tertutup tanpa dialog. Kirim host, arsitektur, versi macOS, versi Xcode, dan hasil tiap nomor.
 - **Hanya langkah ini yang bisa membuktikan:** bahwa judul jendela nyata berasal dari `shared/config/public.json` lewat bundel, bukan dari literal.
+
+## Fitur `010`: `Satu contoh lokalisasi` (spec `macos/0006`)
+
+### `F010-1` · Teks tombol mengikuti bahasa di jendela nyata
+
+Dari laporan `arc-f010-spec` (2026-11-15). Membuktikan spec `macos/0006` `AC-11` (OS-9); ini milestone 2 bagian macOS fitur 010.
+
+- **Prasyarat:** Mac Apple Silicon dengan macOS 14 atau lebih baru (yang diuji 27.0.1), Xcode 27.1, sesi desktop yang sedang login, repo pada commit yang lulus AC-8 spec `macos/0006` (milestone 1 bagian macOS sudah di-merge), dan aplikasi DesktopMac tidak sedang berjalan.
+- **Jalankan:**
+  1. Dari akar repo: `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build`. Harapan: `** BUILD SUCCEEDED **`.
+  2. `open -n apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app --args -AppleLanguages '(id)'`. Harapan: tombol bertuliskan `Sapa`, kolom tetap `Name`. Ketik `Ayu`, klik `Sapa`. Harapan: label `Hello, Ayu!`. Command Q.
+  3. `open -n apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app --args -AppleLanguages '(id-ID)'`. Harapan: tombol `Sapa`. Command Q.
+  4. `open -n apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app --args -AppleLanguages '(fr)'`. Harapan: tombol `Greet`. Command Q.
+  5. System Settings, General, Language & Region: tambahkan Bahasa Indonesia bila belum ada dan seret ke urutan pertama. `open apps/macos/DerivedData/Build/Products/Debug/DesktopMac.app` tanpa argumen. Harapan: tombol `Sapa`. Catat apakah menu bawaan macOS ikut berbahasa Indonesia atau tetap Inggris; keduanya tidak menggagalkan langkah ini.
+  6. Dengan bahasa Indonesia masih pertama, nyalakan VoiceOver (Command F5), pindah ke tombol. Harapan: `Sapa` dibacakan. Ketik `Ayu`, tekan Return, pindah ke label. Harapan: `Hello, Ayu!` dibacakan. Matikan VoiceOver, Command Q.
+  7. Kembalikan urutan bahasa, buka aplikasi lagi. Harapan: tombol `Greet`. Command Q, lalu `git status --short`. Harapan: tidak ada keluaran.
+- **Lulus bila:** setiap harapan di atas terpenuhi. Kirim host, arsitektur, versi macOS, dan hasil tiap langkah.
+- **Hanya langkah ini yang bisa membuktikan:** bahwa jendela nyata menampilkan teks dari katalog dalam bahasa yang dipilih sistem, dan bahwa hasil `hello` tetap bahasa Inggris.
 
 ## Fitur `011`: `Aset merek bersama` (spec `_root/0005`)
 

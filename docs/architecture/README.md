@@ -28,7 +28,7 @@ Path ini menunjukkan tempat kode **saat dibutuhkan**. Root workspace, `crates/co
 | `bindings/swift/` | Keluaran UniFFI untuk Swift. |
 | `design-system/tokens/`, `design-system/schemas/` | Definisi visual dan skema validasinya. |
 | `shared/config/`, `shared/localization/`, `shared/assets/`, `shared/specifications/` | Sumber bersama. Kontrak perilaku tetap dimiliki oleh API Rust. Spec pekerjaan per scope akan berada di `docs/specs/`. |
-| `tooling/codegen/`, `tooling/validation/` | Generator dan pemeriksaan. |
+| `tooling/codegen/` | Generator, validasi sumber bersama, dan pemeriksaan arsitektur dalam satu paket. |
 | `tests/fixtures/`, `tests/contracts/` | Contoh input dan uji kontrak yang bisa digunakan kembali. |
 | `scripts/`, `.github/workflows/` | Perintah lokal untuk build, generate, validate, dan test serta job CI pada host target. |
 
@@ -68,11 +68,13 @@ Dependensi mengarah ke Core dan tidak pernah membentuk siklus. Aturan berlaku un
 
 Tidak ada anggota yang bergantung pada crate aplikasi. Anggota yang butuh pustaka satu OS menaruh dependensi itu di bawah tabel `target` untuk OS tersebut dan memberi kode yang memakainya atribut `cfg` yang sama, sehingga `cargo build --workspace --locked` berhasil di ketiga host. Bukti untuk Core adalah `cargo tree -p desktop-core --target all --all-features --prefix none --locked`, yang mencetak tepat satu baris. Rincian dan alasannya ada di [spec 0001](../specs/_root/0001-batas-workspace-dan-pemilik/index.md).
 
+Aturan di tabel ini diperiksa otomatis oleh `cargo run -p desktop-codegen --locked -- architecture check` dan oleh `cargo test --workspace --locked`. Daftar aturan, kelas paket terlarang, dan aturan yang ditinjau orang ada di [spec 0007](../specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md).
+
 ## Aturan pengembangan yang akan dicatat
 
-Saat scaffold sudah ada, `AGENTS.md` di root akan merujuk aturan pemilik, dependensi, kontrak, dan tes. Sebelum mengubah kode, pengembang bisa mencari modul dan keputusan yang sudah mengatur perilaku itu. Saat mengubah kontrak, token, atau resource bersama, pengembang perlu menilai dampaknya pada ketiga aplikasi. Adapter OS boleh berkembang di aplikasinya sendiri.
+`AGENTS.md` di root merujuk aturan pemilik, dependensi, kontrak, dan tes, beserta perintah yang memeriksanya. Sebelum mengubah kode, pengembang bisa mencari modul dan keputusan yang sudah mengatur perilaku itu. Saat mengubah kontrak, token, atau resource bersama, pengembang perlu menilai dampaknya pada ketiga aplikasi. Adapter OS boleh berkembang di aplikasinya sendiri.
 
-Sesudah perubahan, hasil tes, pemeriksaan arsitektur, pembuatan ulang artefak, dan build OS yang terdampak menjadi bukti. Keputusan arsitektur penting beserta alasannya akan dicatat sebagai ADR di `docs/decisions/`. Panduan di `docs/` akan mengikuti struktur dan perilaku yang benar benar diterapkan.
+Sesudah perubahan, hasil tes, pemeriksaan arsitektur, pembuatan ulang artefak, dan build OS yang terdampak menjadi bukti. Keputusan arsitektur penting dicatat sebagai spec di `docs/specs/`, dengan alasannya di `rationale.md` spec itu. Repo ini tidak memakai folder ADR terpisah. Panduan di `docs/` akan mengikuti struktur dan perilaku yang benar benar diterapkan.
 
 Untuk layanan mendatang, setiap modul memiliki satu pemilik dan tujuan, antarmuka publik, kesalahan terstruktur, siklus hidup, serta perilaku yang dapat diuji. Modul yang sudah ada dipertimbangkan sebelum menambah crate. Penyimpanan, orkestrasi API, sinkronisasi, dan pemrosesan data bersama tetap mengikuti batas Core saat kelak masuk scope.
 
