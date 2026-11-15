@@ -5,16 +5,16 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 19:35`
+- **Diperbarui:** `2026-11-15 20:00`
 
 ## Sub sesi wave `1`
 
 | Nama | Peran | Item | Scope | Ownership | Branch | Model | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `arc-f001-spec` | architect | 001 spec `_root` 0001; laporan `done` (`9bf09db`), merge `50c3b3c` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
+| `arc-f001-spec` | architect | 001 spec `_root` 0001; laporan `done` (`9bf09db`), merge `50c3b3c`; `architect (update)` untuk `.graphifyignore` dikirim 2026-11-15 | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
 | `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1`; koreksi rujukan langkah `8515ef5`, merge `d4ff759` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS `macos/0001`; brief "mulai" dikirim 2026-11-15. Penerapan macOS 001 dan 003 menyusul di sesi yang sama sesudah spec ini di-merge | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/0001-sapaan-di-jendela-macos/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | aktif |
-| `dev-f001-m1` | developer | 001 Build it milestone 1 (langkah 1, 2) spec `_root/0001`; brief "mulai" dikirim 2026-11-15 | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md`, baris `**Status**` `index.md` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | aktif |
+| `dev-f001-m1` | developer | 001 Build it milestone 1 (langkah 1, 2) spec `_root/0001`; brief "mulai" dikirim 2026-11-15 | `001 - Batas workspace dan pemilik.md` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md`, baris `**Status**` `index.md` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | blocked |
 | `dev-f003-m1` | developer | 003 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3 sampai 6) spec `_root/0002`; menunggu 001 milestone 1 di `main` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs` (tambah baris), `crates/core/Cargo.toml` (tambah `[lints.rust]`), `docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | standby |
 
 ## Keputusan
@@ -37,6 +37,7 @@
 | 2026-11-15 | Koreksi susulan `arc-f003-spec` (`8515ef5`) di-merge sebagai `d4ff759`: prasyarat build 003 menunjuk milestone 1 spec `_root/0001` = Build plan langkah 1 dan 2 (bukan 1 sampai 4), karena spec 0001 berubah sesudah cross check. Teks AC dan keputusan spec 0002 tidak berubah. Konflik hanya di `graphify-out/GRAPH_REPORT.md`, diselesaikan lead dengan sisi `main`. Kotak milestone 1 di file scope 003 disesuaikan. | lead |
 | 2026-11-15 | Nomor spec macOS: `macos/0001-sapaan-di-jendela-macos` = scope 004 (ditulis lebih dulu karena memuat keputusan macOS yang nyata). Penerapan macOS scope 001 dan 003 menjadi dua spec kecil berikutnya (`macos/0002`, `macos/0003`) di sesi `arc-f004-spec` yang dipakai ulang. Spec 004 dimulai begitu kedua spec `_root` di `main`, tanpa menunggu build 001, karena spec hanya bergantung pada keputusan, bukan kode. | lead |
 | 2026-11-15 | Rekonsiliasi ulang: `ListAgents` kini memuat 35 sesi peer, 10 di antaranya `busy`, semuanya proyek lain (termasuk koordinasi lain bernama `arc-f1-spec`, `dev-f009-m3`). Nama scope ini (`…-f001-…`, `…-f003-…`, `…-f004-…`) tetap unik. Checker dan tester belum dimulai; saat laporan developer tiba, sesi architect yang sudah `merged` dipakai ulang sebagai checker bila `start_session` ditolak. | lead |
+| 2026-11-15 | Laporan `blocked` `dev-f001-m1`: commit langkah 1 ditolak hook, `Graphify extraction failed` pada `Cargo.toml` root. Lead mereproduksi di scratchpad: Graphify 0.9.48 menghasilkan nol node untuk manifest virtual dan mencatatnya di `failed_sources`; `scripts/update_graphify.py` baris 74 keluar dengan error. Enam file langkah 1 sudah staged di worktree developer dan lulus AC-1 sampai AC-6. Worktree itu dibiarkan apa adanya sampai spec diperbarui. | lead |
 
 ## Keputusan delegasi
 
@@ -69,6 +70,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 | 2026-11-15 | `_root/0001` · AC-2 | Tempat uji API Core | `crates/core/tests/` | `tests/contracts/` di root | - | `architect (update)` spec `_root/0001` | berlaku |
 | 2026-11-15 | `_root/0001` · tidak ada AC | Bagian References | Tanpa bagian References | - | - | `architect (update)` spec `_root/0001` | berlaku |
 | 2026-11-15 | `_root/0001` · AC-7 | Bahasa rustdoc dan deskripsi paket Core | Inggris, mengikuti spec `_root/0002`, sampai scope 002 memutuskan kebijakan bahasa komentar (diminta lead saat accept) | Indonesia | - | `architect (update)` spec `_root/0001` dan `_root/0002`; rustdoc Core ditulis ulang | berlaku |
+| 2026-11-15 | `_root/0001` · AC-7 | Hook Graphify menolak manifest virtual di root | `.graphifyignore` di root berisi `/Cargo.toml`: mekanisme Graphify sendiri, hook tidak dilonggarkan, sesuai `AGENTS.md` butir 2; manifest root tidak masuk graf | Ubah `scripts/update_graphify.py` supaya menoleransi manifest tanpa node (rekomendasi developer; skrip hook milik user dan sengaja ketat) | - | `architect (update)` spec `_root/0001`; hapus `.graphifyignore` dan perbaiki skrip hook | berlaku |
 
 ## Blocker terbuka
 
@@ -76,6 +78,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 006 · `/architect scope 006 sapaan di jendela Windows` ← `005 - Kelayakan WinUI dari Rust.md`: hasil 005, dan host Windows; pemilik user.
 - 007 · `/architect scope 007 sapaan di jendela Linux`: hardware, host Linux dengan sesi Wayland; pemilik user.
 - 001, 002, 003, 008 sampai 012 · penerapan Windows dan Linux: host masing masing; pemilik user. Fitur bersama tidak ditandai `done` sebelum bukti itu ada.
+- 001 · `Build it` milestone 1 ← pembaruan spec `_root/0001` (`.graphifyignore`) di-merge; lalu lead mengirim "lanjut" ke `dev-f001-m1`, yang worktree-nya memuat enam file staged.
 - 002 · `/audit` ← `001 - Batas workspace dan pemilik.md`: scaffold (`Build it` 001) harus sudah di `main`.
 - 001 · Milestone 3 (AC-9) ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - 001 · `/architect scope 001 batas workspace dan pemilik untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
