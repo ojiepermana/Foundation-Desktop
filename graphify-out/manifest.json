@@ -6,8 +6,8 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794745763.1730866,
-    "seen": 1794745764.386313,
+    "mtime": 1794745774.8123672,
+    "seen": 1794745780.8227909,
     "ast_hash": "9fe146992e5cfb18365f9b814c764461",
     "semantic_hash": ""
   },
@@ -96,9 +96,9 @@
     "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
   },
   "docs/scope/008 - Tema bersama dan kontrol native.md": {
-    "mtime": 1794744282.8377163,
-    "seen": 1794744285.677449,
-    "ast_hash": "b537145060684e44d2717125ed715ea6",
+    "mtime": 1794745406.569515,
+    "seen": 1794745407.770623,
+    "ast_hash": "ba195572c8f5d9f4b68a6a2b6238945d",
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
@@ -132,8 +132,8 @@
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
-    "mtime": 1794745763.1786983,
-    "seen": 1794745764.3863199,
+    "mtime": 1794745775.3752332,
+    "seen": 1794745780.822787,
     "ast_hash": "f8dfef81c8b2afcb037efd0eb20cf9e7",
     "semantic_hash": ""
   },
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794745334.8460777,
-    "seen": 1794745337.962237,
-    "ast_hash": "1e5bec60f157d03ec1cf1a3501391ac4",
+    "mtime": 1794745448.3606255,
+    "seen": 1794745450.1653419,
+    "ast_hash": "c139da08ee9d0311d988c7b52b55e551",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -462,8 +462,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/index.md": {
-    "mtime": 1794745648.4287019,
-    "seen": 1794745651.707406,
+    "mtime": 1794745775.689162,
+    "seen": 1794745780.822794,
     "ast_hash": "adb2aef8ddce868a1f1e522f0321be8f",
     "semantic_hash": ""
   },
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794745176.3580716,
-    "seen": 1794745179.34673,
-    "ast_hash": "48f52c601cfed1b313c7e00845ba4f37",
+    "mtime": 1794745401.7412276,
+    "seen": 1794745405.831467,
+    "ast_hash": "13971e7038bf4a1bea3d8d42ca369d48",
     "semantic_hash": ""
   },
   "design-system/schemas/typography.schema.json": {
@@ -522,8 +522,8 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794745648.6830542,
-    "seen": 1794745651.707402,
+    "mtime": 1794745776.2293143,
+    "seen": 1794745780.822795,
     "ast_hash": "d9f3c1f9b8a3cbdbcce546b303679f71",
     "semantic_hash": ""
   },
@@ -593,40 +593,40 @@
     "ast_hash": "82dac752d3b9514ebceaad43e882517d",
     "semantic_hash": ""
   },
-  "tooling/codegen/tests/config_contract.rs": {
-    "mtime": 1794745648.7255502,
-    "seen": 1794745651.7074041,
-    "ast_hash": "efc5cca5c43a81f7797e825eab54b7b1",
-    "semantic_hash": ""
-  },
-  "shared/config/public.schema.json": {
-    "mtime": 1794745648.6131487,
-    "seen": 1794745651.707407,
-    "ast_hash": "14c583d3b40b5f51627088536ac0a597",
-    "semantic_hash": ""
-  },
-  "shared/config/README.md": {
-    "mtime": 1794745648.6102164,
-    "seen": 1794745651.707408,
-    "ast_hash": "3485fc82f3f62b52d4e9d1af910ead3d",
-    "semantic_hash": ""
-  },
-  "shared/config/public.json": {
-    "mtime": 1794745648.6128583,
-    "seen": 1794745651.707409,
-    "ast_hash": "7c4f1b353b4bdd109ba47fa839148400",
-    "semantic_hash": ""
-  },
   "tooling/codegen/src/config/mod.rs": {
-    "mtime": 1794745648.664838,
-    "seen": 1794745651.7074099,
+    "mtime": 1794745776.199794,
+    "seen": 1794745780.822784,
     "ast_hash": "4f0b665ddb92e8b395aec1d8b7628dcf",
     "semantic_hash": ""
   },
+  "shared/config/public.json": {
+    "mtime": 1794745776.0812135,
+    "seen": 1794745780.8227892,
+    "ast_hash": "7c4f1b353b4bdd109ba47fa839148400",
+    "semantic_hash": ""
+  },
+  "shared/config/public.schema.json": {
+    "mtime": 1794745776.1083326,
+    "seen": 1794745780.82279,
+    "ast_hash": "14c583d3b40b5f51627088536ac0a597",
+    "semantic_hash": ""
+  },
   "docs/specs/_root/0004-konfigurasi-publik/verify.md": {
-    "mtime": 1794745763.1819012,
-    "seen": 1794745764.386325,
+    "mtime": 1794745775.7493365,
+    "seen": 1794745780.822792,
     "ast_hash": "d49ec597b3595f81a41cb04780af350d",
+    "semantic_hash": ""
+  },
+  "shared/config/README.md": {
+    "mtime": 1794745776.061023,
+    "seen": 1794745780.822793,
+    "ast_hash": "3485fc82f3f62b52d4e9d1af910ead3d",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_contract.rs": {
+    "mtime": 1794745776.3672917,
+    "seen": 1794745780.822796,
+    "ast_hash": "efc5cca5c43a81f7797e825eab54b7b1",
     "semantic_hash": ""
   }
 }
