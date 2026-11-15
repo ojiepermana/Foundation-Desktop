@@ -361,10 +361,10 @@ Pembaruan yang diminta pada spec `macos/0001` sebelum build (lewat `architect (u
 - [ ] Tabel "Value sourcing": baris judul jendela, nama tampil bundel, pengenal bundel, dan versi bundel menunjuk ke spec ini.
 - [ ] "Configuration required": menyebut `apps/macos/Config/Shared.xcconfig` sebagai berkas setelan hasil generator.
 - [ ] AC-5 dan langkah manual 2: judul jendela adalah nilai `build.product_name`, dengan nilai sementara `Desktop Foundation`.
-- [ ] Tabel keputusan, baris "Teks antarmuka": `Desktop Foundation` dikeluarkan dari daftar literal. Judul jendela datang dari bundel menurut spec ini; `Name` dan `Greet` tetap literal sampai scope 010.
+- [ ] Tabel keputusan, baris "Teks antarmuka": `Desktop Foundation` dikeluarkan dari daftar literal. Judul jendela datang dari bundel menurut spec ini; `Name` dan `Greet` mengikuti spec `_root/0006`.
 - [ ] Follow-up "Nilai dari user: pengenal bundel akhir": menunjuk ke `DASAR_PENGENAL` (`N6`) ditambah `.macos`.
 - [ ] Follow-up Scope 009: ditandai `[x]`, diterapkan di spec `_root/0004` dan spec ini.
-- [ ] Follow-up Scope 010: `Desktop Foundation` dikeluarkan dari daftar teks yang pindah ke katalog bahasa. Yang tersisa `Name` dan `Greet`.
+- [ ] Follow-up Scope 010: `Desktop Foundation` dikeluarkan dari daftar teks yang pindah ke katalog bahasa. Nasib `Name` dan `Greet` diputuskan spec `_root/0006`.
 - [ ] Follow-up Scope 011: "nama tampil bundel" dikeluarkan. Yang tersisa ikon aplikasi dan aset merek lain.
 - [ ] Follow-up Scope 012: bagian "jaga `MARKETING_VERSION` tetap sama dengan versi workspace" ditandai terjawab di sini. Yang tersisa untuk scope 012 adalah membungkus perintah dalam skrip dan CI.
 
@@ -382,7 +382,7 @@ Pembaruan yang diminta pada spec `_root/0004`:
 Lainnya:
 
 - [x] Jawaban atas Follow-up "Spec macOS scope 009" di spec `_root/0004`: `K-2` dipenuhi dengan generator, akhiran `.macos` dipertahankan, judul jendela ikut nama produk, `PRODUCT_NAME` tidak ikut, dan belum ada berkas untuk pengaturan lokal.
-- [ ] Scope 010: judul jendela bukan entri katalog. Bila kelak judul butuh teks lain di samping nama produk, spec scope 010 memutuskan bentuknya.
+- [ ] Scope 010: judul jendela bukan entri katalog, sejalan dengan aturan `L-1` spec `_root/0006`. Bila kelak judul butuh teks lain di samping nama produk, spec scope 010 memutuskan bentuknya.
 - [ ] Scope 012: `scripts/build-macos.sh` dan CI menjalankan `cargo run -p desktop-codegen --locked -- config check` sebelum `xcodebuild`, dan mencatat hasil AC-3 serta AC-4 per arsitektur.
 - [ ] Scope 002 (spec pemeriksaan arsitektur, bila ditulis): jadikan AC-2 pemeriksaan tetap, supaya tiga setelan turunan tidak kembali ke `project.pbxproj`.
 - [ ] `/sync` atau lead, sesudah milestone 1: `docs/platforms/macos/README.md` dan `AGENTS.md` root menyebut `apps/macos/Config/Shared.xcconfig` sebagai berkas hasil generator dan perintah `config generate`.
