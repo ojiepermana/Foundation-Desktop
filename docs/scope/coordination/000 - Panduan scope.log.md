@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 21:12`
+- **Diperbarui:** `2026-11-15 21:13`
 
 ## Sub sesi wave `2`
 
@@ -28,6 +28,9 @@
 | `arc-f004-spec` | architect (update) | baris `desktop-codegen` di tabel aturan spec `_root/0001` dan `docs/architecture/README.md`; laporan `done` (`a004343`, HEAD `94ab6fc`), merge `bc76880` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md`, satu baris tabel `docs/architecture/README.md`, satu baris Follow-up spec `_root/0003` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 008 spec macOS `macos/0005`; tindak lanjut di sesi yang sama; perubahan yang dibutuhkan pada spec `macos/0001` ditulis sebagai Follow-up | `008 - Tema bersama dan kontrol native.md` | `docs/specs/macos/0005-tema-bersama-dan-kontrol-native/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` sampai 19:24, lalu `opus-5-5 · high` | aktif (dilanjutkan 21:15 sesudah terputus) |
 | `dev-f001-m1` | tester | 008 Test it; laporan `done` (`89e14d0`), merge `3660b20`: 17 test di `tooling/codegen/tests/tokens_rules.rs` | `008 - Tema bersama dan kontrol native.md` | `tooling/codegen/tests/tokens_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
+| `arc-f001-spec` | checker (verify) | 009 verify milestone 1 dan 2 (AC-1 sampai AC-10) dari `main`; model dipindah ke Opus; clear ditolak aplikasi, konteks architect spec `_root/0004` tetap | `009 - Konfigurasi publik.md` | centang `verify.md` spec `_root/0004` | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | dipakai ulang |
+| `dev-f008-m1` | developer | 010 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3) spec `_root/0006`; tindak lanjut di sesi yang sama | `010 - Satu contoh lokalisasi.md` | `shared/localization/`, `tooling/codegen/src/localization/`, `tooling/codegen/src/lib.rs` (dua tempat), `tooling/codegen/tests/localization_contract.rs`, `.gitattributes` (satu baris), dua dokumen rujukan, `verify.md` spec `_root/0006`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | dipakai ulang |
+| `dev-f001-m1` | tester | 009 Test it (bagian bersama); Range `cd0c908..705b135` | `009 - Konfigurasi publik.md` | paling banyak satu file baru `tooling/codegen/tests/config_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | dipakai ulang |
 
 ## Sub sesi wave `1`
 
@@ -213,7 +216,6 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - Spec `macos/0001` ← satu `architect (update)` gabungan: 13 butir dari spec `macos/0004` dan butir dari spec `macos/0005` (belum diterima); harus di-merge sebelum build macOS 008 dan 009.
 - 009 macOS · Milestone 1 ← 009 milestone 1 (spec `_root/0004`) di `main` dan pembaruan gabungan spec `macos/0001`.
 - 009 macOS · Milestone 2 (AC-7) ← sesi GUI di Mac; langkah manual `F009-1`, pemilik user.
-- 010 · `Build it` milestone 1 ← 008 milestone 1 di `main`, dan sesudah build 009 milestone 1 (file bersama `tooling/codegen/src/lib.rs`, `.gitattributes`).
 - 010 · `/architect scope 010 contoh lokalisasi untuk macOS` ← 010 milestone 1 di `main` dan pembaruan AC-12 spec `macos/0001`.
 - 008 · Milestone 3 (AC-12) ← host Windows dan host Linux; langkah manual `F008-1`, pemilik user.
 - Spec `macos/0001` Follow-up Scope 010 dan 011 ← `architect (update)`: keputusan 12 spec `_root/0004` memindahkan nama produk ke konfigurasi publik.
