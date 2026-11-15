@@ -13,9 +13,9 @@ Setelah scaffold tersedia, `/audit` mengidentifikasi konvensi pada struktur yang
 * [ ] Build it: `/develop scope 002 aturan pengembangan untuk _root`
   * [x] Milestone 1: Sumber `architecture` dan aturan dependensi. Build plan langkah 1 dan 2. AC-1 (angka `4 rules`), AC-2, AC-3, AC-10. after build scope 011 (penulis tunggal `tooling/codegen/src/lib.rs`)
   * [x] Milestone 2: Aturan kode dan uji lintas crate. Build plan langkah 3 dan 4. AC-4, AC-7, AC-8, AC-10. after milestone 1
-  * [ ] Milestone 3: Panduan dan dokumen mengikuti. Build plan langkah 5. AC-1, AC-5, AC-6, AC-9, AC-10. after milestone 2; perubahan lima dokumen disetujui user 2026-11-15, izin eksplisit ada di brief developer
+  * [x] Milestone 3: Panduan dan dokumen mengikuti. Build plan langkah 5. AC-1, AC-5, AC-6, AC-9, AC-10. after milestone 2; perubahan lima dokumen disetujui user 2026-11-15, izin eksplisit ada di brief developer
   * [ ] Milestone 4: Bukti di host Windows dan Linux. Build plan langkah 6. AC-11. after milestone 3; needs host Windows dan host Linux (`BLOCKED`, `owner: user`, langkah manual `F002-1`)
-* [ ] Verify it: `/check verify scope 002 aturan pengembangan untuk _root`
+* [x] Verify it: `/check verify scope 002 aturan pengembangan untuk _root` (bukti di Mac, AC-1 sampai AC-10; AC-11 menunggu langkah manual `F002-1` di host Windows dan Linux)
 * [ ] Test it: `/test scope 002 aturan pengembangan untuk _root`
 
 **macOS** · spec [macos/0008](../specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md)
