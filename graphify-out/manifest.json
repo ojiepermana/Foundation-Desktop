@@ -474,15 +474,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/rationale.md": {
-    "mtime": 1794744248.0915823,
-    "seen": 1794744256.004603,
-    "ast_hash": "dbc27121be87fc8ef5517012ee0e204d",
+    "mtime": 1794752507.0419133,
+    "seen": 1794752515.0708008,
+    "ast_hash": "61dd2cd70bdde643d0b780276ed6606e",
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794744988.7458286,
-    "seen": 1794744995.800632,
-    "ast_hash": "c9dabe56f1a3bf5d2220578dcd05b7d3",
+    "mtime": 1794752507.0352926,
+    "seen": 1794752515.0708082,
+    "ast_hash": "902a15be0250e3375a8a21c86a9814ac",
     "semantic_hash": ""
   },
   "docs/specs/_root/0006-satu-contoh-lokalisasi/rationale.md": {
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794752107.347207,
-    "seen": 1794752109.23809,
-    "ast_hash": "267de7feb07e605b8e999682a20e1b97",
+    "mtime": 1794752507.044299,
+    "seen": 1794752515.070806,
+    "ast_hash": "f09ef242480c5f2d684c6d72d4ee5d96",
     "semantic_hash": ""
   },
   "design-system/schemas/typography.schema.json": {

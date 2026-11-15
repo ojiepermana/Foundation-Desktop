@@ -136,6 +136,8 @@ Opsi 1 dipilih karena tiga gaya dari Context saling menguatkan. Pertama, setiap 
 
 Skema yang dihasilkan, bukan ditulis tangan, menjawab satu hal yang Opsi 2 biarkan terbuka: dua definisi bentuk yang bisa berbeda. Di Opsi 1 hanya ada satu definisi, yaitu tipe dan konstanta di alat, dan file skema adalah cerminannya untuk editor dan pembaca. Harganya, mengubah bentuk berarti mengubah kode. Itu harga yang wajar, karena setiap perubahan bentuk memang memaksa emitter tiap OS ikut berubah.
 
+Pada 2026-11-15 batas waktu AC diperjelas ("pada akhir milestone 1" dan "pada akhir milestone 2"), karena build spec `_root/0004`, `_root/0005`, dan `_root/0006` sudah menambah file di `tooling/codegen/`, baris di `.gitattributes`, nama di baris `sources:`, dan lokasi di `docs/architecture/README.md` secara sah. Angka, perintah, dan keputusan tidak berubah.
+
 Isi token sengaja kecil karena kriteria 32. Tiga warna semantik cukup untuk membuktikan seluruh rantai: nilai dasar merek, alias semantik, dan pemetaan terang dan gelap. `accent` masuk (keputusan 6, bertanda berat) karena tanpa itu tidak ada nilai merek yang sampai ke layar, dan rantai "nilai merek ke alias ke kontrol" tidak terbukti. Pilihan keduanya, membiarkan aksen mengikuti pengguna OS, lebih hormat pada pengaturan pengguna; bila kamu memilih itu, `accent` dan `brand.primary` dihapus dan jendela hanya memakai warna netral.
 
 ## Bukti percobaan
