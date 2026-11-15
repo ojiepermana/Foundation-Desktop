@@ -96,15 +96,15 @@
     "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
   },
   "docs/scope/008 - Tema bersama dan kontrol native.md": {
-    "mtime": 1794745406.569515,
-    "seen": 1794745407.770623,
-    "ast_hash": "ba195572c8f5d9f4b68a6a2b6238945d",
+    "mtime": 1794752116.3362145,
+    "seen": 1794752118.1582248,
+    "ast_hash": "d80ca0ccb095fa6270adc03ab9e9b71e",
     "semantic_hash": ""
   },
   "docs/scope/009 - Konfigurasi publik.md": {
-    "mtime": 1794745128.5609655,
-    "seen": 1794745133.9051552,
-    "ast_hash": "bdd10a1e037abc6524cd5222f8f78814",
+    "mtime": 1794751948.9286013,
+    "seen": 1794751950.05543,
+    "ast_hash": "ee7a03dde4389514ae95c34a43f3e121",
     "semantic_hash": ""
   },
   "docs/scope/010 - Satu contoh lokalisasi.md": {
@@ -234,20 +234,20 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.brief-umum.md": {
-    "mtime": 1794744159.8193316,
-    "seen": 1794744163.970825,
-    "ast_hash": "1937de51dc9787904f93d62b7e7c4503",
+    "mtime": 1794751948.9292846,
+    "seen": 1794751950.055428,
+    "ast_hash": "c79ad67b0c2533af3c7f3b05bd947472",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794745448.3606255,
-    "seen": 1794745450.1653419,
-    "ast_hash": "c139da08ee9d0311d988c7b52b55e551",
+    "mtime": 1794752116.3371549,
+    "seen": 1794752118.1582232,
+    "ast_hash": "5251060f3aaedb132ea286f8c1a27af1",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794745128.5696309,
-    "seen": 1794745133.9051478,
+    "mtime": 1794752116.3373437,
+    "seen": 1794752118.158227,
     "ast_hash": "70f897c6897d1f3ad9771eb6512e66fa",
     "semantic_hash": ""
   },
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794745401.7412276,
-    "seen": 1794745405.831467,
-    "ast_hash": "13971e7038bf4a1bea3d8d42ca369d48",
+    "mtime": 1794752107.347207,
+    "seen": 1794752109.23809,
+    "ast_hash": "267de7feb07e605b8e999682a20e1b97",
     "semantic_hash": ""
   },
   "design-system/schemas/typography.schema.json": {
@@ -635,16 +635,16 @@
     "ast_hash": "aacb5ae90cdf21a7990caf7718370f10",
     "semantic_hash": ""
   },
-  "docs/specs/_root/0005-aset-merek-bersama/rationale.md": {
-    "mtime": 1794751922.3117464,
-    "seen": 1794751924.156702,
-    "ast_hash": "86d1d78d44759623b2948c237a6d8fd8",
+  "docs/specs/_root/0005-aset-merek-bersama/index.md": {
+    "mtime": 1794752116.3419538,
+    "seen": 1794752118.158218,
+    "ast_hash": "45bdb0ae7e03165233b41799959756e8",
     "semantic_hash": ""
   },
-  "docs/specs/_root/0005-aset-merek-bersama/index.md": {
-    "mtime": 1794751922.3114972,
-    "seen": 1794751924.1567092,
-    "ast_hash": "45bdb0ae7e03165233b41799959756e8",
+  "docs/specs/_root/0005-aset-merek-bersama/rationale.md": {
+    "mtime": 1794752116.3423738,
+    "seen": 1794752118.158228,
+    "ast_hash": "86d1d78d44759623b2948c237a6d8fd8",
     "semantic_hash": ""
   }
 }

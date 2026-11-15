@@ -6,7 +6,7 @@ Pisahkan nilai publik bersama dari pengaturan lokal dan rahasia penandatanganan.
 
 **Done when:** Skema, versi, dan cara validasi serta konsumsi nilai publik terdokumentasi, termasuk batas pengaturan khusus tiap OS.
 
-**Pointer:** spec bersama [_root/0004](../specs/_root/0004-konfigurasi-publik/index.md)
+**Pointer:** spec bersama [_root/0004](../specs/_root/0004-konfigurasi-publik/index.md) · code in `shared/config/`, `tooling/codegen/src/config/`
 
 * [x] `/architect scope 009 konfigurasi publik untuk _root` (spec)
 * [ ] Build it: `/develop scope 009 konfigurasi publik untuk _root`
