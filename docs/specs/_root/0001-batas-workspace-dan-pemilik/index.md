@@ -70,7 +70,8 @@ Pemilik di sini adalah lapisan arsitektur dari [peta arsitektur](../../../archit
 | `design-system/tokens/`, `design-system/schemas/` | bukan paket | rencana | Sistem desain | 008 |
 | `shared/config/`, `shared/localization/`, `shared/assets/` | bukan paket | rencana | Resource bersama | 009, 010, 011 |
 | `shared/specifications/` | bukan paket | rencana, belum ada scope yang membutuhkannya | Resource bersama | belum ada; spec pekerjaan tinggal di `docs/specs/` |
-| `tooling/codegen/`, `tooling/validation/` | ditetapkan scope pembuatnya | rencana | Tooling bersama | scope pertama di antara 002, 004, dan 008 yang membutuhkannya |
+| `tooling/codegen/` | `desktop-codegen` | rencana | Tooling bersama | 008, lewat spec `_root/0003` |
+| `tooling/validation/` | ditetapkan scope pembuatnya | rencana | Tooling bersama | scope pertama yang membutuhkannya; scope 008 tidak membuatnya |
 | `tests/fixtures/`, `tests/contracts/` | bukan paket | rencana | Tooling bersama | saat konsumen kedua butuh fixture yang sama |
 | `scripts/`, `.github/workflows/` | bukan paket | `scripts/update_graphify.py` sudah ada | Tooling bersama | 012 |
 
@@ -224,6 +225,7 @@ Dependensi mengarah ke Core dan tidak pernah membentuk siklus. Aturan berlaku un
 | `desktop-macos-ffi` | `desktop-core`, alat binding. | Crate aplikasi; pustaka UI. |
 | `desktop-windows` | `desktop-core`; pustaka UI dan SDK Windows di bawah tabel `target` untuk Windows. | `desktop-macos-ffi`, `desktop-linux`. |
 | `desktop-linux` | `desktop-core`; GTK dan libadwaita di bawah tabel `target` untuk Linux. | `desktop-macos-ffi`, `desktop-windows`. |
+| `desktop-codegen` | Pustaka teks umum seperti `serde` dan `serde_json`. | Anggota workspace mana pun; pustaka UI; SDK khusus OS. Tidak ada anggota yang bergantung padanya. |
 | `apps/macos/` (Xcode) | `bindings/swift/` dan pustaka hasil build `desktop-macos-ffi`. | Memanggil Core lewat jalur lain. |
 
 Tidak ada anggota yang bergantung pada crate aplikasi.
@@ -283,7 +285,7 @@ Langkah 3 Build plan mengubah `docs/architecture/README.md` sebagai berikut. Bag
    Tidak ada anggota yang bergantung pada crate aplikasi. Anggota yang butuh pustaka satu OS menaruh dependensi itu di bawah tabel `target` untuk OS tersebut dan memberi kode yang memakainya atribut `cfg` yang sama, sehingga `cargo build --workspace --locked` berhasil di ketiga host. Bukti untuk Core adalah `cargo tree -p desktop-core --target all --all-features --prefix none --locked`, yang mencetak tepat satu baris. Rincian dan alasannya ada di spec 0001.
    ```
 
-   Ganti kata `TABEL` dengan salinan persis tabel lima baris dari bagian "Aturan arah dependensi" spec ini. Jadikan kata `spec 0001` di kalimat terakhir tautan ke `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`; dari dokumen arsitektur path relatifnya diawali `../specs/_root/`.
+   Ganti kata `TABEL` dengan salinan persis tabel lima baris dari bagian "Aturan arah dependensi" spec ini. Lima baris itu adalah keadaan pada akhir milestone 2. Baris `desktop-codegen` ditambahkan kemudian ke kedua tabel dalam satu commit, karena spec `_root/0003` (2026-11-15). Jadikan kata `spec 0001` di kalimat terakhir tautan ke `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`; dari dokumen arsitektur path relatifnya diawali `../specs/_root/`.
 
 ## Build plan
 
