@@ -6,11 +6,11 @@ Tentukan tempat untuk Core, penghubung macOS, aplikasi native, dan resource agar
 
 **Done when:** Workspace dapat membangun Core sendiri dan arah dependensi tiap aplikasi sesuai dengan [peta arsitektur](../architecture/README.md).
 
-**Pointer:** spec bersama [_root/0001](../specs/_root/0001-batas-workspace-dan-pemilik/index.md)
+**Pointer:** spec bersama [_root/0001](../specs/_root/0001-batas-workspace-dan-pemilik/index.md) · code in `crates/core/`, `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`
 
 * [x] `/architect scope 001 batas workspace dan pemilik untuk _root` (spec)
 * [ ] Build it: `/develop scope 001 batas workspace dan pemilik`
-  * [ ] Milestone 1: Workspace dan kerangka Core. Build plan langkah 1 dan 2. AC-1 sampai AC-7
+  * [x] Milestone 1: Workspace dan kerangka Core. Build plan langkah 1 dan 2. AC-1 sampai AC-7
   * [ ] Milestone 2: Peta arsitektur mencatat tata letak nyata. Build plan langkah 3. AC-8. after milestone 1
   * [ ] Milestone 3: Bukti Core di host Windows dan Linux. Build plan langkah 4. AC-9. after milestone 1; needs host Windows dan host Linux (`BLOCKED`, `owner: user`)
 * [ ] Verify it: `/check verify scope 001 batas workspace dan pemilik`
