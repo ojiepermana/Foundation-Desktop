@@ -5,7 +5,9 @@
 //! (S-1 to S-7) of spec `_root/0005`
 //! (`docs/specs/_root/0005-aset-merek-bersama/index.md`). It plans the
 //! generated `shared/assets/brand.schema.json`, built from the same
-//! constants the check uses. The tool never writes binary files.
+//! constants the check uses, and the macOS icon document of spec
+//! `macos/0007` (`apps/macos/Resources/AppIcon.icon`), whose stale files
+//! rule I-1 rejects. The tool never writes binary files.
 
 use std::fs;
 use std::path::Path;
@@ -15,6 +17,7 @@ use serde::Deserialize;
 use crate::json::UniqueMap;
 use crate::{Output, Plan, Problem, Source};
 
+pub mod macos;
 mod schema;
 mod svg;
 
@@ -291,11 +294,35 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
                 .iter()
                 .map(|asset| asset.source_paths().len())
                 .sum();
+            let asset = brand
+                .assets
+                .iter()
+                .find(|asset| asset.id == REQUIRED_ASSET)
+                .expect("A-2 guarantees app-icon");
+            let mut contents = Vec::new();
+            for path in asset.source_paths() {
+                match fs::read_to_string(root.join(&path)) {
+                    Ok(text) => contents.push(text),
+                    Err(error) => {
+                        problems.push(Problem::new(&path, format!("S-1: cannot read: {error}")));
+                    }
+                }
+            }
+            if !problems.is_empty() {
+                return Err(problems);
+            }
+            let icon = macos::outputs(asset, &contents);
+            check_icon_folder(root, &icon, &mut problems);
+            if !problems.is_empty() {
+                return Err(problems);
+            }
+            let mut outputs = vec![Output {
+                path: SCHEMA_PATH.to_string(),
+                contents: schema::contents(),
+            }];
+            outputs.extend(icon);
             Ok(Plan {
-                outputs: vec![Output {
-                    path: SCHEMA_PATH.to_string(),
-                    contents: schema::contents(),
-                }],
+                outputs,
                 summary: format!(
                     "{} assets, {files} source files, {} placeholder values",
                     brand.assets.len(),
@@ -304,6 +331,48 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
             })
         }
         _ => Err(problems),
+    }
+}
+
+/// I-1: when the macOS icon document exists, it holds only `icon.json` and
+/// an `Assets/` folder whose files are all produced by the generator.
+/// Missing files are left to `check` and `generate`.
+fn check_icon_folder(root: &Path, icon: &[Output], problems: &mut Vec<Problem>) {
+    let stale = "I-1: not produced by the generator, remove it";
+    if !root.join(macos::ICON_DIR).exists() {
+        return;
+    }
+    let found = match entries(&root.join(macos::ICON_DIR)) {
+        Ok(found) => found,
+        Err(error) => {
+            problems.push(Problem::new(
+                macos::ICON_DIR,
+                format!("I-1: cannot read the folder: {error}"),
+            ));
+            return;
+        }
+    };
+    for (name, kind) in found {
+        let path = format!("{}/{name}", macos::ICON_DIR);
+        match (name.as_str(), kind) {
+            ("icon.json", Kind::File) => {}
+            ("Assets", Kind::Folder) => match entries(&root.join(macos::ICON_ASSETS_DIR)) {
+                Ok(layers) => {
+                    for (layer, kind) in layers {
+                        let path = format!("{}/{layer}", macos::ICON_ASSETS_DIR);
+                        let produced = icon.iter().any(|output| output.path == path);
+                        if kind != Kind::File || !produced {
+                            problems.push(Problem::new(&path, stale));
+                        }
+                    }
+                }
+                Err(error) => problems.push(Problem::new(
+                    macos::ICON_ASSETS_DIR,
+                    format!("I-1: cannot read the folder: {error}"),
+                )),
+            },
+            _ => problems.push(Problem::new(&path, stale)),
+        }
     }
 }
 
