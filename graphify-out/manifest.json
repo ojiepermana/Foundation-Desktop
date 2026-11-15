@@ -342,9 +342,81 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0001-sapaan-di-jendela-macos/index.md": {
-    "mtime": 1794739767.6535225,
-    "seen": 1794739770.2422678,
-    "ast_hash": "13b32666d9a5301b8a6fe6c599628452",
+    "mtime": 1794740287.2968566,
+    "seen": 1794740289.077939,
+    "ast_hash": "a0a4e1b623c02f3c25399aed2317d712",
+    "semantic_hash": ""
+  },
+  "apps/macos/Package.swift": {
+    "mtime": 1794740287.2869787,
+    "seen": 1794740289.07793,
+    "ast_hash": "c6d7ed31a2558949961f0289d3f689ca",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift": {
+    "mtime": 1794740287.2889543,
+    "seen": 1794740289.0779321,
+    "ast_hash": "ee1e6e8038a9efd34ffac1dc2f55bc31",
+    "semantic_hash": ""
+  },
+  "apps/macos/Interop/Greeter.swift": {
+    "mtime": 1794740287.2867029,
+    "seen": 1794740289.077934,
+    "ast_hash": "101d65fa6b38e57b692010c84800ee73",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/src/bin/uniffi-bindgen-swift.rs": {
+    "mtime": 1794740287.2913454,
+    "seen": 1794740289.0779352,
+    "ast_hash": "fefaf8455dad550fd4e9818b0543cc75",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0001-sapaan-di-jendela-macos/verify.md": {
+    "mtime": 1794740287.2973552,
+    "seen": 1794740289.0779352,
+    "ast_hash": "df5e761cf15abaffeac4feb58851b64a",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Package.swift": {
+    "mtime": 1794740287.2885237,
+    "seen": 1794740289.0779362,
+    "ast_hash": "1fa4dd93f00dbafd6c970f69bbe3f390",
+    "semantic_hash": ""
+  },
+  "bindings/swift/Sources/desktop_macos_ffiFFI/desktop_macos_ffiFFI.h": {
+    "mtime": 1794740287.2893445,
+    "seen": 1794740289.077937,
+    "ast_hash": "1f2397eaa29b6460ab6102cc8362562b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/PresentationTests/GreetingViewModelTests.swift": {
+    "mtime": 1794740287.2881026,
+    "seen": 1794740289.07794,
+    "ast_hash": "2e4466d2dab07629cd4d280604d4b36d",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/src/lib.rs": {
+    "mtime": 1794740287.2914472,
+    "seen": 1794740289.07794,
+    "ast_hash": "005d7cb6fc31c3f1454570a48c5fd9e0",
+    "semantic_hash": ""
+  },
+  "crates/macos-ffi/Cargo.toml": {
+    "mtime": 1794740287.2911134,
+    "seen": 1794740289.077941,
+    "ast_hash": "730676471aca1151030449d7991f9b37",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/InteropTests/BindingContractTests.swift": {
+    "mtime": 1794740287.2878096,
+    "seen": 1794740289.0779421,
+    "ast_hash": "dec9670adc8873f86f80dbdefa1e80e8",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingViewModel.swift": {
+    "mtime": 1794740287.2874827,
+    "seen": 1794740289.077943,
+    "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
     "semantic_hash": ""
   }
 }
