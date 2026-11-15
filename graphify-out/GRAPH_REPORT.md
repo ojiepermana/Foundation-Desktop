@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 163 files · ~261,670 words
+- 163 files · ~261,645 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -47,6 +47,7 @@
 - 007 - Sapaan di jendela Linux
 - config/mod.rs
 - architecture_contract.rs
+- ThemeTests.swift
 - spacing.json
 - Fondasi macOS
 - svg.rs
@@ -62,7 +63,6 @@
 - 0007. Aturan pengembangan dan pemeriksaan arsitektur: alasan
 - catalog.json
 - lib.sh
-- GreetingViewModelTests.swift
 - properties
 - 0001. Sapaan di jendela macOS: catatan keputusan
 - 0001. Batas workspace dan pemilik: alasan
@@ -93,7 +93,6 @@
 - Milestone 1: Katalog dan sumber localization
 - macos_bridge_ownership.rs
 - Aturan pengembangan
-- TextRole
 - Log koordinasi: `<nama-SCOPE>`
 - required
 - Verify: spec macos/0002 dan macos/0003 · 2026-11-15
@@ -102,6 +101,7 @@
 - 0006. Satu contoh lokalisasi di macOS
 - 0002. Kontrak sapaan bersama
 - refresh
+- GreetingView
 - Peran: architect
 - Peran: checker
 - Peran: debugger
@@ -109,7 +109,6 @@
 - Peran: tester
 - Options considered
 - Konfigurasi publik
-- ThemeTests.swift
 - Rust Core (`desktop-core`)
 - typography.json
 - Arsitektur fondasi desktop
@@ -121,6 +120,7 @@
 - Milestone 1: Gerbang bersama
 - validate.sh
 - public.json
+- TextRole
 - macos-ffi/src/lib.rs
 - 008 - Tema bersama dan kontrol native
 - PackageDescription
@@ -152,12 +152,12 @@
   apps/macos/DesignSystem/Tokens.swift → apps/macos/DesignSystem/Theme.swift
 - `Uji jendela di Mac` --semantically_similar_to--> `Uji sesi grafis Linux`  [INFERRED] [semantically similar]
   docs/platforms/macos/README.md → docs/platforms/linux/README.md
-- `.body` --calls--> `GreetingView`  [INFERRED]
-  apps/macos/App/DesktopMacApp.swift → apps/macos/Presentation/GreetingView.swift
 - `.body` --calls--> `GreetingViewModel`  [INFERRED]
   apps/macos/App/DesktopMacApp.swift → apps/macos/Presentation/GreetingViewModel.swift
 - `Colors` --calls--> `ThemeColor`  [INFERRED]
   apps/macos/DesignSystem/Tokens.swift → apps/macos/DesignSystem/Theme.swift
+- `long_name_is_not_cut()` --calls--> `hello()`  [INFERRED]
+  crates/core/tests/hello_contract.rs → crates/core/src/greeting.rs
 
 ## Import Cycles
 - None detected.
@@ -315,69 +315,69 @@ Nodes (16): Build, check_app_identifier(), check_entries(), check_product_name()
 Cohesion: 0.23
 Nodes (14): accepts_allowed_shapes(), apply(), copy_repo(), copy_tree(), Edit, lock_block(), Rejected, rejects_broken_repos() (+6 more)
 
-### Community 37 - "spacing.json"
+### Community 37 - "ThemeTests.swift"
+Cohesion: 0.17
+Nodes (7): AppKit, DesignSystem, Interop, Observation, Presentation, SwiftUI, Testing
+
+### Community 38 - "spacing.json"
 Cohesion: 0.13
 Nodes (14): base, space.large, space.medium, description, ref, description, ref, $schema (+6 more)
 
-### Community 38 - "Fondasi macOS"
+### Community 39 - "Fondasi macOS"
 Cohesion: 0.17
 Nodes (15): AppKit, Apple Silicon ARM64 dan Intel bersyarat, Batas Swift dan Rust, Binding Swift yang dihasilkan, Bukti penerimaan pada Mac, Distribusi, Fondasi macOS, Jendela dan interaksi (+7 more)
 
-### Community 39 - "svg.rs"
+### Community 40 - "svg.rs"
 Cohesion: 0.31
 Nodes (13): FnMut, check_elements(), check_entities(), check_events(), check_references(), check_root(), check_svg(), is_valid_view_box() (+5 more)
 
-### Community 40 - "ThemeColor"
+### Community 41 - "ThemeColor"
 Cohesion: 0.19
 Nodes (12): Bool, NSColor, UInt8, ThemeColor, .color, .nsColor, Colors, Spacing (+4 more)
 
-### Community 41 - "BindingContractTests"
+### Community 42 - "BindingContractTests"
 Cohesion: 0.22
 Nodes (4): CoreGreeter, String, BindingContractTests, DesktopMacosFFI
 
-### Community 42 - "GreetingViewModel"
-Cohesion: 0.25
-Nodes (7): Greeter, GreetingView, .body, GreetingViewModel, String, GreetingViewModelTests, View
+### Community 43 - "GreetingViewModel"
+Cohesion: 0.26
+Nodes (7): Greeter, GreetingViewModel, String, GreetingViewModelTests, RecordingGreeter, String, Sendable
 
-### Community 43 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
+### Community 44 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
 Cohesion: 0.14
 Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Jembatan, binding, dan uji tanpa jendela, Milestone 2: Jendela SwiftUI dan proyek Xcode (+5 more)
 
-### Community 44 - "0002. Batas workspace dan pemilik di macOS"
+### Community 45 - "0002. Batas workspace dan pemilik di macOS"
 Cohesion: 0.14
 Nodes (14): 0002. Batas workspace dan pemilik di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tambah satu langkah untuk peta arsitektur (+6 more)
 
-### Community 45 - "0003. Kontrak sapaan bersama di macOS"
+### Community 46 - "0003. Kontrak sapaan bersama di macOS"
 Cohesion: 0.14
 Nodes (14): 0003. Kontrak sapaan bersama di macOS, Build plan, Consequences, Context, Decision, Feature design, Follow-up, Opsi 1: Rujuk bukti yang ada, tanpa langkah build (+6 more)
 
-### Community 46 - "Milestone 1: Sumber architecture dan aturan dependensi"
+### Community 47 - "Milestone 1: Sumber architecture dan aturan dependensi"
 Cohesion: 0.14
 Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Sumber architecture dan aturan dependensi, Milestone 2: Aturan kode dan uji lintas crate (+5 more)
 
-### Community 47 - "properties"
+### Community 48 - "properties"
 Cohesion: 0.17
 Nodes (13): propertyNames, type, properties, base, $schema, schemaVersion, semantic, pattern (+5 more)
 
-### Community 48 - "pre-commit script"
+### Community 49 - "pre-commit script"
 Cohesion: 0.21
 Nodes (10): Validasi keluaran generator, post-commit script, Rekonsiliasi indeks sesudah git commit --only, pre-commit script, Empat artefak Graphify dalam satu commit, Isolasi riwayat kueri lokal, Preservasi edit unstaged pada artefak, Validasi artefak sebelum staging (+2 more)
 
-### Community 49 - "0007. Aturan pengembangan dan pemeriksaan arsitektur: alasan"
+### Community 50 - "0007. Aturan pengembangan dan pemeriksaan arsitektur: alasan"
 Cohesion: 0.15
 Nodes (13): 0007. Aturan pengembangan dan pemeriksaan arsitektur: alasan, Bukti percobaan, Context, Cross check, Jawaban atas masukan `/audit`, Keputusan yang diambil, Opsi 1: Sumber `architecture` di `desktop-codegen`, Opsi 2: Paket pemeriksa sendiri di `tooling/validation/` (+5 more)
 
-### Community 50 - "catalog.json"
+### Community 51 - "catalog.json"
 Cohesion: 0.15
 Nodes (12): en, id, entries, greeting.submit, description, text, $schema, locales (+4 more)
 
-### Community 51 - "lib.sh"
+### Community 52 - "lib.sh"
 Cohesion: 0.21
 Nodes (7): finish(), header(), lib.sh script, step(), summary_line(), summary_row(), toolchain_step()
-
-### Community 52 - "GreetingViewModelTests.swift"
-Cohesion: 0.18
-Nodes (8): App, DesktopMacApp, .body, Interop, Observation, Presentation, Scene, Testing
 
 ### Community 53 - "properties"
 Cohesion: 0.17
@@ -499,41 +499,41 @@ Nodes (7): bridge_sources_hold_no_unsafe(), files_with_extension(), hand_written
 Cohesion: 0.22
 Nodes (9): Agent skills, Aturan pengembangan, Build approach, Commands, Context files, Rules, Specs, Stack (+1 more)
 
-### Community 83 - "TextRole"
-Cohesion: 0.28
-Nodes (7): TextRole, .font, RecordingGreeter, String, Equatable, Font, Sendable
-
-### Community 84 - "Log koordinasi: `<nama-SCOPE>`"
+### Community 83 - "Log koordinasi: `<nama-SCOPE>`"
 Cohesion: 0.22
 Nodes (8): Blocker terbuka, Dicentang pada wave ini, Keputusan, Keputusan delegasi, Log koordinasi: `<nama-SCOPE>`, Penutupan, Riwayat wave, Sub sesi wave `<n>`
 
-### Community 85 - "required"
+### Community 84 - "required"
 Cohesion: 0.28
 Nodes (9): additionalProperties, required, type, additionalProperties, description, value, additionalProperties, dark (+1 more)
 
-### Community 86 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
+### Community 85 - "Verify: spec macos/0002 dan macos/0003 · 2026-11-15"
 Cohesion: 0.22
 Nodes (9): Catatan, Host dan versi, Keadaan `verify.md` yang dirujuk, Spec macos/0002 (scope 001), Spec macos/0003 (scope 003), Tafsiran yang diambil, Verdict, Verify: spec macos/0002 dan macos/0003 · 2026-11-15 (+1 more)
 
-### Community 87 - "0001. Sapaan di jendela macOS"
+### Community 86 - "0001. Sapaan di jendela macOS"
 Cohesion: 0.22
 Nodes (9): 0001. Sapaan di jendela macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 88 - "0005. Tema bersama dan kontrol native di macOS"
+### Community 87 - "0005. Tema bersama dan kontrol native di macOS"
 Cohesion: 0.22
 Nodes (9): 0005. Tema bersama dan kontrol native di macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 89 - "0006. Satu contoh lokalisasi di macOS"
+### Community 88 - "0006. Satu contoh lokalisasi di macOS"
 Cohesion: 0.22
 Nodes (9): 0006. Satu contoh lokalisasi di macOS, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 90 - "0002. Kontrak sapaan bersama"
+### Community 89 - "0002. Kontrak sapaan bersama"
 Cohesion: 0.22
 Nodes (9): 0002. Kontrak sapaan bersama, Build plan, Consequences, Decision, Feature design, Follow-up, Rationale, Requirements (+1 more)
 
-### Community 91 - "refresh"
+### Community 90 - "refresh"
 Cohesion: 0.33
 Nodes (7): Ekstraksi struktur lokal, Pemeriksaan kesegaran graf, Pemeriksaan ujung relasi, Pencatatan hash manifest, Penggunaan ulang bukti semantik, Refresh the shared Graphify artifacts inside a disposable Git index snapshot., refresh()
+
+### Community 91 - "GreetingView"
+Cohesion: 0.25
+Nodes (7): App, DesktopMacApp, .body, GreetingView, .body, Scene, View
 
 ### Community 92 - "Peran: architect"
 Cohesion: 0.25
@@ -563,49 +563,49 @@ Nodes (8): 0002. Kontrak sapaan bersama: catatan keputusan, Context, Keputusan y
 Cohesion: 0.25
 Nodes (7): Batas pengaturan khusus OS, Cara aplikasi memakai nilai, Cara mengubah, Konfigurasi publik, Riwayat skema, Skema versi 1, Yang tidak boleh ada di folder ini
 
-### Community 99 - "ThemeTests.swift"
-Cohesion: 0.38
-Nodes (3): AppKit, DesignSystem, SwiftUI
-
-### Community 100 - "Rust Core (`desktop-core`)"
+### Community 99 - "Rust Core (`desktop-core`)"
 Cohesion: 0.29
 Nodes (7): Commands, Conventions, Gotchas, Key files, Overview, Related specs, Rust Core (`desktop-core`)
 
-### Community 101 - "typography.json"
+### Community 100 - "typography.json"
 Cohesion: 0.29
 Nodes (6): description, weight, roles, body, $schema, schemaVersion
 
-### Community 102 - "Arsitektur fondasi desktop"
+### Community 101 - "Arsitektur fondasi desktop"
 Cohesion: 0.29
 Nodes (7): Arsitektur fondasi desktop, Aturan arah dependensi, Aturan pengembangan yang akan dicatat, Batas fase fondasi, Pemilik dan arah dependensi, Tata letak yang dituju, Yang sudah ada
 
-### Community 103 - "brand.json"
+### Community 102 - "brand.json"
 Cohesion: 0.29
 Nodes (6): placeholder, variants, assets, app-icon, $schema, schemaVersion
 
-### Community 104 - "Langkah manual: `<nama-SCOPE>`"
+### Community 103 - "Langkah manual: `<nama-SCOPE>`"
 Cohesion: 0.33
 Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`), Langkah manual: `<nama-SCOPE>`, Nilai dari user, Ringkasan
 
-### Community 105 - "Milestone 1: Setelan Xcode dari sumber bersama"
+### Community 104 - "Milestone 1: Setelan Xcode dari sumber bersama"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Setelan Xcode dari sumber bersama, UI / manual, Verify: Konfigurasi publik di macOS · spec macos/0004 · updated 2026-11-15
 
-### Community 106 - "Milestone 2: Jendela sapaan memakai token"
+### Community 105 - "Milestone 2: Jendela sapaan memakai token"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 2: Jendela sapaan memakai token, UI / manual, Verify: Tema bersama dan kontrol native di macOS · spec macos/0005 · updated 2026-11-15
 
-### Community 107 - "Milestone 1: Gerbang Mac terbukti"
+### Community 106 - "Milestone 1: Gerbang Mac terbukti"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Gerbang Mac terbukti, UI / manual, Verify: Aturan pengembangan dan pemeriksaan arsitektur macOS · spec macos/0008 · updated 2026-11-15
 
-### Community 108 - "Milestone 1: Gerbang bersama"
+### Community 107 - "Milestone 1: Gerbang bersama"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Gerbang bersama, UI / manual, Verify: Build dan penerimaan per target · spec _root/0008 · updated 2026-11-15
 
-### Community 110 - "public.json"
+### Community 109 - "public.json"
 Cohesion: 0.33
 Nodes (5): build, app_identifier, product_name, $schema, schemaVersion
+
+### Community 110 - "TextRole"
+Cohesion: 0.50
+Nodes (4): TextRole, .font, Equatable, Font
 
 ### Community 112 - "008 - Tema bersama dan kontrol native"
 Cohesion: 0.50

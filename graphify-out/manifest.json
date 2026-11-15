@@ -954,9 +954,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/verify.md": {
-    "mtime": 1794757881.5903113,
-    "seen": 1794757883.3935208,
-    "ast_hash": "200f6c6a9135aecac73c05389e3544ea",
+    "mtime": 1794758554.8344538,
+    "seen": 1794758560.806051,
+    "ast_hash": "a5405dfd926dbca9dd00c2c18334b160",
     "semantic_hash": ""
   },
   "apps/macos/DesignSystem/Theme.swift": {
