@@ -1042,5 +1042,11 @@
     "seen": 1794759979.486847,
     "ast_hash": "d3dbb50af1ff24801233e304dbc266f0",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/localization_macos_rules.rs": {
+    "mtime": 1794760287.3347838,
+    "seen": 1794760290.587282,
+    "ast_hash": "3f7f8877836e946ba750e7dd540c245c",
+    "semantic_hash": ""
   }
 }
