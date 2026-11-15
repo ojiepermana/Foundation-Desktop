@@ -472,5 +472,17 @@
     "seen": 1794743706.424963,
     "ast_hash": "802305f45ff7b70d6947db8521ae8a78",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/rationale.md": {
+    "mtime": 1794744248.0915823,
+    "seen": 1794744256.004603,
+    "ast_hash": "dbc27121be87fc8ef5517012ee0e204d",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
+    "mtime": 1794744248.091351,
+    "seen": 1794744256.004606,
+    "ast_hash": "98fce5a6079ade3b9d9c34e303424818",
+    "semantic_hash": ""
   }
 }
