@@ -894,7 +894,7 @@ Prasyarat: needs scope 008 milestone 1 dari spec `_root/0003` di `main` (paket `
 * [x] Scope 002: dijawab spec `macos/0008` (aturan `C-1` sampai `C-3`). Jadikan pemeriksaan teks **AC-3** dan **AC-6** pemeriksaan tetap (tidak ada warna, bobot, atau jarak literal di kode tampilan; hanya `Presentation` yang mengimpor `DesignSystem`).
 * [ ] Scope 010: teks `Name` dan `Greet` pindah ke katalog bahasa. Pemeriksaan `grep` di AC-6 yang menyebut teks itu ikut diperbarui.
 * [ ] Scope 011: bila merek membawa huruf sendiri, `TextRole.font` adalah satu satunya tempat yang berubah. Ikon aplikasi dan warna aksen di asset catalog bukan bagian spec ini.
-* [ ] Scope 012: `scripts/generate-design-tokens.sh` membungkus `tokens generate`, dan runner macOS menjalankan `tokens check`, `swift test`, dan `xcodebuild` dari spec ini.
+* [x] Scope 012: `scripts/generate-design-tokens.sh` membungkus `tokens generate`, dan runner macOS menjalankan `tokens check`, `swift test`, dan `xcodebuild` dari spec ini. Dijawab [spec `_root/0008`](../../_root/0008-build-dan-penerimaan-per-target/index.md): `tokens check` lewat `validate.sh` dan langkah 2 `build-macos.sh`, `swift test` lewat `G-3`, dan `xcodebuild` lewat `G-4` (2026-11-15).
 * [ ] Bila langkah manual 8 menunjukkan macOS memperbesar teks kontrol tetapi tidak memperbesar label hasil, itu pelanggaran K-6. Perbaiki lewat pembaruan spec ini.
 * [ ] Uji di macOS 14 sampai 26 belum ada. `Font.system(_:)` dan `NSColor(name:dynamicProvider:)` tersedia sejak sebelum macOS 14, tetapi tampilannya di versi itu belum dilihat.
 * [ ] AC-7, AC-8, dan milestone 3 menunggu sesi GUI user (`owner: user`).

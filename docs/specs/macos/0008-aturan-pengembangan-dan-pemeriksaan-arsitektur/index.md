@@ -305,11 +305,11 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
   * AC-1 spec itu berbatas "pada akhir milestone 3" (`13 rules`). Milestone 3 dan 4 spec ini menambah tepat tiga lalu tepat satu aturan; bila AC-1 diperiksa ulang sesudah itu, tulis angkanya bersama aturan `C`;
   * urutan masalah di bagian "Bentuk alat" spec itu mendapat huruf ID sebagai kunci pertama, seperti bagian **Aturan teks macOS** spec ini;
   * baris "Binding Swift sama byte demi byte" di tabel "Peta aturan ke pemeriksaan" dan baris "Saat `crates/core/` atau `crates/macos-ffi/` berubah, di Mac" di tabel "Kapan pemeriksaan berjalan" menunjuk `G-1` sampai `G-5` spec ini.
-* [ ] Pemilik spec `macos/0001`, dalam pembaruan gabungan yang lead urutkan:
+* [x] Pemilik spec `macos/0001`, dalam pembaruan gabungan yang lead urutkan (diterapkan di `12c98a0`, 2026-11-15; AC-1 dan **Membuat ulang binding** merujuk `G-2`):
   * bagian **Membuat ulang binding** tetap cara memperbaiki binding; tambahkan satu kalimat bahwa pemeriksaannya adalah `G-2` spec ini;
   * AC-1 boleh merujuk `G-2`.
   * Tidak ada path atau perintah yang berubah, jadi hitungan path di AC-12 spec itu tetap.
-* [ ] Scope 012 (`arc-f012-spec`, spec `_root/0008`):
+* [x] Scope 012 (`arc-f012-spec`, spec `_root/0008`). Dijawab [spec `_root/0008`](../../_root/0008-build-dan-penerimaan-per-target/index.md): `build-macos.sh` membungkus `G-1` sampai `G-5` apa adanya, job macOS memakai `R` sebagai filter `paths:`, dan build `Release` sesudah `G-5` diputuskan di sana tanpa pemicu tambahan (2026-11-15):
   * skrip dan job runner macOS menjalankan `G-1` sampai `G-5` persis seperti di sini, tanpa perintah lain untuk hal yang sama;
   * filter path job macOS memakai pola `R`;
   * bila CI butuh pemicu tambahan, misalnya build `Release` sebelum rilis, itu keputusan spec 0008.
