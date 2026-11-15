@@ -2,7 +2,7 @@
 
 **Scope**: [002 - Aturan pengembangan dan pemeriksaan arsitektur](../../../scope/002%20-%20Aturan%20pengembangan%20dan%20pemeriksaan%20arsitektur.md)
 **Date**: 2026-11-15
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 
