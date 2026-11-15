@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794741186.4283166,
-    "seen": 1794741187.3231308,
-    "ast_hash": "bb2759fbf52f3001ce332ca326d72493",
+    "mtime": 1794744427.8647058,
+    "seen": 1794744433.550453,
+    "ast_hash": "60f91066abfc65c3e3a3a9a9f81bfb5e",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794741072.1472223,
-    "seen": 1794741073.220414,
-    "ast_hash": "84cc965d59445aea36f3e62c169f9d53",
+    "mtime": 1794744427.8868186,
+    "seen": 1794744433.550445,
+    "ast_hash": "8629771533e931035f200ee2b4a95c8b",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794741072.1474054,
-    "seen": 1794741073.2204149,
-    "ast_hash": "32e9d8a53c63c3ccf464954a91c2f91a",
+    "mtime": 1794744427.8870704,
+    "seen": 1794744433.5504498,
+    "ast_hash": "b67ca8a20a5bb94d9e49ee6ee132f433",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794744248.091351,
-    "seen": 1794744256.004606,
-    "ast_hash": "98fce5a6079ade3b9d9c34e303424818",
+    "mtime": 1794744427.8882484,
+    "seen": 1794744433.550452,
+    "ast_hash": "9a365f920bdca9e7a7bbbf56f433c1cb",
     "semantic_hash": ""
   }
 }
