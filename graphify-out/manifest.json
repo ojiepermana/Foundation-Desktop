@@ -576,9 +576,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0004-konfigurasi-publik/index.md": {
-    "mtime": 1794755995.051819,
-    "seen": 1794755997.1905768,
-    "ast_hash": "6812a4d40978e039146629d27701f25e",
+    "mtime": 1794756255.0247715,
+    "seen": 1794756256.576782,
+    "ast_hash": "e8e181571b77323c3e89ece36afcbef1",
     "semantic_hash": ""
   },
   "shared/config/public.schema.json": {
@@ -600,9 +600,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/config/mod.rs": {
-    "mtime": 1794751903.6259665,
-    "seen": 1794751904.789956,
-    "ast_hash": "4f0b665ddb92e8b395aec1d8b7628dcf",
+    "mtime": 1794756255.0296187,
+    "seen": 1794756256.576788,
+    "ast_hash": "6c8d97dae3ab66d9a2559f98c9631609",
     "semantic_hash": ""
   },
   "shared/config/README.md": {
@@ -885,6 +885,18 @@
     "mtime": 1794755684.0772216,
     "seen": 1794755688.609706,
     "ast_hash": "b613741fc18c5be9037cea9b8bc17bc3",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_macos_contract.rs": {
+    "mtime": 1794756255.0312517,
+    "seen": 1794756256.5767848,
+    "ast_hash": "8a473b02e525dddc8124559c976cb1b4",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/config/macos.rs": {
+    "mtime": 1794756255.0294724,
+    "seen": 1794756256.5767858,
+    "ast_hash": "87bc36524812fef7c15b8cd4b3aa2f7e",
     "semantic_hash": ""
   }
 }

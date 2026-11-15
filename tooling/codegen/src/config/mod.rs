@@ -15,6 +15,8 @@ use serde_json::{Value, json};
 use crate::json::to_canonical_json;
 use crate::{Output, Plan, Problem, Source};
 
+pub mod macos;
+
 /// The `config` source, run as `desktop-codegen config <check|generate>`.
 pub const SOURCE: Source = Source {
     name: "config",
@@ -82,8 +84,9 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     let mut problems = Vec::new();
     check_entries(root, &mut problems);
 
-    if let Some(file) = read_public(root, &mut problems) {
-        check_public(&file, &mut problems);
+    let public = read_public(root, &mut problems);
+    if let Some(file) = &public {
+        check_public(file, &mut problems);
         if file.schema_version != SCHEMA_VERSION {
             problems.push(Problem::new(
                 PUBLIC_PATH,
@@ -99,11 +102,22 @@ fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     if !problems.is_empty() {
         return Err(problems);
     }
+    let Some(file) = public else {
+        return Err(problems);
+    };
+    let xcconfig = macos::shared_xcconfig(
+        &file.build.product_name,
+        &file.build.app_identifier,
+        env!("CARGO_PKG_VERSION"),
+    )?;
     Ok(Plan {
-        outputs: vec![Output {
-            path: SCHEMA_PATH.to_string(),
-            contents: to_canonical_json(&schema()),
-        }],
+        outputs: vec![
+            Output {
+                path: SCHEMA_PATH.to_string(),
+                contents: to_canonical_json(&schema()),
+            },
+            xcconfig,
+        ],
         summary: format!(
             "schema version {SCHEMA_VERSION}, {} build values",
             BUILD_KEYS.len()
