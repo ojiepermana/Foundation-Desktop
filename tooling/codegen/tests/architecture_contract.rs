@@ -4,7 +4,8 @@
 //! standard library. `every_source_passes_check_on_the_repo` runs `check`
 //! for every entry of `SOURCES`, so a registered source cannot slip past
 //! the gate (AC-1, AC-3). `rejects_broken_repos` and
-//! `accepts_allowed_shapes` run the `N` and `P` cases of
+//! `accepts_allowed_shapes` run the cases `N-1` to `N-19`, `P-1`, `P-2`,
+//! and `P-3` of
 //! `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md`
 //! on a copy of the repo under a temporary root, restoring every changed
 //! file before the next case (AC-2).
@@ -86,6 +87,8 @@ fn copy_repo(name: &str) -> PathBuf {
 enum Edit {
     /// Replace the first `.1` with `.2` in file `.0`.
     Replace(&'static str, &'static str, &'static str),
+    /// Append text `.1` to file `.0`.
+    Append(&'static str, &'static str),
     /// Create file `.0` with text `.1`, making its folders.
     Create(&'static str, &'static str),
     /// Add entry `.1` to the `dependencies` of lock block `.0`.
@@ -100,7 +103,7 @@ impl Edit {
     /// The file the edit changes, from the repo root.
     fn path(self) -> &'static str {
         match self {
-            Edit::Replace(path, ..) | Edit::Create(path, _) => path,
+            Edit::Replace(path, ..) | Edit::Append(path, _) | Edit::Create(path, _) => path,
             Edit::Edge(..) | Edit::Unedge(..) | Edit::Block(..) => "Cargo.lock",
         }
     }
@@ -124,7 +127,7 @@ fn apply(edit: Edit, text: &str) -> String {
             assert!(text.contains(find), "{find:?} is not in the file");
             text.replacen(find, replace, 1)
         }
-        Edit::Create(_, extra) => format!("{text}{extra}"),
+        Edit::Append(_, extra) | Edit::Create(_, extra) => format!("{text}{extra}"),
         Edit::Edge(package, dependency) => {
             let (start, end) = lock_block(text, package);
             let block = &text[start..end];
@@ -269,6 +272,126 @@ const REJECTED: &[Rejected] = &[
         rules: &["A-4"],
         contains: &["desktop-codegen", "gtk4", "class ui"],
     },
+    Rejected {
+        number: "N-7",
+        edits: &[Edit::Replace(
+            "crates/macos-ffi/Cargo.toml",
+            "unsafe_code = \"forbid\"\n",
+            "",
+        )],
+        rules: &["A-5"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-8",
+        edits: &[Edit::Create("rustfmt.toml", "")],
+        rules: &["A-5"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-9",
+        edits: &[Edit::Append(
+            "crates/core/src/greeting.rs",
+            "#[cfg(target_os = \"macos\")]\n",
+        )],
+        rules: &["A-6"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-10",
+        edits: &[Edit::Create(
+            "crates/core/tests/outside.rs",
+            "const X: &str = include_str!(\"../../../Cargo.toml\");\n",
+        )],
+        rules: &["A-6"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-11",
+        edits: &[Edit::Append(
+            "crates/macos-ffi/src/lib.rs",
+            "// shared/config/public.json\n",
+        )],
+        rules: &["A-7"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-12",
+        edits: &[Edit::Create(
+            "apps/macos/Presentation/Local.swift",
+            "let text = \"Hello, \" + name\n",
+        )],
+        rules: &["A-8"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-13",
+        edits: &[Edit::Replace(
+            "crates/macos-ffi/src/lib.rs",
+            "desktop_core::hello(name)",
+            "format!(\"Hello, {name}!\")",
+        )],
+        rules: &["A-8", "A-9"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-14",
+        edits: &[Edit::Replace(
+            "crates/macos-ffi/src/lib.rs",
+            "#[cfg(test)]",
+            "pub fn extra() -> String {\n    String::new()\n}\n\n#[cfg(test)]",
+        )],
+        rules: &["A-9"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-15",
+        edits: &[Edit::Replace(
+            "crates/macos-ffi/src/lib.rs",
+            "desktop_core::hello(name)",
+            "desktop_core::hello(name.trim().to_string())",
+        )],
+        rules: &["A-9"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-16",
+        edits: &[Edit::Replace(
+            "crates/macos-ffi/src/lib.rs",
+            "pub fn hello(name: String) -> String {",
+            "pub fn hello(name: &str) -> String {",
+        )],
+        rules: &["A-9"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-17",
+        edits: &[Edit::Replace(
+            "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
+            "public func hello(",
+            "public func hallo(",
+        )],
+        rules: &["A-9"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-18",
+        edits: &[Edit::Create(
+            "apps/macos/Presentation/Direct.swift",
+            "import DesktopMacosFFI\n",
+        )],
+        rules: &["A-10"],
+        contains: &[],
+    },
+    Rejected {
+        number: "N-19",
+        edits: &[Edit::Append(
+            "apps/macos/Package.swift",
+            "// .package(url: \"https://example.com/x.git\", from: \"1.0.0\")\n",
+        )],
+        rules: &["A-11"],
+        contains: &[],
+    },
 ];
 
 #[test]
@@ -299,7 +422,23 @@ fn rejects_broken_repos() {
 }
 
 /// The `P` cases of spec `_root/0007`: edits that `plan` must accept.
-const ACCEPTED: &[(&str, &[Edit])] = &[("P-1", &[])];
+const ACCEPTED: &[(&str, &[Edit])] = &[
+    ("P-1", &[]),
+    (
+        "P-2",
+        &[Edit::Append(
+            "tooling/codegen/src/lib.rs",
+            "// shared/config\n",
+        )],
+    ),
+    (
+        "P-3",
+        &[Edit::Create(
+            "apps/macos/Tests/PresentationTests/Extra.swift",
+            "let text = \"Hello, Ayu!\"\n",
+        )],
+    ),
+];
 
 #[test]
 fn accepts_allowed_shapes() {

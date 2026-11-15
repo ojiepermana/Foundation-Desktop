@@ -11,6 +11,7 @@ use std::path::Path;
 
 use crate::{Plan, Problem, Source};
 
+mod code;
 mod deps;
 mod manifest;
 
@@ -22,7 +23,9 @@ pub const SOURCE: Source = Source {
 };
 
 /// The IDs of the rules this source checks, in order.
-pub const RULES: &[&str] = &["A-1", "A-2", "A-3", "A-4"];
+pub const RULES: &[&str] = &[
+    "A-1", "A-2", "A-3", "A-4", "A-5", "A-6", "A-7", "A-8", "A-9", "A-10", "A-11",
+];
 
 /// A class of packages a workspace member may be forbidden to reach.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -163,6 +166,7 @@ impl Findings {
 fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     let mut findings = Findings::default();
     deps::check(root, &mut findings);
+    code::check(root, &mut findings);
     if !findings.0.is_empty() {
         return Err(findings.into_problems());
     }
