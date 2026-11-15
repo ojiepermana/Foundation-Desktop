@@ -6,8 +6,8 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794744427.8647058,
-    "seen": 1794744433.550453,
+    "mtime": 1794744442.2231877,
+    "seen": 1794744444.219553,
     "ast_hash": "60f91066abfc65c3e3a3a9a9f81bfb5e",
     "semantic_hash": ""
   },
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794744282.8390856,
-    "seen": 1794744285.677454,
-    "ast_hash": "2ca12b8c691f04fe8469dbfd1c683d64",
+    "mtime": 1794744371.016281,
+    "seen": 1794744374.014199,
+    "ast_hash": "43d36e45381415239cc139e53acf29e9",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -264,14 +264,14 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794744427.8868186,
-    "seen": 1794744433.550445,
+    "mtime": 1794744442.2312157,
+    "seen": 1794744444.219549,
     "ast_hash": "8629771533e931035f200ee2b4a95c8b",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794744427.8870704,
-    "seen": 1794744433.5504498,
+    "mtime": 1794744442.2319615,
+    "seen": 1794744444.219554,
     "ast_hash": "b67ca8a20a5bb94d9e49ee6ee132f433",
     "semantic_hash": ""
   },
@@ -480,8 +480,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0003-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794744427.8882484,
-    "seen": 1794744433.550452,
+    "mtime": 1794744442.2330723,
+    "seen": 1794744444.2195551,
     "ast_hash": "9a365f920bdca9e7a7bbbf56f433c1cb",
     "semantic_hash": ""
   }

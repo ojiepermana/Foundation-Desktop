@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 19:04`
+- **Diperbarui:** `2026-11-15 19:06`
 
 ## Sub sesi wave `2`
 
@@ -15,11 +15,12 @@
 | `arc-f001-spec` | architect | 009 spec `_root/0004`; laporan `done` (`0bca895`, HEAD `c319c6d`), merge `c04db56`; bagian "Bentuk alat" bersandar pada spec `_root/0003` | `009 - Konfigurasi publik.md` | `docs/specs/_root/0004-konfigurasi-publik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f011-spec` | architect | 011 spec `_root/0005`; mengikuti bentuk generator dari architect 008 | `011 - Aset merek bersama.md` | `docs/specs/_root/0005-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `fable-5-2 · high` | aktif |
 | `arc-f010-spec` | architect | 010 spec `_root/0006`; mengikuti bentuk generator dari architect 008 | `010 - Satu contoh lokalisasi.md` | `docs/specs/_root/0006-satu-contoh-lokalisasi/` | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | aktif |
-| `arc-f002-spec` | architect | 002 spec `_root`; nomor dan ownership ditetapkan saat "mulai", sesudah audit di `main` dan spec `_root/0003` diterima | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | ditetapkan saat "mulai" | `claude/arc-f002-spec-d362fa` | `fable-5-2 · high` | standby |
+| `arc-f002-spec` | architect | 002 spec `_root/0007`; brief "mulai" dikirim 2026-11-15 dengan dua belas masukan audit | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/` | `claude/arc-f002-spec-d362fa` | `fable-5-2 · high` | aktif |
 | `arc-f012-spec` | architect | 012 spec `_root`; ditetapkan saat "mulai", sesudah spec 008 sampai 011 dan 002 diterima | `012 - Build dan penerimaan per target.md` | ditetapkan saat "mulai" | `claude/arc-f012-spec-50349d` | `fable-5-2 · high` | standby |
-| `dev-f008-m1` | developer | 008 Build it; milestone dari blok usulan spec `_root/0003` | `008 - Tema bersama dan kontrol native.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | standby |
+| `dev-f008-m1` | developer | 008 Build it milestone 1 (langkah 1, 2) spec `_root/0003`; brief "mulai" dikirim 2026-11-15 | `008 - Tema bersama dan kontrol native.md` | `Cargo.toml` akar (baris `members`), `Cargo.lock`, `.gitattributes`, `tooling/codegen/`, `design-system/tokens/`, `design-system/schemas/`, `verify.md` spec `_root/0003`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | aktif |
 | `arc-f003-spec` | auditor | 002 `/audit`, penyegaran fakta; laporan `done` (`2e2feb5`, HEAD `2850fba`), merge `d753c2a` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `AGENTS.md` (bagian tambahan audit, +63 baris), `crates/core/AGENTS.md` (+58 baris) | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect | 009 spec macOS `macos/0004`; tindak lanjut di sesi yang sama tanpa clear; perubahan yang dibutuhkan pada spec `macos/0001` ditulis sebagai Follow-up, bukan disunting | `009 - Konfigurasi publik.md` | `docs/specs/macos/0004-konfigurasi-publik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | dipakai ulang |
+| `arc-f004-spec` | architect (update) | baris `desktop-codegen` di tabel aturan spec `_root/0001` dan `docs/architecture/README.md` dalam satu commit; tabel lokasi; satu baris Follow-up spec `_root/0003` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md`, satu baris tabel `docs/architecture/README.md` (diizinkan lead), satu baris Follow-up spec `_root/0003` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | dipakai ulang |
 
 ## Sub sesi wave `1`
 
@@ -100,6 +101,7 @@
 | 2026-11-15 | Ringkasan "Accept this spec?" spec `_root/0004` (scope 009) dibalas `accept` tanpa perubahan: cross check (Opus, 13 temuan) diterapkan; Done when dan kriteria 18 tercakup AC-1 sampai AC-10; hanya dua nilai publik (`build.product_name`, `build.app_identifier`), sesuai kriteria 32. Delapan belas keputusan dicatat, digabung per topik; dua `berat`. Syarat yang lead pegang: bagian "Bentuk alat" mengikuti spec `_root/0003`; bila bentuk yang diterima di sana berbeda, `architect (update)` spec `_root/0004`. Build 009 sesudah milestone 1 spec `_root/0003`. | lead |
 | 2026-11-15 | Nomor spec macOS berikutnya: `macos/0004-konfigurasi-publik` (scope 009). Spec macOS untuk scope 008 sampai 011 semuanya menyentuh `apps/macos/` dan spec `macos/0001` (AC-12, isi file yang disalin byte demi byte), jadi ditulis satu per satu dan pembaruan spec `macos/0001` dijadwalkan lead sebagai `architect (update)` tersendiri sebelum build tiap bagian. | lead |
 | 2026-11-15 | Ringkasan "Accept this spec?" spec `_root/0003` (scope 008) dibalas `accept` tanpa perubahan: cross check (Opus) diterapkan; Done when dan kriteria 15, 16, 17 tercakup AC-1 sampai AC-12; purwarupa lengkap sudah dijalankan architect di folder sementara. Bentuk alat yang diterima (`desktop-codegen`, `check` dan `generate`) sama dengan yang dipakai spec `_root/0004`, jadi syarat yang lead pegang untuk spec itu terpenuhi tanpa pembaruan. Tindak lanjut lead: baris `desktop-codegen` di tabel aturan spec `_root/0001` dan `docs/architecture/README.md` dalam satu commit (uji mengunci keduanya); `.gitattributes` menjadi file bersama satu pemilik per wave; tiga warna dasar adalah nilai dari user. | lead |
+| 2026-11-15 | Sesudah spec `_root/0003` di-merge (`02d4a07`), tiga item dimulai bersamaan dengan ownership yang tidak beririsan: build 008 milestone 1 (`dev-f008-m1`), spec `_root/0007` scope 002 (`arc-f002-spec`), dan baris `desktop-codegen` di tabel aturan (`arc-f004-spec`). Untuk item terakhir architect diizinkan mengubah satu baris tabel di `docs/architecture/README.md`, karena test `architecture_rule_table_matches_the_spec_row_by_row` gagal bila spec dan dokumen tidak berubah dalam satu commit. Nomor `_root/0007` ditetapkan untuk scope 002. | lead |
 
 ## Keputusan delegasi
 
@@ -173,7 +175,6 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 006 · `/architect scope 006 sapaan di jendela Windows` ← `005 - Kelayakan WinUI dari Rust.md`: hasil 005, dan host Windows; pemilik user.
 - 007 · `/architect scope 007 sapaan di jendela Linux`: hardware, host Linux dengan sesi Wayland; pemilik user.
 - 001, 002, 003, 008 sampai 012 · penerapan Windows dan Linux: host masing masing; pemilik user. Fitur bersama tidak ditandai `done` sebelum bukti itu ada.
-- 002 · `/architect scope 002 aturan pengembangan untuk _root` ← `/audit` dicentang dan spec `_root/0003` diterima; sesi `arc-f002-spec` standby.
 - 001 · Milestone 3 (AC-9) dan `Build it` ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
 - 004 · Milestone 4 dan `Build it` ← langkah manual `F004-1` dan `F004-2`.
