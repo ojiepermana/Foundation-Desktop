@@ -6,7 +6,7 @@
 
 ## Summary
 
-Spec ini memberi tim satu cara mengulang build dan uji di setiap host: skrip `bash` tipis di `scripts/` yang hanya membungkus perintah yang sudah ditetapkan spec lain, termasuk gerbang Mac `G-1` sampai `G-5` dari spec `macos/0008`, dan satu workflow GitHub Actions yang hanya memanggil skrip itu. Setiap skrip mencetak host, arsitektur, versi, commit, perintah, dan hasil tiap langkah, jadi keluarannya langsung menjadi bukti. Hasil aktual per OS dan CPU dikumpulkan di satu laporan fondasi, dan fondasi baru boleh dinyatakan selesai saat integrasi macOS, Windows, dan Linux masing masing punya bukti jendela nyata. Di Mac semuanya bisa dibangun dan dibuktikan sekarang; host Windows, Linux, dan run CI pertama menunggu langkah manual kamu.
+Spec ini memberi tim satu cara mengulang build dan uji di setiap host: skrip `bash` tipis di `scripts/` yang hanya membungkus perintah yang sudah ditetapkan spec lain, termasuk gerbang Mac `G-1` sampai `G-5` dari spec `macos/0008`, dan dua workflow GitHub Actions yang hanya memanggil skrip itu. Setiap skrip mencetak host, arsitektur, versi, commit, perintah, dan hasil tiap langkah, jadi keluarannya langsung menjadi bukti. Hasil aktual per OS dan CPU dikumpulkan di satu laporan fondasi, dan fondasi baru boleh dinyatakan selesai saat integrasi macOS, Windows, dan Linux masing masing punya bukti jendela nyata. Di Mac semuanya bisa dibangun dan dibuktikan sekarang; host Windows, Linux, dan run CI pertama menunggu langkah manual kamu.
 
 ## Requirements
 
@@ -30,8 +30,8 @@ Angka kriteria merujuk tabel di [Penerimaan dan bukti fondasi](../../../quality/
 * **AC-7** (kriteria 28, membuat ulang binding; jawaban Follow-up Scope 012 spec `macos/0001`): `/bin/bash scripts/generate-bindings.sh` keluar dengan kode `0`, berakhir `== generate-bindings.sh: PASS, 5 steps, 0 failed`, dan memuat baris `bindings/swift: unchanged`. Sesudah `printf '\n' >> bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift`, skrip yang sama keluar dengan kode `0`, memuat `bindings/swift: unchanged` (generator menulis ulang berkas itu), dan `git status --short` sesudahnya tidak mencetak apa pun.
 * **AC-8** (kriteria 28, token; jawaban Follow-up Scope 012 spec `_root/0003` dan `macos/0005`): `/bin/bash scripts/generate-design-tokens.sh` keluar dengan kode `0`, berakhir `== generate-design-tokens.sh: PASS, 2 steps, 0 failed`, memuat baris yang diawali `tokens: ok, `, dan `git status --short` sesudahnya tidak mencetak apa pun.
 * **AC-9** (kriteria 28, penjaga host dan argumen): dengan `uname` palsu, `d=$(mktemp -d); printf '#!/bin/sh\necho Linux\n' > "$d/uname"; chmod +x "$d/uname"`, perintah `PATH="$d:$PATH" /bin/bash scripts/build-macos.sh` dan `PATH="$d:$PATH" /bin/bash scripts/generate-bindings.sh` masing masing keluar dengan kode `2`, tidak mencetak apa pun ke stdout, dan stderr-nya tepat satu baris yang diawali `<nama>.sh: needs macOS on arm64, this host is Linux`. `PATH="$d:$PATH" /bin/bash scripts/build-macos.sh --nope` keluar dengan kode `2` dengan stderr `usage: bash scripts/build-macos.sh`, karena argumen diperiksa sebelum host. Sesudahnya `rm -rf "$d"`.
-* **AC-10** (kriteria 29, workflow dikonfigurasi): `awk '/^```yaml$/{f=1;next} /^```$/{f=0} f' docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md | diff - .github/workflows/foundation.yml` tidak mencetak apa pun. `git ls-files .github` mencetak tepat satu baris, `.github/workflows/foundation.yml`. `ruby -ryaml -e 'YAML.load_file(".github/workflows/foundation.yml")'` keluar dengan kode `0`. `grep -E '^ +(- )?run: ' .github/workflows/foundation.yml | grep -vcE 'run: (rustup toolchain install|bash scripts/[a-z-]+\.sh)$'` mencetak `0`, jadi workflow tidak punya perintah sendiri selain skrip. `grep -E 'uses: ' .github/workflows/foundation.yml | grep -vcE 'uses: actions/checkout@[0-9a-f]{40} # v[0-9.]+$'` mencetak `0`.
-* **AC-11** (kriteria 29 dan 30, run CI nyata; `NOT_RUN`, `owner: user`, langkah manual `F012-2`): sesudah `main` di-push ke `origin`, run workflow `foundation` pada commit itu selesai dengan ketiga job (`rust (ubuntu-24.04)`, `rust (windows-2025)`, `macos (macos-26)`) berhasil, dan log tiap job memuat baris penutup `PASS` untuk setiap skrip yang ia jalankan. URL run, citra runner, dan baris kepala tiap skrip dicatat di laporan fondasi. Di CI, kriteria 28 untuk build Rust dibuktikan langkah 4 `validate.sh`; `build-rust.sh` dibuktikan di Mac (AC-4) dan lewat `F012-1`.
+* **AC-10** (kriteria 29, workflow dikonfigurasi): dengan `blk() { awk -v n="$1" '/^```yaml$/{c++; if(c==n){f=1;next}} /^```$/{f=0} f' docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md; }`, `blk 1 | diff - .github/workflows/foundation.yml` dan `blk 2 | diff - .github/workflows/foundation-macos.yml` tidak mencetak apa pun. `git ls-files .github` mencetak tepat dua baris, kedua path itu. Untuk tiap berkas `W` dari keduanya: `ruby -ryaml -e 'YAML.load_file(ARGV[0])' "$W"` keluar dengan kode `0`; `grep -E '^ +(- )?run: ' "$W" | grep -vcE 'run: (rustup toolchain install|bash scripts/[a-z-]+\.sh)$'` mencetak `0`, jadi workflow tidak punya perintah sendiri selain skrip; `grep -E 'uses: ' "$W" | grep -vcE 'uses: actions/checkout@[0-9a-f]{40} # v[0-9.]+$'` mencetak `0`. Daftar `paths:` di `foundation-macos.yml` sama dengan tabel **Pola `R` sebagai filter path**.
+* **AC-11** (kriteria 29 dan 30, run CI nyata; `NOT_RUN`, `owner: user`, langkah manual `F012-2`): sesudah `main` di-push ke `origin`, run workflow `foundation` pada commit itu selesai dengan kedua job `rust (ubuntu-24.04)` dan `rust (windows-2025)` berhasil, run workflow `foundation-macos` pada commit itu (dari push, atau lewat Run workflow bila push tidak menyentuh path filternya) selesai dengan job `macos (macos-26)` berhasil, dan log tiap job memuat baris penutup `PASS` untuk setiap skrip yang ia jalankan. URL run, citra runner, dan baris kepala tiap skrip dicatat di laporan fondasi. Di CI, kriteria 28 untuk build Rust dibuktikan langkah 4 `validate.sh`; `build-rust.sh` dibuktikan di Mac (AC-4) dan lewat `F012-1`.
 * **AC-12** (kriteria 1, 28, dan 30 pada host lain; `BLOCKED`, `owner: user`, langkah manual `F012-1`): pada host Windows `x86_64-pc-windows-msvc` (Git Bash) dan host Linux `x86_64-unknown-linux-gnu`, `bash scripts/build-rust.sh`, `bash scripts/validate.sh`, dan `bash scripts/test.sh` keluar dengan kode `0`. Keluarannya memenuhi syarat lulus `F001-1`, `F002-1`, dan `F008-1` sekaligus (pemetaannya di **Daftar penerimaan per target**).
 * **AC-13** (kriteria 31, Done when "menelusuri hasil aktual untuk tiap OS dan CPU"): laporan ada di path dari bagian **Laporan fondasi**, dengan heading berurutan persis seperti di sana. Dengan `L` = path laporan dan `sec() { awk -v h="$1" '$0==h{f=1;next} /^## /{f=0} f' "$L"; }`: `sec '## Hasil per target' | grep -cE '^\| (macOS|Windows|Linux) '` mencetak `6`; `sec '## Status kriteria' | grep -cE '^\| [0-9]+ \|'` mencetak `32`; `sec '## Perintah build dan uji' | grep -cE '^\| `[a-z-]+\.sh` \|'` mencetak `6`. Setiap sel `PASS` atau `FAIL` memuat tautan ke catatan yang ada (bagian `verify.md`, catatan `docs/reviews/`, baris di file langkah manual koordinasi, atau URL run CI), dan catatan itu menyebut host, arsitektur, versi, commit, perintah, dan keluaran aktual. Baris macOS `arm64` mengutip baris penutup kelima skrip Mac dari run pada commit di baris `**Diperbarui:**`. Setiap tautan relatif di laporan menunjuk berkas yang ada: perintah di bagian **Pemeriksaan tautan** tidak mencetak apa pun, dan sesudah milestone 3 spec `_root/0007` aturan `A-12` menjaganya di gerbang.
 * **AC-14** (Done when "membuktikan tiga integrasi wajib sebelum menyatakan fondasi selesai"): `sec '## Tiga integrasi wajib' | grep -cE '^\| (macOS|Windows|Linux) \|'` mencetak `3`, dan tiap baris memuat bukti yang dibutuhkan dari tabel **Tiga integrasi wajib** spec ini, langkahnya, status, dan bukti. `sec '## Aturan status' | grep -cE '^\* \*\*S-[1-5]\*\*'` mencetak `5`. Selama satu baris integrasi belum `PASS`, `grep -c '^\*\*Status fondasi:\*\* belum selesai$' "$L"` mencetak `1`.
@@ -50,11 +50,11 @@ Keputusan turunannya:
 | Skrip yang dibuat sekarang | Enam skrip dan satu pembantu di tabel **Skrip**. `build-windows.ps1` dan `build-linux.sh` dari rancangan `docs/quality/README.md` dibuat spec scope 006 dan 007, saat aplikasi Windows dan Linux ada. Sampai itu, host Windows dan Linux memakai skrip bersama. |
 | Isi skrip | Hanya perintah yang sudah ditetapkan spec pemiliknya, dengan teks yang sama. Skrip tidak menambah dependensi, tidak mengunduh, tidak menyentuh hook, dan tidak meng-commit. |
 | Gerbang Mac | `build-macos.sh` menjalankan `G-1` sampai `G-5` spec `macos/0008` apa adanya, didahului `config check` dan diikuti build Release. Pemeriksaan binding hanya `G-2`; spec ini tidak menambah pemeriksaan binding sendiri. |
-| Kapan gerbang Mac wajib | `validate.sh` mencetak baris `macos gate:` dari pola `R` spec `macos/0008` atas `git diff --name-only main...HEAD`. Baris itu catatan, bukan langkah. Di CI gerbang Mac selalu dijalankan. |
+| Kapan gerbang Mac wajib | Di mesin lokal, `validate.sh` mencetak baris `macos gate:` dari pola `R` spec `macos/0008` atas `git diff --name-only main...HEAD`; baris itu catatan, bukan langkah. Di CI, workflow `foundation-macos` hanya terpicu oleh path yang cocok dengan `R` (ditulis sebagai filter `paths:`), ditambah `scripts/**` dan berkas workflow itu sendiri. |
 | Daftar sumber `desktop-codegen` | Dibaca dari baris `sources:` keluaran alat itu, bukan ditulis di skrip. Sumber baru ikut tanpa mengubah skrip. |
 | Langkah gagal | `validate.sh`, `build-rust.sh`, dan `test.sh` menjalankan semua langkah lalu melapor. `build-macos.sh`, `generate-bindings.sh`, dan `generate-design-tokens.sh` berhenti di langkah pertama yang gagal, karena langkahnya saling bergantung (spec `macos/0008`: setiap perintah harus lulus sebelum berikutnya). |
 | Toolchain | Langkah 1 setiap skrip memeriksa `rustc --version` diawali `rustc <channel> ` dari `rust-toolchain.toml`. CI memasangnya dengan `rustup toolchain install` tanpa argumen. |
-| CI | Satu workflow `.github/workflows/foundation.yml`. Job `rust` di `ubuntu-24.04` dan `windows-2025` menjalankan `validate.sh`; job `macos` di `macos-26` (Xcode bawaan citra) menjalankan `validate.sh` lalu `build-macos.sh`. Izin `contents: read`, satu action (`actions/checkout`) dipaku ke SHA commit, tanpa cache, tanpa rahasia. |
+| CI | Dua workflow. `.github/workflows/foundation.yml`: job `rust` di `ubuntu-24.04` dan `windows-2025` menjalankan `validate.sh` pada setiap push ke `main` dan pull request. `.github/workflows/foundation-macos.yml`: job `macos` di `macos-26` (Xcode bawaan citra) menjalankan `validate.sh` lalu `build-macos.sh`, dengan filter path dari `R`. Izin `contents: read`, satu action (`actions/checkout`) dipaku ke SHA commit, tanpa cache, tanpa rahasia. |
 | Bukti dari CI | Log job dan ringkasan job (`$GITHUB_STEP_SUMMARY`) yang ditulis skrip. Tidak ada artefak unggahan. |
 | Laporan fondasi | Satu berkas Markdown yang diperbarui setiap kali bukti baru masuk. Path dan isinya di bagian **Laporan fondasi**. |
 | Tiga integrasi wajib | Integrasi sapaan di jendela native macOS, Windows, dan Linux, dibaca dari kalimat pembuka `docs/quality/README.md` ("integrasi wajib pada ketiga OS") dan tabel "Bukti native per host" di dokumen yang sama. |
@@ -70,7 +70,7 @@ Nilai dari spec lain yang dipakai di sini, tanpa diputuskan ulang:
 | Gerbang `cargo test --workspace --locked` menjalankan `check` semua sumber | Spec `_root/0007` |
 | Pemeriksaan ekspor basi `git ls-files -s -- shared/assets/source \| diff - <folder>/brand-export.txt`, dan baris `.gitattributes` untuk `brand-export.txt` milik spec OS | Spec [`_root/0005`](../0005-aset-merek-bersama/index.md) aturan **E-6** dan tabel "Kontrak untuk spec OS" |
 | Perintah **Membuat ulang binding** | Spec [`macos/0001`](../../macos/0001-sapaan-di-jendela-macos/index.md) |
-| `G-1` sampai `G-5` dan pola `R` | Spec `macos/0008` (aturan pengembangan macOS, scope 002) |
+| `G-1` sampai `G-5` dan pola `R` | Spec [`macos/0008`](../../macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) |
 | `config check` menjaga `MARKETING_VERSION` sama dengan versi workspace; perintah `-showBuildSettings` dan `plutil` di AC-3 dan AC-4 | Spec [`macos/0004`](../../macos/0004-konfigurasi-publik/index.md) |
 | `tokens check`, `swift test`, dan `xcodebuild` di runner macOS | Spec [`macos/0005`](../../macos/0005-tema-bersama-dan-kontrol-native/index.md) |
 
@@ -188,7 +188,7 @@ Baris penutup, selalu baris terakhir stdout:
 
 ### Workflow
 
-Isi `.github/workflows/foundation.yml` harus sama persis dengan blok ini, diakhiri satu baris baru:
+Isi `.github/workflows/foundation.yml` harus sama persis dengan blok pertama, dan isi `.github/workflows/foundation-macos.yml` dengan blok kedua, masing masing diakhiri satu baris baru.
 
 ```yaml
 name: foundation
@@ -229,7 +229,58 @@ jobs:
           persist-credentials: false
       - run: rustup toolchain install
       - run: bash scripts/validate.sh
+```
 
+```yaml
+name: foundation-macos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "crates/**"
+      - "bindings/**"
+      - "apps/macos/**"
+      - "tooling/codegen/**"
+      - "design-system/**"
+      - "shared/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rust-toolchain.toml"
+      - ".gitattributes"
+      - ".gitignore"
+      - "scripts/**"
+      - ".github/workflows/foundation-macos.yml"
+  pull_request:
+    paths:
+      - "crates/**"
+      - "bindings/**"
+      - "apps/macos/**"
+      - "tooling/codegen/**"
+      - "design-system/**"
+      - "shared/**"
+      - "Cargo.toml"
+      - "Cargo.lock"
+      - "rust-toolchain.toml"
+      - ".gitattributes"
+      - ".gitignore"
+      - "scripts/**"
+      - ".github/workflows/foundation-macos.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: foundation-macos-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  CARGO_TERM_COLOR: never
+  CARGO_INCREMENTAL: "0"
+  CARGO_PROFILE_DEV_DEBUG: "0"
+
+jobs:
   macos:
     name: macos (macos-26)
     runs-on: macos-26
@@ -247,7 +298,15 @@ jobs:
         run: bash scripts/build-macos.sh
 ```
 
-`validate.sh` sudah menjalankan `cargo test --workspace --locked` dan mencetak `rust tests:`, jadi `test.sh` tidak dijalankan lagi di CI. `build-macos.sh` tetap berjalan walau `validate.sh` gagal, supaya bukti Mac tercatat. Yang sengaja tidak ada: cache, rahasia, token tulis, artefak unggahan, runner ARM, runner Intel macOS, jadwal `schedule`, dan pipeline rilis (di luar fase fondasi menurut `docs/quality/README.md`).
+**Pola `R` sebagai filter path.** Filter GitHub memakai glob, bukan regex, jadi tiap bagian `R` spec `macos/0008` ditulis ulang satu lawan satu. `*` di filter tidak melewati `/`, jadi nama berkas tanpa folder hanya cocok di akar, sama dengan `^...$` di `R`.
+
+| Bagian `R` | Glob di `paths:` |
+| --- | --- |
+| `^crates/`, `^bindings/`, `^apps/macos/`, `^tooling/codegen/`, `^design-system/`, `^shared/` | `crates/**`, `bindings/**`, `apps/macos/**`, `tooling/codegen/**`, `design-system/**`, `shared/**` |
+| `^Cargo\.toml$`, `^Cargo\.lock$`, `^rust-toolchain\.toml$`, `^\.gitattributes$`, `^\.gitignore$` | `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitattributes`, `.gitignore` |
+| (tambahan spec ini, karena skrip dan workflow lahir sesudah `R`) | `scripts/**`, `.github/workflows/foundation-macos.yml` |
+
+`validate.sh` sudah menjalankan `cargo test --workspace --locked` dan mencetak `rust tests:`, jadi `test.sh` tidak dijalankan di CI. `build-macos.sh` tetap berjalan walau `validate.sh` gagal, supaya bukti Mac tercatat. Perubahan yang hanya menyentuh dokumen tidak memicu `foundation-macos`, sama dengan aturan `R` untuk gerbang lokal. Yang sengaja tidak ada: cache, rahasia, token tulis, artefak unggahan, runner ARM, runner Intel macOS, jadwal `schedule`, dan pipeline rilis (di luar fase fondasi menurut `docs/quality/README.md`).
 
 ### Laporan fondasi
 
@@ -294,7 +353,7 @@ Heading dan baris pembuka, berurutan:
 
 **Versi teknologi**: per host yang punya run, baris kepala run terakhir. Untuk Mac juga rujukan tabel **Kombinasi yang dipakai** spec `macos/0001`; untuk runner juga versi citra dari log CI.
 
-**CI**: path workflow, nama tiga job, runner, URL run terakhir dan hasil tiap job, atau `NOT_RUN` sampai `F012-2`.
+**CI**: path kedua workflow, nama tiga job, runner, URL run terakhir dan hasil tiap job, atau `NOT_RUN` sampai `F012-2`.
 
 **Kegagalan dan keterbatasan**: satu butir per sel `FAIL`, per langkah manual yang `NOT_RUN` atau `BLOCKED`, dan per nilai sementara di "Nilai dari user" file langkah manual koordinasi yang masih dipakai, masing masing dengan rujukannya.
 
@@ -355,6 +414,7 @@ Cara `F012-1` memenuhi tiga langkah lama:
 | `build-macos.sh` | Label langkah 3 sampai 10 | Baris perintah `G-1` sampai `G-5` di spec `macos/0008` |
 | `build-macos.sh` | Baris `settings` dan `bundle` | Perintah di tabel baris tambahan |
 | Workflow | Runner, versi dan SHA `actions/checkout` | Spec ini; SHA diperiksa dengan `git ls-remote https://github.com/actions/checkout 'refs/tags/v7*'` pada 2026-11-15 |
+| `foundation-macos.yml` | Daftar `paths:` | Pola `R` spec `macos/0008`, lewat tabel **Pola `R` sebagai filter path** |
 | Laporan | Status tiap sel | Tabel **Pengisian pertama**, lalu aturan **S-1** sampai **S-5** |
 | Laporan | Isi baris "Tiga integrasi wajib" | `docs/quality/README.md` bagian "Bukti native per host" dan tiga rujukan platform |
 | Laporan | Nomor kriteria | Tabel `docs/quality/README.md` |
@@ -363,7 +423,7 @@ Cara `F012-1` memenuhi tiga langkah lama:
 ### Invarian
 
 * Workflow tidak punya logika sendiri. Setiap perintah build dan uji di CI adalah `bash scripts/<nama>.sh`, jadi run lokal dan run CI menjalankan hal yang sama.
-* Skrip tidak mengubah keputusan spec lain. Bila perintah di spec pemilik berubah (termasuk `G-1` sampai `G-5` dan `R`), skrip ikut berubah lewat pembaruan spec ini di commit yang sama.
+* Skrip tidak mengubah keputusan spec lain. Bila perintah di spec pemilik berubah (termasuk `G-1` sampai `G-5` dan `R`), skrip, baris `macos gate:`, dan filter `paths:` ikut berubah lewat pembaruan spec ini di commit yang sama.
 * `build-macos.sh` dan `validate.sh` tidak pernah menulis berkas yang dilacak git. Hanya `generate-bindings.sh` dan `generate-design-tokens.sh` yang menulis, dan hanya keluaran generatornya.
 * Skrip tidak pernah meng-commit, push, mengubah konfigurasi git, menyentuh `.githooks/` atau `graphify-out/`, atau mengunduh di luar Cargo dan SwiftPM.
 * Laporan tidak pernah memuat `PASS` tanpa catatan tertaut (aturan **S-2**).
@@ -390,6 +450,7 @@ Cara `F012-1` memenuhi tiga langkah lama:
 | Pemeriksaan ekspor basi gagal | Langkahnya FAIL dengan keluaran `diff`. Ekspor diulang di host OS itu (spec `_root/0005`, **E-6**). |
 | Binding Swift di git berbeda dari keluaran generator | `build-macos.sh` FAIL di langkah 7 (`G-2`) dan mencetak petunjuk. `bash scripts/generate-bindings.sh` menulis ulang binding; kamu meninjau dan meng-commit `bindings/swift/` bersama perubahan Rust. |
 | Run `main` berikutnya masuk saat run sebelumnya berjalan | Keduanya selesai, karena pembatalan hanya untuk `pull_request`. |
+| Push ke `main` hanya mengubah dokumen | `foundation-macos` tidak berjalan untuk commit itu. Bukti CI Mac diambil dari commit terakhir yang memicunya, atau dari Run workflow pada commit itu (`F012-2`). |
 | GitHub Actions dimatikan atau repo belum ada di GitHub | Tidak ada run. Kolom CI di laporan tetap `NOT_RUN`. |
 
 ### Skenario uji kritis
@@ -406,7 +467,7 @@ Cara `F012-1` memenuhi tiga langkah lama:
 | --- | --- |
 | 1 | `scripts/lib.sh`, `scripts/build-rust.sh`, `scripts/test.sh`, `scripts/validate.sh`, `.gitattributes` (dua baris), `docs/specs/_root/0008-build-dan-penerimaan-per-target/verify.md`, baris `**Status**` di `index.md` spec ini |
 | 2 | `scripts/generate-design-tokens.sh`, `scripts/generate-bindings.sh`, `scripts/build-macos.sh`, `scripts/lib.sh`, `verify.md` spec ini |
-| 3 | `.github/workflows/foundation.yml`, `docs/quality/laporan-fondasi.md`, `docs/quality/README.md` (satu kalimat), `verify.md` spec ini |
+| 3 | `.github/workflows/foundation.yml`, `.github/workflows/foundation-macos.yml`, `docs/quality/laporan-fondasi.md`, `docs/quality/README.md` (satu kalimat), `verify.md` spec ini |
 | 4 | `docs/quality/laporan-fondasi.md`, `verify.md` spec ini |
 
 Setiap commit juga membawa empat berkas `graphify-out/` dari hook; AC-16 mengecualikannya. `docs/quality/` biasanya terlarang bagi sub sesi, jadi milestone 3 dan 4 butuh izin eksplisit di brief developer.
@@ -420,13 +481,13 @@ Pendekatan build proyek adalah Tracer Bullet. Benang tipisnya di sini adalah sat
 1. Ubah `**Status**` spec ini menjadi `In Progress`. Tulis `scripts/lib.sh` sesuai **Kerangka `lib.sh`** dan `scripts/validate.sh` sesuai **Skrip** dan **Bentuk keluaran**, tambah dua baris ke `.gitattributes`, dan commit `validate.sh` dengan mode `100755` (`git add --chmod=+x`). Lalu jalankan perintah AC-1, AC-2, dan AC-3, satisfies **AC-1**, **AC-2**, **AC-3**, **AC-15**
 2. Tulis `scripts/build-rust.sh` dan `scripts/test.sh`, mode `100755`, dan commit. Jalankan AC-4, AC-15, dan AC-16 (bagian milestone 1), lalu catat perintah dan keluaran semuanya di `verify.md` bagian `## Milestone 1: Gerbang bersama`, satisfies **AC-4**, **AC-15**, **AC-16**
 
-**Milestone 2: Skrip macOS** (langkah 3, sesudah milestone 1 dan sesudah spec `macos/0008` ada di `main`)
+**Milestone 2: Skrip macOS** (langkah 3, sesudah milestone 1)
 
 3. Tulis `scripts/generate-design-tokens.sh`, `scripts/generate-bindings.sh`, dan `scripts/build-macos.sh`, mode `100755`, dengan label `G-1` sampai `G-5` disalin dari spec `macos/0008` di `main`, dan commit. Jalankan AC-5 sampai AC-9 dan AC-15, lalu catat di `verify.md` bagian `## Milestone 2: Skrip macOS`, satisfies **AC-1**, **AC-5**, **AC-6**, **AC-7**, **AC-8**, **AC-9**, **AC-15**
 
 **Milestone 3: Workflow dan laporan** (langkah 4 dan 5, sesudah milestone 2)
 
-4. Tulis `.github/workflows/foundation.yml` persis dari bagian **Workflow** dan commit. Jalankan AC-10 dan AC-15. Jangan push: run nyata adalah langkah manual `F012-2`, satisfies **AC-10**, **AC-15**
+4. Tulis `.github/workflows/foundation.yml` dan `.github/workflows/foundation-macos.yml` persis dari bagian **Workflow** dan commit. Jalankan AC-10 dan AC-15. Jangan push: run nyata adalah langkah manual `F012-2`, satisfies **AC-10**, **AC-15**
 5. Jalankan keenam skrip di Mac pada commit langkah 4. Tulis `docs/quality/laporan-fondasi.md` sesuai **Laporan fondasi** dan **Pengisian pertama**, tambah satu kalimat ke `docs/quality/README.md`, dan commit. Jalankan AC-13, AC-14, AC-16, dan **Pemeriksaan tautan**, lalu catat di `verify.md` bagian `## Milestone 3: Workflow dan laporan`, dengan langkah `F012-1` dan `F012-2` di `### UI / manual`, satisfies **AC-13**, **AC-14**, **AC-16**
 
 **Milestone 4: Bukti host lain dan CI** (langkah 6, `BLOCKED`, `owner: user`)
@@ -451,8 +512,8 @@ Untuk file langkah manual koordinasi. Nilai yang hanya kamu tahu ada di Follow-u
 **`F012-2` · Push dan jalankan workflow GitHub Actions** (AC-11)
 
 * **Prasyarat:** milestone 3 spec ini di `main`. Repo GitHub `origin` ada dan GitHub Actions diizinkan untuk repo itu (Settings, Actions, General: izinkan action milik GitHub). Untuk repo privat, menit runner macOS dihitung lebih mahal; atur batas pemakaian bila perlu.
-* **Jalankan:** kirim `main` ke `origin` mengikuti aturan 4 di `AGENTS.md`. Buka tab Actions, pilih workflow `foundation`, tunggu run untuk commit itu (atau pakai Run workflow).
-* **Lulus bila:** ketiga job berhasil. Kirim URL run, hasil tiap job, versi citra runner dari langkah "Set up job", serta baris kepala dan baris penutup tiap skrip dari log.
+* **Jalankan:** kirim `main` ke `origin` mengikuti aturan 4 di `AGENTS.md`. Buka tab Actions dan tunggu run workflow `foundation` untuk commit itu. Untuk `foundation-macos`, tunggu run dari push itu; bila tidak ada (push tidak menyentuh path filternya), pilih workflow `foundation-macos`, Run workflow, cabang `main`.
+* **Lulus bila:** ketiga job berhasil pada commit yang sama. Kirim URL run, hasil tiap job, versi citra runner dari langkah "Set up job", serta baris kepala dan baris penutup tiap skrip dari log.
 * **Hanya langkah ini yang bisa membuktikan:** workflow benar benar berjalan di runner GitHub, termasuk Windows dan Linux.
 
 ## Consequences
@@ -479,7 +540,7 @@ Untuk file langkah manual koordinasi. Nilai yang hanya kamu tahu ada di Follow-u
 **Neutral**:
 
 * `scripts/update_graphify.py` tetap di folder yang sama dan tidak disentuh atau dipanggil.
-* Baris `macos gate:` di CI selalu `unknown`, karena checkout CI tidak memuat cabang `main` lokal. Di CI gerbang Mac selalu dijalankan.
+* Baris `macos gate:` di CI selalu `unknown`, karena checkout CI tidak memuat cabang `main` lokal. Di CI keputusan itu diambil filter `paths:`.
 * `/develop` menulis `verify.md` saat build. Spec ini tidak membuatnya.
 
 ## Follow-up
@@ -493,8 +554,8 @@ Untuk file langkah manual koordinasi. Nilai yang hanya kamu tahu ada di Follow-u
 * [x] Jawaban atas Follow-up Scope 012 di spec `macos/0001`: `generate-bindings.sh` membungkus **Membuat ulang binding**, `build-macos.sh` membungkus **Perintah build dan uji** lewat `G-1` sampai `G-4` spec `macos/0008`; hasil per arsitektur tercatat di baris `bundle <K>:`; `MARKETING_VERSION` dijaga `config check` (spec `macos/0004`) yang berjalan sebelum `xcodebuild`.
 * [x] Jawaban atas Follow-up Scope 012 di spec `macos/0004`: `build-macos.sh` menjalankan `config check` sebelum `xcodebuild` dan mencatat nilai AC-3 dan AC-4 di baris `settings <K>:` dan `bundle <K>:`.
 * [x] Jawaban atas Follow-up Scope 012 di spec `macos/0005`: `generate-design-tokens.sh` membungkus `tokens generate`; runner macOS menjalankan `tokens check` (lewat `validate.sh`), `swift test` (`G-3`), dan `xcodebuild` (`G-4`) lewat `build-macos.sh`.
-* [x] Jawaban atas spec `macos/0008` ("Scope 012 tinggal membungkus lima perintah dan satu pola"): `build-macos.sh` membungkus `G-1` sampai `G-5`, `validate.sh` mencetak hasil pola `R`.
-* [ ] Lead: tandai baris Follow-up Scope 012 di spec `_root/0001`, `_root/0003` sampai `_root/0007`, `macos/0001`, `macos/0004`, `macos/0005`, dan `macos/0008` sebagai dijawab spec ini, dan ganti rujukan `macos/0008` di bagian "Nilai dari spec lain" dengan tautan begitu spec itu ada di `main`.
+* [x] Jawaban atas Follow-up Scope 012 di spec `macos/0008`: `build-macos.sh` membungkus `G-1` sampai `G-5` apa adanya, tanpa pemeriksaan binding lain; job macOS memakai `R` sebagai filter `paths:` (ditambah `scripts/**` dan berkas workflow itu); build `Release` sesudah `G-5` diputuskan di sini atas AC-4 spec `macos/0001`, tanpa pemicu tambahan.
+* [ ] Lead: tandai baris Follow-up Scope 012 di spec `_root/0001`, `_root/0003` sampai `_root/0007`, `macos/0001`, `macos/0004`, `macos/0005`, dan `macos/0008` sebagai dijawab spec ini.
 * [ ] Lead: keputusan path laporan fondasi (sekarang `docs/quality/laporan-fondasi.md`) dan izin eksplisit untuk `docs/quality/` di brief milestone 3 dan 4.
 * [ ] Lead: di file langkah manual, catat bahwa keluaran `F012-1` memenuhi `F001-1`, `F002-1`, dan `F008-1`, sehingga ketiganya bisa ditutup dari satu run per host.
 * [ ] Scope 006 (Windows): `scripts/build-windows.ps1` atau perluasan skrip bash untuk build WinUI, job Windows yang membangun aplikasi, dan bukti jendela untuk baris Windows di "Tiga integrasi wajib". Menunggu host Windows.
@@ -503,4 +564,4 @@ Untuk file langkah manual koordinasi. Nilai yang hanya kamu tahu ada di Follow-u
 * [ ] Nilai dari user: visibilitas repo GitHub (publik atau privat). Bila publik, runner `ubuntu-24.04-arm` dan `windows-11-arm` gratis dan bisa ditambah ke matriks `rust` lewat pembaruan spec ini untuk bukti Rust di `aarch64` dan `ARM64`. Bila privat, runner itu berbayar per menit.
 * [ ] `/sync` atau lead: `AGENTS.md` bagian Commands bisa menyebut `bash scripts/validate.sh` dan `bash scripts/build-macos.sh` sebagai cara satu perintah menjalankan gerbang, dan `test-preferences.json` bisa menyebut `bash scripts/test.sh`.
 * [ ] User (`.githooks/` terlarang bagi sub sesi, sama dengan Follow-up spec `_root/0007`): hook `pre-push` yang memanggil `bash scripts/validate.sh` hanya dipasang atas keputusanmu.
-* [ ] Saat GitHub memensiunkan `macos-26`, `ubuntu-24.04`, atau `windows-2025`, atau saat `actions/checkout` naik versi major, perbarui blok **Workflow** spec ini dan berkasnya bersama.
+* [ ] Saat GitHub memensiunkan `macos-26`, `ubuntu-24.04`, atau `windows-2025`, atau saat `actions/checkout` naik versi major, perbarui blok **Workflow** spec ini dan kedua berkasnya bersama.

@@ -21,7 +21,7 @@ Bila keputusan ini ditunda, setiap pemeriksa terus menyalin perintah dari spec d
 
 ### Opsi 1: Skrip bash tipis, workflow yang hanya memanggil skrip, laporan yang hidup
 
-Enam skrip `bash` dan satu pembantu di `scripts/` membungkus perintah spec lain apa adanya dan mencetak keluaran berbentuk bukti. Satu workflow memanggil skrip yang sama. Satu berkas laporan mengumpulkan hasil per target.
+Enam skrip `bash` dan satu pembantu di `scripts/` membungkus perintah spec lain apa adanya dan mencetak keluaran berbentuk bukti. Workflow GitHub Actions memanggil skrip yang sama. Satu berkas laporan mengumpulkan hasil per target.
 
 **Pros**: mengikuti rancangan `scripts/` yang sudah tertulis; run lokal dan CI identik; tanpa dependensi baru; jalan di ketiga host (Git Bash di Windows).
 **Cons**: butuh Git Bash di Windows; dibatasi fitur bash `3.2`; perintah tertulis dua kali (spec pemilik dan skrip).
@@ -76,7 +76,7 @@ Mode keputusan `auto`. Setiap baris: pertanyaan, pilihan, pilihan kedua, tanda, 
 | D-15 | Langkah manual host | Satu `F012-1` yang memenuhi `F001-1`, `F002-1`, `F008-1` | Tiga langkah lama dijalankan terpisah | biasa | Bagian **Daftar penerimaan per target** |
 | D-16 | Uji Swift | Hanya lewat `G-3` di `build-macos.sh`; `test.sh` hanya Rust | Juga di `test.sh` pada Darwin `arm64` | biasa | AC-4 menjadi empat langkah di Mac; `swift test` berjalan dua kali di CI |
 | D-17 | Bentuk gerbang Mac di skrip | `build-macos.sh` = `config check`, `G-1` sampai `G-5` apa adanya, lalu build Release | Perintah build dan uji sendiri dari spec `macos/0001` (draf pertama spec ini) | biasa | AC-5 dan AC-6; pemeriksaan binding ganda dengan `G-2` |
-| D-18 | Pola `R` di skrip | Baris catatan `macos gate:` di `validate.sh`; CI selalu menjalankan gerbang Mac | Filter path di workflow, atau skrip sendiri yang keluar `0` atau `1` | biasa | Workflow dan AC-2; skrip ketujuh |
+| D-18 | Pola `R` di skrip dan CI | Baris catatan `macos gate:` di `validate.sh`; di CI workflow macOS terpisah dengan filter `paths:` hasil terjemahan `R`, ditambah `scripts/**` dan berkas workflow itu | Satu workflow, job macOS selalu berjalan | biasa | Satu berkas workflow; AC-10 dan AC-11; setiap perubahan dokumen memakai menit runner macOS |
 | D-19 | Akhir `generate-bindings.sh` | Baris `bindings/swift: unchanged` atau `changed`, tanpa gagal | `git diff --exit-code -- bindings/swift` dari blok **Membuat ulang binding** | biasa | AC-7; alat pembuat ulang gagal justru saat ia bekerja |
 | D-20 | `test.sh` di CI | Tidak dijalankan; `validate.sh` mencetak `rust tests:` | Jalankan juga | biasa | `cargo test` dua kali per job |
 | D-21 | Pembatalan run CI | Hanya untuk `pull_request` | Batalkan semua run lama pada ref yang sama | biasa | Run `main` bisa batal, sehingga AC-11 tidak punya run untuk commit itu |
@@ -100,7 +100,7 @@ Alasan singkat per baris:
 * **D-15.** Brief lead meminta satu daftar penerimaan per OS dan CPU tanpa teks ganda. Keluaran skrip memuat setiap baris yang diminta tiga langkah lama.
 * **D-16.** Kriteria 30 meminta uji yang relevan dijalankan; di Mac uji Swift dijalankan `G-3`. Menjalankannya juga di `test.sh` hanya mengulang kerja.
 * **D-17.** Lead meneruskan bahwa spec `macos/0008` (diterima, scope 002 macOS) menetapkan gerbang Mac supaya spec ini hanya membungkusnya. `G-2` membandingkan binding di `target/binding-check/` tanpa menulis berkas terlacak, jadi lebih tepat untuk CI daripada blok **Membuat ulang binding** yang menghapus `bindings/swift/Sources`. `config check` ditaruh sebelum `G-1` atas permintaan Follow-up spec `macos/0004`, dan build Release sesudah `G-5` atas AC-4 spec `macos/0001`, supaya urutan `G-1` sampai `G-5` sendiri tidak berubah.
-* **D-18.** Pola `R` menjawab pertanyaan orang sebelum merge, bukan pertanyaan CI. Di CI gerbang Mac murah dibanding risiko salah lewat, dan checkout CI tidak punya `main` lokal.
+* **D-18.** Follow-up Scope 012 spec `macos/0008` meminta filter path job macOS memakai `R`. Sebagian besar commit di repo ini hanya dokumen, dan menit runner macOS paling mahal, jadi filter itu menghemat tanpa mengurangi bukti untuk perubahan yang memengaruhi aplikasi. Filter `paths:` berlaku per workflow, bukan per job, sehingga job macOS pindah ke berkas sendiri. Glob ditulis satu lawan satu dari regex `R`. `scripts/**` dan berkas workflow itu sendiri ditambahkan karena keduanya lahir sesudah `R` dan langsung mengubah apa yang dijalankan job macOS. Checkout CI tidak punya `main` lokal, jadi baris `macos gate:` hanya berguna di mesin lokal.
 * **D-19.** Kegagalan `git diff` di akhir blok **Membuat ulang binding** berarti "binding berubah, commit", yang memang tujuan menjalankan alat itu. Pemeriksaan binding sekarang milik `G-2`, jadi alat pembuat ulang cukup melaporkan apakah ada yang berubah.
 * **D-20.** Usul pemeriksaan silang: `cargo test` dua kali per job hanya memakan menit.
 * **D-21.** Usul pemeriksaan silang: dengan pembatalan untuk semua event, push kedua ke `main` membatalkan run commit pertama, sehingga commit itu tidak punya bukti CI.
@@ -117,13 +117,13 @@ Dijalankan 2026-11-15 di Mac koordinasi (macOS `27.0.1`, `arm64`, `rustc 1.99.1`
 * `git ls-remote https://github.com/actions/checkout 'refs/tags/v7*'` mencetak `3d3c42e5aac5ba805825da76410c181273ba90b1` untuk `refs/tags/v7` dan `refs/tags/v7.0.1`.
 * `rustup --version` mencetak `rustup 1.29.3`, dan `rustup toolchain install --help` menyatakan perintah itu memasang toolchain aktif bila tanpa argumen.
 * `apps/macos/DesktopMac.xcodeproj/project.pbxproj` memuat `objectVersion = 77`, `MACOSX_DEPLOYMENT_TARGET = 14.0`, dan fase skrip yang memanggil `cargo` dari `$HOME/.cargo/bin`.
-* Blok **Workflow** di `index.md` dibaca dengan `ruby -ryaml` (Ruby `2.6.10` bawaan macOS) tanpa galat: job `rust` dan `macos`, matriks `ubuntu-24.04` dan `windows-2025`. Kedua pemeriksaan `grep` di AC-10 mencetak `0` pada blok itu.
+* Kedua blok **Workflow** di `index.md`, diambil dengan fungsi `blk` AC-10, dibaca dengan `ruby -ryaml` (Ruby `2.6.10` bawaan macOS) tanpa galat: `foundation` dengan job `rust` dan `foundation-macos` dengan job `macos`, masing masing dipicu `push`, `pull_request`, dan `workflow_dispatch`. Kedua pemeriksaan `grep` di AC-10 mencetak `0` untuk tiap blok.
 
 Fakta runner GitHub dari pemeriksaan web 2026-11-15 (subagent baca saja): `ubuntu-latest` adalah Ubuntu 24.04, `windows-latest` adalah Windows Server 2025, `macos-latest` adalah macOS 26 `arm64`; citra `macos-26` `arm64` 20261102 memasang Xcode 26.0.1 sampai 26.6 dengan 26.6 sebagai bawaan dan tanpa Xcode 27 (Xcode 27 hanya lewat label pratinjau `xcode-27`); `ubuntu-24.04-arm` dan `windows-11-arm` gratis untuk repo publik dan berbayar untuk repo privat; citra Windows 2025 memasang Git Bash `5.3.15`. Fakta ini bisa berubah; skrip mencatat versi nyata di setiap run.
 
 ## Cross check
 
-Pemeriksaan silang baca saja oleh subagent `claude-sonnet-5-5` (penulis spec: `claude-opus-5-5`, family yang sama; Fable tidak dipakai sesuai aturan koordinasi sejak 2026-11-15 19:24). Ia membaca draf pertama, tidak menjalankan apa pun, dan menemukan bahwa kesembilan baris Follow-up Scope 012 terjawab dan kriteria 1, 28 sampai 31 serta Done when tercakup. Mode keputusan `auto`, jadi semua perbaikan yang direkomendasikan diterapkan. Draf kedua juga menyelaraskan spec dengan `macos/0008` (D-17 sampai D-19), yang tiba lewat lead pada saat yang sama.
+Pemeriksaan silang baca saja oleh subagent `claude-sonnet-5-5` (penulis spec: `claude-opus-5-5`, family yang sama; Fable tidak dipakai sesuai aturan koordinasi sejak 2026-11-15 19:24). Ia membaca draf pertama, tidak menjalankan apa pun, dan menemukan bahwa kesembilan baris Follow-up Scope 012 terjawab dan kriteria 1, 28 sampai 31 serta Done when tercakup. Mode keputusan `auto`, jadi semua perbaikan yang direkomendasikan diterapkan. Draf kedua juga menyelaraskan spec dengan `macos/0008` (D-17 sampai D-19), yang tiba lewat lead pada saat yang sama, dan sesudah `macos/0008` masuk `main` (`5f7e69d`) menjawab Follow-up Scope 012 di sana dengan filter `R` (D-18). Bagian gerbang Mac dan pola `R` di `main` sama dengan teks yang dipakai draf kedua; yang bertambah hanya kalimat alasan.
 
 | No. | Temuan | Penerapan |
 | --- | --- | --- |

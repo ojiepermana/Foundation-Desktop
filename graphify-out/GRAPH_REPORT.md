@@ -1,11 +1,11 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 144 files · ~230,509 words
+- 144 files · ~231,023 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1895 nodes · 3082 edges · 110 communities (102 shown, 8 thin omitted)
+- 1895 nodes · 3083 edges · 110 communities (102 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 47 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -560,7 +560,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Findings` be split into smaller, more focused modules?**
   _Cohesion score 0.06280701754385964 - nodes in this community are weakly interconnected._
 - **Should `quality/README.md` be split into smaller, more focused modules?**
-  _Cohesion score 0.08576576576576576 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08612612612612612 - nodes in this community are weakly interconnected._
 - **Should `Problem` be split into smaller, more focused modules?**
   _Cohesion score 0.08209255533199195 - nodes in this community are weakly interconnected._
 Pembaruan hook menggunakan indeks struktural lokal. Hash semantik kosong menandai dokumen yang menunggu ekstraksi semantik.

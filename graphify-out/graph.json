@@ -7532,7 +7532,7 @@
       "node_kind": "heading",
       "norm_label": "build plan",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L414"
+      "source_location": "L475"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_consequences",
@@ -7544,7 +7544,7 @@
       "node_kind": "heading",
       "norm_label": "consequences",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L458"
+      "source_location": "L519"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_daftar_penerimaan_per_target",
@@ -7556,7 +7556,7 @@
       "node_kind": "heading",
       "norm_label": "daftar penerimaan per target",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L325"
+      "source_location": "L384"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_decision",
@@ -7580,7 +7580,7 @@
       "node_kind": "heading",
       "norm_label": "file yang boleh diubah tiap milestone",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L403"
+      "source_location": "L464"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_follow_up",
@@ -7592,7 +7592,7 @@
       "node_kind": "heading",
       "norm_label": "follow-up",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L485"
+      "source_location": "L546"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_invarian",
@@ -7604,7 +7604,7 @@
       "node_kind": "heading",
       "norm_label": "invarian",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L363"
+      "source_location": "L423"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_kasus_gagal_yang_sudah_diputuskan",
@@ -7616,7 +7616,7 @@
       "node_kind": "heading",
       "norm_label": "kasus gagal yang sudah diputuskan",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L377"
+      "source_location": "L437"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_keamanan",
@@ -7628,7 +7628,7 @@
       "node_kind": "heading",
       "norm_label": "keamanan",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L371"
+      "source_location": "L431"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_kerangka_lib_sh",
@@ -7652,7 +7652,7 @@
       "node_kind": "heading",
       "norm_label": "langkah manual",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L436"
+      "source_location": "L497"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_laporan_fondasi",
@@ -7664,7 +7664,7 @@
       "node_kind": "heading",
       "norm_label": "laporan fondasi",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L252"
+      "source_location": "L311"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_pemeriksaan_tautan",
@@ -7676,7 +7676,7 @@
       "node_kind": "heading",
       "norm_label": "pemeriksaan tautan",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L316"
+      "source_location": "L375"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_rancangan",
@@ -7724,7 +7724,7 @@
       "node_kind": "heading",
       "norm_label": "skenario uji kritis",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L395"
+      "source_location": "L456"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_skrip",
@@ -7760,7 +7760,7 @@
       "node_kind": "heading",
       "norm_label": "value sourcing",
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L345"
+      "source_location": "L404"
     },
     {
       "id": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_workflow",
@@ -45512,17 +45512,6 @@
     },
     {
       "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_0008_build_dan_penerimaan_per_target",
-      "target": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_file_yang_boleh_diubah_tiap_milestone",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L403",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_0008_build_dan_penerimaan_per_target",
       "target": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_decision",
       "relation": "contains",
       "_origin": "ast",
@@ -45534,13 +45523,24 @@
     },
     {
       "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_0008_build_dan_penerimaan_per_target",
+      "target": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_file_yang_boleh_diubah_tiap_milestone",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
+      "source_location": "L464",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_0008_build_dan_penerimaan_per_target",
       "target": "docs_specs_root_0008_build_dan_penerimaan_per_target_index_build_plan",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L414",
+      "source_location": "L475",
       "weight": 1.0
     },
     {
@@ -45551,7 +45551,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L436",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -45562,7 +45562,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L458",
+      "source_location": "L519",
       "weight": 1.0
     },
     {
@@ -45573,7 +45573,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L485",
+      "source_location": "L546",
       "weight": 1.0
     },
     {
@@ -45650,7 +45650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L252",
+      "source_location": "L311",
       "weight": 1.0
     },
     {
@@ -45661,7 +45661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L316",
+      "source_location": "L375",
       "weight": 1.0
     },
     {
@@ -45672,7 +45672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L325",
+      "source_location": "L384",
       "weight": 1.0
     },
     {
@@ -45683,7 +45683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L345",
+      "source_location": "L404",
       "weight": 1.0
     },
     {
@@ -45694,7 +45694,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L363",
+      "source_location": "L423",
       "weight": 1.0
     },
     {
@@ -45705,7 +45705,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L371",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -45716,7 +45716,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L377",
+      "source_location": "L437",
       "weight": 1.0
     },
     {
@@ -45727,7 +45727,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L395",
+      "source_location": "L456",
       "weight": 1.0
     },
     {
@@ -54708,13 +54708,24 @@
     },
     {
       "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index",
+      "target": "docs_scope_012_build_dan_penerimaan_per_target",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index",
       "target": "docs_platforms_macos_readme",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L287",
+      "source_location": "L346",
       "weight": 1.0
     },
     {
@@ -54725,7 +54736,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L288",
+      "source_location": "L347",
       "weight": 1.0
     },
     {
@@ -54736,18 +54747,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L289",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index",
-      "target": "docs_scope_012_build_dan_penerimaan_per_target",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
-      "source_location": "L3",
+      "source_location": "L348",
       "weight": 1.0
     },
     {
@@ -54803,6 +54803,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
       "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_specs_root_0008_build_dan_penerimaan_per_target_index",
+      "target": "docs_specs_macos_0008_aturan_pengembangan_dan_pemeriksaan_arsitektur_index",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/specs/_root/0008-build-dan-penerimaan-per-target/index.md",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
