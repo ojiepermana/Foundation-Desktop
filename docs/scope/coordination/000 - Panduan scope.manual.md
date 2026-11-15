@@ -9,7 +9,7 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 | ID | Langkah | AC | Kotak yang dicentang dengan langkah ini `NOT_RUN` | Bisa dijalankan sesudah | Hasil |
 | --- | --- | --- | --- | --- | --- |
 | `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
-| `F008-1` | Bangun, uji, dan periksa token dengan `desktop-codegen` di host Windows dan host Linux | spec `_root/0003` AC-12 | belum ada | 008 milestone 1 di `origin/main` | `NOT_RUN` |
+| `F008-1` | Bangun, uji, dan periksa token dengan `desktop-codegen` di host Windows dan host Linux | spec `_root/0003` AC-12 | `Verify it` fitur 008 (bukti Mac). Milestone 3 dan `Build it` fitur 008 tetap terbuka sampai langkah ini `PASS` | 008 milestone 1 di `origin/main` | `NOT_RUN` |
 | `F009-1` | Judul jendela dari konfigurasi publik dan nama menu aplikasi (langkah 1 sampai 4) | spec `macos/0004` AC-7 | belum ada | 009 macOS milestone 1 di `main` | `NOT_RUN` |
 | `F004-1` | Alur sapaan di jendela: build, buka aplikasi, `Ayu`, kolom kosong, teks Unicode (langkah 1 sampai 5) | spec `macos/0001` AC-5 | `Verify it` fitur 004 (bukti tanpa jendela) dan `Verify it` bagian macOS fitur 003 (spec `macos/0003` AC-4 bagian jendela). Milestone 4 dan `Build it` fitur 004 tetap terbuka sampai langkah ini `PASS` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
 | `F004-2` | Penggunaan nyata: Return tanpa mouse, VoiceOver, Command Q, Run dari Xcode (langkah 6 sampai 9) | spec `macos/0001` AC-13 | sama dengan `F004-1` | 004 milestone 2 di `main` (terpenuhi di `main` lokal, `c969a82`) | `NOT_RUN` |
@@ -28,6 +28,7 @@ Nilai yang hanya kamu tahu. AC di kolom ketiga `BLOCKED` sampai nilainya ada.
 | `N6` | `DASAR_PENGENAL`: dasar pengenal reverse DNS dari domain milik pemilik produk. Nilai sementara `com.example.desktop-foundation`. `N4` (pengenal bundel macOS) diturunkan darinya dengan aturan spec macOS. | spec `_root/0004` AC-2 (lulus dengan nilai sementara) | `shared/config/public.json` (`build.app_identifier`) |
 | `N7` | Warna merek: warna utama, latar terang dan gelap, teks terang dan gelap, dan apakah tampilan gelap memakai rona merek yang berbeda. Tiga warna dasar sekarang (`brand.primary`, `neutral.50`, `neutral.950`) adalah contoh bertanda `placeholder`. | spec `_root/0003` AC-8 (lulus dengan nilai sementara; alat melaporkan `3 placeholder values`) | `design-system/tokens/colors.json` |
 | `N8` | Bahasa yang didukung selain bahasa sumber, dan teks terjemahan yang disetujui. Sekarang: sumber `en` (`Greet`), bahasa kedua `id` (`Sapa`), usulan architect. | spec `_root/0006` AC-1 (lulus dengan usulan itu) | `shared/localization/catalog.json` |
+| `N9` | Berkas ikon aplikasi nyata dalam SVG (dan berkas merek lain bila ada). Sekarang `shared/assets/source/app-icon.svg` akan berupa penanda kotak abu abu bersilang bertanda `placeholder`. | spec `_root/0005` AC-10 (`BLOCKED`, `owner: user`) | `shared/assets/source/`, `shared/assets/brand.json` |
 
 ## Fitur `001`: `Batas workspace dan pemilik` (spec `_root/0001`)
 
