@@ -9791,7 +9791,7 @@
       "node_kind": "heading",
       "norm_label": "cross check",
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md",
-      "source_location": "L165"
+      "source_location": "L166"
     },
     {
       "id": "docs_specs_macos_0005_tema_bersama_dan_kontrol_native_rationale_keputusan_yang_lebih_kecil",
@@ -12651,7 +12651,7 @@
       "node_kind": "heading",
       "norm_label": "build plan",
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md",
-      "source_location": "L787"
+      "source_location": "L831"
     },
     {
       "id": "docs_specs_macos_0005_tema_bersama_dan_kontrol_native_index_consequences",
@@ -12663,7 +12663,7 @@
       "node_kind": "heading",
       "norm_label": "consequences",
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md",
-      "source_location": "L806"
+      "source_location": "L850"
     },
     {
       "id": "docs_specs_macos_0005_tema_bersama_dan_kontrol_native_index_decision",
@@ -12699,7 +12699,7 @@
       "node_kind": "heading",
       "norm_label": "follow-up",
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md",
-      "source_location": "L834"
+      "source_location": "L878"
     },
     {
       "id": "docs_specs_macos_0005_tema_bersama_dan_kontrol_native_index_rationale",
@@ -32426,7 +32426,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md",
-      "source_location": "L787",
+      "source_location": "L831",
       "weight": 1.0
     },
     {
@@ -32437,7 +32437,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md",
-      "source_location": "L806",
+      "source_location": "L850",
       "weight": 1.0
     },
     {
@@ -32448,7 +32448,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md",
-      "source_location": "L834",
+      "source_location": "L878",
       "weight": 1.0
     },
     {
@@ -32492,7 +32492,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {

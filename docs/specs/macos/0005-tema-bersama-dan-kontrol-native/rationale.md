@@ -153,6 +153,7 @@ Pengulangan pada kode nyata, 2026-11-15, sesudah sesi berpindah ke `claude-opus-
 | `tokens generate`, lalu `tokens check`, lalu `config check` | `wrote apps/macos/DesignSystem/Tokens.swift` dan `4 outputs, 1 written`; `4 outputs up to date`; `config: ok, ..., 1 outputs up to date` |
 | `Tokens.swift` hasil kode nyata dibanding blok di **Isi file** | Sama byte demi byte |
 | `cargo test --workspace --locked`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo fmt --all --check` | Semua kode 0; `config_contract` 33 passed, `tokens_contract` 5 passed, `tokens_swift_contract` 2 passed, `macos_bridge_ownership` 4 passed, `workspace_layout` 10 passed |
+| Pengulangan sesudah `main` maju ke `01a93ce` (sumber `localization` dan uji `tokens_rules.rs` baru): perubahan di **Isi file** termasuk uji `tokens_rules.rs` yang dilonggarkan | `cargo test --workspace --locked` hijau (`tokens_rules` 17 passed); tanpa baris `.gitattributes` untuk `Tokens.swift`, `outputs_live_under_design_system_with_lf_attributes` gagal seperti seharusnya; `tokens`, `config`, dan `localization check` lulus |
 | `swift test`, `swift build` (baris `warning`), `xcodebuild` Debug dan Release | `4 tests`, `7 tests`, dan `5 tests in 1 suite passed`; `0` baris `warning`; `** BUILD SUCCEEDED **` dua kali, `lipo -archs` mencetak `arm64` |
 
 Catatan dari percobaan:

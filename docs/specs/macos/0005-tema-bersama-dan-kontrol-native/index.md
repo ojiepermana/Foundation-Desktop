@@ -21,7 +21,7 @@ Spec ini membuat jendela sapaan di Mac memakai token dari sumber bersama. Alat `
 Angka kriteria merujuk tabel di [Penerimaan dan bukti fondasi](../../../quality/README.md). K-1 sampai K-9 dan O-1 sampai O-7 adalah milik spec `_root/0003`. Semua perintah dijalankan dari akar repo pada Mac Apple Silicon. Bukti setiap AC dicatat bersama host, arsitektur, dan versi dari **AC-11**; langkah manual juga mencatat versi macOS dan tampilan yang sedang aktif.
 
 * **AC-1** (kriteria 16, Done when "token yang bisa dihasilkan ulang", K-1, K-8): `cargo run -p desktop-codegen --locked -- tokens check` keluar dengan kode 0 dan baris terakhirnya `tokens: ok, 6 semantic tokens, 3 placeholder values, 4 outputs up to date`. Pada working tree yang bersih, `cargo run -p desktop-codegen --locked -- tokens generate` mencetak baris terakhir yang berakhir `4 outputs, 0 written`, lalu `git diff --exit-code -- apps/macos/DesignSystem design-system` keluar dengan kode 0. Sesudah `rm apps/macos/DesignSystem/Tokens.swift`, perintah `generate` mencetak `wrote apps/macos/DesignSystem/Tokens.swift` dan `git status --short` tidak mencetak apa pun. Isi `Tokens.swift` sama persis dengan blok di bagian **Isi file**: `awk '/^`apps\/macos\/DesignSystem\/Tokens.swift` adalah hasil/{s=1} s&&/^```swift$/{f=1;next} f&&/^```$/{exit} f' docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md | diff - apps/macos/DesignSystem/Tokens.swift` tidak mencetak apa pun. `git ls-files --eol apps/macos/DesignSystem/Tokens.swift` mencetak satu baris yang memuat `i/lf`, `w/lf`, dan `attr/text eol=lf`. Dicatat dengan host dari AC-11.
-* **AC-2** (kriteria 16, K-2, K-9): emitter memetakan setiap jenis token. `cargo test -p desktop-codegen --locked` lulus; berkas uji `tokens_contract` mencetak `5 passed` dan `tokens_swift_contract` mencetak `2 passed`. `grep -c '_ =>' tooling/codegen/src/tokens/swift.rs` mencetak `0`, jadi peran atau bobot baru gagal dikompilasi sampai dipetakan. `grep -c 'Placeholder value' apps/macos/DesignSystem/Tokens.swift` mencetak `3`. Dicatat dengan host dari AC-11.
+* **AC-2** (kriteria 16, K-2, K-9): emitter memetakan setiap jenis token. `cargo test -p desktop-codegen --locked` lulus; berkas uji `tokens_contract` mencetak `5 passed`, `tokens_rules` mencetak `17 passed`, dan `tokens_swift_contract` mencetak `2 passed`. `grep -c '_ =>' tooling/codegen/src/tokens/swift.rs` mencetak `0`, jadi peran atau bobot baru gagal dikompilasi sampai dipetakan. `grep -c 'Placeholder value' apps/macos/DesignSystem/Tokens.swift` mencetak `3`. Dicatat dengan host dari AC-11.
 * **AC-3** (kriteria 16 di aplikasi, K-3, K-4): jendela sapaan hanya memakai token, dan setiap token dipakai. `grep -c 'Tokens\.' apps/macos/Presentation/GreetingView.swift` mencetak `6`. Untuk tiap nama `Tokens.Colors.accent`, `Tokens.Colors.background`, `Tokens.Colors.textPrimary`, `Tokens.Typography.body`, `Tokens.Spacing.gapControl`, dan `Tokens.Spacing.insetWindow`, `grep -c` pada file itu mencetak `1`. `grep -c 'public static let' apps/macos/DesignSystem/Tokens.swift` mencetak `6`. `grep -rnE 'spacing: [0-9]|padding\([0-9]|padding\(\.[a-z]+, *[0-9]|minLength: *[0-9]|Color\(|Color\.|NSColor|Font\.|\.font\(\.|fontWeight|\.bold\(|\.foregroundStyle\(\.|\.foregroundColor|\.tint\(\.|\.background\(\.|size:' apps/macos/Presentation apps/macos/App` tidak mencetak apa pun, untuk `DesktopMacApp.swift` versi spec `macos/0001` maupun versi spec `macos/0004`. `grep -rl 'import DesignSystem' apps/macos/App apps/macos/Presentation apps/macos/Interop apps/macos/DesignSystem apps/macos/Tests` mencetak tepat dua baris: `apps/macos/Presentation/GreetingView.swift` dan `apps/macos/Tests/DesignSystemTests/ThemeTests.swift`. Satu satunya angka yang tersisa di `GreetingView.swift` adalah `minWidth: 320`, konstanta milik macOS (K-3): `grep -cE '[0-9]' apps/macos/Presentation/GreetingView.swift` mencetak `1`. Dicatat dengan host dari AC-11.
 * **AC-4** (kriteria 17 tanpa jendela, K-5): warna ikut tampilan sistem, dan itu terbukti tanpa membuka jendela. Sesudah `cargo build -p desktop-macos-ffi --locked --target aarch64-apple-darwin`, perintah `swift test --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug"` keluar dengan kode 0. Keluarannya memuat `Test run with 5 tests in 1 suite passed` (suite `ThemeTests`) dan tetap memuat `Test run with 7 tests in 1 suite passed` serta `Test run with 4 tests in 1 suite passed` dari spec `macos/0001`. `grep -rnE 'preferredColorScheme|colorScheme|NSApp\.appearance|\.appearance = ' apps/macos/App apps/macos/Presentation apps/macos/DesignSystem apps/macos/Interop` tidak mencetak apa pun, jadi tidak ada tombol tema dan tidak ada tampilan yang dipaksa. Dicatat dengan host dari AC-11.
 * **AC-5** (kriteria 16 dan 17, build): `xcodebuild -project apps/macos/DesktopMac.xcodeproj -scheme DesktopMac -configuration Debug -derivedDataPath apps/macos/DerivedData build` mencetak `** BUILD SUCCEEDED **`, begitu juga dengan `-configuration Release`. Untuk kedua konfigurasi, `lipo -archs apps/macos/DerivedData/Build/Products/<K>/DesktopMac.app/Contents/MacOS/DesktopMac` mencetak `arm64`. Sesudah `rm -rf apps/macos/.build`, supaya semua modul dikompilasi ulang, `swift build --package-path apps/macos -Xlinker -L"$PWD/target/aarch64-apple-darwin/debug" 2>&1 | grep -ci warning` mencetak `0`. Dicatat dengan host dari AC-11.
@@ -158,6 +158,7 @@ Tidak ada.
 | `tooling/codegen/tests/tokens_swift_contract.rs` | Baru | Bagian **Isi file** |
 | `tooling/codegen/src/tokens/mod.rs` | Diubah: satu baris, isi `Plan`, dan komentar dokumen `plan` | Bagian **Isi file** |
 | `tooling/codegen/src/lib.rs` | Diubah: satu baris komentar dokumen | Bagian **Isi file** |
+| `tooling/codegen/tests/tokens_rules.rs` | Diubah: uji `outputs_live_under_design_system_with_lf_attributes` | Bagian **Isi file** |
 | `tooling/codegen/tests/tokens_contract.rs` | Diubah, satu konstanta dan enam baris | Bagian **Isi file** |
 | `.gitattributes` | Diubah, satu baris | Bagian **Isi file** |
 | `apps/macos/DesignSystem/Tokens.swift` | Baru, hasil generator. Jangan disunting. | Generator; isi yang diharapkan di **Isi file** |
@@ -177,7 +178,7 @@ Peran bagian baru di `apps/macos/`:
 
 | Milestone | File |
 | --- | --- |
-| 1 | `tooling/codegen/src/tokens/swift.rs`, `tooling/codegen/src/tokens/mod.rs`, `tooling/codegen/src/lib.rs` (satu baris komentar dokumen), `tooling/codegen/tests/tokens_swift_contract.rs`, `tooling/codegen/tests/tokens_contract.rs`, `.gitattributes`, `apps/macos/DesignSystem/`, `apps/macos/Tests/DesignSystemTests/`, `apps/macos/Package.swift` |
+| 1 | `tooling/codegen/src/tokens/swift.rs`, `tooling/codegen/src/tokens/mod.rs`, `tooling/codegen/src/lib.rs` (satu baris komentar dokumen), `tooling/codegen/tests/tokens_swift_contract.rs`, `tooling/codegen/tests/tokens_contract.rs`, `tooling/codegen/tests/tokens_rules.rs` (satu uji), `.gitattributes`, `apps/macos/DesignSystem/`, `apps/macos/Tests/DesignSystemTests/`, `apps/macos/Package.swift` |
 | 2 | `apps/macos/Presentation/GreetingView.swift` |
 | 3 | Hanya `verify.md` spec ini |
 
@@ -417,6 +418,49 @@ Di `tooling/codegen/tests/tokens_contract.rs`, uji `check_reports_stale_and_miss
 7. `"3 outputs, 0 written"` menjadi `"4 outputs, 0 written"`.
 
 Bagian sesudahnya, yang menyunting `SCHEMAS[0]` dan memeriksa bahwa hanya file itu yang ditulis ulang, tidak berubah. Jalankan `cargo fmt -p desktop-codegen` sesudahnya.
+
+Di `tooling/codegen/tests/tokens_rules.rs`, uji `outputs_live_under_design_system_with_lf_attributes` mengunci bahwa setiap keluaran `tokens` tinggal di `design-system/`. Aturan O-6 spec `_root/0003` mengizinkan keluaran satu OS di folder aplikasinya, jadi uji itu dilonggarkan dengan sempit. Dua perubahan dan tidak lebih:
+
+1. Komentar dokumen di atas uji itu menjadi:
+
+   ```rust
+   /// Covers AC-6 (O-6): outputs use fixed relative paths with `/`. Shared
+   /// ones live under `design-system/` with a per type `text eol=lf` line in
+   /// `.gitattributes`; the macOS tokens of spec `macos/0005` live under
+   /// `apps/macos/DesignSystem/` with a `text eol=lf` line for that path.
+   ```
+
+2. Di dalam perulangan, ganti
+
+   ```rust
+           assert!(path.starts_with("design-system/"), "O-6: {path} location");
+           let extension = path.rsplit('.').next().unwrap_or_default();
+           assert!(
+               rules.iter().any(|rule| rule.starts_with("/design-system/")
+                   && rule.ends_with(&format!("*.{extension}"))),
+               "O-6: no per type text eol=lf line for {path}: {rules:?}"
+           );
+   ```
+
+   dengan
+
+   ```rust
+           let extension = path.rsplit('.').next().unwrap_or_default();
+           let covered = if path.starts_with("design-system/") {
+               rules.iter().any(|rule| {
+                   rule.starts_with("/design-system/") && rule.ends_with(&format!("*.{extension}"))
+               })
+           } else {
+               assert!(
+                   path.starts_with("apps/macos/DesignSystem/"),
+                   "O-6: {path} location"
+               );
+               rules.contains(&format!("/{path}").as_str())
+           };
+           assert!(covered, "O-6: no text eol=lf line for {path}: {rules:?}");
+   ```
+
+Nama uji tidak diubah. Uji itu tetap gagal bila baris `.gitattributes` untuk `Tokens.swift` hilang, atau bila sebuah keluaran ditulis di luar dua folder itu.
 
 `tooling/codegen/tests/tokens_swift_contract.rs`:
 
@@ -842,7 +886,7 @@ Prasyarat: needs scope 008 milestone 1 dari spec `_root/0003` di `main` (paket `
   5. **Follow-up** baris Scope 008: tandai `[x] ... diterapkan di spec macos/0005`.
   6. Tidak perlu diubah oleh spec ini: AC-2 dan AC-3 (baris `7 tests` dan `4 tests` tetap muncul), AC-4, AC-8 (hitungan `Text(verbatim: model.greeting` tetap 1), `project.pbxproj`, dan `DesktopMacApp.swift`. Dua file terakhir diubah spec `macos/0004`, bukan spec ini.
 * [ ] Lead: `test-preferences.json` menyebut bahwa file baru di `apps/macos` butuh pembaruan spec `macos/0001` (AC-12). Sesudah spec ini dibangun, catat juga suite `ThemeTests` di `apps/macos/Tests/DesignSystemTests/` dan uji emitter di `tooling/codegen/tests/tokens_swift_contract.rs`.
-* [ ] Lead: build spec ini mengubah `tooling/codegen/src/tokens/mod.rs` (satu baris dan isi `Plan`) dan `tooling/codegen/tests/tokens_contract.rs` (satu konstanta dan enam baris), yang dibuat spec `_root/0003`, dan menambah satu baris ke `.gitattributes`. Jadwalkan sesudah milestone 1 spec `_root/0003` dan tidak bersamaan dengan build scope 009, 010, atau 011 di `tooling/codegen/`.
+* [ ] Lead: build spec ini mengubah `tooling/codegen/src/tokens/mod.rs` (satu baris, isi `Plan`, dan komentar dokumen), `tooling/codegen/src/lib.rs` (satu baris komentar dokumen), `tooling/codegen/tests/tokens_contract.rs` (satu konstanta dan enam baris), dan satu uji di `tooling/codegen/tests/tokens_rules.rs` (milik tahap `Test it` scope 008), yang dibuat untuk spec `_root/0003`, dan menambah satu baris ke `.gitattributes`. Jadwalkan sesudah milestone 1 spec `_root/0003` dan tidak bersamaan dengan build scope 009, 010, atau 011 di `tooling/codegen/`.
 * [ ] Lead: tambahkan tautan balik ke spec ini di berkas scope 008. `docs/platforms/macos/README.md` dan tabel "Yang sudah ada" di `docs/architecture/README.md` perlu menyebut modul `DesignSystem`. Itu sengaja di luar commit build ini (kedua file terlarang bagi developer); pemiliknya lead, lewat `/sync` sesudah merge.
 * [ ] Nilai dari user: warna merek (`N7`). Sesudah nilai masuk lewat spec `_root/0003`, jalankan `generate`, lalu perbarui blok `Tokens.swift`, tabel **Data model sketch**, AC-2 (hitungan `Placeholder value`), AC-7, dan angka di langkah manual lewat pembaruan spec ini.
 * [x] Spec macOS scope 009 (`macos/0004`, di `main`): kedua spec tidak menyentuh file yang sama di `apps/macos/`. Spec `macos/0004` mengubah `project.pbxproj` dan `DesktopMacApp.swift` dan menambah `Config/Shared.xcconfig`; spec ini mengubah `Package.swift` dan `GreetingView.swift` dan menambah `DesignSystem/` serta `Tests/DesignSystemTests/`. Pemeriksaan teks AC-3, AC-4, dan AC-6 spec ini lulus untuk `DesktopMacApp.swift` versi lama maupun versi spec `macos/0004`, dan keduanya menambah satu baris berbeda di `.gitattributes`. Isi file tidak bertabrakan, tetapi hitungan path bertabrakan: lihat butir berikut.
