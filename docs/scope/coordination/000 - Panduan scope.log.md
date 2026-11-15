@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 19:23`
+- **Diperbarui:** `2026-11-15 19:24`
 
 ## Sub sesi wave `2`
 
@@ -27,6 +27,7 @@
 | `dev-f008-m1` | developer | 009 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3) spec `_root/0004`; tindak lanjut di sesi yang sama tanpa clear | `009 - Konfigurasi publik.md` | `shared/config/`, `tooling/codegen/src/config/`, `tooling/codegen/src/lib.rs` (dua tempat), `tooling/codegen/tests/config_contract.rs`, `.gitattributes` (satu baris), `docs/shared-resources/README.md` dan `docs/architecture/README.md` (langkah 3), `verify.md` spec `_root/0004`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | dipakai ulang |
 | `arc-f004-spec` | architect (update) | baris `desktop-codegen` di tabel aturan spec `_root/0001` dan `docs/architecture/README.md`; laporan `done` (`a004343`, HEAD `94ab6fc`), merge `bc76880` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md`, satu baris tabel `docs/architecture/README.md`, satu baris Follow-up spec `_root/0003` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 008 spec macOS `macos/0005`; tindak lanjut di sesi yang sama; perubahan yang dibutuhkan pada spec `macos/0001` ditulis sebagai Follow-up | `008 - Tema bersama dan kontrol native.md` | `docs/specs/macos/0005-tema-bersama-dan-kontrol-native/` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | dipakai ulang |
+| `dev-f001-m1` | tester | 008 Test it (bagian bersama); tindak lanjut di sesi tester yang sama; Range `fea05bd..b549dce` | `008 - Tema bersama dan kontrol native.md` | paling banyak satu file baru `tooling/codegen/tests/tokens_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | dipakai ulang |
 
 ## Sub sesi wave `1`
 
