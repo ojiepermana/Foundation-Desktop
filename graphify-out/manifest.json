@@ -382,5 +382,35 @@
     "seen": 1794740004.869985,
     "ast_hash": "ee1e6e8038a9efd34ffac1dc2f55bc31",
     "semantic_hash": ""
+  },
+  "apps/macos/Tests/InteropTests/BindingContractTests.swift": {
+    "mtime": 1794740057.8655894,
+    "seen": 1794740058.695901,
+    "ast_hash": "dec9670adc8873f86f80dbdefa1e80e8",
+    "semantic_hash": ""
+  },
+  "apps/macos/Package.swift": {
+    "mtime": 1794740057.865077,
+    "seen": 1794740058.695904,
+    "ast_hash": "c6d7ed31a2558949961f0289d3f689ca",
+    "semantic_hash": ""
+  },
+  "apps/macos/Interop/Greeter.swift": {
+    "mtime": 1794740057.8649423,
+    "seen": 1794740058.695905,
+    "ast_hash": "101d65fa6b38e57b692010c84800ee73",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingViewModel.swift": {
+    "mtime": 1794740057.8652947,
+    "seen": 1794740058.6959062,
+    "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
+    "semantic_hash": ""
+  },
+  "apps/macos/Tests/PresentationTests/GreetingViewModelTests.swift": {
+    "mtime": 1794740057.8657813,
+    "seen": 1794740058.695907,
+    "ast_hash": "2e4466d2dab07629cd4d280604d4b36d",
+    "semantic_hash": ""
   }
 }
