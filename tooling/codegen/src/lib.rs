@@ -12,6 +12,7 @@ use std::fmt;
 use std::fs;
 use std::path::{Path, PathBuf};
 
+pub mod config;
 pub mod json;
 pub mod tokens;
 
@@ -67,7 +68,7 @@ pub struct Source {
 }
 
 /// Every source the tool knows, in the order the usage line lists them.
-pub const SOURCES: &[Source] = &[tokens::SOURCE];
+pub const SOURCES: &[Source] = &[tokens::SOURCE, config::SOURCE];
 
 /// The repo root, fixed when this crate is compiled.
 pub fn repo_root() -> PathBuf {

@@ -6,9 +6,9 @@
     "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
   },
   "docs/architecture/README.md": {
-    "mtime": 1794745176.3341782,
-    "seen": 1794745179.346726,
-    "ast_hash": "87c768414da35dfe6961f84e3cb30e04",
+    "mtime": 1794751903.6094954,
+    "seen": 1794751904.789952,
+    "ast_hash": "9fe146992e5cfb18365f9b814c764461",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
@@ -132,10 +132,10 @@
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
-    "mtime": 1794730406.3481607,
-    "seen": 1794731111.1998038,
-    "ast_hash": "74c063c6e1f7504a39a2a56971c278da",
-    "semantic_hash": "74c063c6e1f7504a39a2a56971c278da"
+    "mtime": 1794751903.6159906,
+    "seen": 1794751904.789954,
+    "ast_hash": "f8dfef81c8b2afcb037efd0eb20cf9e7",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
     "mtime": 1794742646.1288874,
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/index.md": {
-    "mtime": 1794745296.8263276,
-    "seen": 1794745299.650023,
-    "ast_hash": "afbd9d9d8b058ab691fe45f402083988",
+    "mtime": 1794751903.6196957,
+    "seen": 1794751904.789958,
+    "ast_hash": "adb2aef8ddce868a1f1e522f0321be8f",
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/rationale.md": {
@@ -522,9 +522,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/lib.rs": {
-    "mtime": 1794744988.7776232,
-    "seen": 1794744995.800627,
-    "ast_hash": "d78ed1c3949e4a8958f8ecd0ffee7bb6",
+    "mtime": 1794751903.6267357,
+    "seen": 1794751904.789957,
+    "ast_hash": "d9f3c1f9b8a3cbdbcce546b303679f71",
     "semantic_hash": ""
   },
   "design-system/tokens/spacing.json": {
@@ -591,6 +591,42 @@
     "mtime": 1794745121.5785213,
     "seen": 1794745127.490716,
     "ast_hash": "82dac752d3b9514ebceaad43e882517d",
+    "semantic_hash": ""
+  },
+  "shared/config/public.schema.json": {
+    "mtime": 1794751903.624913,
+    "seen": 1794751904.789948,
+    "ast_hash": "14c583d3b40b5f51627088536ac0a597",
+    "semantic_hash": ""
+  },
+  "shared/config/public.json": {
+    "mtime": 1794751903.6246817,
+    "seen": 1794751904.789953,
+    "ast_hash": "7c4f1b353b4bdd109ba47fa839148400",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/config_contract.rs": {
+    "mtime": 1794751903.6283875,
+    "seen": 1794751904.7899551,
+    "ast_hash": "efc5cca5c43a81f7797e825eab54b7b1",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/config/mod.rs": {
+    "mtime": 1794751903.6259665,
+    "seen": 1794751904.789956,
+    "ast_hash": "4f0b665ddb92e8b395aec1d8b7628dcf",
+    "semantic_hash": ""
+  },
+  "shared/config/README.md": {
+    "mtime": 1794751903.6243696,
+    "seen": 1794751904.789959,
+    "ast_hash": "3485fc82f3f62b52d4e9d1af910ead3d",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0004-konfigurasi-publik/verify.md": {
+    "mtime": 1794751903.620459,
+    "seen": 1794751904.78996,
+    "ast_hash": "d49ec597b3595f81a41cb04780af350d",
     "semantic_hash": ""
   }
 }
