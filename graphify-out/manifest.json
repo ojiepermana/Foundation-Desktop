@@ -298,5 +298,11 @@
     "seen": 1794737769.946012,
     "ast_hash": "0e4c12a04427ae16734cc94295cd3d1d",
     "semantic_hash": ""
+  },
+  "crates/core/tests/hello_contract.rs": {
+    "mtime": 1794737788.931568,
+    "seen": 1794737791.1060228,
+    "ast_hash": "3bea4bc9a7a4cc8edf292847bdf65200",
+    "semantic_hash": ""
   }
 }
