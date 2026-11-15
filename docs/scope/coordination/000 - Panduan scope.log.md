@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 19:22`
+- **Diperbarui:** `2026-11-15 19:23`
 
 ## Sub sesi wave `2`
 
@@ -19,7 +19,8 @@
 | `arc-f012-spec` | architect | 012 spec `_root`; ditetapkan saat "mulai", sesudah spec 008 sampai 011 dan 002 diterima | `012 - Build dan penerimaan per target.md` | ditetapkan saat "mulai" | `claude/arc-f012-spec-50349d` | `fable-5-2 · high` | standby |
 | `dev-f008-m1` | developer | 008 Build it milestone 1; Langkah Build plan selesai 1 (`f262895`), 2 (`ed52dbd`, `5133b63`); Pointer code in `tooling/codegen/`, `design-system/`; laporan `done` (`0dbe8de`), merge `abd3a43` | `008 - Tema bersama dan kontrol native.md` | `Cargo.toml` akar (baris `members`), `Cargo.lock`, `.gitattributes`, `tooling/codegen/`, `design-system/tokens/`, `design-system/schemas/`, `verify.md` spec `_root/0003`, baris `**Status**` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
 | `dev-f008-m1` | developer | 008 Build it milestone 2; Langkah Build plan selesai 3 (`8693348`); Pointer code in `docs/design-system/README.md`, `docs/architecture/README.md`; laporan `done` (`cec0f52`), merge `b549dce` | `008 - Tema bersama dan kontrol native.md` | `docs/design-system/README.md`, `docs/architecture/README.md`, `verify.md` spec `_root/0003` bagian Milestone 2 | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | merged |
-| `arc-f010-spec` | checker (verify) | 008 verify milestone 1 (AC-1 sampai AC-10) dari `main` `abd3a43`; sesi dibersihkan, judul `arc-f010-spec · 008 verify milestone 1` | `008 - Tema bersama dan kontrol native.md` | centang `verify.md` spec `_root/0003` bagian Milestone 1 | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | dipakai ulang |
+| `arc-f010-spec` | checker (verify) | 008 verify milestone 1; laporan `done` PASS 29 dari 29 (`cefec41`, HEAD `b283154`), merge `87a1011` | `008 - Tema bersama dan kontrol native.md` | centang `verify.md` spec `_root/0003` bagian Milestone 1 | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | merged |
+| `arc-f010-spec` | checker (verify) | 008 verify milestone 2 (AC-11); tindak lanjut di sesi yang sama | `008 - Tema bersama dan kontrol native.md` | centang `verify.md` spec `_root/0003` bagian Milestone 2 | `claude/arc-f010-spec-3201ce` | `fable-5-2 · high` | dipakai ulang |
 | `arc-f003-spec` | auditor | 002 `/audit`, penyegaran fakta; laporan `done` (`2e2feb5`, HEAD `2850fba`), merge `d753c2a` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `AGENTS.md` (bagian tambahan audit, +63 baris), `crates/core/AGENTS.md` (+58 baris) | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect | 009 spec macOS `macos/0004`; laporan `done` (`23d7ccc`, HEAD `aafcce3`), merge `30c9c23` | `009 - Konfigurasi publik.md` | `docs/specs/macos/0004-konfigurasi-publik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect (update) | spec `_root/0004`: delapan butir dari Follow-up spec `macos/0004` dan penyelarasan dengan API nyata `desktop-codegen`; laporan `done` (`db684e5`, HEAD `9dd6956`), merge `11fe9f8` | `009 - Konfigurasi publik.md` | `docs/specs/_root/0004-konfigurasi-publik/index.md`, `rationale.md` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
@@ -216,6 +217,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Dicentang pada wave ini
 
+- 008 · `Milestone 1: Alat dan sumber token` · laporan `done` `dev-f008-m1` dan verify PASS `arc-f010-spec` (29 dari 29 langkah, AC-1 sampai AC-10, pada `abd3a43`; tujuh file sama byte demi byte dengan spec; langkah yang mengubah file dijalankan di clone sekali pakai) · `claude/dev-f008-m1-1a2956` → `abd3a43`, centang verify `claude/arc-f010-spec-3201ce` → `87a1011` · fmt, clippy, 42 test, `tokens check` dan `generate` di `main` · commit `docs(scope): tick 008 milestone 1` · tanpa langkah manual
 - 009 macOS · `/architect scope 009 konfigurasi publik untuk macOS` · laporan `done` `arc-f001-spec` · commit `aafcce3` dari `claude/arc-f001-spec-a1f824` → `30c9c23` (commit itu di-merge langsung, karena sesi melanjutkan item berikutnya di branch yang sama) · diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik · commit `docs(scope): tick the macOS spec for 009` · manual `F009-1` (AC-7) untuk milestone 2
 - 010 · `/architect scope 010 contoh lokalisasi untuk _root` · laporan `done` `arc-f010-spec` · `claude/arc-f010-spec-3201ce` → `a766a1f` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik · commit `docs(scope): tick 010 spec` · nilai dari user `N8`
 - 008 · `/architect scope 008 tema bersama untuk _root` · laporan `done` `arc-f004-spec` · `claude/arc-f004-spec-de734c` → `02d4a07` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik · commit `docs(scope): tick 008 spec` · manual `F008-1` (AC-12) untuk milestone 3; nilai dari user `N7`
