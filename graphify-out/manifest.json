@@ -780,9 +780,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/deps.rs": {
-    "mtime": 1794753978.2690196,
-    "seen": 1794753980.333802,
-    "ast_hash": "ff95171762f6972a35464fcc3d530cb7",
+    "mtime": 1794754520.093364,
+    "seen": 1794754521.745868,
+    "ast_hash": "4915bd8b2e032d3de76d93f5648354cc",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/code.rs": {
@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794754400.8687217,
-    "seen": 1794754402.4757068,
-    "ast_hash": "eff930bca8b72432049fa7041a86c173",
+    "mtime": 1794754520.095619,
+    "seen": 1794754521.745867,
+    "ast_hash": "c8e409df2327a6b7f38fe8b2eda57cd3",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
@@ -822,9 +822,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/docs.rs": {
-    "mtime": 1794754400.863128,
-    "seen": 1794754402.475703,
-    "ast_hash": "13d3d68f79cc73dca014c6d6bee4bfad",
+    "mtime": 1794754520.0935142,
+    "seen": 1794754521.745864,
+    "ast_hash": "e0430980325ad4dacb629fdb8d94839a",
     "semantic_hash": ""
   },
   "docs/specs/macos/0006-satu-contoh-lokalisasi/rationale.md": {

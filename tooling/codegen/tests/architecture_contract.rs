@@ -96,6 +96,8 @@ enum Edit {
     Edge(&'static str, &'static str),
     /// Remove entry `.1` from the `dependencies` of lock block `.0`.
     Unedge(&'static str, &'static str),
+    /// Delete file `.0`.
+    Delete(&'static str),
     /// Add a lock block for package `.0` at version `.1`.
     Block(&'static str, &'static str),
 }
@@ -104,7 +106,10 @@ impl Edit {
     /// The file the edit changes, from the repo root.
     fn path(self) -> &'static str {
         match self {
-            Edit::Replace(path, ..) | Edit::Append(path, _) | Edit::Create(path, _) => path,
+            Edit::Replace(path, ..)
+            | Edit::Append(path, _)
+            | Edit::Create(path, _)
+            | Edit::Delete(path) => path,
             Edit::Edge(..) | Edit::Unedge(..) | Edit::Block(..) => "Cargo.lock",
         }
     }
@@ -129,6 +134,7 @@ fn apply(edit: Edit, text: &str) -> String {
             text.replacen(find, replace, 1)
         }
         Edit::Append(_, extra) | Edit::Create(_, extra) => format!("{text}{extra}"),
+        Edit::Delete(_) => unreachable!("run_case deletes the file itself"),
         Edit::Edge(package, dependency) => {
             let (start, end) = lock_block(text, package);
             let block = &text[start..end];
@@ -188,6 +194,10 @@ fn run_case(root: &Path, edits: &[Edit]) -> Result<String, Vec<String>> {
             }
             fs::create_dir_all(parent).expect("the folder can be made");
             created_folders.extend(missing);
+        }
+        if let Edit::Delete(_) = edit {
+            fs::remove_file(&path).expect("the file can be deleted");
+            continue;
         }
         let text = fs::read_to_string(&path).unwrap_or_default();
         fs::write(&path, apply(*edit, &text)).expect("the copy can be edited");
@@ -444,6 +454,18 @@ fn rejects_broken_repos() {
                 ));
             }
         }
+    }
+    // A member manifest that cannot be read gives exactly one `cannot read`
+    // problem. The A-1 rule check needs that member's package name, so it
+    // is skipped ("File yang tidak terbaca" in spec `_root/0007`).
+    let found = match run_case(&root, &[Edit::Delete("crates/macos-ffi/Cargo.toml")]) {
+        Ok(summary) => vec![format!("(accepted: {summary})")],
+        Err(messages) => messages,
+    };
+    if found.len() != 1 || !found[0].starts_with("cannot read: ") {
+        failures.push(format!(
+            "unreadable member manifest: expected exactly one cannot read problem, got {found:?}"
+        ));
     }
     fs::remove_dir_all(&root).expect("the copy can be removed");
     assert!(failures.is_empty(), "{}", failures.join("\n"));

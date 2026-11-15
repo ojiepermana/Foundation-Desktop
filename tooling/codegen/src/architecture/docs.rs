@@ -26,17 +26,17 @@ pub(super) fn check(root: &Path, files: &[File], findings: &mut Findings) {
             check_links(root, &file.path, text, findings);
         }
     }
-    let packages: Vec<String> = deps::members(root, findings)
-        .unwrap_or_default()
-        .into_iter()
-        .map(|member| member.package)
-        .collect();
+    // Package names need every member manifest. When one cannot be read,
+    // its name is unknown and the package part of A-13 is skipped.
+    let packages: Option<Vec<String>> = deps::read_members(root, findings)
+        .filter(|(_, complete)| *complete)
+        .map(|(members, _)| members.into_iter().map(|member| member.package).collect());
     for file in files {
         if file.name() != "AGENTS.md" {
             continue;
         }
         if let Some(text) = &file.text {
-            check_agents(root, &file.path, text, &packages, findings);
+            check_agents(root, &file.path, text, packages.as_deref(), findings);
         }
     }
 }
@@ -215,7 +215,13 @@ fn is_path_candidate(candidate: &str) -> bool {
 }
 
 /// `A-13`: spec references, package names, and paths in one `AGENTS.md`.
-fn check_agents(root: &Path, path: &str, text: &str, packages: &[String], findings: &mut Findings) {
+fn check_agents(
+    root: &Path,
+    path: &str,
+    text: &str,
+    packages: Option<&[String]>,
+    findings: &mut Findings,
+) {
     let folder = folder_of(path);
     let mut in_code = false;
     for (number, line) in text.lines().enumerate() {
@@ -242,14 +248,16 @@ fn check_agents(root: &Path, path: &str, text: &str, packages: &[String], findin
                 );
             }
         }
-        for name in package_names(line) {
-            if !packages.iter().any(|package| package == name) {
-                findings.push(
-                    13,
-                    path,
-                    number,
-                    format!("A-13: package {name} is not a workspace member"),
-                );
+        if let Some(packages) = packages {
+            for name in package_names(line) {
+                if !packages.iter().any(|package| package == name) {
+                    findings.push(
+                        13,
+                        path,
+                        number,
+                        format!("A-13: package {name} is not a workspace member"),
+                    );
+                }
             }
         }
         let candidates: Vec<&str> = if in_code {
