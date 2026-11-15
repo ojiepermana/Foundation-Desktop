@@ -59,7 +59,7 @@ Mode keputusan `auto`. Setiap baris: pertanyaan, pilihan, pilihan kedua, tanda, 
 
 | No. | Pertanyaan | Diambil | Pilihan kedua | Tanda | Bila pilihan kedua |
 | --- | --- | --- | --- | --- | --- |
-| D-1 | Bahasa skrip | `bash` setara `3.2`, dipanggil `bash scripts/<nama>.sh` | Paket Rust (Opsi 2) | biasa | Semua AC skrip dan Build plan langkah 1 sampai 3 ditulis ulang; `MEMBERS` bertambah |
+| D-1 | Bahasa skrip | `bash` setara `3.2`, dipanggil `bash scripts/<nama>.sh` | Paket Rust (Opsi 2) | berat (dinaikkan lead: Windows butuh Git Bash) | Semua AC skrip dan Build plan langkah 1 sampai 3 ditulis ulang; `MEMBERS` bertambah |
 | D-2 | Skrip host Windows dan Linux sekarang | Tidak dibuat; skrip bersama dipakai sampai scope 006 dan 007 | Buat `build-windows.ps1` dan `build-linux.sh` sekarang sebagai pembungkus skrip bersama | biasa | AC-16 berubah; dua berkas baru tanpa isi khusus OS |
 | D-3 | Langkah yang gagal | `validate.sh`, `build-rust.sh`, `test.sh` lanjut; skrip macOS dan generator berhenti | Semua skrip berhenti di langkah gagal pertama | biasa | AC-3 hanya melihat satu langkah gagal |
 | D-4 | Asal daftar sumber `desktop-codegen` | Baris `sources:` dari pesan usage alat | Daftar tetap di `validate.sh` | biasa | Setiap sumber baru butuh pembaruan skrip; AC-2 memakai angka tetap |
@@ -68,7 +68,7 @@ Mode keputusan `auto`. Setiap baris: pertanyaan, pilihan, pilihan kedua, tanda, 
 | D-7 | Kepercayaan action dan izin CI | Hanya `actions/checkout`, dipaku ke SHA, `contents: read`, `persist-credentials: false`, tanpa rahasia | Tag major `actions/checkout@v7` | berat | Satu baris `uses:`; AC-10 tidak lagi menuntut SHA |
 | D-8 | Pemasangan toolchain di CI | `rustup toolchain install` tanpa argumen, dicek langkah 1 skrip | Action pihak ketiga untuk Rust | biasa | Satu action pihak ketiga lagi; D-7 berubah |
 | D-9 | Runner ARM Windows dan Linux | Belum dipakai | Tambah `ubuntu-24.04-arm` dan `windows-11-arm` ke matriks | biasa | Matriks `rust` bertambah dua; baris ARM di laporan mendapat bukti Rust |
-| D-10 | Lokasi laporan fondasi | `docs/quality/laporan-fondasi.md` (menunggu lead) | `docs/reviews/laporan-fondasi.md` | biasa | Path di AC-13, AC-14, bagian **Laporan fondasi**, dan tabel berkas; tanpa izin `docs/quality/` |
+| D-10 | Lokasi laporan fondasi | `docs/quality/laporan-fondasi.md`, dipilih lead (opsi 1) | `docs/reviews/laporan-fondasi.md` | berat (dinaikkan lead: folder tulisan user) | Path di AC-13, AC-14, bagian **Laporan fondasi**, dan tabel berkas; tanpa izin `docs/quality/` |
 | D-11 | Arti "tiga integrasi wajib" | Integrasi sapaan di jendela native macOS, Windows, dan Linux | Tiga kelompok pemeriksaan (Core, binding, build native) | berat | AC-14 dan bagian "Tiga integrasi wajib"; aturan **S-5** |
 | D-12 | Akhir baris checkout Windows | Bawaan runner (CRLF untuk berkas tanpa atribut) | Paksa LF untuk seluruh repo | biasa | Satu langkah `git config` sebelum checkout; bukti CRLF hilang |
 | D-13 | Cache CI | Tanpa cache | `actions/cache` untuk `~/.cargo` dan `target/` | biasa | Action kedua; aturan kunci cache |
@@ -81,6 +81,7 @@ Mode keputusan `auto`. Setiap baris: pertanyaan, pilihan, pilihan kedua, tanda, 
 | D-20 | `test.sh` di CI | Tidak dijalankan; `validate.sh` mencetak `rust tests:` | Jalankan juga | biasa | `cargo test` dua kali per job |
 | D-21 | Pembatalan run CI | Hanya untuk `pull_request` | Batalkan semua run lama pada ref yang sama | biasa | Run `main` bisa batal, sehingga AC-11 tidak punya run untuk commit itu |
 | D-22 | Syarat Xcode di skrip | `build-macos.sh` keluar `2` bila major `xcodebuild -version` di bawah 26 | Tanpa pemeriksaan; biarkan `actool` gagal di langkah `G-4` | biasa | AC-9; galat datang terlambat dan tidak menyebut sebabnya |
+| D-23 | Invarian teks sapaan di gerbang | Langkah 7 `validate.sh` membungkus `git grep --untracked -lF 'Hello, {' -- '*.rs'` dan lulus hanya bila hasilnya tepat `crates/core/src/greeting.rs` | Biarkan tetap perintah verifikasi sekali jalan | biasa | AC-2 dan AC-3; langkah sesudahnya bergeser satu |
 
 Alasan singkat per baris:
 
@@ -93,7 +94,7 @@ Alasan singkat per baris:
 * **D-7.** Model kepercayaan CI termasuk keputusan keamanan, jadi bertanda `berat` walau mudah dibalik. Memaku SHA mencegah tag yang dipindah diam diam; satu action menjaga permukaan tetap kecil.
 * **D-8.** `rustup 1.29.3` menyatakan `toolchain install` tanpa argumen memasang toolchain aktif, yang dibaca dari `rust-toolchain.toml`. Langkah 1 skrip menangkap bila yang terpasang berbeda.
 * **D-9.** Runner ARM gratis hanya untuk repo publik, dan visibilitas repo adalah nilai dari user.
-* **D-10.** `docs/quality/README.md` menjelaskan isi laporan tetapi tidak lokasinya. Di sebelah tabel kriteria adalah tempat yang paling mudah ditemukan, dengan biaya izin `docs/quality/` di brief developer. `docs/reviews/` berisi catatan bertanggal per pemeriksaan, bukan dokumen yang terus diperbarui.
+* **D-10.** Diputuskan lead pada 2026-11-15 (opsi 1). `docs/quality/README.md` menjelaskan isi laporan tetapi tidak lokasinya. Di sebelah tabel kriteria adalah tempat yang paling mudah ditemukan, dengan biaya izin `docs/quality/` di brief developer. `docs/reviews/` berisi catatan bertanggal per pemeriksaan, bukan dokumen yang terus diperbarui.
 * **D-11.** Kalimat pembuka `docs/quality/README.md` berbunyi fondasi lengkap setelah integrasi wajib pada ketiga OS punya bukti, dan setiap rujukan platform punya baris "Integrasi" sendiri. Tafsiran ini menentukan kapan fondasi selesai, jadi bertanda `berat`.
 * **D-12.** Pengembang Windows memakai pengaturan bawaan git. CI yang sama dengan mereka membuktikan aturan teks spec `_root/0007` menerima `\r\n`.
 * **D-13.** Belum ada waktu run yang terukur. Cache menambah action dan cara gagal baru.
@@ -106,14 +107,16 @@ Alasan singkat per baris:
 * **D-20.** Usul pemeriksaan silang: `cargo test` dua kali per job hanya memakan menit.
 * **D-21.** Usul pemeriksaan silang: dengan pembatalan untuk semua event, push kedua ke `main` membatalkan run commit pertama, sehingga commit itu tidak punya bukti CI.
 * **D-22.** Lead meneruskan bahwa spec `macos/0007` (diterima) memakai dokumen Icon Composer yang hanya dikompilasi `actool` Xcode 26 ke atas, dan meminta skrip build macOS menyebut syarat itu. Memeriksanya sebelum langkah pertama memberi pesan yang jelas, bukan galat `actool` sesudah beberapa menit build.
+* **D-23.** Diminta lead saat menerima spec: invarian AC-3 spec `_root/0002` (juga AC-10 spec `_root/0006` dan `crates/core/AGENTS.md`) sempat terlanggar beberapa merge tanpa ketahuan, karena perintahnya hanya dijalankan saat spec itu diverifikasi. Perintahnya sudah ditetapkan spec lain, jadi membungkusnya tidak melanggar aturan "hanya membungkus". Langkah ini diletakkan sebelum daftar sumber supaya nomor langkah sumber tetap dihitung dari satu titik.
 
 ## Bukti percobaan
 
-Dijalankan 2026-11-15 di Mac koordinasi (macOS `27.0.1`, `arm64`, `rustc 1.99.1`, `cargo 1.99.1`), dari folder sementara di luar repo. Run pertama pada `9b84e6c`, run kedua pada `96b8279` sesudah sumber `architecture` masuk `main`.
+Dijalankan 2026-11-15 di Mac koordinasi (macOS `27.0.1`, `arm64`, `rustc 1.99.1`, `cargo 1.99.1`), dari folder sementara di luar repo. Run pertama pada `9b84e6c`, run kedua pada `96b8279` sesudah sumber `architecture` masuk `main`, run ketiga pada `021957e` (sesudah `cb22811`) dengan urutan langkah final `validate.sh`.
 
 * `/bin/bash --version` mencetak `GNU bash, version 3.2.57(1)-release (arm64-apple-darwin26)`. Prototipe `lib.sh` dan `validate.sh` (fungsi `step`, `SECONDS`, `set -u`) berjalan dengan bash itu.
 * Prototipe `validate.sh` keluar dengan kode `0` dalam sekitar 31 detik dengan build hangat: `== validate.sh: PASS, 9 steps, 0 failed` (tanpa langkah toolchain, yang ditambahkan sesudahnya). Langkah per sumber mencetak `tokens: ok, 6 semantic tokens, 3 placeholder values, 3 outputs up to date`, `config: ok, schema version 1, 2 build values, 1 outputs up to date`, `localization: ok, 1 keys, 2 locales, 0 missing translations, 1 outputs up to date`, dan `assets: ok, 1 assets, 1 source files, 1 placeholder values, 1 outputs up to date`. `brand exports: 0 records`. Jumlah angka `passed` di semua baris `test result:` adalah `137`.
 * Pada `96b8279`: prototipe keluar dengan kode `0` dengan 10 langkah (tanpa langkah toolchain dan langkah daftar sumber), sumber kelima mencetak `architecture: ok, 11 rules, 3 members, 0 outputs up to date`, dan jumlah `passed` adalah `159`. Dengan `printf '\n' >> design-system/schemas/colors.schema.json`, prototipe keluar dengan kode `1` dan `FAIL, 10 steps, 2 failed (steps 4 6)`: langkah `cargo test` (uji `every_source_passes_check_on_the_repo`) dan langkah `tokens check` (`differs from the generator output`). `architecture check` tetap lulus. Dengan langkah toolchain dan langkah daftar sumber di depan, nomornya menjadi `steps 5 8` seperti di AC-3.
+* Pada `021957e`, prototipe dengan urutan final (toolchain, `fmt`, `clippy`, build, test, `cargo tree`, teks sapaan, daftar sumber, lima `check`) menjalankan 13 langkah. Baris sumber `sources: tokens config localization assets architecture`, `architecture: ok, 13 rules, 3 members, 0 outputs up to date`, dan `rust tests: 177 passed, 0 failed, 1 ignored`. Satu satunya langkah gagal adalah langkah 7: `git grep --untracked -lF 'Hello, {' -- '*.rs'` mencetak `crates/core/src/greeting.rs` dan `tooling/codegen/tests/architecture_contract.rs` (baris 343, `"format!(\"Hello, {name}!\")"`), yaitu pelanggaran yang sedang diperbaiki developer. Dengan mutasi AC-3, langkah gagal menjadi `5 7 9`, jadi sesudah perbaikan itu `5 9`. Dengan `probe.rs` yang belum dilacak di akar, hanya langkah 7 yang gagal dan keluarannya memuat `probe.rs`.
 * Perintah `sed` channel di **Kerangka `lib.sh`** mencetak `1.99.1` tanpa karakter lain. Perintah **Pemeriksaan tautan** dengan `/bin/bash` mengubah `%20` menjadi spasi dan melaporkan path yang tidak ada.
 * `cargo run -p desktop-codegen --locked` tanpa argumen keluar dengan kode `2` dan mencetak `sources: tokens, config, localization, assets` di stderr pada `9b84e6c` (ditambah `architecture` pada `96b8279`).
 * `git ls-remote https://github.com/actions/checkout 'refs/tags/v7*'` mencetak `3d3c42e5aac5ba805825da76410c181273ba90b1` untuk `refs/tags/v7` dan `refs/tags/v7.0.1`.
