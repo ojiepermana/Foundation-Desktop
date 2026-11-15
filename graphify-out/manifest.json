@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
-    "mtime": 1794754303.5007868,
-    "seen": 1794754305.0951092,
-    "ast_hash": "2e1d1bb5c861ceda2c092632cf058af1",
+    "mtime": 1794754628.4301035,
+    "seen": 1794754630.1234171,
+    "ast_hash": "70710dd3a70f602ba8729f68e96698a4",
     "semantic_hash": ""
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794754482.096136,
-    "seen": 1794754483.6160882,
-    "ast_hash": "3c64c50899a4350840547280d0082914",
+    "mtime": 1794754628.4317005,
+    "seen": 1794754630.12342,
+    "ast_hash": "506d7e3d17f26bde80102af266c05fd4",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -792,8 +792,8 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/verify.md": {
-    "mtime": 1794754734.5661757,
-    "seen": 1794754736.2236311,
+    "mtime": 1794754743.5945275,
+    "seen": 1794754745.2409852,
     "ast_hash": "5feb7693ce6723603ee95355f02500ff",
     "semantic_hash": ""
   },
@@ -837,6 +837,18 @@
     "mtime": 1794754449.522616,
     "seen": 1794754450.993108,
     "ast_hash": "f91dd0a7261b3f62ae521c392dddfb88",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
+    "mtime": 1794754604.260715,
+    "seen": 1794754605.978605,
+    "ast_hash": "d0f228eded182e360cedfc465a0f09c0",
+    "semantic_hash": ""
+  },
+  "docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
+    "mtime": 1794754604.260467,
+    "seen": 1794754605.9786072,
+    "ast_hash": "a0ca8ced0f6e5afffb6e938f6f55c72d",
     "semantic_hash": ""
   }
 }
