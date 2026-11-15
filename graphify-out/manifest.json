@@ -264,15 +264,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794744478.1459827,
-    "seen": 1794744480.3832278,
-    "ast_hash": "8629771533e931035f200ee2b4a95c8b",
+    "mtime": 1794755555.7696195,
+    "seen": 1794755564.028485,
+    "ast_hash": "bb17ef359e523ace52abff913609bb59",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794744478.1462011,
-    "seen": 1794744480.3832262,
-    "ast_hash": "b67ca8a20a5bb94d9e49ee6ee132f433",
+    "mtime": 1794755555.7698474,
+    "seen": 1794755564.028481,
+    "ast_hash": "d32098a7954d5e68e5bca79264d68573",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
