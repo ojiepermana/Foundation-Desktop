@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 17:59`
+- **Diperbarui:** `2026-11-15 18:04`
 
 ## Sub sesi wave `1`
 
@@ -67,6 +67,7 @@
 | 2026-11-15 | Nomor spec macOS berikutnya ditetapkan: `macos/0002-batas-workspace-dan-pemilik.md` (scope 001) dan `macos/0003-kontrak-sapaan-bersama.md` (scope 003), bentuk satu file. Keduanya hanya merujuk keputusan `_root` dan `macos/0001` serta menyatakan bukti di host Mac; tanpa kode atau test baru. Tiga item berjalan bersamaan dengan ownership yang tidak beririsan: build 004 milestone 1 (kode dan manifest), koreksi AC-4 spec `_root/0001`, dan dua spec penerapan macOS. | lead |
 | 2026-11-15 | Koreksi AC-4 spec `_root/0001` (`26d9ef7`) di-merge sebagai `d370d32`: diff hanya `index.md` dan `rationale.md` spec itu plus `graphify-out/`; ID AC dan blok "Isi file" tidak berubah; baris Follow-up Scope 004 ditandai terjawab. Di `main` `cargo test -p desktop-core --locked` tetap lulus (test `workspace_layout.rs` membaca spec ini saat kompilasi). Baris Follow-up serupa di spec `macos/0001` ditandai saat item architect berikutnya menyentuh spec itu. | lead |
 | 2026-11-15 | Gerbang `dev-f003-m1` 004 milestone 1: worktree bersih, diff 16 file ownership plus `graphify-out/`, merge tanpa konflik di luar graf. Di `main`: `cargo fmt --all --check`, `cargo build --workspace --locked`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, clippy jembatan dengan `--all-features`, `cargo test --workspace --locked` (Core 5 + 7 + 4 + 5 + 10 + 1 doc, jembatan 1), `cargo tree` jembatan tiga baris (`desktop-macos-ffi`, `desktop-core`, `uniffi v0.32.2`), `cargo tree` Core tetap satu baris, binding dibuat ulang tanpa selisih terhadap yang terlacak, `swift test` 7 + 4 uji lulus, `grep unsafe` kosong, satu `pub fn hello`. `Cargo.lock` 77 paket. Merge `d7feee4`; hook membangun ulang graf (70 sumber) dan memberi peringatan, bukan penolakan, bahwa header C hasil generator hanya terekstrak sebagian. `.graphifyignore` tidak berubah. | lead |
+| 2026-11-15 | Ringkasan gabungan spec `macos/0002` (scope 001 di Mac) dan `macos/0003` (scope 003 di Mac) dibalas `accept` tanpa perubahan (`d0e4bde`). Keduanya hanya memetakan bukti yang ada; `macos/0002` punya satu langkah build dokumen (tabel "Yang sudah ada" di `docs/architecture/README.md`), `macos/0003` tanpa langkah build. Blok scope dipakai seperti usulan, tanpa `Test it` untuk keduanya karena tidak ada kode atau uji baru; uji yang dipakai dikunci `Test it` scope 001, 003, dan 004. Tindak lanjut lead: `architect (update)` spec `_root/0001` AC-8 dengan batas "pada akhir milestone 2" dan baris `crates/core/` yang masih berkata "kerangka". | lead |
 
 ## Keputusan delegasi
 
@@ -114,6 +115,9 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 | 2026-11-15 | `macos/0001` · AC-2, AC-5, AC-13 | Uji Swift dan uji UI | Swift Testing; tanpa uji UI otomatis, alur jendela manual | XCTest; target XCUITest yang dijalankan user | - | `architect (update)` spec `macos/0001` | berlaku |
 | 2026-11-15 | `macos/0001` · AC-5, AC-8 | Teks antarmuka | Literal Inggris `Desktop Foundation`, `Name`, `Greet`; hasil lewat `Text(verbatim:)` | Katalog bahasa sekarang (milik scope 010) | - | `architect (update)` spec `macos/0001` | berlaku |
 | 2026-11-15 | `macos/0001` · AC-6 | Lint jembatan dan nama | `unsafe_code = "forbid"`, `missing_docs = "warn"`; nama `DesktopMac`, `DesktopMacModules`, `Interop`, `Presentation`, `DesktopMacosFFI` | Tanpa lint sampai scope 002; nama produk (milik scope 011) | - | `architect (update)` spec `macos/0001` | berlaku |
+| 2026-11-15 | `macos/0002` · AC-1, AC-2, AC-7 | Bentuk bukti scope 001 di Mac | Merujuk `verify.md` spec `_root/0001` dan `macos/0001` yang sudah ada | Menjalankan ulang semua perintah dan mencatat di berkas bukti sendiri | - | `architect (update)` spec `macos/0002` | berlaku |
+| 2026-11-15 | `macos/0002` · AC-4 | Siapa yang memperbarui tabel "Yang sudah ada" untuk lokasi macOS | Satu langkah build di spec `macos/0002` | Pembaruan spec `_root/0001` tanpa langkah build | - | `architect (update)` spec `macos/0002`; AC-4 dan langkah 1 hilang | berlaku |
+| 2026-11-15 | `macos/0003` · AC-6 | Bentuk bukti scope 003 di Mac | Merujuk, tanpa langkah build; V-3, V-4, V-5, V-8, V-9 hanya terbukti di Core | Menambah uji Swift untuk lima vektor itu (butuh pembaruan spec `macos/0001`) | - | `architect (update)` spec `macos/0003` dan `macos/0001` | berlaku |
 
 ## Blocker terbuka
 
