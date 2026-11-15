@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 22:00`
+- **Diperbarui:** `2026-11-15 22:02`
 
 ## Sub sesi wave `2`
 
@@ -43,7 +43,7 @@
 | `dev-f001-m1` | tester | 002 Test it; Range `53d0653..00e898e` | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | paling banyak satu file baru `tooling/codegen/tests/architecture_rules.rs` | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | aktif |
 | `arc-f001-spec` | checker (verify) | 002 verify milestone 1 dan 2; laporan `done` PASS 24 dari 24 (`87e3a08`, HEAD `a078282`), merge lihat "Dicentang"; dijalankan di Opus, family sama dengan penulis kode | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | centang `verify.md` spec `_root/0007` bagian Milestone 1 dan 2 | `claude/arc-f001-spec-a1f824` | `opus-5-5 · high` | merged |
 | `arc-f012-spec` | architect | 012 spec `_root/0008`; "mulai" dikirim sesudah spec `_root/0007` di `main` | `012 - Build dan penerimaan per target.md` | `docs/specs/_root/0008-build-dan-penerimaan-per-target/` | `claude/arc-f012-spec-50349d` | `opus-5-5 · high` | aktif |
-| `arc-f011-spec` | architect | 011 spec macOS `macos/0007`; ringkasan diterima lead (`71aaa46`) apa adanya; laporan akhir ditunggu | `011 - Aset merek bersama.md` | `docs/specs/macos/0007-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `opus-5-5 · high` | aktif |
+| `arc-f011-spec` | architect | 011 spec macOS `macos/0007`; laporan `done` (`71aaa46`, HEAD `b4e5304`), merge `ae98dc0`; cross check subagent Sonnet | `011 - Aset merek bersama.md` | `docs/specs/macos/0007-aset-merek-bersama/` | `claude/arc-f011-spec-3fcf4a` | `opus-5-5 · high` | merged |
 | `arc-f002-spec` | architect | 002 spec macOS `macos/0008`; laporan `done` (`a1d0e5c`, penyelarasan `622f0d6`, HEAD `31c47ab`), merge `980b522`; cross check subagent Sonnet | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `docs/specs/macos/0008-aturan-pengembangan-dan-pemeriksaan-arsitektur/` | `claude/arc-f002-spec-d362fa` | `opus-5-5 · high` | merged |
 | `dev-f008-m1` | developer | 002 macOS Build it milestone 1 (langkah 1 spec `macos/0008`): gerbang `G-1` sampai `G-5` dibuktikan di `main`, tanpa kode | `002 - Aturan pengembangan dan pemeriksaan arsitektur.md` | `verify.md` dan baris `**Status**` spec `macos/0008` | `claude/dev-f008-m1-1a2956` | `opus-5-5 · medium` | aktif |
 
@@ -284,7 +284,9 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 008 · Milestone 3 (AC-12) ← host Windows dan host Linux; langkah manual `F008-1`, pemilik user.
 - Spec `macos/0001` Follow-up Scope 010 dan 011 ← `architect (update)`: keputusan 12 spec `_root/0004` memindahkan nama produk ke konfigurasi publik.
 - 011 · Milestone 3 (AC-10) ← ikon SVG nyata dari user; langkah manual `F011-1`.
-- 011 macOS · build ← spec macOS scope 011 (`macos/0007`) dan pembaruan gabungan spec `macos/0001`.
+- 011 macOS · Milestone 1 ← pembaruan gabungan spec `macos/0001`, dan urutan terhadap build spec `macos/0004` (`project.pbxproj`, `.gitattributes`).
+- 011 macOS · Milestone 2 (AC-11) ← sesi GUI di Mac; langkah manual `F011-2`, pemilik user.
+- 011 macOS · Milestone 3 (AC-12) ← `F011-1` (ikon nyata dari user); langkah manual `F011-3`.
 - 002 · Milestone 4 (AC-11) ← host Windows dan host Linux; langkah manual `F002-1`, pemilik user.
 - 002 macOS · Milestone 2 spec `macos/0008` ← persetujuan user untuk komentar macOS di Commands dan butir "Gerbang Mac" di `AGENTS.md`; teks persisnya ditunjukkan sesudah laporan akhir spec itu.
 - 008 macOS · Milestone 1 ← pembaruan gabungan spec `macos/0001` dan `macos/0004`, termasuk dua rujukan path uji lama di spec `macos/0005` (baris 32 dan 874).
@@ -294,6 +296,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Dicentang pada wave ini
 
+- 011 macOS · `/architect scope 011 aset merek untuk macOS` · laporan `done` `arc-f011-spec` · `claude/arc-f011-spec-3fcf4a` → `ae98dc0` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, `architecture check` di `main` sesudah merge kode 0 · commit `docs(scope): tick the 011 macOS spec` · manual `F011-2` (AC-11) dan `F011-3` (AC-12) tercatat; nilai dari user `N9`
 - 002 · `Milestone 3: Panduan dan dokumen mengikuti` dan `Verify it: /check verify scope 002 aturan pengembangan untuk _root` · laporan `done` `dev-f008-m1` dan verify PASS `arc-f001-spec` (milestone 1 dan 2: 24 dari 24; milestone 3: 13 dari 13 pada `00e898e`; lima dokumen sama byte demi byte dengan hasil menerapkan 16 blok Ganti spec pada versi sebelum langkah 5; sebelas probe `A-12` dan `A-13` di clone sekali pakai) · build `claude/dev-f008-m1-1a2956` → `2a56971` dan `00e898e`, centang verify `claude/arc-f001-spec-a1f824` → `6c6eccb` · `verify.md` 37 `[x]`, 0 terbuka · gerbang lead di `main` `00e898e`: fmt, clippy, 159 test, lima `check` · commit `docs(scope): tick 002 milestone 3 and verify` · `(manual NOT_RUN: F002-1, owner user)` untuk AC-11; milestone 4 dan `Build it` tetap terbuka
 - 002 macOS · `/architect scope 002 aturan pengembangan untuk macOS` · laporan `done` `arc-f002-spec` · `claude/arc-f002-spec-d362fa` → `980b522` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, `architecture check` di `main` sesudah merge kode 0 · commit `docs(scope): tick the 002 macOS spec` · tanpa langkah manual; milestone 2 menunggu persetujuan user atas teks `AGENTS.md`
 - 010 macOS · `/architect scope 010 contoh lokalisasi untuk macOS` · laporan `done` `arc-f010-spec` · `claude/arc-f010-spec-3201ce` → `edbc55c` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, `architecture check` di `main` sesudah merge kode 0 (`13 rules`, tautan Markdown sah) · commit `docs(scope): tick the 010 macOS spec` · manual `F010-1` (AC-11) tercatat untuk milestone 2

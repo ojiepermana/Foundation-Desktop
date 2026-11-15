@@ -15,7 +15,16 @@ Tentukan pemilik berkas merek dan cara menghasilkan varian yang diperlukan setia
   * [ ] Milestone 3: Berkas merek nyata dari user. Build plan langkah 4. AC-10. after milestone 1; needs ikon SVG dari user (`BLOCKED`, `owner: user`)
 * [x] Verify it: `/check verify scope 011 aset merek bersama` (AC-1 sampai AC-9; AC-10 menunggu langkah manual `F011-1`, ikon SVG nyata dari user)
 * [x] Test it: `/test scope 011 aset merek bersama`
-* [ ] `/architect scope 011 aset merek untuk macOS` (spec). after milestone 1 di atas; needs pembaruan AC-12 spec macos/0001
+
+**macOS** · spec [macos/0007](../specs/macos/0007-aset-merek-bersama/index.md)
+
+* [x] `/architect scope 011 aset merek untuk macOS` (spec)
+* [ ] Build it: `/develop scope 011 aset merek untuk macOS`
+  * [ ] Milestone 1: Ikon penanda dari sumber bersama sampai bundel Mac. Build plan langkah 1 dan 2. AC-1 sampai AC-10. needs pembaruan gabungan spec macos/0001; tidak bersamaan dengan build lain yang menyentuh `.gitattributes`, `tooling/codegen/src/assets/`, atau `project.pbxproj` (urut terhadap build spec macos/0004); brief butuh izin `.gitattributes` dan `apps/macos/DesktopMac.xcodeproj/project.pbxproj`
+  * [ ] Milestone 2: Ikon terlihat di sesi GUI. Build plan langkah 3. AC-11. after milestone 1; needs sesi GUI di Mac (`BLOCKED`, `owner: user`, langkah manual `F011-2`)
+  * [ ] Milestone 3: Ikon nyata dari user. Build plan langkah 4. AC-12. after milestone 1 dan langkah manual `F011-1` (`BLOCKED`, `owner: user`, langkah manual `F011-3`)
+* [ ] Verify it: `/check verify scope 011 aset merek untuk macOS`
+* [ ] Test it: `/test scope 011 aset merek untuk macOS`
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 
