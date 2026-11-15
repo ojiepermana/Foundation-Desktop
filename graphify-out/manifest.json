@@ -418,5 +418,17 @@
     "seen": 1794740289.077943,
     "ast_hash": "ee5ad4ce1ceb143b25f6b9f7b976240a",
     "semantic_hash": ""
+  },
+  "apps/macos/App/DesktopMacApp.swift": {
+    "mtime": 1794740587.843783,
+    "seen": 1794740590.030339,
+    "ast_hash": "d56b1e3c15c6554e10c91524bc08b77b",
+    "semantic_hash": ""
+  },
+  "apps/macos/Presentation/GreetingView.swift": {
+    "mtime": 1794740587.8674853,
+    "seen": 1794740590.0303419,
+    "ast_hash": "ab9c91a8434bec35a05e01145a6fba7d",
+    "semantic_hash": ""
   }
 }
