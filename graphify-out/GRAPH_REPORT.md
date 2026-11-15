@@ -1,12 +1,12 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 169 files · ~266,142 words
+- 173 files · ~267,460 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2190 nodes · 3609 edges · 132 communities (121 shown, 11 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 66 edges (avg confidence: 0.84)
+- 2208 nodes · 3644 edges · 132 communities (121 shown, 11 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 68 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -16,6 +16,7 @@
 - Findings
 - generate
 - localization/mod.rs
+- tokens/schema.rs
 - catalog.schema.json
 - config_macos_rules.rs
 - spacing.schema.json
@@ -25,10 +26,9 @@
 - brand.schema.json
 - typography.schema.json
 - public.schema.json
-- assets/mod.rs
-- tokens/schema.rs
 - config_rules.rs
 - localization_rules.rs
+- assets/mod.rs
 - text.primary
 - Langkah manual: `000 - Panduan scope`
 - Rancangan pemeriksaan
@@ -111,7 +111,6 @@
 - Peran: tester
 - Options considered
 - Konfigurasi publik
-- Rust Core (`desktop-core`)
 - typography.json
 - Arsitektur fondasi desktop
 - brand.json
@@ -140,10 +139,10 @@
 - desktop-codegen
 
 ## God Nodes (most connected - your core abstractions)
-1. `Problem` - 42 edges
+1. `Problem` - 43 edges
 2. `fixture()` - 34 edges
 3. `assert_rejected()` - 29 edges
-4. `generate()` - 27 edges
+4. `generate()` - 28 edges
 5. `edit()` - 25 edges
 6. `Findings` - 24 edges
 7. `Fondasi Linux` - 19 edges
@@ -173,7 +172,7 @@
 
 ### Community 0 - "quality/README.md"
 Cohesion: 0.06
-Nodes (37): Aturan commit dan integrasi, Eksekusi dan uji, Kepemilikan dan kompatibilitas, Kontrak Rust bersama, Sistem desain bersama, Yang sudah ada, C01 · Cargo Workspace berhasil dibangun, C02 · Rust Core dapat dibangun dan diuji secara mandiri dari framework UI native (+29 more)
+Nodes (44): Aturan commit dan integrasi, Commands, Conventions, Gotchas, Key files, Overview, Related specs, Rust Core (`desktop-core`) (+36 more)
 
 ### Community 1 - "desktop_macos_ffi.swift"
 Cohesion: 0.05
@@ -188,64 +187,64 @@ Cohesion: 0.06
 Nodes (63): File, check(), check_bridge(), check_config(), check_core(), check_greeting(), check_imports(), check_lints() (+55 more)
 
 ### Community 4 - "generate"
-Cohesion: 0.09
-Nodes (50): ExitCode, Into, check(), generate(), generate_command(), Output, Plan, repo_root() (+42 more)
+Cohesion: 0.07
+Nodes (54): ExitCode, Into, check(), generate(), generate_command(), Output, Plan, repo_root() (+46 more)
 
 ### Community 5 - "localization/mod.rs"
 Cohesion: 0.10
 Nodes (44): escaped(), file(), outputs(), String, Vec, Catalog, CatalogFile, check_entry() (+36 more)
 
-### Community 6 - "catalog.schema.json"
+### Community 6 - "tokens/schema.rs"
+Cohesion: 0.07
+Nodes (39): A, D, Deserialize, Error, PhantomData, contents(), String, Value (+31 more)
+
+### Community 7 - "catalog.schema.json"
 Cohesion: 0.05
 Nodes (45): entries, locales, sourceLocale, text, additionalProperties, additionalProperties, minLength, properties (+37 more)
 
-### Community 7 - "config_macos_rules.rs"
+### Community 8 - "config_macos_rules.rs"
 Cohesion: 0.08
 Nodes (42): is_plain_version(), product_name_problem(), Option, Result, Vec, shared_xcconfig(), accepted(), rejected() (+34 more)
 
-### Community 8 - "spacing.schema.json"
+### Community 9 - "spacing.schema.json"
 Cohesion: 0.05
 Nodes (42): additionalProperties, additionalProperties, properties, required, type, additionalProperties, propertyNames, type (+34 more)
 
-### Community 9 - "architecture_rules.rs"
+### Community 10 - "architecture_rules.rs"
 Cohesion: 0.13
 Nodes (31): Drop, agents_references(), architecture_command_exit_codes(), Copy, copy_tree(), core_boundary_edges(), core_re_export_must_be_plain(), every_violating_line_gives_its_own_problem() (+23 more)
 
-### Community 10 - "assets_rules.rs"
+### Community 11 - "assets_rules.rs"
 Cohesion: 0.13
 Nodes (39): AsRef, asset_id_edges(), assets_command_exit_codes(), broken_source_writes_nothing(), clean(), committed_plan(), early_s_rule_failures_skip_the_later_rules(), edit() (+31 more)
 
-### Community 11 - "config_contract.rs"
+### Community 12 - "config_contract.rs"
 Cohesion: 0.17
 Nodes (39): assert_accepted(), assert_rejected(), edit(), fixture(), Path, PathBuf, t01_rejects_an_extra_local_json(), t02_rejects_an_extra_env_file() (+31 more)
 
-### Community 12 - "brand.schema.json"
+### Community 13 - "brand.schema.json"
 Cohesion: 0.05
 Nodes (39): any, app-icon, assets, light-dark, variants, additionalProperties, description, properties (+31 more)
 
-### Community 13 - "typography.schema.json"
+### Community 14 - "typography.schema.json"
 Cohesion: 0.06
 Nodes (34): additionalProperties, additionalProperties, properties, required, type, $comment, pattern, type (+26 more)
 
-### Community 14 - "public.schema.json"
+### Community 15 - "public.schema.json"
 Cohesion: 0.06
 Nodes (34): app_identifier, build, product_name, additionalProperties, description, maxLength, pattern, type (+26 more)
 
-### Community 15 - "assets/mod.rs"
-Cohesion: 0.13
-Nodes (28): A, D, Deserialize, Error, Asset, AssetFile, Brand, check_folder() (+20 more)
-
-### Community 16 - "tokens/schema.rs"
-Cohesion: 0.11
-Nodes (29): PhantomData, contents(), String, Value, schema(), newline(), BTreeMap, String (+21 more)
-
-### Community 17 - "config_rules.rs"
+### Community 16 - "config_rules.rs"
 Cohesion: 0.15
 Nodes (30): app_identifier_shape_edges_are_rejected(), app_identifier_short_shapes_are_accepted(), broken_source_writes_nothing(), committed_plan(), config_command_exit_codes(), content_rules_are_skipped_when_public_json_is_unreadable(), edit(), every_output_follows_the_output_rules() (+22 more)
 
-### Community 18 - "localization_rules.rs"
+### Community 17 - "localization_rules.rs"
 Cohesion: 0.14
 Nodes (29): at(), broken_or_unreadable_catalog_writes_nothing(), catalog(), committed_plan(), edited(), entry(), entry_problems_follow_the_check_order(), every_output_follows_the_output_rules() (+21 more)
+
+### Community 18 - "assets/mod.rs"
+Cohesion: 0.19
+Nodes (25): icon_json(), outputs(), String, Vec, svg_copy(), svg_marker(), Asset, AssetFile (+17 more)
 
 ### Community 19 - "text.primary"
 Cohesion: 0.07
@@ -575,67 +574,63 @@ Nodes (8): 0002. Kontrak sapaan bersama: catatan keputusan, Context, Keputusan y
 Cohesion: 0.25
 Nodes (7): Batas pengaturan khusus OS, Cara aplikasi memakai nilai, Cara mengubah, Konfigurasi publik, Riwayat skema, Skema versi 1, Yang tidak boleh ada di folder ini
 
-### Community 101 - "Rust Core (`desktop-core`)"
-Cohesion: 0.29
-Nodes (7): Commands, Conventions, Gotchas, Key files, Overview, Related specs, Rust Core (`desktop-core`)
-
-### Community 102 - "typography.json"
+### Community 101 - "typography.json"
 Cohesion: 0.29
 Nodes (6): description, weight, roles, body, $schema, schemaVersion
 
-### Community 103 - "Arsitektur fondasi desktop"
+### Community 102 - "Arsitektur fondasi desktop"
 Cohesion: 0.29
 Nodes (7): Arsitektur fondasi desktop, Aturan arah dependensi, Aturan pengembangan yang akan dicatat, Batas fase fondasi, Pemilik dan arah dependensi, Tata letak yang dituju, Yang sudah ada
 
-### Community 104 - "brand.json"
+### Community 103 - "brand.json"
 Cohesion: 0.29
 Nodes (6): placeholder, variants, assets, app-icon, $schema, schemaVersion
 
-### Community 105 - "DesktopMacApp"
+### Community 104 - "DesktopMacApp"
 Cohesion: 0.33
 Nodes (5): App, DesktopMacApp, .body, Presentation, Scene
 
-### Community 106 - "TextRole"
+### Community 105 - "TextRole"
 Cohesion: 0.40
 Nodes (4): TextRole, .font, Equatable, Font
 
-### Community 107 - "Langkah manual: `<nama-SCOPE>`"
+### Community 106 - "Langkah manual: `<nama-SCOPE>`"
 Cohesion: 0.33
 Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`), Langkah manual: `<nama-SCOPE>`, Nilai dari user, Ringkasan
 
-### Community 108 - "Milestone 1: Setelan Xcode dari sumber bersama"
+### Community 107 - "Milestone 1: Setelan Xcode dari sumber bersama"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Setelan Xcode dari sumber bersama, UI / manual, Verify: Konfigurasi publik di macOS · spec macos/0004 · updated 2026-11-15
 
-### Community 109 - "Milestone 2: Jendela sapaan memakai token"
+### Community 108 - "Milestone 2: Jendela sapaan memakai token"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 2: Jendela sapaan memakai token, UI / manual, Verify: Tema bersama dan kontrol native di macOS · spec macos/0005 · updated 2026-11-15
 
-### Community 110 - "Milestone 1: Resource dari katalog sampai tombol"
+### Community 109 - "Milestone 1: Resource dari katalog sampai tombol"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Resource dari katalog sampai tombol, UI / manual, Verify: Satu contoh lokalisasi di macOS · spec macos/0006 · updated 2026-11-15
 
-### Community 111 - "Milestone 1: Gerbang Mac terbukti"
+### Community 110 - "Milestone 1: Gerbang Mac terbukti"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Gerbang Mac terbukti, UI / manual, Verify: Aturan pengembangan dan pemeriksaan arsitektur macOS · spec macos/0008 · updated 2026-11-15
 
-### Community 112 - "Milestone 1: Gerbang bersama"
+### Community 111 - "Milestone 1: Gerbang bersama"
 Cohesion: 0.33
 Nodes (5): Acceptance-criteria coverage, Commands, Milestone 1: Gerbang bersama, UI / manual, Verify: Build dan penerimaan per target · spec _root/0008 · updated 2026-11-15
 
-### Community 114 - "public.json"
+### Community 113 - "public.json"
 Cohesion: 0.33
 Nodes (5): build, app_identifier, product_name, $schema, schemaVersion
 
-### Community 116 - "008 - Tema bersama dan kontrol native"
+### Community 115 - "008 - Tema bersama dan kontrol native"
 Cohesion: 0.50
 Nodes (4): C15 · Token desain memiliki satu sumber acuan, C16 · Ketiga aplikasi memakai token hasil generasi atau pemetaan yang dapat diulang, C17 · Antarmuka memperlihatkan tampilan terang dan gelap, 008 - Tema bersama dan kontrol native
 
-### Community 118 - "dark"
+### Community 117 - "dark"
 Cohesion: 0.67
 Nodes (3): pattern, type, dark
 
-### Community 119 - "light"
+### Community 118 - "light"
 Cohesion: 0.67
 Nodes (3): pattern, type, light
 
@@ -648,17 +643,17 @@ Nodes (3): pattern, type, light
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Problem` connect `Problem` to `Findings`, `generate`, `localization/mod.rs`, `config/mod.rs`, `config_macos_rules.rs`, `architecture_rules.rs`, `assets_rules.rs`, `svg.rs`, `assets/mod.rs`, `assets_contract.rs`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+  _High betweenness centrality (0.038) - this node is a cross-community bridge._
 - **Why does `generate()` connect `generate` to `Problem`, `config_macos_rules.rs`, `architecture_rules.rs`, `assets_rules.rs`, `config_rules.rs`, `localization_rules.rs`, `tokens_contract.rs`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Why does `0007. Aturan pengembangan dan pemeriksaan arsitektur` connect `Rancangan pemeriksaan` to `quality/README.md`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Are the 18 inferred relationships involving `generate()` (e.g. with `main()` and `plan_does_not_depend_on_the_root_and_generate_writes_nothing()`) actually correct?**
-  _`generate()` has 18 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 19 inferred relationships involving `generate()` (e.g. with `main()` and `plan_does_not_depend_on_the_root_and_generate_writes_nothing()`) actually correct?**
+  _`generate()` has 19 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
   _811 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `quality/README.md` be split into smaller, more focused modules?**
-  _Cohesion score 0.06360100663463739 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05643564356435644 - nodes in this community are weakly interconnected._
 - **Should `desktop_macos_ffi.swift` be split into smaller, more focused modules?**
   _Cohesion score 0.051770451770451774 - nodes in this community are weakly interconnected._
 Pembaruan hook menggunakan indeks struktural lokal. Hash semantik kosong menandai dokumen yang menunggu ekstraksi semantik.

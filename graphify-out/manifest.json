@@ -738,9 +738,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/assets/mod.rs": {
-    "mtime": 1794753084.1268554,
-    "seen": 1794753088.8941,
-    "ast_hash": "d4fd7bdde0790e6c93024d37114aa187",
+    "mtime": 1794759703.133327,
+    "seen": 1794759705.559443,
+    "ast_hash": "c1513121a6262336645a39c33e29d8a4",
     "semantic_hash": ""
   },
   "shared/assets/brand.schema.json": {
@@ -852,9 +852,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0007-aset-merek-bersama/index.md": {
-    "mtime": 1794756266.8913293,
-    "seen": 1794756268.473284,
-    "ast_hash": "b843f1279ce8e700ef4d7b6a4a6f3809",
+    "mtime": 1794759703.1284833,
+    "seen": 1794759705.559437,
+    "ast_hash": "5385cbad07c40dcc178dc741db7174bc",
     "semantic_hash": ""
   },
   "docs/specs/macos/0007-aset-merek-bersama/rationale.md": {
@@ -1011,6 +1011,30 @@
     "mtime": 1794759301.6432042,
     "seen": 1794759308.0947552,
     "ast_hash": "f41fac9832b6566d352134b657592030",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/tests/assets_macos_contract.rs": {
+    "mtime": 1794759703.1364017,
+    "seen": 1794759705.5594409,
+    "ast_hash": "69612ed39496b7e80db9068c73894a83",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/assets/macos.rs": {
+    "mtime": 1794759703.133149,
+    "seen": 1794759705.559444,
+    "ast_hash": "d3dbb50af1ff24801233e304dbc266f0",
+    "semantic_hash": ""
+  },
+  "apps/macos/Resources/AppIcon.icon/Assets/app-icon.svg": {
+    "mtime": 1794759703.108211,
+    "seen": 1794759705.559446,
+    "ast_hash": "d40a96907a5d0b0f6b9bb300acc63d14",
+    "semantic_hash": ""
+  },
+  "apps/macos/Resources/AppIcon.icon/icon.json": {
+    "mtime": 1794759703.1083598,
+    "seen": 1794759705.559447,
+    "ast_hash": "1b9a207dad01b1c746b00f1546d1c030",
     "semantic_hash": ""
   }
 }
