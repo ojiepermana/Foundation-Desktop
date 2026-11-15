@@ -1,21 +1,21 @@
 {
   "README.md": {
-    "mtime": 1794733300.246755,
-    "seen": 1794733430.9440682,
-    "ast_hash": "0dbc2953ce9bd3587106f37a4b06494c",
-    "semantic_hash": "0dbc2953ce9bd3587106f37a4b06494c"
+    "mtime": 1794754196.568173,
+    "seen": 1794754198.107577,
+    "ast_hash": "f835abe422bb6a9b6c62ef700a853a3a",
+    "semantic_hash": ""
   },
   "docs/architecture/README.md": {
-    "mtime": 1794753083.5080426,
-    "seen": 1794753088.8941,
-    "ast_hash": "8a7edd64410e3221d4c6c52599cb5852",
+    "mtime": 1794754196.5739803,
+    "seen": 1794754198.10758,
+    "ast_hash": "a93d1e996463885c1edaa655bcbd4900",
     "semantic_hash": ""
   },
   "docs/contracts/README.md": {
-    "mtime": 1794730406.3463833,
-    "seen": 1794731111.199765,
-    "ast_hash": "3b115bb9483c28080c096b595f16a1c9",
-    "semantic_hash": "3b115bb9483c28080c096b595f16a1c9"
+    "mtime": 1794754196.574206,
+    "seen": 1794754198.1075819,
+    "ast_hash": "d0697ee58c07997c7a230bcffc8ee0e0",
+    "semantic_hash": ""
   },
   "docs/design-system/README.md": {
     "mtime": 1794745176.3345726,
@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1794742646.1288874,
-    "seen": 1794742647.247597,
-    "ast_hash": "13a851a717ac1bcd1faf1319da0b38dd",
+    "mtime": 1794754196.5676742,
+    "seen": 1794754198.107578,
+    "ast_hash": "757041d4eeb6af0648fd6c2b9c10f6ed",
     "semantic_hash": ""
   },
   ".githooks/post-commit": {
@@ -444,9 +444,9 @@
     "semantic_hash": ""
   },
   "crates/core/AGENTS.md": {
-    "mtime": 1794742646.1321232,
-    "seen": 1794742647.2475939,
-    "ast_hash": "c8ec2e4a46ff2ff7c71f1d70487e1b06",
+    "mtime": 1794754196.5714254,
+    "seen": 1794754198.1075761,
+    "ast_hash": "359a158389c976a93da708802f54ecf4",
     "semantic_hash": ""
   },
   "docs/specs/_root/0004-konfigurasi-publik/index.md": {
@@ -792,15 +792,15 @@
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/code.rs": {
-    "mtime": 1794753874.015836,
-    "seen": 1794753875.936503,
-    "ast_hash": "2d6434d4bc3a237e745ce4941c9d908a",
+    "mtime": 1794754196.5855489,
+    "seen": 1794754198.107573,
+    "ast_hash": "31d568462c52ffbe9d0b13a147cc66f9",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
-    "mtime": 1794753874.01651,
-    "seen": 1794753875.936505,
-    "ast_hash": "6738a91631fc4e6ebdc3e99b0b62c9d2",
+    "mtime": 1794754196.5860558,
+    "seen": 1794754198.107581,
+    "ast_hash": "dac0be29af580737b42610ef5be41003",
     "semantic_hash": ""
   },
   "tooling/codegen/tests/workspace_layout.rs": {
@@ -810,15 +810,21 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794753874.0275404,
-    "seen": 1794753875.936513,
-    "ast_hash": "cb88f1695dd7db5a01f0e8a0d643c002",
+    "mtime": 1794754196.5880842,
+    "seen": 1794754198.107579,
+    "ast_hash": "eff930bca8b72432049fa7041a86c173",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/deps.rs": {
     "mtime": 1794753874.016205,
     "seen": 1794753875.936515,
     "ast_hash": "ff95171762f6972a35464fcc3d530cb7",
+    "semantic_hash": ""
+  },
+  "tooling/codegen/src/architecture/docs.rs": {
+    "mtime": 1794754196.5858116,
+    "seen": 1794754198.107583,
+    "ast_hash": "13d3d68f79cc73dca014c6d6bee4bfad",
     "semantic_hash": ""
   }
 }

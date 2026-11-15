@@ -46,14 +46,16 @@ const CORE_LIB: &str = "crates/core/src/lib.rs";
 const BINDING_DIR: &str = "bindings/swift/Sources/DesktopMacosFFI";
 
 /// One file of the repo: its path from the root and its text, if UTF-8.
-struct File {
-    path: String,
-    text: Option<String>,
+pub(super) struct File {
+    /// Path from the repo root, with `/` as the separator.
+    pub(super) path: String,
+    /// The text of the file, or `None` when it is not UTF-8.
+    pub(super) text: Option<String>,
 }
 
 impl File {
     /// The file name, the last path segment.
-    fn name(&self) -> &str {
+    pub(super) fn name(&self) -> &str {
         self.path.rsplit('/').next().unwrap_or_default()
     }
 
@@ -88,7 +90,7 @@ impl File {
 
 /// Every file under `root`, sorted by path in byte order, skipping the
 /// [`SKIPPED`] folders, `.git` files, and symlinks.
-fn walk(root: &Path) -> Vec<File> {
+pub(super) fn walk(root: &Path) -> Vec<File> {
     let mut paths = Vec::new();
     let mut pending = vec![String::new()];
     while let Some(folder) = pending.pop() {
@@ -125,15 +127,14 @@ fn walk(root: &Path) -> Vec<File> {
 }
 
 /// Runs `A-5` to `A-11`.
-pub(super) fn check(root: &Path, findings: &mut Findings) {
-    let files = walk(root);
-    check_lints(root, &files, findings);
-    check_core(&files, findings);
-    check_config(&files, findings);
-    check_greeting(&files, findings);
-    check_bridge(&files, findings);
-    check_imports(&files, findings);
-    check_remote_packages(&files, findings);
+pub(super) fn check(root: &Path, files: &[File], findings: &mut Findings) {
+    check_lints(root, files, findings);
+    check_core(files, findings);
+    check_config(files, findings);
+    check_greeting(files, findings);
+    check_bridge(files, findings);
+    check_imports(files, findings);
+    check_remote_packages(files, findings);
 }
 
 /// `A-5`: every member manifest sets the lint lines, and no formatter or

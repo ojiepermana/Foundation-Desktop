@@ -13,6 +13,7 @@ use crate::{Plan, Problem, Source};
 
 mod code;
 mod deps;
+mod docs;
 mod manifest;
 
 /// The `architecture` source, run as
@@ -24,7 +25,7 @@ pub const SOURCE: Source = Source {
 
 /// The IDs of the rules this source checks, in order.
 pub const RULES: &[&str] = &[
-    "A-1", "A-2", "A-3", "A-4", "A-5", "A-6", "A-7", "A-8", "A-9", "A-10", "A-11",
+    "A-1", "A-2", "A-3", "A-4", "A-5", "A-6", "A-7", "A-8", "A-9", "A-10", "A-11", "A-12", "A-13",
 ];
 
 /// A class of packages a workspace member may be forbidden to reach.
@@ -166,7 +167,9 @@ impl Findings {
 fn plan(root: &Path) -> Result<Plan, Vec<Problem>> {
     let mut findings = Findings::default();
     deps::check(root, &mut findings);
-    code::check(root, &mut findings);
+    let files = code::walk(root);
+    code::check(root, &files, &mut findings);
+    docs::check(root, &files, &mut findings);
     if !findings.0.is_empty() {
         return Err(findings.into_problems());
     }
