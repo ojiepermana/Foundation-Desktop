@@ -11213,7 +11213,7 @@
       "file_type": "code",
       "norm_label": "accepts_allowed_shapes()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L502"
+      "source_location": "L504"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_apply",
@@ -11312,7 +11312,7 @@
       "file_type": "code",
       "norm_label": "rejects_broken_repos()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L436"
+      "source_location": "L438"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_rs_path",
@@ -25120,7 +25120,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L503",
+      "source_location": "L505",
       "weight": 1.0
     },
     {
@@ -25132,7 +25132,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L506",
+      "source_location": "L508",
       "weight": 1.0
     },
     {
@@ -25180,7 +25180,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L437",
+      "source_location": "L439",
       "weight": 1.0
     },
     {
@@ -25192,7 +25192,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L440",
+      "source_location": "L442",
       "weight": 1.0
     },
     {
@@ -50925,7 +50925,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L436",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -50936,7 +50936,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L502",
+      "source_location": "L504",
       "weight": 1.0
     },
     {

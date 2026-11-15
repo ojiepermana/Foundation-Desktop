@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "tooling/codegen/tests/architecture_contract.rs": {
-    "mtime": 1794754520.095619,
-    "seen": 1794754521.745867,
-    "ast_hash": "c8e409df2327a6b7f38fe8b2eda57cd3",
+    "mtime": 1794755187.0732985,
+    "seen": 1794755188.775179,
+    "ast_hash": "5c91b4ed05c9b22318a232f3b6616129",
     "semantic_hash": ""
   },
   "tooling/codegen/src/architecture/mod.rs": {
