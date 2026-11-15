@@ -4,7 +4,7 @@ Catatan keputusan untuk [index.md](index.md). `/develop` tidak perlu membaca fil
 
 ## Context
 
-Pada 2026-11-15 repo sudah punya Cargo Workspace dengan tiga anggota (`desktop-core`, `desktop-macos-ffi`, `desktop-codegen`), binding Swift yang dilacak git, aplikasi macOS, dan dua sumber bersama yang diperiksa alat (`tokens`, lalu `config` yang sedang dibangun). Aturan pengembangan sudah ada, tetapi tersebar: tabel arah dependensi di spec `_root/0001`, R-1 sampai R-9 di spec `_root/0002`, aturan keluaran generator di spec `_root/0003`, `K-4` di spec `_root/0004`, dan AC-6 sampai AC-8 di spec `macos/0001`. `/audit` merangkum semuanya sebagai penunjuk di `AGENTS.md` dan `crates/core/AGENTS.md`.
+Pada 2026-11-15 repo sudah punya Cargo Workspace dengan tiga anggota (`desktop-core`, `desktop-macos-ffi`, `desktop-codegen`), binding Swift yang dilacak git, aplikasi macOS, dan sumber bersama yang diperiksa alat: `tokens`, `config`, dan `localization` sudah ada, dan `assets` sedang dibangun. Aturan pengembangan sudah ada, tetapi tersebar: tabel arah dependensi di spec `_root/0001`, R-1 sampai R-9 di spec `_root/0002`, aturan keluaran generator di spec `_root/0003`, `K-4` di spec `_root/0004`, dan AC-6 sampai AC-8 di spec `macos/0001`. `/audit` merangkum semuanya sebagai penunjuk di `AGENTS.md` dan `crates/core/AGENTS.md`.
 
 Sebagian aturan sudah dikunci uji di `crates/core/tests/`, sebagian lagi hanya berupa perintah `cargo tree` dan `git grep` di spec yang dijalankan orang sekali saat verifikasi. Ada tiga celah nyata:
 
@@ -178,6 +178,7 @@ Dijalankan pada 2026-11-15 di Mac koordinasi, pada `main` `abd3a43` (dan diulang
 | Paket Swift jarak jauh | Tidak ada. `apps/macos/Package.swift` hanya memakai `.package(path: "../../bindings/swift")`. |
 | Tautan Markdown (tanpa `.claude/`, `graphify-out/`, `docs/scope/coordination/`) | 44 file, 197 tautan, 0 rusak. Dengan folder itu ikut, 3 rusak: dua contoh `NNNN-slug` di skill koordinasi dan satu tautan di file aturan umum koordinasi. Karena itu kedua folder dikecualikan. |
 | Calon path di `AGENTS.md` | 6 di akar dan 9 di `crates/core/`, semuanya ada. Rujukan spec dan nama paket sesudah `-p` semuanya ada. |
+| Ulangan pada `main` `01a93ce` (sesudah sumber `config` dan `localization`, `shared/config/`, `shared/localization/`, dan spec `_root/0005` masuk) | Tautan: 54 file, 247 tautan, 0 rusak. Calon path `AGENTS.md`: 0 hilang. Teks sapaan di bagian bukan uji: hanya `crates/core/src/greeting.rs`, juga di modul `config` dan `localization`. Tidak ada `shared/config` atau `public.json` di Core, jembatan, atau binding. Anggota tetap tiga, dependensi langsung `desktop-codegen` tetap `serde` dan `serde_json`, dan manifest alat tetap memuat kedua baris lint. Setiap kalimat lama di bagian **Perubahan dokumen** masih ada persis satu kali. |
 
 ## Cross check
 

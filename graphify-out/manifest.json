@@ -696,15 +696,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md": {
-    "mtime": 1794752655.8815808,
-    "seen": 1794752661.021513,
-    "ast_hash": "0ccba06f92ced876753904ac2e990183",
+    "mtime": 1794752753.4324594,
+    "seen": 1794752761.764278,
+    "ast_hash": "a213dfbe8c7770e61eadb1d4841b2f7d",
     "semantic_hash": ""
   },
   "docs/specs/_root/0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/rationale.md": {
-    "mtime": 1794752655.8820868,
-    "seen": 1794752661.0215192,
-    "ast_hash": "3b451a86d161eec4c1205dcec5715fe0",
+    "mtime": 1794752753.432668,
+    "seen": 1794752761.764265,
+    "ast_hash": "243295688f54049e8cc9a992e81a37f3",
     "semantic_hash": ""
   }
 }

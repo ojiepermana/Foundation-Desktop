@@ -1,19 +1,19 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 118 files · ~167,811 words
+- 118 files · ~167,983 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1468 nodes · 2337 edges · 90 communities (82 shown, 8 thin omitted)
+- 1468 nodes · 2338 edges · 91 communities (83 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 50 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
 - desktop_macos_ffi.swift
 - tokens_rules.rs
-- quality/README.md
 - localization/mod.rs
+- quality/README.md
 - tokens/mod.rs
 - GreetingViewModel
 - catalog.schema.json
@@ -82,6 +82,7 @@
 - Peran: tester
 - Options considered
 - Konfigurasi publik
+- Rust Core (`desktop-core`)
 - typography.json
 - Arsitektur fondasi desktop
 - Langkah manual: `<nama-SCOPE>`
@@ -128,7 +129,7 @@
 ## Hyperedges (group relationships)
 - **Pemeriksaan runtime pada tiga host** — docs_quality_readme_bukti_runtime_per_host, docs_platforms_macos_readme_uji_jendela_di_mac, docs_platforms_windows_readme_uji_jendela_windows, docs_platforms_linux_readme_uji_sesi_grafis_linux [EXTRACTED 1.00]
 
-## Communities (90 total, 8 thin omitted)
+## Communities (91 total, 8 thin omitted)
 
 ### Community 0 - "desktop_macos_ffi.swift"
 Cohesion: 0.05
@@ -138,13 +139,13 @@ Nodes (66): Array, createReader(), createWriter(), Data, FfiConverter, FfiConver
 Cohesion: 0.07
 Nodes (62): ExitCode, Into, check(), generate(), generate_command(), Output, Plan, repo_root() (+54 more)
 
-### Community 2 - "quality/README.md"
-Cohesion: 0.10
-Nodes (15): Commands, Conventions, Gotchas, Key files, Overview, Related specs, Rust Core (`desktop-core`), C18 · Aturan konfigurasi bersama terdokumentasi (+7 more)
-
-### Community 3 - "localization/mod.rs"
+### Community 2 - "localization/mod.rs"
 Cohesion: 0.08
 Nodes (52): A, D, Deserialize, Error, PhantomData, newline(), BTreeMap, Formatter (+44 more)
+
+### Community 3 - "quality/README.md"
+Cohesion: 0.12
+Nodes (8): C18 · Aturan konfigurasi bersama terdokumentasi, C19 · Tersedia aturan lokalisasi bersama, C20 · Ada contoh minimal penggunaan lokalisasi, C21 · Kepemilikan aset bersama terdokumentasi, 009 - Konfigurasi publik, 010 - Satu contoh lokalisasi, 011 - Aset merek bersama, Katalog bahasa bersama
 
 ### Community 4 - "tokens/mod.rs"
 Cohesion: 0.11
@@ -418,31 +419,35 @@ Nodes (8): 0002. Kontrak sapaan bersama: catatan keputusan, Context, Keputusan y
 Cohesion: 0.25
 Nodes (7): Batas pengaturan khusus OS, Cara aplikasi memakai nilai, Cara mengubah, Konfigurasi publik, Riwayat skema, Skema versi 1, Yang tidak boleh ada di folder ini
 
-### Community 72 - "typography.json"
+### Community 72 - "Rust Core (`desktop-core`)"
+Cohesion: 0.29
+Nodes (7): Commands, Conventions, Gotchas, Key files, Overview, Related specs, Rust Core (`desktop-core`)
+
+### Community 73 - "typography.json"
 Cohesion: 0.29
 Nodes (6): description, weight, roles, body, $schema, schemaVersion
 
-### Community 73 - "Arsitektur fondasi desktop"
+### Community 74 - "Arsitektur fondasi desktop"
 Cohesion: 0.29
 Nodes (7): Arsitektur fondasi desktop, Aturan arah dependensi, Aturan pengembangan yang akan dicatat, Batas fase fondasi, Pemilik dan arah dependensi, Tata letak yang dituju, Yang sudah ada
 
-### Community 74 - "Langkah manual: `<nama-SCOPE>`"
+### Community 75 - "Langkah manual: `<nama-SCOPE>`"
 Cohesion: 0.33
 Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`), Langkah manual: `<nama-SCOPE>`, Nilai dari user, Ringkasan
 
-### Community 75 - "public.json"
+### Community 76 - "public.json"
 Cohesion: 0.33
 Nodes (5): build, app_identifier, product_name, $schema, schemaVersion
 
-### Community 77 - "Resource bersama"
+### Community 78 - "Resource bersama"
 Cohesion: 0.50
 Nodes (4): Aset merek, Konfigurasi, Lokalisasi, Resource bersama
 
-### Community 79 - "dark"
+### Community 80 - "dark"
 Cohesion: 0.67
 Nodes (3): pattern, type, dark
 
-### Community 80 - "light"
+### Community 81 - "light"
 Cohesion: 0.67
 Nodes (3): pattern, type, light
 
@@ -457,7 +462,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `Problem` connect `tokens/mod.rs` to `config/mod.rs`, `localization/mod.rs`, `tokens_rules.rs`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `quality/README.md`, `Fondasi desktop native`, `Fondasi Windows`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
 - **Why does `check()` connect `tokens_rules.rs` to `localization_contract.rs`, `config_rules.rs`, `tokens/mod.rs`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
@@ -466,6 +471,6 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.050883898709985664 - nodes in this community are weakly interconnected._
 - **Should `tokens_rules.rs` be split into smaller, more focused modules?**
   _Cohesion score 0.0670807453416149 - nodes in this community are weakly interconnected._
-- **Should `quality/README.md` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+- **Should `localization/mod.rs` be split into smaller, more focused modules?**
+  _Cohesion score 0.07539450613676213 - nodes in this community are weakly interconnected._
 Pembaruan hook menggunakan indeks struktural lokal. Hash semantik kosong menandai dokumen yang menunggu ekstraksi semantik.
