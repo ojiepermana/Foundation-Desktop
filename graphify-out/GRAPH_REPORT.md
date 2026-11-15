@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 109 files · ~149,589 words
+- 109 files · ~149,724 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -415,7 +415,7 @@ Nodes (3): pattern, type, light
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `quality/README.md`, `007 - Sapaan di jendela Linux`, `Fondasi desktop native`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `0004. Konfigurasi publik` connect `Rancangan konfigurasi` to `quality/README.md`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `0005. Aset merek bersama` connect `Rancangan aset merek` to `quality/README.md`?**
