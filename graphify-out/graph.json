@@ -20796,7 +20796,7 @@
       "node_kind": "heading",
       "norm_label": "blocker terbuka",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L320"
+      "source_location": "L321"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_dicentang_pada_wave_ini",
@@ -20808,7 +20808,7 @@
       "node_kind": "heading",
       "norm_label": "dicentang pada wave ini",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L344"
+      "source_location": "L345"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan",
@@ -20832,7 +20832,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan delegasi",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L209"
+      "source_location": "L210"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_log_koordinasi_000_panduan_scope",
@@ -20856,7 +20856,7 @@
       "node_kind": "heading",
       "norm_label": "penutupan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L397"
+      "source_location": "L399"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_riwayat_wave",
@@ -20868,7 +20868,7 @@
       "node_kind": "heading",
       "norm_label": "riwayat wave",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L393"
+      "source_location": "L395"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_1",
@@ -47696,7 +47696,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L209",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -47707,7 +47707,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L320",
+      "source_location": "L321",
       "weight": 1.0
     },
     {
@@ -47718,7 +47718,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L344",
+      "source_location": "L345",
       "weight": 1.0
     },
     {
@@ -47729,7 +47729,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L393",
+      "source_location": "L395",
       "weight": 1.0
     },
     {
@@ -47740,7 +47740,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L397",
+      "source_location": "L399",
       "weight": 1.0
     },
     {
