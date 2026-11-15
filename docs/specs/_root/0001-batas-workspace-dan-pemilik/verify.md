@@ -44,14 +44,14 @@ Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah
 
 ### Commands
 
-- [ ] `grep -c 'desktop-core\|desktop-macos-ffi\|desktop-windows\|desktop-linux' docs/architecture/README.md` → angka 4 atau lebih (developer melihat `8`) → AC-8
-- [ ] `grep -c '1\.99\.1' docs/architecture/README.md` → angka 1 atau lebih (developer melihat `1`) → AC-8
-- [ ] `grep -c '^### Yang sudah ada$' docs/architecture/README.md` → `1`; `grep -c '^### Aturan arah dependensi$' docs/architecture/README.md` → `1` → AC-8
-- [ ] `diff <(awk '/^## Aturan arah dependensi$/{f=1;next} /^\*\*Aturan netral host/{f=0} f && /^\|/' docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md) <(awk '/^### Aturan arah dependensi$/{f=1;next} /^## /{f=0} f && /^\|/' docs/architecture/README.md)` → tidak mencetak apa pun, kode 0; perintah `awk` kedua sendiri mencetak 7 baris (header, pemisah, lima aturan) → AC-8
-- [ ] `grep -o '(\.\./specs/_root/0001-batas-workspace-dan-pemilik/index\.md)' docs/architecture/README.md` → satu baris; `test -f docs/architecture/../specs/_root/0001-batas-workspace-dan-pemilik/index.md` → kode 0 → AC-8
-- [ ] `grep -c 'Pada tahap scope, folder implementasi masih berupa rencana\.' docs/architecture/README.md` → `0` → AC-8
-- [ ] `grep -c 'Root workspace nantinya memuat manifest Cargo, lockfile dan konfigurasi toolchain\.' docs/architecture/README.md` → `0` → AC-8
-- [ ] Bandingkan isi `docs/architecture/README.md` dengan bagian "Perubahan dokumen arsitektur" spec ini: dua kalimat pengganti dan dua subbagian baru (sebelum heading "Aturan pengembangan yang akan dicatat") sama teksnya, dan `git diff <commit sebelum langkah 3> -- docs/architecture/README.md` tidak mengubah baris lain, termasuk tabel "Pemilik dan arah dependensi" → AC-8
+- [x] `grep -c 'desktop-core\|desktop-macos-ffi\|desktop-windows\|desktop-linux' docs/architecture/README.md` → angka 4 atau lebih (developer melihat `8`) → AC-8
+- [x] `grep -c '1\.99\.1' docs/architecture/README.md` → angka 1 atau lebih (developer melihat `1`) → AC-8
+- [x] `grep -c '^### Yang sudah ada$' docs/architecture/README.md` → `1`; `grep -c '^### Aturan arah dependensi$' docs/architecture/README.md` → `1` → AC-8
+- [x] `diff <(awk '/^## Aturan arah dependensi$/{f=1;next} /^\*\*Aturan netral host/{f=0} f && /^\|/' docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md) <(awk '/^### Aturan arah dependensi$/{f=1;next} /^## /{f=0} f && /^\|/' docs/architecture/README.md)` → tidak mencetak apa pun, kode 0; perintah `awk` kedua sendiri mencetak 7 baris (header, pemisah, lima aturan) → AC-8
+- [x] `grep -o '(\.\./specs/_root/0001-batas-workspace-dan-pemilik/index\.md)' docs/architecture/README.md` → satu baris; `test -f docs/architecture/../specs/_root/0001-batas-workspace-dan-pemilik/index.md` → kode 0 → AC-8
+- [x] `grep -c 'Pada tahap scope, folder implementasi masih berupa rencana\.' docs/architecture/README.md` → `0` → AC-8
+- [x] `grep -c 'Root workspace nantinya memuat manifest Cargo, lockfile dan konfigurasi toolchain\.' docs/architecture/README.md` → `0` → AC-8
+- [x] Bandingkan isi `docs/architecture/README.md` dengan bagian "Perubahan dokumen arsitektur" spec ini: dua kalimat pengganti dan dua subbagian baru (sebelum heading "Aturan pengembangan yang akan dicatat") sama teksnya, dan `git diff <commit sebelum langkah 3> -- docs/architecture/README.md` tidak mengubah baris lain, termasuk tabel "Pemilik dan arah dependensi" → AC-8
 
 ### Acceptance-criteria coverage
 
