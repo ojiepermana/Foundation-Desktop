@@ -26,4 +26,4 @@ Bagian tetap dari setiap brief sub sesi koordinasi scope ini. Brief yang dikirim
   - **Tier:** Beta. Kotak penutup tiap fitur: `Verify it` (`/check verify`) lalu `Test it` (`/test`). Tidak ada `Review it` dan `Document it`.
   - **Format scope repo ini:** satu file per fitur di `docs/scope/`, kotak memakai `* [ ]`, indeks di `docs/scope/scope.md` (bukan `index.md`). Blok scope usulan architect mengikuti gaya itu: `* [ ] Build it: /develop <fitur>` dengan 2 sampai 5 milestone bersarang, lalu `* [ ] Verify it` dan `* [ ] Test it`.
   - **Batas fase fondasi:** `docs/architecture/README.md` bagian "Batas fase fondasi" mengikat semua spec; kriteria 32 melarang layanan untuk fitur mendatang.
-  - **File bersama satu pemilik per wave:** root `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.github/workflows/`, `scripts/` (selain `update_graphify.py` yang dilarang).
+  - **File bersama satu pemilik per wave:** root `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.gitattributes`, `.graphifyignore`, `tooling/codegen/src/lib.rs`, `.github/workflows/`, `scripts/` (selain `update_graphify.py` yang dilarang).

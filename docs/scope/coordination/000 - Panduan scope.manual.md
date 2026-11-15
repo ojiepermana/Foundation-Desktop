@@ -24,6 +24,7 @@ Nilai yang hanya kamu tahu. AC di kolom ketiga `BLOCKED` sampai nilainya ada.
 | `N4` | Pengenal bundel akhir aplikasi macOS. Spec memakai nilai sementara `com.example.desktop-foundation.macos`, cukup untuk build lokal, wajib diganti sebelum penandatanganan atau distribusi. | tidak ada; Follow-up spec `macos/0001` | `apps/macos/DesktopMac.xcodeproj/project.pbxproj`, lewat pembaruan spec `macos/0001` |
 | `N5` | `NAMA_PRODUK`: nama produk yang tampil di ketiga OS. Nilai sementara `Desktop Foundation`. | spec `_root/0004` AC-2 (lulus dengan nilai sementara) | `shared/config/public.json` (`build.product_name`) |
 | `N6` | `DASAR_PENGENAL`: dasar pengenal reverse DNS dari domain milik pemilik produk. Nilai sementara `com.example.desktop-foundation`. `N4` (pengenal bundel macOS) diturunkan darinya dengan aturan spec macOS. | spec `_root/0004` AC-2 (lulus dengan nilai sementara) | `shared/config/public.json` (`build.app_identifier`) |
+| `N7` | Warna merek: warna utama, latar terang dan gelap, teks terang dan gelap, dan apakah tampilan gelap memakai rona merek yang berbeda. Tiga warna dasar sekarang (`brand.primary`, `neutral.50`, `neutral.950`) adalah contoh bertanda `placeholder`. | spec `_root/0003` AC-8 (lulus dengan nilai sementara; alat melaporkan `3 placeholder values`) | `design-system/tokens/colors.json` |
 
 ## Fitur `001`: `Batas workspace dan pemilik` (spec `_root/0001`)
 

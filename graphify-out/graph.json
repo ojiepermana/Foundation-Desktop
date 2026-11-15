@@ -3282,7 +3282,7 @@
       "node_kind": "heading",
       "norm_label": "blocker terbuka",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L162"
+      "source_location": "L170"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_dicentang_pada_wave_ini",
@@ -3294,7 +3294,7 @@
       "node_kind": "heading",
       "norm_label": "dicentang pada wave ini",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L178"
+      "source_location": "L186"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan",
@@ -3318,7 +3318,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan delegasi",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L103"
+      "source_location": "L104"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_log_koordinasi_000_panduan_scope",
@@ -3342,7 +3342,7 @@
       "node_kind": "heading",
       "norm_label": "penutupan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L202"
+      "source_location": "L210"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_riwayat_wave",
@@ -3354,7 +3354,7 @@
       "node_kind": "heading",
       "norm_label": "riwayat wave",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L198"
+      "source_location": "L206"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_1",
@@ -3858,7 +3858,7 @@
       "node_kind": "heading",
       "norm_label": "`f001-1` \u00b7 bangun dan uji core di host windows dan host linux",
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_manual_f004_1_alur_sapaan_di_jendela",
@@ -3870,7 +3870,7 @@
       "node_kind": "heading",
       "norm_label": "`f004-1` \u00b7 alur sapaan di jendela",
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_manual_f004_2_penggunaan_nyata",
@@ -3882,7 +3882,7 @@
       "node_kind": "heading",
       "norm_label": "`f004-2` \u00b7 penggunaan nyata",
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L60"
+      "source_location": "L61"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_manual_fitur_001_batas_workspace_dan_pemilik_spec_root_0001",
@@ -3894,7 +3894,7 @@
       "node_kind": "heading",
       "norm_label": "fitur `001`: `batas workspace dan pemilik` (spec `_root/0001`)",
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_manual_fitur_004_sapaan_di_jendela_macos_spec_macos_0001",
@@ -3906,7 +3906,7 @@
       "node_kind": "heading",
       "norm_label": "fitur `004`: `sapaan di jendela macos` (spec `macos/0001`)",
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_manual_langkah_manual_000_panduan_scope",
@@ -14106,7 +14106,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L103",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
@@ -14117,7 +14117,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L162",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -14128,7 +14128,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L178",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
@@ -14139,7 +14139,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L198",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -14150,7 +14150,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L202",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -14194,7 +14194,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -14205,7 +14205,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -14216,7 +14216,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -14238,7 +14238,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -14249,7 +14249,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.manual.md",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
