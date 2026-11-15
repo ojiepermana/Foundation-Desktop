@@ -1,7 +1,7 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 119 files · ~168,190 words
+- 119 files · ~168,674 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -453,8 +453,8 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `Problem` connect `Problem` to `tokens/mod.rs`, `localization/mod.rs`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **Why does `0004. Konfigurasi publik` connect `Rancangan konfigurasi` to `quality/README.md`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `Penerimaan dan bukti fondasi` connect `Penerimaan dan bukti fondasi` to `pre-commit script`, `quality/README.md`, `Fondasi desktop native`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Are the 16 inferred relationships involving `check()` (e.g. with `main()` and `committed_outputs_match_the_source()`) actually correct?**
   _`check()` has 16 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**

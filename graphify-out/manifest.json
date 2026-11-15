@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794752874.4936593,
-    "seen": 1794752878.1490738,
-    "ast_hash": "db45b3c587748ce6d13370532047a026",
+    "mtime": 1794753008.7571752,
+    "seen": 1794753010.890392,
+    "ast_hash": "3eff906dc708e0e432537114816aba70",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
@@ -702,14 +702,14 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/rationale.md": {
-    "mtime": 1794752932.2813125,
-    "seen": 1794752934.077419,
+    "mtime": 1794753021.379406,
+    "seen": 1794753022.896564,
     "ast_hash": "11452544872e000e16e87c072f506cb0",
     "semantic_hash": ""
   },
   "docs/specs/macos/0005-tema-bersama-dan-kontrol-native/index.md": {
-    "mtime": 1794752932.2810023,
-    "seen": 1794752934.0774221,
+    "mtime": 1794753021.379208,
+    "seen": 1794753022.896567,
     "ast_hash": "6e9358812a55a4c0cdaa769ff0693c18",
     "semantic_hash": ""
   }
