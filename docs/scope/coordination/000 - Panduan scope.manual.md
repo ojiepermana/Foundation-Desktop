@@ -16,4 +16,4 @@ Nilai yang hanya kamu tahu. AC di kolom ketiga `BLOCKED` sampai nilainya ada.
 
 | ID | Nilai yang dibutuhkan | AC yang menunggu | File yang menunggu |
 | --- | --- | --- | --- |
-| belum ada | | | |
+| `N1` | Lisensi paket Rust (field `license` di `[workspace.package]`). Sampai ada, `publish = false` menjaga paket tetap privat. | tidak ada; Follow-up spec `_root/0001` | `Cargo.toml` root, lewat pembaruan spec `_root/0001` |
