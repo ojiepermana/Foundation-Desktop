@@ -19,6 +19,7 @@ Nilai yang hanya kamu tahu. AC di kolom ketiga `BLOCKED` sampai nilainya ada.
 | `N1` | Lisensi paket Rust (field `license` di `[workspace.package]`). Sampai ada, `publish = false` menjaga paket tetap privat. | tidak ada; Follow-up spec `_root/0001` | `Cargo.toml` root, lewat pembaruan spec `_root/0001` |
 | `N2` | Bahasa komentar kode dan rustdoc (sekarang Inggris di Core, dokumen repo Indonesia). Architect scope 002 akan mengambil rekomendasinya bila kamu tidak menyebut pilihan. | tidak ada; Follow-up spec `_root/0001` dan `_root/0002` | spec scope 002 |
 | `N3` | Gaya pesan commit, awalan branch, dan preferensi gaya di luar bawaan `rustfmt` dan `clippy`. Audit tidak menebaknya dan tidak menuliskannya di `AGENTS.md`. | tidak ada | `AGENTS.md`, bila kamu ingin aturannya tertulis |
+| `N4` | Pengenal bundel akhir aplikasi macOS. Spec memakai nilai sementara `com.example.desktop-foundation.macos`, cukup untuk build lokal, wajib diganti sebelum penandatanganan atau distribusi. | tidak ada; Follow-up spec `macos/0001` | `apps/macos/DesktopMac.xcodeproj/project.pbxproj`, lewat pembaruan spec `macos/0001` |
 
 ## Fitur `001`: `Batas workspace dan pemilik` (spec `_root/0001`)
 
