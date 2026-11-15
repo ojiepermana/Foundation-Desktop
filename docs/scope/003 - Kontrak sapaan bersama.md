@@ -18,7 +18,7 @@ Tetapkan satu fungsi publik dengan masukan nama dan hasil sapaan. Bagian spec ti
 **macOS** · spec [macos/0003](../specs/macos/0003-kontrak-sapaan-bersama.md)
 
 * [x] `/architect scope 003 kontrak sapaan untuk macOS` (spec)
-* [ ] Verify it: `/check verify scope 003 kontrak sapaan untuk macOS`. needs Verify it scope 004; bagian jendela AC-4 menunggu `F004-1` dan `F004-2`
+* [x] Verify it: `/check verify scope 003 kontrak sapaan untuk macOS` (bagian tanpa jendela, catatan di [docs/reviews](../reviews/2026-11-15-verify-macos-0002-0003.md); bagian jendela AC-4 menunggu langkah manual `F004-1` dan `F004-2`)
 
 **Tujuan spec** `docs/specs/_root/` untuk keputusan bersama. Penerapan per OS ada di `docs/specs/macos/`, `docs/specs/windows/`, dan `docs/specs/linux/`.
 

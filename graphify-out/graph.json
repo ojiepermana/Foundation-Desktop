@@ -141,6 +141,19 @@
       "source_location": "L38"
     },
     {
+      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult",
+      "label": "InitializationResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "desktop_macos_ffi.swift",
+      "file_type": "code",
+      "norm_label": "initializationresult",
+      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
+      "source_location": "L522"
+    },
+    {
       "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_nslock",
       "label": "NSLock",
       "_callable": true,
@@ -308,19 +321,6 @@
       "norm_label": "uniffiinternalerror",
       "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
       "source_location": "L263"
-    },
-    {
-      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult",
-      "label": "InitializationResult",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "InitializationResult",
-      "file_type": "code",
-      "norm_label": "initializationresult",
-      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
-      "source_location": "L522"
     },
     {
       "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_createreader",
@@ -1099,6 +1099,39 @@
       "norm_label": "desktop_macos_ffi.swift",
       "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
       "source_location": "L1"
+    },
+    {
+      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult_apichecksummismatch",
+      "label": "apiChecksumMismatch",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "desktop_macos_ffi.swift",
+      "file_type": "code",
+      "norm_label": "apichecksummismatch",
+      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
+      "source_location": "L525"
+    },
+    {
+      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult_contractversionmismatch",
+      "label": "contractVersionMismatch",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "desktop_macos_ffi.swift",
+      "file_type": "code",
+      "norm_label": "contractversionmismatch",
+      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
+      "source_location": "L524"
+    },
+    {
+      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult_ok",
+      "label": "ok",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "desktop_macos_ffi.swift",
+      "file_type": "code",
+      "norm_label": "ok",
+      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
+      "source_location": "L523"
     },
     {
       "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_swift_string",
@@ -3510,7 +3543,7 @@
       "node_kind": "heading",
       "norm_label": "blocker terbuka",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L132"
+      "source_location": "L133"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_dicentang_pada_wave_ini",
@@ -3534,7 +3567,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L36"
+      "source_location": "L37"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan_delegasi",
@@ -3546,7 +3579,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan delegasi",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L81"
+      "source_location": "L82"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_log_koordinasi_000_panduan_scope",
@@ -3570,7 +3603,7 @@
       "node_kind": "heading",
       "norm_label": "penutupan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L169"
+      "source_location": "L170"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_riwayat_wave",
@@ -3582,7 +3615,7 @@
       "node_kind": "heading",
       "norm_label": "riwayat wave",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L165"
+      "source_location": "L166"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_1",
@@ -4749,37 +4782,48 @@
       "source_location": "L9"
     },
     {
-      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult_apichecksummismatch",
-      "label": "apiChecksumMismatch",
+      "id": "crates_macos_ffi_src_lib",
+      "label": "macos-ffi/src/lib.rs",
       "_origin": "ast",
       "community": 39,
-      "community_name": "InitializationResult",
+      "community_name": "macos-ffi/src/lib.rs",
       "file_type": "code",
-      "norm_label": "apichecksummismatch",
-      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
-      "source_location": "L525"
+      "norm_label": "macos-ffi/src/lib.rs",
+      "source_file": "crates/macos-ffi/src/lib.rs",
+      "source_location": "L1"
     },
     {
-      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult_contractversionmismatch",
-      "label": "contractVersionMismatch",
+      "id": "crates_macos_ffi_src_lib_forwards_to_core",
+      "label": "forwards_to_core()",
       "_origin": "ast",
       "community": 39,
-      "community_name": "InitializationResult",
+      "community_name": "macos-ffi/src/lib.rs",
       "file_type": "code",
-      "norm_label": "contractversionmismatch",
-      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
-      "source_location": "L524"
+      "norm_label": "forwards_to_core()",
+      "source_file": "crates/macos-ffi/src/lib.rs",
+      "source_location": "L27"
     },
     {
-      "id": "bindings_swift_sources_desktopmacosffi_desktop_macos_ffi_initializationresult_ok",
-      "label": "ok",
+      "id": "crates_macos_ffi_src_lib_hello",
+      "label": "hello()",
       "_origin": "ast",
       "community": 39,
-      "community_name": "InitializationResult",
+      "community_name": "macos-ffi/src/lib.rs",
       "file_type": "code",
-      "norm_label": "ok",
-      "source_file": "bindings/swift/Sources/DesktopMacosFFI/desktop_macos_ffi.swift",
-      "source_location": "L523"
+      "norm_label": "hello()",
+      "source_file": "crates/macos-ffi/src/lib.rs",
+      "source_location": "L18"
+    },
+    {
+      "id": "crates_macos_ffi_src_lib_rs_string",
+      "label": "String",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "macos-ffi/src/lib.rs",
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "",
+      "source_location": ""
     },
     {
       "id": "docs_architecture_readme",
@@ -5166,54 +5210,10 @@
       "source_location": "L1"
     },
     {
-      "id": "crates_macos_ffi_src_lib",
-      "label": "macos-ffi/src/lib.rs",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "macos-ffi/src/lib.rs",
-      "file_type": "code",
-      "norm_label": "macos-ffi/src/lib.rs",
-      "source_file": "crates/macos-ffi/src/lib.rs",
-      "source_location": "L1"
-    },
-    {
-      "id": "crates_macos_ffi_src_lib_forwards_to_core",
-      "label": "forwards_to_core()",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "macos-ffi/src/lib.rs",
-      "file_type": "code",
-      "norm_label": "forwards_to_core()",
-      "source_file": "crates/macos-ffi/src/lib.rs",
-      "source_location": "L27"
-    },
-    {
-      "id": "crates_macos_ffi_src_lib_hello",
-      "label": "hello()",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "macos-ffi/src/lib.rs",
-      "file_type": "code",
-      "norm_label": "hello()",
-      "source_file": "crates/macos-ffi/src/lib.rs",
-      "source_location": "L18"
-    },
-    {
-      "id": "crates_macos_ffi_src_lib_rs_string",
-      "label": "String",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "macos-ffi/src/lib.rs",
-      "file_type": "code",
-      "norm_label": "string",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "apps_macos_package",
       "label": "macos/Package.swift",
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "community_name": "PackageDescription",
       "file_type": "code",
       "norm_label": "macos/package.swift",
@@ -5224,7 +5224,7 @@
       "id": "bindings_swift_package",
       "label": "swift/Package.swift",
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "community_name": "PackageDescription",
       "file_type": "code",
       "norm_label": "swift/package.swift",
@@ -5235,7 +5235,7 @@
       "id": "packagedescription",
       "label": "PackageDescription",
       "_origin": "ast",
-      "community": 41,
+      "community": 40,
       "community_name": "PackageDescription",
       "file_type": "code",
       "norm_label": "packagedescription",
@@ -5247,7 +5247,7 @@
       "id": "claude_skills_coordinate_templates_brief",
       "label": "brief.md",
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "community_name": "brief.md",
       "file_type": "document",
       "node_kind": "page",
@@ -5259,7 +5259,7 @@
       "id": "claude_skills_coordinate_templates_brief_brief_sub_sesi",
       "label": "Brief sub sesi",
       "_origin": "ast",
-      "community": 42,
+      "community": 41,
       "community_name": "brief.md",
       "file_type": "document",
       "node_kind": "heading",
@@ -5271,7 +5271,7 @@
       "id": "claude_skills_coordinate_templates_brief_umum",
       "label": "brief-umum.md",
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "community_name": "brief-umum.md",
       "file_type": "document",
       "node_kind": "page",
@@ -5283,7 +5283,7 @@
       "id": "claude_skills_coordinate_templates_brief_umum_aturan_umum_brief_nama_scope",
       "label": "Aturan umum brief: `<nama-SCOPE>`",
       "_origin": "ast",
-      "community": 43,
+      "community": 42,
       "community_name": "brief-umum.md",
       "file_type": "document",
       "node_kind": "heading",
@@ -5295,7 +5295,7 @@
       "id": "claude_skills_coordinate_templates_report",
       "label": "report.md",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "community_name": "report.md",
       "file_type": "document",
       "node_kind": "page",
@@ -5307,7 +5307,7 @@
       "id": "claude_skills_coordinate_templates_report_laporan_sub_sesi",
       "label": "Laporan sub sesi",
       "_origin": "ast",
-      "community": 44,
+      "community": 43,
       "community_name": "report.md",
       "file_type": "document",
       "node_kind": "heading",
@@ -5319,7 +5319,7 @@
       "id": "crates_macos_ffi_src_bin_uniffi_bindgen_swift",
       "label": "uniffi-bindgen-swift.rs",
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "community_name": "uniffi-bindgen-swift.rs",
       "file_type": "code",
       "norm_label": "uniffi-bindgen-swift.rs",
@@ -5330,7 +5330,7 @@
       "id": "crates_macos_ffi_src_bin_uniffi_bindgen_swift_main",
       "label": "main()",
       "_origin": "ast",
-      "community": 45,
+      "community": 44,
       "community_name": "uniffi-bindgen-swift.rs",
       "file_type": "code",
       "norm_label": "main()",
@@ -5341,7 +5341,7 @@
       "id": "docs_scope_coordination_000_panduan_scope_brief_umum",
       "label": "000 - Panduan scope.brief-umum.md",
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "community_name": "000 - Panduan scope.brief-umum.md",
       "file_type": "document",
       "node_kind": "page",
@@ -5353,7 +5353,7 @@
       "id": "docs_scope_coordination_000_panduan_scope_brief_umum_aturan_umum_brief_000_panduan_scope",
       "label": "Aturan umum brief: `000 - Panduan scope`",
       "_origin": "ast",
-      "community": 46,
+      "community": 45,
       "community_name": "000 - Panduan scope.brief-umum.md",
       "file_type": "document",
       "node_kind": "heading",
@@ -5365,7 +5365,7 @@
       "id": "pkg_desktop_core",
       "label": "desktop-core",
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "community_name": "desktop-core",
       "ecosystem": "cargo",
       "file_type": "code",
@@ -5378,7 +5378,7 @@
       "id": "pkg_desktop_macos_ffi",
       "label": "desktop-macos-ffi",
       "_origin": "ast",
-      "community": 47,
+      "community": 46,
       "community_name": "desktop-core",
       "ecosystem": "cargo",
       "file_type": "code",
@@ -5391,7 +5391,7 @@
       "id": "bindings_swift_sources_desktop_macos_ffiffi_desktop_macos_ffiffi",
       "label": "desktop_macos_ffiFFI.h",
       "_origin": "ast",
-      "community": 48,
+      "community": 47,
       "community_name": "desktop_macos_ffiFFI.h",
       "file_type": "code",
       "norm_label": "desktop_macos_ffiffi.h",
@@ -5402,7 +5402,7 @@
       "id": "crates_core_src_lib",
       "label": "core/src/lib.rs",
       "_origin": "ast",
-      "community": 49,
+      "community": 48,
       "community_name": "lib.rs",
       "file_type": "code",
       "norm_label": "core/src/lib.rs",
@@ -13439,7 +13439,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -13461,7 +13461,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L165",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -13472,7 +13472,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L169",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -13483,7 +13483,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -13494,7 +13494,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -16084,6 +16084,17 @@
     },
     {
       "source": "docs_scope_001_batas_workspace_dan_pemilik",
+      "target": "docs_reviews_2026_11_15_verify_macos_0002_0003",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/scope/001 - Batas workspace dan pemilik.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_scope_001_batas_workspace_dan_pemilik",
       "target": "docs_scope_scope",
       "relation": "references",
       "_origin": "ast",
@@ -16135,6 +16146,17 @@
       "confidence_score": 1.0,
       "source_file": "docs/scope/003 - Kontrak sapaan bersama.md",
       "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_scope_003_kontrak_sapaan_bersama",
+      "target": "docs_reviews_2026_11_15_verify_macos_0002_0003",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/scope/003 - Kontrak sapaan bersama.md",
+      "source_location": "L21",
       "weight": 1.0
     },
     {

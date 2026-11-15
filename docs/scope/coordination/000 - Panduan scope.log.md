@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 18:21`
+- **Diperbarui:** `2026-11-15 18:26`
 
 ## Sub sesi wave `1`
 
@@ -20,6 +20,7 @@
 | `arc-f001-spec` | checker (verify) | 004 verify milestone 1; laporan `done` PASS 19 dari 19 (`32484e2`, HEAD `a7d4615`), merge `9ee21a6` | `004 - Sapaan di jendela macOS.md` | centang `verify.md` spec `macos/0001` bagian Milestone 1 | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | checker (verify) | 004 verify milestone 2 dan 3 (21 dari 21) dan AC-4 spec `macos/0002`; laporan `done` PASS (`4224a2a`, HEAD `b207ba7`), merge `29c7194` | `004 - Sapaan di jendela macOS.md`, `001 - Batas workspace dan pemilik.md` | centang `verify.md` spec `macos/0001` bagian Milestone 2 dan 3 | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `arc-f001-spec` | architect (update) | spec `_root/0001` AC-4: hitungan paket `Cargo.lock` berlaku pada akhir milestone 1; laporan `done` (`26d9ef7`, HEAD `e1a16ce`), merge `d370d32` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
+| `arc-f001-spec` | checker (verify) | `Verify it` spec `macos/0002` (PASS, AC-1 sampai AC-7) dan `macos/0003` (PASS bagian tanpa jendela; AC-4 jendela `NOT_RUN`); laporan `done` (`a621f58`), merge `bd7b064` | `001 - Batas workspace dan pemilik.md`, `003 - Kontrak sapaan bersama.md` | `docs/reviews/2026-11-15-verify-macos-0002-0003.md` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | merged |
 | `dev-f001-m1` | tester | 004 Test it; laporan `done` (`c2c6f2b`), merge `ed9aca6`: empat test AC-6 di `crates/core/tests/macos_bridge_ownership.rs`, catatan `swift test` di `test-preferences.json` | `004 - Sapaan di jendela macOS.md` | `crates/core/tests/macos_bridge_ownership.rs`, `test-preferences.json` (`notes`) | `claude/dev-f001-m1-c305cb` | `opus-5-5 · high` | merged |
 | `arc-f004-spec` | architect (update) | spec `_root/0001` AC-8 dibatasi "pada akhir milestone 2"; spec `macos/0002` menambah penggantian baris `crates/core/`; satu baris Follow-up spec `macos/0001` ditandai terjawab; laporan `done` (`800dba9`, HEAD `36b7a0b`), merge `59f3d2c` | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md`, `rationale.md`, `docs/specs/macos/0002-batas-workspace-dan-pemilik.md`, satu baris Follow-up spec `macos/0001` | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | merged |
 | `dev-f003-m1` | developer | 001 macOS Build it milestone 1; Langkah Build plan selesai 1 (`4d0fd10`); Pointer code in `docs/architecture/README.md`; laporan `done`, merge `ac2dbf3` | `001 - Batas workspace dan pemilik.md` | `docs/architecture/README.md`, baris `**Status**` spec `macos/0002` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | merged |
@@ -140,13 +141,13 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 002 · `/architect scope 002 aturan pengembangan untuk _root` ← hasil `/audit` (sedang berjalan); belum ada kotaknya di file fitur, lead menambahkannya sesudah `/audit` dicentang.
 - 001 · Milestone 3 (AC-9) dan `Build it` ← host Windows dan host Linux; langkah manual `F001-1`, pemilik user.
 - Nilai `N1` (lisensi paket) ← user; tidak menahan AC mana pun.
-- 001 macOS dan 003 macOS · `Verify it` ← sedang dikerjakan checker `arc-f001-spec`.
 - 004 · Milestone 4 dan `Build it` ← langkah manual `F004-1` dan `F004-2`.
 - `README.md` masih menyebut semua fitur `planned`; diperbarui lewat `/sync` akhir wave.
 - 008 sampai 012 · `/architect scope … untuk _root` ← alur 004 terbukti di Mac (urutan Panduan).
 
 ## Dicentang pada wave ini
 
+- 001 macOS · `Verify it: /check verify scope 001 batas workspace dan pemilik untuk macOS` dan 003 macOS · `Verify it: /check verify scope 003 kontrak sapaan untuk macOS` · laporan `done` `arc-f001-spec`: spec `macos/0002` PASS (AC-1 sampai AC-7), spec `macos/0003` PASS untuk bagian tanpa jendela; rujukan `[x]` diperiksa di tiga `verify.md` (23, 21, 40 kotak) dan perintah dijalankan ulang pada `726e99e` · `claude/arc-f001-spec-a1f824` → `bd7b064` · catatan `docs/reviews/2026-11-15-verify-macos-0002-0003.md` · commit `docs(scope): tick the macOS verify boxes for 001 and 003` · `(manual NOT_RUN: F004-1, F004-2, owner user)` untuk AC-4 bagian jendela spec `macos/0003`
 - 004 · `Milestone 2`, `Milestone 3`, dan `Verify it: /check verify scope 004 sapaan di jendela macOS` · laporan `done` `dev-f003-m1` dan verify PASS `arc-f001-spec` (milestone 1: 19 dari 19 pada `d7feee4`; milestone 2 dan 3: 21 dari 21 pada `7286ffb`, satu jalan dari tree bersih; 14 file sama byte demi byte dengan spec) · `claude/dev-f003-m1-f164e9` → `c969a82`, centang verify → `29c7194` · `verify.md` 40 `[x]`, 0 terbuka · fmt, clippy, test workspace, `swift test`, `xcodebuild` Debug dan Release di `main` · commit `docs(scope): tick 004 milestones 2 and 3 and verify` · `(manual NOT_RUN: F004-1, F004-2, owner user)` untuk AC-5 dan AC-13
 - 001 macOS · `Milestone 1: Peta arsitektur mencatat lokasi macOS` dan `Build it` bagian macOS · laporan `done` `dev-f003-m1` dan pemeriksaan AC-4 spec `macos/0002` oleh `arc-f001-spec` (lima baris tabel, empat `grep -c`, tiga penggantian sama dengan spec, `workspace_layout` 10 test) · `claude/dev-f003-m1-f164e9` → `ac2dbf3` · commit yang sama · tanpa langkah manual
 - 004 · `Test it: /test scope 004 sapaan di jendela macOS` · laporan `done` tester `dev-f001-m1` (empat test baru untuk AC-6; empat mutasi di salinan scratchpad tertangkap; `swift test` 7 + 4 lulus) · `claude/dev-f001-m1-c305cb` → `ed9aca6` · di `main`: fmt, clippy, `cargo test --workspace --locked` tanpa gagal, 16 path di tiga folder macOS, grep AC-8 dua baris, kode produksi dan lockfile tidak berubah · commit `docs(scope): tick 004 test` · tanpa langkah manual baru
@@ -164,7 +165,7 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Riwayat wave
 
-- belum ada
+- Wave `1` (2026-11-15 sampai 2026-11-15, hash awal `9b67c13`): selesai: spec `_root/0001`, `_root/0002`, `macos/0001`, `macos/0002`, `macos/0003`; build, verify, dan test bagian Mac scope 001 (milestone 1 dan 2), scope 003 (semua kotak `_root`), scope 004 (milestone 1 sampai 3, verify tanpa jendela, test); bagian macOS scope 001 (build, verify) dan scope 003 (verify tanpa jendela). Terbuka: 001 milestone 3 dan `Build it` (`F001-1`, host Windows dan Linux); 004 milestone 4 dan `Build it` (`F004-1`, `F004-2`, sesi GUI); 002 `/audit` (branch `claude/arc-f003-spec-14125c` selesai, merge menunggu izin user). Blocker: 005, 006, 007 (host); 008 sampai 012 dan architect 002 butuh sesi baru pada giliran user. `/sync` akhir wave ditunda sampai keputusan user atas tambahan `AGENTS.md`, karena `/sync` juga menulis ke file itu. Kotak di scope lain yang terbuka oleh wave ini: 008 sampai 012 (alur 004 terbukti tanpa jendela di Mac).
 
 ## Penutupan
 

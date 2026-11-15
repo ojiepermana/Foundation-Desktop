@@ -54,9 +54,9 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794741703.6740248,
-    "seen": 1794741706.486382,
-    "ast_hash": "81cb47fdd68f974bd7fac7fd5e0d4187",
+    "mtime": 1794742005.129519,
+    "seen": 1794742010.011086,
+    "ast_hash": "7f3814b6064b79c45dfc315bf36f6826",
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
@@ -66,9 +66,9 @@
     "semantic_hash": "1ee11d35079c41c8e668deb9ea59b100"
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
-    "mtime": 1794740752.3002844,
-    "seen": 1794740754.358057,
-    "ast_hash": "691c74b2667b6592a65a0a335d5815f8",
+    "mtime": 1794742005.129829,
+    "seen": 1794742010.011084,
+    "ast_hash": "3a2a56ed8112c83477bc2a7c6f5c3e15",
     "semantic_hash": ""
   },
   "docs/scope/004 - Sapaan di jendela macOS.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794741703.6760576,
-    "seen": 1794741706.48639,
-    "ast_hash": "326ef3be156382023732baac5d44c0e5",
+    "mtime": 1794742005.131259,
+    "seen": 1794742010.01108,
+    "ast_hash": "26396448ca62aeb2acb60c943e5f99bd",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794741703.6762588,
-    "seen": 1794741706.486389,
-    "ast_hash": "da094e09fbc9fcdce2827003ce13e6e7",
+    "mtime": 1794742005.131476,
+    "seen": 1794742010.011088,
+    "ast_hash": "3375449d8d254864defa437d69381576",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {

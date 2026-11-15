@@ -1,11 +1,11 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 76 files · ~72,180 words
+- 76 files · ~72,459 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 661 nodes · 1058 edges · 50 communities (43 shown, 7 thin omitted)
+- 661 nodes · 1060 edges · 49 communities (42 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 33 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -48,7 +48,6 @@
 - Options considered
 - Arsitektur fondasi desktop
 - Langkah manual: `<nama-SCOPE>`
-- InitializationResult
 - macos-ffi/src/lib.rs
 - PackageDescription
 - brief.md
@@ -89,11 +88,11 @@
 - **Pemeriksaan runtime pada tiga host** — docs_quality_readme_bukti_runtime_per_host, docs_platforms_macos_readme_uji_jendela_di_mac, docs_platforms_windows_readme_uji_jendela_windows, docs_platforms_linux_readme_uji_sesi_grafis_linux [EXTRACTED 1.00]
 - **Pemetaan visual native bersama** — docs_design_system_readme_token_desain_bersama, docs_design_system_readme_tema_swiftui, docs_design_system_readme_fluent_design, docs_design_system_readme_css_gtk [EXTRACTED 1.00]
 
-## Communities (50 total, 7 thin omitted)
+## Communities (49 total, 7 thin omitted)
 
 ### Community 0 - "desktop_macos_ffi.swift"
-Cohesion: 0.07
-Nodes (50): Array, createReader(), createWriter(), Data, FfiConverter, FfiConverterByRefBytes, FfiConverterPrimitive, FfiConverterRustBuffer (+42 more)
+Cohesion: 0.06
+Nodes (54): Array, createReader(), createWriter(), Data, FfiConverter, FfiConverterByRefBytes, FfiConverterPrimitive, FfiConverterRustBuffer (+46 more)
 
 ### Community 1 - "GreetingViewModel"
 Cohesion: 0.07
@@ -243,10 +242,6 @@ Nodes (7): Arsitektur fondasi desktop, Aturan arah dependensi, Aturan pengembang
 Cohesion: 0.33
 Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`), Langkah manual: `<nama-SCOPE>`, Nilai dari user, Ringkasan
 
-### Community 39 - "InitializationResult"
-Cohesion: 0.50
-Nodes (4): InitializationResult, apiChecksumMismatch, contractVersionMismatch, ok
-
 ## Knowledge Gaps
 - **236 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+231 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -256,13 +251,13 @@ Nodes (4): InitializationResult, apiChecksumMismatch, contractVersionMismatch, o
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Fondasi desktop native` connect `Fondasi desktop native` to `pre-commit script`, `Fondasi Linux`, `scope.md`, `Arsitektur fondasi desktop`, `Fondasi Windows`, `Scope fondasi desktop native`, `Fondasi macOS`, `Sistem desain bersama`, `Penerimaan dan bukti fondasi`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
-  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+  _High betweenness centrality (0.063) - this node is a cross-community bridge._
 - **Why does `Aturan commit dan integrasi` connect `pre-commit script` to `Fondasi desktop native`?**
   _High betweenness centrality (0.053) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
   _236 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `desktop_macos_ffi.swift` be split into smaller, more focused modules?**
-  _Cohesion score 0.06842105263157895 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0629746835443038 - nodes in this community are weakly interconnected._
 - **Should `GreetingViewModel` be split into smaller, more focused modules?**
   _Cohesion score 0.07053140096618357 - nodes in this community are weakly interconnected._
 - **Should `pre-commit script` be split into smaller, more focused modules?**
