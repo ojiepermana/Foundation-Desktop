@@ -1,21 +1,21 @@
 # Log koordinasi: `000 - Panduan scope`
 
 - **Scope:** `docs/scope/000 - Panduan scope.md` (panduan tanpa kotak); kotak kerja ada di file fitur `docs/scope/001 …` sampai `012 …`, cakupan run ini jalur Mac
-- **Hash awal:** `0572298` · **Hash awal wave aktif:** `0572298`
+- **Hash awal:** `0572298` · **Hash awal wave aktif:** `9b67c13`
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 16:55`
+- **Diperbarui:** `2026-11-15 17:10`
 
 ## Sub sesi wave `1`
 
 | Nama | Peran | Item | Scope | Ownership | Branch | Model | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `arc-f1-spec` | architect | 001 spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | diisi sesudah mulai | `fable-5-2 · high` | aktif |
-| `arc-f3-spec` | architect | 003 spec `_root` 0002 | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | diisi sesudah mulai | `fable-5-2 · high` | aktif |
-| `arc-f4-spec` | architect | 004 spec macOS, plus penerapan macOS 001 dan 003; nomor ditetapkan saat "mulai" | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/` (folder per spec, ditetapkan saat "mulai") | diisi sesudah mulai | `fable-5-2 · high` | standby |
-| `dev-f1-m1` | developer | 001 Build it; milestone dari blok usulan spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | ditetapkan saat "mulai" dari Build plan | diisi sesudah mulai | `opus-5-5 · medium` | standby |
-| `dev-f3-m1` | developer | 003 Build it; milestone dari blok usulan spec `_root` 0002 | `003 - Kontrak sapaan bersama.md` | ditetapkan saat "mulai" dari Build plan | diisi sesudah mulai | `opus-5-5 · medium` | standby |
+| `arc-f001-spec` | architect | 001 spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
+| `arc-f003-spec` | architect | 003 spec `_root` 0002 | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | aktif |
+| `arc-f004-spec` | architect | 004 spec macOS, plus penerapan macOS 001 dan 003; nomor ditetapkan saat "mulai" | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/` (folder per spec, ditetapkan saat "mulai") | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | standby |
+| `dev-f001-m1` | developer | 001 Build it; milestone dari blok usulan spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | standby |
+| `dev-f003-m1` | developer | 003 Build it; milestone dari blok usulan spec `_root` 0002 | `003 - Kontrak sapaan bersama.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | standby |
 
 ## Keputusan
 
@@ -30,6 +30,8 @@
 | 2026-11-15 | Gerbang merge: untuk branch yang hanya berisi spec, cek worktree bersih, diff hanya ownership plus `graphify-out/`, tidak ada penanda konflik, dan tautan relatif spec mengarah ke file yang ada. Sesudah Cargo Workspace ada di `main`: `cargo fmt --all --check`, `cargo clippy --workspace --all-targets --locked -- -D warnings`, `cargo test -p <crate>`, plus perintah Build plan milestone itu. `cargo xtask …` tidak ada di repo ini. | lead |
 | 2026-11-15 | Graph: hook `.githooks/pre-commit` memperbarui `graphify-out/` pada setiap commit, juga di worktree (aturan `AGENTS.md`), jadi lead tidak menjalankan `graphify update` terpisah. Konflik `graphify-out/` saat merge diselesaikan lead dengan mengambil satu sisi lalu `git commit`, karena hook membuat ulang graf. Ekstraksi semantik (`/graphify . --update`) hanya untuk file spec yang di-merge, di akhir wave; file koordinasi cukup lewat hook. | lead |
 | 2026-11-15 | Rekonsiliasi: tidak ada worktree atau branch lain di repo ini; 19 sesi peer di `ListAgents` semuanya milik proyek lain (Stackly, Pool, Mobile) dan tidak dipetakan ke item mana pun. Lima di antaranya `busy` di Mac yang sama, jadi paling banyak 4 sub sesi berjalan di sini dan 2 build Rust penuh bersamaan. Tidak ada kode di `main`, jadi tidak ada kotak yang artefaknya sudah ada. | lead |
+| 2026-11-15 | Nama sub sesi memakai nomor scope tiga digit (`arc-f001-spec`, `dev-f003-m1`), karena `ListAgents` di Mac ini sudah memuat sesi proyek lain bernama `arc-f4-spec`, `dev-f4-m1`, dan sejenisnya. | lead |
+| 2026-11-15 | Worktree sub sesi dibuat aplikasi di `/Users/ojiepermana/worktrees/desktop/<name>-<hash>` dan dipotong dari `origin/main` (`60fb6a3`), bukan `main` lokal. Kelima worktree wave 1 sudah di-fast-forward ke `9b67c13` sebelum ada perubahan di dalamnya. Sesi berikutnya dimulai dengan `source_branch: main`, dan brief selalu membuka dengan `git merge main`. | lead |
 
 ## Keputusan delegasi
 
