@@ -66,10 +66,10 @@
     "semantic_hash": "1ee11d35079c41c8e668deb9ea59b100"
   },
   "docs/scope/003 - Kontrak sapaan bersama.md": {
-    "mtime": 1794730741.102933,
-    "seen": 1794731111.199784,
-    "ast_hash": "67f9278ce53ae04b1b0808781cb2165a",
-    "semantic_hash": "67f9278ce53ae04b1b0808781cb2165a"
+    "mtime": 1794736762.3541749,
+    "seen": 1794736765.1353889,
+    "ast_hash": "7f5fb684ab1e16c7b30e588423168e6a",
+    "semantic_hash": ""
   },
   "docs/scope/004 - Sapaan di jendela macOS.md": {
     "mtime": 1794730741.1030672,
@@ -126,10 +126,10 @@
     "semantic_hash": "7f0dc0ae611b276c9e064621d0e2ac4c"
   },
   "docs/scope/scope.md": {
-    "mtime": 1794730741.1378279,
-    "seen": 1794731111.1998022,
-    "ast_hash": "4fc68e8428ee61f9802d24a0f0bb9b0e",
-    "semantic_hash": "4fc68e8428ee61f9802d24a0f0bb9b0e"
+    "mtime": 1794736762.5202625,
+    "seen": 1794736765.1353579,
+    "ast_hash": "de39c9423e28b1ad40a1ef0a146c9cf1",
+    "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
     "mtime": 1794730406.3481607,
@@ -240,9 +240,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794736667.2082229,
-    "seen": 1794736668.9773738,
-    "ast_hash": "ae259dc3a1a650dc2e5e4f5893e931f3",
+    "mtime": 1794736762.5054524,
+    "seen": 1794736765.135394,
+    "ast_hash": "6f2ace5ab065d9a662a413ed05a7bf99",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {

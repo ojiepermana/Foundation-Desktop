@@ -5,17 +5,17 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `1`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 17:50`
+- **Diperbarui:** `2026-11-15 18:15`
 
 ## Sub sesi wave `1`
 
 | Nama | Peran | Item | Scope | Ownership | Branch | Model | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `arc-f001-spec` | architect | 001 spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | `docs/specs/_root/0001-batas-workspace-dan-pemilik/` | `claude/arc-f001-spec-a1f824` | `fable-5-2 · high` | aktif |
-| `arc-f003-spec` | architect | 003 spec `_root` 0002; ringkasan diterima lead (`82db3f0`), menunggu laporan akhir | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | aktif |
+| `arc-f003-spec` | architect | 003 spec `_root` 0002; laporan `done` (`bff635c`), merge `63f89a1` | `003 - Kontrak sapaan bersama.md` | `docs/specs/_root/0002-kontrak-sapaan-bersama/` | `claude/arc-f003-spec-14125c` | `fable-5-2 · high` | merged |
 | `arc-f004-spec` | architect | 004 spec macOS, plus penerapan macOS 001 dan 003; nomor ditetapkan saat "mulai" | `004 - Sapaan di jendela macOS.md` | `docs/specs/macos/` (folder per spec, ditetapkan saat "mulai") | `claude/arc-f004-spec-de734c` | `fable-5-2 · high` | standby |
 | `dev-f001-m1` | developer | 001 Build it; milestone dari blok usulan spec `_root` 0001 | `001 - Batas workspace dan pemilik.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f001-m1-c305cb` | `opus-5-5 · medium` | standby |
-| `dev-f003-m1` | developer | 003 Build it; milestone dari blok usulan spec `_root` 0002 | `003 - Kontrak sapaan bersama.md` | ditetapkan saat "mulai" dari Build plan | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | standby |
+| `dev-f003-m1` | developer | 003 Build it milestone 1 (langkah 1, 2) lalu milestone 2 (langkah 3 sampai 6) spec `_root/0002`; menunggu 001 milestone 1 di `main` | `003 - Kontrak sapaan bersama.md` | `crates/core/src/greeting.rs`, `crates/core/tests/hello_contract.rs`, `crates/core/src/lib.rs` (tambah baris), `crates/core/Cargo.toml` (tambah `[lints.rust]`), `docs/specs/_root/0002-kontrak-sapaan-bersama/verify.md` | `claude/dev-f003-m1-f164e9` | `opus-5-5 · medium` | standby |
 
 ## Keputusan
 
@@ -59,12 +59,15 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 007 · `/architect scope 007 sapaan di jendela Linux`: hardware, host Linux dengan sesi Wayland; pemilik user.
 - 001, 002, 003, 008 sampai 012 · penerapan Windows dan Linux: host masing masing; pemilik user. Fitur bersama tidak ditandai `done` sebelum bukti itu ada.
 - 002 · `/audit` ← `001 - Batas workspace dan pemilik.md`: scaffold (`Build it` 001) harus sudah di `main`.
-- 004 · `/architect scope 004 sapaan di jendela macOS` ← spec `_root` 0001 dan 0002 di-merge.
+- 004 · `/architect scope 004 sapaan di jendela macOS` ← spec `_root/0001` di-merge (`_root/0002` sudah di `main`, `63f89a1`). Input wajib dari Follow-up spec 0002: pembungkus UniFFI yang badannya hanya `desktop_core::hello(name)`, uji Swift V-1, V-2, V-6, V-10, `Text(verbatim:)`, dan R-8.
+- 003 · `Build it` milestone 1 ← `001 - Batas workspace dan pemilik.md`: milestone 1 "Workspace dan kerangka Core" (spec `_root/0001` langkah 1 sampai 4) di `main`.
+- 003 · `/architect scope 003 kontrak sapaan untuk macOS` ← ditulis `arc-f004-spec` bersama spec macOS 004.
+- `README.md` masih menyebut semua fitur `planned`; diperbarui lewat `/sync` akhir wave.
 - 008 sampai 012 · `/architect scope … untuk _root` ← alur 004 terbukti di Mac (urutan Panduan).
 
 ## Dicentang pada wave ini
 
-- belum ada
+- 003 · `/architect scope 003 kontrak sapaan untuk _root` · laporan `done` `arc-f003-spec` · `claude/arc-f003-spec-14125c` → `63f89a1` · worktree bersih, diff hanya dua file spec plus `graphify-out/`, tanpa penanda konflik, tautan relatif sah (belum ada kode, jadi tanpa gerbang cargo) · commit `docs(scope): tick 003 spec` · tanpa langkah manual
 
 ## Riwayat wave
 
