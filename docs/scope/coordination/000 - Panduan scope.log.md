@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-16 05:07`
+- **Diperbarui:** `2026-11-16 05:09`
 
 ## Sub sesi wave `2`
 
@@ -436,4 +436,6 @@ Ditutup 2026-11-16 atas kata user ("Tutup dan push"). Hash awal run `0572298`.
 - **Follow-up `/sync` di spec yang belum terpenuhi penuh (dibiarkan `[ ]`):** `_root/0004` baris 543, `_root/0005` baris 695, `_root/0007` baris 554, `_root/0008` baris 577, `macos/0004` baris 390, `macos/0005` baris 890, `macos/0007` baris 414. Sisa isinya: `test-preferences.json` (catatan uji baru, milik `/test`), `docs/platforms/macos/README.md` dan tabel "Yang sudah ada" di `docs/architecture/README.md` (dokumen user), perintah per sumber dan `bash scripts/build-macos.sh` di `AGENTS.md`.
 - **Usul pembaruan spec yang dicatat dan tidak dikerjakan:** definisi impor di `_root/0007` (komentar dan titik koma); L-1 dan lokasi berkas gambar merek sebagai aturan arsitektur; `--` di komentar SVG sebagai aturan S (`_root/0005`); kalimat rencana manual `macos/0005`; folder `.lproj` yang tertinggal (`macos/0006`); kalimat berkas belum dilacak di "Kasus gagal" `_root/0008`; nol di depan versi dan akhiran `.macos` ganda (`macos/0004`).
 - **Model:** lead `claude-fable-5-2`; sub sesi `claude-fable-5-2` sampai 2026-11-15 19:24, lalu `claude-opus-5-5`. Verify dan sebagian cross check berjalan pada family yang sama dengan penulis kodenya.
-- **Push dan pembersihan:** dicatat di bawah sesudah dijalankan.
+- **Push:** `git fetch origin` menunjukkan remote tidak lebih maju (`main..origin/main` = 0, lokal 441 commit di depan `60fb6a3`). `git push origin main` tanpa force: `60fb6a3..0615245`. Sesudahnya `git rev-parse main` = `git rev-parse origin/main` = `0615245eff42eb31dd97a596b20d3f992ebf90fb`, sama dengan `git ls-remote origin refs/heads/main`. `git status --short` saat push hanya memuat dua folder skill user yang belum dilacak (`.claude/skills/rust-async-patterns/`, `.claude/skills/rust-best-practices/`), yang sengaja tidak di-commit.
+- **Pembersihan:** kesepuluh branch lulus tiga cek (sesi idle, worktree bersih, leluhur `origin/main`). Sembilan sesi diarsipkan, worktree-nya dihapus dengan `git worktree remove` tanpa `--force`, dan branch-nya dihapus dengan `git branch -d`: `arc-f001-spec`, `arc-f002-spec`, `arc-f004-spec`, `arc-f010-spec`, `arc-f011-spec`, `arc-f012-spec`, `dev-f001-m1`, `dev-f003-m1`, `dev-f008-m1`. Lalu `git worktree prune`.
+- **disimpan:** `claude/arc-f003-spec-14125c` beserta worktree `worktrees/desktop/arc-f003-spec-14125c` dan sesinya (`arc-f003-spec · 002 audit`). Alasan: arsip ditolak aplikasi ("still has live work": agen, klien Remote Control, pesan antre, atau tugas latar). Isinya (`2850fba`) sudah di `origin/main` dan worktree-nya bersih, jadi aman diarsipkan user dari sidebar; sesudah itu `git branch -d claude/arc-f003-spec-14125c`.
