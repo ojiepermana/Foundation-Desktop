@@ -1,11 +1,11 @@
 # Graph Report - desktop  (2026-11-15)
 
 ## Corpus Check
-- 72 files · ~61,840 words
+- 72 files · ~62,545 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 607 nodes · 985 edges · 47 communities (40 shown, 7 thin omitted)
+- 611 nodes · 989 edges · 48 communities (41 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 31 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -23,13 +23,13 @@
 - Fondasi macOS
 - Sistem desain bersama
 - Penerimaan dan bukti fondasi
-- UniffiInternalError
+- Milestone 1: Jembatan, binding, dan uji tanpa jendela
 - T
+- UniffiInternalError
 - contract_surface.rs
 - Fondasi desktop native
 - 0001. Sapaan di jendela macOS: catatan keputusan
 - 0001. Batas workspace dan pemilik: alasan
-- Milestone 1: Jembatan, binding, dan uji tanpa jendela
 - Milestone 1: Workspace dan kerangka Core
 - Milestone 1: fungsi hello dan uji Done when
 - Log koordinasi: `<nama-SCOPE>`
@@ -46,6 +46,7 @@
 - Options considered
 - Arsitektur fondasi desktop
 - Langkah manual: `<nama-SCOPE>`
+- InitializationResult
 - macos-ffi/src/lib.rs
 - PackageDescription
 - brief.md
@@ -86,11 +87,11 @@
 - **Pemeriksaan runtime pada tiga host** — docs_quality_readme_bukti_runtime_per_host, docs_platforms_macos_readme_uji_jendela_di_mac, docs_platforms_windows_readme_uji_jendela_windows, docs_platforms_linux_readme_uji_sesi_grafis_linux [EXTRACTED 1.00]
 - **Pemetaan visual native bersama** — docs_design_system_readme_token_desain_bersama, docs_design_system_readme_tema_swiftui, docs_design_system_readme_fluent_design, docs_design_system_readme_css_gtk [EXTRACTED 1.00]
 
-## Communities (47 total, 7 thin omitted)
+## Communities (48 total, 7 thin omitted)
 
 ### Community 0 - "desktop_macos_ffi.swift"
-Cohesion: 0.07
-Nodes (49): Array, createReader(), createWriter(), Data, FfiConverter, FfiConverterByRefBytes, FfiConverterPrimitive, FfiConverterRustBuffer (+41 more)
+Cohesion: 0.08
+Nodes (44): Array, createReader(), createWriter(), Data, FfiConverter, FfiConverterByRefBytes, FfiConverterPrimitive, FfiConverterRustBuffer (+36 more)
 
 ### Community 1 - "GreetingViewModel"
 Cohesion: 0.07
@@ -140,33 +141,33 @@ Nodes (15): Aksesibilitas kontrol native, Alias warna semantik, CSS GTK, Fluent 
 Cohesion: 0.18
 Nodes (15): Uji jendela di Mac, Uji jendela Windows, Bukti build per arsitektur, Bukti native per host, Bukti runtime per host, C28 · Skrip build berfungsi pada host yang sesuai, C29 · Alur kerja GitHub Actions untuk fondasi sudah dikonfigurasi, C30 · Pengujian yang relevan sudah dijalankan (+7 more)
 
-### Community 14 - "UniffiInternalError"
+### Community 14 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
+Cohesion: 0.14
+Nodes (13): Acceptance-criteria coverage, Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Commands, Milestone 1: Jembatan, binding, dan uji tanpa jendela, Milestone 2: Jendela SwiftUI dan proyek Xcode (+5 more)
+
+### Community 15 - "T"
+Cohesion: 0.39
+Nodes (6): NSLock, UniffiHandleMap, .count, Int, T, UInt64
+
+### Community 16 - "UniffiInternalError"
 Cohesion: 0.17
 Nodes (12): UniffiInternalError, bufferOverflow, .errorDescription, incompleteData, rustPanic, unexpectedEnumCase, unexpectedNullPointer, unexpectedOptionalTag (+4 more)
 
-### Community 15 - "T"
-Cohesion: 0.45
-Nodes (5): NSLock, UniffiHandleMap, .count, T, UInt64
-
-### Community 16 - "contract_surface.rs"
+### Community 17 - "contract_surface.rs"
 Cohesion: 0.22
 Nodes (5): manifest_declares_no_dependencies_of_any_kind(), manifest_forbids_unsafe_code_and_warns_on_missing_docs(), manifest_tables(), String, Vec
 
-### Community 17 - "Fondasi desktop native"
+### Community 18 - "Fondasi desktop native"
 Cohesion: 0.25
 Nodes (11): API publik Rust, Eksekusi dan uji, hello(name: String) → String, Kepemilikan dan kompatibilitas, Kontrak Rust bersama, Safe Rust, Uji kontrak Core mandiri, WinUI 3 (+3 more)
 
-### Community 18 - "0001. Sapaan di jendela macOS: catatan keputusan"
+### Community 19 - "0001. Sapaan di jendela macOS: catatan keputusan"
 Cohesion: 0.18
 Nodes (11): 0001. Sapaan di jendela macOS: catatan keputusan, Bukti percobaan, Context, Cross check, Keputusan yang lebih kecil, Opsi 1: Binding terlacak sebagai paket Swift lokal, modul Swift yang diuji `swift test`, target Xcode tipis, Opsi 2: Semua kode Swift di target aplikasi Xcode, binding lewat bridging header, Opsi 3: XCFramework sebagai target biner (+3 more)
 
-### Community 19 - "0001. Batas workspace dan pemilik: alasan"
+### Community 20 - "0001. Batas workspace dan pemilik: alasan"
 Cohesion: 0.18
 Nodes (11): 0001. Batas workspace dan pemilik: alasan, Bukti percobaan, Context, Cross check, Keputusan yang diambil, Opsi 1: Satu workspace, anggota eksplisit, aturan netral host, Opsi 2: Satu workspace dengan `default-members` hanya Core, Opsi 3: Aplikasi OS di luar workspace (+3 more)
-
-### Community 20 - "Milestone 1: Jembatan, binding, dan uji tanpa jendela"
-Cohesion: 0.20
-Nodes (9): Acceptance-criteria coverage, Acceptance-criteria coverage, Commands, Commands, Milestone 1: Jembatan, binding, dan uji tanpa jendela, Milestone 2: Jendela SwiftUI dan proyek Xcode, UI / manual, UI / manual (+1 more)
 
 ### Community 21 - "Milestone 1: Workspace dan kerangka Core"
 Cohesion: 0.20
@@ -232,8 +233,12 @@ Nodes (7): Arsitektur fondasi desktop, Aturan arah dependensi, Aturan pengembang
 Cohesion: 0.33
 Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`), Langkah manual: `<nama-SCOPE>`, Nilai dari user, Ringkasan
 
+### Community 37 - "InitializationResult"
+Cohesion: 0.50
+Nodes (4): InitializationResult, apiChecksumMismatch, contractVersionMismatch, ok
+
 ## Knowledge Gaps
-- **201 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+196 more)
+- **204 isolated node(s):** `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE`, `2. Analisis dan rencana wave`, `3. Mulai sub sesi` (+199 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -241,15 +246,15 @@ Nodes (5): `F<fitur>-<n>` · `<judul>`, Fitur `<nomor>`: `<nama>` (spec `<NNNN>`
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Fondasi desktop native` connect `Fondasi desktop native` to `Fondasi Linux`, `Arsitektur fondasi desktop`, `pre-commit script`, `scope.md`, `Fondasi Windows`, `Scope fondasi desktop native`, `Fondasi macOS`, `Sistem desain bersama`, `Penerimaan dan bukti fondasi`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
-  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Why does `Scope fondasi desktop native` connect `Scope fondasi desktop native` to `Fondasi Linux`, `scope.md`, `Fondasi Windows`, `Fondasi macOS`, `Sistem desain bersama`, `Penerimaan dan bukti fondasi`, `Fondasi desktop native`, `002 - Aturan pengembangan dan pemeriksaan arsitektur`?**
   _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **Why does `UniffiHandleMap` connect `T` to `desktop_macos_ffi.swift`, `GreetingViewModel`?**
   _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **What connects `Pemakaian`, `Konteks saat ini`, `1. Tentukan SCOPE` to the rest of the system?**
-  _201 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _204 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `desktop_macos_ffi.swift` be split into smaller, more focused modules?**
-  _Cohesion score 0.06990622335890878 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07886904761904762 - nodes in this community are weakly interconnected._
 - **Should `GreetingViewModel` be split into smaller, more focused modules?**
   _Cohesion score 0.07053140096618357 - nodes in this community are weakly interconnected._
 - **Should `Fondasi Linux` be split into smaller, more focused modules?**
