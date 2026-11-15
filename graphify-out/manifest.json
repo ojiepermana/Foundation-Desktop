@@ -54,9 +54,9 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794741101.3842468,
-    "seen": 1794741103.69764,
-    "ast_hash": "2077026839251f69ceda205871599d26",
+    "mtime": 1794741703.6740248,
+    "seen": 1794741706.486382,
+    "ast_hash": "81cb47fdd68f974bd7fac7fd5e0d4187",
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "docs/scope/004 - Sapaan di jendela macOS.md": {
-    "mtime": 1794741623.13772,
-    "seen": 1794741624.038649,
-    "ast_hash": "7ad8dbfef933264f97b04d46e57b2f1c",
+    "mtime": 1794741703.6746547,
+    "seen": 1794741706.486387,
+    "ast_hash": "f2fa2d4f2cc56e98a5d7067d5460f8e3",
     "semantic_hash": ""
   },
   "docs/scope/005 - Kelayakan WinUI dari Rust.md": {
@@ -240,15 +240,15 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.log.md": {
-    "mtime": 1794741623.1389446,
-    "seen": 1794741624.038647,
-    "ast_hash": "c8ff5311794dec6c261769a89200544b",
+    "mtime": 1794741703.6760576,
+    "seen": 1794741706.48639,
+    "ast_hash": "326ef3be156382023732baac5d44c0e5",
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794741038.2346368,
-    "seen": 1794741039.9780061,
-    "ast_hash": "dc6f77113212357897513fed1b156311",
+    "mtime": 1794741703.6762588,
+    "seen": 1794741706.486389,
+    "ast_hash": "da094e09fbc9fcdce2827003ce13e6e7",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
