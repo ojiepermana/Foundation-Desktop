@@ -5,7 +5,7 @@
 - **Mode keputusan:** `auto` · **Ketentuan tambahan:** tidak ada
 - **Aturan umum brief:** `000 - Panduan scope.brief-umum.md` · **Langkah manual:** `000 - Panduan scope.manual.md`
 - **Wave aktif:** `2`, mulai `2026-11-15`
-- **Diperbarui:** `2026-11-15 23:59`
+- **Diperbarui:** `2026-11-16 05:07`
 
 ## Sub sesi wave `2`
 
@@ -219,6 +219,7 @@
 | 2026-11-15 | Verify milestone 3 dan 4 spec `macos/0008` PASS di-merge (`642e981`). Catatan checker, bukan cacat menurut spec: `C-3` juga menandai baris komentar `// import DesignSystem` di luar `Presentation`, karena cara bacanya sama dengan `A-10`; bisa memberi positif palsu pada komentar. Dicatat untuk pembaruan spec itu bila mengganggu. `Verify it` bagian macOS scope 002 tidak dicentang: AC-8 milik milestone 2 yang menunggu persetujuan user, bukan langkah manual. `Test it` untuk aturan `C` dikirim ke `dev-f001-m1`. Sesudah itu tidak ada item yang bisa jalan tanpa jawaban user. | lead |
 | 2026-11-15 | `Test it` 002 macOS di-merge (`2213e59`); `validate.sh` di `main` `PASS`, 251 uji. Dua catatan tester untuk pemilik spec `macos/0008` dan `_root/0007`: (1) baris komentar `// import X` ditandai `C-3` dan `A-10`, sesuai definisi impor di spec bersama, jadi dikunci uji; kemungkinan positif palsu. (2) `import X;` dengan titik koma lolos `C-3` dan `A-10`; tidak dikunci. Keduanya dicatat untuk satu pembaruan definisi impor di spec `_root/0007` bila diinginkan. Koreksi atas brief lead: galat baca `C-4` diurutkan di antara aturan `C`, bukan paling depan, sesuai spec. Dengan ini tidak ada lagi item di cakupan Mac yang bisa jalan tanpa jawaban user. | lead |
 | 2026-11-15 | `/sync` wave 2 dijalankan lead (mode `branch`, rentang `9c67106..HEAD`), commit `1acc686`. `AGENTS.md` akar, empat suntingan baris: kalimat pembuka kini menyebut sumber bersama, `tooling/codegen/`, dan `scripts/` sudah ada (sebelumnya "masih rencana"); butir Stack baru **Alat** untuk `desktop-codegen`; butir macOS menyebut modul `DesignSystem`; satu perintah `bash scripts/validate.sh` di Commands; satu pointer di Context files. Delapan baris pertama dan dua baris jangkar milestone 2 spec `macos/0008` tidak disentuh (masing masing masih tepat satu kali). Dibuat: `tooling/codegen/AGENTS.md` (area baru seluruhnya di rentang ini). Tanpa `CLAUDE.md` pendamping, mengikuti kebiasaan repo (`crates/core/` juga tanpa). Status spec: keenam belas sudah `In Progress`, tidak ada yang berubah. Kotak scope: tidak ada yang dicentang `/sync`. Gerbang sesudahnya: `architecture check` 17 aturan (termasuk `A-13` atas `AGENTS.md` baru), `validate.sh` `PASS`, 251 uji. Sengaja tidak dilakukan: `bash scripts/build-macos.sh` belum ditambahkan ke Commands (berdekatan dengan baris yang diubah milestone 2 spec `macos/0008`, menunggu user); `AGENTS.md` bersarang untuk `apps/macos/` dan `crates/macos-ffi/` (area lama, tugas `/audit`); `test-preferences.json` (catatannya masih menyebut AC-12 lama dan belum menyebut uji baru; milik `/test`); `docs/architecture/README.md` tabel "Yang sudah ada" dan `docs/platforms/macos/README.md` (dokumen user, belum menyebut `DesignSystem`, `Resources/`, `Config/`); tawaran Agent Skill dan MCP. | lead |
+| 2026-11-16 | User menjawab "Tutup dan push": run ditutup sekarang; tiga hal yang belum dijawab dicatat sebagai blocker terbuka dan tidak dibangun: butir "Gerbang Mac" di `AGENTS.md` (milestone 2 spec `macos/0008`), `docs/quality/laporan-fondasi.md` beserta dua workflow (milestone 3 spec `_root/0008`), dan dua folder skill yang belum dilacak. Penutupan langkah 9: `git branch --no-merged main` kosong (kesepuluh branch koordinasi sudah di `main`); `/sync` penutup tidak menemukan perubahan sumber sesudah `/sync` wave 2 (`1acc686`), jadi hanya satu baris Follow-up `/sync` yang dicentang (spec `_root/0006`); tujuh baris Follow-up `/sync` lain baru sebagian terpenuhi dan dibiarkan `[ ]` (lihat Penutupan). | user |
 
 ## Keputusan delegasi
 
@@ -353,6 +354,8 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 - 012 · Milestone 3 ← persetujuan user untuk `docs/quality/laporan-fondasi.md` dan satu kalimat di `docs/quality/README.md`.
 - 012 · Milestone 4 (AC-11, AC-12) ← host Windows dan Linux, push, dan GitHub Actions; langkah manual `F012-1`, `F012-2`, pemilik user.
 - Nilai `N10` (visibilitas repo GitHub) ← user; tidak menahan AC mana pun.
+- 002 macOS · Milestone 2 spec `macos/0008` (AC-8) dan `Verify it` bagian macOS ← izin user untuk dua baris komentar di Commands dan butir "Gerbang Mac" di `AGENTS.md`; belum dijawab saat run ditutup.
+- 012 · `Test it` ← sesudah milestone 3; cara menguji skrip bash belum diputuskan (spec `macos/0008` AC-5 melarang uji Rust yang memanggil `cargo`, `swift`, atau `xcodebuild`).
 - Gerbang Mac di checkout utama (`build-macos.sh` langkah 13, `G-5`) ← keputusan user atas dua folder skill yang belum dilacak (`.claude/skills/rust-async-patterns/`, `.claude/skills/rust-best-practices/`): `.git/info/exclude` lokal, commit, atau dibiarkan (gerbang dijalankan di worktree bersih).
 - 008 sampai 012 bagian macOS ← spec `_root` masing masing, dan alur 004 terbukti di jendela (`F004-1`, `F004-2`).
 
@@ -418,4 +421,19 @@ Keputusan spec yang diambil dari opsi rekomendasi atas nama user (SKILL.md bagia
 
 ## Penutupan
 
-- belum dimulai
+Ditutup 2026-11-16 atas kata user ("Tutup dan push"). Hash awal run `0572298`.
+
+- **Branch yang di-merge:** kesepuluh branch koordinasi sudah di `main`; `git branch --no-merged main` kosong. Hash merge tiap item ada di tabel sub sesi dan di "Dicentang pada wave ini". Tidak ada branch `failed`, `blocked`, atau debugger.
+  - `claude/arc-f001-spec-a1f824` (architect lalu checker verify), `claude/arc-f002-spec-d362fa`, `claude/arc-f003-spec-14125c`, `claude/arc-f004-spec-de734c`, `claude/arc-f010-spec-3201ce`, `claude/arc-f011-spec-3fcf4a`, `claude/arc-f012-spec-50349d` (architect), `claude/dev-f001-m1-c305cb` (developer lalu tester), `claude/dev-f003-m1-f164e9`, `claude/dev-f008-m1-1a2956` (developer).
+- **Di `main` saat ditutup:** spec `_root/0001` sampai `0008` dan `macos/0001` sampai `0008`; Core, jembatan macOS, `desktop-codegen` dengan lima sumber dan 17 aturan arsitektur; empat build macOS; tujuh skrip di `scripts/`. `bash scripts/validate.sh` `PASS, 13 steps`, 251 uji, 0 `ignored`.
+- **Kotak tercentang:** 003 seluruhnya; 009 dan 010 bagian bersama seluruhnya; 001, 002, 004, 008, 011, 012 sampai batas langkah manual, host, atau izin user (rinciannya di "Dicentang pada wave ini").
+- **Kotak terbuka, semuanya tercatat di "Blocker terbuka":**
+  - sesi GUI di Mac: 004 milestone 4 dan `Build it` (`F004-1`, `F004-2`); bagian macOS 008 (`F008-2`), 009 (`F009-1`), 010 (`F010-1`), 011 (`F011-2`);
+  - host Windows dan Linux: 001 milestone 3, 002 milestone 4, 008 milestone 3 (`F012-1`, yang mencakup `F001-1`, `F002-1`, `F008-1`); scope 005, 006, 007;
+  - nilai dari user: 011 milestone 3 (`F011-1`, `F011-3`, ikon nyata `N9`);
+  - izin user yang belum dijawab: 002 macOS milestone 2 dan `Verify it` (`AGENTS.md`); 012 milestone 3 (`docs/quality/`), lalu milestone 4 (`F012-2`, push dan CI), `Verify it`, `Test it`;
+  - `build-macos.sh` di checkout utama gagal di `G-5` sampai user memutuskan nasib `.claude/skills/rust-async-patterns/` dan `.claude/skills/rust-best-practices/`.
+- **Follow-up `/sync` di spec yang belum terpenuhi penuh (dibiarkan `[ ]`):** `_root/0004` baris 543, `_root/0005` baris 695, `_root/0007` baris 554, `_root/0008` baris 577, `macos/0004` baris 390, `macos/0005` baris 890, `macos/0007` baris 414. Sisa isinya: `test-preferences.json` (catatan uji baru, milik `/test`), `docs/platforms/macos/README.md` dan tabel "Yang sudah ada" di `docs/architecture/README.md` (dokumen user), perintah per sumber dan `bash scripts/build-macos.sh` di `AGENTS.md`.
+- **Usul pembaruan spec yang dicatat dan tidak dikerjakan:** definisi impor di `_root/0007` (komentar dan titik koma); L-1 dan lokasi berkas gambar merek sebagai aturan arsitektur; `--` di komentar SVG sebagai aturan S (`_root/0005`); kalimat rencana manual `macos/0005`; folder `.lproj` yang tertinggal (`macos/0006`); kalimat berkas belum dilacak di "Kasus gagal" `_root/0008`; nol di depan versi dan akhiran `.macos` ganda (`macos/0004`).
+- **Model:** lead `claude-fable-5-2`; sub sesi `claude-fable-5-2` sampai 2026-11-15 19:24, lalu `claude-opus-5-5`. Verify dan sebagian cross check berjalan pada family yang sama dengan penulis kodenya.
+- **Push dan pembersihan:** dicatat di bawah sesudah dijalankan.

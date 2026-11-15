@@ -1,7 +1,7 @@
-# Graph Report - desktop  (2026-11-15)
+# Graph Report - desktop  (2026-11-16)
 
 ## Corpus Check
-- 183 files · ~280,345 words
+- 183 files · ~280,924 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -29,17 +29,17 @@
 - config_rules.rs
 - tokens_rules.rs
 - localization_rules.rs
-- Problem
+- check_colors
 - text.primary
 - architecture_macos_rules.rs
 - Langkah manual: `000 - Panduan scope`
 - Rancangan pemeriksaan
-- tokens_swift_rules.rs
 - hello
 - Rancangan konfigurasi
 - Rancangan
-- tokens/mod.rs
+- tokens_swift_rules.rs
 - assets_contract.rs
+- tokens/mod.rs
 - Rancangan
 - Feature design
 - Rancangan aset merek
@@ -49,10 +49,10 @@
 - 0008. Aturan pengembangan dan pemeriksaan arsitektur di macOS
 - generate
 - Alur lead
+- Problem
 - 0001. Batas workspace dan pemilik
 - Fondasi Linux
 - 007 - Sapaan di jendela Linux
-- config/mod.rs
 - architecture_contract.rs
 - ThemeTests.swift
 - ThemeColor
@@ -262,9 +262,9 @@ Nodes (29): a_file_that_does_not_fit_its_type_gives_one_problem(), broken_source
 Cohesion: 0.14
 Nodes (29): at(), broken_or_unreadable_catalog_writes_nothing(), catalog(), committed_plan(), edited(), entry(), entry_problems_follow_the_check_order(), every_output_follows_the_output_rules() (+21 more)
 
-### Community 19 - "Problem"
-Cohesion: 0.20
-Nodes (20): BTreeSet, Display, Item, Iterator, Problem, check_colors(), check_spacing(), check_typography() (+12 more)
+### Community 19 - "check_colors"
+Cohesion: 0.19
+Nodes (20): BTreeSet, Item, Iterator, check_colors(), check_spacing(), check_typography(), FileProblems, FileProblems<'a> (+12 more)
 
 ### Community 20 - "text.primary"
 Cohesion: 0.07
@@ -282,29 +282,29 @@ Nodes (24): `F001-1` · Bangun dan uji Core di host Windows dan host Linux, `F00
 Cohesion: 0.08
 Nodes (25): 0007. Aturan pengembangan dan pemeriksaan arsitektur, Aturan dependensi yang dibaca mesin, Aturan yang diperiksa manusia, Aturan yang diperiksa mesin, Bentuk alat, Build plan, Cara menambah atau mengubah aturan, Cara tiap aturan membaca repo (+17 more)
 
-### Community 24 - "tokens_swift_rules.rs"
-Cohesion: 0.14
-Nodes (19): contrast(), luminance(), parse_rgb(), Rgb, broken_source_writes_no_tokens_swift(), color(), constants(), dotted_names_become_camel_case_identifiers() (+11 more)
-
-### Community 25 - "hello"
+### Community 24 - "hello"
 Cohesion: 0.12
 Nodes (11): hello(), String, long_name_is_not_cut(), assert_wraps_name(), braces_in_name_stay_plain_text(), every_vector_is_prefix_then_name_unchanged_then_bang(), long_multi_byte_name_is_not_cut(), String (+3 more)
 
-### Community 26 - "Rancangan konfigurasi"
+### Community 25 - "Rancangan konfigurasi"
 Cohesion: 0.09
 Nodes (23): 0004. Konfigurasi publik, Aturan versi skema, Batas pengaturan khusus OS, Bentuk alat, Build plan, Cara aplikasi memakai nilai, Consequences, Decision (+15 more)
 
-### Community 27 - "Rancangan"
+### Community 26 - "Rancangan"
 Cohesion: 0.09
 Nodes (23): 0008. Build dan penerimaan per target, Bentuk keluaran, Build plan, Consequences, Daftar penerimaan per target, Decision, File yang boleh diubah tiap milestone, Follow-up (+15 more)
 
-### Community 28 - "tokens/mod.rs"
-Cohesion: 0.18
-Nodes (21): UniqueMap, BaseColor, BaseSpace, Color, ColorsFile, is_valid_description(), Role, RoleEntry (+13 more)
+### Community 27 - "tokens_swift_rules.rs"
+Cohesion: 0.15
+Nodes (18): contrast(), luminance(), Rgb, broken_source_writes_no_tokens_swift(), color(), constants(), dotted_names_become_camel_case_identifiers(), every_swift_keyword_gets_backticks_and_nothing_else() (+10 more)
 
-### Community 29 - "assets_contract.rs"
+### Community 28 - "assets_contract.rs"
 Cohesion: 0.19
 Nodes (20): accepts_valid_sources(), Change, changed_icon(), fixture(), folder_case(), make_light_dark(), messages(), read() (+12 more)
+
+### Community 29 - "tokens/mod.rs"
+Cohesion: 0.19
+Nodes (20): UniqueMap, BaseColor, BaseSpace, Color, ColorsFile, is_valid_description(), Role, RoleEntry (+12 more)
 
 ### Community 30 - "Rancangan"
 Cohesion: 0.10
@@ -342,21 +342,21 @@ Nodes (17): Into, check(), generate(), generate_command(), Output, Plan, repo_ro
 Cohesion: 0.11
 Nodes (18): 1. Tentukan SCOPE, 2. Analisis dan rencana wave, 3. Mulai sub sesi, 4. Komunikasi, 5. Laporan, 6. Gerbang centang dan merge, 7. Log, 8. Akhir wave (+10 more)
 
-### Community 39 - "0001. Batas workspace dan pemilik"
+### Community 39 - "Problem"
+Cohesion: 0.25
+Nodes (18): Display, Build, check_app_identifier(), check_entries(), check_product_name(), check_public(), check_readme_version(), plan() (+10 more)
+
+### Community 40 - "0001. Batas workspace dan pemilik"
 Cohesion: 0.11
 Nodes (19): 0001. Batas workspace dan pemilik, Aturan arah dependensi, Aturan untuk manifest root, Build plan, Consequences, Decision, Follow-up, Invarian (+11 more)
 
-### Community 40 - "Fondasi Linux"
+### Community 41 - "Fondasi Linux"
 Cohesion: 0.20
 Nodes (17): Bukti yang diperlukan di Linux, Compositor Wayland, Evaluasi Flatpak di masa mendatang, Fondasi Linux, GTK 4, gtk-rs, Jendela native dan Rust Core, Kompatibilitas X11 (+9 more)
 
-### Community 41 - "007 - Sapaan di jendela Linux"
+### Community 42 - "007 - Sapaan di jendela Linux"
 Cohesion: 0.15
 Nodes (17): C04 · UniFFI berhasil menghasilkan binding Swift untuk macOS, C05 · Aplikasi macOS berhasil memanggil fungsi Rust tersebut, C10 · Aplikasi Linux menggunakan GTK 4 dan libadwaita, C11 · Aplikasi Linux memanggil Rust Core langsung melalui Cargo, C12 · Aplikasi Linux berjalan pada backend Wayland native, C13 · Kompatibilitas X11 diperiksa dan hasil atau keterbatasannya dicatat, C14 · Antarmuka pada ketiga OS menampilkan hasil aktual dari fungsi Rust yang sama, C23 · Kepemilikan pada batas FFI macOS terdokumentasi dan divalidasi bila relevan (+9 more)
-
-### Community 42 - "config/mod.rs"
-Cohesion: 0.27
-Nodes (16): Build, check_app_identifier(), check_entries(), check_product_name(), check_public(), check_readme_version(), plan(), PublicFile (+8 more)
 
 ### Community 43 - "architecture_contract.rs"
 Cohesion: 0.23
@@ -714,9 +714,9 @@ Nodes (3): pattern, type, light
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Problem` connect `Problem` to `Findings`, `localization/mod.rs`, `config_macos_rules.rs`, `generate`, `architecture_rules.rs`, `assets_rules.rs`, `config/mod.rs`, `assets/mod.rs`, `svg.rs`, `tokens_rules.rs`, `assets_macos_rules.rs`, `architecture_macos_rules.rs`, `assets_contract.rs`, `main`?**
+- **Why does `Problem` connect `Problem` to `Findings`, `localization/mod.rs`, `generate`, `config_macos_rules.rs`, `architecture_rules.rs`, `assets_rules.rs`, `assets/mod.rs`, `svg.rs`, `tokens_rules.rs`, `check_colors`, `assets_macos_rules.rs`, `architecture_macos_rules.rs`, `assets_contract.rs`, `main`?**
   _High betweenness centrality (0.060) - this node is a cross-community bridge._
-- **Why does `generate()` connect `generate` to `config_macos_rules.rs`, `tokens_contract.rs`, `assets_macos_contract.rs`, `architecture_rules.rs`, `assets_rules.rs`, `localization_macos_contract.rs`, `config_rules.rs`, `tokens_rules.rs`, `localization_rules.rs`, `assets_macos_rules.rs`, `Problem`, `tokens_swift_rules.rs`, `main`?**
+- **Why does `generate()` connect `generate` to `config_macos_rules.rs`, `tokens_contract.rs`, `architecture_rules.rs`, `assets_macos_contract.rs`, `Problem`, `assets_rules.rs`, `localization_macos_contract.rs`, `config_rules.rs`, `tokens_rules.rs`, `localization_rules.rs`, `assets_macos_rules.rs`, `tokens_swift_rules.rs`, `main`?**
   _High betweenness centrality (0.027) - this node is a cross-community bridge._
 - **Are the 23 inferred relationships involving `generate()` (e.g. with `main()` and `plan_does_not_depend_on_the_root_and_generate_writes_nothing()`) actually correct?**
   _`generate()` has 23 INFERRED edges - model-reasoned connections that need verification._
