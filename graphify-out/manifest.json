@@ -1032,9 +1032,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0007-aset-merek-bersama/verify.md": {
-    "mtime": 1794759977.5875232,
-    "seen": 1794759979.486846,
-    "ast_hash": "e6acc6a1109bba4e05983c647078dae8",
+    "mtime": 1794760439.139643,
+    "seen": 1794760441.153852,
+    "ast_hash": "8667c0a34108ca084c1e2c033652b097",
     "semantic_hash": ""
   },
   "tooling/codegen/src/assets/macos.rs": {
