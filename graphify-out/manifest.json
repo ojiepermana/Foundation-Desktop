@@ -1048,5 +1048,11 @@
     "seen": 1794760537.595627,
     "ast_hash": "6e562699e612ad40d902eae1dae3708b",
     "semantic_hash": ""
+  },
+  "tooling/codegen/tests/assets_macos_rules.rs": {
+    "mtime": 1794760722.0689251,
+    "seen": 1794760723.91045,
+    "ast_hash": "59e1a58bcef804278589a9b604499ec5",
+    "semantic_hash": ""
   }
 }
