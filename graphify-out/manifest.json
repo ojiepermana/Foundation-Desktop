@@ -634,5 +634,17 @@
     "seen": 1794751909.488357,
     "ast_hash": "aacb5ae90cdf21a7990caf7718370f10",
     "semantic_hash": ""
+  },
+  "docs/specs/_root/0005-aset-merek-bersama/rationale.md": {
+    "mtime": 1794752197.6185129,
+    "seen": 1794752200.054091,
+    "ast_hash": "86d1d78d44759623b2948c237a6d8fd8",
+    "semantic_hash": ""
+  },
+  "docs/specs/_root/0005-aset-merek-bersama/index.md": {
+    "mtime": 1794752197.618333,
+    "seen": 1794752200.054094,
+    "ast_hash": "45bdb0ae7e03165233b41799959756e8",
+    "semantic_hash": ""
   }
 }
