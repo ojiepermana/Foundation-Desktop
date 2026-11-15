@@ -180,3 +180,38 @@ Dibaca oleh model lain (read only) pada 2026-11-15 sebelum spec ini diajukan. Ju
 | Teks `README.md` bertentangan dengan pengecualian `.DS_Store` | Kalimat disesuaikan |
 | Tidak jelas apakah pemeriksaan melaporkan semua pelanggaran | Semua dilaporkan (keputusan 17) |
 | Baris Neutral tidak menyebut literal judul jendela | Ditambahkan |
+
+## Pembaruan sesudah diterima
+
+Diperbarui pada 2026-11-15, sesudah spec ini diterima dan sebelum dibangun. Keputusan dan ID AC tidak berubah. Dua sebabnya: spec [macos/0004](../../macos/0004-konfigurasi-publik/index.md) meminta delapan penyesuaian, dan paket `desktop-codegen` dari spec `_root/0003` sudah ada di `main`, jadi bagian "Bentuk alat" dicocokkan dengan kode nyata di `tooling/codegen/src/lib.rs`, `main.rs`, `json.rs`, dan `tooling/codegen/tests/tokens_contract.rs`.
+
+Delapan penyesuaian dari spec `macos/0004`:
+
+| Bagian | Perubahan |
+| --- | --- |
+| AC-1 dan "Bentuk alat" | Baris `.gitattributes` menjadi `/shared/config/**/*.json text eol=lf`, per jenis file menurut aturan O-6 spec `_root/0003`. |
+| "Kasus yang diterima" | Uji T-28 sampai T-32 tidak menghitung keluaran `plan` dan tidak mengunci daftar path keluarannya. |
+| Tabel "Cara aplikasi memakai nilai" | Kolom macOS menunjuk ke spec `macos/0004`. |
+| Paragraf di bawah aturan `K` | Pelanggaran `K-2` di macOS berlaku sampai milestone 1 spec `macos/0004` dibangun. |
+| Baris "User memberi nama produk atau dasar pengenal akhir" | Di macOS salinannya ditulis ulang `config generate`. |
+| Baris "Keluaran `plan`" | Satu keluaran untuk spec ini; spec OS menambah keluarannya sendiri. |
+| "Kasus gagal yang sudah diputuskan" | Baris baru untuk format native yang menolak `build.product_name`. |
+| AC-6 | `wc -l` diberi `tr -d ' '`, karena macOS mencetak spasi di depan angka. |
+
+Selisih antara teks lama dan alat nyata, semuanya diselaraskan ke alat:
+
+| Hal | Teks lama | Alat nyata |
+| --- | --- | --- |
+| Penanda di skema hasil generator | `... from tooling/codegen/src/config/mod.rs. Do not edit. Run: ...` | Bentuk yang dipakai skema token: `... from tooling/codegen/src/config. Do not edit. To regenerate, run: ...`. Blok skema di "Isi file" ikut berubah. |
+| Root sementara di uji | Folder di bawah `std::env::temp_dir()` | Folder di bawah `env!("CARGO_TARGET_TMPDIR")`, seperti `tokens_contract.rs`. |
+| Pendaftaran sumber | "Dua baris di `lib.rs`" | Satu baris baru `pub mod config;` dan entri baru di baris `SOURCES` yang sudah ada. |
+| Baris gagal | Tidak ditulis | `<path>: <pesan>` per masalah di stderr, lalu `config: failed, <n> problems` dengan kata `problems` selalu jamak. AC-4 sekarang memeriksa keduanya. |
+| Baris sukses `generate` | Tidak ditulis | `config: ok, <ringkasan>, <n> outputs, <w> written`, dan `wrote <path>` per file. AC-4 memeriksa akhiran `0 written`. |
+| Folder induk | Tidak ditulis | `generate` membuat folder induk yang belum ada. |
+| Cara uji memanggil `plan` dan `check` | "memanggil `check` pada repo" | `(config::SOURCE.plan)(&root)` dan `check(&repo_root(), &config::SOURCE)`. |
+| AC-5 | "`--list` memperlihatkan T-1 sampai T-32" | `--list` mencetak nama uji, jadi teksnya menjadi 32 uji bernama `t01_` sampai `t32_`. |
+
+Yang cocok tanpa perubahan: nama paket, dua perintah, kode keluar 0, 1, dan 2, tipe `Source`, `Plan`, `Output`, dan `Problem`, fungsi `to_canonical_json`, dependensi `serde` dan `serde_json`, dan uji `committed_outputs_match_the_source`. Uji token memakai satu uji bertabel (`rejects_broken_sources`), sedangkan AC-5 spec ini tetap meminta satu uji per baris; itu pilihan spec ini dan tidak bertentangan dengan alat.
+
+Satu akibat dari baris `.gitattributes` per jenis file: `shared/config/README.md` tidak lagi tercakup, padahal `R-3` membacanya. Karena itu `R-3` mengabaikan `\r` di akhir baris.
+
