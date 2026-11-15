@@ -16409,7 +16409,7 @@
       "node_kind": "heading",
       "norm_label": "blocker terbuka",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L275"
+      "source_location": "L278"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_dicentang_pada_wave_ini",
@@ -16421,7 +16421,7 @@
       "node_kind": "heading",
       "norm_label": "dicentang pada wave ini",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L302"
+      "source_location": "L305"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan",
@@ -16433,7 +16433,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L81"
+      "source_location": "L83"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_keputusan_delegasi",
@@ -16445,7 +16445,7 @@
       "node_kind": "heading",
       "norm_label": "keputusan delegasi",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L170"
+      "source_location": "L173"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_log_koordinasi_000_panduan_scope",
@@ -16469,7 +16469,7 @@
       "node_kind": "heading",
       "norm_label": "penutupan",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L346"
+      "source_location": "L349"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_riwayat_wave",
@@ -16481,7 +16481,7 @@
       "node_kind": "heading",
       "norm_label": "riwayat wave",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L342"
+      "source_location": "L345"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_1",
@@ -16493,7 +16493,7 @@
       "node_kind": "heading",
       "norm_label": "sub sesi wave `1`",
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L54"
+      "source_location": "L56"
     },
     {
       "id": "docs_scope_coordination_000_panduan_scope_log_sub_sesi_wave_2",
@@ -42103,7 +42103,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L170",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -42114,7 +42114,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L275",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -42125,7 +42125,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L302",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -42136,7 +42136,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L342",
+      "source_location": "L345",
       "weight": 1.0
     },
     {
@@ -42147,7 +42147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L346",
+      "source_location": "L349",
       "weight": 1.0
     },
     {
@@ -42158,7 +42158,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L54",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -42169,7 +42169,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/scope/coordination/000 - Panduan scope.log.md",
-      "source_location": "L81",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
