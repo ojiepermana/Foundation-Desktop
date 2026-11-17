@@ -202,3 +202,11 @@ Lewat `architect (update)`, teks saja. Keputusan, ID AC, tabel "Aturan arah depe
 | Tabel "Lokasi dan pemilik" | Kolom keadaan menjadi "Keadaan di `main` (2026-11-15)", dengan satu kalimat yang mencatat keadaan pada akhir milestone 1. Baris `crates/core/`, `crates/macos-ffi/`, `bindings/swift/`, `apps/macos/`, `design-system/`, `shared/config/`, `shared/localization/`, `shared/assets/`, dan `tooling/codegen/` kini "ada" dengan spec pengisinya. Baris `tooling/validation/` kini "tidak dibuat", diputuskan spec `_root/0003` dan `_root/0007`. Baris `scripts/` menyebut spec `_root/0008` tanpa tautan, karena spec itu belum di `main`. Baris baru untuk `.gitattributes`, file root yang diatur spec `_root/0003`, `_root/0004`, `_root/0005`, dan `_root/0006` (Follow-up spec `_root/0003`). |
 | Kalimat sesudah tabel | Uji yang membaca file di luar Core, termasuk `workspace_layout.rs`, tinggal di `tooling/codegen/tests/` sejak spec `_root/0007`. |
 | Follow-up | Scope 002, Scope 003, dan baris `README.md` menjadi `[x]` dengan spec penjawabnya. Scope 012 tetap terbuka sampai spec `_root/0008` masuk `main`. |
+
+## Penundaan bukti host (2026-11-17)
+
+Saat scope 001 dilanjutkan melalui `agent-flow`, AC-1 sampai AC-8 sudah punya bukti di Mac. AC-9 belum punya hasil dari host Windows maupun Linux yang diminta. Pemeriksaan ulang di Mac lulus, tetapi tidak menggantikan bukti kedua host.
+
+User menjawab usulan menjalankan dua job GitHub Actions: "skipp dan pindah ke pospone, nanti akan di jalankan developemnt di dua platform tersebut". Keputusan ini memindahkan AC-9 dan milestone 3 ke `POSTPONED`, untuk dijalankan saat pengembangan Windows (scope 006) dan Linux (scope 007). Tidak ada workflow ditambahkan, branch dipush, atau Actions dijalankan.
+
+Scope 001 ditutup dengan pekerjaan bersama dan macOS yang sudah selesai. Status `Accepted` mencatat batas penerimaan itu. Persyaratan host, target, toolchain, perintah, dan bukti AC-9 tetap dipertahankan untuk dilanjutkan; hasil Windows dan Linux tetap belum terverifikasi. Fondasi tiga OS belum dinyatakan selesai.

@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "kind": "agent_flow_model_resolution",
+  "runtime_ref": "state.json#/runtime_kind",
+  "policy_ref": "/Users/ojiepermana/.agents/skills/agent-flow/templates/model-policy.json",
+  "leader_snapshot": {
+    "selection": null,
+    "family": null,
+    "effort": null,
+    "evidence": [
+      "Runtime identifies Codex based on GPT-6; exact release/effort not exposed. No settings changed."
+    ]
+  },
+  "sources": {
+    "economy": {
+      "requested_selection": "gpt-6-luna",
+      "requested_effort": "low",
+      "family": "luna (advertised profile only)",
+      "via": "spawn_agent model override and fork_turns=none",
+      "access_status": "dispatch accepted and task completed; actual execution model unverified",
+      "substitution": null
+    }
+  },
+  "inline_advisory_mismatch": "Cannot assess; exact session effort unknown."
+}

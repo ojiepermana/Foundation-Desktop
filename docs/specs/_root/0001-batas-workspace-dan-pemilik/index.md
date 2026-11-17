@@ -2,7 +2,9 @@
 
 **Scope**: [001 - Batas workspace dan pemilik](../../../scope/001%20-%20Batas%20workspace%20dan%20pemilik.md)
 **Date**: 2026-11-15
-**Status**: In Progress
+**Status**: Accepted
+
+**Batas penerimaan (2026-11-17):** Implementasi bersama dan macOS diterima dengan bukti AC-1 sampai AC-8. User menunda AC-9 dan milestone 3 sampai pengembangan Windows dan Linux. `Accepted` mencerminkan penyelesaian scope saat ini dengan penundaan tersebut, bukan bukti kelulusan kedua host. Lihat [rationale.md](rationale.md#penundaan-bukti-host-2026-11-17).
 
 ## Summary
 
@@ -26,7 +28,7 @@ Spec ini menetapkan satu Cargo Workspace (kumpulan paket Rust yang dibangun bers
 - **AC-6** (gerbang merge lead): `cargo fmt --all --check` dan `cargo clippy --workspace --all-targets --locked -- -D warnings` keluar dengan kode 0.
 - **AC-7** (kriteria 32): Milestone 1 hanya menyentuh file berikut: `Cargo.toml`, `Cargo.lock`, `rust-toolchain.toml`, `.gitignore`, `.graphifyignore`, `crates/core/Cargo.toml`, `crates/core/src/lib.rs`, `verify.md` spec ini, baris `**Status**` di `index.md` spec ini, dan empat file `graphify-out/` dari hook. Daftar itu diperiksa dengan `git diff --name-only main...HEAD` di branch developer sebelum merge, atau sesudah merge dengan `git log --name-only --format= --grep='spec _root/0001 step [12]' | sort -u`. Pada commit langkah 1, isi tujuh file pertama sama persis dengan bagian "Isi file", jadi kerangka Core tidak memuat item, atribut, atau test. Pada akhir milestone 1 `grep -cE '^\[workspace\.(lints|dependencies)\]|^default-members|^exclude|^\[profile' Cargo.toml` mencetak `0`. Tidak ada crate `xtask` dan tidak ada `.cargo/config.toml`.
 - **AC-8** (kriteria 27, Done when): Yang berlaku terus: `docs/architecture/README.md` memuat heading `### Yang sudah ada` dan `### Aturan arah dependensi`, tabel aturannya sama baris demi baris dengan tabel di bagian "Aturan arah dependensi" spec ini, dan tautan ke `docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md` mengarah ke file yang ada. Pada akhir milestone 2: `docs/architecture/README.md` memuat teks dari bagian "Perubahan dokumen arsitektur", `grep -c 'desktop-core\|desktop-macos-ffi\|desktop-windows\|desktop-linux' docs/architecture/README.md` mencetak angka 4 atau lebih, `grep -c '1\.99\.1' docs/architecture/README.md` mencetak 1 atau lebih, dan kalimat "Pada tahap scope, folder implementasi masih berupa rencana." serta "Root workspace nantinya memuat manifest Cargo, lockfile dan konfigurasi toolchain." sudah tidak ada. Tabel "Yang sudah ada" dan kalimat di sekitarnya bertambah atau disesuaikan saat lokasi baru dibangun, lewat spec yang membangunnya.
-- **AC-9** (kriteria 2 pada host lain; `BLOCKED`, `owner: user`): Pada host Windows dengan target `x86_64-pc-windows-msvc` dan host Linux dengan target `x86_64-unknown-linux-gnu`, `cargo build -p desktop-core --locked` dan `cargo test -p desktop-core --locked` keluar dengan kode 0 dengan toolchain `1.99.1`. Prasyaratnya hanya `rustup` dan linker sistem (MSVC Build Tools di Windows, `cc` di Linux), tanpa pustaka UI. Hasil dicatat per host dengan OS, arsitektur, versi, perintah, dan keluaran.
+- **AC-9** (kriteria 2 pada host lain; `POSTPONED` oleh user pada 2026-11-17): Pada host Windows dengan target `x86_64-pc-windows-msvc` dan host Linux dengan target `x86_64-unknown-linux-gnu`, `cargo build -p desktop-core --locked` dan `cargo test -p desktop-core --locked` keluar dengan kode 0 dengan toolchain `1.99.1`. Prasyaratnya hanya `rustup` dan linker sistem (MSVC Build Tools di Windows, `cc` di Linux), tanpa pustaka UI. Hasil dicatat per host dengan OS, arsitektur, versi, perintah, dan keluaran. Kriteria ini tetap belum terverifikasi dan dijalankan saat pengembangan kedua platform; tidak menjadi gerbang penutupan scope 001 saat ini.
 
 ## Decision
 
@@ -301,7 +303,7 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
 
 3. Perbarui `docs/architecture/README.md` sesuai bagian "Perubahan dokumen arsitektur" dan catat pemeriksaan AC-8 di `verify.md` bagian `## Milestone 2: Peta arsitektur mencatat tata letak nyata`, satisfies **AC-8**
 
-**Milestone 3: Bukti Core di host Windows dan Linux** (langkah 4, `BLOCKED`, `owner: user`)
+**Milestone 3: Bukti Core di host Windows dan Linux** (langkah 4, `POSTPONED` oleh user pada 2026-11-17 sampai pengembangan kedua platform)
 
 4. Pada host Windows `x86_64-pc-windows-msvc` dan host Linux `x86_64-unknown-linux-gnu`, jalankan `cargo build -p desktop-core --locked` dan `cargo test -p desktop-core --locked`, lalu catat OS, arsitektur, versi, perintah, dan keluaran di `verify.md` bagian `## Milestone 3: Bukti Core di host Windows dan Linux`. Sesi koordinasi di Mac tidak menjalankan langkah ini, satisfies **AC-9**
 
@@ -336,6 +338,6 @@ Pendekatan build proyek adalah Tracer Bullet. Untuk fitur ini benang tipisnya ad
 - [ ] Scope 005 dan 006 (menunggu host Windows): `apps/windows/` bergabung sebagai `desktop-windows` di bawah aturan netral host, termasuk perilaku titik masuknya di host lain. Bila `windows-reactor` butuh toolchain lain atau tidak bisa mematuhi aturan itu, perbarui spec ini lebih dulu.
 - [ ] Scope 007 (menunggu host Linux): `apps/linux/` bergabung sebagai `desktop-linux` di bawah aturan netral host, termasuk perilaku titik masuknya di host lain.
 - [x] Scope 012: skrip `scripts/` dan CI membungkus perintah yang sama dengan `--locked` dan membaca `rust-toolchain.toml`; pengaturan `[profile.release]` bila dibutuhkan. Dijawab spec [`_root/0008`](../0008-build-dan-penerimaan-per-target/index.md): skrip dan CI memakai `--locked` dan memeriksa `rust-toolchain.toml` di langkah 1, dan `[profile.release]` tidak dibutuhkan (2026-11-15).
-- [ ] AC-9 dan milestone 3 menunggu host Windows dan Linux (`owner: user`).
+- [ ] `POSTPONED` (user, 2026-11-17): AC-9 dan milestone 3 dijalankan saat pengembangan Windows (scope 006) dan Linux (scope 007). Belum ada bukti pada kedua host; penundaan ini tidak menyatakan keduanya lulus.
 - [x] `README.md` di root masih berkata repo hanya berisi dokumentasi perencanaan. Kalimat itu usang sesudah milestone 1; `/sync` atau lead memperbaruinya. Diperbarui lewat bagian **Perubahan dokumen** spec [`_root/0007`](../0007-aturan-pengembangan-dan-pemeriksaan-arsitektur/index.md) (2026-11-15).
 - [ ] Field `license` sengaja tidak diisi karena lisensinya hanya user yang tahu. `publish = false` menjaga paket tetap privat sampai nilai itu ada.

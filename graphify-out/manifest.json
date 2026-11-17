@@ -54,9 +54,9 @@
     "semantic_hash": "840cadf54591ac8ce83d826f4b8e74b9"
   },
   "docs/scope/001 - Batas workspace dan pemilik.md": {
-    "mtime": 1794742005.129519,
-    "seen": 1794742010.011086,
-    "ast_hash": "7f3814b6064b79c45dfc315bf36f6826",
+    "mtime": 1794930958.4070992,
+    "seen": 1794930962.880007,
+    "ast_hash": "ff05f1acaa3f26cb3eff87cddb0ce6ea",
     "semantic_hash": ""
   },
   "docs/scope/002 - Aturan pengembangan dan pemeriksaan arsitektur.md": {
@@ -84,16 +84,16 @@
     "semantic_hash": "63df1764cd82cbe62ef2ed3976e1736e"
   },
   "docs/scope/006 - Sapaan di jendela Windows.md": {
-    "mtime": 1794730741.1241417,
-    "seen": 1794731111.199789,
-    "ast_hash": "ed766cf97ac0977dff2b320e3ee68a4e",
-    "semantic_hash": "ed766cf97ac0977dff2b320e3ee68a4e"
+    "mtime": 1794930958.4297848,
+    "seen": 1794930962.8800042,
+    "ast_hash": "2451c18a0fdd72f5f6b77a2125b106f9",
+    "semantic_hash": ""
   },
   "docs/scope/007 - Sapaan di jendela Linux.md": {
-    "mtime": 1794730741.1255836,
-    "seen": 1794731111.1997912,
-    "ast_hash": "fe32c0b702fc6f42763ad92cef48a54c",
-    "semantic_hash": "fe32c0b702fc6f42763ad92cef48a54c"
+    "mtime": 1794930958.4325483,
+    "seen": 1794930962.880001,
+    "ast_hash": "ae24f0c140498bd89ef2bba5626bb8f8",
+    "semantic_hash": ""
   },
   "docs/scope/008 - Tema bersama dan kontrol native.md": {
     "mtime": 1794759260.4461598,
@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "docs/scope/scope.md": {
-    "mtime": 1794930460.554614,
-    "seen": 1794930462.512983,
-    "ast_hash": "0b23518fdb4d3ce5efacd3f6a5075e59",
+    "mtime": 1794930958.4810135,
+    "seen": 1794930962.8800051,
+    "ast_hash": "f289c626a19f7399d72efbfa86f0887c",
     "semantic_hash": ""
   },
   "docs/shared-resources/README.md": {
@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "docs/scope/coordination/000 - Panduan scope.manual.md": {
-    "mtime": 1794760511.6673665,
-    "seen": 1794760513.528979,
-    "ast_hash": "ee63e3814f775414ff38039459c25e55",
+    "mtime": 1794930958.4583163,
+    "seen": 1794930962.880012,
+    "ast_hash": "a365dda9c1fce5ba180485a5b28c6812",
     "semantic_hash": ""
   },
   "docs/specs/_root/0002-kontrak-sapaan-bersama/rationale.md": {
@@ -198,15 +198,15 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/index.md": {
-    "mtime": 1794756266.883969,
-    "seen": 1794756268.473282,
-    "ast_hash": "5e71f8454bc8a58b344c6ede0fdb22c3",
+    "mtime": 1794930958.4832852,
+    "seen": 1794930962.8800058,
+    "ast_hash": "e0f3d73a42c7dff4f4baabfa33c446f2",
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/rationale.md": {
-    "mtime": 1794755838.39927,
-    "seen": 1794755842.589777,
-    "ast_hash": "d32098a7954d5e68e5bca79264d68573",
+    "mtime": 1794930958.486905,
+    "seen": 1794930962.880008,
+    "ast_hash": "97e5ac27d5db94703f69581a01d067a8",
     "semantic_hash": ""
   },
   "crates/core/src/lib.rs": {
@@ -222,9 +222,9 @@
     "semantic_hash": ""
   },
   "docs/specs/_root/0001-batas-workspace-dan-pemilik/verify.md": {
-    "mtime": 1794738001.5968251,
-    "seen": 1794738002.671702,
-    "ast_hash": "5b0540458c866490482feb32f10a9e1e",
+    "mtime": 1794930958.4886582,
+    "seen": 1794930962.880003,
+    "ast_hash": "e1e472618dff2245140033dada32743c",
     "semantic_hash": ""
   },
   "crates/core/src/greeting.rs": {
@@ -348,9 +348,9 @@
     "semantic_hash": ""
   },
   "docs/specs/macos/0002-batas-workspace-dan-pemilik.md": {
-    "mtime": 1794755995.0513284,
-    "seen": 1794755997.190578,
-    "ast_hash": "81f82748fbe732eaaf4ef1f8c420037e",
+    "mtime": 1794930958.5367475,
+    "seen": 1794930962.879997,
+    "ast_hash": "f828b52929ab0757bc1514cfe326c789",
     "semantic_hash": ""
   },
   "docs/specs/macos/0003-kontrak-sapaan-bersama.md": {
@@ -1029,6 +1029,24 @@
     "mtime": 1794761950.8868868,
     "seen": 1794761953.429004,
     "ast_hash": "dfb06202aab92ffab57646053e3c6f07",
+    "semantic_hash": ""
+  },
+  "docs/scope/coordination/scope-001-agent-flow/state.json": {
+    "mtime": 1794930958.4727702,
+    "seen": 1794930962.880009,
+    "ast_hash": "f0d857488a95d8d5a030c7bc38cb11f5",
+    "semantic_hash": ""
+  },
+  "docs/scope/coordination/scope-001-agent-flow/model-resolution.json": {
+    "mtime": 1794930958.4707072,
+    "seen": 1794930962.88001,
+    "ast_hash": "78349be72283e77dbdc70d2835de066f",
+    "semantic_hash": ""
+  },
+  "docs/scope/coordination/scope-001-agent-flow/team.md": {
+    "mtime": 1794930958.4738626,
+    "seen": 1794930962.880011,
+    "ast_hash": "c4dd8100be8fdcaa4b99c3004ddd3b46",
     "semantic_hash": ""
   }
 }

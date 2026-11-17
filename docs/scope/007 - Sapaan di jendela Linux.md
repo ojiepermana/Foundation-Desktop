@@ -8,6 +8,8 @@ Jalankan [kontrak 003](003%20-%20Kontrak%20sapaan%20bersama.md) dari jendela GTK
 
 * [ ] `/architect scope 007 sapaan di jendela Linux`
 
+**Bukti yang ditunda:** Saat pengembangan Linux dimulai, jalankan bagian Linux dari AC-9 scope 001 ([Postponed](001%20-%20Batas%20workspace%20dan%20pemilik.md#postponed), langkah `F001-1`). Penundaan diminta user pada 2026-11-17.
+
 **Tujuan spec** `docs/specs/linux/`
 
 [Kembali ke indeks scope](scope.md)

@@ -4,7 +4,7 @@
 
 | No. | Fitur | Fase | Status |
 | --- | --- | --- | --- |
-| 001 | [Batas workspace dan pemilik](001%20-%20Batas%20workspace%20dan%20pemilik.md) | Dasar | in-progress |
+| 001 | [Batas workspace dan pemilik](001%20-%20Batas%20workspace%20dan%20pemilik.md) | Dasar | done |
 | 002 | [Aturan pengembangan dan pemeriksaan arsitektur](002%20-%20Aturan%20pengembangan%20dan%20pemeriksaan%20arsitektur.md) | Dasar | in-progress |
 | 003 | [Kontrak sapaan bersama](003%20-%20Kontrak%20sapaan%20bersama.md) | Dasar | in-progress |
 | 004 | [Sapaan di jendela macOS](004%20-%20Sapaan%20di%20jendela%20macOS.md) | Alur native | in-progress |

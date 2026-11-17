@@ -1,4 +1,4 @@
-# Verify: Batas workspace dan pemilik · spec _root/0001 · updated 2026-11-15
+# Verify: Batas workspace dan pemilik · spec _root/0001 · updated 2026-11-17
 
 _Langkah ini diturunkan dari kriteria penerimaan spec _root/0001. `/check verify` menjalankannya, dan `/test` mengunci langkah yang tahan lama._
 
@@ -32,7 +32,7 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 
 - AC-1: langkah 1 dan 2 · AC-2: langkah 3 dan 4 · AC-3: langkah 5 dan 6 · AC-4: langkah 7 dan 8 · AC-5: langkah 9 · AC-6: langkah 10 dan 11 · AC-7: langkah 12 sampai 15.
 - AC-8 menunggu milestone 2 (langkah 3 Build plan, `docs/architecture/README.md`).
-- AC-9 menunggu milestone 3 (langkah 4 Build plan, `BLOCKED`, `owner: user`, host Windows dan Linux).
+- AC-9 dipindah ke milestone 3 berstatus `POSTPONED` sesuai instruksi user pada 2026-11-17; bukti host Windows dan Linux belum ada.
 
 ## Milestone 2: Peta arsitektur mencatat tata letak nyata
 
@@ -56,4 +56,26 @@ Tidak ada. Milestone ini hanya mengubah dokumen, dan semua bukti berupa perintah
 ### Acceptance-criteria coverage
 
 - AC-8: langkah 1 sampai 8 di bagian ini.
-- AC-1 sampai AC-7 tercakup di Milestone 1. AC-9 menunggu milestone 3 (langkah 4 Build plan, `BLOCKED`, `owner: user`).
+- AC-1 sampai AC-7 tercakup di Milestone 1. AC-9 dipindah ke milestone 3 berstatus `POSTPONED` sesuai instruksi user pada 2026-11-17; belum terverifikasi.
+
+## Milestone 3: Bukti Core di host Windows dan Linux
+
+**Status: `POSTPONED` (user, 2026-11-17).** Dijalankan saat pengembangan kedua platform, bukan gerbang penutupan scope 001 saat ini. Kedua kotak di bawah belum lulus. Riwayat keputusan ada di [rationale.md](rationale.md#penundaan-bukti-host-2026-11-17).
+
+- [ ] Host Windows `x86_64-pc-windows-msvc`: jalankan `rustc --version`, `cargo build -p desktop-core --locked`, dan `cargo test -p desktop-core --locked` dari root dengan Rust `1.99.1` serta MSVC Build Tools. Catat OS, arsitektur, versi, commit, perintah, dan keluaran. Build dan test harus berkode 0, dengan `test result: ok` tanpa `FAILED`. → AC-9
+- [ ] Host Linux `x86_64-unknown-linux-gnu`: jalankan tiga perintah yang sama dengan Rust `1.99.1` serta `cc`, dan catat bukti yang sama. Build dan test harus berkode 0, dengan `test result: ok` tanpa `FAILED`. → AC-9
+
+## Pemeriksaan ulang Mac (2026-11-17)
+
+Host macOS 27.0.1, `arm64`, Rust `1.99.1`, Cargo `1.99.1`. Sumber diuji pada commit `b1f67cebc6d84023e0ae133dbf03b4f26b038ad5`. Tidak ada sumber aplikasi yang berubah dalam penutupan ini.
+
+| Perintah | Hasil aktual |
+| --- | --- |
+| `bash scripts/validate.sh` | Kode 0, `PASS, 13 steps, 0 failed`, `251 passed, 0 failed, 0 ignored`. Termasuk build workspace, test, fmt, clippy, pemeriksaan sumber bersama dan arsitektur. |
+| `cargo build -p desktop-core --locked` | Kode 0. |
+| `cargo test -p desktop-core --locked` | Kode 0, 22 tes termasuk satu doctest lulus, tidak ada yang gagal. |
+| `cargo tree -p desktop-core --target all --all-features --prefix none --locked` | Kode 0, tepat satu baris: `desktop-core v0.1.0 (<root>/crates/core)`. |
+
+Keluaran lengkap selama run ada di `/tmp/desktop-scope001-validate.log` dan `/tmp/desktop-scope001-core.log`. Catatan ini membuktikan pemeriksaan Mac saat penutupan, bukan AC-9. Bukti historis yang dibatasi akhir milestone 1 dan 2 tetap merujuk catatan 2026-11-15 di atas.
+
+Gerbang diulang sesudah commit paralel `e0df7c0a34bd0ddb41c1b3524f2831b620d7cd60` memperbarui salinan repo dalam uji arsitektur. Pada checkout dengan perubahan dokumen penutupan ini, `bash scripts/validate.sh` kembali berkode 0: 13 langkah lulus, 251 tes lulus, 0 gagal. Keluaran ada di `/tmp/desktop-scope001-final-validate.log`. `architecture check`, `git diff --check`, pemeriksaan tautan dokumen di luar contoh kode, dan parsing JSON koordinasi juga lulus.

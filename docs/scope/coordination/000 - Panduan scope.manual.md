@@ -8,7 +8,7 @@ Keputusan yang diambil atas namamu ada di `000 - Panduan scope.log.md` bagian "K
 
 | ID | Langkah | AC | Kotak yang dicentang dengan langkah ini `NOT_RUN` | Bisa dijalankan sesudah | Hasil |
 | --- | --- | --- | --- | --- | --- |
-| `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). Milestone 3 dan `Build it` fitur 001 tetap terbuka sampai langkah ini `PASS` | 001 milestone 1 di `origin/main` (sesudah push penutupan) | `NOT_RUN` |
+| `F001-1` | Bangun dan uji Core di host Windows dan host Linux | spec `_root/0001` AC-9 | `Verify it` fitur 001 (bukti Mac). AC-9 dan milestone 3 dipindah ke Postponed atas instruksi user pada 2026-11-17; bukan gerbang penutupan scope 001 saat ini | saat pengembangan Windows (006) dan Linux (007) | `POSTPONED` |
 | `F008-1` | Bangun, uji, dan periksa token dengan `desktop-codegen` di host Windows dan host Linux | spec `_root/0003` AC-12 | `Verify it` fitur 008 (bukti Mac). Milestone 3 dan `Build it` fitur 008 tetap terbuka sampai langkah ini `PASS` | 008 milestone 1 di `origin/main` | `NOT_RUN` |
 | `F002-1` | Bangun, uji, dan jalankan pemeriksaan arsitektur di host Windows dan host Linux | spec `_root/0007` AC-11 | belum ada | 002 milestone 3 di `main`, dan host Windows serta Linux | `NOT_RUN` |
 | `F008-2` | Tampilan terang dan gelap dari token, fokus, keyboard, ukuran teks, VoiceOver, Increase contrast (langkah 1 sampai 10) | spec `macos/0005` AC-7, AC-8 | `Verify it` fitur 008 bagian macOS (bukti tanpa jendela). Milestone 3 dan `Build it` bagian macOS tetap terbuka sampai langkah ini `PASS` | sekarang (008 macOS milestone 2 di `main` lokal `033231a`) | `NOT_RUN` |
@@ -46,6 +46,8 @@ Nilai yang hanya kamu tahu. AC di kolom ketiga `BLOCKED` sampai nilainya ada.
 ### `F001-1` · Bangun dan uji Core di host Windows dan host Linux
 
 Dari laporan `arc-f001-spec` (2026-11-15). Membuktikan spec `_root/0001` `AC-9` (kriteria 2 pada host lain); ini milestone 3 fitur 001.
+
+**Status (2026-11-17): `POSTPONED`.** User meminta melewati eksekusi sekarang dan menjalankannya saat pengembangan Windows serta Linux. Belum dijalankan pada kedua host, dan tidak dicatat sebagai `PASS`. Scope 001 ditutup dengan penundaan ini; prasyarat dan perintah di bawah tetap berlaku saat dilanjutkan.
 
 - **Prasyarat:** milestone 1 fitur 001 sudah di `main` dan sudah di-clone di host itu. Host Windows `x86_64-pc-windows-msvc` dengan `rustup` dan MSVC Build Tools; host Linux `x86_64-unknown-linux-gnu` dengan `rustup` dan `cc`. Tanpa pustaka UI.
 - **Jalankan:** di root repo, pada tiap host:
