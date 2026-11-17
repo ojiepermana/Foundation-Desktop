@@ -90,8 +90,6 @@ Aturan berikut butuh penilaian orang. Penulis perubahan memeriksanya sebelum mem
 
 ## Agent skills
 
-- [coordinate](.claude/skills/coordinate/): lokal di repo ini, membagi satu scope ke sub sesi (architect, developer, checker, tester, debugger) dan menjaga gerbang merge.
-
 Alur `/scope`, `/architect`, `/develop`, `/check verify`, `/test`, `/audit`, dan `/sync` yang disebut di `docs/scope/` adalah skill tingkat pengguna. Skill itu tidak tersimpan di repo ini.
 
 ## Context files
