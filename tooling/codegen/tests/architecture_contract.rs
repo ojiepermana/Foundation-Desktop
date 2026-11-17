@@ -40,16 +40,15 @@ fn every_source_passes_check_on_the_repo() {
     assert!(failures.is_empty(), "{}", failures.join("\n"));
 }
 
-/// Folders the copy skips. These are the folders the tool skips, except
-/// `.claude`: the tool does not scan it, but the root `AGENTS.md` links
-/// into it, so the copy keeps it for the `A-12` existence check.
-const SKIPPED: [&str; 6] = [
+/// Folders the copy skips, matching the architecture tool.
+const SKIPPED: [&str; 7] = [
     ".git",
     "target",
     ".build",
     "DerivedData",
     "xcuserdata",
     "graphify-out",
+    ".claude",
 ];
 
 /// Copies the repo tree from `from` to `to`, skipping [`SKIPPED`] names

@@ -20,15 +20,15 @@ use std::process::Command;
 use desktop_codegen::architecture::{self, Class, MEMBERS, RULES};
 use desktop_codegen::{Plan, Problem, check, generate, repo_root};
 
-/// Folders the copy skips: the folders the tool skips, except `.claude`,
-/// which the root `AGENTS.md` links into.
-const SKIPPED: [&str; 6] = [
+/// Folders the copy skips, matching the architecture tool.
+const SKIPPED: [&str; 7] = [
     ".git",
     "target",
     ".build",
     "DerivedData",
     "xcuserdata",
     "graphify-out",
+    ".claude",
 ];
 
 /// The bridge source.

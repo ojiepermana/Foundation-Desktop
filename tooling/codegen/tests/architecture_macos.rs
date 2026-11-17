@@ -14,16 +14,15 @@ use std::path::{Path, PathBuf};
 use desktop_codegen::architecture;
 use desktop_codegen::repo_root;
 
-/// Folders the copy skips: the folders the tool skips, except `.claude`,
-/// which the root `AGENTS.md` links to (the same copy as
-/// `architecture_contract.rs`).
-const SKIPPED: [&str; 6] = [
+/// Folders the copy skips, matching the architecture tool.
+const SKIPPED: [&str; 7] = [
     ".git",
     "target",
     ".build",
     "DerivedData",
     "xcuserdata",
     "graphify-out",
+    ".claude",
 ];
 
 /// Copies the repo tree from `from` to `to`, skipping [`SKIPPED`] names

@@ -88,5 +88,5 @@ Tidak ada. Milestone ini tidak punya tampilan, dan semua bukti berupa perintah.
 ### Acceptance-criteria coverage
 
 - AC-1: langkah 1 sampai 3 · AC-5: langkah 4 sampai 7 · AC-6: langkah 8 · AC-9: langkah 6, 7, 9, dan 10 · AC-10: langkah 11 sampai 13.
-- Salinan repo di uji ikut menyalin `.claude/` (yang tidak dipindai alat), karena `AGENTS.md` akar menautkan `.claude/skills/coordinate/`; tanpa itu `P-1` gagal dengan `A-12` pada salinan. Lihat laporan build.
+- Catatan historis milestone 3: saat verifikasi ini dilakukan, salinan repo di uji ikut menyalin `.claude/` (yang tidak dipindai alat), karena `AGENTS.md` akar menautkan `.claude/skills/coordinate/`; tanpa itu `P-1` gagal dengan `A-12` pada salinan. Lihat laporan build. Skill lokal dan tautan itu dihapus pada 2026-11-17; salinan uji kini melewati `.claude/` sesuai aturan alat.
 - AC-11 menunggu milestone 4 (`BLOCKED`, `owner: user`).

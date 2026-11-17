@@ -18,15 +18,15 @@ use std::path::{Path, PathBuf};
 use desktop_codegen::architecture::{self, RULES};
 use desktop_codegen::{Problem, repo_root};
 
-/// Folders the copy skips: the folders the tool skips, except `.claude`,
-/// which the root `AGENTS.md` links into.
-const SKIPPED: [&str; 6] = [
+/// Folders the copy skips, matching the architecture tool.
+const SKIPPED: [&str; 7] = [
     ".git",
     "target",
     ".build",
     "DerivedData",
     "xcuserdata",
     "graphify-out",
+    ".claude",
 ];
 
 /// A view file read by `C-1` and `C-2`.

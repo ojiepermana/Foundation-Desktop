@@ -14331,7 +14331,7 @@
       "file_type": "code",
       "norm_label": "accepts_allowed_shapes()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L505"
+      "source_location": "L504"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_apply",
@@ -14342,7 +14342,7 @@
       "file_type": "code",
       "norm_label": "apply()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L130"
+      "source_location": "L129"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_copy_repo",
@@ -14353,7 +14353,7 @@
       "file_type": "code",
       "norm_label": "copy_repo()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L77"
+      "source_location": "L76"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_copy_tree",
@@ -14364,7 +14364,7 @@
       "file_type": "code",
       "norm_label": "copy_tree()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L57"
+      "source_location": "L56"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_edit",
@@ -14375,7 +14375,7 @@
       "file_type": "code",
       "norm_label": "edit",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L88"
+      "source_location": "L87"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_edit_path",
@@ -14386,7 +14386,7 @@
       "file_type": "code",
       "norm_label": ".path()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L107"
+      "source_location": "L106"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_every_source_passes_check_on_the_repo",
@@ -14408,7 +14408,7 @@
       "file_type": "code",
       "norm_label": "lock_block()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L119"
+      "source_location": "L118"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_rejected",
@@ -14419,7 +14419,7 @@
       "file_type": "code",
       "norm_label": "rejected",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L227"
+      "source_location": "L226"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_rejects_broken_repos",
@@ -14430,7 +14430,7 @@
       "file_type": "code",
       "norm_label": "rejects_broken_repos()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L438"
+      "source_location": "L437"
     },
     {
       "id": "tooling_codegen_tests_architecture_contract_rs_path",
@@ -14496,7 +14496,7 @@
       "file_type": "code",
       "norm_label": "run_case()",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178"
+      "source_location": "L177"
     },
     {
       "id": "deserialize",
@@ -17418,7 +17418,7 @@
       "file_type": "code",
       "norm_label": "accepts_macos_shapes()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L253"
+      "source_location": "L252"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_apply",
@@ -17429,7 +17429,7 @@
       "file_type": "code",
       "norm_label": "apply()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L81"
+      "source_location": "L80"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_copy_repo",
@@ -17440,7 +17440,7 @@
       "file_type": "code",
       "norm_label": "copy_repo()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L51"
+      "source_location": "L50"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_copy_tree",
@@ -17451,7 +17451,7 @@
       "file_type": "code",
       "norm_label": "copy_tree()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L31"
+      "source_location": "L30"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_edit",
@@ -17462,7 +17462,7 @@
       "file_type": "code",
       "norm_label": "edit",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L62"
+      "source_location": "L61"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_edit_path",
@@ -17473,7 +17473,7 @@
       "file_type": "code",
       "norm_label": ".path()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L73"
+      "source_location": "L72"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_rejects_macos_violations",
@@ -17484,7 +17484,7 @@
       "file_type": "code",
       "norm_label": "rejects_macos_violations()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L214"
+      "source_location": "L213"
     },
     {
       "id": "tooling_codegen_tests_architecture_macos_rs_path",
@@ -17550,7 +17550,7 @@
       "file_type": "code",
       "norm_label": "run_case()",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102"
+      "source_location": "L101"
     },
     {
       "id": "design_system_schemas_colors_schema_base_propertynames",
@@ -29215,7 +29215,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L506",
+      "source_location": "L505",
       "weight": 1.0
     },
     {
@@ -29227,7 +29227,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L509",
+      "source_location": "L508",
       "weight": 1.0
     },
     {
@@ -29239,7 +29239,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L139",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -29251,7 +29251,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L82",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -29263,7 +29263,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L69",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -29275,7 +29275,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L439",
+      "source_location": "L438",
       "weight": 1.0
     },
     {
@@ -29287,7 +29287,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L442",
+      "source_location": "L441",
       "weight": 1.0
     },
     {
@@ -29299,7 +29299,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L182",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -29311,7 +29311,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L203",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -29323,7 +29323,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L254",
+      "source_location": "L253",
       "weight": 1.0
     },
     {
@@ -29335,7 +29335,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L257",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -29347,7 +29347,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L56",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -29359,7 +29359,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L43",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -29371,7 +29371,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L215",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -29383,7 +29383,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L218",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -29683,7 +29683,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L106",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -29695,7 +29695,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L123",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -35995,7 +35995,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L229",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -37579,7 +37579,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -37591,7 +37591,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -37651,7 +37651,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -37663,7 +37663,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -41647,7 +41647,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L130",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -41659,7 +41659,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L57",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -41671,7 +41671,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -41683,7 +41683,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -41695,7 +41695,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L81",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -41707,7 +41707,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -41743,7 +41743,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -41755,7 +41755,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -43750,7 +43750,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L130",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -43762,7 +43762,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L77",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -43774,7 +43774,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -43786,7 +43786,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L81",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -43798,7 +43798,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L51",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -43870,7 +43870,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -58804,7 +58804,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L119",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -58815,7 +58815,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L130",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -58826,7 +58826,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L178",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -58848,7 +58848,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L227",
+      "source_location": "L226",
       "weight": 1.0
     },
     {
@@ -58859,7 +58859,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L438",
+      "source_location": "L437",
       "weight": 1.0
     },
     {
@@ -58870,7 +58870,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L505",
+      "source_location": "L504",
       "weight": 1.0
     },
     {
@@ -58881,7 +58881,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L57",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -58892,7 +58892,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L77",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -58903,7 +58903,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L88",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -58914,7 +58914,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L102",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -58925,7 +58925,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L214",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -58936,7 +58936,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L253",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -58947,7 +58947,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -58958,7 +58958,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L51",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -58969,7 +58969,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L62",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -58980,7 +58980,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L81",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -64359,7 +64359,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_contract.rs",
-      "source_location": "L107",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -64370,7 +64370,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tooling/codegen/tests/architecture_macos.rs",
-      "source_location": "L73",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
